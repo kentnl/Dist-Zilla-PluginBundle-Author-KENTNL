@@ -26,7 +26,7 @@ sub _expand {
 
 sub _load {
   my $m = shift;
-  eval " require $m; 1" or do {
+  eval " require $m ; 1" or do {
     ## no critic (ProhibitPunctuationVars)
     my $e = $@;
     require Carp;
@@ -81,7 +81,7 @@ sub bundle_config {
     ( $arg->{nogit}  ? () : [ 'Git::Commit'  => {} ] ),
     ( $arg->{nocpan} ? () : [ 'UploadToCPAN' => {} ] ),
   );
-  _load( $_->[0] ) for @config;
+  _load( $_->[1] ) for @config;
   return @config;
 }
 __PACKAGE__->meta->make_immutable;
