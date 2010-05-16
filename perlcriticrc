@@ -10,5 +10,5 @@ allow_includes = 1
 [CodeLayout::ProhibitTrailingWhitespace]
 
 [Documentation::PodSpelling]
-stop_words = metadata KiokuDB
+stop_words = metadata KiokuDB KENTNL
 
