@@ -21,7 +21,8 @@ and wants others to be using what he's using if they want to be doing work on hi
 
 sub _expand {
   my ( $class, $suffix, $conf ) = @_;
-  return [ $class . '/Dist::Zilla::Plugin::' . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+  ## no critic ( RequireInterpolationOfMetachars )
+  return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
 sub _load {
@@ -58,7 +59,8 @@ sub bundle_config {
         time_zone => $arg->{version_rel_time_zone} || 'Pacific/Auckland',
       }
     ],
-    [ 'AllFiles'              => {} ],
+    [ 'GatherDir'             => {} ],
+    [ 'MetaConfig'            => {} ],
     [ 'PruneCruft'            => {} ],
     [ 'Repository'            => {} ],
     [ 'License'               => {} ],
@@ -71,9 +73,11 @@ sub bundle_config {
     [ 'ReadmeFromPod'         => {} ],
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
+    [ 'AutoPrereq'            => {} ],
     [ 'CompileTests'          => {} ],
-    [ 'MetaTests'             => {} ],
-    [ 'PodTests'              => {} ],
+#    [ 'MetaTests'             => {} ],  # TODO: Let this pass x_Dist_Zilla
+    [ 'PodCoverageTests'      => {} ],
+    [ 'PodSyntaxTests'        => {} ],
     [ 'ExtraTests'            => {} ],
     ( $arg->{nogit} ? () : [ 'Git::Check' => { filename => 'Changes' } ] ),
     [ 'NextRelease' => {} ],
