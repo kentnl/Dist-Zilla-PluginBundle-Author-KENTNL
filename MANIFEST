@@ -1,0 +1,17 @@
+Build.PL
+Changes
+LICENSE
+MANIFEST
+META.json
+META.yml
+README
+dist.ini
+inc/lib.pm
+lib/Dist/Zilla/PluginBundle/KENTNL.pm
+perlcriticrc
+t/00-compile.t
+t/author-critic.t
+t/author-kwalitee.t
+t/release-pod-coverage.t
+t/release-pod-syntax.t
+weaver.ini
