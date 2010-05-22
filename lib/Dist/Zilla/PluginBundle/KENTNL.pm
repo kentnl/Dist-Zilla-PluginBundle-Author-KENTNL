@@ -10,7 +10,7 @@ use Moose::Autobox;
 
 with 'Dist::Zilla::Role::PluginBundle';
 
-use namespace::autoclean -also => [qw( _expand _load )];
+use namespace::autoclean -also => [qw( _expand _load _defined_or )];
 
 =head1 DESCRIPTION
 
@@ -44,13 +44,43 @@ See L<Dist::Zilla::Role::PluginBundle> for what this is for, it is a method to s
 
 sub _defined_or {
     # Backcompat way of doing // in < 5.10
-    my ( $self, $hash, $field, $default ) = @_;
+    my ( $hash, $field, $default ) = @_;
     if ( not ( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} and defined $hash->{$field} ) ){
         require Carp;
         Carp::carp( '[@KENTNL]'. " Warning: autofilling $field with $default ");
         return $default;
     }
     return $hash->{$field};
+}
+
+sub _only_git {
+    my ( $args , $ref ) = @_;
+    return () if exists $ENV{KENTNL_NOGIT};
+    return $ref unless defined $args;
+    return $ref unless ref $args eq 'HASH';
+    return $ref unless exists $args->{nogit};
+    return ();
+}
+
+sub _only_cpan {
+    my ( $args , $ref ) = @_;
+    return () if exists $ENV{KENTNL_NOCPAN};
+    return $ref unless defined $args;
+    return $ref unless ref $args eq 'HASH';
+    return $ref unless exists $args->{nocpan};
+    return ();
+}
+sub _release_fail {
+    my ( $args , $ref ) = ( shift, [ 'FakeRelease' => {} ] );
+    if ( exists $ENV{KENTNL_RELEASE_FAIL} ){
+        $ENV{DZIL_FAKERELEASE_FAIL} = 1;
+        return $ref;
+    }
+    return () unless defined $args;
+    return () unless ref $args eq 'HASH';
+    return () unless exists ( $args->{release_fail} );
+    $ENV{DZIL_FAKERELEASE_FAIL} = 1;
+    return $ref
 }
 
 sub bundle_config {
@@ -61,13 +91,13 @@ sub bundle_config {
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
       'AutoVersion::Relative' => {    ## no critic (ProhibitMagicNumbers)
-        major     => $self->_defined_or( $arg, version_major => 0 ),
-        minor     => $self->_defined_or( $arg, version_minor => 1 ),
-        year      => $self->_defined_or( $arg, version_rel_year => 2010 ),
-        month     => $self->_defined_or( $arg, version_rel_month => 5 ),
-        day       => $self->_defined_or( $arg, version_rel_day => 16 ),
-        hour      => $self->_defined_or( $arg, version_rel_hour =>  20 ),
-        time_zone => $self->_defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland'),
+        major     => _defined_or( $arg, version_major => 0 ),
+        minor     => _defined_or( $arg, version_minor => 1 ),
+        year      => _defined_or( $arg, version_rel_year => 2010 ),
+        month     => _defined_or( $arg, version_rel_month => 5 ),
+        day       => _defined_or( $arg, version_rel_day => 16 ),
+        hour      => _defined_or( $arg, version_rel_hour =>  20 ),
+        time_zone => _defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland'),
       }
     ],
     [ 'GatherDir'             => {} ],
@@ -91,12 +121,14 @@ sub bundle_config {
     [ 'PodCoverageTests' => {} ],
     [ 'PodSyntaxTests'   => {} ],
     [ 'ExtraTests'       => {} ],
-    ( $arg->{nogit} ? () : [ 'Git::Check' => { filename => 'Changes' } ] ),
+    [ 'TestRelease'     => {} ],
     [ 'ConfirmRelease' => {} ],
+    _release_fail( $arg ),
+    _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
     [ 'NextRelease'    => {} ],
-    ( $arg->{nogit} ? () : [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
-    ( $arg->{nogit}  ? () : [ 'Git::Commit'  => {} ] ),
-    ( $arg->{nocpan} ? () : [ 'UploadToCPAN' => {} ] ),
+    _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
+    _only_git( $arg, [ 'Git::Commit'  => {} ] ),
+    _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
   );
   _load( $_->[1] ) for @config;
   return @config;
