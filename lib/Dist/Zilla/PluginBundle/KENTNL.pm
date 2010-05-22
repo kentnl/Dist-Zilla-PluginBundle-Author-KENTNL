@@ -46,8 +46,9 @@ sub _defined_or {
 
   # Backcompat way of doing // in < 5.10
   my ( $hash, $field, $default ) = @_;
-  if ( not( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} and defined $hash->{$field} ) ) {
+  if ( not( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} && defined $hash->{$field} ) ) {
     require Carp;
+    ## no critic (RequireInterpolationOfMetachars)
     Carp::carp( '[@KENTNL]' . " Warning: autofilling $field with $default " );
     return $default;
   }
@@ -74,6 +75,8 @@ sub _only_cpan {
 
 sub _release_fail {
   my ( $args, $ref ) = ( shift, [ 'FakeRelease' => {} ] );
+  ## no critic (RequireLocalizedPunctuationVars)
+
   if ( exists $ENV{KENTNL_RELEASE_FAIL} ) {
     $ENV{DZIL_FAKERELEASE_FAIL} = 1;
     return $ref;
@@ -90,9 +93,10 @@ sub bundle_config {
   my $class = ( ref $self ) || $self;
 
   my $arg = $section->{payload};
+
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
-      'AutoVersion::Relative' => {    ## no critic (ProhibitMagicNumbers)
+      'AutoVersion::Relative' => {
         major     => _defined_or( $arg, version_major         => 0 ),
         minor     => _defined_or( $arg, version_minor         => 1 ),
         year      => _defined_or( $arg, version_rel_year      => 2010 ),
