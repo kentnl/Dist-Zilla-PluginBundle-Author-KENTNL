@@ -42,6 +42,17 @@ See L<Dist::Zilla::Role::PluginBundle> for what this is for, it is a method to s
 
 =cut
 
+sub _defined_or {
+    # Backcompat way of doing // in < 5.10
+    my ( $self, $hash, $field, $default ) = @_;
+    if ( not ( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} and defined $hash->{$field} ) ){
+        require Carp;
+        Carp::carp( '[@KENTNL]'. " Warning: autofilling $field with $default ");
+        return $default;
+    }
+    return $hash->{$field};
+}
+
 sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
@@ -50,13 +61,13 @@ sub bundle_config {
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
       'AutoVersion::Relative' => {    ## no critic (ProhibitMagicNumbers)
-        major     => $arg->{version_major}         || 0,
-        minor     => $arg->{version_minor}         || 1,
-        year      => $arg->{version_rel_year}      || 2010,
-        month     => $arg->{version_rel_month}     || 5,
-        day       => $arg->{version_rel_day}       || 16,
-        hour      => $arg->{version_rel_hour}      || 20,
-        time_zone => $arg->{version_rel_time_zone} || 'Pacific/Auckland',
+        major     => $self->_defined_or( $arg, version_major => 0 ),
+        minor     => $self->_defined_or( $arg, version_minor => 1 ),
+        year      => $self->_defined_or( $arg, version_rel_year => 2010 ),
+        month     => $self->_defined_or( $arg, version_rel_month => 5 ),
+        day       => $self->_defined_or( $arg, version_rel_day => 16 ),
+        hour      => $self->_defined_or( $arg, version_rel_hour =>  20 ),
+        time_zone => $self->_defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland'),
       }
     ],
     [ 'GatherDir'             => {} ],
@@ -75,12 +86,14 @@ sub bundle_config {
     [ 'Manifest'              => {} ],
     [ 'AutoPrereq'            => {} ],
     [ 'CompileTests'          => {} ],
-#    [ 'MetaTests'             => {} ],  # TODO: Let this pass x_Dist_Zilla
-    [ 'PodCoverageTests'      => {} ],
-    [ 'PodSyntaxTests'        => {} ],
-    [ 'ExtraTests'            => {} ],
+
+    #    [ 'MetaTests'             => {} ],  # TODO: Let this pass x_Dist_Zilla
+    [ 'PodCoverageTests' => {} ],
+    [ 'PodSyntaxTests'   => {} ],
+    [ 'ExtraTests'       => {} ],
     ( $arg->{nogit} ? () : [ 'Git::Check' => { filename => 'Changes' } ] ),
-    [ 'NextRelease' => {} ],
+    [ 'ConfirmRelease' => {} ],
+    [ 'NextRelease'    => {} ],
     ( $arg->{nogit} ? () : [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
     ( $arg->{nogit}  ? () : [ 'Git::Commit'  => {} ] ),
     ( $arg->{nocpan} ? () : [ 'UploadToCPAN' => {} ] ),
