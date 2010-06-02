@@ -12,10 +12,41 @@ with 'Dist::Zilla::Role::PluginBundle';
 
 use namespace::autoclean -also => [qw( _expand _load _defined_or _only_git _only_cpan _release_fail )];
 
+=head1 SYNOPSIS
+
+    [@KENTNL]
+    no_cpan = 1 ; skip upload to cpan and twitter.
+    no_git  = 1 ; skip things that work with git.
+    twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
+    release_fail = 1 ; asplode!. ( non-twitter only )
+
 =head1 DESCRIPTION
 
 This is the plug-in bundle that KENTNL uses. It exists mostly because he is very lazy
 and wants others to be using what he's using if they want to be doing work on his modules.
+
+=cut
+
+
+=head1 ENVIRONMENT
+
+all of these have to merely exist to constitute a "true" status.
+
+=head2 KENTNL_NOGIT
+
+the same as no_git=1
+
+=head2 KENTNL_NOCPAN
+
+same as no_cpan = 1
+
+=head2 KENTNL_TWITTER_ONLY
+
+same as twitter_only=1
+
+=head2 KENTNL_RELEASE_FAIL
+
+same as release_fail=1
 
 =cut
 

@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        A little better documentation. Nobody else
+        should care, but I'm likely to forget what my own code does.
+
         More of my fail. Tweaking so I can 
         KENTNL_TWITTER_ONLY=1 dzil release 
         and get a dumb no-git no-cpan twitter release.
