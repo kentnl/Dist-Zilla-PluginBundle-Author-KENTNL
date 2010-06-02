@@ -135,6 +135,7 @@ sub bundle_config {
     _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
     _only_git( $arg, [ 'Git::Commit' => {} ] ),
     _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
+    _only_cpan( $arg, [ 'Twitter' => { } ] ),
   );
   _load( $_->[1] ) for @config;
   return @config;

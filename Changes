@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        Added Dist::Zilla::Plugin::Twitter to the chain.
+
 0.01000600 2010-05-22 20:33:14 Pacific/Auckland
           First version.
 
