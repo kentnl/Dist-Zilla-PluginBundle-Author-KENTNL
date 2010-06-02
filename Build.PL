@@ -20,7 +20,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01000600',
+  'dist_version' => '0.01001712',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
@@ -34,6 +34,7 @@ my %module_build_args = (
     'Dist::Zilla::Plugin::PodWeaver' => '3.093321',
     'Dist::Zilla::Plugin::ReadmeFromPod' => '0.04',
     'Dist::Zilla::Plugin::Repository' => '0.11',
+    'Dist::Zilla::Plugin::Twitter' => '0.007',
     'Dist::Zilla::Role::PluginBundle' => '0',
     'Moose' => '1.01',
     'Moose::Autobox' => '0',

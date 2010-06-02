@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01000600';
+  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01001712';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -127,6 +127,7 @@ sub bundle_config {
     _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
     _only_git( $arg, [ 'Git::Commit' => {} ] ),
     _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
+    _only_cpan( $arg, [ 'Twitter' => { } ] ),
   );
   _load( $_->[1] ) for @config;
   return @config;
@@ -147,7 +148,7 @@ Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your distribut
 
 =head1 VERSION
 
-version 0.01000600
+version 0.01001712
 
 =head1 DESCRIPTION
 

@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+0.01001712 2010-06-03 08:54:05 Pacific/Auckland
+
+        Added Dist::Zilla::Plugin::Twitter to the chain.
+
 0.01000600 2010-05-22 20:33:14 Pacific/Auckland
           First version.
 

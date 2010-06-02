@@ -23,7 +23,7 @@
    "provides" : {
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01000600"
+         "version" : "0.01001712"
       }
    },
    "recommends" : {},
@@ -37,6 +37,7 @@
       "Dist::Zilla::Plugin::PodWeaver" : "3.093321",
       "Dist::Zilla::Plugin::ReadmeFromPod" : "0.04",
       "Dist::Zilla::Plugin::Repository" : "0.11",
+      "Dist::Zilla::Plugin::Twitter" : "0.007",
       "Dist::Zilla::Role::PluginBundle" : "0",
       "Moose" : "1.01",
       "Moose::Autobox" : "0",
@@ -45,9 +46,9 @@
       "namespace::autoclean" : "0.09"
    },
    "resources" : {
-      "repository" : "origin"
+      "repository" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl"
    },
-   "version" : "0.01000600",
+   "version" : "0.01001712",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -58,7 +59,7 @@
          {
             "class" : "Dist::Zilla::Plugin::AutoVersion::Relative",
             "name" : "@KENTNL/AutoVersion::Relative",
-            "version" : "0.01006104"
+            "version" : "0.01027903"
          },
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
@@ -98,7 +99,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
             "name" : "@KENTNL/MetaProvides::Package",
-            "version" : "1.10027518"
+            "version" : "1.10027802"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
@@ -189,6 +190,11 @@
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
             "name" : "@KENTNL/UploadToCPAN",
             "version" : "2.101310"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Twitter",
+            "name" : "@KENTNL/Twitter",
+            "version" : "0.007"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereq",
