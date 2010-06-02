@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01001713';
+  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01001714';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -14,6 +14,8 @@ use Moose::Autobox;
 with 'Dist::Zilla::Role::PluginBundle';
 
 use namespace::autoclean -also => [qw( _expand _load _defined_or _only_git _only_cpan _release_fail )];
+
+
 
 
 sub _expand {
@@ -48,20 +50,20 @@ sub _defined_or {
 }
 
 sub _only_git {
-  my ( $args, $ref ) = @_;
+  my ( $args, @rest ) = @_;
   return () if exists $ENV{KENTNL_NOGIT};
-  return $ref unless defined $args;
-  return $ref unless ref $args eq 'HASH';
-  return $ref unless exists $args->{nogit};
+  return @rest unless defined $args;
+  return @rest unless ref $args eq 'HASH';
+  return @rest unless exists $args->{nogit};
   return ();
 }
 
 sub _only_cpan {
-  my ( $args, $ref ) = @_;
+  my ( $args, @rest ) = @_;
   return () if exists $ENV{KENTNL_NOCPAN};
-  return $ref unless defined $args;
-  return $ref unless ref $args eq 'HASH';
-  return $ref unless exists $args->{nocpan};
+  return @rest unless defined $args;
+  return @rest unless ref $args eq 'HASH';
+  return @rest unless exists $args->{nocpan};
   return ();
 }
 
@@ -78,6 +80,13 @@ sub _release_fail {
   return () unless exists( $args->{release_fail} );
   $ENV{DZIL_FAKERELEASE_FAIL} = 1;
   return $ref;
+}
+
+sub _if_twitter {
+  my ( $args, $twitter, $else ) = @_;
+  return @{$twitter} if ( exists $ENV{KENTNL_TWITTER_ONLY} );
+  return @{$twitter} if ( exists $args->{twitter_only} );
+  return @{$else};
 }
 
 sub bundle_config {
@@ -121,13 +130,19 @@ sub bundle_config {
     [ 'ExtraTests'       => {} ],
     [ 'TestRelease'      => {} ],
     [ 'ConfirmRelease'   => {} ],
-    _release_fail($arg),
-    _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
-    [ 'NextRelease' => {} ],
-    _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
-    _only_git( $arg, [ 'Git::Commit' => {} ] ),
-    _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
-    _only_cpan( $arg, [ 'Twitter' => { } ] ),
+    _if_twitter(
+      $arg,
+      [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => {}, ], ],
+      [
+        _release_fail($arg),
+        _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
+        [ 'NextRelease' => {} ],
+        _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
+        _only_git( $arg, [ 'Git::Commit' => {} ] ),
+        _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
+        _only_cpan( $arg, [ 'Twitter'      => {} ] ),
+      ]
+    )
   );
   _load( $_->[1] ) for @config;
   return @config;
@@ -148,7 +163,15 @@ Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your distribut
 
 =head1 VERSION
 
-version 0.01001713
+version 0.01001714
+
+=head1 SYNOPSIS
+
+    [@KENTNL]
+    no_cpan = 1 ; skip upload to cpan and twitter.
+    no_git  = 1 ; skip things that work with git.
+    twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
+    release_fail = 1 ; asplode!. ( non-twitter only )
 
 =head1 DESCRIPTION
 
@@ -160,6 +183,26 @@ and wants others to be using what he's using if they want to be doing work on hi
 =head2 bundle_config
 
 See L<Dist::Zilla::Role::PluginBundle> for what this is for, it is a method to satisfy that role.
+
+=head1 ENVIRONMENT
+
+all of these have to merely exist to constitute a "true" status.
+
+=head2 KENTNL_NOGIT
+
+the same as no_git=1
+
+=head2 KENTNL_NOCPAN
+
+same as no_cpan = 1
+
+=head2 KENTNL_TWITTER_ONLY
+
+same as twitter_only=1
+
+=head2 KENTNL_RELEASE_FAIL
+
+same as release_fail=1
 
 =head1 AUTHOR
 

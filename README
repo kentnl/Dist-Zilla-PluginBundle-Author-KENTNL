@@ -3,7 +3,14 @@ NAME
     distributions.
 
 VERSION
-    version 0.01001713
+    version 0.01001714
+
+SYNOPSIS
+        [@KENTNL]
+        no_cpan = 1 ; skip upload to cpan and twitter.
+        no_git  = 1 ; skip things that work with git.
+        twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
+        release_fail = 1 ; asplode!. ( non-twitter only )
 
 DESCRIPTION
     This is the plug-in bundle that KENTNL uses. It exists mostly because he
@@ -14,6 +21,21 @@ METHODS
   bundle_config
     See Dist::Zilla::Role::PluginBundle for what this is for, it is a method
     to satisfy that role.
+
+ENVIRONMENT
+    all of these have to merely exist to constitute a "true" status.
+
+  KENTNL_NOGIT
+    the same as no_git=1
+
+  KENTNL_NOCPAN
+    same as no_cpan = 1
+
+  KENTNL_TWITTER_ONLY
+    same as twitter_only=1
+
+  KENTNL_RELEASE_FAIL
+    same as release_fail=1
 
 AUTHOR
       Kent Fredric <kentnl@cpan.org>
