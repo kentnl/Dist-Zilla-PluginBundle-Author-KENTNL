@@ -23,7 +23,7 @@
    "provides" : {
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01001712"
+         "version" : "0.01001713"
       }
    },
    "recommends" : {},
@@ -48,7 +48,7 @@
    "resources" : {
       "repository" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl"
    },
-   "version" : "0.01001712",
+   "version" : "0.01001713",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
