@@ -56,20 +56,20 @@ sub _defined_or {
 }
 
 sub _only_git {
-  my ( $args, $ref ) = @_;
+  my ( $args, @rest ) = @_;
   return () if exists $ENV{KENTNL_NOGIT};
-  return $ref unless defined $args;
-  return $ref unless ref $args eq 'HASH';
-  return $ref unless exists $args->{nogit};
+  return @rest unless defined $args;
+  return @rest unless ref $args eq 'HASH';
+  return @rest unless exists $args->{nogit};
   return ();
 }
 
 sub _only_cpan {
-  my ( $args, $ref ) = @_;
+  my ( $args, @rest ) = @_;
   return () if exists $ENV{KENTNL_NOCPAN};
-  return $ref unless defined $args;
-  return $ref unless ref $args eq 'HASH';
-  return $ref unless exists $args->{nocpan};
+  return @rest unless defined $args;
+  return @rest unless ref $args eq 'HASH';
+  return @rest unless exists $args->{nocpan};
   return ();
 }
 
@@ -86,6 +86,13 @@ sub _release_fail {
   return () unless exists( $args->{release_fail} );
   $ENV{DZIL_FAKERELEASE_FAIL} = 1;
   return $ref;
+}
+
+sub _if_twitter {
+  my ( $args, $twitter, $else ) = @_;
+  return @{$twitter} if ( exists $ENV{KENTNL_TWITTER_ONLY} );
+  return @{$twitter} if ( exists $args->{twitter_only} );
+  return @{$else};
 }
 
 sub bundle_config {
@@ -129,13 +136,19 @@ sub bundle_config {
     [ 'ExtraTests'       => {} ],
     [ 'TestRelease'      => {} ],
     [ 'ConfirmRelease'   => {} ],
-    _release_fail($arg),
-    _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
-    [ 'NextRelease' => {} ],
-    _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
-    _only_git( $arg, [ 'Git::Commit' => {} ] ),
-    _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
-    _only_cpan( $arg, [ 'Twitter' => { } ] ),
+    _if_twitter(
+      $arg,
+      [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => {}, ], ],
+      [
+        _release_fail($arg),
+        _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
+        [ 'NextRelease' => {} ],
+        _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
+        _only_git( $arg, [ 'Git::Commit' => {} ] ),
+        _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
+        _only_cpan( $arg, [ 'Twitter'      => {} ] ),
+      ]
+    )
   );
   _load( $_->[1] ) for @config;
   return @config;

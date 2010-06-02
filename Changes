@@ -2,6 +2,10 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        More of my fail. Tweaking so I can 
+        KENTNL_TWITTER_ONLY=1 dzil release 
+        and get a dumb no-git no-cpan twitter release.
+
 0.01001713 2010-06-03 09:04:31 Pacific/Auckland
 
         Re-attempted release of 0.01001712 
