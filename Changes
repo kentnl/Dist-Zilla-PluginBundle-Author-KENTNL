@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.01001713 2010-06-03 09:04:31 Pacific/Auckland
+
         Re-attempted release of 0.01001712 
         except with a (hopefully) working .netrc so 
         the twitter thing Actually Works(TM).
