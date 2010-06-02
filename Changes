@@ -2,6 +2,10 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        Re-attempted release of 0.01001712 
+        except with a (hopefully) working .netrc so 
+        the twitter thing Actually Works(TM).
+
 0.01001712 2010-06-03 08:54:05 Pacific/Auckland
 
         Added Dist::Zilla::Plugin::Twitter to the chain.
