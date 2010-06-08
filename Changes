@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.01002309 2010-06-09 05:47:53 Pacific/Auckland
+
         Upgrade to DZIL 4. 
         Upgrade deps on ReadmeFromPod ( win32 )
         Add report-versions. 
