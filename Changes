@@ -2,6 +2,15 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        Upgrade to DZIL 4. 
+        Upgrade deps on ReadmeFromPod ( win32 )
+        Add report-versions. 
+        Replace Kwalitee Tests with Plugin.
+        Add portability tests
+        Dep on other requirements for tests.
+        fix @inc for Dzil 4.
+        add 'notwitter' flag.
+
 0.01001714 2010-06-03 10:11:42 Pacific/Auckland
 
         A little better documentation. Nobody else

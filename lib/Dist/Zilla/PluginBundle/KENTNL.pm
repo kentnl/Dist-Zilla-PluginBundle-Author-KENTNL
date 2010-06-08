@@ -86,22 +86,27 @@ sub _defined_or {
   return $hash->{$field};
 }
 
-sub _only_git {
-  my ( $args, @rest ) = @_;
-  return () if exists $ENV{KENTNL_NOGIT};
-  return @rest unless defined $args;
-  return @rest unless ref $args eq 'HASH';
-  return @rest unless exists $args->{nogit};
-  return ();
+sub _mk_only {
+  my ( $subname, $envname, $argfield ) = @_;
+  my $sub = sub {
+    my ( $args, @rest ) = @_;
+    return () if exists $ENV{'KENTNL_NO' . $envname};
+    return @rest unless defined $args;
+    return @rest unless ref $args eq 'HASH';
+    return @rest unless exists $args->{'no' .  $argfield};
+    return ();
+  };
+  {
+    ## no critic (ProhibitNoStrict)
+    no strict 'refs';
+    *{__PACKAGE__ . '::_only_' . $subname} = $sub;
+  }
+  return 1;
 }
-
-sub _only_cpan {
-  my ( $args, @rest ) = @_;
-  return () if exists $ENV{KENTNL_NOCPAN};
-  return @rest unless defined $args;
-  return @rest unless ref $args eq 'HASH';
-  return @rest unless exists $args->{nocpan};
-  return ();
+BEGIN {
+  _mk_only(qw( git GIT git ));
+  _mk_only(qw( cpan CPAN cpan ));
+  _mk_only(qw( twitter TWITTER twitter ));
 }
 
 sub _release_fail {
@@ -160,13 +165,15 @@ sub bundle_config {
     [ 'Manifest'              => {} ],
     [ 'AutoPrereq'            => {} ],
     [ 'CompileTests'          => {} ],
-
-    #    [ 'MetaTests'             => {} ],  # TODO: Let this pass x_Dist_Zilla
-    [ 'PodCoverageTests' => {} ],
-    [ 'PodSyntaxTests'   => {} ],
-    [ 'ExtraTests'       => {} ],
-    [ 'TestRelease'      => {} ],
-    [ 'ConfirmRelease'   => {} ],
+    [ 'MetaTests'             => {} ],
+    [ 'PodCoverageTests'      => {} ],
+    [ 'PodSyntaxTests'        => {} ],
+    [ 'ReportVersions::Tiny'  => {} ],
+    [ 'KwaliteeTests'         => {} ],
+    [ 'PortabilityTests'      => {} ],
+    [ 'ExtraTests'            => {} ],
+    [ 'TestRelease'           => {} ],
+    [ 'ConfirmRelease'        => {} ],
     _if_twitter(
       $arg,
       [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => {}, ], ],
@@ -177,7 +184,7 @@ sub bundle_config {
         _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
         _only_git( $arg, [ 'Git::Commit' => {} ] ),
         _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
-        _only_cpan( $arg, [ 'Twitter'      => {} ] ),
+        _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter'      => {} ] ) ),
       ]
     )
   );
