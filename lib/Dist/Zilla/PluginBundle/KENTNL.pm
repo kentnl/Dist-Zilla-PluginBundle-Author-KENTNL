@@ -1,4 +1,4 @@
-use strict;
+use strict; 	
 use warnings;
 
 package Dist::Zilla::PluginBundle::KENTNL;
@@ -171,6 +171,9 @@ sub bundle_config {
     [ 'ReportVersions::Tiny'  => {} ],
     [ 'KwaliteeTests'         => {} ],
     [ 'PortabilityTests'      => {} ],
+    [ 'EOLTests'              => {
+        trailing_whitespace => 1,
+    } ],
     [ 'ExtraTests'            => {} ],
     [ 'TestRelease'           => {} ],
     [ 'ConfirmRelease'        => {} ],

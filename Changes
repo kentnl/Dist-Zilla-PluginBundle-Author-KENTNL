@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        Add Test::EOL dependencies.
 
 0.01002321 2010-06-09 17:13:23 Pacific/Auckland
 
