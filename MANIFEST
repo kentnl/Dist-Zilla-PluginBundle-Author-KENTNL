@@ -10,8 +10,11 @@ inc/lib.pm
 lib/Dist/Zilla/PluginBundle/KENTNL.pm
 perlcriticrc
 t/00-compile.t
+t/000-report-versions-tiny.t
 t/author-critic.t
-t/author-kwalitee.t
+t/release-distmeta.t
+t/release-kwalitee.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
+t/release-portability.t
 weaver.ini
