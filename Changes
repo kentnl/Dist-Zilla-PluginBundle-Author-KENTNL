@@ -1,5 +1,14 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+0.01002321 2010-06-09 17:13:23 Pacific/Auckland
+
+        Add hard deps on Net::SSLeay and
+          IO::Socket::SSL. Net::Twitter does not work
+          without these, and they work when force-installed on 
+          win32.
+        This release is also intending to test my patched version
+          of Dist::Zilla.
+
 0.01002309 2010-06-09 05:47:53 Pacific/Auckland
 
         Upgrade to DZIL 4. 

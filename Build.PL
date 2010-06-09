@@ -21,7 +21,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01002309',
+  'dist_version' => '0.01002321',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
@@ -41,10 +41,12 @@ my %module_build_args = (
     'Dist::Zilla::Plugin::Repository' => '0.11',
     'Dist::Zilla::Plugin::Twitter' => '0.007',
     'Dist::Zilla::Role::PluginBundle' => '0',
+    'IO::Socket::SSL' => '0',
     'Moose' => '1.01',
     'Moose::Autobox' => '0',
     'MooseX::Has::Sugar' => '0.0405',
     'MooseX::Types' => '0.21',
+    'Net::SSLeay' => '1.36',
     'Pod::Coverage::TrustPod' => '0',
     'Test::CPAN::Meta' => '0',
     'namespace::autoclean' => '0.09'
