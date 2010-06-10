@@ -8,7 +8,9 @@ use Module::Build 0.3601;
 my %module_build_args = (
   'build_requires' => {
     'File::Find' => '0',
+    'File::Spec' => '0',
     'File::Temp' => '0',
+    'FindBin' => '0',
     'Module::Build' => '0.3601',
     'Test::More' => '0.88',
     'Test::Perl::Critic' => '0'
@@ -21,7 +23,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01002321',
+  'dist_version' => '0.01002419',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
@@ -31,6 +33,7 @@ my %module_build_args = (
     'Dist::Zilla' => '4.101582',
     'Dist::Zilla::Plugin::AutoVersion::Relative' => '0.01006104',
     'Dist::Zilla::Plugin::CompileTests' => '1.092870',
+    'Dist::Zilla::Plugin::EOLTests' => '0.02',
     'Dist::Zilla::Plugin::Git' => '1.093410',
     'Dist::Zilla::Plugin::KwaliteeTests' => '1.101420',
     'Dist::Zilla::Plugin::MetaProvides' => '1.10027518',
@@ -49,6 +52,7 @@ my %module_build_args = (
     'Net::SSLeay' => '1.36',
     'Pod::Coverage::TrustPod' => '0',
     'Test::CPAN::Meta' => '0',
+    'Test::EOL' => '0.7',
     'namespace::autoclean' => '0.09'
   },
   'script_files' => []

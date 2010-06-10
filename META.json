@@ -4,7 +4,7 @@
       "Kent Fredric <kentnl@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.101600, CPAN::Meta::Converter version 2.101580",
+   "generated_by" : "Dist::Zilla version 4.101600, CPAN::Meta::Converter version 2.101591",
    "license" : [
       "perl_5"
    ],
@@ -30,6 +30,7 @@
             "Dist::Zilla" : "4.101582",
             "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01006104",
             "Dist::Zilla::Plugin::CompileTests" : "1.092870",
+            "Dist::Zilla::Plugin::EOLTests" : "0.02",
             "Dist::Zilla::Plugin::Git" : "1.093410",
             "Dist::Zilla::Plugin::KwaliteeTests" : "1.101420",
             "Dist::Zilla::Plugin::MetaProvides" : "1.10027518",
@@ -48,13 +49,16 @@
             "Net::SSLeay" : "1.36",
             "Pod::Coverage::TrustPod" : 0,
             "Test::CPAN::Meta" : 0,
+            "Test::EOL" : "0.7",
             "namespace::autoclean" : "0.09"
          }
       },
       "test" : {
          "requires" : {
             "File::Find" : 0,
+            "File::Spec" : 0,
             "File::Temp" : 0,
+            "FindBin" : 0,
             "Test::More" : "0.88",
             "Test::Perl::Critic" : 0
          }
@@ -63,17 +67,16 @@
    "provides" : {
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01002321"
+         "version" : "0.01002419"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "repository" : {
-         "type" : "unknown",
          "url" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl"
       }
    },
-   "version" : "0.01002321",
+   "version" : "0.01002419",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -190,6 +193,11 @@
             "class" : "Dist::Zilla::Plugin::PortabilityTests",
             "name" : "@KENTNL/PortabilityTests",
             "version" : "1.101420"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::EOLTests",
+            "name" : "@KENTNL/EOLTests",
+            "version" : "0.02"
          },
          {
             "class" : "Dist::Zilla::Plugin::ExtraTests",

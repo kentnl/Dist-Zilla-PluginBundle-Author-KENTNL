@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+0.01002419 2010-06-10 15:38:51 Pacific/Auckland
+        Add Test::EOL dependencies.
+        This release tests my hacks to Dist::Zilla in the eol department.
+
 0.01002321 2010-06-09 17:13:23 Pacific/Auckland
 
         Add hard deps on Net::SSLeay and
