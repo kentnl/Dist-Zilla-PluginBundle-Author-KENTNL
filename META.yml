@@ -20,12 +20,16 @@ meta-spec:
   version: 1.4
 name: Dist-Zilla-PluginBundle-KENTNL
 provides:
+  Dist::Zilla::Plugin::Author::KENTNL::DistINI:
+    file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
+    version: 0.01002504
   Dist::Zilla::PluginBundle::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/KENTNL.pm
-    version: 0.01002419
+    version: 0.01002504
 requires:
   Carp: 0
   Dist::Zilla: 4.101582
+  Dist::Zilla::File::FromCode: 0
   Dist::Zilla::Plugin::AutoVersion::Relative: 0.01006104
   Dist::Zilla::Plugin::CompileTests: 1.092870
   Dist::Zilla::Plugin::EOLTests: 0.02
@@ -38,6 +42,7 @@ requires:
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.01
   Dist::Zilla::Plugin::Repository: 0.11
   Dist::Zilla::Plugin::Twitter: 0.007
+  Dist::Zilla::Role::FileGatherer: 0
   Dist::Zilla::Role::PluginBundle: 0
   IO::Socket::SSL: 0
   Moose: 1.01
@@ -46,12 +51,13 @@ requires:
   MooseX::Types: 0.21
   Net::SSLeay: 1.36
   Pod::Coverage::TrustPod: 0
+  String::Formatter: 0
   Test::CPAN::Meta: 0
   Test::EOL: 0.7
   namespace::autoclean: 0.09
 resources:
   repository: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl
-version: 0.01002419
+version: 0.01002504
 x_Dist_Zilla:
   plugins:
     -

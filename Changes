@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+0.01002504 2010-06-11 00:10:51 Pacific/Auckland
+
+        Added Dist::Zilla::Plugin::Author::KENTNL::DistINI.
+        Now I can just 'dzil new Module-Name' and start hacking =).
+
 0.01002419 2010-06-10 15:38:51 Pacific/Auckland
         Add Test::EOL dependencies.
         This release tests my hacks to Dist::Zilla in the eol department.

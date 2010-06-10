@@ -7,6 +7,7 @@ META.yml
 README
 dist.ini
 inc/lib.pm
+lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/KENTNL.pm
 perlcriticrc
 t/00-compile.t

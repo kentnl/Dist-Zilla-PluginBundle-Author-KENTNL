@@ -50,6 +50,7 @@ sub pmver {
 
 eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Dist::Zilla','4.101582') };
+eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoVersion::Relative','0.01006104') };
 eval { $v .= pmver('Dist::Zilla::Plugin::CompileTests','1.092870') };
 eval { $v .= pmver('Dist::Zilla::Plugin::EOLTests','0.02') };
@@ -62,6 +63,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::ReadmeFromPod','0.12') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReportVersions::Tiny','1.01') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Repository','0.11') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Twitter','0.007') };
+eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','any version') };
 eval { $v .= pmver('Dist::Zilla::Role::PluginBundle','any version') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Spec','any version') };
@@ -75,6 +77,7 @@ eval { $v .= pmver('MooseX::Has::Sugar','0.0405') };
 eval { $v .= pmver('MooseX::Types','0.21') };
 eval { $v .= pmver('Net::SSLeay','1.36') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
+eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::EOL','0.7') };
 eval { $v .= pmver('Test::More','0.88') };
