@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.01002504 2010-06-11 00:10:51 Pacific/Auckland
+
         Added Dist::Zilla::Plugin::Author::KENTNL::DistINI.
         Now I can just 'dzil new Module-Name' and start hacking =).
 
