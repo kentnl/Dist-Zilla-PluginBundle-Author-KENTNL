@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.01002610 2010-06-12 06:44:05 Pacific/Auckland
         Dropped "Repository" in favour of "GithubMeta"
         Use MetaData::BuiltWith.
         Bumped Test::EOL.
