@@ -49,19 +49,20 @@ sub pmver {
 }
 
 eval { $v .= pmver('Carp','any version') };
-eval { $v .= pmver('Dist::Zilla','4.101582') };
+eval { $v .= pmver('Dist::Zilla','4.101612') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoVersion::Relative','0.01006104') };
 eval { $v .= pmver('Dist::Zilla::Plugin::CompileTests','1.092870') };
 eval { $v .= pmver('Dist::Zilla::Plugin::EOLTests','0.02') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Git','1.093410') };
+eval { $v .= pmver('Dist::Zilla::Plugin::GithubMeta','0.08') };
 eval { $v .= pmver('Dist::Zilla::Plugin::KwaliteeTests','1.101420') };
+eval { $v .= pmver('Dist::Zilla::Plugin::MetaData::BuiltWith','0.01000022') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MetaProvides','1.10027518') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PodWeaver','3.093321') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PortabilityTests','1.101420') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReadmeFromPod','0.12') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReportVersions::Tiny','1.01') };
-eval { $v .= pmver('Dist::Zilla::Plugin::Repository','0.11') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Twitter','0.007') };
 eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','any version') };
 eval { $v .= pmver('Dist::Zilla::Role::PluginBundle','any version') };
@@ -79,7 +80,7 @@ eval { $v .= pmver('Net::SSLeay','1.36') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
-eval { $v .= pmver('Test::EOL','0.7') };
+eval { $v .= pmver('Test::EOL','0.8') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::Perl::Critic','any version') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
