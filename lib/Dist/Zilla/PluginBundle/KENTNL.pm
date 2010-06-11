@@ -152,7 +152,7 @@ sub bundle_config {
     [ 'GatherDir'             => {} ],
     [ 'MetaConfig'            => {} ],
     [ 'PruneCruft'            => {} ],
-    [ 'Repository'            => {} ],
+    _only_git( $arg , [ 'GithubMeta'            => {} ] ),
     [ 'License'               => {} ],
     [ 'PkgVersion'            => {} ],
     [ 'PodWeaver'             => {} ],
