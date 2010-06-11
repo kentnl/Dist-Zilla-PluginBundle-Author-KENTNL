@@ -164,6 +164,7 @@ sub bundle_config {
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
     [ 'AutoPrereq'            => {} ],
+    [ 'MetaData::BuiltWith'   => {} ],
     [ 'CompileTests'          => {} ],
     [ 'MetaTests'             => {} ],
     [ 'PodCoverageTests'      => {} ],

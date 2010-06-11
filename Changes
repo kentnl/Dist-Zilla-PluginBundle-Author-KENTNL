@@ -2,6 +2,7 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        Use MetaData::BuiltWith.
         Bumped Test::EOL.
 
 0.01002504 2010-06-11 00:10:51 Pacific/Auckland
