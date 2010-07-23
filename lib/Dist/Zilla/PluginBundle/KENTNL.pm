@@ -22,7 +22,7 @@ sub _expand {
   ## no critic ( RequireInterpolationOfMetachars )
   if ( ref $suffix ) {
     my ( $corename, $rename ) = @{$suffix};
-    return [ q{@KENTNL/} . $corename . '/' . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
+    return [ q{@KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
 
   }
   return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
@@ -198,7 +198,7 @@ and wants others to be using what he's using if they want to be doing work on hi
 
 =head2 bundle_config
 
-See L<Dist::Zilla::Role::PluginBundle> for what this is for, it is a method to satisfy that role.
+See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what this is for, it is a method to satisfy that role.
 
 =head1 ENVIRONMENT
 

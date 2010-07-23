@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
-0.01006911 2010-07-24 07:44:23 Pacific/Auckland
+0.01006911 2010-07-24 07:49:25 Pacific/Auckland
 
         Bumping CompileTests and Git depends.
         Adding CommitBuild behaviour.

@@ -19,8 +19,8 @@ DESCRIPTION
 
 METHODS
   bundle_config
-    See Dist::Zilla::Role::PluginBundle for what this is for, it is a method
-    to satisfy that role.
+    See the "PluginBundle" role for what this is for, it is a method to
+    satisfy that role.
 
 ENVIRONMENT
     all of these have to merely exist to constitute a "true" status.
