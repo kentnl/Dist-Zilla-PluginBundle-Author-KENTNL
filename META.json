@@ -71,11 +71,11 @@
    "provides" : {
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "0.01006911"
+         "version" : "0.01006912"
       },
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01006911"
+         "version" : "0.01006912"
       }
    },
    "release_status" : "stable",
@@ -87,7 +87,7 @@
          "web" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree"
       }
    },
-   "version" : "0.01006911",
+   "version" : "0.01006912",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.16",
@@ -105,7 +105,7 @@
          "Dist::Zilla::Plugin::PortabilityTests" : "1.101420",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.12",
          "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.01",
-         "Dist::Zilla::Plugin::Twitter" : "0.007",
+         "Dist::Zilla::Plugin::Twitter" : "0.008",
          "Dist::Zilla::Role::FileGatherer" : "4.101900",
          "Dist::Zilla::Role::PluginBundle" : "4.101900",
          "File::Find" : "1.15",
@@ -310,7 +310,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Twitter",
             "name" : "@KENTNL/Twitter",
-            "version" : "0.007"
+            "version" : "0.008"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereq",
