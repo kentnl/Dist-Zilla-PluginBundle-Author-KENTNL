@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        Bumping CompileTests and Git depends.
+        Adding CommitBuild behaviour.
+
 0.01002610 2010-06-12 06:44:05 Pacific/Auckland
         Dropped "Repository" in favour of "GithubMeta"
         Use MetaData::BuiltWith.

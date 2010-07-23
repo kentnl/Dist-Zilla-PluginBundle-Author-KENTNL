@@ -53,6 +53,11 @@ same as release_fail=1
 sub _expand {
   my ( $class, $suffix, $conf ) = @_;
   ## no critic ( RequireInterpolationOfMetachars )
+  if( ref $suffix ) {
+    my  ( $corename, $rename ) = @{ $suffix };
+    return [ q{@KENTNL/} . $corename . '/' . $rename , 'Dist::Zilla::Plugin::' . $corename, $conf ];
+
+  }
   return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
@@ -185,8 +190,10 @@ sub bundle_config {
         _release_fail($arg),
         _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
         [ 'NextRelease' => {} ],
-        _only_git( $arg, [ 'Git::Tag' => { filename => 'Changes', tag_format => '%v-source' } ] ),
+        _only_git( $arg, [[ 'Git::Tag' , 'tag_master' ] => { filename => 'Changes', tag_format => '%v-source' } ] ),
         _only_git( $arg, [ 'Git::Commit' => {} ] ),
+        _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ),
+        _only_git( $arg, [[ 'Git::Tag', 'tag_release' ] => { filename => 'Changes', tag_format =>'%v' } ],
         _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
         _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter'      => {} ] ) ),
       ]
