@@ -27,7 +27,6 @@ and wants others to be using what he's using if they want to be doing work on hi
 
 =cut
 
-
 =head1 ENVIRONMENT
 
 all of these have to merely exist to constitute a "true" status.
@@ -53,9 +52,9 @@ same as release_fail=1
 sub _expand {
   my ( $class, $suffix, $conf ) = @_;
   ## no critic ( RequireInterpolationOfMetachars )
-  if( ref $suffix ) {
-    my  ( $corename, $rename ) = @{ $suffix };
-    return [ q{@KENTNL/} . $corename . '/' . $rename , 'Dist::Zilla::Plugin::' . $corename, $conf ];
+  if ( ref $suffix ) {
+    my ( $corename, $rename ) = @{$suffix};
+    return [ q{@KENTNL/} . $corename . '/' . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
 
   }
   return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
@@ -95,19 +94,20 @@ sub _mk_only {
   my ( $subname, $envname, $argfield ) = @_;
   my $sub = sub {
     my ( $args, @rest ) = @_;
-    return () if exists $ENV{'KENTNL_NO' . $envname};
+    return () if exists $ENV{ 'KENTNL_NO' . $envname };
     return @rest unless defined $args;
     return @rest unless ref $args eq 'HASH';
-    return @rest unless exists $args->{'no' .  $argfield};
+    return @rest unless exists $args->{ 'no' . $argfield };
     return ();
   };
   {
     ## no critic (ProhibitNoStrict)
     no strict 'refs';
-    *{__PACKAGE__ . '::_only_' . $subname} = $sub;
+    *{ __PACKAGE__ . '::_only_' . $subname } = $sub;
   }
   return 1;
 }
+
 BEGIN {
   _mk_only(qw( git GIT git ));
   _mk_only(qw( cpan CPAN cpan ));
@@ -154,10 +154,10 @@ sub bundle_config {
         time_zone => _defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland' ),
       }
     ],
-    [ 'GatherDir'             => {} ],
-    [ 'MetaConfig'            => {} ],
-    [ 'PruneCruft'            => {} ],
-    _only_git( $arg , [ 'GithubMeta'            => {} ] ),
+    [ 'GatherDir'  => {} ],
+    [ 'MetaConfig' => {} ],
+    [ 'PruneCruft' => {} ],
+    _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'License'               => {} ],
     [ 'PkgVersion'            => {} ],
     [ 'PodWeaver'             => {} ],
@@ -177,9 +177,7 @@ sub bundle_config {
     [ 'ReportVersions::Tiny'  => {} ],
     [ 'KwaliteeTests'         => {} ],
     [ 'PortabilityTests'      => {} ],
-    [ 'EOLTests'              => {
-        trailing_whitespace => 1,
-    } ],
+    [ 'EOLTests'              => { trailing_whitespace => 1, } ],
     [ 'ExtraTests'            => {} ],
     [ 'TestRelease'           => {} ],
     [ 'ConfirmRelease'        => {} ],
@@ -190,12 +188,12 @@ sub bundle_config {
         _release_fail($arg),
         _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
         [ 'NextRelease' => {} ],
-        _only_git( $arg, [[ 'Git::Tag' , 'tag_master' ] => { filename => 'Changes', tag_format => '%v-source' } ] ),
+        _only_git( $arg, [ [ 'Git::Tag', 'tag_master' ] => { filename => 'Changes', tag_format => '%v-source' } ] ),
         _only_git( $arg, [ 'Git::Commit' => {} ] ),
-        _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ]),
-        _only_git( $arg, [[ 'Git::Tag', 'tag_release' ] => { filename => 'Changes', tag_format =>'%v' } ]),
+        _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ] ),
+        _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { filename => 'Changes', tag_format => '%v' } ] ),
         _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
-        _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter'      => {} ] ) ),
+        _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter' => {} ] ) ),
       ]
     )
   );
