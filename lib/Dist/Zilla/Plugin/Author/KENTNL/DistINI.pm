@@ -3,10 +3,10 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01002610';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01006912';
 }
 
-# ABSTRACT: Generate a dist.ini for @KENTNL projects.
+# ABSTRACT: Generate a C<dist.ini> for @KENTNL projects.
 
 use Moose;
 
@@ -99,11 +99,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @KENTNL projects.
+Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @KENTNL projects.
 
 =head1 VERSION
 
-version 0.01002610
+version 0.01006912
 
 =head1 SYNOPSIS
 
@@ -139,7 +139,7 @@ relative frame of reference.
 
 =head2 gather_files
 
-generates a dist.ini file.
+generates a C<dist.ini> file.
 
 =head1 NAMING RATIONALE
 
@@ -149,20 +149,20 @@ generates a dist.ini file.
   Plugin::Author::KENTNL::* # Low pollution, well clustered.
 
 As it is, the following stuff is starting to get to me in terms of
-namespace pollution:
+name-space pollution:
 
   Plugin::EOLTests  # Would prefer Plugin::Test::EOL
   Plugin::PodSyntaxTests # Would prefer Plugin::Test::Pod::Syntax
 
-And I have half a mind to rename L<Dist::Zilla::PluginBundle::KENTNL> to be L<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plugins are useful for people other than ... well.. me. Call me a counter-egotist, if you will.
+And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::Zilla::PluginBundle::KENTNL >> to be C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful for people other than ... well.. me. Call me a counter-egotist, if you will.
 
 =head1 THEFT
 
-This code is mostly stolen from the L<Dist::Zilla::Plugin::DistINI> plugin. Blame C<rjbs> if its broken =).
+This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken =).
 
 =head1 AUTHOR
 
-  Kent Fredric <kentnl@cpan.org>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

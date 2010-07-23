@@ -3,7 +3,7 @@ NAME
     distributions.
 
 VERSION
-    version 0.01002610
+    version 0.01006912
 
 SYNOPSIS
         [@KENTNL]
@@ -19,8 +19,8 @@ DESCRIPTION
 
 METHODS
   bundle_config
-    See Dist::Zilla::Role::PluginBundle for what this is for, it is a method
-    to satisfy that role.
+    See the "PluginBundle" role for what this is for, it is a method to
+    satisfy that role.
 
 ENVIRONMENT
     all of these have to merely exist to constitute a "true" status.
@@ -38,7 +38,7 @@ ENVIRONMENT
     same as release_fail=1
 
 AUTHOR
-      Kent Fredric <kentnl@cpan.org>
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2010 by Kent Fredric.
