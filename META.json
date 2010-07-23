@@ -96,7 +96,7 @@
          "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01027903",
          "Dist::Zilla::Plugin::CompileTests" : "1.101800",
          "Dist::Zilla::Plugin::EOLTests" : "0.02",
-         "Dist::Zilla::Plugin::Git" : "1.102020",
+         "Dist::Zilla::Plugin::Git" : "1.102040",
          "Dist::Zilla::Plugin::GithubMeta" : "0.10",
          "Dist::Zilla::Plugin::KwaliteeTests" : "1.101420",
          "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01000216",
@@ -275,7 +275,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
             "name" : "@KENTNL/Git::Check",
-            "version" : "1.102020"
+            "version" : "1.102040"
          },
          {
             "class" : "Dist::Zilla::Plugin::NextRelease",
@@ -285,22 +285,22 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "@KENTNL/Git::Tag/tag_master",
-            "version" : "1.102020"
+            "version" : "1.102040"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
             "name" : "@KENTNL/Git::Commit",
-            "version" : "1.102020"
+            "version" : "1.102040"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::CommitBuild",
             "name" : "@KENTNL/Git::CommitBuild",
-            "version" : "1.102020"
+            "version" : "1.102040"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "@KENTNL/Git::Tag/tag_release",
-            "version" : "1.102020"
+            "version" : "1.102040"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
