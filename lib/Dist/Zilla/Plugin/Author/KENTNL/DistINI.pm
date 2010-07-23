@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01006912';
 }
 
-# ABSTRACT: Generate a dist.ini for @KENTNL projects.
+# ABSTRACT: Generate a C<dist.ini> for @KENTNL projects.
 
 use Moose;
 
@@ -99,7 +99,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @KENTNL projects.
+Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @KENTNL projects.
 
 =head1 VERSION
 
@@ -158,7 +158,7 @@ And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::
 
 =head1 THEFT
 
-This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plugin. Blame C<rjbs> if its broken =).
+This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken =).
 
 =head1 AUTHOR
 
