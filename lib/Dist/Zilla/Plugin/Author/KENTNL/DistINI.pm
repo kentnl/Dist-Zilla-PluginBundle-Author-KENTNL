@@ -139,7 +139,7 @@ relative frame of reference.
 
 =head2 gather_files
 
-generates a dist.ini file.
+generates a C<dist.ini> file.
 
 =head1 NAMING RATIONALE
 
