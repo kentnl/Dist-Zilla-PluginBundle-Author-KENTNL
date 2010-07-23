@@ -1,9 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
-0.01006912 2010-07-24 08:52:43 Pacific/Auckland
+0.01006912 2010-07-24 08:55:32 Pacific/Auckland
 
         Bumping CompileTests and Git depends.
         Adding CommitBuild behaviour.
+        Tidied Docs up a little.
 
 0.01002610 2010-06-12 06:44:05 Pacific/Auckland
         Dropped "Repository" in favour of "GithubMeta"
