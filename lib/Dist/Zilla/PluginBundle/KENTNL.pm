@@ -192,8 +192,8 @@ sub bundle_config {
         [ 'NextRelease' => {} ],
         _only_git( $arg, [[ 'Git::Tag' , 'tag_master' ] => { filename => 'Changes', tag_format => '%v-source' } ] ),
         _only_git( $arg, [ 'Git::Commit' => {} ] ),
-        _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ),
-        _only_git( $arg, [[ 'Git::Tag', 'tag_release' ] => { filename => 'Changes', tag_format =>'%v' } ],
+        _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ]),
+        _only_git( $arg, [[ 'Git::Tag', 'tag_release' ] => { filename => 'Changes', tag_format =>'%v' } ]),
         _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
         _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter'      => {} ] ) ),
       ]
