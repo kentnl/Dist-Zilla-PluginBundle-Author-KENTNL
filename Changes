@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
-0.01007006 2010-07-25 02:37:25 Pacific/Auckland
+0.01007006 2010-07-25 02:38:33 Pacific/Auckland
         Ramp up deps versions.
         Fix author test sillyness.
         Add hash_tags for twitter (and tuneables)

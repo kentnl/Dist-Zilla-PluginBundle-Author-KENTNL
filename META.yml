@@ -89,7 +89,7 @@ x_BuiltWith:
     Module::Build: 0.3607
     Moose: 1.08
     Moose::Autobox: 0.11
-    MooseX::Has::Sugar: 0.0405
+    MooseX::Has::Sugar: 0.05044303
     MooseX::Types: 0.22
     Net::SSLeay: 1.36
     Pod::Coverage::TrustPod: 0.092830
