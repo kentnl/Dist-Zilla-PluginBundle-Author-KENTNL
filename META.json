@@ -36,7 +36,8 @@
             "Dist::Zilla::Plugin::GithubMeta" : "0.08",
             "Dist::Zilla::Plugin::KwaliteeTests" : "1.101420",
             "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01000022",
-            "Dist::Zilla::Plugin::MetaProvides" : "1.10027518",
+            "Dist::Zilla::Plugin::MetaProvides" : "1.11",
+            "Dist::Zilla::Plugin::MetaProvides::Package" : "1.11",
             "Dist::Zilla::Plugin::PodWeaver" : "3.093321",
             "Dist::Zilla::Plugin::PortabilityTests" : "1.101420",
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.12",
@@ -47,7 +48,7 @@
             "IO::Socket::SSL" : 0,
             "Moose" : "1.01",
             "Moose::Autobox" : 0,
-            "MooseX::Has::Sugar" : "0.0405",
+            "MooseX::Has::Sugar" : "0.05",
             "MooseX::Types" : "0.21",
             "Net::SSLeay" : "1.36",
             "Pod::Coverage::TrustPod" : 0,
@@ -63,19 +64,18 @@
             "File::Spec" : 0,
             "File::Temp" : 0,
             "FindBin" : 0,
-            "Test::More" : "0.88",
-            "Test::Perl::Critic" : 0
+            "Test::More" : "0.88"
          }
       }
    },
    "provides" : {
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "0.01006912"
+         "version" : "0.01007006"
       },
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01006912"
+         "version" : "0.01007006"
       }
    },
    "release_status" : "stable",
@@ -87,7 +87,7 @@
          "web" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree"
       }
    },
-   "version" : "0.01006912",
+   "version" : "0.01007006",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.16",
@@ -100,7 +100,8 @@
          "Dist::Zilla::Plugin::GithubMeta" : "0.10",
          "Dist::Zilla::Plugin::KwaliteeTests" : "1.101420",
          "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01000216",
-         "Dist::Zilla::Plugin::MetaProvides" : "1.10027802",
+         "Dist::Zilla::Plugin::MetaProvides" : "1.11034201",
+         "Dist::Zilla::Plugin::MetaProvides::Package" : "1.11034201",
          "Dist::Zilla::Plugin::PodWeaver" : "3.101640",
          "Dist::Zilla::Plugin::PortabilityTests" : "1.101420",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.12",
@@ -124,7 +125,6 @@
          "Test::CPAN::Meta" : "0.17",
          "Test::EOL" : "0.9",
          "Test::More" : "0.94",
-         "Test::Perl::Critic" : "1.02",
          "namespace::autoclean" : "0.11"
       },
       "perl" : "5.012001",
@@ -175,7 +175,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
             "name" : "@KENTNL/MetaProvides::Package",
-            "version" : "1.10027802"
+            "version" : "1.11034201"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",

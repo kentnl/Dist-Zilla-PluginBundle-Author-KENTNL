@@ -9,7 +9,6 @@ build_requires:
   FindBin: 0
   Module::Build: 0.3601
   Test::More: 0.88
-  Test::Perl::Critic: 0
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
@@ -22,10 +21,10 @@ name: Dist-Zilla-PluginBundle-KENTNL
 provides:
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 0.01006912
+    version: 0.01007006
   Dist::Zilla::PluginBundle::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/KENTNL.pm
-    version: 0.01006912
+    version: 0.01007006
 requires:
   Carp: 0
   Dist::Zilla: 4.101612
@@ -37,7 +36,8 @@ requires:
   Dist::Zilla::Plugin::GithubMeta: 0.08
   Dist::Zilla::Plugin::KwaliteeTests: 1.101420
   Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01000022
-  Dist::Zilla::Plugin::MetaProvides: 1.10027518
+  Dist::Zilla::Plugin::MetaProvides: 1.11
+  Dist::Zilla::Plugin::MetaProvides::Package: 1.11
   Dist::Zilla::Plugin::PodWeaver: 3.093321
   Dist::Zilla::Plugin::PortabilityTests: 1.101420
   Dist::Zilla::Plugin::ReadmeFromPod: 0.12
@@ -48,7 +48,7 @@ requires:
   IO::Socket::SSL: 0
   Moose: 1.01
   Moose::Autobox: 0
-  MooseX::Has::Sugar: 0.0405
+  MooseX::Has::Sugar: 0.05
   MooseX::Types: 0.21
   Net::SSLeay: 1.36
   Pod::Coverage::TrustPod: 0
@@ -59,7 +59,7 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree
   repository: git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git
-version: 0.01006912
+version: 0.01007006
 x_BuiltWith:
   modules:
     Carp: 1.16
@@ -72,7 +72,8 @@ x_BuiltWith:
     Dist::Zilla::Plugin::GithubMeta: 0.10
     Dist::Zilla::Plugin::KwaliteeTests: 1.101420
     Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01000216
-    Dist::Zilla::Plugin::MetaProvides: 1.10027802
+    Dist::Zilla::Plugin::MetaProvides: 1.11034201
+    Dist::Zilla::Plugin::MetaProvides::Package: 1.11034201
     Dist::Zilla::Plugin::PodWeaver: 3.101640
     Dist::Zilla::Plugin::PortabilityTests: 1.101420
     Dist::Zilla::Plugin::ReadmeFromPod: 0.12
@@ -96,7 +97,6 @@ x_BuiltWith:
     Test::CPAN::Meta: 0.17
     Test::EOL: 0.9
     Test::More: 0.94
-    Test::Perl::Critic: 1.02
     namespace::autoclean: 0.11
   perl: 5.012001
   platform: linux
@@ -137,7 +137,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaProvides::Package
       name: '@KENTNL/MetaProvides::Package'
-      version: 1.10027802
+      version: 1.11034201
     -
       class: Dist::Zilla::Plugin::MetaJSON
       name: '@KENTNL/MetaJSON'

@@ -12,8 +12,7 @@ my %module_build_args = (
     'File::Temp' => '0',
     'FindBin' => '0',
     'Module::Build' => '0.3601',
-    'Test::More' => '0.88',
-    'Test::Perl::Critic' => '0'
+    'Test::More' => '0.88'
   },
   'configure_requires' => {
     'Module::Build' => '0.3601'
@@ -23,7 +22,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01006912',
+  'dist_version' => '0.01007006',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
@@ -39,7 +38,8 @@ my %module_build_args = (
     'Dist::Zilla::Plugin::GithubMeta' => '0.08',
     'Dist::Zilla::Plugin::KwaliteeTests' => '1.101420',
     'Dist::Zilla::Plugin::MetaData::BuiltWith' => '0.01000022',
-    'Dist::Zilla::Plugin::MetaProvides' => '1.10027518',
+    'Dist::Zilla::Plugin::MetaProvides' => '1.11',
+    'Dist::Zilla::Plugin::MetaProvides::Package' => '1.11',
     'Dist::Zilla::Plugin::PodWeaver' => '3.093321',
     'Dist::Zilla::Plugin::PortabilityTests' => '1.101420',
     'Dist::Zilla::Plugin::ReadmeFromPod' => '0.12',
@@ -50,7 +50,7 @@ my %module_build_args = (
     'IO::Socket::SSL' => '0',
     'Moose' => '1.01',
     'Moose::Autobox' => '0',
-    'MooseX::Has::Sugar' => '0.0405',
+    'MooseX::Has::Sugar' => '0.05',
     'MooseX::Types' => '0.21',
     'Net::SSLeay' => '1.36',
     'Pod::Coverage::TrustPod' => '0',
