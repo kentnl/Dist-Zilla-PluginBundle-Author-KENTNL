@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01006912';
+  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01007006';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -43,11 +43,12 @@ sub _load {
 sub _defined_or {
 
   # Backcompat way of doing // in < 5.10
-  my ( $hash, $field, $default ) = @_;
+  my ( $hash, $field, $default, $nowarn ) = @_;
+  $nowarn = 0 if not defined $nowarn;
   if ( not( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} && defined $hash->{$field} ) ) {
     require Carp;
     ## no critic (RequireInterpolationOfMetachars)
-    Carp::carp( '[@KENTNL]' . " Warning: autofilling $field with $default " );
+    Carp::carp( '[@KENTNL]' . " Warning: autofilling $field with $default " ) unless $nowarn;
     return $default;
   }
   return $hash->{$field};
@@ -103,7 +104,10 @@ sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
 
-  my $arg = $section->{payload};
+  my $arg          = $section->{payload};
+  my $twitter_conf = { hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ) };
+  my $extra_hash   = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
+  $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
@@ -146,7 +150,7 @@ sub bundle_config {
     [ 'ConfirmRelease'        => {} ],
     _if_twitter(
       $arg,
-      [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => {}, ], ],
+      [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => $twitter_conf, ], ],
       [
         _release_fail($arg),
         _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
@@ -156,7 +160,7 @@ sub bundle_config {
         _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ] ),
         _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { filename => 'Changes', tag_format => '%v' } ] ),
         _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
-        _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter' => {} ] ) ),
+        _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter' => $twitter_conf ] ) ),
       ]
     )
   );
@@ -179,7 +183,7 @@ Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your distribut
 
 =head1 VERSION
 
-version 0.01006912
+version 0.01007006
 
 =head1 SYNOPSIS
 
