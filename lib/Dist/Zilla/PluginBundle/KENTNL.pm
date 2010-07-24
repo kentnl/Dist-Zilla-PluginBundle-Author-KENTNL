@@ -80,11 +80,12 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 sub _defined_or {
 
   # Backcompat way of doing // in < 5.10
-  my ( $hash, $field, $default ) = @_;
+  my ( $hash, $field, $default , $nowarn ) = @_;
+  $nowarn = 0 if not defined $nowarn;
   if ( not( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} && defined $hash->{$field} ) ) {
     require Carp;
     ## no critic (RequireInterpolationOfMetachars)
-    Carp::carp( '[@KENTNL]' . " Warning: autofilling $field with $default " );
+    Carp::carp( '[@KENTNL]' . " Warning: autofilling $field with $default " ) unless $nowarn;
     return $default;
   }
   return $hash->{$field};
@@ -142,8 +143,8 @@ sub bundle_config {
 
   my $arg          = $section->{payload};
   my $twitter_conf = { hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ) };
-  my $extra_hash   = _defined_or( $arg, twitter_extra_hash_tags => '' );
-  $twitter_conf{hash_tags} .= ' ' . $extra_hash if $extra_hash;
+  my $extra_hash   = _defined_or( $arg, twitter_extra_hash_tags => '' , 1);
+  $twitter_conf->{hash_tags} .= ' ' . $extra_hash if $extra_hash;
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
