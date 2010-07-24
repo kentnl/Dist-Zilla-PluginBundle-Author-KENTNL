@@ -140,12 +140,10 @@ sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
 
-  my $arg = $section->{payload};
-  my $twitter_conf = {
-      hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' )
-  };
-  my $extra_hash = _defined_or( $arg, twitter_extra_hash_tags => '' );
-  $twitter_conf{hash_tags} .= ' ' $extra_hash if $extra_hash;
+  my $arg          = $section->{payload};
+  my $twitter_conf = { hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ) };
+  my $extra_hash   = _defined_or( $arg, twitter_extra_hash_tags => '' );
+  $twitter_conf{hash_tags} .= ' ' . $extra_hash if $extra_hash;
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
@@ -188,7 +186,7 @@ sub bundle_config {
     [ 'ConfirmRelease'        => {} ],
     _if_twitter(
       $arg,
-      [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => $twitter_conf , ], ],
+      [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => $twitter_conf, ], ],
       [
         _release_fail($arg),
         _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
