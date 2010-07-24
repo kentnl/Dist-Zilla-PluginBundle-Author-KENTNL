@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.01007006 2010-07-25 02:40:46 Pacific/Auckland
         Ramp up deps versions.
         Fix author test sillyness.
         Add hash_tags for twitter (and tuneables)
