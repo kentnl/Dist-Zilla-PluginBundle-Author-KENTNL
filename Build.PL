@@ -77,7 +77,7 @@ my %module_build_args = (
     'Pod::Coverage::TrustPod' => '0',
     'String::Formatter' => '0',
     'Test::CPAN::Meta' => '0',
-    'Test::EOL' => '0.8',
+    'Test::EOL' => '0.9',
     'namespace::autoclean' => '0.09'
   },
   'script_files' => []

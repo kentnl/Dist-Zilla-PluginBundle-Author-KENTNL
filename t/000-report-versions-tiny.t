@@ -102,7 +102,7 @@ eval { $v .= pmver('Net::SSLeay','1.36') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
-eval { $v .= pmver('Test::EOL','0.8') };
+eval { $v .= pmver('Test::EOL','0.9') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
 
