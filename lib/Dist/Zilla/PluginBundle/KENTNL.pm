@@ -136,7 +136,7 @@ sub bundle_config {
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
     [ 'AutoPrereq'            => {} ],
-    [ 'MetaData::BuiltWith'   => { show_uname => 1, uname_args => qw{ -s -o -r -m -i } } ],
+    [ 'MetaData::BuiltWith'   => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'CompileTests'          => {} ],
     [ 'MetaTests'             => {} ],
     [ 'PodCoverageTests'      => {} ],

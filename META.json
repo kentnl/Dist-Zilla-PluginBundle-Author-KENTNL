@@ -171,7 +171,7 @@
       },
       "perl" : "5.012001",
       "platform" : "linux",
-      "uname" : "Linux\n"
+      "uname" : "Linux 2.6.34-gentoo x86_64 GenuineIntel GNU/Linux\n"
    },
    "x_Dist_Zilla" : {
       "plugins" : [
@@ -263,7 +263,11 @@
                   "show_uname" : 1,
                   "uname" : {
                      "uname_args" : [
-                        "-s"
+                        "-s",
+                        "-o",
+                        "-r",
+                        "-m",
+                        "-i"
                      ],
                      "uname_call" : "uname"
                   }

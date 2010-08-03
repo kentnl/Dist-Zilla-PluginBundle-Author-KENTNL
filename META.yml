@@ -142,7 +142,7 @@ x_BuiltWith:
     namespace::autoclean: 0.11
   perl: 5.012001
   platform: linux
-  uname: "Linux\n"
+  uname: "Linux 2.6.34-gentoo x86_64 GenuineIntel GNU/Linux\n"
 x_Dist_Zilla:
   plugins:
     -
@@ -218,6 +218,10 @@ x_Dist_Zilla:
           uname:
             uname_args:
               - '-s'
+              - '-o'
+              - '-r'
+              - '-m'
+              - '-i'
             uname_call: uname
       name: '@KENTNL/MetaData::BuiltWith'
       version: 0.01005122
