@@ -29,15 +29,15 @@
             "Carp" : 0,
             "Dist::Zilla" : "4.101612",
             "Dist::Zilla::File::FromCode" : 0,
-            "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01006104",
+            "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01034313",
             "Dist::Zilla::Plugin::CompileTests" : "1.101800",
             "Dist::Zilla::Plugin::EOLTests" : "0.02",
             "Dist::Zilla::Plugin::Git" : "1.102040",
             "Dist::Zilla::Plugin::GithubMeta" : "0.08",
             "Dist::Zilla::Plugin::KwaliteeTests" : "1.101420",
-            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01000022",
-            "Dist::Zilla::Plugin::MetaProvides" : "1.11",
-            "Dist::Zilla::Plugin::MetaProvides::Package" : "1.11",
+            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01005122",
+            "Dist::Zilla::Plugin::MetaProvides" : "1.11034201",
+            "Dist::Zilla::Plugin::MetaProvides::Package" : "1.11034304",
             "Dist::Zilla::Plugin::PodWeaver" : "3.093321",
             "Dist::Zilla::Plugin::PortabilityTests" : "1.101420",
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.12",
@@ -48,7 +48,7 @@
             "IO::Socket::SSL" : 0,
             "Moose" : "1.01",
             "Moose::Autobox" : 0,
-            "MooseX::Has::Sugar" : "0.05",
+            "MooseX::Has::Sugar" : "0.05044",
             "MooseX::Types" : "0.21",
             "Net::SSLeay" : "1.36",
             "Pod::Coverage::TrustPod" : 0,
@@ -71,11 +71,11 @@
    "provides" : {
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "0.01007006"
+         "version" : "0.01007922"
       },
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01007006"
+         "version" : "0.01007922"
       }
    },
    "release_status" : "stable",
@@ -87,19 +87,19 @@
          "web" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree"
       }
    },
-   "version" : "0.01007006",
+   "version" : "0.01007922",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.16",
          "Dist::Zilla" : "4.101900",
          "Dist::Zilla::File::FromCode" : "4.101900",
-         "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01027903",
+         "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01034313",
          "Dist::Zilla::Plugin::CompileTests" : "1.101800",
          "Dist::Zilla::Plugin::EOLTests" : "0.02",
          "Dist::Zilla::Plugin::Git" : "1.102040",
          "Dist::Zilla::Plugin::GithubMeta" : "0.10",
          "Dist::Zilla::Plugin::KwaliteeTests" : "1.101420",
-         "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01000216",
+         "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01005020",
          "Dist::Zilla::Plugin::MetaProvides" : "1.11034201",
          "Dist::Zilla::Plugin::MetaProvides::Package" : "1.11034201",
          "Dist::Zilla::Plugin::PodWeaver" : "3.101640",
@@ -128,14 +128,15 @@
          "namespace::autoclean" : "0.11"
       },
       "perl" : "5.012001",
-      "platform" : "linux"
+      "platform" : "linux",
+      "uname" : "Linux\n"
    },
    "x_Dist_Zilla" : {
       "plugins" : [
          {
             "class" : "Dist::Zilla::Plugin::AutoVersion::Relative",
             "name" : "@KENTNL/AutoVersion::Relative",
-            "version" : "0.01027903"
+            "version" : "0.01034313"
          },
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
@@ -214,8 +215,20 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",
+            "config" : {
+               "Dist::Zilla::Plugin::MetaData::BuiltWith" : {
+                  "_stash_key" : "x_BuiltWith",
+                  "show_uname" : 1,
+                  "uname" : {
+                     "uname_args" : [
+                        "-s"
+                     ],
+                     "uname_call" : "uname"
+                  }
+               }
+            },
             "name" : "@KENTNL/MetaData::BuiltWith",
-            "version" : "0.01000216"
+            "version" : "0.01005020"
          },
          {
             "class" : "Dist::Zilla::Plugin::CompileTests",
