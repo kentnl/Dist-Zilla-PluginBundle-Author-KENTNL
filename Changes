@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        Dep latest. Modifiy to use new BuiltWith features.
 
 0.01007006 2010-07-25 02:40:46 Pacific/Auckland
         Ramp up deps versions.
