@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+0.01008321 2010-08-07 17:55:10 Pacific/Auckland
+        Dep latest Autoversion::Relative, solve Moose Deprecation problems.
+        Tweak DistINI generator to stuff in default hash_tags for twitter.
+
 0.01007922 2010-08-03 18:25:33 Pacific/Auckland
         Dep latest. Modifiy to use new BuiltWith features.
 

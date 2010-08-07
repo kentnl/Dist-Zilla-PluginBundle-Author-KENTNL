@@ -21,16 +21,16 @@ name: Dist-Zilla-PluginBundle-KENTNL
 provides:
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 0.01007922
+    version: 0.01008321
   Dist::Zilla::PluginBundle::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/KENTNL.pm
-    version: 0.01007922
+    version: 0.01008321
 requires:
   Carp: 0
   Dist::Zilla: 4.101612
   Dist::Zilla::File::FromCode: 0
   Dist::Zilla::Plugin::AutoPrereq: 0
-  Dist::Zilla::Plugin::AutoVersion::Relative: 0.01034313
+  Dist::Zilla::Plugin::AutoVersion::Relative: 0.01035617
   Dist::Zilla::Plugin::CompileTests: 1.101800
   Dist::Zilla::Plugin::ConfirmRelease: 0
   Dist::Zilla::Plugin::EOLTests: 0.02
@@ -80,14 +80,14 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree
   repository: git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git
-version: 0.01007922
+version: 0.01008321
 x_BuiltWith:
   modules:
     Carp: 1.16
     Dist::Zilla: 4.101900
     Dist::Zilla::File::FromCode: 4.101900
     Dist::Zilla::Plugin::AutoPrereq: 4.101900
-    Dist::Zilla::Plugin::AutoVersion::Relative: 0.01034313
+    Dist::Zilla::Plugin::AutoVersion::Relative: 0.01035617
     Dist::Zilla::Plugin::CompileTests: 1.101800
     Dist::Zilla::Plugin::ConfirmRelease: 4.101900
     Dist::Zilla::Plugin::EOLTests: 0.02
@@ -129,10 +129,10 @@ x_BuiltWith:
     FindBin: 1.50
     IO::Socket::SSL: 1.33
     Module::Build: 0.3607
-    Moose: 1.08
+    Moose: 1.09
     Moose::Autobox: 0.11
     MooseX::Has::Sugar: 0.05044303
-    MooseX::Types: 0.22
+    MooseX::Types: 0.23
     Net::SSLeay: 1.36
     Pod::Coverage::TrustPod: 0.092830
     String::Formatter: 0.100720
@@ -148,7 +148,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::AutoVersion::Relative
       name: '@KENTNL/AutoVersion::Relative'
-      version: 0.01034313
+      version: 0.01035617
     -
       class: Dist::Zilla::Plugin::GatherDir
       name: '@KENTNL/GatherDir'

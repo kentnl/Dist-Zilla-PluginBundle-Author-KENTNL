@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01007922';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01008321';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @KENTNL projects.
@@ -50,6 +50,7 @@ sub gather_files {
       'version_rel_day   = %{rel_day}n',                #
       'version_rel_hour  = %{rel_hour}n',               #
       'version_rel_time_zone = %{tz}s',                 #
+      'twitter_hash_tags = %{tags}s',                   #
       $empty,                                           #
       '[Prereq]',                                       #
       $empty,                                           #
@@ -79,6 +80,7 @@ sub gather_files {
         rel_day   => (localtime)[3],
         rel_hour  => (localtime)[2],
         tz        => 'Pacific/Auckland',
+        tags      => '#perl #cpan',
     });
     return $content;
   };
@@ -103,7 +105,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @KENTN
 
 =head1 VERSION
 
-version 0.01007922
+version 0.01008321
 
 =head1 SYNOPSIS
 

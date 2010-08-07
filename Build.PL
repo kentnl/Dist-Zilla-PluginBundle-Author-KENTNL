@@ -22,7 +22,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01007922',
+  'dist_version' => '0.01008321',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
@@ -32,7 +32,7 @@ my %module_build_args = (
     'Dist::Zilla' => '4.101612',
     'Dist::Zilla::File::FromCode' => '0',
     'Dist::Zilla::Plugin::AutoPrereq' => '0',
-    'Dist::Zilla::Plugin::AutoVersion::Relative' => '0.01034313',
+    'Dist::Zilla::Plugin::AutoVersion::Relative' => '0.01035617',
     'Dist::Zilla::Plugin::CompileTests' => '1.101800',
     'Dist::Zilla::Plugin::ConfirmRelease' => '0',
     'Dist::Zilla::Plugin::EOLTests' => '0.02',
