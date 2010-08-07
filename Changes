@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        Dep latest Autoversion::Relative, solve Moose Deprecation problems.
 
 0.01007922 2010-08-03 18:25:33 Pacific/Auckland
         Dep latest. Modifiy to use new BuiltWith features.
