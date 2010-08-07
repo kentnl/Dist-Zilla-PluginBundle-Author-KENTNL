@@ -102,6 +102,7 @@ sub gather_files {
       'version_rel_day   = %{rel_day}n',                #
       'version_rel_hour  = %{rel_hour}n',               #
       'version_rel_time_zone = %{tz}s',                 #
+      'twitter_hash_tags = %{tags}s',                   #
       $empty,                                           #
       '[Prereq]',                                       #
       $empty,                                           #
@@ -131,6 +132,7 @@ sub gather_files {
         rel_day   => (localtime)[3],
         rel_hour  => (localtime)[2],
         tz        => 'Pacific/Auckland',
+        tags      => '#perl #cpan',
     });
     return $content;
   };
