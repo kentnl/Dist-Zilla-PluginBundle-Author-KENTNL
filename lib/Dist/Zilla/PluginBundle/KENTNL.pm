@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01008321';
+  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01009310';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -138,6 +138,7 @@ sub bundle_config {
     [ 'AutoPrereq'            => {} ],
     [ 'MetaData::BuiltWith'   => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'CompileTests'          => {} ],
+    [ 'CriticTests'           => {} ],
     [ 'MetaTests'             => {} ],
     [ 'PodCoverageTests'      => {} ],
     [ 'PodSyntaxTests'        => {} ],
@@ -183,7 +184,7 @@ Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your distribut
 
 =head1 VERSION
 
-version 0.01008321
+version 0.01009310
 
 =head1 SYNOPSIS
 

@@ -3,16 +3,15 @@ abstract: 'BeLike::KENTNL when you build your distributions.'
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
+  English: 0
   File::Find: 0
-  File::Spec: 0
   File::Temp: 0
-  FindBin: 0
   Module::Build: 0.3601
   Test::More: 0.88
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.101670'
+generated_by: 'Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.102160'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -21,10 +20,10 @@ name: Dist-Zilla-PluginBundle-KENTNL
 provides:
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 0.01008321
+    version: 0.01009310
   Dist::Zilla::PluginBundle::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/KENTNL.pm
-    version: 0.01008321
+    version: 0.01009310
 requires:
   Carp: 0
   Dist::Zilla: 4.101612
@@ -33,6 +32,7 @@ requires:
   Dist::Zilla::Plugin::AutoVersion::Relative: 0.01035617
   Dist::Zilla::Plugin::CompileTests: 1.101800
   Dist::Zilla::Plugin::ConfirmRelease: 0
+  Dist::Zilla::Plugin::CriticTests: 1.102280
   Dist::Zilla::Plugin::EOLTests: 0.02
   Dist::Zilla::Plugin::ExtraTests: 0
   Dist::Zilla::Plugin::FakeRelease: 0
@@ -80,7 +80,7 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree
   repository: git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git
-version: 0.01008321
+version: 0.01009310
 x_BuiltWith:
   modules:
     Carp: 1.16
@@ -90,6 +90,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::AutoVersion::Relative: 0.01035617
     Dist::Zilla::Plugin::CompileTests: 1.101800
     Dist::Zilla::Plugin::ConfirmRelease: 4.101900
+    Dist::Zilla::Plugin::CriticTests: 1.102280
     Dist::Zilla::Plugin::EOLTests: 0.02
     Dist::Zilla::Plugin::ExtraTests: 4.101900
     Dist::Zilla::Plugin::FakeRelease: 4.101900
@@ -123,10 +124,9 @@ x_BuiltWith:
     Dist::Zilla::Plugin::UploadToCPAN: 4.101900
     Dist::Zilla::Role::FileGatherer: 4.101900
     Dist::Zilla::Role::PluginBundle: 4.101900
+    English: 1.04
     File::Find: 1.15
-    File::Spec: 3.31
     File::Temp: 0.22
-    FindBin: 1.50
     IO::Socket::SSL: 1.33
     Module::Build: 0.3607
     Moose: 1.09
@@ -135,14 +135,14 @@ x_BuiltWith:
     MooseX::Types: 0.23
     Net::SSLeay: 1.36
     Pod::Coverage::TrustPod: 0.092830
-    String::Formatter: 0.100720
+    String::Formatter: 0.102080
     Test::CPAN::Meta: 0.17
     Test::EOL: 0.9
-    Test::More: 0.94
+    Test::More: 0.96
     namespace::autoclean: 0.11
   perl: 5.012001
   platform: linux
-  uname: "Linux 2.6.34-gentoo x86_64 GenuineIntel GNU/Linux\n"
+  uname: "Linux 2.6.35-gentoo x86_64 GenuineIntel GNU/Linux\n"
 x_Dist_Zilla:
   plugins:
     -
@@ -229,6 +229,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::CompileTests
       name: '@KENTNL/CompileTests'
       version: 1.101800
+    -
+      class: Dist::Zilla::Plugin::CriticTests
+      name: '@KENTNL/CriticTests'
+      version: 1.102280
     -
       class: Dist::Zilla::Plugin::MetaTests
       name: '@KENTNL/MetaTests'

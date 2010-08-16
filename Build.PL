@@ -7,10 +7,9 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   'build_requires' => {
+    'English' => '0',
     'File::Find' => '0',
-    'File::Spec' => '0',
     'File::Temp' => '0',
-    'FindBin' => '0',
     'Module::Build' => '0.3601',
     'Test::More' => '0.88'
   },
@@ -22,7 +21,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01008321',
+  'dist_version' => '0.01009310',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
@@ -35,6 +34,7 @@ my %module_build_args = (
     'Dist::Zilla::Plugin::AutoVersion::Relative' => '0.01035617',
     'Dist::Zilla::Plugin::CompileTests' => '1.101800',
     'Dist::Zilla::Plugin::ConfirmRelease' => '0',
+    'Dist::Zilla::Plugin::CriticTests' => '1.102280',
     'Dist::Zilla::Plugin::EOLTests' => '0.02',
     'Dist::Zilla::Plugin::ExtraTests' => '0',
     'Dist::Zilla::Plugin::FakeRelease' => '0',
