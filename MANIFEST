@@ -6,14 +6,12 @@ META.json
 META.yml
 README
 dist.ini
-inc/lib.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/KENTNL.pm
-perlcriticrc
+perlcritic.rc
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/author-critic.t
-t/author-noeol.t
 t/release-distmeta.t
 t/release-eol.t
 t/release-kwalitee.t

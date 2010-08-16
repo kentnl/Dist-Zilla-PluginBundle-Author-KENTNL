@@ -33,6 +33,7 @@
             "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01035617",
             "Dist::Zilla::Plugin::CompileTests" : "1.101800",
             "Dist::Zilla::Plugin::ConfirmRelease" : 0,
+            "Dist::Zilla::Plugin::CriticTests" : "1.102280",
             "Dist::Zilla::Plugin::EOLTests" : "0.02",
             "Dist::Zilla::Plugin::ExtraTests" : 0,
             "Dist::Zilla::Plugin::FakeRelease" : 0,
@@ -81,10 +82,9 @@
       },
       "test" : {
          "requires" : {
+            "English" : 0,
             "File::Find" : 0,
-            "File::Spec" : 0,
             "File::Temp" : 0,
-            "FindBin" : 0,
             "Test::More" : "0.88"
          }
       }
@@ -118,6 +118,7 @@
          "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01035617",
          "Dist::Zilla::Plugin::CompileTests" : "1.101800",
          "Dist::Zilla::Plugin::ConfirmRelease" : "4.101900",
+         "Dist::Zilla::Plugin::CriticTests" : "1.102280",
          "Dist::Zilla::Plugin::EOLTests" : "0.02",
          "Dist::Zilla::Plugin::ExtraTests" : "4.101900",
          "Dist::Zilla::Plugin::FakeRelease" : "4.101900",
@@ -151,10 +152,9 @@
          "Dist::Zilla::Plugin::UploadToCPAN" : "4.101900",
          "Dist::Zilla::Role::FileGatherer" : "4.101900",
          "Dist::Zilla::Role::PluginBundle" : "4.101900",
+         "English" : "1.04",
          "File::Find" : "1.15",
-         "File::Spec" : "3.31",
          "File::Temp" : "0.22",
-         "FindBin" : "1.50",
          "IO::Socket::SSL" : "1.33",
          "Module::Build" : "0.3607",
          "Moose" : "1.09",
@@ -280,6 +280,11 @@
             "class" : "Dist::Zilla::Plugin::CompileTests",
             "name" : "@KENTNL/CompileTests",
             "version" : "1.101800"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::CriticTests",
+            "name" : "@KENTNL/CriticTests",
+            "version" : "1.102280"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaTests",
