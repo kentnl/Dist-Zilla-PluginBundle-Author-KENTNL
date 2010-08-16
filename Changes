@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.01009310 2010-08-17 06:13:54 Pacific/Auckland
         Dep latest CriticTests.
         use upcomming Bootstrap::lib instead of this [=inc::lib] sillyness.
         Cleaned a lot of redundant files.
