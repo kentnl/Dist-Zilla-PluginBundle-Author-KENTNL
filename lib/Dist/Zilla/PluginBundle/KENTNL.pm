@@ -175,6 +175,7 @@ sub bundle_config {
     [ 'AutoPrereq'            => {} ],
     [ 'MetaData::BuiltWith'   => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'CompileTests'          => {} ],
+    [ 'CriticTests'           => {} ],
     [ 'MetaTests'             => {} ],
     [ 'PodCoverageTests'      => {} ],
     [ 'PodSyntaxTests'        => {} ],
