@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        Dep latest CriticTests.
+        use upcomming Bootstrap::lib instead of this [=inc::lib] sillyness.
+        Cleaned a lot of redundant files.
 
 0.01008321 2010-08-07 17:56:23 Pacific/Auckland
         Dep latest Autoversion::Relative, solve Moose Deprecation problems.
