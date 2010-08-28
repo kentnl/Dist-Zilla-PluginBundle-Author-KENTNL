@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01009310';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01010423';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @KENTNL projects.
@@ -39,7 +39,7 @@ sub gather_files {
       'copyright_holder = %{copyrightholder}s',         #
       $empty,                                           #
       q(; Uncomment this to bootstrap via self ),       #
-      q(; [=inc::lib]),                                 #
+      q(; [Bootstrap::lib]),                            #
       $empty,                                           #
       '[@KENTNL]',                                      #
       'version_major     = 0',                          #
@@ -105,7 +105,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @KENTN
 
 =head1 VERSION
 
-version 0.01009310
+version 0.01010423
 
 =head1 SYNOPSIS
 
