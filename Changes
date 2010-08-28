@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.01010423 2010-08-28 19:47:18 Pacific/Auckland
         Custom DistINI now injects [Bootstrap::lib] instead of [=inc::lib]
         Added Bootstrap::lib into DevelopRequires
 
