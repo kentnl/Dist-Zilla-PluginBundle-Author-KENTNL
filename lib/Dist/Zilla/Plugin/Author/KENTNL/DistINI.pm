@@ -91,7 +91,7 @@ sub gather_files {
       'copyright_holder = %{copyrightholder}s',         #
       $empty,                                           #
       q(; Uncomment this to bootstrap via self ),       #
-      q(; [=inc::lib]),                                 #
+      q(; [Bootstrap::lib]),                            #
       $empty,                                           #
       '[@KENTNL]',                                      #
       'version_major     = 0',                          #
