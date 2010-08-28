@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        Custom DistINI now injects [Bootstrap::lib] instead of [=inc::lib]
 
 0.01009310 2010-08-17 06:13:54 Pacific/Auckland
         Dep latest CriticTests.
