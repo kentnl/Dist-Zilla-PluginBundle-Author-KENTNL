@@ -1,5 +1,7 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+0.01017119 2010-11-02 16:47:51 Pacific/Auckland
+
 0.01010423 2010-08-28 19:47:18 Pacific/Auckland
         Custom DistINI now injects [Bootstrap::lib] instead of [=inc::lib]
         Added Bootstrap::lib into DevelopRequires
