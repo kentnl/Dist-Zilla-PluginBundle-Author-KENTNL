@@ -172,7 +172,7 @@ sub bundle_config {
     [ 'ReadmeFromPod'         => {} ],
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
-    [ 'AutoPrereq'            => {} ],
+    [ 'AutoPrereqs'           => {} ],
     [ 'MetaData::BuiltWith'   => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'CompileTests'          => {} ],
     [ 'CriticTests'           => {} ],
