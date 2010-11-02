@@ -25,8 +25,15 @@
          }
       },
       "develop" : {
+         "recommends" : {
+            "Dist::Zilla::PluginBundle::KENTNL::Lite" : "0.01009803"
+         },
          "requires" : {
-            "Dist::Zilla::Plugin::Bootstrap::lib" : 0
+            "Dist::Zilla::Plugin::Bootstrap::lib" : 0,
+            "Dist::Zilla::PluginBundle::KENTNL::Lite" : 0
+         },
+         "suggests" : {
+            "Dist::Zilla::PluginBundle::KENTNL" : "0.01017119"
          }
       },
       "runtime" : {
@@ -97,11 +104,11 @@
    "provides" : {
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "0.01017119"
+         "version" : "0.01017122"
       },
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01017119"
+         "version" : "0.01017122"
       }
    },
    "release_status" : "stable",
@@ -113,7 +120,7 @@
          "web" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree"
       }
    },
-   "version" : "0.01017119",
+   "version" : "0.01017122",
    "x_BuiltWith" : {
       "modules" : {},
       "perl" : "5.012002",
@@ -216,6 +223,39 @@
          {
             "class" : "Dist::Zilla::Plugin::AutoPrereqs",
             "name" : "@KENTNL/AutoPrereqs",
+            "version" : "4.102342"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "develop",
+                  "type" : "requires"
+               }
+            },
+            "name" : "@KENTNL/Prereqs/BundleDevelNeeds",
+            "version" : "4.102342"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "develop",
+                  "type" : "recommends"
+               }
+            },
+            "name" : "@KENTNL/Prereqs/BundleDevelRecommends",
+            "version" : "4.102342"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "develop",
+                  "type" : "suggests"
+               }
+            },
+            "name" : "@KENTNL/Prereqs/BundleDevelSuggests",
             "version" : "4.102342"
          },
          {
