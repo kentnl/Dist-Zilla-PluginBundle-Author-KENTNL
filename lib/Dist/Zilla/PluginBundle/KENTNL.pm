@@ -54,8 +54,10 @@ sub _expand {
   ## no critic ( RequireInterpolationOfMetachars )
   if ( ref $suffix ) {
     my ( $corename, $rename ) = @{$suffix};
+    if ( exists $conf->{-name} ){
+        $rename = delete $conf->{-name};
+    }
     return [ q{@KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
-
   }
   return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
@@ -173,6 +175,10 @@ sub bundle_config {
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
     [ 'AutoPrereqs'           => {} ],
+    [ 'Prereqs' => { -name => 'BundleDevelNeeds' , -phase => 'develop' , -type => 'requires' , 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0 }],
+    [ 'Prereqs' => { -name => 'BundleDevelRecommends' , -phase => 'develop' , -type => 'recommends' , 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0.01009803 }],
+    [ 'Prereqs' => { -name => 'BundleDevelSuggests' , -phase => 'develop' , -type => 'suggests' , 'Dist::Zilla::PluginBundle::KENTNL' => 0.01017119 }],
+
     [ 'MetaData::BuiltWith'   => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'CompileTests'          => {} ],
     [ 'CriticTests'           => {} ],
