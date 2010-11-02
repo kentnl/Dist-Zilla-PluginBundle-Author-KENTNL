@@ -104,11 +104,11 @@
    "provides" : {
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "0.01017121"
+         "version" : "0.01017122"
       },
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01017121"
+         "version" : "0.01017122"
       }
    },
    "release_status" : "stable",
@@ -120,7 +120,7 @@
          "web" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree"
       }
    },
-   "version" : "0.01017121",
+   "version" : "0.01017122",
    "x_BuiltWith" : {
       "modules" : {},
       "perl" : "5.012002",
