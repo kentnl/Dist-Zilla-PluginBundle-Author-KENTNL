@@ -59,6 +59,12 @@ sub _expand {
     }
     return [ q{@KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
   }
+  if ( exists $conf->{-name} ){
+        my $rename;
+        $rename = sprintf q{%s/%s}, $suffix , ( delete $conf->{-name} );
+        return [ q{@KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+
+  }
   return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
