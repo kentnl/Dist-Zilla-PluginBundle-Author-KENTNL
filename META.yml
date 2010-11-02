@@ -20,10 +20,10 @@ name: Dist-Zilla-PluginBundle-KENTNL
 provides:
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 0.01017119
+    version: 0.01017121
   Dist::Zilla::PluginBundle::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/KENTNL.pm
-    version: 0.01017119
+    version: 0.01017121
 requires:
   Carp: 0
   Dist::Zilla: 4.101612
@@ -80,7 +80,7 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree
   repository: git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git
-version: 0.01017119
+version: 0.01017121
 x_BuiltWith:
   modules: {}
   perl: 5.012002
@@ -164,6 +164,30 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: '@KENTNL/AutoPrereqs'
+      version: 4.102342
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: develop
+          type: requires
+      name: '@KENTNL/Prereqs/BundleDevelNeeds'
+      version: 4.102342
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: develop
+          type: recommends
+      name: '@KENTNL/Prereqs/BundleDevelRecommends'
+      version: 4.102342
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: develop
+          type: suggests
+      name: '@KENTNL/Prereqs/BundleDevelSuggests'
       version: 4.102342
     -
       class: Dist::Zilla::Plugin::MetaData::BuiltWith

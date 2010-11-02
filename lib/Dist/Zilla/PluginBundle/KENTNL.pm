@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01017119';
+  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01017121';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -22,7 +22,15 @@ sub _expand {
   ## no critic ( RequireInterpolationOfMetachars )
   if ( ref $suffix ) {
     my ( $corename, $rename ) = @{$suffix};
+    if ( exists $conf->{-name} ){
+        $rename = delete $conf->{-name};
+    }
     return [ q{@KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
+  }
+  if ( exists $conf->{-name} ){
+        my $rename;
+        $rename = $suffix . '/' .  ( delete $conf->{-name} );
+        return [ q{@KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 
   }
   return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
@@ -136,6 +144,10 @@ sub bundle_config {
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
     [ 'AutoPrereqs'           => {} ],
+    [ 'Prereqs' => { -name => 'BundleDevelNeeds' , -phase => 'develop' , -type => 'requires' , 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0 }],
+    [ 'Prereqs' => { -name => 'BundleDevelRecommends' , -phase => 'develop' , -type => 'recommends' , 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0.01009803 }],
+    [ 'Prereqs' => { -name => 'BundleDevelSuggests' , -phase => 'develop' , -type => 'suggests' , 'Dist::Zilla::PluginBundle::KENTNL' => 0.01017119 }],
+
     [ 'MetaData::BuiltWith'   => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'CompileTests'          => {} ],
     [ 'CriticTests'           => {} ],
@@ -184,7 +196,7 @@ Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your distribut
 
 =head1 VERSION
 
-version 0.01017119
+version 0.01017121
 
 =head1 SYNOPSIS
 
