@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+0.01017322 2010-11-04 19:54:18 Pacific/Auckland
+        Ramp up BuiltWith dep.
+
 0.01017122 2010-11-02 19:00:35 Pacific/Auckland
         Inject Develop Needs/Suggests/Recommends for @KENTNL
 

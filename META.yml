@@ -20,10 +20,10 @@ name: Dist-Zilla-PluginBundle-KENTNL
 provides:
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 0.01017122
+    version: 0.01017322
   Dist::Zilla::PluginBundle::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/KENTNL.pm
-    version: 0.01017122
+    version: 0.01017322
 requires:
   Carp: 0
   Dist::Zilla: 4.101612
@@ -46,10 +46,10 @@ requires:
   Dist::Zilla::Plugin::Manifest: 0
   Dist::Zilla::Plugin::ManifestSkip: 0
   Dist::Zilla::Plugin::MetaConfig: 0
-  Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01005122
+  Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01014716
   Dist::Zilla::Plugin::MetaJSON: 0
-  Dist::Zilla::Plugin::MetaProvides: 1.11034201
-  Dist::Zilla::Plugin::MetaProvides::Package: 1.11034304
+  Dist::Zilla::Plugin::MetaProvides: 1.12044518
+  Dist::Zilla::Plugin::MetaProvides::Package: 1.11044404
   Dist::Zilla::Plugin::MetaTests: 0
   Dist::Zilla::Plugin::MetaYAML: 0
   Dist::Zilla::Plugin::ModuleBuild: 0
@@ -80,9 +80,68 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree
   repository: git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git
-version: 0.01017122
+version: 0.01017322
 x_BuiltWith:
-  modules: {}
+  modules:
+    Carp: 1.17
+    Dist::Zilla: 4.102342
+    Dist::Zilla::File::FromCode: 4.102342
+    Dist::Zilla::Plugin::AutoPrereq: 4.102342
+    Dist::Zilla::Plugin::AutoVersion::Relative: 0.01037118
+    Dist::Zilla::Plugin::Bootstrap::lib: 0.01000003
+    Dist::Zilla::Plugin::CompileTests: 1.101800
+    Dist::Zilla::Plugin::ConfirmRelease: 4.102342
+    Dist::Zilla::Plugin::CriticTests: 1.102280
+    Dist::Zilla::Plugin::EOLTests: 0.02
+    Dist::Zilla::Plugin::ExtraTests: 4.102342
+    Dist::Zilla::Plugin::FakeRelease: 4.102342
+    Dist::Zilla::Plugin::GatherDir: 4.102342
+    Dist::Zilla::Plugin::Git::Check: 1.102810
+    Dist::Zilla::Plugin::Git::CommitBuild: 1.102810
+    Dist::Zilla::Plugin::Git::Tag: 1.102810
+    Dist::Zilla::Plugin::GithubMeta: 0.10
+    Dist::Zilla::Plugin::KwaliteeTests: 1.101420
+    Dist::Zilla::Plugin::License: 4.102342
+    Dist::Zilla::Plugin::Manifest: 4.102342
+    Dist::Zilla::Plugin::ManifestSkip: 4.102342
+    Dist::Zilla::Plugin::MetaConfig: 4.102342
+    Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01014716
+    Dist::Zilla::Plugin::MetaJSON: 4.102342
+    Dist::Zilla::Plugin::MetaProvides: 1.12044518
+    Dist::Zilla::Plugin::MetaProvides::Package: 1.11044404
+    Dist::Zilla::Plugin::MetaTests: 4.102342
+    Dist::Zilla::Plugin::MetaYAML: 4.102342
+    Dist::Zilla::Plugin::ModuleBuild: 4.102342
+    Dist::Zilla::Plugin::PkgVersion: 4.102342
+    Dist::Zilla::Plugin::PodCoverageTests: 4.102342
+    Dist::Zilla::Plugin::PodSyntaxTests: 4.102342
+    Dist::Zilla::Plugin::PodWeaver: 3.101641
+    Dist::Zilla::Plugin::PortabilityTests: 1.101420
+    Dist::Zilla::Plugin::PruneCruft: 4.102342
+    Dist::Zilla::Plugin::ReadmeFromPod: 0.14
+    Dist::Zilla::Plugin::ReportVersions::Tiny: 1.01
+    Dist::Zilla::Plugin::TestRelease: 4.102342
+    Dist::Zilla::Plugin::Twitter: 0.009
+    Dist::Zilla::Plugin::UploadToCPAN: 4.102342
+    Dist::Zilla::PluginBundle::KENTNL: NA(undef)
+    Dist::Zilla::PluginBundle::KENTNL::Lite: 0.01000002
+    Dist::Zilla::Role::FileGatherer: 4.102342
+    Dist::Zilla::Role::PluginBundle: 4.102342
+    File::Find: 1.15
+    File::Temp: 0.22
+    IO::Socket::SSL: 1.33
+    Module::Build: 0.3607
+    Moose: 1.17
+    Moose::Autobox: 0.11
+    MooseX::Has::Sugar: 0.05046611
+    MooseX::Types: 0.24
+    Net::SSLeay: 1.36
+    Pod::Coverage::TrustPod: 0.092830
+    String::Formatter: 0.102080
+    Test::CPAN::Meta: 0.17
+    Test::EOL: 0.9
+    Test::More: 0.96
+    namespace::autoclean: 0.11
   perl: 5.012002
   platform: linux
   uname: "Linux 2.6.36-gentoo x86_64 GenuineIntel GNU/Linux\n"
@@ -136,7 +195,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaProvides::Package
       name: '@KENTNL/MetaProvides::Package'
-      version: 1.11034304
+      version: 1.11044404
     -
       class: Dist::Zilla::Plugin::MetaJSON
       name: '@KENTNL/MetaJSON'
@@ -204,7 +263,7 @@ x_Dist_Zilla:
               - '-i'
             uname_call: uname
       name: '@KENTNL/MetaData::BuiltWith'
-      version: 0.01005122
+      version: 0.01014716
     -
       class: Dist::Zilla::Plugin::CompileTests
       name: '@KENTNL/CompileTests'
