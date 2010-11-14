@@ -21,13 +21,14 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01017322',
+  'dist_version' => '0.01018316',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
   'recursive_test_files' => 1,
   'requires' => {
     'Carp' => '0',
+    'Class::Load' => '0',
     'Dist::Zilla' => '4.101612',
     'Dist::Zilla::File::FromCode' => '0',
     'Dist::Zilla::Plugin::AutoPrereq' => '0',

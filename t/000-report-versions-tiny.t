@@ -49,6 +49,7 @@ sub pmver {
 }
 
 eval { $v .= pmver('Carp','any version') };
+eval { $v .= pmver('Class::Load','any version') };
 eval { $v .= pmver('Dist::Zilla','4.101612') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoPrereq','any version') };
