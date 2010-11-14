@@ -1,6 +1,10 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        Replace internal loader code with Class::Load.
+
+        Fix outstanding headache with my ini generator doing [Prereq] instead
+        of [Prereqs]
 
 0.01017322 2010-11-04 19:56:23 Pacific/Auckland
         Ramp up BuiltWith dep.

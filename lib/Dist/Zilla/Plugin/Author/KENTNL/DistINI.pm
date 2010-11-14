@@ -104,7 +104,7 @@ sub gather_files {
       'version_rel_time_zone = %{tz}s',                 #
       'twitter_hash_tags = %{tags}s',                   #
       $empty,                                           #
-      '[Prereq]',                                       #
+      '[Prereqs]',                                       #
       $empty,                                           #
     );
   }

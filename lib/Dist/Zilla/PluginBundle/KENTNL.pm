@@ -7,10 +7,11 @@ package Dist::Zilla::PluginBundle::KENTNL;
 
 use Moose;
 use Moose::Autobox;
+use Class::Load qw( :all );
 
 with 'Dist::Zilla::Role::PluginBundle';
 
-use namespace::autoclean -also => [qw( _expand _load _defined_or _only_git _only_cpan _release_fail )];
+use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail )];
 
 =head1 SYNOPSIS
 
@@ -54,29 +55,18 @@ sub _expand {
   ## no critic ( RequireInterpolationOfMetachars )
   if ( ref $suffix ) {
     my ( $corename, $rename ) = @{$suffix};
-    if ( exists $conf->{-name} ){
-        $rename = delete $conf->{-name};
+    if ( exists $conf->{-name} ) {
+      $rename = delete $conf->{-name};
     }
     return [ q{@KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
   }
-  if ( exists $conf->{-name} ){
-        my $rename;
-        $rename = sprintf q{%s/%s}, $suffix , ( delete $conf->{-name} );
-        return [ q{@KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+  if ( exists $conf->{-name} ) {
+    my $rename;
+    $rename = sprintf q{%s/%s}, $suffix, ( delete $conf->{-name} );
+    return [ q{@KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 
   }
   return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
-}
-
-sub _load {
-  my $m = shift;
-  eval " require $m ; 1" or do {
-    ## no critic (ProhibitPunctuationVars)
-    my $e = $@;
-    require Carp;
-    Carp::confess($e);
-  };
-  return;
 }
 
 =method bundle_config
@@ -181,19 +171,36 @@ sub bundle_config {
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
     [ 'AutoPrereqs'           => {} ],
-    [ 'Prereqs' => { -name => 'BundleDevelNeeds' , -phase => 'develop' , -type => 'requires' , 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0 }],
-    [ 'Prereqs' => { -name => 'BundleDevelRecommends' , -phase => 'develop' , -type => 'recommends' , 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0.01009803 }],
-    [ 'Prereqs' => { -name => 'BundleDevelSuggests' , -phase => 'develop' , -type => 'suggests' , 'Dist::Zilla::PluginBundle::KENTNL' => 0.01017119 }],
+    [
+      'Prereqs' =>
+        { -name => 'BundleDevelNeeds', -phase => 'develop', -type => 'requires', 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0 }
+    ],
+    [
+      'Prereqs' => {
+        -name                                     => 'BundleDevelRecommends',
+        -phase                                    => 'develop',
+        -type                                     => 'recommends',
+        'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0.01009803
+      }
+    ],
+    [
+      'Prereqs' => {
+        -name                               => 'BundleDevelSuggests',
+        -phase                              => 'develop',
+        -type                               => 'suggests',
+        'Dist::Zilla::PluginBundle::KENTNL' => 0.01017119
+      }
+    ],
 
-    [ 'MetaData::BuiltWith'   => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
-    [ 'CompileTests'          => {} ],
-    [ 'CriticTests'           => {} ],
-    [ 'MetaTests'             => {} ],
-    [ 'PodCoverageTests'      => {} ],
-    [ 'PodSyntaxTests'        => {} ],
-    [ 'ReportVersions::Tiny'  => {} ],
-    [ 'KwaliteeTests'         => {} ],
-    [ 'PortabilityTests'      => {} ],
+    [ 'MetaData::BuiltWith'  => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
+    [ 'CompileTests'         => {} ],
+    [ 'CriticTests'          => {} ],
+    [ 'MetaTests'            => {} ],
+    [ 'PodCoverageTests'     => {} ],
+    [ 'PodSyntaxTests'       => {} ],
+    [ 'ReportVersions::Tiny' => {} ],
+    [ 'KwaliteeTests'        => {} ],
+    [ 'PortabilityTests'     => {} ],
     [ 'EOLTests'       => { trailing_whitespace => 1, } ],
     [ 'ExtraTests'     => {} ],
     [ 'TestRelease'    => {} ],
@@ -214,7 +221,7 @@ sub bundle_config {
       ]
     )
   );
-  _load( $_->[1] ) for @config;
+  load_class( $_->[1] ) for @config;
   return @config;
 }
 __PACKAGE__->meta->make_immutable;
