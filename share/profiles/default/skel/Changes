@@ -1,4 +1,4 @@
-Release history for {{ $plugin->dist_name }}
+Release history for {{ $dist->name }}
 
 {{ '{{$NEXT}}' }}
 
