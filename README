@@ -3,7 +3,7 @@ NAME
     distributions.
 
 VERSION
-    version 0.01018316
+    version 0.01023309
 
 SYNOPSIS
         [@KENTNL]
@@ -11,6 +11,7 @@ SYNOPSIS
         no_git  = 1 ; skip things that work with git.
         twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
         release_fail = 1 ; asplode!. ( non-twitter only )
+        git_versions = 1 ;  use git::nextversion for versioning
 
 DESCRIPTION
     This is the plug-in bundle that KENTNL uses. It exists mostly because he
@@ -41,7 +42,7 @@ AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2010 by Kent Fredric.
+    This software is copyright (c) 2011 by Kent Fredric.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

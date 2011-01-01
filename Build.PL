@@ -21,7 +21,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01018316',
+  'dist_version' => '0.01023309',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
@@ -68,6 +68,7 @@ my %module_build_args = (
     'Dist::Zilla::Plugin::Twitter' => '0.007',
     'Dist::Zilla::Plugin::UploadToCPAN' => '0',
     'Dist::Zilla::Role::FileGatherer' => '0',
+    'Dist::Zilla::Role::MintingProfile::ShareDir' => '0',
     'Dist::Zilla::Role::PluginBundle' => '0',
     'IO::Socket::SSL' => '0',
     'Moose' => '1.01',

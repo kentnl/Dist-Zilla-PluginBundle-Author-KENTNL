@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01018316';
+  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '0.01023309';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -98,6 +98,13 @@ sub _if_twitter {
   return @{$else};
 }
 
+sub _if_git_versions {
+  my ( $args, $gitversions, $else ) = @_;
+  return @{$gitversions} if exists $ENV{KENTNL_GITVERSIONS};
+  return @{$gitversions} if exists $args->{git_versions};
+  return @{$else};
+}
+
 sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
@@ -109,15 +116,21 @@ sub bundle_config {
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
-      'AutoVersion::Relative' => {
-        major     => _defined_or( $arg, version_major         => 0 ),
-        minor     => _defined_or( $arg, version_minor         => 1 ),
-        year      => _defined_or( $arg, version_rel_year      => 2010 ),
-        month     => _defined_or( $arg, version_rel_month     => 5 ),
-        day       => _defined_or( $arg, version_rel_day       => 16 ),
-        hour      => _defined_or( $arg, version_rel_hour      => 20 ),
-        time_zone => _defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland' ),
-      }
+      _if_git_versions(
+        $arg,
+        [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$' , first_version => 0.01000 } ],
+        [
+          'AutoVersion::Relative' => {
+            major     => _defined_or( $arg, version_major         => 0 ),
+            minor     => _defined_or( $arg, version_minor         => 1 ),
+            year      => _defined_or( $arg, version_rel_year      => 2010 ),
+            month     => _defined_or( $arg, version_rel_month     => 5 ),
+            day       => _defined_or( $arg, version_rel_day       => 16 ),
+            hour      => _defined_or( $arg, version_rel_hour      => 20 ),
+            time_zone => _defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland' ),
+          }
+        ]
+      )
     ],
     [ 'GatherDir'  => {} ],
     [ 'MetaConfig' => {} ],
@@ -175,10 +188,10 @@ sub bundle_config {
         _release_fail($arg),
         _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
         [ 'NextRelease' => {} ],
-        _only_git( $arg, [ [ 'Git::Tag', 'tag_master' ] => { filename => 'Changes', tag_format => '%v-source' } ] ),
+        _only_git( $arg, [ [ 'Git::Tag', 'tag_master' ] => { tag_format => '%v-source' } ] ),
         _only_git( $arg, [ 'Git::Commit' => {} ] ),
         _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ] ),
-        _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { filename => 'Changes', tag_format => '%v' } ] ),
+        _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { branch => 'releases', tag_format => '%v' } ] ),
         _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
         _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter' => $twitter_conf ] ) ),
       ]
@@ -203,7 +216,7 @@ Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your distribut
 
 =head1 VERSION
 
-version 0.01018316
+version 0.01023309
 
 =head1 SYNOPSIS
 
@@ -212,6 +225,7 @@ version 0.01018316
     no_git  = 1 ; skip things that work with git.
     twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
     release_fail = 1 ; asplode!. ( non-twitter only )
+    git_versions = 1 ;  use git::nextversion for versioning
 
 =head1 DESCRIPTION
 
@@ -250,7 +264,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Kent Fredric.
+This software is copyright (c) 2011 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

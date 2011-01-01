@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01018316';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '0.01023309';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @KENTNL projects.
@@ -105,7 +105,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @KENTN
 
 =head1 VERSION
 
-version 0.01018316
+version 0.01023309
 
 =head1 SYNOPSIS
 
@@ -168,7 +168,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Kent Fredric.
+This software is copyright (c) 2011 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
