@@ -20,13 +20,13 @@ name: Dist-Zilla-PluginBundle-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: 0.01023309
+    version: 0.01023310
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 0.01023309
+    version: 0.01023310
   Dist::Zilla::PluginBundle::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/KENTNL.pm
-    version: 0.01023309
+    version: 0.01023310
 requires:
   Carp: 0
   Class::Load: 0
@@ -85,7 +85,7 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree
   repository: git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git
-version: 0.01023309
+version: 0.01023310
 x_BuiltWith:
   modules:
     Carp: 1.17

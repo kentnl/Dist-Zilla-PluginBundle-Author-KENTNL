@@ -1,6 +1,8 @@
 .perltidyrc
 Build.PL
 Changes
+Dist-Zilla-PluginBundle-KENTNL-0.01023309/.perltidyrc
+Dist-Zilla-PluginBundle-KENTNL-0.01023309/share/profiles/default/.perltidyrc
 LICENSE
 MANIFEST
 META.json
@@ -11,12 +13,12 @@ lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/KENTNL.pm
 perlcritic.rc
-share/profiles/default/.gitignore
-share/profiles/default/.perltidyrc
-share/profiles/default/Changes
-share/profiles/default/perlcritic.rc
 share/profiles/default/profile.ini
-share/profiles/default/weaver.ini
+share/profiles/default/skel/.gitignore
+share/profiles/default/skel/.perltidyrc
+share/profiles/default/skel/Changes
+share/profiles/default/skel/perlcritic.rc
+share/profiles/default/skel/weaver.ini
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/author-critic.t
