@@ -172,7 +172,7 @@ sub bundle_config {
     ],
     [ 'GatherDir'  => { include_dotfiles => 1 } ],
     [ 'MetaConfig' => {} ],
-    [ 'PruneCruft' => { except => ['\.perltidyrc$'] } ],
+    [ 'PruneCruft' => { except => '^.perltidyrc' } ],
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'License'               => {} ],
     [ 'PkgVersion'            => {} ],
