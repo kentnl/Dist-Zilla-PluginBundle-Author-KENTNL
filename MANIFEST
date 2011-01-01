@@ -1,3 +1,4 @@
+.perltidyrc
 Build.PL
 Changes
 LICENSE
@@ -10,6 +11,8 @@ lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/KENTNL.pm
 perlcritic.rc
+share/profiles/default/.gitignore
+share/profiles/default/.perltidyrc
 share/profiles/default/Changes
 share/profiles/default/perlcritic.rc
 share/profiles/default/profile.ini
