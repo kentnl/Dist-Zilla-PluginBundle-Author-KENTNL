@@ -305,10 +305,6 @@ x_Dist_Zilla:
       name: '@KENTNL/KwaliteeTests'
       version: 1.101420
     -
-      class: Dist::Zilla::Plugin::PortabilityTests
-      name: '@KENTNL/PortabilityTests'
-      version: 1.101420
-    -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@KENTNL/EOLTests'
       version: 0.02
