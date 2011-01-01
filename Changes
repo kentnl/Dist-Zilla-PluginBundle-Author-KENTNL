@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.01023311 2011-01-02 08:31:37 Pacific/Auckland
         Replace internal loader code with Class::Load.
 
         Fix outstanding headache with my ini generator doing [Prereq] instead
