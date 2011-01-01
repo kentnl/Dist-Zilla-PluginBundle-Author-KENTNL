@@ -82,7 +82,12 @@ my %module_build_args = (
     'Test::EOL' => '0.9',
     'namespace::autoclean' => '0.09'
   },
-  'script_files' => []
+  'script_files' => [],
+  'share_dir' => {
+    'module' => {
+      'Dist::Zilla::MintingProfile::Author::KENTNL' => 'share/profiles'
+    }
+  }
 );
 
 

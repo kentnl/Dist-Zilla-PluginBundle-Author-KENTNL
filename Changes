@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
-0.01023309 2011-01-02 06:24:15 Pacific/Auckland
+0.01023309 2011-01-02 06:36:57 Pacific/Auckland
         Replace internal loader code with Class::Load.
 
         Fix outstanding headache with my ini generator doing [Prereq] instead

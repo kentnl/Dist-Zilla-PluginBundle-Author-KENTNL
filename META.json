@@ -455,6 +455,11 @@
             "version" : "0.009"
          },
          {
+            "class" : "Dist::Zilla::Plugin::ModuleShareDirs",
+            "name" : "ModuleShareDirs",
+            "version" : "4.102346"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::Prereqs",
             "config" : {
                "Dist::Zilla::Plugin::Prereqs" : {
