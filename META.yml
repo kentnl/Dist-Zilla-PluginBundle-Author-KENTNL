@@ -32,7 +32,7 @@ requires:
   Class::Load: 0
   Dist::Zilla: 4.101612
   Dist::Zilla::File::FromCode: 0
-  Dist::Zilla::Plugin::AutoPrereq: 0
+  Dist::Zilla::Plugin::AutoPrereqs: 0
   Dist::Zilla::Plugin::AutoVersion::Relative: 0.01035617
   Dist::Zilla::Plugin::CompileTests: 1.101800
   Dist::Zilla::Plugin::ConfirmRelease: 0
@@ -43,6 +43,7 @@ requires:
   Dist::Zilla::Plugin::GatherDir: 0
   Dist::Zilla::Plugin::Git::Check: 1.102040
   Dist::Zilla::Plugin::Git::CommitBuild: 1.102040
+  Dist::Zilla::Plugin::Git::NextVersion: 1.102810
   Dist::Zilla::Plugin::Git::Tag: 1.102040
   Dist::Zilla::Plugin::GithubMeta: 0.08
   Dist::Zilla::Plugin::KwaliteeTests: 1.101420
@@ -61,7 +62,7 @@ requires:
   Dist::Zilla::Plugin::PodCoverageTests: 0
   Dist::Zilla::Plugin::PodSyntaxTests: 0
   Dist::Zilla::Plugin::PodWeaver: 3.093321
-  Dist::Zilla::Plugin::PortabilityTests: 1.101420
+  Dist::Zilla::Plugin::Prereqs: 0
   Dist::Zilla::Plugin::PruneCruft: 0
   Dist::Zilla::Plugin::ReadmeFromPod: 0.12
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.01
@@ -92,7 +93,7 @@ x_BuiltWith:
     Class::Load: 0.06
     Dist::Zilla: 4.102346
     Dist::Zilla::File::FromCode: 4.102346
-    Dist::Zilla::Plugin::AutoPrereq: 4.102346
+    Dist::Zilla::Plugin::AutoPrereqs: 4.102346
     Dist::Zilla::Plugin::AutoVersion::Relative: 0.01037118
     Dist::Zilla::Plugin::Bootstrap::lib: 0.01000003
     Dist::Zilla::Plugin::CompileTests: 1.103030
@@ -104,6 +105,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::GatherDir: 4.102346
     Dist::Zilla::Plugin::Git::Check: 1.102810
     Dist::Zilla::Plugin::Git::CommitBuild: 1.102810
+    Dist::Zilla::Plugin::Git::NextVersion: 1.102810
     Dist::Zilla::Plugin::Git::Tag: 1.102810
     Dist::Zilla::Plugin::GithubMeta: 0.10
     Dist::Zilla::Plugin::KwaliteeTests: 1.101420
@@ -122,7 +124,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::PodCoverageTests: 4.102346
     Dist::Zilla::Plugin::PodSyntaxTests: 4.102346
     Dist::Zilla::Plugin::PodWeaver: 3.101641
-    Dist::Zilla::Plugin::PortabilityTests: 1.101420
+    Dist::Zilla::Plugin::Prereqs: 4.102346
     Dist::Zilla::Plugin::PruneCruft: 4.102346
     Dist::Zilla::Plugin::ReadmeFromPod: 0.14
     Dist::Zilla::Plugin::ReportVersions::Tiny: 1.02
