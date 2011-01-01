@@ -1,6 +1,8 @@
 .perltidyrc
 Build.PL
 Changes
+Dist-Zilla-PluginBundle-KENTNL-0.01023310/.perltidyrc
+Dist-Zilla-PluginBundle-KENTNL-0.01023310/share/profiles/default/skel/.perltidyrc
 LICENSE
 MANIFEST
 META.json

@@ -20,13 +20,13 @@ name: Dist-Zilla-PluginBundle-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: 0.01023310
+    version: 0.01017323
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 0.01023310
+    version: 0.01017323
   Dist::Zilla::PluginBundle::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/KENTNL.pm
-    version: 0.01023310
+    version: 0.01017323
 requires:
   Carp: 0
   Class::Load: 0
@@ -85,7 +85,7 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree
   repository: git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git
-version: 0.01023310
+version: 0.01017323
 x_BuiltWith:
   modules:
     Carp: 1.17
@@ -160,22 +160,9 @@ x_BuiltWith:
 x_Dist_Zilla:
   plugins:
     -
-      class: Dist::Zilla::Plugin::AutoVersion::Relative
-      config:
-        Dist::Zilla::Plugin::AutoVersion::Relative:
-          format: "{{ sprintf('%d.%02d%04d%02d', $major, $minor, days, hours) }}"
-          major: 0
-          minor: 1
-          relative_to:
-            day: 16
-            hour: 20
-            minute: 0
-            month: 5
-            second: 0
-            time_zone: Pacific/Auckland
-            year: 2010
-      name: '@KENTNL/AutoVersion::Relative'
-      version: 0.01037118
+      class: Dist::Zilla::Plugin::Git::NextVersion
+      name: '@KENTNL/Git::NextVersion'
+      version: 1.102810
     -
       class: Dist::Zilla::Plugin::GatherDir
       name: '@KENTNL/GatherDir'

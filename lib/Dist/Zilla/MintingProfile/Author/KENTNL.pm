@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::MintingProfile::Author::KENTNL;
 BEGIN {
-  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '0.01023310';
+  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '0.01017323';
 }
 
 # ABSTRACT: KENTNL's Minting Profile
@@ -23,7 +23,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 0.01023310
+version 0.01017323
 
 =head1 AUTHOR
 
