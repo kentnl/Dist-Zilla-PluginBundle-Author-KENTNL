@@ -21,13 +21,14 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '0.01017322',
+  'dist_version' => '0.01023311',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
   'recommends' => {},
   'recursive_test_files' => 1,
   'requires' => {
     'Carp' => '0',
+    'Class::Load' => '0',
     'Dist::Zilla' => '4.101612',
     'Dist::Zilla::File::FromCode' => '0',
     'Dist::Zilla::Plugin::AutoPrereq' => '0',
@@ -67,6 +68,7 @@ my %module_build_args = (
     'Dist::Zilla::Plugin::Twitter' => '0.007',
     'Dist::Zilla::Plugin::UploadToCPAN' => '0',
     'Dist::Zilla::Role::FileGatherer' => '0',
+    'Dist::Zilla::Role::MintingProfile::ShareDir' => '0',
     'Dist::Zilla::Role::PluginBundle' => '0',
     'IO::Socket::SSL' => '0',
     'Moose' => '1.01',
@@ -80,7 +82,12 @@ my %module_build_args = (
     'Test::EOL' => '0.9',
     'namespace::autoclean' => '0.09'
   },
-  'script_files' => []
+  'script_files' => [],
+  'share_dir' => {
+    'module' => {
+      'Dist::Zilla::MintingProfile::Author::KENTNL' => 'share/profiles'
+    }
+  }
 );
 
 

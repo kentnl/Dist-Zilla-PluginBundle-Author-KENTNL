@@ -45,10 +45,11 @@ sub pmver {
     }
 
     # So, we should be good, right?
-    return sprintf('%-40s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
+    return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
 eval { $v .= pmver('Carp','any version') };
+eval { $v .= pmver('Class::Load','any version') };
 eval { $v .= pmver('Dist::Zilla','4.101612') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoPrereq','any version') };
@@ -91,6 +92,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::UploadToCPAN','any version') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::KENTNL','0.01017119') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::KENTNL::Lite','0.01009803') };
 eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','any version') };
+eval { $v .= pmver('Dist::Zilla::Role::MintingProfile::ShareDir','any version') };
 eval { $v .= pmver('Dist::Zilla::Role::PluginBundle','any version') };
 eval { $v .= pmver('English','any version') };
 eval { $v .= pmver('File::Find','any version') };

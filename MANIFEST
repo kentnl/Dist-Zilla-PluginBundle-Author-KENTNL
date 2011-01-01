@@ -1,3 +1,4 @@
+.perltidyrc
 Build.PL
 Changes
 LICENSE
@@ -6,9 +7,16 @@ META.json
 META.yml
 README
 dist.ini
+lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/KENTNL.pm
 perlcritic.rc
+share/profiles/default/profile.ini
+share/profiles/default/skel/.gitignore
+share/profiles/default/skel/.perltidyrc
+share/profiles/default/skel/Changes
+share/profiles/default/skel/perlcritic.rc
+share/profiles/default/skel/weaver.ini
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/author-critic.t
@@ -17,5 +25,4 @@ t/release-eol.t
 t/release-kwalitee.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
-t/release-portability.t
 weaver.ini
