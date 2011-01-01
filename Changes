@@ -6,6 +6,12 @@ Revision history for {{$dist->name}}
         Fix outstanding headache with my ini generator doing [Prereq] instead
         of [Prereqs]
 
+        Added a Minting Profile.
+
+          dzil new -P Author::KENTNL Some::Dist::Name
+
+        Add git_versions = 1 flag to use Git::NextVersion 
+
 0.01017322 2010-11-04 19:56:23 Pacific/Auckland
         Ramp up BuiltWith dep.
         Ramp up MetaProvides dep.
