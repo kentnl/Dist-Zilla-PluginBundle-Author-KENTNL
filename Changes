@@ -12,6 +12,8 @@ Revision history for {{$dist->name}}
 
         Add git_versions = 1 flag to use Git::NextVersion 
 
+        Drop portability tests because we now ship .perltidyrc in all dists
+
 0.01017322 2010-11-04 19:56:23 Pacific/Auckland
         Ramp up BuiltWith dep.
         Ramp up MetaProvides dep.
