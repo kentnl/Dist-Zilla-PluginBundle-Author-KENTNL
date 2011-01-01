@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
-0.01023311 2011-01-02 08:26:52 Pacific/Auckland
+0.01023311 2011-01-02 08:30:00 Pacific/Auckland
         Replace internal loader code with Class::Load.
 
         Fix outstanding headache with my ini generator doing [Prereq] instead
@@ -11,6 +11,8 @@ Revision history for Dist-Zilla-PluginBundle-KENTNL
           dzil new -P Author::KENTNL Some::Dist::Name
 
         Add git_versions = 1 flag to use Git::NextVersion 
+
+        Drop portability tests because we now ship .perltidyrc in all dists
 
 0.01017322 2010-11-04 19:56:23 Pacific/Auckland
         Ramp up BuiltWith dep.

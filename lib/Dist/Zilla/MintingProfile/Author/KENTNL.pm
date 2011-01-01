@@ -7,11 +7,14 @@ BEGIN {
 }
 
 # ABSTRACT: KENTNL's Minting Profile
+
 use Moose;
 use namespace::autoclean;
 with 'Dist::Zilla::Role::MintingProfile::ShareDir';
 
+
 __PACKAGE__->meta->make_immutable;
+no Moose;
 1;
 
 __END__
@@ -24,6 +27,10 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 =head1 VERSION
 
 version 0.01023311
+
+=head1 SYNOPSIS
+
+    dzil new -P Author::KENTNL Some::Dist::Name
 
 =head1 AUTHOR
 

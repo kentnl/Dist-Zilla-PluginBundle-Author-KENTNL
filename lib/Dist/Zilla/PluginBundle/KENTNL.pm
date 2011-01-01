@@ -176,7 +176,6 @@ sub bundle_config {
     [ 'PodSyntaxTests'       => {} ],
     [ 'ReportVersions::Tiny' => {} ],
     [ 'KwaliteeTests'        => {} ],
-    [ 'PortabilityTests'     => {} ],
     [ 'EOLTests'       => { trailing_whitespace => 1, } ],
     [ 'ExtraTests'     => {} ],
     [ 'TestRelease'    => {} ],
