@@ -42,7 +42,7 @@
             "Class::Load" : 0,
             "Dist::Zilla" : "4.101612",
             "Dist::Zilla::File::FromCode" : 0,
-            "Dist::Zilla::Plugin::AutoPrereq" : 0,
+            "Dist::Zilla::Plugin::AutoPrereqs" : 0,
             "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01035617",
             "Dist::Zilla::Plugin::CompileTests" : "1.101800",
             "Dist::Zilla::Plugin::ConfirmRelease" : 0,
@@ -53,6 +53,7 @@
             "Dist::Zilla::Plugin::GatherDir" : 0,
             "Dist::Zilla::Plugin::Git::Check" : "1.102040",
             "Dist::Zilla::Plugin::Git::CommitBuild" : "1.102040",
+            "Dist::Zilla::Plugin::Git::NextVersion" : "1.102810",
             "Dist::Zilla::Plugin::Git::Tag" : "1.102040",
             "Dist::Zilla::Plugin::GithubMeta" : "0.08",
             "Dist::Zilla::Plugin::KwaliteeTests" : "1.101420",
@@ -71,7 +72,7 @@
             "Dist::Zilla::Plugin::PodCoverageTests" : 0,
             "Dist::Zilla::Plugin::PodSyntaxTests" : 0,
             "Dist::Zilla::Plugin::PodWeaver" : "3.093321",
-            "Dist::Zilla::Plugin::PortabilityTests" : "1.101420",
+            "Dist::Zilla::Plugin::Prereqs" : 0,
             "Dist::Zilla::Plugin::PruneCruft" : 0,
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.12",
             "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.01",
@@ -106,15 +107,15 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "0.01023311"
+         "version" : "0.01023312"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "0.01023311"
+         "version" : "0.01023312"
       },
       "Dist::Zilla::PluginBundle::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/KENTNL.pm",
-         "version" : "0.01023311"
+         "version" : "0.01023312"
       }
    },
    "release_status" : "stable",
@@ -126,14 +127,14 @@
          "web" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree"
       }
    },
-   "version" : "0.01023311",
+   "version" : "0.01023312",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.17",
          "Class::Load" : "0.06",
          "Dist::Zilla" : "4.102346",
          "Dist::Zilla::File::FromCode" : "4.102346",
-         "Dist::Zilla::Plugin::AutoPrereq" : "4.102346",
+         "Dist::Zilla::Plugin::AutoPrereqs" : "4.102346",
          "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01037118",
          "Dist::Zilla::Plugin::Bootstrap::lib" : "0.01000003",
          "Dist::Zilla::Plugin::CompileTests" : "1.103030",
@@ -145,6 +146,7 @@
          "Dist::Zilla::Plugin::GatherDir" : "4.102346",
          "Dist::Zilla::Plugin::Git::Check" : "1.102810",
          "Dist::Zilla::Plugin::Git::CommitBuild" : "1.102810",
+         "Dist::Zilla::Plugin::Git::NextVersion" : "1.102810",
          "Dist::Zilla::Plugin::Git::Tag" : "1.102810",
          "Dist::Zilla::Plugin::GithubMeta" : "0.10",
          "Dist::Zilla::Plugin::KwaliteeTests" : "1.101420",
@@ -163,7 +165,7 @@
          "Dist::Zilla::Plugin::PodCoverageTests" : "4.102346",
          "Dist::Zilla::Plugin::PodSyntaxTests" : "4.102346",
          "Dist::Zilla::Plugin::PodWeaver" : "3.101641",
-         "Dist::Zilla::Plugin::PortabilityTests" : "1.101420",
+         "Dist::Zilla::Plugin::Prereqs" : "4.102346",
          "Dist::Zilla::Plugin::PruneCruft" : "4.102346",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.14",
          "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.02",
@@ -205,25 +207,9 @@
    "x_Dist_Zilla" : {
       "plugins" : [
          {
-            "class" : "Dist::Zilla::Plugin::AutoVersion::Relative",
-            "config" : {
-               "Dist::Zilla::Plugin::AutoVersion::Relative" : {
-                  "format" : "{{ sprintf('%d.%02d%04d%02d', $major, $minor, days, hours) }}",
-                  "major" : "0",
-                  "minor" : "1",
-                  "relative_to" : {
-                     "day" : "16",
-                     "hour" : "20",
-                     "minute" : 0,
-                     "month" : "5",
-                     "second" : 0,
-                     "time_zone" : "Pacific/Auckland",
-                     "year" : "2010"
-                  }
-               }
-            },
-            "name" : "@KENTNL/AutoVersion::Relative",
-            "version" : "0.01037118"
+            "class" : "Dist::Zilla::Plugin::Git::NextVersion",
+            "name" : "@KENTNL/Git::NextVersion",
+            "version" : "1.102810"
          },
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
