@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.01023312 2011-01-02 09:01:33 Pacific/Auckland
+
         Cleanup a few dependencies.
 
 0.01023311 2011-01-02 08:31:37 Pacific/Auckland
