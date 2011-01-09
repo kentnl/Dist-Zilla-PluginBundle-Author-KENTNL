@@ -1,5 +1,7 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+1.0.1     2011-01-09 23:17:10 Pacific/Auckland
+
 1.000.000 2011-01-09 23:15:06 Pacific/Auckland
 
         Switch to Git::NextVersion for good, use Gentoo Compatible
