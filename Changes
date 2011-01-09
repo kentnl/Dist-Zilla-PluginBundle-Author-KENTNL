@@ -1,5 +1,7 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
+1.001.000 2011-01-09 23:05:50 Pacific/Auckland
+
 0.01023312 2011-01-02 09:01:33 Pacific/Auckland
 
         Cleanup a few dependencies.
