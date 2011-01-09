@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+1.000.000 2011-01-09 23:15:06 Pacific/Auckland
+
         Switch to Git::NextVersion for good, use Gentoo Compatible
         version numbers.
 
