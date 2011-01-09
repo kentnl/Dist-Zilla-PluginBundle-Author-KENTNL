@@ -156,7 +156,7 @@ sub bundle_config {
     [
       _if_git_versions(
         $arg,
-        [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => 0.01000 } ],
+        [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.001.000' } ],
         [
           'AutoVersion::Relative' => {
             major     => _defined_or( $arg, version_major         => 0 ),

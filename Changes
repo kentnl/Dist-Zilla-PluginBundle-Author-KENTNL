@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        Switch to Git::NextVersion for good, use Gentoo Compatible
+        version numbers.
+
 0.01023312 2011-01-02 09:01:33 Pacific/Auckland
 
         Cleanup a few dependencies.
