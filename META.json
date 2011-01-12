@@ -33,7 +33,7 @@
             "Dist::Zilla::PluginBundle::KENTNL::Lite" : 0
          },
          "suggests" : {
-            "Dist::Zilla::PluginBundle::KENTNL" : "0.01017119"
+            "Dist::Zilla::PluginBundle::KENTNL" : "v1.0.0"
          }
       },
       "runtime" : {

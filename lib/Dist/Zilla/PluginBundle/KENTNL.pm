@@ -164,7 +164,7 @@ sub bundle_config {
         -name                               => 'BundleDevelSuggests',
         -phase                              => 'develop',
         -type                               => 'suggests',
-        'Dist::Zilla::PluginBundle::KENTNL' => 0.01017119
+        'Dist::Zilla::PluginBundle::KENTNL' => '1.0.0',
       }
     ],
 
