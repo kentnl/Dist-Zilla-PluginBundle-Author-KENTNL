@@ -151,12 +151,12 @@ x_BuiltWith:
     Test::More: 0.96
     namespace::autoclean: 0.11
   perl:
-    original: v5.12.2
+    original: v5.12.3
     qv: 1
     version:
       - 5
       - 12
-      - 2
+      - 3
   platform: linux
   uname: 'Linux 2.6.37-gentoo x86_64 GenuineIntel GNU/Linux'
 x_Dist_Zilla:
