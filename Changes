@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-KENTNL
 
-1.0.1     2011-01-13 08:02:52 Pacific/Auckland
+1.0.1     2011-01-13 08:03:19 Pacific/Auckland
 
         Fix the default version to be unpadded. Its useless with padding anyway -_-
 
