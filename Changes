@@ -4,6 +4,8 @@ Revision history for {{$dist->name}}
 
         Fix the default version to be unpadded. Its useless with padding anyway -_-
 
+        Now suggests @KENTNL 1.0.0 for Devel Suggests.
+
 1.000.000 2011-01-09 23:15:06 Pacific/Auckland
 
         Switch to Git::NextVersion for good, use Gentoo Compatible
