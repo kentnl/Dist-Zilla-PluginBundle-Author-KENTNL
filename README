@@ -25,11 +25,9 @@ METHODS
 
 NAMING SCHEME
     As I blogged about on "blog.fox.geek.nz" : Making a Minting Profile as a
-    CPANized Dist
-    <http://blog.fox.geek.nz/2011/01/making-minting-profile-as-cpanized-dist
-    .html>, this bundle advocates a new naming system for people who are
-    absolutely convinced they want their Author-Centric distribution
-    uploaded to CPAN.
+    CPANized Dist <http://bit.ly/hAwl4S>, this bundle advocates a new naming
+    system for people who are absolutely convinced they want their
+    Author-Centric distribution uploaded to CPAN.
 
     As we have seen with Dist::Zilla there have been a slew of PluginBundles
     with CPANID's in their name, to the point that there is a copious amount
@@ -70,9 +68,8 @@ NAMING SCHEME
 
     @Author::DOHERTY - Mike Doherty's, Author Bundle.
     @Author::OLIVER - Oliver Gorwits', Author Bundle.
-    "Dist::Zilla::PluginBundle::Author::" namespace
-    <http://blogs.perl.org/users/oliver_gorwits/2011/02/dist-zilla-pluginbun
-    dle-author-namespace.html> - Oliver Gorwit's blog on the subject.
+    "Dist::Zilla::PluginBundle::Author::" namespace <http://bit.ly/dIovQI> -
+    Oliver Gorwit's blog on the subject.
 
 ENVIRONMENT
     all of these have to merely exist to constitute a "true" status.
