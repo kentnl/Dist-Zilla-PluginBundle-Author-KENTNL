@@ -240,7 +240,7 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 
 =head1 NAMING SCHEME
 
-As I blogged about on L<< blog.fox.geek.nz : Making a Minting Profile as a CPANized Dist |http://blog.fox.geek.nz/2011/01/making-minting-profile-as-cpanized-dist.html >>,
+As I blogged about on L<< C<blog.fox.geek.nz> : Making a Minting Profile as a CPANized Dist |http://blog.fox.geek.nz/2011/01/making-minting-profile-as-cpanized-dist.html >>,
 this bundle advocates a new naming system for people who are absolutely convinced they want their Author-Centric distribution uploaded to CPAN.
 
 As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is a copious amount of name-space pollution
@@ -275,7 +275,7 @@ I wish to give proper repsect to the people out there already implementing this 
 
 =item L<< C<@Author::OLIVER> |Dist::Zilla::PluginBundle::Author::OLIVER >> - Oliver Gorwits', Author Bundle.
 
-=item L<< C<Dist::Zilla::PluginBundle::Author::> namespace |http://blogs.perl.org/users/oliver_gorwits/2011/02/dist-zilla-pluginbundle-author-namespace.html>> - Oliver Gorwit's blog on the subject.
+=item L<< C<Dist::Zilla::PluginBundle::Author::> namespace |http://blogs.perl.org/users/oliver_gorwits/2011/02/dist-zilla-pluginbundle-author-namespace.html >> - Oliver Gorwit's blog on the subject.
 
 =back
 

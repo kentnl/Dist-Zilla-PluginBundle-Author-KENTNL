@@ -24,7 +24,7 @@ METHODS
     satisfy that role.
 
 NAMING SCHEME
-    As I blogged about on blog.fox.geek.nz : Making a Minting Profile as a
+    As I blogged about on "blog.fox.geek.nz" : Making a Minting Profile as a
     CPANized Dist
     <http://blog.fox.geek.nz/2011/01/making-minting-profile-as-cpanized-dist
     .html>, this bundle advocates a new naming system for people who are
@@ -72,7 +72,7 @@ NAMING SCHEME
     @Author::OLIVER - Oliver Gorwits', Author Bundle.
     "Dist::Zilla::PluginBundle::Author::" namespace
     <http://blogs.perl.org/users/oliver_gorwits/2011/02/dist-zilla-pluginbun
-    dle-author-namespace.html>> - Oliver Gorwit's blog on the subject.>
+    dle-author-namespace.html> - Oliver Gorwit's blog on the subject.
 
 ENVIRONMENT
     all of these have to merely exist to constitute a "true" status.
@@ -97,11 +97,4 @@ COPYRIGHT AND LICENSE
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
-
-POD ERRORS
-    Hey! The above document had some coding errors, which are explained
-    below:
-
-    Around line 278:
-        Unterminated L< ... > sequence
 
