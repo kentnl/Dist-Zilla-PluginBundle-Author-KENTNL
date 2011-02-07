@@ -1,4 +1,8 @@
-Revision history for Dist-Zilla-PluginBundle-KENTNL
+Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
+
+1.0.2     2011-02-08 03:53:13 Pacific/Auckland
+
+        Moved to being @Author::KENTNL
 
 1.0.1     2011-01-13 08:03:19 Pacific/Auckland
 

@@ -1,9 +1,9 @@
 use strict;
 use warnings;
 
-package Dist::Zilla::PluginBundle::KENTNL;
+package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '1.0.1';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.2';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -18,6 +18,7 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 
 
+
 sub _expand {
   my ( $class, $suffix, $conf ) = @_;
   ## no critic ( RequireInterpolationOfMetachars )
@@ -26,15 +27,15 @@ sub _expand {
     if ( exists $conf->{-name} ) {
       $rename = delete $conf->{-name};
     }
-    return [ q{@KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
+    return [ q{@Author::KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
   }
   if ( exists $conf->{-name} ) {
     my $rename;
     $rename = sprintf q{%s/%s}, $suffix, ( delete $conf->{-name} );
-    return [ q{@KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+    return [ q{@Author::KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 
   }
-  return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+  return [ q{@Author::KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
 
@@ -46,7 +47,7 @@ sub _defined_or {
   if ( not( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} && defined $hash->{$field} ) ) {
     require Carp;
     ## no critic (RequireInterpolationOfMetachars)
-    Carp::carp( '[@KENTNL]' . " Warning: autofilling $field with $default " ) unless $nowarn;
+    Carp::carp( '[@Author::KENTNL]' . " Warning: autofilling $field with $default " ) unless $nowarn;
     return $default;
   }
   return $hash->{$field};
@@ -149,14 +150,14 @@ sub bundle_config {
     [ 'AutoPrereqs'           => {} ],
     [
       'Prereqs' =>
-        { -name => 'BundleDevelNeeds', -phase => 'develop', -type => 'requires', 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0 }
+        { -name => 'BundleDevelNeeds', -phase => 'develop', -type => 'requires', 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 }
     ],
     [
       'Prereqs' => {
         -name                                     => 'BundleDevelRecommends',
         -phase                                    => 'develop',
         -type                                     => 'recommends',
-        'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0.01009803
+        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0.01009803
       }
     ],
     [
@@ -164,7 +165,7 @@ sub bundle_config {
         -name                               => 'BundleDevelSuggests',
         -phase                              => 'develop',
         -type                               => 'suggests',
-        'Dist::Zilla::PluginBundle::KENTNL' => '1.0.0',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.0.0',
       }
     ],
 
@@ -211,15 +212,15 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your distributions.
+Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your distributions.
 
 =head1 VERSION
 
-version 1.0.1
+version 1.0.2
 
 =head1 SYNOPSIS
 
-    [@KENTNL]
+    [@Author::KENTNL]
     no_cpan = 1 ; skip upload to cpan and twitter.
     no_git  = 1 ; skip things that work with git.
     twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
@@ -230,6 +231,47 @@ version 1.0.1
 
 This is the plug-in bundle that KENTNL uses. It exists mostly because he is very lazy
 and wants others to be using what he's using if they want to be doing work on his modules.
+
+=head1 NAMING SCHEME
+
+As I blogged about on L<< C<blog.fox.geek.nz> : Making a Minting Profile as a CPANized Dist |http://bit.ly/hAwl4S >>,
+this bundle advocates a new naming system for people who are absolutely convinced they want their Author-Centric distribution uploaded to CPAN.
+
+As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is a copious amount of name-space pollution
+in the PluginBundle name-space, and more Author bundles than task-bundles, which was really what the name-space was designed for, and I'm petitioning you to help reduce
+this annoyance in future modules.
+
+From a CPAN testers perspective, the annoyance of lots of CPANID-dists is similar to the annoyance of the whole DPCHRIST:: subspace, and that if this pattern continues,
+it will mean for the testers who do not wish to test everyones personal modules, that they will have to work hard to avoid this. If DPCHRIST:: had used something like
+Author::DPCHRIST:: instead, I doubt so many people would be horrified by it, because you can just have a policy/rule that excludes ^Author::, and everyone else who goes
+that way can be quietly ignored.
+
+Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and so-forth, and possibly even apply special indexing restrictions
+or something so people wouldn't even have to know those modules exist on cpan!
+
+So, for the sake of cleanliness, semantics, and general global sanity, I ask you to join me with my Author:: naming policy to voluntarily segregate modules that are most
+likely of only personal use from those that have more general application.
+
+    Dist::Zilla::Plugin::Foo                    # [Foo]                 dist-zilla plugins for general use
+    Dist::Zilla::Plugin::Author::KENTNL::Foo    # [Author::KENTNL::Foo] foo that only KENTNL will probably have use for
+    Dist::Zilla::PluginBundle::Classic          # [@Classic]            A bundle that can have practical use by many
+    Dist::Zilla::PluginBundle::Author::KENTNL   # [@Author::KENTNL]     KENTNL's primary plugin bundle
+    Dist::Zilla::MintingProfile::Default        # A minting profile that is used by all
+    Dist::Zilla::MintingProfile::Author::KENTNL # A minting profile that only KENTNL will find of use.
+
+=head2 Current Proponents
+
+I wish to give proper respect to the people out there already implementing this scheme:
+
+=over 4
+
+=item L<< C<@Author::DOHERTY> |Dist::Zilla::PluginBundle::Author::DOHERTY >> - Mike Doherty's, Author Bundle.
+
+=item L<< C<@Author::OLIVER> |Dist::Zilla::PluginBundle::Author::OLIVER >> - Oliver Gorwits', Author Bundle.
+
+=item L<< C<Dist::Zilla::PluginBundle::Author::> namespace |http://bit.ly/dIovQI >> - Oliver Gorwit's blog on the subject.
+
+=back
 
 =head1 METHODS
 

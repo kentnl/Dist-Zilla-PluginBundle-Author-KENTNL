@@ -3,10 +3,10 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.0.1';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.0.2';
 }
 
-# ABSTRACT: Generate a C<dist.ini> for @KENTNL projects.
+# ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
 
 use Moose;
 
@@ -41,7 +41,7 @@ sub gather_files {
       q(; Uncomment this to bootstrap via self ),       #
       q(; [Bootstrap::lib]),                            #
       $empty,                                           #
-      '[@KENTNL]',                                      #
+      '[@Author::KENTNL]',                              #
       'git_versions      = 1',                          #
       'version_major     = 0',                          #
       'version_minor     = 1',                          #
@@ -102,11 +102,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @KENTNL projects.
+Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Author::KENTNL projects.
 
 =head1 VERSION
 
-version 1.0.1
+version 1.0.2
 
 =head1 SYNOPSIS
 
@@ -132,7 +132,7 @@ Then
   dzil new Some-Distname
   # start hacking.
 
-This sets up [@KENTNL] packages the way KENTNL likes it.
+This sets up [@Author::KENTNL] packages the way KENTNL likes it.
 
 This involves initial configuration of the parameters that get
 passed through to AutoVersion::Relative to provide the
