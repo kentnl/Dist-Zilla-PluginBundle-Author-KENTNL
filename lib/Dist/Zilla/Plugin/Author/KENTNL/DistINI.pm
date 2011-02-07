@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
-# ABSTRACT: Generate a C<dist.ini> for @KENTNL projects.
+# ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
 
 use Moose;
 
@@ -33,7 +33,7 @@ Then
   dzil new Some-Distname
   # start hacking.
 
-This sets up [@KENTNL] packages the way KENTNL likes it.
+This sets up [@Author::KENTNL] packages the way KENTNL likes it.
 
 This involves initial configuration of the parameters that get
 passed through to AutoVersion::Relative to provide the
@@ -93,7 +93,7 @@ sub gather_files {
       q(; Uncomment this to bootstrap via self ),       #
       q(; [Bootstrap::lib]),                            #
       $empty,                                           #
-      '[@KENTNL]',                                      #
+      '[@Author::KENTNL]',                              #
       'git_versions      = 1',                          #
       'version_major     = 0',                          #
       'version_minor     = 1',                          #
