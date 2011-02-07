@@ -120,11 +120,11 @@
    },
    "release_status" : "stable",
    "resources" : {
-      "homepage" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree",
+      "homepage" : "http://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/tree",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git",
-         "web" : "http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree"
+         "url" : "git://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git",
+         "web" : "http://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/tree"
       }
    },
    "version" : "1.0.2",

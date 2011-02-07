@@ -84,8 +84,8 @@ requires:
   Test::EOL: 0.9
   namespace::autoclean: 0.09
 resources:
-  homepage: http://github.com/kentfredric/dist-zilla-pluginbundle-kentnl/tree
-  repository: git://github.com/kentfredric/dist-zilla-pluginbundle-kentnl.git
+  homepage: http://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/tree
+  repository: git://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
 version: 1.0.2
 x_BuiltWith:
   modules:
