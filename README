@@ -41,7 +41,7 @@ NAMING SCHEME
     who goes that way can be quietly ignored.
 
     Then we could probably rationally add that same restriction to the irc
-    announce bots, the "recent modules" list and soforth, and possibly even
+    announce bots, the "recent modules" list and so-forth, and possibly even
     apply special indexing restrictions or something so people wouldn't even
     have to know those modules exist on cpan!
 
@@ -58,7 +58,7 @@ NAMING SCHEME
         Dist::Zilla::MintingProfile::Author::KENTNL # A minting profile that only KENTNL will find of use.
 
   Current Proponents
-    I wish to give proper repsect to the people out there already
+    I wish to give proper respect to the people out there already
     implementing this scheme:
 
     @Author::DOHERTY - Mike Doherty's, Author Bundle.

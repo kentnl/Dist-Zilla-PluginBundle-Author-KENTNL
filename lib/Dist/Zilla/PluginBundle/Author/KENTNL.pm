@@ -246,7 +246,7 @@ it will mean for the testers who do not wish to test everyones personal modules,
 Author::DPCHRIST:: instead, I doubt so many people would be horrified by it, because you can just have a policy/rule that excludes ^Author::, and everyone else who goes
 that way can be quietly ignored.
 
-Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and soforth, and possibly even apply special indexing restrictions
+Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and so-forth, and possibly even apply special indexing restrictions
 or something so people wouldn't even have to know those modules exist on cpan!
 
 So, for the sake of cleanliness, semantics, and general global sanity, I ask you to join me with my Author:: naming policy to voluntarily segregate modules that are most
@@ -261,7 +261,7 @@ likely of only personal use from those that have more general application.
 
 =head2 Current Proponents
 
-I wish to give proper repsect to the people out there already implementing this scheme:
+I wish to give proper respect to the people out there already implementing this scheme:
 
 =over 4
 
