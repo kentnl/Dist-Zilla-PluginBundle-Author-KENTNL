@@ -1,12 +1,12 @@
 NAME
-    Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your
-    distributions.
+    Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you
+    build your distributions.
 
 VERSION
-    version 1.0.1
+    version 1.0.2
 
 SYNOPSIS
-        [@KENTNL]
+        [@Author::KENTNL]
         no_cpan = 1 ; skip upload to cpan and twitter.
         no_git  = 1 ; skip things that work with git.
         twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.

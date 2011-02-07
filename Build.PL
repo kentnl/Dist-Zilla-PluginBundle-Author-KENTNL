@@ -20,10 +20,10 @@ my %module_build_args = (
   'dist_author' => [
     'Kent Fredric <kentnl@cpan.org>'
   ],
-  'dist_name' => 'Dist-Zilla-PluginBundle-KENTNL',
-  'dist_version' => '1.0.1',
+  'dist_name' => 'Dist-Zilla-PluginBundle-Author-KENTNL',
+  'dist_version' => '1.0.2',
   'license' => 'perl',
-  'module_name' => 'Dist::Zilla::PluginBundle::KENTNL',
+  'module_name' => 'Dist::Zilla::PluginBundle::Author::KENTNL',
   'recommends' => {},
   'recursive_test_files' => 1,
   'requires' => {

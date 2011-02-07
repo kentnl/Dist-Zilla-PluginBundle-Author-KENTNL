@@ -1,9 +1,9 @@
 use strict;
 use warnings;
 
-package Dist::Zilla::PluginBundle::KENTNL;
+package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::KENTNL::VERSION = '1.0.1';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.2';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -26,15 +26,15 @@ sub _expand {
     if ( exists $conf->{-name} ) {
       $rename = delete $conf->{-name};
     }
-    return [ q{@KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
+    return [ q{@Author::KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
   }
   if ( exists $conf->{-name} ) {
     my $rename;
     $rename = sprintf q{%s/%s}, $suffix, ( delete $conf->{-name} );
-    return [ q{@KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+    return [ q{@Author::KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 
   }
-  return [ q{@KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+  return [ q{@Author::KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
 
@@ -46,7 +46,7 @@ sub _defined_or {
   if ( not( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} && defined $hash->{$field} ) ) {
     require Carp;
     ## no critic (RequireInterpolationOfMetachars)
-    Carp::carp( '[@KENTNL]' . " Warning: autofilling $field with $default " ) unless $nowarn;
+    Carp::carp( '[@Author::KENTNL]' . " Warning: autofilling $field with $default " ) unless $nowarn;
     return $default;
   }
   return $hash->{$field};
@@ -149,14 +149,14 @@ sub bundle_config {
     [ 'AutoPrereqs'           => {} ],
     [
       'Prereqs' =>
-        { -name => 'BundleDevelNeeds', -phase => 'develop', -type => 'requires', 'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0 }
+        { -name => 'BundleDevelNeeds', -phase => 'develop', -type => 'requires', 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 }
     ],
     [
       'Prereqs' => {
         -name                                     => 'BundleDevelRecommends',
         -phase                                    => 'develop',
         -type                                     => 'recommends',
-        'Dist::Zilla::PluginBundle::KENTNL::Lite' => 0.01009803
+        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0.01009803
       }
     ],
     [
@@ -164,7 +164,7 @@ sub bundle_config {
         -name                               => 'BundleDevelSuggests',
         -phase                              => 'develop',
         -type                               => 'suggests',
-        'Dist::Zilla::PluginBundle::KENTNL' => '1.0.0',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.0.0',
       }
     ],
 
@@ -211,15 +211,15 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::PluginBundle::KENTNL - BeLike::KENTNL when you build your distributions.
+Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your distributions.
 
 =head1 VERSION
 
-version 1.0.1
+version 1.0.2
 
 =head1 SYNOPSIS
 
-    [@KENTNL]
+    [@Author::KENTNL]
     no_cpan = 1 ; skip upload to cpan and twitter.
     no_git  = 1 ; skip things that work with git.
     twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
