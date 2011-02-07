@@ -227,6 +227,11 @@ version 1.0.2
     release_fail = 1 ; asplode!. ( non-twitter only )
     git_versions = 1 ;  use git::nextversion for versioning
 
+=head1 DESCRIPTION
+
+This is the plug-in bundle that KENTNL uses. It exists mostly because he is very lazy
+and wants others to be using what he's using if they want to be doing work on his modules.
+
 =head1 NAMING SCHEME
 
 As I blogged about on L<< C<blog.fox.geek.nz> : Making a Minting Profile as a CPANized Dist |http://bit.ly/hAwl4S >>,
@@ -267,11 +272,6 @@ I wish to give proper repsect to the people out there already implementing this 
 =item L<< C<Dist::Zilla::PluginBundle::Author::> namespace |http://bit.ly/dIovQI >> - Oliver Gorwit's blog on the subject.
 
 =back
-
-=head1 DESCRIPTION
-
-This is the plug-in bundle that KENTNL uses. It exists mostly because he is very lazy
-and wants others to be using what he's using if they want to be doing work on his modules.
 
 =head1 METHODS
 

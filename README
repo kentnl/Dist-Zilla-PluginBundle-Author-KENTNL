@@ -13,6 +13,11 @@ SYNOPSIS
         release_fail = 1 ; asplode!. ( non-twitter only )
         git_versions = 1 ;  use git::nextversion for versioning
 
+DESCRIPTION
+    This is the plug-in bundle that KENTNL uses. It exists mostly because he
+    is very lazy and wants others to be using what he's using if they want
+    to be doing work on his modules.
+
 NAMING SCHEME
     As I blogged about on "blog.fox.geek.nz" : Making a Minting Profile as a
     CPANized Dist <http://bit.ly/hAwl4S>, this bundle advocates a new naming
@@ -60,11 +65,6 @@ NAMING SCHEME
     @Author::OLIVER - Oliver Gorwits', Author Bundle.
     "Dist::Zilla::PluginBundle::Author::" namespace <http://bit.ly/dIovQI> -
     Oliver Gorwit's blog on the subject.
-
-DESCRIPTION
-    This is the plug-in bundle that KENTNL uses. It exists mostly because he
-    is very lazy and wants others to be using what he's using if they want
-    to be doing work on his modules.
 
 METHODS
   bundle_config
