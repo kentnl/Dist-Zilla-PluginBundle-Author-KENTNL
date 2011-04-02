@@ -1,6 +1,6 @@
-Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
+Revision history for {{$dist->name}}
 
-1.0.3     2011-04-02T18:38:01Z
+{{$NEXT}} 
  [Dependencies]
  - Added Dist::Zilla::Plugin::CPANChangesTests
 
