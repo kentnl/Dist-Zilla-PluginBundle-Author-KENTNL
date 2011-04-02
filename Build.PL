@@ -33,6 +33,7 @@ my %module_build_args = (
     'Dist::Zilla::File::FromCode' => '0',
     'Dist::Zilla::Plugin::AutoPrereqs' => '0',
     'Dist::Zilla::Plugin::AutoVersion::Relative' => '0.01035617',
+    'Dist::Zilla::Plugin::CPANChangesTests' => '0',
     'Dist::Zilla::Plugin::CompileTests' => '1.101800',
     'Dist::Zilla::Plugin::ConfirmRelease' => '0',
     'Dist::Zilla::Plugin::CriticTests' => '1.102280',

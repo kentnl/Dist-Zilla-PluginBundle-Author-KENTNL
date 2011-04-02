@@ -44,6 +44,7 @@
             "Dist::Zilla::File::FromCode" : 0,
             "Dist::Zilla::Plugin::AutoPrereqs" : 0,
             "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01035617",
+            "Dist::Zilla::Plugin::CPANChangesTests" : 0,
             "Dist::Zilla::Plugin::CompileTests" : "1.101800",
             "Dist::Zilla::Plugin::ConfirmRelease" : 0,
             "Dist::Zilla::Plugin::CriticTests" : "1.102280",
@@ -137,6 +138,7 @@
          "Dist::Zilla::Plugin::AutoPrereqs" : "4.200004",
          "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01037118",
          "Dist::Zilla::Plugin::Bootstrap::lib" : "0.01000003",
+         "Dist::Zilla::Plugin::CPANChangesTests" : "1.001",
          "Dist::Zilla::Plugin::CompileTests" : "1.110870",
          "Dist::Zilla::Plugin::ConfirmRelease" : "4.200004",
          "Dist::Zilla::Plugin::CriticTests" : "1.102280",
@@ -339,6 +341,11 @@
             },
             "name" : "@Author::KENTNL/MetaData::BuiltWith",
             "version" : "0.01018204"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::CPANChangesTests",
+            "name" : "@Author::KENTNL/CPANChangesTests",
+            "version" : "1.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::CompileTests",
