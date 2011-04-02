@@ -188,7 +188,7 @@ sub bundle_config {
       [
         _release_fail($arg),
         _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
-        [ 'NextRelease' => { format => q[%-9v %{yyyy-MM-dd'T'HH:mm:ssZ}d ] } ],
+        [ 'NextRelease' => { time_zone => 'UTC', format => q[%-9v %{yyyy-MM-dd'T'HH:mm:ss}d+00:00] } ],
         _only_git( $arg, [ [ 'Git::Tag', 'tag_master' ] => { tag_format => '%v-source' } ] ),
         _only_git( $arg, [ 'Git::Commit' => {} ] ),
         _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ] ),

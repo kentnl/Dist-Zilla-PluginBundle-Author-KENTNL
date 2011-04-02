@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-#
+1.0.3     2011-04-02T16:35:15+00:00
 
        [Features]
        - Now generate versions in W3CDTF form for compatibility with CPAN Changes.
