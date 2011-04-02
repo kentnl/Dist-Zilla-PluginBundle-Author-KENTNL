@@ -63,24 +63,44 @@ Revision history for {{$dist->name}}
  - Internal Loading code replaced with Class::Load.
 
 0.01017322 2010-11-04T06:56:23Z
- - Ramp up BuiltWith dep.
- - Ramp up MetaProvides dep.
+ [Dependencies]
+ - Dist::Zilla::Plugin::MetaData::BuiltWith : 0.01014716 => 0.01005122
+ - Dist::Zilla::Plugin::MetaProvides : 1.11034201 => 1.12044518
+ - Dist::Zilla::Plugin::MetaProvides::Package : 1.11044404 => 1.11034304
 
 0.01017122 2010-11-02T06:00:35Z
- - Inject Develop Needs/Suggests/Recommends for @KENTNL
+ [Features]
+ - Injects PluginBundle dependencies and suggestions for all modules built
+   with this as "Develop" time requirements.
 
 0.01017119 2010-11-02T03:50:49Z
- - Replace AutoPreReq with AutoPreReqs
- - Replace Prereq with PreReqs
+ [Internals]
+ - Use AutoPrereqs instead AutoPrereq in the Bundle.
+ - Use Prereqs instead of Prereq in the Bundle.
 
 0.01010423 2010-08-28T07:47:18Z
- - Custom DistINI now injects [Bootstrap::lib] instead of [=inc::lib]
- - Added Bootstrap::lib into DevelopRequires
+ [Dependencies::Development]
+ - Boostrap::lib now required for Development.
+
+ [Features]
+ - Author::KENTNL::DistINI injects "Bootstrap::lib" instead of "=inc::lib".
 
 0.01009310 2010-08-16T18:13:54Z
- - Dep latest CriticTests.
- - use upcomming Bootstrap::lib instead of this [=inc::lib] sillyness.
- - Cleaned a lot of redundant files.
+ [Dependencies]
+ - Now Depends on Dist::Zilla::Plugin::CriticTests 1.102280
+
+ [Dependencies::Build]
+ - English.pm now needed to Build/Test.
+ - File::Spec no longer needed.
+ - FindBin no longer needed.
+
+ [Packaging]
+ - Now uses Bootstrap::lib during develop time instead of bundling an inc::
+   file in every dist.
+ - inc:: now cleaned out as a result.
+ - perlcriticrc moved to perlcritic.rc as a result of using CriticTests
+   instead of our own shipped tests.
+ - Removed redundant noeol.t which existed purely as a temporary solution.
 
 0.01008321 2010-08-07T05:56:23Z
  - Dep latest Autoversion::Relative, solve Moose Deprecation problems.
