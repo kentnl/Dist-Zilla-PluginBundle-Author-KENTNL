@@ -1,141 +1,147 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies]
+ - Added Dist::Zilla::Plugin::CPANChangesTests
 
-       [Features]
-       - Now generate versions in W3CDTF form for compatibility with CPAN Changes.
-       - Add CPANChangesTests to all generated dists.
+ [Features]
+ - Now generate versions in W3CDTF form for compatibility with CPAN
+   Changes.
+ - Add CPANChangesTests to all generated dists.
 
-       [Dependencies]
-       - Added Dist::Zilla::Plugin::CPANChangesTests
+ [Packaging]
+ - Reworked Changes file to be closer to CPAN::Changes spec.
 
-       [Packaging]
-       - Reworked Changes file to be closer to CPAN::Changes spec.
+1.0.2 2011-02-07T14:53:13Z
+ [Documentation]
+ - Added a rant section on the Author:: scheme.
+ - Cite other authors using the Author:: scheme.
 
-1.0.2     2011-02-08 03:53:13 Pacific/Auckland
+ [Packaging]
+ - Moved to being @Author::KENTNL
 
-        Moved to being @Author::KENTNL
+1.0.1 2011-01-12T19:03:19Z
+ [Dependencies]
+ - Now suggests @KENTNL 1.0.0 for Devel Suggests.
 
-1.0.1     2011-01-13 08:03:19 Pacific/Auckland
+ [Packaging]
+ - Fix the default version to be unpadded. Its useless with padding anyway.
 
-        Fix the default version to be unpadded. Its useless with padding anyway -_-
+1.000.000 2011-01-09T10:15:06Z
+ [Features]
+ - Initial version on new dists is now 0.1.0 instead of 0.01000
 
-        Now suggests @KENTNL 1.0.0 for Devel Suggests.
+ [Packaging]
+ - Migrate to Gentoo style version numbers.
 
-1.000.000 2011-01-09 23:15:06 Pacific/Auckland
+0.01023312 2011-01-01T20:01:33Z
+ [Dependencies]
+ - Use Dist::Zilla::Plugin::AutoPrereqs instead of ::AutoPrereq
+ - Add Git::NextVersion 1.102810
+ - Drop portability tests.
+ - Add ::Prereqs
 
-        Switch to Git::NextVersion for good, use Gentoo Compatible
-        version numbers.
+0.01023311 2011-01-01T19:31:37Z
+ [BugFixes]
+ - Ini generation previously produced "Prereq" instead of the now-standard
+   "Prereqs". This is now fixed.
 
-0.01023312 2011-01-02 09:01:33 Pacific/Auckland
+ [Dependencies]
+ - Dropped Dist::Zilla::Plugin::PortabilityTests.
+ - Added Class::Load
 
-        Cleanup a few dependencies.
+ [Features]
+ - Ships now with minting profile 'Author::KENTNL'. New dists can be minted
+   via "dzil new -P Author::KENTNL Some::Dist::Name". This profile is
+   shipped in the ShareDir for this module name.
+ - Consuming dists can now set 'git_versions = 1' as a flag to this plugin
+   to use Git::NextVersion instead of AutoVersion::Relative.
+ - Now ship .perltidyrc files with all dists by adding an exclusion to
+   PruneCruft/GatherDir. Have to drop portability tests as a result.
 
-0.01023311 2011-01-02 08:31:37 Pacific/Auckland
-        Replace internal loader code with Class::Load.
+ [Internals]
+ - Internal Loading code replaced with Class::Load.
 
-        Fix outstanding headache with my ini generator doing [Prereq] instead
-        of [Prereqs]
+0.01017322 2010-11-04T06:56:23Z
+ - Ramp up BuiltWith dep.
+ - Ramp up MetaProvides dep.
 
-        Added a Minting Profile.
+0.01017122 2010-11-02T06:00:35Z
+ - Inject Develop Needs/Suggests/Recommends for @KENTNL
 
-          dzil new -P Author::KENTNL Some::Dist::Name
+0.01017119 2010-11-02T03:50:49Z
+ - Replace AutoPreReq with AutoPreReqs
+ - Replace Prereq with PreReqs
 
-        Add git_versions = 1 flag to use Git::NextVersion 
+0.01010423 2010-08-28T07:47:18Z
+ - Custom DistINI now injects [Bootstrap::lib] instead of [=inc::lib]
+ - Added Bootstrap::lib into DevelopRequires
 
-        Drop portability tests because we now ship .perltidyrc in all dists
+0.01009310 2010-08-16T18:13:54Z
+ - Dep latest CriticTests.
+ - use upcomming Bootstrap::lib instead of this [=inc::lib] sillyness.
+ - Cleaned a lot of redundant files.
 
-0.01017322 2010-11-04 19:56:23 Pacific/Auckland
-        Ramp up BuiltWith dep.
-        Ramp up MetaProvides dep.
+0.01008321 2010-08-07T05:56:23Z
+ - Dep latest Autoversion::Relative, solve Moose Deprecation problems.
+ - Tweak DistINI generator to stuff in default hash_tags for twitter.
 
-0.01017122 2010-11-02 19:00:35 Pacific/Auckland
-        Inject Develop Needs/Suggests/Recommends for @KENTNL
+0.01007922 2010-08-03T06:25:33Z
+ - Dep latest. Modifiy to use new BuiltWith features.
 
-0.01017119 2010-11-02 16:50:49 Pacific/Auckland
-        Replace AutoPreReq with AutoPreReqs
-        Replace Prereq with PreReqs
+0.01007006 2010-07-24T14:40:46Z
+ - Ramp up deps versions.
+ - Fix author test sillyness.
+ - Add hash_tags for twitter (and tuneables)
 
-0.01010423 2010-08-28 19:47:18 Pacific/Auckland
-        Custom DistINI now injects [Bootstrap::lib] instead of [=inc::lib]
-        Added Bootstrap::lib into DevelopRequires
+0.01006912 2010-07-23T20:56:10Z
+ - Bumping CompileTests and Git depends.
+ - Adding CommitBuild behaviour.
+ - Tidied Docs up a little.
 
-0.01009310 2010-08-17 06:13:54 Pacific/Auckland
-        Dep latest CriticTests.
-        use upcomming Bootstrap::lib instead of this [=inc::lib] sillyness.
-        Cleaned a lot of redundant files.
+0.01002610 2010-06-11T18:44:05Z
+ - Dropped "Repository" in favour of "GithubMeta"
+ - Use MetaData::BuiltWith.
+ - Bumped Test::EOL.
 
-0.01008321 2010-08-07 17:56:23 Pacific/Auckland
-        Dep latest Autoversion::Relative, solve Moose Deprecation problems.
-        Tweak DistINI generator to stuff in default hash_tags for twitter.
+0.01002504 2010-06-10T12:10:51Z
+ - Added Dist::Zilla::Plugin::Author::KENTNL::DistINI.
+ - Now I can just 'dzil new Module-Name' and start hacking =).
 
-0.01007922 2010-08-03 18:25:33 Pacific/Auckland
-        Dep latest. Modifiy to use new BuiltWith features.
+0.01002419 2010-06-10T03:38:51Z
+ - Add Test::EOL dependencies.
+ - This release tests my hacks to Dist::Zilla in the eol department.
 
-0.01007006 2010-07-25 02:40:46 Pacific/Auckland
-        Ramp up deps versions.
-        Fix author test sillyness.
-        Add hash_tags for twitter (and tuneables)
+0.01002321 2010-06-09T05:13:23Z
+ - Add hard deps on Net::SSLeay and IO::Socket::SSL. Net::Twitter does not
+   work without these, and they work when force-installed on  win32.
+ - This release is also intending to test my patched version of
+   Dist::Zilla.
 
-0.01006912 2010-07-24 08:56:10 Pacific/Auckland
+0.01002309 2010-06-08T17:47:53Z
+ - Upgrade to DZIL 4.
+ - Upgrade deps on ReadmeFromPod ( win32 )
+ - Add report-versions.
+ - Replace Kwalitee Tests with Plugin.
+ - Add portability tests
+ - Dep on other requirements for tests.
+ - fix @inc for Dzil 4.
+ - add 'notwitter' flag.
 
-        Bumping CompileTests and Git depends.
-        Adding CommitBuild behaviour.
-        Tidied Docs up a little.
+0.01001714 2010-06-02T22:11:42Z
+ - A little better documentation. Nobody else should care, but I'm likely
+   to forget what my own code does.
+ - More of my fail. Tweaking so I can  KENTNL_TWITTER_ONLY=1 dzil release
+   and get a dumb no-git no-cpan twitter release.
 
-0.01002610 2010-06-12 06:44:05 Pacific/Auckland
-        Dropped "Repository" in favour of "GithubMeta"
-        Use MetaData::BuiltWith.
-        Bumped Test::EOL.
+0.01001713 2010-06-02T21:04:31Z
+ - Re-attempted release of 0.01001712  except with a (hopefully) working
+   .netrc so  the twitter thing Actually Works(TM).
 
-0.01002504 2010-06-11 00:10:51 Pacific/Auckland
+0.01001712 2010-06-02T20:54:05Z
+ - Added Dist::Zilla::Plugin::Twitter to the chain.
 
-        Added Dist::Zilla::Plugin::Author::KENTNL::DistINI.
-        Now I can just 'dzil new Module-Name' and start hacking =).
+0.01000600 2010-05-22T08:33:14Z
+ - First version.
 
-0.01002419 2010-06-10 15:38:51 Pacific/Auckland
-        Add Test::EOL dependencies.
-        This release tests my hacks to Dist::Zilla in the eol department.
-
-0.01002321 2010-06-09 17:13:23 Pacific/Auckland
-
-        Add hard deps on Net::SSLeay and
-          IO::Socket::SSL. Net::Twitter does not work
-          without these, and they work when force-installed on 
-          win32.
-        This release is also intending to test my patched version
-          of Dist::Zilla.
-
-0.01002309 2010-06-09 05:47:53 Pacific/Auckland
-
-        Upgrade to DZIL 4. 
-        Upgrade deps on ReadmeFromPod ( win32 )
-        Add report-versions. 
-        Replace Kwalitee Tests with Plugin.
-        Add portability tests
-        Dep on other requirements for tests.
-        fix @inc for Dzil 4.
-        add 'notwitter' flag.
-
-0.01001714 2010-06-03 10:11:42 Pacific/Auckland
-
-        A little better documentation. Nobody else
-        should care, but I'm likely to forget what my own code does.
-
-        More of my fail. Tweaking so I can 
-        KENTNL_TWITTER_ONLY=1 dzil release 
-        and get a dumb no-git no-cpan twitter release.
-
-0.01001713 2010-06-03 09:04:31 Pacific/Auckland
-
-        Re-attempted release of 0.01001712 
-        except with a (hopefully) working .netrc so 
-        the twitter thing Actually Works(TM).
-
-0.01001712 2010-06-03 08:54:05 Pacific/Auckland
-
-        Added Dist::Zilla::Plugin::Twitter to the chain.
-
-0.01000600 2010-05-22 20:33:14 Pacific/Auckland
-          First version.
 
