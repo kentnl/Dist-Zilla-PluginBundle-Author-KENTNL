@@ -7,15 +7,16 @@ use warnings;
 use DateTime::Format::Strptime;
 
 my $strp = DateTime::Format::Strptime->new(
-  pattern => '%Y-%m-%d %H:%M:%S',
+  pattern   => '%Y-%m-%d %H:%M:%S',
   time_zone => 'Pacific/Auckland',
 );
-while(<>){
-  if( $_ =~ qr{(^[\d.]+\s+)(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) Pacific/Auckland} ){
+while (<>) {
+  if ( $_ =~ qr{(^[\d.]+\s+)(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) Pacific/Auckland} ) {
     my $prelude = $1;
-    my $date = $2;
+    my $date    = $2;
     print $prelude, $strp->parse_datetime($date)->set_time_zone('UTC'), "Z\n";
-  } else {
+  }
+  else {
     print $_;
   }
 }
