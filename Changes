@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.3     2011-04-03T00:53:36Z
+1.0.3     2011-04-03T00:56:48Z
  [Dependencies]
  - Added Dist::Zilla::Plugin::CPANChangesTests
 
@@ -10,7 +10,8 @@ Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
  - Add CPANChangesTests to all generated dists.
 
  [Packaging]
- - Reworked Changes file to be closer to CPAN::Changes spec.
+ - Reworked Changes file to be closer to CPAN::Changes spec, as well as to
+   be more informative.
 
 1.0.2 2011-02-07T14:53:13Z
  [Documentation]
