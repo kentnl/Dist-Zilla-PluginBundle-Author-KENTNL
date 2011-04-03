@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.0.4 2011-04-03T12:08:53Z
  [Dependencies]
  - Moved dependency on CompileTests plugin from 1.101800 to 1.110930 to
    avoid rt#67183
