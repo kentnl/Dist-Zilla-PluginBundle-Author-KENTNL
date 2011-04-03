@@ -20,13 +20,13 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: v1.0.3
+    version: v1.0.4
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: v1.0.3
+    version: v1.0.4
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: v1.0.3
+    version: v1.0.4
 requires:
   Carp: 0
   Class::Load: 0
@@ -35,7 +35,7 @@ requires:
   Dist::Zilla::Plugin::AutoPrereqs: 0
   Dist::Zilla::Plugin::AutoVersion::Relative: 0.01035617
   Dist::Zilla::Plugin::CPANChangesTests: 0
-  Dist::Zilla::Plugin::CompileTests: 1.101800
+  Dist::Zilla::Plugin::CompileTests: 1.110930
   Dist::Zilla::Plugin::ConfirmRelease: 0
   Dist::Zilla::Plugin::CriticTests: 1.102280
   Dist::Zilla::Plugin::EOLTests: 0.02
@@ -87,7 +87,7 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/tree
   repository: git://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.0.3
+version: 1.0.4
 x_BuiltWith:
   modules:
     Carp: 1.17
@@ -98,7 +98,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::AutoVersion::Relative: 0.01037118
     Dist::Zilla::Plugin::Bootstrap::lib: 0.01000003
     Dist::Zilla::Plugin::CPANChangesTests: 1.001
-    Dist::Zilla::Plugin::CompileTests: 1.110870
+    Dist::Zilla::Plugin::CompileTests: 1.110930
     Dist::Zilla::Plugin::ConfirmRelease: 4.200004
     Dist::Zilla::Plugin::CriticTests: 1.102280
     Dist::Zilla::Plugin::EOLTests: 0.02
@@ -274,7 +274,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::CompileTests
       name: '@Author::KENTNL/CompileTests'
-      version: 1.110870
+      version: 1.110930
     -
       class: Dist::Zilla::Plugin::CriticTests
       name: '@Author::KENTNL/CriticTests'

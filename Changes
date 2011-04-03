@@ -1,6 +1,19 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.3     2011-04-03T01:00:33Z
+1.0.4 2011-04-03T12:08:53Z
+ [Dependencies]
+ - Moved dependency on CompileTests plugin from 1.101800 to 1.110930 to
+   avoid rt#67183
+
+ [Features]
+ - Removed extra whitespace padding on injected release stamp lines. This
+   results in the generated file being the same as a parsed and
+   re-serialized version of the same file as per how CPAN::Changes sees it.
+
+ [Packaging]
+ - Rebuilt with rt#67183 test annoyance solved.
+
+1.0.3 2011-04-03T01:00:33Z
  [Dependencies]
  - Added Dist::Zilla::Plugin::CPANChangesTests
 
@@ -264,5 +277,4 @@ Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
 0.01000600 2010-05-22T08:33:14Z
  - First version.
-
 
