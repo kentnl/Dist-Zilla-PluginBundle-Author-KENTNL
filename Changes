@@ -1,6 +1,6 @@
 Revision history for {{$dist->name}}
 
-{{$NEXT}}
+{{$NEXT}} 
  [Dependencies]
  - Added Dist::Zilla::Plugin::CPANChangesTests
 
@@ -103,16 +103,45 @@ Revision history for {{$dist->name}}
  - Removed redundant noeol.t which existed purely as a temporary solution.
 
 0.01008321 2010-08-07T05:56:23Z
- - Dep latest Autoversion::Relative, solve Moose Deprecation problems.
- - Tweak DistINI generator to stuff in default hash_tags for twitter.
+ [Dependencies]
+ - Autoversion::Relative moves from 0.01034313 to 0.01035617 to solve Moose
+   Deprecation problems.
+
+ [Features]
+ - Author::KENTNL::DistINI generation now inserts in a default 'hash_tags='
+   for twitter.
 
 0.01007922 2010-08-03T06:25:33Z
- - Dep latest. Modifiy to use new BuiltWith features.
+ [Dependencies]
+ - Adds Plugins to dependencies: AutoPrereq, ConfirmRelease, ExtraTests,
+   GatherDir, Git::Check, Git::CommitBuild, Git::Tag, License, Manifest,
+   MetaConfig, MetaJSON, MetaTests, MetaYAML, ModuleBuild, PkgVersion,
+   PodCoverageTests, PodSyntaxTests, PruneCruft, TestRelease, UploadToCPAN.
+ - Depends on AutoVersion::Relative moves from 0.01006104 to 0.01034313
+ - Depends on MetaData::BuiltWith moves from 0.01000022 to 0.01005122 for
+   its new features.
+ - Depends on MetaProvides moves from 1.11 to 1.11034201
+ - Depends on MetaProvides::Package moves from 1.11 to 1.11034304
+ - Depends on MooseX::Has::Sugar moves from 0.05 to 0.05044
+ - Depends on Test::EOL moves from 0.8 to 0.9
+
+ [Features]
+ - Uses new features in MetaData::BuiltWith to display a customised result
+   from uname
 
 0.01007006 2010-07-24T14:40:46Z
- - Ramp up deps versions.
- - Fix author test sillyness.
- - Add hash_tags for twitter (and tuneables)
+ [Dependencies]
+ - Test::Perl::Critic no longer a mandatory dependency for testing.
+   Author/Release testing only.
+ - Dependency on Dist::Zilla::Plugin::MetaProvides moves from 1.10027518 to
+   1.11 for the new "Split" dependencies.
+ - Adds Dependency on Dist::Zilla::Plugin::MetaProvides::Package 1.11 for
+   new Split dependencies.
+ - Dependency on MooseX::Has::Sugar moves from 0.0405 to 0.05
+
+ [Features]
+ - Consumer can now specify hash tags to append to the tweeted release
+   notice via 'hash_tags'
 
 0.01006912 2010-07-23T20:56:10Z
  - Bumping CompileTests and Git depends.
