@@ -4,12 +4,14 @@ Revision history for {{$dist->name}}
  [Features]
  - Can now pass 'auto_prereqs_skip' instead of having to filter the bundle
    and mangle things.
+ - Newly Minted Changes file is more formal and CPAN::Changes-like.
 
  [Packaging]
  - Now comes with utils/zuluize.pl to translate Dist::Zilla style
    datestamps to W3CDTF while retaining accuracy.
  - Now comes with utils/normalize.pl to run a Changes file through
    CPAN::Changes and normalize the output.
+ - All code run through Perl::Tidy.
 
 1.0.4 2011-04-03T12:08:53Z
  [Dependencies]

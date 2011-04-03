@@ -1,6 +1,5 @@
 Release history for {{ $dist->name }}
 
 {{ '{{$NEXT}}' }}
-
-        First version, released on an unsuspecting world.
+ - First version.
 

@@ -215,7 +215,7 @@ sub bundle_config {
     ],
     [ 'GatherDir'  => { include_dotfiles => 1 } ],
     [ 'MetaConfig' => {} ],
-    [ 'PruneCruft' => { except => '^.perltidyrc' } ],
+    [ 'PruneCruft' => { except           => '^.perltidyrc' } ],
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'License'               => {} ],
     [ 'PkgVersion'            => {} ],
@@ -227,24 +227,28 @@ sub bundle_config {
     [ 'ReadmeFromPod'         => {} ],
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
-    [ 'AutoPrereqs'           => { skip => _defined_or( $arg, auto_prereqs_skip => q{}, 1 ) }  ],
+    [ 'AutoPrereqs'           => { skip => _defined_or( $arg, auto_prereqs_skip => q{}, 1 ) } ],
     [
-      'Prereqs' =>
-        { -name => 'BundleDevelNeeds', -phase => 'develop', -type => 'requires', 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 }
+      'Prereqs' => {
+        -name                                             => 'BundleDevelNeeds',
+        -phase                                            => 'develop',
+        -type                                             => 'requires',
+        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0
+      }
     ],
     [
       'Prereqs' => {
-        -name                                     => 'BundleDevelRecommends',
-        -phase                                    => 'develop',
-        -type                                     => 'recommends',
+        -name                                             => 'BundleDevelRecommends',
+        -phase                                            => 'develop',
+        -type                                             => 'recommends',
         'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0.01009803
       }
     ],
     [
       'Prereqs' => {
-        -name                               => 'BundleDevelSuggests',
-        -phase                              => 'develop',
-        -type                               => 'suggests',
+        -name                                       => 'BundleDevelSuggests',
+        -phase                                      => 'develop',
+        -type                                       => 'suggests',
         'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.0.0',
       }
     ],
