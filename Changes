@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.0.3     2011-04-03T01:00:33Z
  [Dependencies]
  - Added Dist::Zilla::Plugin::CPANChangesTests
 
