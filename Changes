@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.0.5 2011-04-03T14:57:02Z
+ [Features]
+ - Can now pass 'auto_prereqs_skip' instead of having to filter the bundle and mangle things.
+
 1.0.4 2011-04-03T12:08:53Z
  [Dependencies]
  - Moved dependency on CompileTests plugin from 1.101800 to 1.110930 to
