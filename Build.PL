@@ -8,7 +8,6 @@ use Module::Build 0.3601;
 my %module_build_args = (
   'build_requires' => {
     'English' => '0',
-    'File::Find' => '0',
     'File::Temp' => '0',
     'Module::Build' => '0.3601',
     'Test::More' => '0.88'
