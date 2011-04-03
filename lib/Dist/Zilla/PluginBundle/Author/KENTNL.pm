@@ -227,7 +227,7 @@ sub bundle_config {
     [ 'ReadmeFromPod'         => {} ],
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
-    [ 'AutoPrereqs'           => { skip => _defined_or( $arg, auto_prereqs_skip => '', 1 ) }  ],
+    [ 'AutoPrereqs'           => { skip => _defined_or( $arg, auto_prereqs_skip => q{}, 1 ) }  ],
     [
       'Prereqs' =>
         { -name => 'BundleDevelNeeds', -phase => 'develop', -type => 'requires', 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 }
