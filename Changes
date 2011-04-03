@@ -10,7 +10,8 @@ Revision history for {{$dist->name}}
  - Add CPANChangesTests to all generated dists.
 
  [Packaging]
- - Reworked Changes file to be closer to CPAN::Changes spec.
+ - Reworked Changes file to be closer to CPAN::Changes spec, as well as to
+   be more informative.
 
 1.0.2 2011-02-07T14:53:13Z
  [Documentation]
