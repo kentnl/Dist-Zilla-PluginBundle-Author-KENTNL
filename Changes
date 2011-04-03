@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.4 2011-04-03T12:06:54Z
+1.0.4 2011-04-03T12:07:42Z
  [Dependencies]
  - Moved dependency on CompileTests plugin from 1.101800 to 1.110930 to
    avoid rt#67183
