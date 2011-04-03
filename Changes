@@ -1,6 +1,11 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies]
+ - Moved dependency on CompileTests plugin from 1.101800 to 1.110930 to avoid rt#67183
+
+ [Packaging]
+ - Rebuilt with rt#67183 test annoyance solved.
 
 1.0.3     2011-04-03T01:00:33Z
  [Dependencies]
