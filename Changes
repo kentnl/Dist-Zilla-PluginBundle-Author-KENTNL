@@ -1,8 +1,15 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.5 2011-04-03T14:58:53Z
+1.0.5 2011-04-03T15:11:44Z
  [Features]
- - Can now pass 'auto_prereqs_skip' instead of having to filter the bundle and mangle things.
+ - Can now pass 'auto_prereqs_skip' instead of having to filter the bundle
+   and mangle things.
+
+ [Packaging]
+ - Now comes with utils/zuluize.pl to translate Dist::Zilla style
+   datestamps to W3CDTF while retaining accuracy.
+ - Now comes with utils/normalize.pl to run a Changes file through
+   CPAN::Changes and normalize the output.
 
 1.0.4 2011-04-03T12:08:53Z
  [Dependencies]
