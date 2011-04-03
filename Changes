@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.5 2011-04-03T15:21:27Z
+1.0.5 2011-04-03T15:21:54Z
  [Features]
  - Can now pass 'auto_prereqs_skip' instead of having to filter the bundle
    and mangle things.
