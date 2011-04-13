@@ -11,7 +11,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110910'
+generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110930'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -20,13 +20,13 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: v1.0.5
+    version: v1.0.6
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: v1.0.5
+    version: v1.0.6
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: v1.0.5
+    version: v1.0.6
 requires:
   Carp: 0
   Class::Load: 0
@@ -87,7 +87,7 @@ requires:
 resources:
   homepage: http://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/tree
   repository: git://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.0.5
+version: 1.0.6
 x_BuiltWith:
   modules:
     Carp: 1.17
@@ -95,9 +95,9 @@ x_BuiltWith:
     Dist::Zilla: 4.200004
     Dist::Zilla::File::FromCode: 4.200004
     Dist::Zilla::Plugin::AutoPrereqs: 4.200004
-    Dist::Zilla::Plugin::AutoVersion::Relative: 0.01037118
-    Dist::Zilla::Plugin::Bootstrap::lib: 0.01000003
-    Dist::Zilla::Plugin::CPANChangesTests: 1.001
+    Dist::Zilla::Plugin::AutoVersion::Relative: 0.01060309
+    Dist::Zilla::Plugin::Bootstrap::lib: 0.01023600
+    Dist::Zilla::Plugin::CPANChangesTests: 1.002
     Dist::Zilla::Plugin::CompileTests: 1.110930
     Dist::Zilla::Plugin::ConfirmRelease: 4.200004
     Dist::Zilla::Plugin::CriticTests: 1.102280
@@ -117,8 +117,8 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaConfig: 4.200004
     Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01018204
     Dist::Zilla::Plugin::MetaJSON: 4.200004
-    Dist::Zilla::Plugin::MetaProvides: 1.12044806
-    Dist::Zilla::Plugin::MetaProvides::Package: 1.12044908
+    Dist::Zilla::Plugin::MetaProvides: 1.12060501
+    Dist::Zilla::Plugin::MetaProvides::Package: 1.12060501
     Dist::Zilla::Plugin::MetaTests: 4.200004
     Dist::Zilla::Plugin::MetaYAML: 4.200004
     Dist::Zilla::Plugin::ModuleBuild: 4.200004
@@ -141,12 +141,12 @@ x_BuiltWith:
     File::Temp: 0.22
     IO::Socket::SSL: 1.39
     Module::Build: 0.38
-    Moose: 1.9905
+    Moose: 2
     Moose::Autobox: 0.11
-    MooseX::Has::Sugar: 0.05055616
+    MooseX::Has::Sugar: 0.05070419
     MooseX::Types: 0.25
     Net::SSLeay: 1.36
-    Pod::Coverage::TrustPod: 0.092832
+    Pod::Coverage::TrustPod: 0.100000
     String::Formatter: 0.102082
     Test::CPAN::Meta: 0.18
     Test::EOL: 0.9
@@ -198,7 +198,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaProvides::Package
       name: '@Author::KENTNL/MetaProvides::Package'
-      version: 1.12044908
+      version: 1.12060501
     -
       class: Dist::Zilla::Plugin::MetaJSON
       name: '@Author::KENTNL/MetaJSON'
@@ -268,9 +268,9 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/MetaData::BuiltWith'
       version: 0.01018204
     -
-      class: Dist::Zilla::Plugin::CPANChangesTests
-      name: '@Author::KENTNL/CPANChangesTests'
-      version: 1.001
+      class: Dist::Zilla::Plugin::Test::CPAN::Changes
+      name: '@Author::KENTNL/Test::CPAN::Changes'
+      version: 0.003
     -
       class: Dist::Zilla::Plugin::CompileTests
       name: '@Author::KENTNL/CompileTests'
