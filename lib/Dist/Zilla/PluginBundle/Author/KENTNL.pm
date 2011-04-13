@@ -254,7 +254,7 @@ sub bundle_config {
     ],
 
     [ 'MetaData::BuiltWith'  => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
-    [ 'CPANChangesTests'     => {} ],
+    [ 'Test::CPAN::Changes'     => {} ],
     [ 'CompileTests'         => {} ],
     [ 'CriticTests'          => {} ],
     [ 'MetaTests'            => {} ],
