@@ -1,12 +1,12 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
- [Features]
- - Replace CPANChangesTests with Test::CPAN::Changes
-
  [Dependencies]
  - Removed Dist::Zilla::Plugin::CPANChangesTests
  - Added Dist::Zilla::Plugin::Test::CPAN::Changes
+
+ [Features]
+ - Replace CPANChangesTests with Test::CPAN::Changes
 
 1.0.5 2011-04-03T15:21:54Z
  [Features]
