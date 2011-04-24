@@ -100,6 +100,7 @@ eval { $v .= pmver('English','any version') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('IO::Socket::SSL','any version') };
+eval { $v .= pmver('LWP::Protocol::https','6.00') };
 eval { $v .= pmver('Module::Build','0.3601') };
 eval { $v .= pmver('Moose','1.01') };
 eval { $v .= pmver('Moose::Autobox','any version') };

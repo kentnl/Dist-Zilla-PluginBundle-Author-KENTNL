@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.6';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.7';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -221,7 +221,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.6
+version 1.0.7
 
 =head1 SYNOPSIS
 
