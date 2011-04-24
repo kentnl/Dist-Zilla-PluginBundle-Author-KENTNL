@@ -1,6 +1,11 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies]
+ - Depend on LWP::Protocol::https >= 6.0 to make sure ::Twitter works.
+
+ [Utils]
+ - Use CPAN::Changes 0.17 instead of hacking it ourself.
 
 1.0.6 2011-04-13T13:15:49Z
  [Dependencies]
