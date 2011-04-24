@@ -21,7 +21,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-Author-KENTNL',
-  'dist_version' => '1.0.6',
+  'dist_version' => '1.0.7',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::Author::KENTNL',
   'recommends' => {},
@@ -73,6 +73,7 @@ my %module_build_args = (
     'Dist::Zilla::Role::MintingProfile::ShareDir' => '0',
     'Dist::Zilla::Role::PluginBundle' => '0',
     'IO::Socket::SSL' => '0',
+    'LWP::Protocol::https' => '6.00',
     'Moose' => '1.01',
     'Moose::Autobox' => '0',
     'MooseX::Has::Sugar' => '0.05044',
