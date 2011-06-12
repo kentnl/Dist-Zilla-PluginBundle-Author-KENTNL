@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.0.8 2011-06-12T22:41:51Z
  [Features]
  - No longer warns about unspecified Autoversion::Relative params when
    using Git::NextVersion
