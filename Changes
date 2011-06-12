@@ -1,6 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.8 2011-06-12T22:38:37Z
+1.0.8 2011-06-12T22:41:51Z
+ [Features]
+ - No longer warns about unspecified Autoversion::Relative params when
+   using Git::NextVersion
 
 1.0.7 2011-04-24T13:45:19Z
  [Dependencies]
