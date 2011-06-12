@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.0.8 2011-06-12T22:41:51Z
+ [Features]
+ - No longer warns about unspecified Autoversion::Relative params when
+   using Git::NextVersion
+
 1.0.7 2011-04-24T13:45:19Z
  [Dependencies]
  - Depend on LWP::Protocol::https >= 6.0 to make sure ::Twitter works.
