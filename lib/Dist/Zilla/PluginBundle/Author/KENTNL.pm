@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.7';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.8';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -114,6 +114,7 @@ sub bundle_config {
   my $twitter_conf = { hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ) };
   my $extra_hash   = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
   $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
+  my $warn_no_git = _if_git_versions( $arg, [1], [0] );
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
@@ -122,13 +123,13 @@ sub bundle_config {
         [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.1.0' } ],
         [
           'AutoVersion::Relative' => {
-            major     => _defined_or( $arg, version_major         => 0 ),
-            minor     => _defined_or( $arg, version_minor         => 1 ),
-            year      => _defined_or( $arg, version_rel_year      => 2010 ),
-            month     => _defined_or( $arg, version_rel_month     => 5 ),
-            day       => _defined_or( $arg, version_rel_day       => 16 ),
-            hour      => _defined_or( $arg, version_rel_hour      => 20 ),
-            time_zone => _defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland' ),
+            major     => _defined_or( $arg, version_major         => 0,                  $warn_no_git ),
+            minor     => _defined_or( $arg, version_minor         => 1,                  $warn_no_git ),
+            year      => _defined_or( $arg, version_rel_year      => 2010,               $warn_no_git ),
+            month     => _defined_or( $arg, version_rel_month     => 5,                  $warn_no_git ),
+            day       => _defined_or( $arg, version_rel_day       => 16,                 $warn_no_git ),
+            hour      => _defined_or( $arg, version_rel_hour      => 20,                 $warn_no_git ),
+            time_zone => _defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland', $warn_no_git ),
           }
         ]
       )
@@ -174,7 +175,7 @@ sub bundle_config {
     ],
 
     [ 'MetaData::BuiltWith'  => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
-    [ 'Test::CPAN::Changes'     => {} ],
+    [ 'Test::CPAN::Changes'  => {} ],
     [ 'CompileTests'         => {} ],
     [ 'CriticTests'          => {} ],
     [ 'MetaTests'            => {} ],
@@ -221,7 +222,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.7
+version 1.0.8
 
 =head1 SYNOPSIS
 
