@@ -61,8 +61,22 @@ subtest 'build minting' => sub {
     perlcritic.rc
     Changes
     .perltidyrc
-    .gitignore
     dist.ini
+    Build.PL
+    Changes
+    LICENSE
+    MANIFEST
+    META.json
+    META.yml
+    README
+    t/00-compile-t
+    t/000-report-versions-tiny.t
+    t/author-critic.t
+    t/release-cpan-changes.t
+    t/release-eol.t
+    t/release-kwalitee.t
+    t/release-pod-coverage.t
+    t/release-pod-syntax.t
   );
 
   my %got_files;
