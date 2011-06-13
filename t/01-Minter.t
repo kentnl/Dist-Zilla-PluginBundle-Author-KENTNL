@@ -91,6 +91,8 @@ subtest 'build minting' => sub {
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
 
+  $bzil->test;
+
 };
 
 done_testing;
