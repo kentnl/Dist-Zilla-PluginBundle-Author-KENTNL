@@ -62,7 +62,7 @@ subtest 'build minting' => sub {
   require File::pushd;
   my $tmpdir = $tzil->tempdir->subdir('mint')->absolute;
 
-  my $target = File::pushd::pushd($tmpdir);
+  # my $target = File::pushd::pushd($tmpdir);
   my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $corpus }, );
   $bzil->chrome->logger->set_debug(1);
 
