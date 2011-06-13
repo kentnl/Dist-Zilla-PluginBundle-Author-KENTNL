@@ -18,7 +18,6 @@ my $tzil = Minter->_new_from_profile(
 $tzil->chrome->logger->set_debug(1);
 $tzil->mint_dist;
 
-system("find",$tzil->tempdir );
 
 my $bzil = Builder->from_config(
   { dist_root => $tzil->tempdir->subdir('mint') },
@@ -49,8 +48,10 @@ subtest 'mint files' => sub {
     $got_files{$name} += 1;
   }
 
+  # system("find",$tzil->tempdir );
+
   for my $dir (qw( .git .git/refs .git/objects lib )) {
-    ok( -e $tzil->tempdir->subdir('mint')->subdir($_),  "output dir $_ exists");
+    ok( -e $tzil->tempdir->subdir('mint')->subdir($_),  "output dir $dir exists");
   }
 
   note explain { got => \%got_files, expected => \%expected_files };
