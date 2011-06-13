@@ -1,5 +1,31 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.0.9 2011-06-13T23:50:29Z
+ [Dependencies::Test::New]
+ - Capture::Tiny
+ - File::pushd
+ - FindBin
+ - Path::Class
+ - Test::DZil
+ - Test::Fatal
+ - Test::File::ShareDir
+ - Test::Output
+
+ [Features]
+ - Comments out autoversion_relative fields in generated dist.ini as a move
+   towards eliminating it.
+
+ - Pre-Injects Abstract and Moose to new Modules.
+
+ - Sets a custom template provider in the profile.
+
+ [MiscFiles::New]
+ - share/profiles/default/ModuleTemplate.pm, template for my modules.
+ - corpus/global/config.ini,  a default "Global" configuaration for test purposes.
+
+ [Tests::New]
+ - 01-Minter.t, A reasonably exhaustive mint > build > testbuild domino test.
+
 1.0.8 2011-06-12T22:41:51Z
  [Features]
  - No longer warns about unspecified Autoversion::Relative params when

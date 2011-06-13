@@ -6,11 +6,13 @@ MANIFEST
 META.json
 META.yml
 README
+corpus/global/config.ini
 dist.ini
 lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 perlcritic.rc
+share/profiles/default/ModuleTemplate.pm.tpl
 share/profiles/default/profile.ini
 share/profiles/default/skel/.gitignore
 share/profiles/default/skel/.perltidyrc
@@ -19,6 +21,7 @@ share/profiles/default/skel/perlcritic.rc
 share/profiles/default/skel/weaver.ini
 t/00-compile.t
 t/000-report-versions-tiny.t
+t/01-Minter.t
 t/author-critic.t
 t/release-cpan-changes.t
 t/release-distmeta.t

@@ -48,6 +48,7 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('Capture::Tiny','any version') };
 eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Class::Load','any version') };
 eval { $v .= pmver('Dist::Zilla','4.101612') };
@@ -99,6 +100,8 @@ eval { $v .= pmver('Dist::Zilla::Role::PluginBundle','any version') };
 eval { $v .= pmver('English','any version') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
+eval { $v .= pmver('File::pushd','any version') };
+eval { $v .= pmver('FindBin','any version') };
 eval { $v .= pmver('IO::Socket::SSL','any version') };
 eval { $v .= pmver('LWP::Protocol::https','6.00') };
 eval { $v .= pmver('Module::Build','0.3601') };
@@ -107,11 +110,16 @@ eval { $v .= pmver('Moose::Autobox','any version') };
 eval { $v .= pmver('MooseX::Has::Sugar','0.05044') };
 eval { $v .= pmver('MooseX::Types','0.21') };
 eval { $v .= pmver('Net::SSLeay','1.36') };
+eval { $v .= pmver('Path::Class','any version') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
+eval { $v .= pmver('Test::DZil','any version') };
 eval { $v .= pmver('Test::EOL','0.9') };
+eval { $v .= pmver('Test::Fatal','any version') };
+eval { $v .= pmver('Test::File::ShareDir','any version') };
 eval { $v .= pmver('Test::More','0.88') };
+eval { $v .= pmver('Test::Output','any version') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
 
 
