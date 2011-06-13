@@ -1,6 +1,9 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Features]
+ - Comments out autoversion_relative fields in generated dist.ini as a move
+   towards eliminating it.
 
 1.0.8 2011-06-12T22:41:51Z
  [Features]
