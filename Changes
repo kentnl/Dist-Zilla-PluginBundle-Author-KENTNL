@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.0.9 2011-06-13T23:50:29Z
  [Dependencies::Test::New]
  - Capture::Tiny
  - File::pushd
