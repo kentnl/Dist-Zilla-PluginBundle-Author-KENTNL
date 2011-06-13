@@ -65,6 +65,7 @@ subtest 'build minting' => sub {
   eval {
     $bzil->test;
   };
+  system("find",$bzil->tempdir );
 
   my %expected_files = map { $_ => 1 } qw(
     lib/DZT/Minty.pm
