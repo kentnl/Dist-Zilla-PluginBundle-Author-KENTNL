@@ -22,6 +22,7 @@ share/profiles/default/skel/weaver.ini
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/01-Minter.t
+'t/\\'
 t/author-critic.t
 t/release-cpan-changes.t
 t/release-distmeta.t
