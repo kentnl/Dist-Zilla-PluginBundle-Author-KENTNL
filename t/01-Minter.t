@@ -85,9 +85,9 @@ subtest 'build minting' => sub {
       };
     }
   );
-  if ( defined $exception ) {
+   if ( defined $exception ) {
     note explain $@;
-    system("urxvt -e bash");
+    #  system("urxvt -e bash"); # XXX DEVELOPMENT
     die $@;
   }
   note explain { 'output was' => { out => $stdout, err => $stderr } };

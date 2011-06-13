@@ -1,12 +1,13 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.9 2011-06-13T23:29:13Z
+1.0.9 2011-06-13T23:41:09Z
  [Dependencies::Test::New]
  - Capture::Tiny
  - File::pushd
  - FindBin
  - Path::Class
  - Test::DZil
+ - Test::Fatal
  - Test::File::ShareDir
  - Test::Output
 
@@ -14,7 +15,7 @@ Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
  - Comments out autoversion_relative fields in generated dist.ini as a move
    towards eliminating it.
 
- - Pre-Injects Abstract and Moose to new Modules. 
+ - Pre-Injects Abstract and Moose to new Modules.
 
  - Sets a custom template provider in the profile.
 
