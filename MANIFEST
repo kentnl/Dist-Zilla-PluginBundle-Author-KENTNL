@@ -12,7 +12,7 @@ lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 perlcritic.rc
-share/profiles/default/ModuleTemplate.pm
+share/profiles/default/ModuleTemplate.pm.tpl
 share/profiles/default/profile.ini
 share/profiles/default/skel/.gitignore
 share/profiles/default/skel/.perltidyrc
