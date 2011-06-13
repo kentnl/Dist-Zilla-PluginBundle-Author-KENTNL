@@ -57,7 +57,9 @@ subtest 'mint files' => sub {
 
 subtest 'build minting' => sub {
 
-  $bzil->test;
+  eval {
+    $bzil->test;
+  }
 
   my %expected_files = map { $_ => 1 } qw(
     lib/DZT/Minty.pm
