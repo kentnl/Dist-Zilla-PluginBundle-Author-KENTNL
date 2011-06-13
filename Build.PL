@@ -16,6 +16,7 @@ my %module_build_args = (
     'Module::Build' => '0.3601',
     'Path::Class' => '0',
     'Test::DZil' => '0',
+    'Test::Fatal' => '0',
     'Test::File::ShareDir' => '0',
     'Test::More' => '0.88',
     'Test::Output' => '0'

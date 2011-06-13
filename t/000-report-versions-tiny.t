@@ -116,6 +116,7 @@ eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::DZil','any version') };
 eval { $v .= pmver('Test::EOL','0.9') };
+eval { $v .= pmver('Test::Fatal','any version') };
 eval { $v .= pmver('Test::File::ShareDir','any version') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::Output','any version') };
