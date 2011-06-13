@@ -20,35 +20,63 @@ $tzil->mint_dist;
 
 my $bzil = Builder->from_config(
   { dist_root => $tzil->tempdir->subdir('mint') },
-  {},
-  { global_config_root => dir("$FindBin::Bin/../corpus/global") },
+  {}, { global_config_root => dir("$FindBin::Bin/../corpus/global") },
 );
 
 $bzil->build;
 
-my $pm = $tzil->slurp_file('mint/lib/DZT/Minty.pm');
+subtest 'mint files' => sub {
 
-my %expected_files = map { $_ => 1 } qw(
-  lib/DZT/Minty.pm
-  weaver.ini
-  perlcritic.rc
-  Changes
-  .perltidyrc
-  .gitignore
-  dist.ini
-);
+  my $pm = $tzil->slurp_file('mint/lib/DZT/Minty.pm');
 
-my %got_files;
+  my %expected_files = map { $_ => 1 } qw(
+    lib/DZT/Minty.pm
+    weaver.ini
+    perlcritic.rc
+    Changes
+    .perltidyrc
+    .gitignore
+    dist.ini
+  );
 
-for my $file (@{$tzil->files} ){
-  my $name = $file->name;
-  $got_files{$name} = 0 if not exists $got_files{$name};
-  $got_files{$name} += 1;
-}
+  my %got_files;
 
-note explain { got => \%got_files, expected => \%expected_files };
+  for my $file ( @{ $tzil->files } ) {
+    my $name = $file->name;
+    $got_files{$name} = 0 if not exists $got_files{$name};
+    $got_files{$name} += 1;
+  }
 
-is_deeply( \%got_files, \%expected_files , 'All expected mint files exist');
+  note explain { got => \%got_files, expected => \%expected_files };
+
+  is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
+
+};
+
+subtest 'build minting' => sub {
+
+  my %expected_files = map { $_ => 1 } qw(
+    lib/DZT/Minty.pm
+    weaver.ini
+    perlcritic.rc
+    Changes
+    .perltidyrc
+    .gitignore
+    dist.ini
+  );
+
+  my %got_files;
+  for my $file ( @{ $bzil->files } ) {
+    my $name = $file->name;
+    $got_files{$name} = 0 if not exists $got_files{$name};
+    $got_files{$name} += 1;
+  }
+
+  note explain { got => \%got_files, expected => \%expected_files };
+
+  is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
+
+};
 
 done_testing;
 
