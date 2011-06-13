@@ -23,8 +23,6 @@ my $bzil = Builder->from_config(
   {}, { global_config_root => dir("$FindBin::Bin/../corpus/global") },
 );
 
-$bzil->build;
-
 subtest 'mint files' => sub {
 
   my $pm = $tzil->slurp_file('mint/lib/DZT/Minty.pm');
@@ -54,6 +52,8 @@ subtest 'mint files' => sub {
 };
 
 subtest 'build minting' => sub {
+
+  $bzil->test;
 
   my %expected_files = map { $_ => 1 } qw(
     lib/DZT/Minty.pm
@@ -91,7 +91,6 @@ subtest 'build minting' => sub {
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
 
-  $bzil->test;
 
 };
 
