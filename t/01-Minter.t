@@ -18,14 +18,6 @@ my $tzil = Minter->_new_from_profile(
 $tzil->chrome->logger->set_debug(1);
 $tzil->mint_dist;
 
-
-my $bzil = Builder->from_config(
-  { dist_root => $tzil->tempdir->subdir('mint') },
-  {}, { global_config_root => dir("$FindBin::Bin/../corpus/global") },
-);
-$bzil->chrome->logger->set_debug(1);
-
-
 subtest 'mint files' => sub {
 
   my $pm = $tzil->slurp_file('mint/lib/DZT/Minty.pm');
@@ -51,7 +43,7 @@ subtest 'mint files' => sub {
   # system("find",$tzil->tempdir );
 
   for my $dir (qw( .git .git/refs .git/objects lib )) {
-    ok( -e $tzil->tempdir->subdir('mint')->subdir($dir),  "output dir $dir exists");
+    ok( -e $tzil->tempdir->subdir('mint')->subdir($dir), "output dir $dir exists" );
   }
 
   note explain [ $tzil->log_messages ];
@@ -64,10 +56,18 @@ subtest 'mint files' => sub {
 
 subtest 'build minting' => sub {
 
-  eval {
-    $bzil->test;
-  };
-#  system("find",$bzil->tempdir );
+  require File::pushd;
+
+  my $target = File::pushd::pushd( $tzil->tempdir->subdir('mint') );
+  my $bzil   = Builder->from_config(
+    { dist_root => $tzil->tempdir->subdir('mint') },
+    {}, { global_config_root => dir("$FindBin::Bin/../corpus/global") },
+  );
+  $bzil->chrome->logger->set_debug(1);
+
+  eval { $bzil->test; };
+
+  #  system("find",$bzil->tempdir );
 
   my %expected_files = map { $_ => 1 } qw(
     lib/DZT/Minty.pm
@@ -104,7 +104,6 @@ subtest 'build minting' => sub {
   note explain { got => \%got_files, expected => \%expected_files };
 
   note explain [ $bzil->log_messages ];
-
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
 

@@ -6,6 +6,7 @@ build_requires:
   English: 0
   File::Find: 0
   File::Temp: 0
+  File::pushd: 0
   FindBin: 0
   Module::Build: 0.3601
   Path::Class: 0
@@ -144,6 +145,7 @@ x_BuiltWith:
     Dist::Zilla::Role::MintingProfile::ShareDir: 4.200007
     Dist::Zilla::Role::PluginBundle: 4.200007
     File::Temp: 0.22
+    File::pushd: 1.00
     FindBin: 1.50
     IO::Socket::SSL: 1.44
     LWP::Protocol::https: 6.02
