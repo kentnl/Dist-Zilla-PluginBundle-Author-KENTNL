@@ -59,6 +59,7 @@ subtest 'mint files' => sub {
 };
 
 use Capture::Tiny;
+use Test::Fatal;
 
 subtest 'build minting' => sub {
 
@@ -68,23 +69,29 @@ subtest 'build minting' => sub {
   $bzil->chrome->logger->set_debug(1);
 
   $bzil->build;
+
   # NOTE: ->test doesn't work atm due to various reasons unknown, so doing it manually.
 
-  my ( $stdout, $stderr ) = Capture::Tiny::capture(sub {
-    require File::pushd;
-    my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
-    system ( $^X , 'Build.PL') and die "error with Build.PL\n";
-    system ( $^X , 'Build' ) and die "error running $^X Build\n";
-    system ( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
-#    };
-#    if( $@ ) {
-#      warn $@;
-#      system ( "urxvt -e bash" );
-#      die $@;
-#    }
-  });
-
+  my $exception;
+  my $target;
+  my ( $stdout, $stderr ) = Capture::Tiny::capture(
+    sub {
+      $exception = exception {
+        require File::pushd;
+        $target = File::pushd::pushd( dir( $bzil->tempdir )->subdir('build') );
+        system( $^X , 'Build.PL' ) and die "error with Build.PL\n";
+        system( $^X , 'Build' )    and die "error running $^X Build\n";
+        system( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
+      };
+    }
+  );
+   if ( defined $exception ) {
+    note explain $@;
+    #  system("urxvt -e bash"); # XXX DEVELOPMENT
+    die $@;
+  }
   note explain { 'output was' => { out => $stdout, err => $stderr } };
+
   #  system("find",$bzil->tempdir );
 
   my %expected_files = map { $_ => 1 } qw(
