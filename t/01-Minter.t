@@ -70,7 +70,7 @@ subtest 'build minting' => sub {
   $bzil->build;
   # NOTE: ->test doesn't work atm due to various reasons unknown, so doing it manually.
 
-  my ( $stout, $stderr ) = capture  {
+  my ( $stdout, $stderr ) = capture  {
     require File::pushd;
     my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
     eval {
@@ -85,7 +85,7 @@ subtest 'build minting' => sub {
 #    }
   };
 
-  note explain { 'output was' => $output };
+  note explain { 'output was' => { out => $stdout, err => $stderr } };
   #  system("find",$bzil->tempdir );
 
   my %expected_files = map { $_ => 1 } qw(
