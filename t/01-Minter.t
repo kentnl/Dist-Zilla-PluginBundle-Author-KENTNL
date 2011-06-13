@@ -15,13 +15,17 @@ my $tzil = Minter->_new_from_profile(
   { name               => 'DZT-Minty', },
   { global_config_root => dir("$FindBin::Bin/../corpus/global") },
 );
-
+$tzil->chrome->logger->set_debug(1);
 $tzil->mint_dist;
+
+system("find",$tzil->tempdir );
 
 my $bzil = Builder->from_config(
   { dist_root => $tzil->tempdir->subdir('mint') },
   {}, { global_config_root => dir("$FindBin::Bin/../corpus/global") },
 );
+$bzil->chrome->logger->set_debug(1);
+
 
 subtest 'mint files' => sub {
 
