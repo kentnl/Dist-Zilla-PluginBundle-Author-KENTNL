@@ -73,6 +73,7 @@ subtest 'build minting' => sub {
     t/000-report-versions-tiny.t
     t/author-critic.t
     t/release-cpan-changes.t
+    t/release-distmeta.t
     t/release-eol.t
     t/release-kwalitee.t
     t/release-pod-coverage.t
