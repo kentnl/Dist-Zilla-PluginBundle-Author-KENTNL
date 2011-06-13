@@ -103,7 +103,7 @@ subtest 'build minting' => sub {
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
 
-
+  system('bash');
 };
 
 done_testing;
