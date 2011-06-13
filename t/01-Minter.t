@@ -59,14 +59,21 @@ subtest 'mint files' => sub {
 
 subtest 'build minting' => sub {
 
-  require File::pushd;
   my $tmpdir = $tzil->tempdir->subdir('mint')->absolute;
 
-  # my $target = File::pushd::pushd($tmpdir);
   my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $corpus }, );
   $bzil->chrome->logger->set_debug(1);
 
-  eval { $bzil->build };
+  $bzil->build;
+  # NOTE: ->test doesn't work atm due to various reasons unknown, so doing it manually.
+
+  require File::pushd;
+  my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
+  system ( $^X , 'Build.PL') and die "error with Build.PL\n";
+  system ( $^X , 'Build' ) and die "error running $^X Build\n";
+  system ( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
+
+
 
   #  system("find",$bzil->tempdir );
 
@@ -108,7 +115,6 @@ subtest 'build minting' => sub {
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
 
-  system('bash');
 };
 
 done_testing;
