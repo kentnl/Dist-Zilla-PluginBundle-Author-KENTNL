@@ -58,6 +58,8 @@ subtest 'mint files' => sub {
 
 };
 
+use Capture::Tiny;
+
 subtest 'build minting' => sub {
 
   my $tmpdir = $tzil->tempdir->subdir('mint')->absolute;
@@ -68,7 +70,7 @@ subtest 'build minting' => sub {
   $bzil->build;
   # NOTE: ->test doesn't work atm due to various reasons unknown, so doing it manually.
 
-  my $output = Test::Output::output_from(sub {
+  my ( $stout, $stderr ) = capture  {
     require File::pushd;
     my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
     eval {
@@ -81,7 +83,7 @@ subtest 'build minting' => sub {
 #      system ( "urxvt -e bash" );
 #      die $@;
 #    }
-  });
+  };
 
   note explain { 'output was' => $output };
   #  system("find",$bzil->tempdir );

@@ -7,6 +7,7 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   'build_requires' => {
+    'Capture::Tiny' => '0',
     'English' => '0',
     'File::Find' => '0',
     'File::Temp' => '0',

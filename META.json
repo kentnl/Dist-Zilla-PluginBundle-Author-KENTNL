@@ -99,6 +99,7 @@
       },
       "test" : {
          "requires" : {
+            "Capture::Tiny" : 0,
             "English" : 0,
             "File::Find" : 0,
             "File::Temp" : 0,
@@ -138,6 +139,7 @@
    "version" : "1.0.9",
    "x_BuiltWith" : {
       "modules" : {
+         "Capture::Tiny" : "0.11",
          "Carp" : "1.20",
          "Class::Load" : "0.06",
          "Dist::Zilla" : "4.200007",
