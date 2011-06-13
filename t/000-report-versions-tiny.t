@@ -108,6 +108,7 @@ eval { $v .= pmver('Moose::Autobox','any version') };
 eval { $v .= pmver('MooseX::Has::Sugar','0.05044') };
 eval { $v .= pmver('MooseX::Types','0.21') };
 eval { $v .= pmver('Net::SSLeay','1.36') };
+eval { $v .= pmver('Path::Class','any version') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };

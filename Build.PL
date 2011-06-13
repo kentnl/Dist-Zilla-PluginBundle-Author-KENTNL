@@ -12,6 +12,7 @@ my %module_build_args = (
     'File::Temp' => '0',
     'FindBin' => '0',
     'Module::Build' => '0.3601',
+    'Path::Class' => '0',
     'Test::DZil' => '0',
     'Test::File::ShareDir' => '0',
     'Test::More' => '0.88'

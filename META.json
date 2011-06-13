@@ -103,6 +103,7 @@
             "File::Find" : 0,
             "File::Temp" : 0,
             "FindBin" : 0,
+            "Path::Class" : 0,
             "Test::DZil" : 0,
             "Test::File::ShareDir" : 0,
             "Test::More" : "0.88"
@@ -193,6 +194,7 @@
          "MooseX::Has::Sugar" : "0.05070419",
          "MooseX::Types" : "0.27",
          "Net::SSLeay" : "1.36",
+         "Path::Class" : "0.24",
          "Pod::Coverage::TrustPod" : "0.100000",
          "String::Formatter" : "0.102082",
          "Test::CPAN::Meta" : "0.18",
