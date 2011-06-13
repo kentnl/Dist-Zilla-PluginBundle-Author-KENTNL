@@ -69,7 +69,7 @@ subtest 'build minting' => sub {
     META.json
     META.yml
     README
-    t/00-compile-t
+    t/00-compile.t
     t/000-report-versions-tiny.t
     t/author-critic.t
     t/release-cpan-changes.t
