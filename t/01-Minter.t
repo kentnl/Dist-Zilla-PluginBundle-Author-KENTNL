@@ -51,7 +51,7 @@ subtest 'mint files' => sub {
   # system("find",$tzil->tempdir );
 
   for my $dir (qw( .git .git/refs .git/objects lib )) {
-    ok( -e $tzil->tempdir->subdir('mint')->subdir($_),  "output dir $dir exists");
+    ok( -e $tzil->tempdir->subdir('mint')->subdir($dir),  "output dir $dir exists");
   }
 
   note explain { got => \%got_files, expected => \%expected_files };
