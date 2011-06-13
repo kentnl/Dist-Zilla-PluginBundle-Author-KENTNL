@@ -5,16 +5,19 @@ use warnings;
 use Test::More;
 use FindBin;
 use Path::Class qw( dir );
-use Test::File::ShareDir
-  -root  => "$FindBin::Bin/../",
-  -share => { -module => { 'Dist::Zilla::MintingProfile::Author::KENTNL' => 'share/profiles' }, };
+
+my ( $root, $corpus );
+
+BEGIN {
+  $root   = dir("$FindBin::Bin")->parent->absolute;
+  $corpus = $root->subdir('corpus')->subdir('global');
+}
+use Test::File::ShareDir -share =>
+  { -module => { 'Dist::Zilla::MintingProfile::Author::KENTNL' => $root->subdir('share')->subdir('profiles') }, };
 use Test::DZil;
 
-my $tzil = Minter->_new_from_profile(
-  [ 'Author::KENTNL'   => 'default' ],
-  { name               => 'DZT-Minty', },
-  { global_config_root => dir("$FindBin::Bin/../corpus/global") },
-);
+my $tzil =
+  Minter->_new_from_profile( [ 'Author::KENTNL' => 'default' ], { name => 'DZT-Minty', }, { global_config_root => $corpus }, );
 $tzil->chrome->logger->set_debug(1);
 $tzil->mint_dist;
 
@@ -57,12 +60,10 @@ subtest 'mint files' => sub {
 subtest 'build minting' => sub {
 
   require File::pushd;
+  my $tmpdir = $tzil->tempdir->subdir('mint')->absolute;
 
-  my $target = File::pushd::pushd( $tzil->tempdir->subdir('mint') );
-  my $bzil   = Builder->from_config(
-    { dist_root => $tzil->tempdir->subdir('mint') },
-    {}, { global_config_root => dir("$FindBin::Bin/../corpus/global") },
-  );
+  my $target = File::pushd::pushd($tmpdir);
+  my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $corpus }, );
   $bzil->chrome->logger->set_debug(1);
 
   eval { $bzil->test; };
