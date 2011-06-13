@@ -42,7 +42,8 @@ sub gather_files {
       q(; [Bootstrap::lib]),                                                     #
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
-      ':version          = 1.0.8' 'git_versions      = 1',                       #
+      ':version          = 1.0.8',                                               #
+      'git_versions      = 1',                                                   #
       '; version_major     = 0',                                                 #
       '; version_minor     = 1',                                                 #
       q(; the following data denotes when this minor was minted),                #
