@@ -86,13 +86,11 @@ subtest 'build minting' => sub {
     }
   );
   if ( defined $exception ) {
-    warn $@;
+    note explain $@;
     system("urxvt -e bash");
     die $@;
   }
-  : w
-
-    note explain { 'output was' => { out => $stdout, err => $stderr } };
+  note explain { 'output was' => { out => $stdout, err => $stderr } };
 
   #  system("find",$bzil->tempdir );
 
