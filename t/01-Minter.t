@@ -5,7 +5,7 @@ use warnings;
 use Test::More;
 use FindBin;
 use Path::Class qw( dir );
-use Test::Output qw( combined_from );
+use Test::Output qw();
 
 my ( $root, $corpus );
 
@@ -68,7 +68,7 @@ subtest 'build minting' => sub {
   $bzil->build;
   # NOTE: ->test doesn't work atm due to various reasons unknown, so doing it manually.
 
-  my $output = combined_from {
+  my $output = Test::Output::output_from(sub {
     require File::pushd;
     my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
     eval {
@@ -81,7 +81,7 @@ subtest 'build minting' => sub {
 #      system ( "urxvt -e bash" );
 #      die $@;
 #    }
-  };
+  });
 
   note explain $output;
   #  system("find",$bzil->tempdir );
