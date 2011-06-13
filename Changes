@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.9 2011-06-13T23:41:09Z
+1.0.9 2011-06-13T23:42:31Z
  [Dependencies::Test::New]
  - Capture::Tiny
  - File::pushd
