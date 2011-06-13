@@ -10,7 +10,10 @@ my %module_build_args = (
     'English' => '0',
     'File::Find' => '0',
     'File::Temp' => '0',
+    'FindBin' => '0',
     'Module::Build' => '0.3601',
+    'Test::DZil' => '0',
+    'Test::File::ShareDir' => '0',
     'Test::More' => '0.88'
   },
   'configure_requires' => {
@@ -21,7 +24,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-Author-KENTNL',
-  'dist_version' => '1.0.8',
+  'dist_version' => '1.0.9',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::Author::KENTNL',
   'recommends' => {},

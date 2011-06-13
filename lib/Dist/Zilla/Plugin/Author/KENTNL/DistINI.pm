@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.0.8';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.0.9';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
@@ -42,15 +42,15 @@ sub gather_files {
       q(; [Bootstrap::lib]),                                                     #
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
-      'git_versions      = 1',                                                   #
-      'version_major     = 0',                                                   #
-      'version_minor     = 1',                                                   #
+      ':version          = 1.0.8' 'git_versions      = 1',                       #
+      '; version_major     = 0',                                                 #
+      '; version_minor     = 1',                                                 #
       q(; the following data denotes when this minor was minted),                #
-      'version_rel_year  = %{rel_year}n',                                        #
-      'version_rel_month = %{rel_month}n',                                       #
-      'version_rel_day   = %{rel_day}n',                                         #
-      'version_rel_hour  = %{rel_hour}n',                                        #
-      'version_rel_time_zone = %{tz}s',                                          #
+      '; version_rel_year  = %{rel_year}n',                                      #
+      '; version_rel_month = %{rel_month}n',                                     #
+      '; version_rel_day   = %{rel_day}n',                                       #
+      '; version_rel_hour  = %{rel_hour}n',                                      #
+      '; version_rel_time_zone = %{tz}s',                                        #
       'twitter_hash_tags = %{tags}s',                                            #
       $empty,                                                                    #
       '[Prereqs]',                                                               #
@@ -113,7 +113,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Autho
 
 =head1 VERSION
 
-version 1.0.8
+version 1.0.9
 
 =head1 SYNOPSIS
 

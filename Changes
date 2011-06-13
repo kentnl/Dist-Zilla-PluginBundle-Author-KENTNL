@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.0.9 2011-06-13T19:52:32Z
+ [Features]
+ - Comments out autoversion_relative fields in generated dist.ini as a move
+   towards eliminating it.
+
 1.0.8 2011-06-12T22:41:51Z
  [Features]
  - No longer warns about unspecified Autoversion::Relative params when
