@@ -83,7 +83,7 @@ subtest 'build minting' => sub {
 #    }
   });
 
-  note explain $output;
+  note explain { 'output was' => $output };
   #  system("find",$bzil->tempdir );
 
   my %expected_files = map { $_ => 1 } qw(
