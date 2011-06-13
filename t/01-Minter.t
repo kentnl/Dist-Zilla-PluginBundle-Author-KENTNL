@@ -54,6 +54,8 @@ subtest 'mint files' => sub {
     ok( -e $tzil->tempdir->subdir('mint')->subdir($dir),  "output dir $dir exists");
   }
 
+  note explain [ $tzil->log_messages ];
+
   note explain { got => \%got_files, expected => \%expected_files };
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
@@ -65,7 +67,7 @@ subtest 'build minting' => sub {
   eval {
     $bzil->test;
   };
-  system("find",$bzil->tempdir );
+#  system("find",$bzil->tempdir );
 
   my %expected_files = map { $_ => 1 } qw(
     lib/DZT/Minty.pm
@@ -100,6 +102,9 @@ subtest 'build minting' => sub {
   }
 
   note explain { got => \%got_files, expected => \%expected_files };
+
+  note explain [ $bzil->log_messages ];
+
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
 
