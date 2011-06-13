@@ -69,10 +69,16 @@ subtest 'build minting' => sub {
 
   require File::pushd;
   my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
-  system ( $^X , 'Build.PL') and die "error with Build.PL\n";
-  system ( $^X , 'Build' ) and die "error running $^X Build\n";
-  system ( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
-  system ( "urxvt -e bash" );
+  eval {
+    system ( $^X , 'Build.PL') and die "error with Build.PL\n";
+    system ( $^X , 'Build' ) and die "error running $^X Build\n";
+    system ( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
+  }
+  if( $@ ) {
+    warn $@;
+    system ( "urxvt -e bash" );
+    die $@;
+  }
 
   #  system("find",$bzil->tempdir );
 
