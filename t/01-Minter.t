@@ -68,7 +68,7 @@ subtest 'build minting' => sub {
   $bzil->build;
   # NOTE: ->test doesn't work atm due to various reasons unknown, so doing it manually.
 
-  my $output = stdout_from {
+  my $output = combined_from {
     require File::pushd;
     my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
     eval {
