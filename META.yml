@@ -13,6 +13,7 @@ build_requires:
   Test::DZil: 0
   Test::File::ShareDir: 0
   Test::More: 0.88
+  Test::Output: 0
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
@@ -163,6 +164,7 @@ x_BuiltWith:
     Test::EOL: 0.9
     Test::File::ShareDir: 0.3.0
     Test::More: 0.98
+    Test::Output: 1.01
     namespace::autoclean: 0.12
   perl:
     original: v5.14.0

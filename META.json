@@ -107,7 +107,8 @@
             "Path::Class" : 0,
             "Test::DZil" : 0,
             "Test::File::ShareDir" : 0,
-            "Test::More" : "0.88"
+            "Test::More" : "0.88",
+            "Test::Output" : 0
          }
       }
    },
@@ -204,6 +205,7 @@
          "Test::EOL" : "0.9",
          "Test::File::ShareDir" : "0.3.0",
          "Test::More" : "0.98",
+         "Test::Output" : "1.01",
          "namespace::autoclean" : "0.12"
       },
       "perl" : {

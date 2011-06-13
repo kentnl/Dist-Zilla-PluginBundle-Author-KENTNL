@@ -5,6 +5,7 @@ use warnings;
 use Test::More;
 use FindBin;
 use Path::Class qw( dir );
+use Test::Output qw( combined_from );
 
 my ( $root, $corpus );
 
@@ -67,19 +68,22 @@ subtest 'build minting' => sub {
   $bzil->build;
   # NOTE: ->test doesn't work atm due to various reasons unknown, so doing it manually.
 
-  require File::pushd;
-  my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
-  eval {
-    system ( $^X , 'Build.PL') and die "error with Build.PL\n";
-    system ( $^X , 'Build' ) and die "error running $^X Build\n";
-    system ( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
+  my $output = stdout_from {
+    require File::pushd;
+    my $target = File::pushd::pushd( dir($bzil->tempdir)->subdir('build') );
+    eval {
+      system ( $^X , 'Build.PL') and die "error with Build.PL\n";
+      system ( $^X , 'Build' ) and die "error running $^X Build\n";
+      system ( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
+    };
+#    if( $@ ) {
+#      warn $@;
+#      system ( "urxvt -e bash" );
+#      die $@;
+#    }
   };
-  if( $@ ) {
-    warn $@;
-    system ( "urxvt -e bash" );
-    die $@;
-  }
 
+  note explain $output;
   #  system("find",$bzil->tempdir );
 
   my %expected_files = map { $_ => 1 } qw(
