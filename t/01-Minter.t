@@ -72,7 +72,7 @@ subtest 'build minting' => sub {
   system ( $^X , 'Build.PL') and die "error with Build.PL\n";
   system ( $^X , 'Build' ) and die "error running $^X Build\n";
   system ( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
-  system ( "urxvt"  );
+  system ( "urxvt -e bash" );
 
   #  system("find",$bzil->tempdir );
 
