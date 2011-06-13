@@ -49,6 +49,10 @@ subtest 'mint files' => sub {
     $got_files{$name} += 1;
   }
 
+  for my $dir (qw( .git .git/refs .git/objects lib )) {
+    ok( -e $tzil->tempdir->subdir('mint')->subdir($_),  "output dir $_ exists");
+  }
+
   note explain { got => \%got_files, expected => \%expected_files };
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
