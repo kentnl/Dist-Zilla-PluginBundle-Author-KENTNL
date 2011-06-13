@@ -10,13 +10,12 @@ use Test::File::ShareDir
 use Test::DZil;
 
 my $tzil = Minter->_new_from_profile(
-  [ 'Author::KENTNL' => 'default' ],
-  { name => 'DZT-Minty', }
+  [ 'Author::KENTNL'   => 'default' ],
+  { name               => 'DZT-Minty', },
   { global_config_root => "$FindBin::Bin/../corpus/global" },
 );
 
 $tzil->mint_dist;
-
 
 done_testing;
 
