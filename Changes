@@ -1,6 +1,11 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.11 2011-07-11T04:51:16Z
+1.0.11 2011-07-11T04:54:54Z
+ [Tests]
+ - Redo the git hack using ENV flags instead of a config file as it still
+   doesn't work as intended. Need both AUTHOR and CONFIG env variables.
+ - Minting test now more detailed with arbitrary pass indicators to
+   indicate where fails occur.
 
 1.0.10 2011-07-11T03:41:19Z
  [Packaging]
