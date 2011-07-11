@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.0.10';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.0.11';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
@@ -114,7 +114,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Autho
 
 =head1 VERSION
 
-version 1.0.10
+version 1.0.11
 
 =head1 SYNOPSIS
 
