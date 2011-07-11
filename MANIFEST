@@ -6,7 +6,6 @@ MANIFEST
 META.json
 META.yml
 README
-corpus/git_config.ini
 corpus/global/config.ini
 dist.ini
 lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm

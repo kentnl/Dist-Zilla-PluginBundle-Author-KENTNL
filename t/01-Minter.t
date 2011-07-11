@@ -15,20 +15,33 @@ BEGIN {
   $global = $corpus->subdir('global');
 }
 
-local $ENV{'GIT_CONFIG'} = $corpus->file('git_config.ini')->stringify;
+$ENV{'GIT_AUTHOR_NAME'} = $ENV{'GIT_COMMITTER_NAME'} = 'Anon Y. Mus';
+$ENV{'GIT_AUTHOR_EMAIL'} = $ENV{'GIT_COMMITTER_EMAIL'} = 'anonymus@example.org';
 
 use Test::File::ShareDir -share =>
   { -module => { 'Dist::Zilla::MintingProfile::Author::KENTNL' => $root->subdir('share')->subdir('profiles') }, };
 use Test::DZil;
 
-my $tzil =
-  Minter->_new_from_profile( [ 'Author::KENTNL' => 'default' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
-$tzil->chrome->logger->set_debug(1);
-$tzil->mint_dist;
+my $tzil;
+
 
 subtest 'mint files' => sub {
 
+  $tzil = Minter->_new_from_profile( [ 'Author::KENTNL' => 'default' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
+
+  pass('Loaded minter config');
+
+  $tzil->chrome->logger->set_debug(1);
+
+  pass("set debug");
+
+  $tzil->mint_dist;
+
+  pass("minted dist");
+
   my $pm = $tzil->slurp_file('mint/lib/DZT/Minty.pm');
+
+  pass('slurped file');
 
   my %expected_files = map { $_ => 1 } qw(
     lib/DZT/Minty.pm
@@ -69,10 +82,19 @@ subtest 'build minting' => sub {
 
   my $tmpdir = $tzil->tempdir->subdir('mint')->absolute;
 
+  pass("Got minted dir");
+
   my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $global }, );
+
+  pass("Loaded builder configuration");
+
   $bzil->chrome->logger->set_debug(1);
 
+  pass("Set debug");
+
   $bzil->build;
+
+  pass("Built Dist");
 
   # NOTE: ->test doesn't work atm due to various reasons unknown, so doing it manually.
 
