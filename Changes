@@ -1,6 +1,12 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.10 2011-07-11T03:35:06Z
+1.0.10 2011-07-11T03:38:58Z
+ [Packaging]
+ - Retroactive Changes normalization
+
+ [Tests]
+ - Change git behaviour in the Minter test so git environment is always
+   sane-ish and doesn't report weirdness.
 
 1.0.9 2011-06-13T23:50:29Z
  [Dependencies::Test::New]
