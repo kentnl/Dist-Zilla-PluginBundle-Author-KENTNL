@@ -7,18 +7,22 @@ use FindBin;
 use Path::Class qw( dir );
 use Test::Output qw();
 
-my ( $root, $corpus );
+my ( $root, $corpus, $global );
 
 BEGIN {
   $root   = dir("$FindBin::Bin")->parent->absolute;
-  $corpus = $root->subdir('corpus')->subdir('global');
+  $corpus = $root->subdir('corpus');
+  $global = $corpus->subdir('global');
 }
+
+local $ENV{'GIT_CONFIG'} = $corpus->file('git_config.ini')->stringify;
+
 use Test::File::ShareDir -share =>
   { -module => { 'Dist::Zilla::MintingProfile::Author::KENTNL' => $root->subdir('share')->subdir('profiles') }, };
 use Test::DZil;
 
 my $tzil =
-  Minter->_new_from_profile( [ 'Author::KENTNL' => 'default' ], { name => 'DZT-Minty', }, { global_config_root => $corpus }, );
+  Minter->_new_from_profile( [ 'Author::KENTNL' => 'default' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
 $tzil->chrome->logger->set_debug(1);
 $tzil->mint_dist;
 
@@ -65,7 +69,7 @@ subtest 'build minting' => sub {
 
   my $tmpdir = $tzil->tempdir->subdir('mint')->absolute;
 
-  my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $corpus }, );
+  my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $global }, );
   $bzil->chrome->logger->set_debug(1);
 
   $bzil->build;
