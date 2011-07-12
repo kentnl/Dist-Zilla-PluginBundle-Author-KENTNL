@@ -17,7 +17,7 @@ my %module_build_args = (
     'Path::Class' => '0',
     'Test::DZil' => '0',
     'Test::Fatal' => '0',
-    'Test::File::ShareDir' => '0',
+    'Test::File::ShareDir' => '0.3.0',
     'Test::More' => '0.88',
     'Test::Output' => '0'
   },
@@ -29,7 +29,7 @@ my %module_build_args = (
     'Kent Fredric <kentnl@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-Author-KENTNL',
-  'dist_version' => '1.0.11',
+  'dist_version' => '1.0.12',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::Author::KENTNL',
   'recommends' => {},

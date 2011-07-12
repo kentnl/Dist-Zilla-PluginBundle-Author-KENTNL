@@ -18,7 +18,7 @@ BEGIN {
 $ENV{'GIT_AUTHOR_NAME'} = $ENV{'GIT_COMMITTER_NAME'} = 'Anon Y. Mus';
 $ENV{'GIT_AUTHOR_EMAIL'} = $ENV{'GIT_COMMITTER_EMAIL'} = 'anonymus@example.org';
 
-use Test::File::ShareDir -share =>
+use Test::File::ShareDir 0.3.0 -share =>
   { -module => { 'Dist::Zilla::MintingProfile::Author::KENTNL' => $root->subdir('share')->subdir('profiles') }, };
 use Test::DZil;
 
