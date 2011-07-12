@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.0.12 2011-07-12T09:57:41Z
  [Dependencies::Tests]
  - Version explicit dependency added to Test::File::ShareDir 0.3.0 which is
    required for -root to be optional.
