@@ -1,5 +1,7 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.0.12 2011-07-12T09:54:19Z
+
 1.0.11 2011-07-11T04:56:38Z
  [Tests]
  - Redo the git hack using ENV flags instead of a config file as it still
