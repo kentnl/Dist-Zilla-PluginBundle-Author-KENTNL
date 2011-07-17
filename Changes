@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.0.13 2011-07-17T01:06:15Z
  [Bugs]
  - Fixed an issue where the change of Dzil's Autoprereqs 'skip' parameter
    started taking an array instead, by using an array. ( External interface
