@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.13 2011-07-17T00:55:13Z
+1.0.13 2011-07-17T00:59:33Z
  [Bugs]
  - Fixed an issue where the change of Dzil's Autoprereqs 'skip' parameter
    started taking an array instead, by using an array. ( External interface
@@ -9,6 +9,9 @@ Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
  [Dependencies]
  - Dist::Zilla 4.200011 is now the minimum requirement, as that has the
    adjusted Autoprereqs
+
+ [Packaging]
+ - Web metadata now uses HTTPS:// urls.
 
 1.0.12 2011-07-12T09:57:41Z
  [Dependencies::Tests]
