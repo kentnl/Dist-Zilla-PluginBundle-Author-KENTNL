@@ -1,6 +1,14 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugs]
+ - Fixed an issue where the change of Dzil's Autoprereqs 'skip' parameter
+   started taking an array instead, by using an array. ( External interface
+   is still the same though )
+
+ [Dependencies]
+ - Dist::Zilla 4.200011 is now the minimum requirement, as that has the
+   adjusted Autoprereqs
 
 1.0.12 2011-07-12T09:57:41Z
  [Dependencies::Tests]
