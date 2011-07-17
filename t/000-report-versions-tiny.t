@@ -48,11 +48,7 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
-eval { $v .= pmver('Capture::Tiny','any version') };
-eval { $v .= pmver('Carp','any version') };
-eval { $v .= pmver('Class::Load','any version') };
 eval { $v .= pmver('Dist::Zilla','4.101612') };
-eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoPrereqs','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoVersion::Relative','0.01035617') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Bootstrap::lib','any version') };
@@ -94,32 +90,16 @@ eval { $v .= pmver('Dist::Zilla::Plugin::Twitter','0.007') };
 eval { $v .= pmver('Dist::Zilla::Plugin::UploadToCPAN','any version') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','1.0.0') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','0.01009803') };
-eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','any version') };
-eval { $v .= pmver('Dist::Zilla::Role::MintingProfile::ShareDir','any version') };
-eval { $v .= pmver('Dist::Zilla::Role::PluginBundle','any version') };
-eval { $v .= pmver('English','any version') };
-eval { $v .= pmver('File::Find','any version') };
-eval { $v .= pmver('File::Temp','any version') };
-eval { $v .= pmver('File::pushd','any version') };
-eval { $v .= pmver('FindBin','any version') };
 eval { $v .= pmver('IO::Socket::SSL','any version') };
 eval { $v .= pmver('LWP::Protocol::https','6.00') };
 eval { $v .= pmver('Module::Build','0.3601') };
 eval { $v .= pmver('Moose','1.01') };
-eval { $v .= pmver('Moose::Autobox','any version') };
 eval { $v .= pmver('MooseX::Has::Sugar','0.05044') };
 eval { $v .= pmver('MooseX::Types','0.21') };
 eval { $v .= pmver('Net::SSLeay','1.36') };
-eval { $v .= pmver('Path::Class','any version') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
-eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
-eval { $v .= pmver('Test::DZil','any version') };
 eval { $v .= pmver('Test::EOL','0.9') };
-eval { $v .= pmver('Test::Fatal','any version') };
-eval { $v .= pmver('Test::File::ShareDir','0.3.0') };
-eval { $v .= pmver('Test::More','0.88') };
-eval { $v .= pmver('Test::Output','any version') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
 
 
