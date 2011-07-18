@@ -1,6 +1,11 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugs]
+ - Reworked handling of auto_prereqs_skip not to carp needlessly.
+
+ [Features]
+ - Can use multiple values of auto_prereqs_skip now.
 
 1.0.13 2011-07-17T01:06:15Z
  [Bugs]
