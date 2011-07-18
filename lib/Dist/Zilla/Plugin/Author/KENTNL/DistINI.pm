@@ -105,6 +105,7 @@ sub gather_files {
       '; version_rel_hour  = %{rel_hour}n',                                      #
       '; version_rel_time_zone = %{tz}s',                                        #
       'twitter_hash_tags = %{tags}s',                                            #
+      '; auto_prereqs_skip = File::Find',                                        #
       $empty,                                                                    #
       '[Prereqs]',                                                               #
       $empty,                                                                    #
