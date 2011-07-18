@@ -108,8 +108,8 @@ sub _if_git_versions {
 
 sub _params_list {
   return (
-    qw( auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags ),
-    ( map {  'version_' . $_ } qw( major minor ), ( map { 'rel_' . $_ } qw( year month day hour time_zone ) ) ),
+    qw( :version auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags ),
+    ( map { 'version_' . $_ } qw( major minor ), ( map { 'rel_' . $_ } qw( year month day hour time_zone ) ) ),
     qw( relea0se_fail )
   );
 }
