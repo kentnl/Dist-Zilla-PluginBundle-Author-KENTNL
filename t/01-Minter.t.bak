@@ -6,6 +6,7 @@ use Test::More;
 use FindBin;
 use Path::Class qw( dir );
 use Test::Output qw();
+use JSON qw( from_json );
 
 my ( $root, $corpus, $global );
 
@@ -15,7 +16,7 @@ BEGIN {
   $global = $corpus->subdir('global');
 }
 
-$ENV{'GIT_AUTHOR_NAME'} = $ENV{'GIT_COMMITTER_NAME'} = 'Anon Y. Mus';
+$ENV{'GIT_AUTHOR_NAME'}  = $ENV{'GIT_COMMITTER_NAME'}  = 'Anon Y. Mus';
 $ENV{'GIT_AUTHOR_EMAIL'} = $ENV{'GIT_COMMITTER_EMAIL'} = 'anonymus@example.org';
 
 use Test::File::ShareDir 0.3.0 -share =>
@@ -24,10 +25,10 @@ use Test::DZil;
 
 my $tzil;
 
-
 subtest 'mint files' => sub {
 
-  $tzil = Minter->_new_from_profile( [ 'Author::KENTNL' => 'default' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
+  $tzil =
+    Minter->_new_from_profile( [ 'Author::KENTNL' => 'default' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
 
   pass('Loaded minter config');
 
@@ -84,22 +85,54 @@ subtest 'build minting' => sub {
 
   pass("Got minted dir");
 
-  subtest 'Mangle minted dist for experimental purposes' => sub {
+  subtest 'Mangle minted dist.ini for experimental purposes' => sub {
 
-    my $distini = $tmpdir->file('dist.ini')->openr();
-    my $newdistini = $tmpdir->file('dist.ini.new')->openw();
+    my $old = $tmpdir->file('dist.ini');
+    my $new = $tmpdir->file('dist.ini.new');
+    my $distini    = $old->openr();
+    my $newdistini = $new->openw();
 
-    while(defined( my $line = <$distini> )) {
+    while ( defined( my $line = <$distini> ) ) {
       print $newdistini $line;
-      if ( $line =~ /auto_prereqs_skip/ ){ 
-        note "Found skip line: " , explain( { line => $line } );
+      if ( $line =~ /auto_prereqs_skip/ ) {
+        note "Found skip line: ", explain( { line => $line } );
         pass "Found skip line: $.";
         print $newdistini "auto_prereqs_skip = Bogus\n";
         print $newdistini "auto_prereqs_skip = OtherBogus\n";
       }
     }
 
+    close $distini;
+    close $newdistini;
 
+    $old->remove();
+
+    rename "$new", "$old" or fail("Can't rename $new to $old");
+
+  };
+
+  subtest 'Create fake pm with deps to be ignored' => sub {
+
+    my $fn = $tmpdir->subdir('lib')->subdir('DZT')->file('Mintiniator.pm');
+    my $fh = $fn->openw();
+
+    print $fh <<'EOF';
+use strict;
+use warnings;
+package DZT::Mintiniator;
+
+# ABSTRACT: Test package to test auto prerequisites skip behaviour
+
+if(0){ # Stop it actually failing
+  require Bogus;
+  require OtherBogus;
+  require SomethingReallyWanted;
+}
+
+1;
+EOF
+
+    pass('Generated file');
   };
 
   my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $global }, );
@@ -131,16 +164,18 @@ subtest 'build minting' => sub {
   );
   note explain { 'output was' => { out => $stdout, err => $stderr } };
 
-   if ( defined $exception ) {
+  if ( defined $exception ) {
     note explain $exception;
+
     #  system("urxvt -e bash"); # XXX DEVELOPMENT
     die $@;
   }
- 
+
   #  system("find",$bzil->tempdir );
 
   my %expected_files = map { $_ => 1 } qw(
     lib/DZT/Minty.pm
+    lib/DZT/Mintiniator.pm
     weaver.ini
     perlcritic.rc
     Changes
@@ -165,10 +200,12 @@ subtest 'build minting' => sub {
   );
 
   my %got_files;
+  my %got_files_refs;
   for my $file ( @{ $bzil->files } ) {
     my $name = $file->name;
     $got_files{$name} = 0 if not exists $got_files{$name};
     $got_files{$name} += 1;
+    $got_files_refs{$name} = $file;
   }
 
   note explain { got => \%got_files, expected => \%expected_files };
@@ -176,6 +213,48 @@ subtest 'build minting' => sub {
   note explain [ $bzil->log_messages ];
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
+
+  my $data = from_json( dir( $bzil->tempdir )->subdir('build')->file('META.json')->slurp() );
+
+  note explain $data;
+
+  is_deeply( $data->{prereqs} , { 
+      build => { 
+        requires => {
+          'Module::Build' => '0.3601'
+        },
+      },
+      configure => {
+        requires => {
+          'Module::Build' => '0.3601'
+        },
+      },
+      develop => { 
+        recommends => {
+          'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '0.01009803'
+        },
+        requires => { 
+          'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0
+        },
+        suggests => {
+           'Dist::Zilla::PluginBundle::Author::KENTNL' => 'v1.0.0'
+        },
+      },
+      runtime => { 
+        requires => {
+          'Moose' => 0,
+          'SomethingReallyWanted' => 0,
+        },
+      },
+      test => {
+        requires => { 
+          'English' => 0,
+          'File::Find' => 0,
+          'File::Temp' => 0,
+          'Test::More' => '0.88',
+        },
+      }
+    }, 'Autodetected pre-reqs are sane');
 
 };
 

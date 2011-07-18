@@ -87,8 +87,8 @@ subtest 'build minting' => sub {
 
   subtest 'Mangle minted dist.ini for experimental purposes' => sub {
 
-    my $old = $tmpdir->file('dist.ini');
-    my $new = $tmpdir->file('dist.ini.new');
+    my $old        = $tmpdir->file('dist.ini');
+    my $new        = $tmpdir->file('dist.ini.new');
     my $distini    = $old->openr();
     my $newdistini = $new->openw();
 
@@ -218,7 +218,34 @@ EOF
 
   note explain $data;
 
+  is_deeply(
+    $data->{prereqs},
+    {
+      build     => { requires => { 'Module::Build' => '0.3601' }, },
+      configure => { requires => { 'Module::Build' => '0.3601' }, },
+      develop   => {
+        recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '0.01009803' },
+        requires   => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 },
+        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       => 'v1.0.0' },
+      },
+      runtime => {
+        requires => {
+          'Moose'                 => 0,
+          'SomethingReallyWanted' => 0,
+        },
+      },
+      test => {
+        requires => {
+          'English'    => 0,
+          'File::Find' => 0,
+          'File::Temp' => 0,
+          'Test::More' => '0.88',
+        },
+      }
+    },
+    'Autodetected pre-reqs are sane'
+  );
+
 };
 
 done_testing;
-
