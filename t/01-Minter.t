@@ -120,7 +120,7 @@ use strict;
 use warnings;
 package DZT::Mintiniator;
 
-# ABSTRACT: Test package to test auto pre-requisites skip behaviour
+# ABSTRACT: Test package to test auto prerequisites skip behaviour
 
 if(0){ # Stop it actually failing
   require Bogus;
