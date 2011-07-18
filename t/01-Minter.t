@@ -118,11 +118,14 @@ subtest 'build minting' => sub {
     print $fh <<'EOF';
 use strict;
 use warnings;
-package DZT::Mintinator;
+package DZT::Mintiniator;
+
+# ABSTRACT: Test package to test autoprereqs skip behaviour
 
 if(0){ # Stop it actually failing
   require Bogus;
   require OtherBogus;
+  require SomethingReallyWanted;
 }
 
 1;
