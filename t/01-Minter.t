@@ -84,6 +84,22 @@ subtest 'build minting' => sub {
 
   pass("Got minted dir");
 
+  subtest 'Mangle minted dist for experimental purposes' => sub {
+
+    my $distini = $tmpdir->file('dist.ini')->openr();
+    my $newdistini = $tmpdir->file('dist.ini.new')->openw();
+
+    while(defined( my $line = <$distini> )) {
+
+      if ( $line =~ /auto_prereqs_skip/ ){ 
+        note "Found skip line: " . explain { line => $line };
+      }
+
+    }
+
+
+  };
+
   my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $global }, );
 
   pass("Loaded builder configuration");
