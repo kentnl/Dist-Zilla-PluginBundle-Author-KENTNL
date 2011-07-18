@@ -130,6 +130,7 @@ sub _param_checker {
   };
 }
 
+
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
 sub bundle_config {
@@ -346,6 +347,8 @@ same as twitter_only=1
 =head2 KENTNL_RELEASE_FAIL
 
 same as release_fail=1
+
+=for Pod::Coverage   mvp_multivalue_args
 
 =head1 AUTHOR
 
