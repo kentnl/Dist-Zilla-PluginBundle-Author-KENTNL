@@ -84,7 +84,7 @@ subtest 'build minting' => sub {
 
   pass("Got minted dir");
 
-  subtest 'Mangle minted dist for experimental purposes' => sub {
+  subtest 'Mangle minted dist.ini for experimental purposes' => sub {
 
     my $old = $tmpdir->file('dist.ini');
     my $new = $tmpdir->file('dist.ini.new');
@@ -108,6 +108,27 @@ subtest 'build minting' => sub {
 
     rename "$new", "$old" or fail("Can't rename $new to $old");
 
+  };
+
+  subtest 'Create fake pm with deps to be ignored' => sub {
+
+    my $fn = $tmpdir->subdir('lib')->subdir('DZT')->file('Mintiniator.pm');
+    my $fh = $fn->openw();
+
+    print $fh <<'EOF';
+use strict;
+use warnings;
+package DZT::Mintinator;
+
+if(0){ # Stop it actually failing
+  require Bogus;
+  require OtherBogus;
+}
+
+1;
+EOF
+
+    pass('Generated file');
   };
 
   my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $global }, );
