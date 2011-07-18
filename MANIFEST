@@ -11,6 +11,7 @@ dist.ini
 lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
+lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm.bak
 perlcritic.rc
 share/profiles/default/ModuleTemplate.pm.tpl
 share/profiles/default/profile.ini
