@@ -106,7 +106,7 @@ sub _if_git_versions {
   return @{$else};
 }
 
-sub mvp_multivalue_args { return qw( auto_prereq_skip ) }
+sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
 sub bundle_config {
   my ( $self, $section ) = @_;
