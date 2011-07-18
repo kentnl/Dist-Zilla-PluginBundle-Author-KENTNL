@@ -93,6 +93,7 @@ subtest 'build minting' => sub {
 
       if ( $line =~ /auto_prereqs_skip/ ){ 
         note "Found skip line: " . explain { line => $line };
+        pass "Found skip line: $.";
       }
 
     }
