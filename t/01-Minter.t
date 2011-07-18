@@ -214,7 +214,7 @@ EOF
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
 
-  my $data = from_json( $got_files_refs{'META.json'}->contents );
+  my $data = from_json( dir( $bzil->tempdir )->subdir('build')->file('META.json')->slurp() );
 
   note explain $data;
 
