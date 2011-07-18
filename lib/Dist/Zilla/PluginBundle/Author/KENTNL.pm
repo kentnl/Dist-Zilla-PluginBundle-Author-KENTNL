@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.13';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.14';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -106,6 +106,8 @@ sub _if_git_versions {
   return @{$else};
 }
 
+sub mvp_multivalue_args { qw( auto_prereq_skip ) }
+
 sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
@@ -115,6 +117,15 @@ sub bundle_config {
   my $extra_hash   = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
   $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
   my $warn_no_git = _if_git_versions( $arg, [1], [0] );
+
+  if ( not defined $arg->{auto_prereqs_skip} ) { 
+    $arg->{auto_prereqs_skip} = [];
+  }
+
+  if ( not ref $arg->{auto_prereqs_skip} eq 'ARRAY' ) { 
+    require Carp;
+    Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
+  }
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
@@ -148,7 +159,7 @@ sub bundle_config {
     [ 'ReadmeFromPod'         => {} ],
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
-    [ 'AutoPrereqs'           => { skip => [ _defined_or( $arg , auto_prereqs_skip => qw{}, 1 )] } ],
+    [ 'AutoPrereqs'           => { skip => $arg->{auto_prereqs_skip} } ],
     [
       'Prereqs' => {
         -name                                             => 'BundleDevelNeeds',
@@ -222,7 +233,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.13
+version 1.0.14
 
 =head1 SYNOPSIS
 
