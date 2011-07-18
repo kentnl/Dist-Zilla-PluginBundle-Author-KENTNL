@@ -174,6 +174,7 @@ EOF
 
   my %expected_files = map { $_ => 1 } qw(
     lib/DZT/Minty.pm
+    lib/DZT/Mintiniator.pm
     weaver.ini
     perlcritic.rc
     Changes
