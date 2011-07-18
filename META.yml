@@ -9,6 +9,7 @@ build_requires:
   File::Temp: 0
   File::pushd: 0
   FindBin: 0
+  JSON: 0
   Module::Build: 0.3601
   Path::Class: 0
   Test::DZil: 0
@@ -152,6 +153,7 @@ x_BuiltWith:
     File::pushd: 1.00
     FindBin: 1.50
     IO::Socket::SSL: 1.44
+    JSON: 2.53
     LWP::Protocol::https: 6.02
     Module::Build: 0.38
     Moose: 2.001

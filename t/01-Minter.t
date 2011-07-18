@@ -6,6 +6,7 @@ use Test::More;
 use FindBin;
 use Path::Class qw( dir );
 use Test::Output qw();
+use JSON qw( from_json );
 
 my ( $root, $corpus, $global );
 
@@ -199,10 +200,12 @@ EOF
   );
 
   my %got_files;
+  my %got_files_refs;
   for my $file ( @{ $bzil->files } ) {
     my $name = $file->name;
     $got_files{$name} = 0 if not exists $got_files{$name};
     $got_files{$name} += 1;
+    $got_files_refs{$name} = $file;
   }
 
   note explain { got => \%got_files, expected => \%expected_files };
@@ -210,6 +213,10 @@ EOF
   note explain [ $bzil->log_messages ];
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
+
+  my $data = from_json( $got_files_refs{'META.json'} );
+
+  note explain $data;
 
 };
 

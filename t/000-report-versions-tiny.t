@@ -103,6 +103,7 @@ eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('File::pushd','any version') };
 eval { $v .= pmver('FindBin','any version') };
 eval { $v .= pmver('IO::Socket::SSL','any version') };
+eval { $v .= pmver('JSON','any version') };
 eval { $v .= pmver('LWP::Protocol::https','6.00') };
 eval { $v .= pmver('Module::Build','0.3601') };
 eval { $v .= pmver('Moose','1.01') };
