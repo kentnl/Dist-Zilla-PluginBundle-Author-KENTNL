@@ -214,7 +214,7 @@ EOF
 
   is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
 
-  my $data = from_json( $got_files_refs{'META.json'} );
+  my $data = from_json( $got_files_refs{'META.json'}->contents );
 
   note explain $data;
 
