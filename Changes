@@ -7,6 +7,7 @@ Revision history for {{$dist->name}}
  [Features]
  - Can use multiple values of auto_prereqs_skip now.
  - Now stricter about flags passed to detect typos.
+ - Minted dists now have an example auto_prereqs_skip
 
 1.0.13 2011-07-17T01:06:15Z
  [Bugs]
