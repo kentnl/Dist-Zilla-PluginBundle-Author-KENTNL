@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.14 2011-07-18T21:17:33Z
+1.0.14 2011-07-18T21:21:00Z
  [Bugs]
  - Reworked handling of auto_prereqs_skip not to carp needlessly.
 
@@ -8,6 +8,10 @@ Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
  - Can use multiple values of auto_prereqs_skip now.
  - Now stricter about flags passed to detect typos.
  - Minted dists now have an example auto_prereqs_skip
+
+ [Tests]
+ - Minter test now tests auto_prereq generation and the auto_prereqs_skip
+   flag.
 
 1.0.13 2011-07-17T01:06:15Z
  [Bugs]
