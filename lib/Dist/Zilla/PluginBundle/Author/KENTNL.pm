@@ -210,6 +210,14 @@ sub _param_checker {
   };
 }
 
+=begin Pod::Coverage
+
+  mvp_multivalue_args
+
+=end Pod::Coverage
+
+=cut
+
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
 sub bundle_config {
