@@ -11,7 +11,6 @@ dist.ini
 lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm.bak
 perlcritic.rc
 share/profiles/default/ModuleTemplate.pm.tpl
 share/profiles/default/profile.ini
@@ -23,7 +22,6 @@ share/profiles/default/skel/weaver.ini
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/01-Minter.t
-t/01-Minter.t.bak
 t/author-critic.t
 t/release-cpan-changes.t
 t/release-distmeta.t

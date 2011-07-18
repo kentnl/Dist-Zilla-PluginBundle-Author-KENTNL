@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.14 2011-07-18T21:15:36Z
+1.0.14 2011-07-18T21:17:33Z
  [Bugs]
  - Reworked handling of auto_prereqs_skip not to carp needlessly.
 
