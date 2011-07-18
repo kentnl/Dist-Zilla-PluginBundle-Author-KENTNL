@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.13';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.14';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -60,7 +60,7 @@ sub _mk_only {
     return () if exists $ENV{ 'KENTNL_NO' . $envname };
     return @rest unless defined $args;
     return @rest unless ref $args eq 'HASH';
-    return @rest unless exists $args->{ 'no' . $argfield };
+    return @rest unless exists $args->{ 'no_' . $argfield };
     return ();
   };
   {
@@ -106,15 +106,58 @@ sub _if_git_versions {
   return @{$else};
 }
 
+sub _params_list {
+  return (
+    qw( :version auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags ),
+    ( map { 'version_' . $_ } qw( major minor ), ( map { 'rel_' . $_ } qw( year month day hour time_zone ) ) ),
+    qw( relea0se_fail )
+  );
+}
+
+sub _param_checker {
+  my $_self = shift;
+
+  my %params_hash = map { $_ => 1 } $_self->_params_list;
+
+  return sub {
+
+    my ( $self, $param ) = @_;
+    if ( not exists $params_hash{$param} ) {
+      require Carp;
+      Carp::croak("[Author::KENTNL] Parameter $param doesn't appear to be supported");
+    }
+
+  };
+}
+
+
+sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
+
 sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
 
-  my $arg          = $section->{payload};
+  my $arg = $section->{payload};
+
   my $twitter_conf = { hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ) };
-  my $extra_hash   = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
+  my $extra_hash = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
   $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
   my $warn_no_git = _if_git_versions( $arg, [1], [0] );
+
+  my $checker = $self->_param_checker;
+
+  for my $param ( keys %{$arg} ) {
+    $checker->( $self, $param );
+  }
+
+  if ( not defined $arg->{auto_prereqs_skip} ) {
+    $arg->{auto_prereqs_skip} = [];
+  }
+
+  if ( not ref $arg->{auto_prereqs_skip} eq 'ARRAY' ) {
+    require Carp;
+    Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
+  }
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
     [
@@ -148,7 +191,7 @@ sub bundle_config {
     [ 'ReadmeFromPod'         => {} ],
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
-    [ 'AutoPrereqs'           => { skip => [ _defined_or( $arg , auto_prereqs_skip => qw{}, 1 )] } ],
+    [ 'AutoPrereqs'           => { skip => $arg->{auto_prereqs_skip} } ],
     [
       'Prereqs' => {
         -name                                             => 'BundleDevelNeeds',
@@ -222,7 +265,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.13
+version 1.0.14
 
 =head1 SYNOPSIS
 
@@ -304,6 +347,8 @@ same as twitter_only=1
 =head2 KENTNL_RELEASE_FAIL
 
 same as release_fail=1
+
+=for Pod::Coverage   mvp_multivalue_args
 
 =head1 AUTHOR
 
