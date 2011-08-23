@@ -122,6 +122,8 @@ eval { $v .= pmver('Test::File::ShareDir','0.3.0') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::Output','any version') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
+eval { $v .= pmver('strict','any version') };
+eval { $v .= pmver('warnings','any version') };
 
 
 
