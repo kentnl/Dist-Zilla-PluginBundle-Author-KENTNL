@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
-BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.0.14';
+{
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.0.15';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
@@ -115,7 +115,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Autho
 
 =head1 VERSION
 
-version 1.0.14
+version 1.0.15
 
 =head1 SYNOPSIS
 
