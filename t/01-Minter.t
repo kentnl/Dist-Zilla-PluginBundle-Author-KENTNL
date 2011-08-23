@@ -232,6 +232,8 @@ EOF
         requires => {
           'Moose'                 => 0,
           'SomethingReallyWanted' => 0,
+          'warnings'              => 0,
+          'strict'                => 0,
         },
       },
       test => {
