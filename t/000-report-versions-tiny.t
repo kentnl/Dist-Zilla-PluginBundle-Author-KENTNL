@@ -51,7 +51,7 @@ sub pmver {
 eval { $v .= pmver('Capture::Tiny','any version') };
 eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Class::Load','any version') };
-eval { $v .= pmver('Dist::Zilla','4.101612') };
+eval { $v .= pmver('Dist::Zilla','4.300000') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoPrereqs','4.200011') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoVersion::Relative','0.01035617') };
@@ -112,6 +112,7 @@ eval { $v .= pmver('MooseX::Has::Sugar','0.05044') };
 eval { $v .= pmver('MooseX::Types','0.21') };
 eval { $v .= pmver('Net::SSLeay','1.36') };
 eval { $v .= pmver('Path::Class','any version') };
+eval { $v .= pmver('Perl::PrereqScanner','1.006') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };

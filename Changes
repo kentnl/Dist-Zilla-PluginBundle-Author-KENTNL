@@ -1,6 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.15 2011-08-23T21:34:06Z
+1.0.15 2011-08-23T21:37:47Z
+ [Bugs]
+ - Recent Dist::Zilla / Prereq Scanners report strict/warnings
+   which broke tests. Fixed now, thanks tjmc.
 
 1.0.14 2011-07-18T21:23:49Z
  [Bugs]
