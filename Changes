@@ -2,8 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
  [Bugs]
- - Recent Dist::Zilla / Prereq Scanners report strict/warnings
-   which broke tests. Fixed now, thanks tjmc.
+ - Recent Dist::Zilla / Prereq Scanners report strict/warnings which broke
+   tests. Fixed now, thanks tjmc.
 
  [Dependencies::Runtime::New]
  - strict # new dist zilla reports this
