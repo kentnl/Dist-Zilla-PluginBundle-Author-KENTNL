@@ -1,6 +1,18 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugs]
+ - Recent Dist::Zilla / Prereq Scanners report strict/warnings
+   which broke tests. Fixed now, thanks tjmc.
+
+ [Dependencies::Runtime::New]
+ - strict # new dist zilla reports this
+ - warnings # new dist zilla reports this
+ - Dist::Zilla 4.300000 is now the minimum version
+ - Perl::PrereqScanner 1.006 is also a new minimum requirement.
+
+ [Internals]
+ - Versions no longer declared in BEGIN { } # new dzil.
 
 1.0.14 2011-07-18T21:23:49Z
  [Bugs]
