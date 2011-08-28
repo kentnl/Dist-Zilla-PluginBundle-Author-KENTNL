@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.15';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.16';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -219,17 +219,17 @@ sub bundle_config {
 
     [ 'MetaData::BuiltWith'  => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'Test::CPAN::Changes'  => {} ],
-    [ 'CompileTests'         => {} ],
+    [ 'Test::Compile'        => {} ],
     [ 'CriticTests'          => {} ],
     [ 'MetaTests'            => {} ],
     [ 'PodCoverageTests'     => {} ],
     [ 'PodSyntaxTests'       => {} ],
     [ 'ReportVersions::Tiny' => {} ],
     [ 'KwaliteeTests'        => {} ],
-    [ 'EOLTests'       => { trailing_whitespace => 1, } ],
-    [ 'ExtraTests'     => {} ],
-    [ 'TestRelease'    => {} ],
-    [ 'ConfirmRelease' => {} ],
+    [ 'EOLTests'        => { trailing_whitespace => 1, } ],
+    [ 'CheckExtraTests' => {} ],
+    [ 'TestRelease'     => {} ],
+    [ 'ConfirmRelease'  => {} ],
     _if_twitter(
       $arg,
       [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => $twitter_conf, ], ],
@@ -265,7 +265,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.15
+version 1.0.16
 
 =head1 SYNOPSIS
 

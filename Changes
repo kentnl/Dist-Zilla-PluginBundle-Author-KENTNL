@@ -1,5 +1,21 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.0.16 2011-08-28T07:59:59Z
+ [Dependencies::Build::Removed]
+ - English
+
+ [Dependencies::Runtime::New]
+ - Dist::Zilla::Plugin::CheckExtraTests # more useful sometimes
+ - Dist::Zilla::Plugin::Test::Compile
+
+ [Dependencies::Runtime::Removed]
+ - Dist::Zilla::Plugin::CompileTests
+ - Dist::Zilla::Plugin::ExtraTests
+
+ [Packaging]
+ - All extra-tests now shipped in xt/ instead of t/, and they're only
+   called by Dzil.
+
 1.0.15 2011-08-23T21:48:10Z
  [Bugs]
  - Recent Dist::Zilla / Prereq Scanners report strict/warnings which broke
