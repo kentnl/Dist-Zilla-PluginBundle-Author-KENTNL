@@ -8,7 +8,6 @@ use Module::Build 0.3601;
 my %module_build_args = (
   "build_requires" => {
     "Capture::Tiny" => 0,
-    "English" => 0,
     "File::Find" => 0,
     "File::Temp" => 0,
     "File::pushd" => 0,
@@ -30,7 +29,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.0.15",
+  "dist_version" => "1.0.16",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -42,11 +41,10 @@ my %module_build_args = (
     "Dist::Zilla::File::FromCode" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => "4.200011",
     "Dist::Zilla::Plugin::AutoVersion::Relative" => "0.01035617",
-    "Dist::Zilla::Plugin::CompileTests" => "1.110930",
+    "Dist::Zilla::Plugin::CheckExtraTests" => 0,
     "Dist::Zilla::Plugin::ConfirmRelease" => 0,
     "Dist::Zilla::Plugin::CriticTests" => "1.102280",
     "Dist::Zilla::Plugin::EOLTests" => "0.02",
-    "Dist::Zilla::Plugin::ExtraTests" => 0,
     "Dist::Zilla::Plugin::FakeRelease" => 0,
     "Dist::Zilla::Plugin::GatherDir" => 0,
     "Dist::Zilla::Plugin::Git::Check" => "1.102040",
@@ -75,6 +73,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::ReadmeFromPod" => "0.12",
     "Dist::Zilla::Plugin::ReportVersions::Tiny" => "1.01",
     "Dist::Zilla::Plugin::Test::CPAN::Changes" => 0,
+    "Dist::Zilla::Plugin::Test::Compile" => "1.112393",
     "Dist::Zilla::Plugin::TestRelease" => 0,
     "Dist::Zilla::Plugin::Twitter" => "0.007",
     "Dist::Zilla::Plugin::UploadToCPAN" => 0,
