@@ -238,7 +238,6 @@ EOF
       },
       test => {
         requires => {
-          'English'    => 0,
           'File::Find' => 0,
           'File::Temp' => 0,
           'Test::More' => '0.88',
