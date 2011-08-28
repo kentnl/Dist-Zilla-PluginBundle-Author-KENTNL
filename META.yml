@@ -74,7 +74,7 @@ requires:
   Dist::Zilla::Plugin::ReadmeFromPod: 0.12
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.01
   Dist::Zilla::Plugin::Test::CPAN::Changes: 0
-  Dist::Zilla::Plugin::Test::Compile: 1.112393
+  Dist::Zilla::Plugin::Test::Compile: 1.112392
   Dist::Zilla::Plugin::TestRelease: 0
   Dist::Zilla::Plugin::Twitter: 0.007
   Dist::Zilla::Plugin::UploadToCPAN: 0
@@ -384,6 +384,14 @@ x_Dist_Zilla:
           phase: develop
           type: requires
       name: DevelopRequires
+      version: 4.300000
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: suggests
+      name: RuntimeSuggests
       version: 4.300000
     -
       class: Dist::Zilla::Plugin::Prereqs
