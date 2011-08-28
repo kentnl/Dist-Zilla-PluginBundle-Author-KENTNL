@@ -53,7 +53,6 @@ requires:
   Dist::Zilla::Plugin::Git::NextVersion: 1.102810
   Dist::Zilla::Plugin::Git::Tag: 1.102040
   Dist::Zilla::Plugin::GithubMeta: 0.08
-  Dist::Zilla::Plugin::KwaliteeTests: 1.101420
   Dist::Zilla::Plugin::License: 0
   Dist::Zilla::Plugin::Manifest: 0
   Dist::Zilla::Plugin::ManifestSkip: 0
@@ -75,6 +74,7 @@ requires:
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.01
   Dist::Zilla::Plugin::Test::CPAN::Changes: 0
   Dist::Zilla::Plugin::Test::Compile: 1.112400
+  Dist::Zilla::Plugin::Test::Kwalitee: 1.101420
   Dist::Zilla::Plugin::TestRelease: 0
   Dist::Zilla::Plugin::Twitter: 0.007
   Dist::Zilla::Plugin::UploadToCPAN: 0
@@ -121,7 +121,6 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Git::NextVersion: 1.112380
     Dist::Zilla::Plugin::Git::Tag: 1.112380
     Dist::Zilla::Plugin::GithubMeta: 0.20
-    Dist::Zilla::Plugin::KwaliteeTests: 1.101420
     Dist::Zilla::Plugin::License: 4.300000
     Dist::Zilla::Plugin::Manifest: 4.300000
     Dist::Zilla::Plugin::ManifestSkip: 4.300000
@@ -142,7 +141,8 @@ x_BuiltWith:
     Dist::Zilla::Plugin::ReadmeFromPod: 0.14
     Dist::Zilla::Plugin::ReportVersions::Tiny: 1.03
     Dist::Zilla::Plugin::Test::CPAN::Changes: 0.005
-    Dist::Zilla::Plugin::Test::Compile: 1.112392
+    Dist::Zilla::Plugin::Test::Compile: 1.112400
+    Dist::Zilla::Plugin::Test::Kwalitee: 1.112400
     Dist::Zilla::Plugin::TestRelease: 4.300000
     Dist::Zilla::Plugin::Twitter: 0.010
     Dist::Zilla::Plugin::UploadToCPAN: 4.300000
@@ -300,7 +300,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Compile
       name: '@Author::KENTNL/Test::Compile'
-      version: 1.112392
+      version: 1.112400
     -
       class: Dist::Zilla::Plugin::CriticTests
       name: '@Author::KENTNL/CriticTests'
@@ -322,9 +322,9 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/ReportVersions::Tiny'
       version: 1.03
     -
-      class: Dist::Zilla::Plugin::KwaliteeTests
-      name: '@Author::KENTNL/KwaliteeTests'
-      version: 1.101420
+      class: Dist::Zilla::Plugin::Test::Kwalitee
+      name: '@Author::KENTNL/Test::Kwalitee'
+      version: 1.112400
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@Author::KENTNL/EOLTests'
