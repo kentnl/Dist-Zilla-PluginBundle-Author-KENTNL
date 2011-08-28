@@ -9,6 +9,13 @@ Revision history for {{$dist->name}}
  - Dist::Zilla::Plugin::CompileTests
  - Dist::Zilla::Plugin::ExtraTests
 
+ [Dependencies::Build::Removed]
+ - English
+
+ [Packaging]
+ - All extra-tests now shipped in xt/ instead of t/, and they're
+   only called by Dzil.
+
 1.0.15 2011-08-23T21:48:10Z
  [Bugs]
  - Recent Dist::Zilla / Prereq Scanners report strict/warnings which broke
