@@ -1,6 +1,13 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Runtime::New]
+ - Dist::Zilla::Plugin::CheckExtraTests # more useful sometimes
+ - Dist::Zilla::Plugin::Test::Compile
+
+ [Dependencies::Runtime::Removed]
+ - Dist::Zilla::Plugin::CompileTests
+ - Dist::Zilla::Plugin::ExtraTests
 
 1.0.15 2011-08-23T21:48:10Z
  [Bugs]

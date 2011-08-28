@@ -306,7 +306,7 @@ sub bundle_config {
 
     [ 'MetaData::BuiltWith'  => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'Test::CPAN::Changes'  => {} ],
-    [ 'CompileTests'         => {} ],
+    [ 'Test::Compile'         => {} ],
     [ 'CriticTests'          => {} ],
     [ 'MetaTests'            => {} ],
     [ 'PodCoverageTests'     => {} ],
@@ -314,7 +314,7 @@ sub bundle_config {
     [ 'ReportVersions::Tiny' => {} ],
     [ 'KwaliteeTests'        => {} ],
     [ 'EOLTests'       => { trailing_whitespace => 1, } ],
-    [ 'ExtraTests'     => {} ],
+    [ 'CheckExtraTests'     => {} ],
     [ 'TestRelease'    => {} ],
     [ 'ConfirmRelease' => {} ],
     _if_twitter(
