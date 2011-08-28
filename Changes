@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.17 2011-08-28T20:30:50Z
+1.0.17 2011-08-28T20:31:43Z
  [Dependencies::Runtime::New]
  - Dist::Zilla::Plugin::Test::Compile 1.122400 # required to circumvent a
    bug with __END__
