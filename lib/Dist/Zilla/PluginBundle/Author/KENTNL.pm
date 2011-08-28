@@ -312,7 +312,7 @@ sub bundle_config {
     [ 'PodCoverageTests'     => {} ],
     [ 'PodSyntaxTests'       => {} ],
     [ 'ReportVersions::Tiny' => {} ],
-    [ 'KwaliteeTests'        => {} ],
+    [ 'Test::Kwalitee'       => {} ],
     [ 'EOLTests'        => { trailing_whitespace => 1, } ],
     [ 'CheckExtraTests' => {} ],
     [ 'TestRelease'     => {} ],
