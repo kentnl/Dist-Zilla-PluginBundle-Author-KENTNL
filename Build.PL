@@ -29,7 +29,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.0.16",
+  "dist_version" => "1.0.17",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -73,7 +73,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::ReadmeFromPod" => "0.12",
     "Dist::Zilla::Plugin::ReportVersions::Tiny" => "1.01",
     "Dist::Zilla::Plugin::Test::CPAN::Changes" => 0,
-    "Dist::Zilla::Plugin::Test::Compile" => "1.112392",
+    "Dist::Zilla::Plugin::Test::Compile" => "1.112400",
     "Dist::Zilla::Plugin::TestRelease" => 0,
     "Dist::Zilla::Plugin::Twitter" => "0.007",
     "Dist::Zilla::Plugin::UploadToCPAN" => 0,

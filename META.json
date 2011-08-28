@@ -76,7 +76,7 @@
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.12",
             "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.01",
             "Dist::Zilla::Plugin::Test::CPAN::Changes" : 0,
-            "Dist::Zilla::Plugin::Test::Compile" : "1.112392",
+            "Dist::Zilla::Plugin::Test::Compile" : "1.112400",
             "Dist::Zilla::Plugin::TestRelease" : 0,
             "Dist::Zilla::Plugin::Twitter" : "0.007",
             "Dist::Zilla::Plugin::UploadToCPAN" : 0,
@@ -98,9 +98,6 @@
             "namespace::autoclean" : "0.09",
             "strict" : 0,
             "warnings" : 0
-         },
-         "suggests" : {
-            "Dist::Zilla::Plugin::Test::Compile" : "1.112393"
          }
       },
       "test" : {
@@ -123,15 +120,15 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "v1.0.16"
+         "version" : "v1.0.17"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "v1.0.16"
+         "version" : "v1.0.17"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "v1.0.16"
+         "version" : "v1.0.17"
       }
    },
    "release_status" : "stable",
@@ -143,7 +140,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "1.0.16",
+   "version" : "1.0.17",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.11",
@@ -485,17 +482,6 @@
                }
             },
             "name" : "DevelopRequires",
-            "version" : "4.300000"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "runtime",
-                  "type" : "suggests"
-               }
-            },
-            "name" : "RuntimeSuggests",
             "version" : "4.300000"
          },
          {
