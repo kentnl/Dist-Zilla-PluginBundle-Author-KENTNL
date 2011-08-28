@@ -190,13 +190,13 @@ EOF
     README
     t/00-compile.t
     t/000-report-versions-tiny.t
-    t/author-critic.t
-    t/release-cpan-changes.t
-    t/release-distmeta.t
-    t/release-eol.t
-    t/release-kwalitee.t
-    t/release-pod-coverage.t
-    t/release-pod-syntax.t
+    xt/author/critic.t
+    xt/release/cpan-changes.t
+    xt/release/distmeta.t
+    xt/release/eol.t
+    xt/release/kwalitee.t
+    xt/release/pod-coverage.t
+    xt/release/pod-syntax.t
   );
 
   my %got_files;
