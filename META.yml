@@ -112,7 +112,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Bootstrap::lib: 0.01023600
     Dist::Zilla::Plugin::CheckExtraTests: 0.004
     Dist::Zilla::Plugin::ConfirmRelease: 4.300000
-    Dist::Zilla::Plugin::CriticTests: 1.112400
+    Dist::Zilla::Plugin::CriticTests: 2.112410
     Dist::Zilla::Plugin::EOLTests: 0.02
     Dist::Zilla::Plugin::FakeRelease: 4.300000
     Dist::Zilla::Plugin::GatherDir: 4.300000
@@ -302,9 +302,9 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/Test::Compile'
       version: 1.112400
     -
-      class: Dist::Zilla::Plugin::CriticTests
-      name: '@Author::KENTNL/CriticTests'
-      version: 1.112400
+      class: Dist::Zilla::Plugin::Test::Perl::Critic
+      name: '@Author::KENTNL/Test::Perl::Critic'
+      version: 2.112410
     -
       class: Dist::Zilla::Plugin::MetaTests
       name: '@Author::KENTNL/MetaTests'
