@@ -44,7 +44,6 @@ requires:
   Dist::Zilla::Plugin::AutoVersion::Relative: 0.01035617
   Dist::Zilla::Plugin::CheckExtraTests: 0
   Dist::Zilla::Plugin::ConfirmRelease: 0
-  Dist::Zilla::Plugin::CriticTests: 1.102280
   Dist::Zilla::Plugin::EOLTests: 0.02
   Dist::Zilla::Plugin::FakeRelease: 0
   Dist::Zilla::Plugin::GatherDir: 0
@@ -74,7 +73,8 @@ requires:
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.01
   Dist::Zilla::Plugin::Test::CPAN::Changes: 0
   Dist::Zilla::Plugin::Test::Compile: 1.112400
-  Dist::Zilla::Plugin::Test::Kwalitee: 1.112400
+  Dist::Zilla::Plugin::Test::Kwalitee: 1.112410
+  Dist::Zilla::Plugin::Test::Perl::Critic: 1.102280
   Dist::Zilla::Plugin::TestRelease: 0
   Dist::Zilla::Plugin::Twitter: 0.007
   Dist::Zilla::Plugin::UploadToCPAN: 0
@@ -112,7 +112,6 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Bootstrap::lib: 0.01023600
     Dist::Zilla::Plugin::CheckExtraTests: 0.004
     Dist::Zilla::Plugin::ConfirmRelease: 4.300000
-    Dist::Zilla::Plugin::CriticTests: 2.112410
     Dist::Zilla::Plugin::EOLTests: 0.02
     Dist::Zilla::Plugin::FakeRelease: 4.300000
     Dist::Zilla::Plugin::GatherDir: 4.300000
@@ -143,6 +142,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Test::CPAN::Changes: 0.005
     Dist::Zilla::Plugin::Test::Compile: 1.112400
     Dist::Zilla::Plugin::Test::Kwalitee: 1.112410
+    Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
     Dist::Zilla::Plugin::TestRelease: 4.300000
     Dist::Zilla::Plugin::Twitter: 0.010
     Dist::Zilla::Plugin::UploadToCPAN: 4.300000
