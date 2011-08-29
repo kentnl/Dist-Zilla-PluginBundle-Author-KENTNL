@@ -183,7 +183,7 @@
          "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.03",
          "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.005",
          "Dist::Zilla::Plugin::Test::Compile" : "1.112400",
-         "Dist::Zilla::Plugin::Test::Kwalitee" : "1.112400",
+         "Dist::Zilla::Plugin::Test::Kwalitee" : "1.112410",
          "Dist::Zilla::Plugin::TestRelease" : "4.300000",
          "Dist::Zilla::Plugin::Twitter" : "0.010",
          "Dist::Zilla::Plugin::UploadToCPAN" : "4.300000",
@@ -406,7 +406,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::Kwalitee",
             "name" : "@Author::KENTNL/Test::Kwalitee",
-            "version" : "1.112400"
+            "version" : "1.112410"
          },
          {
             "class" : "Dist::Zilla::Plugin::EOLTests",
