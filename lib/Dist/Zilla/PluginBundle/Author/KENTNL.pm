@@ -307,7 +307,7 @@ sub bundle_config {
     [ 'MetaData::BuiltWith'  => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
     [ 'Test::CPAN::Changes'  => {} ],
     [ 'Test::Compile'        => {} ],
-    [ 'CriticTests'          => {} ],
+    [ 'Test::Perl::Critic'   => {} ],
     [ 'MetaTests'            => {} ],
     [ 'PodCoverageTests'     => {} ],
     [ 'PodSyntaxTests'       => {} ],
