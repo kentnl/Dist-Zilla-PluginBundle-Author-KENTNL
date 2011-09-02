@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.18 2011-09-02T09:47:58Z
+1.0.18 2011-09-02T09:49:38Z
+ [Documentation]
+ - Credit all the other authors now using @Author::
 
 1.0.17 2011-08-29T19:54:39Z
  [Dependencies::Runtime::New]
