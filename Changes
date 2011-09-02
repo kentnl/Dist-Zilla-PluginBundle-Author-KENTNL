@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Documentation]
+ - Credit all the other authors now using @Author::
 
 1.0.17 2011-08-29T19:54:39Z
  [Dependencies::Runtime::New]
