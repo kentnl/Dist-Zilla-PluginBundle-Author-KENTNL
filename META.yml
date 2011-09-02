@@ -28,13 +28,13 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: v1.0.17
+    version: v1.0.18
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: v1.0.17
+    version: v1.0.18
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: v1.0.17
+    version: v1.0.18
 requires:
   Carp: 0
   Class::Load: 0
@@ -99,7 +99,7 @@ requires:
 resources:
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.0.17
+version: 1.0.18
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.11
@@ -115,10 +115,10 @@ x_BuiltWith:
     Dist::Zilla::Plugin::EOLTests: 0.02
     Dist::Zilla::Plugin::FakeRelease: 4.300000
     Dist::Zilla::Plugin::GatherDir: 4.300000
-    Dist::Zilla::Plugin::Git::Check: 1.112380
-    Dist::Zilla::Plugin::Git::CommitBuild: 1.112380
-    Dist::Zilla::Plugin::Git::NextVersion: 1.112380
-    Dist::Zilla::Plugin::Git::Tag: 1.112380
+    Dist::Zilla::Plugin::Git::Check: 1.112440
+    Dist::Zilla::Plugin::Git::CommitBuild: 1.112440
+    Dist::Zilla::Plugin::Git::NextVersion: 1.112440
+    Dist::Zilla::Plugin::Git::Tag: 1.112440
     Dist::Zilla::Plugin::GithubMeta: 0.20
     Dist::Zilla::Plugin::License: 4.300000
     Dist::Zilla::Plugin::Manifest: 4.300000
@@ -165,7 +165,7 @@ x_BuiltWith:
     MooseX::Types: 0.28
     Net::SSLeay: 1.36
     Path::Class: 0.24
-    Perl::PrereqScanner: 1.006
+    Perl::PrereqScanner: 1.007
     Pod::Coverage::TrustPod: 0.100001
     String::Formatter: 0.102082
     Test::CPAN::Meta: 0.18
@@ -192,7 +192,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::KENTNL/Git::NextVersion'
-      version: 1.112380
+      version: 1.112440
     -
       class: Dist::Zilla::Plugin::GatherDir
       name: '@Author::KENTNL/GatherDir'
@@ -344,7 +344,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Author::KENTNL/Git::Check'
-      version: 1.112380
+      version: 1.112440
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: '@Author::KENTNL/NextRelease'
@@ -352,19 +352,19 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::KENTNL/Git::Tag/tag_master'
-      version: 1.112380
+      version: 1.112440
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: '@Author::KENTNL/Git::Commit'
-      version: 1.112380
+      version: 1.112440
     -
       class: Dist::Zilla::Plugin::Git::CommitBuild
       name: '@Author::KENTNL/Git::CommitBuild'
-      version: 1.112380
+      version: 1.112440
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::KENTNL/Git::Tag/tag_release'
-      version: 1.112380
+      version: 1.112440
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
       name: '@Author::KENTNL/UploadToCPAN'
