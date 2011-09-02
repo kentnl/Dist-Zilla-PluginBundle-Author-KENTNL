@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.17';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.18';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -265,7 +265,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.17
+version 1.0.18
 
 =head1 SYNOPSIS
 
@@ -319,6 +319,18 @@ I wish to give proper respect to the people out there already implementing this 
 =item L<< C<@Author::OLIVER> |Dist::Zilla::PluginBundle::Author::OLIVER >> - Oliver Gorwits', Author Bundle.
 
 =item L<< C<Dist::Zilla::PluginBundle::Author::> namespace |http://bit.ly/dIovQI >> - Oliver Gorwit's blog on the subject.
+
+=item L<< C<Dist::Zilla::PluginBundle::Author::LESPEA> |Dist::Zilla::PluginBundle::Author::LESPEA >> - Adam Lesperance's, Author Bundle.
+
+=item L<< C<Dist::Zilla::PluginBundle::Author::ALEXBIO> |Dist::Zilla::PluginBundle::Author::ALEXBIO >> - Alessandro Ghedini's, Author Bundle.
+
+=item L<< C<Dist::Zilla::PluginBundle::Author::RWSTAUNER> |Dist::Zilla::PluginBundle::Author::RWSTAUNER >> - Randy Stauner's, Author Bundle.
+
+=item L<< C<Dist::Zilla::PluginBundle::Author::WOLVERIAN> |Dist::Zilla::PluginBundle::Author::WOLVERIAN >> - Ilmari Vacklin's, Author Bundle.
+
+=item L<< C<Dist::Zilla::PluginBundle::Author::YANICK> |Dist::Zilla::PluginBundle::Author::YANICK >> - Yanick Champoux's, Author Bundle.
+
+=item L<< C<Dist::Zilla::PluginBundle::Author::RUSSOZ> |Dist::Zilla::PluginBundle::Author::RUSSOZ >> - Alexei Znamensky's, Author Bundle.
 
 =back
 
