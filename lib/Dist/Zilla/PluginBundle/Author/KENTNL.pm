@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.18';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.19';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -217,7 +217,7 @@ sub bundle_config {
       }
     ],
 
-    [ 'MetaData::BuiltWith'  => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
+    [ 'MetaData::BuiltWith'  => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : ( ) } ],
     [ 'Test::CPAN::Changes'  => {} ],
     [ 'Test::Compile'        => {} ],
     [ 'Test::Perl::Critic'   => {} ],
@@ -265,7 +265,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.18
+version 1.0.19
 
 =head1 SYNOPSIS
 

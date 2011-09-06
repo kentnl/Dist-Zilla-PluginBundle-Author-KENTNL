@@ -28,13 +28,13 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: v1.0.18
+    version: v1.0.19
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: v1.0.18
+    version: v1.0.19
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: v1.0.18
+    version: v1.0.19
 requires:
   Carp: 0
   Class::Load: 0
@@ -99,7 +99,7 @@ requires:
 resources:
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.0.18
+version: 1.0.19
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.11
@@ -147,7 +147,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Twitter: 0.010
     Dist::Zilla::Plugin::UploadToCPAN: 4.300000
     Dist::Zilla::PluginBundle::Author::KENTNL: NA(undef)
-    Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.0.6
+    Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     Dist::Zilla::Role::FileGatherer: 4.300000
     Dist::Zilla::Role::MintingProfile::ShareDir: 4.300000
     Dist::Zilla::Role::PluginBundle: 4.300000
@@ -162,7 +162,7 @@ x_BuiltWith:
     Moose: 2.0202
     Moose::Autobox: 0.11
     MooseX::Has::Sugar: 0.05070419
-    MooseX::Types: 0.28
+    MooseX::Types: 0.29
     Net::SSLeay: 1.36
     Path::Class: 0.24
     Perl::PrereqScanner: 1.007
@@ -175,7 +175,7 @@ x_BuiltWith:
     Test::File::ShareDir: 0.3.0
     Test::More: 0.98
     Test::Output: 1.01
-    namespace::autoclean: 0.12
+    namespace::autoclean: 0.13
     strict: 1.04
     warnings: 1.12
   perl:
