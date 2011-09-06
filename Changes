@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.19 2011-09-06T19:42:21Z
+1.0.19 2011-09-06T19:42:54Z
  [BugFix]
  - Only call uname on Linux. ( Reported by James Laver )
 
