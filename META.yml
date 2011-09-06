@@ -162,7 +162,7 @@ x_BuiltWith:
     Moose: 2.0202
     Moose::Autobox: 0.11
     MooseX::Has::Sugar: 0.05070419
-    MooseX::Types: 0.28
+    MooseX::Types: 0.29
     Net::SSLeay: 1.36
     Path::Class: 0.24
     Perl::PrereqScanner: 1.007
@@ -175,7 +175,7 @@ x_BuiltWith:
     Test::File::ShareDir: 0.3.0
     Test::More: 0.98
     Test::Output: 1.01
-    namespace::autoclean: 0.12
+    namespace::autoclean: 0.13
     strict: 1.04
     warnings: 1.12
   perl:
