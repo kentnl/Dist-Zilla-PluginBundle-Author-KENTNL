@@ -317,7 +317,7 @@ sub bundle_config {
       }
     ],
 
-    [ 'MetaData::BuiltWith'  => { show_uname => 1, uname_args => q{ -s -o -r -m -i } } ],
+    [ 'MetaData::BuiltWith'  => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : ( ) } ],
     [ 'Test::CPAN::Changes'  => {} ],
     [ 'Test::Compile'        => {} ],
     [ 'Test::Perl::Critic'   => {} ],
