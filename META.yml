@@ -28,13 +28,13 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: v1.0.19
+    version: v1.0.20
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: v1.0.19
+    version: v1.0.20
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: v1.0.19
+    version: v1.0.20
 requires:
   Carp: 0
   Class::Load: 0
@@ -99,12 +99,12 @@ requires:
 resources:
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.0.19
+version: 1.0.20
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.11
     Carp: 1.20
-    Class::Load: 0.08
+    Class::Load: 0.10
     Dist::Zilla: 4.300000
     Dist::Zilla::File::FromCode: 4.300000
     Dist::Zilla::Plugin::AutoPrereqs: 4.300000
@@ -186,7 +186,7 @@ x_BuiltWith:
       - 14
       - 1
   platform: linux
-  uname: 'Linux 3.0.1-gentoo x86_64 GenuineIntel GNU/Linux'
+  uname: 'Linux 3.0.3-gentoo x86_64 GenuineIntel GNU/Linux'
 x_Dist_Zilla:
   plugins:
     -
@@ -217,6 +217,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::PkgVersion
       name: '@Author::KENTNL/PkgVersion'
       version: 4.300000
+    -
+      class: Dist::Zilla::Plugin::Authority
+      name: '@Author::KENTNL/Authority'
+      version: 0.01
     -
       class: Dist::Zilla::Plugin::PodWeaver
       name: '@Author::KENTNL/PodWeaver'
@@ -422,3 +426,4 @@ x_Dist_Zilla:
     config:
       is_trial: 0
     version: 4.300000
+x_authority: cpan:KENTNL

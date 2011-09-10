@@ -2,8 +2,11 @@ use strict;
 use warnings;
 
 package Dist::Zilla::MintingProfile::Author::KENTNL;
+BEGIN {
+  $Dist::Zilla::MintingProfile::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
+}
 {
-  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '1.0.19';
+  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '1.0.20';
 }
 
 # ABSTRACT: KENTNL's Minting Profile
@@ -26,7 +29,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 1.0.19
+version 1.0.20
 
 =head1 SYNOPSIS
 

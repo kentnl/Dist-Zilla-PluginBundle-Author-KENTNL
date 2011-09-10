@@ -2,8 +2,11 @@ use strict;
 use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
+BEGIN {
+  $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
+}
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.19';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.20';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -150,6 +153,9 @@ sub bundle_config {
     $checker->( $self, $param );
   }
 
+  if ( not defined $arg->{authority} ) {
+    $arg->{authority} = 'cpan:KENTNL';
+  }
   if ( not defined $arg->{auto_prereqs_skip} ) {
     $arg->{auto_prereqs_skip} = [];
   }
@@ -183,6 +189,7 @@ sub bundle_config {
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'License'               => {} ],
     [ 'PkgVersion'            => {} ],
+    [ 'Authority'             => { authority => $arg->{authority}, do_metadata => 1 } ],
     [ 'PodWeaver'             => {} ],
     [ 'MetaProvides::Package' => {} ],
     [ 'MetaJSON'              => {} ],
@@ -265,7 +272,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.19
+version 1.0.20
 
 =head1 SYNOPSIS
 
