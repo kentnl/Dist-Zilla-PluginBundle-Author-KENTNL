@@ -2,8 +2,11 @@ use strict;
 use warnings;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
+BEGIN {
+  $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
+}
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.19';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.20';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -150,6 +153,9 @@ sub bundle_config {
     $checker->( $self, $param );
   }
 
+  if ( not defined $arg->{authority} ) {
+    $arg->{authority} = 'cpan:KENTNL';
+  }
   if ( not defined $arg->{auto_prereqs_skip} ) {
     $arg->{auto_prereqs_skip} = [];
   }
@@ -183,6 +189,7 @@ sub bundle_config {
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'License'               => {} ],
     [ 'PkgVersion'            => {} ],
+    [ 'Authority'             => { authority => $arg->{authority}, do_metadata => 1 } ],
     [ 'PodWeaver'             => {} ],
     [ 'MetaProvides::Package' => {} ],
     [ 'MetaJSON'              => {} ],
@@ -191,7 +198,7 @@ sub bundle_config {
     [ 'ReadmeFromPod'         => {} ],
     [ 'ManifestSkip'          => {} ],
     [ 'Manifest'              => {} ],
-    [ 'AutoPrereqs'           => { skip => $arg->{auto_prereqs_skip} } ],
+    [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
     [
       'Prereqs' => {
         -name                                             => 'BundleDevelNeeds',
@@ -217,19 +224,19 @@ sub bundle_config {
       }
     ],
 
-    [ 'MetaData::BuiltWith'  => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : ( ) } ],
-    [ 'Test::CPAN::Changes'  => {} ],
-    [ 'Test::Compile'        => {} ],
-    [ 'Test::Perl::Critic'   => {} ],
-    [ 'MetaTests'            => {} ],
-    [ 'PodCoverageTests'     => {} ],
-    [ 'PodSyntaxTests'       => {} ],
+    [ 'MetaData::BuiltWith' => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () } ],
+    [ 'Test::CPAN::Changes' => {} ],
+    [ 'Test::Compile'       => {} ],
+    [ 'Test::Perl::Critic'  => {} ],
+    [ 'MetaTests'           => {} ],
+    [ 'PodCoverageTests'    => {} ],
+    [ 'PodSyntaxTests'      => {} ],
     [ 'ReportVersions::Tiny' => {} ],
     [ 'Test::Kwalitee'       => {} ],
-    [ 'EOLTests'        => { trailing_whitespace => 1, } ],
-    [ 'CheckExtraTests' => {} ],
-    [ 'TestRelease'     => {} ],
-    [ 'ConfirmRelease'  => {} ],
+    [ 'EOLTests'             => { trailing_whitespace => 1, } ],
+    [ 'CheckExtraTests'      => {} ],
+    [ 'TestRelease'          => {} ],
+    [ 'ConfirmRelease'       => {} ],
     _if_twitter(
       $arg,
       [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => $twitter_conf, ], ],
@@ -265,7 +272,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.19
+version 1.0.20
 
 =head1 SYNOPSIS
 
