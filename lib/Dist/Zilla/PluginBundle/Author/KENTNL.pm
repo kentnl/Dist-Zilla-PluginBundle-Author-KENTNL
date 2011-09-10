@@ -142,6 +142,7 @@ sub bundle_config {
 
   my $arg = $section->{payload};
 
+  ## no critic (RequireInterpolationOfMetachars)
   my $twitter_conf = {
     hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ),
     tweet_url => 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}/Changes',
