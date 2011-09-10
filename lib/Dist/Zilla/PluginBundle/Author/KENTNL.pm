@@ -250,6 +250,9 @@ sub bundle_config {
     $checker->( $self, $param );
   }
 
+  if ( not defined $arg->{authority} ) {
+    $arg->{authority} = 'cpan:KENTNL';
+  }
   if ( not defined $arg->{auto_prereqs_skip} ) {
     $arg->{auto_prereqs_skip} = [];
   }
@@ -283,6 +286,7 @@ sub bundle_config {
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'License'               => {} ],
     [ 'PkgVersion'            => {} ],
+    [ 'Authority'             => { authority => $arg{authority}, do_metadata => 1 } ],
     [ 'PodWeaver'             => {} ],
     [ 'MetaProvides::Package' => {} ],
     [ 'MetaJSON'              => {} ],
