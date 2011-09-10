@@ -286,7 +286,7 @@ sub bundle_config {
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'License'               => {} ],
     [ 'PkgVersion'            => {} ],
-    [ 'Authority'             => { authority => $arg{authority}, do_metadata => 1 } ],
+    [ 'Authority'             => { authority => $arg->{authority}, do_metadata => 1 } ],
     [ 'PodWeaver'             => {} ],
     [ 'MetaProvides::Package' => {} ],
     [ 'MetaJSON'              => {} ],
