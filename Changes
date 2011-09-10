@@ -1,6 +1,11 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Runtime::New]
+ - Dist::Zilla::Plugin::Authority
+
+ [Features]
+ - Use Authority.
 
 1.0.19 2011-09-06T19:42:54Z
  [BugFix]
