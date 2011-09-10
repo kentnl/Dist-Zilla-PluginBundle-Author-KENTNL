@@ -39,6 +39,7 @@ my %module_build_args = (
     "Class::Load" => 0,
     "Dist::Zilla" => "4.300000",
     "Dist::Zilla::File::FromCode" => 0,
+    "Dist::Zilla::Plugin::Authority" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => "4.200011",
     "Dist::Zilla::Plugin::AutoVersion::Relative" => "0.01035617",
     "Dist::Zilla::Plugin::CheckExtraTests" => 0,
