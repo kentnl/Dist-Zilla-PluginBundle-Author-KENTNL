@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.20';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.21';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -111,9 +111,9 @@ sub _if_git_versions {
 
 sub _params_list {
   return (
-    qw( :version auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags ),
+    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags ),
     ( map { 'version_' . $_ } qw( major minor ), ( map { 'rel_' . $_ } qw( year month day hour time_zone ) ) ),
-    qw( relea0se_fail )
+    qw( release_fail )
   );
 }
 
@@ -142,7 +142,11 @@ sub bundle_config {
 
   my $arg = $section->{payload};
 
-  my $twitter_conf = { hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ) };
+  ## no critic (RequireInterpolationOfMetachars)
+  my $twitter_conf = {
+    hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ),
+    tweet_url => 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}/Changes',
+  };
   my $extra_hash = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
   $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
   my $warn_no_git = _if_git_versions( $arg, [1], [0] );
@@ -272,7 +276,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.20
+version 1.0.21
 
 =head1 SYNOPSIS
 
