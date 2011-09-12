@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.21';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.22';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -276,7 +276,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.21
+version 1.0.22
 
 =head1 SYNOPSIS
 
@@ -345,7 +345,7 @@ I wish to give proper respect to the people out there already implementing this 
 
 =back
 
-=head1 METHODS
+=head1
 
 =head2 bundle_config
 
