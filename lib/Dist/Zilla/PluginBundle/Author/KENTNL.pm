@@ -242,7 +242,7 @@ sub bundle_config {
   ## no critic (RequireInterpolationOfMetachars)
   my $twitter_conf = {
     hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ),
-    tweet_url => 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}/Changes',
+    tweet_url => 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes',
   };
   my $extra_hash = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
   $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
