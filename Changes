@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.22 2011-10-07T21:12:29Z
+1.0.22 2011-10-07T21:14:49Z
  [Dependencies]
  - Added dependency on Dist::Zilla::Plugin::Twitter at version 0.011 for
    TRIAL support. ( 1.0.21-source-2-gca0180a )
