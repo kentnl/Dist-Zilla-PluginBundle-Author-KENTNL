@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.0.22 2011-10-07T21:14:49Z
  [Dependencies]
  - Added dependency on Dist::Zilla::Plugin::Twitter at version 0.011 for
    TRIAL support. ( 1.0.21-source-2-gca0180a )
