@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.21';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.22';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -145,7 +145,7 @@ sub bundle_config {
   ## no critic (RequireInterpolationOfMetachars)
   my $twitter_conf = {
     hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ),
-    tweet_url => 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}/Changes',
+    tweet_url => 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes',
   };
   my $extra_hash = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
   $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
@@ -276,7 +276,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.0.21
+version 1.0.22
 
 =head1 SYNOPSIS
 

@@ -1,5 +1,14 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.0.22 2011-10-07T21:14:49Z
+ [Dependencies]
+ - Added dependency on Dist::Zilla::Plugin::Twitter at version 0.011 for
+   TRIAL support. ( 1.0.21-source-2-gca0180a )
+
+ [Internals]
+ - Now properly creates non-broken URI's on -TRIAL releases.
+   ( 1.0.21-source-2-gca0180a )
+
 1.0.21 2011-09-10T20:26:52Z
  [Features]
  - Tweets URL to the Changelog on MetaCPAN.
