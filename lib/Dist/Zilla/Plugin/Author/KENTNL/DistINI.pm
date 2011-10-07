@@ -150,7 +150,7 @@ This involves initial configuration of the parameters that get
 passed through to AutoVersion::Relative to provide the
 relative frame of reference.
 
-=head1
+=head1 METHODS
 
 =head2 gather_files
 

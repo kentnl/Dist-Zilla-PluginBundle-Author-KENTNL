@@ -78,7 +78,7 @@ NAMING SCHEME
     "Dist::Zilla::PluginBundle::Author::RUSSOZ" - Alexei Znamensky's, Author
     Bundle.
 
-
+METHODS
   bundle_config
     See the "PluginBundle" role for what this is for, it is a method to
     satisfy that role.

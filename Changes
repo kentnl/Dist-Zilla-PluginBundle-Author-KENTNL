@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.22 2011-09-12T23:20:29Z
+1.0.22 2011-10-07T20:53:24Z
+ [Internals]
+ - Now properly creates non-broken URI's on -TRIAL releases.
 
 1.0.21 2011-09-10T20:26:52Z
  [Features]
