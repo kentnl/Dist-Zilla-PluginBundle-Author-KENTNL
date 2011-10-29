@@ -12,7 +12,7 @@ my $v = "\n";
 
 eval {                     # no excuses!
     # report our Perl details
-    my $want = '5.10.0';
+    my $want = '5.008000';
     my $pv = ($^V || $]);
     $v .= "perl: $pv (wanted $want) on $^O from $^X\n\n";
 };
@@ -99,7 +99,6 @@ eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','any version') };
 eval { $v .= pmver('Dist::Zilla::Role::MintingProfile::ShareDir','any version') };
 eval { $v .= pmver('Dist::Zilla::Role::PluginBundle','any version') };
 eval { $v .= pmver('File::Find','any version') };
-eval { $v .= pmver('File::ShareDir','any version') };
 eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('File::pushd','any version') };
 eval { $v .= pmver('FindBin','any version') };
@@ -120,7 +119,7 @@ eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::DZil','any version') };
 eval { $v .= pmver('Test::EOL','0.9') };
 eval { $v .= pmver('Test::Fatal','any version') };
-eval { $v .= pmver('Test::File::ShareDir','v0.3.1') };
+eval { $v .= pmver('Test::File::ShareDir','0.3.0') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::Output','any version') };
 eval { $v .= pmver('namespace::autoclean','0.09') };

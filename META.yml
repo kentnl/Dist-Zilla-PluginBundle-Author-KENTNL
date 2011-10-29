@@ -5,7 +5,6 @@ author:
 build_requires:
   Capture::Tiny: 0
   File::Find: 0
-  File::ShareDir: 0
   File::Temp: 0
   File::pushd: 0
   FindBin: 0
@@ -14,10 +13,9 @@ build_requires:
   Path::Class: 0
   Test::DZil: 0
   Test::Fatal: 0
-  Test::File::ShareDir: v0.3.1
+  Test::File::ShareDir: 0.3.0
   Test::More: 0.88
   Test::Output: 0
-  perl: 5.10.0
 configure_requires:
   Module::Build: 0.3601
 dynamic_config: 0
@@ -157,7 +155,6 @@ x_BuiltWith:
     Dist::Zilla::Role::MintingProfile::ShareDir: 4.300002
     Dist::Zilla::Role::PluginBundle: 4.300002
     File::Find: 1.19
-    File::ShareDir: 1.03
     File::Temp: 0.22
     File::pushd: 1.001
     FindBin: 1.50
