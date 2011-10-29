@@ -9,6 +9,7 @@ my %module_build_args = (
   "build_requires" => {
     "Capture::Tiny" => 0,
     "File::Find" => 0,
+    "File::ShareDir" => 0,
     "File::Temp" => 0,
     "File::pushd" => 0,
     "FindBin" => 0,
@@ -17,9 +18,10 @@ my %module_build_args = (
     "Path::Class" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
-    "Test::File::ShareDir" => "0.3.0",
+    "Test::File::ShareDir" => "v0.3.1",
     "Test::More" => "0.88",
-    "Test::Output" => 0
+    "Test::Output" => 0,
+    "perl" => "5.10.0"
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"
@@ -29,7 +31,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.0.22",
+  "dist_version" => "1.0.23",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
