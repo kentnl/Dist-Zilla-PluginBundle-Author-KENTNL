@@ -97,6 +97,7 @@ requires:
   Test::CPAN::Meta: 0
   Test::EOL: 0.9
   namespace::autoclean: 0.09
+  perl: 5.10.0
   strict: 0
   warnings: 0
 resources:
@@ -383,6 +384,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Twitter
       name: '@Author::KENTNL/Twitter'
       version: 0.011
+    -
+      class: Dist::Zilla::Plugin::MinimumPerl
+      name: MinimumPerl
+      version: 1.003
     -
       class: Dist::Zilla::Plugin::Test::MinimumVersion
       name: Test::MinimumVersion

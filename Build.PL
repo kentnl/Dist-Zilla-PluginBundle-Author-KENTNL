@@ -96,6 +96,7 @@ my %module_build_args = (
     "Test::CPAN::Meta" => 0,
     "Test::EOL" => "0.9",
     "namespace::autoclean" => "0.09",
+    "perl" => "5.10.0",
     "strict" => 0,
     "warnings" => 0
   },
