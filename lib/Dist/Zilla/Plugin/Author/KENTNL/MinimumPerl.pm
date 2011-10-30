@@ -40,7 +40,7 @@ sub _3part_check {
     next
       if $minver >= $perl_required;
     my $v = eval $versiondecl;
-    if ( $v =~ /\A\d+\.\d+\./msx ) {
+    if ( $v =~ /\A\d+[.]\d+[.]/msx ) {
       $minver = $perl_required;
       $self->log_debug( [ 'Upgraded to 5.10 due to %s having x.y.z', $file->name ] );
     }
@@ -56,7 +56,7 @@ sub _build_detected_perl {
 
     # TODO should we scan the content for the perl shebang?
     # Only check .t and .pm/pl files, thanks RT#67355 and DOHERTY
-    next unless $file->name =~ /\.(?:t|p[ml])\z/imsx;
+    next unless $file->name =~ /[.](?:t|p[ml])\z/imsx;
 
     # TODO skip "bad" files and not die, just warn?
     my $pmv = Perl::MinimumVersion->new( \$file->content );
