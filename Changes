@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.1.0 2011-10-30T18:18:21Z
  [Dependencies]
  - new: runtime requires Dist::Zilla::Plugin::MinimumPerl
  - new: runtime requires perl 5.10.0
