@@ -48,12 +48,10 @@ sub _build_detected_perl {
     my $document = $pmv->Document;
     my $vnodes = $document->find( 
       sub { 
-          $_[1]->class eq 'PPI::Statement' and
-          $_[1]->find_any(sub{ 
-              $_[1]->isa('PPI::Token::Symbol') 
-              &&
-              $_[1]->content =~ /VERSION$/
-          }) and $_[1]->find_any('PPI::Token::Quote::Single')
+          $_[1]->class eq 'PPI::Token::Quote::Single'
+            and $_[1]->parent->find_any(sub{ 
+              $_[1]->isa('PPI::Token::Symbol') and  $_[1]->content =~ /::VERSION$/
+          })
       });
     use Data::Dump qw( pp );
     say pp [ map { $_ }  @{ $vnodes || [] } ];
