@@ -56,7 +56,7 @@ sub _build_detected_perl {
           }) and $_[1]->find_any('PPI::Token::Quote::Single')
       });
     use Data::Dump qw( pp );
-    say pp [ map { $_->content }  @{ $vnodes || [] } ];
+    say pp [ map { $_ }  @{ $vnodes || [] } ];
   }
 
   # Write out the minimum perl found
