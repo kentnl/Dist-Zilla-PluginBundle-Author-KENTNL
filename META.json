@@ -40,7 +40,6 @@
          "requires" : {
             "Carp" : 0,
             "Class::Load" : 0,
-            "Data::Dump" : 0,
             "Dist::Zilla" : "4.300000",
             "Dist::Zilla::File::FromCode" : 0,
             "Dist::Zilla::Plugin::Authority" : 0,
@@ -99,7 +98,7 @@
             "Test::CPAN::Meta" : 0,
             "Test::EOL" : "0.9",
             "namespace::autoclean" : "0.09",
-            "perl" : "5.010000",
+            "perl" : "v5.10.0",
             "strict" : 0,
             "version" : 0,
             "warnings" : 0
@@ -155,7 +154,6 @@
          "Capture::Tiny" : "0.11",
          "Carp" : "1.23",
          "Class::Load" : "0.11",
-         "Data::Dump" : "1.21",
          "Dist::Zilla" : "4.300002",
          "Dist::Zilla::File::FromCode" : "4.300002",
          "Dist::Zilla::Plugin::Authority" : "1.005",

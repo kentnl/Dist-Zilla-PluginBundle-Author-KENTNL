@@ -45,16 +45,24 @@ sub _build_detected_perl {
     if ( !defined $minver or $ver > $minver ) {
       $minver = $ver;
     }
-    my $document = $pmv->Document;
-    my $vnodes = $document->find( 
-      sub { 
-          $_[1]->class eq 'PPI::Token::Quote::Single'
-            and $_[1]->parent->find_any(sub{ 
-              $_[1]->isa('PPI::Token::Symbol') and  $_[1]->content =~ /::VERSION$/
-          })
-      });
-    use Data::Dump qw( pp );
-    say pp [ map { eval $_->content }  @{ $vnodes || [] } ];
+    if ( $minver < version->parse('5.10.0') ) {
+      my $document = $pmv->Document;
+      for my $versiondecl (@{
+        $document->find( 
+        sub { 
+            $_[1]->class eq 'PPI::Token::Quote::Single'
+              and $_[1]->parent->find_any(sub{ 
+                $_[1]->isa('PPI::Token::Symbol') and  $_[1]->content =~ /::VERSION$/
+            })
+        }) || []
+      }){
+        my $v = eval $versiondecl;
+        if ( $v =~ /\d+\.\d+\./ and $minver < version->parse('5.10.0') ) {
+          $minver = version->parse('5.10.0');
+          say "Upgraded to 5.10";
+        }
+    }
+  }
   }
 
   # Write out the minimum perl found

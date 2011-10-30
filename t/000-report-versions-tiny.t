@@ -12,7 +12,7 @@ my $v = "\n";
 
 eval {                     # no excuses!
     # report our Perl details
-    my $want = '5.010000';
+    my $want = '5.10.0';
     my $pv = ($^V || $]);
     $v .= "perl: $pv (wanted $want) on $^O from $^X\n\n";
 };
@@ -51,7 +51,6 @@ sub pmver {
 eval { $v .= pmver('Capture::Tiny','any version') };
 eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Class::Load','any version') };
-eval { $v .= pmver('Data::Dump','any version') };
 eval { $v .= pmver('Dist::Zilla','4.300000') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Authority','any version') };
