@@ -23,6 +23,8 @@ no Moose;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile

@@ -112,6 +112,8 @@ no Moose;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Author::KENTNL projects.

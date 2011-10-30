@@ -270,6 +270,8 @@ no Moose;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your distributions.

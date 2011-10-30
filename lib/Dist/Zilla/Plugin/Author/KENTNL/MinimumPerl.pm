@@ -112,6 +112,8 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a few hacks
