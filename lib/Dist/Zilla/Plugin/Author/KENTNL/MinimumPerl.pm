@@ -48,7 +48,7 @@ sub _build_detected_perl {
     my $document = $pmv->Document;
     my $vnodes = $document->find( 
       sub { 
-          $_[1]->isa('PPI::Statement::Compound') and
+          $_[1]->isa('PPI::Statement') and
           $_[1]->find_any(sub{ 
               $_[1]->isa('PPI::Token::Symbol') 
               &&
