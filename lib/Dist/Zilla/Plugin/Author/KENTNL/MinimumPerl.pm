@@ -39,6 +39,7 @@ sub _3part_check {
   for my $versiondecl (@versions) {
     next
       if $minver >= $perl_required;
+    ## no critic (ProhibitStringyEval)
     my $v = eval $versiondecl;
     if ( $v =~ /\A\d+[.]\d+[.]/msx ) {
       $minver = $perl_required;
