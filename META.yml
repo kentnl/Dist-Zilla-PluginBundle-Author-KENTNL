@@ -28,13 +28,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: v1.0.22
+    version: v1.1.0
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: v1.0.22
+    version: v1.1.0
+  Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
+    file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
+    version: v1.1.0
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: v1.0.22
+    version: v1.1.0
 requires:
   Carp: 0
   Class::Load: 0
@@ -63,6 +66,7 @@ requires:
   Dist::Zilla::Plugin::MetaProvides::Package: 1.11044404
   Dist::Zilla::Plugin::MetaTests: 0
   Dist::Zilla::Plugin::MetaYAML: 0
+  Dist::Zilla::Plugin::MinimumPerl: 0
   Dist::Zilla::Plugin::ModuleBuild: 0
   Dist::Zilla::Plugin::PkgVersion: 0
   Dist::Zilla::Plugin::PodCoverageTests: 0
@@ -91,21 +95,24 @@ requires:
   Net::SSLeay: 1.36
   Perl::PrereqScanner: 1.006
   Pod::Coverage::TrustPod: 0
+  Pod::Weaver::Plugin::Encoding: 0
   String::Formatter: 0
   Test::CPAN::Meta: 0
   Test::EOL: 0.9
   namespace::autoclean: 0.09
+  perl: 5.10.0
   strict: 0
+  version: 0
   warnings: 0
 resources:
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.0.22
+version: 1.1.0
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.11
-    Carp: 1.20
-    Class::Load: 0.10
+    Carp: 1.23
+    Class::Load: 0.11
     Dist::Zilla: 4.300002
     Dist::Zilla::File::FromCode: 4.300002
     Dist::Zilla::Plugin::Authority: 1.005
@@ -121,17 +128,18 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Git::CommitBuild: 1.112510
     Dist::Zilla::Plugin::Git::NextVersion: 1.112510
     Dist::Zilla::Plugin::Git::Tag: 1.112510
-    Dist::Zilla::Plugin::GithubMeta: 0.20
+    Dist::Zilla::Plugin::GithubMeta: 0.26
     Dist::Zilla::Plugin::License: 4.300002
     Dist::Zilla::Plugin::Manifest: 4.300002
     Dist::Zilla::Plugin::ManifestSkip: 4.300002
     Dist::Zilla::Plugin::MetaConfig: 4.300002
-    Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01018204
+    Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01018205
     Dist::Zilla::Plugin::MetaJSON: 4.300002
     Dist::Zilla::Plugin::MetaProvides: 1.12060501
     Dist::Zilla::Plugin::MetaProvides::Package: 1.12060501
     Dist::Zilla::Plugin::MetaTests: 4.300002
     Dist::Zilla::Plugin::MetaYAML: 4.300002
+    Dist::Zilla::Plugin::MinimumPerl: 1.003
     Dist::Zilla::Plugin::ModuleBuild: 4.300002
     Dist::Zilla::Plugin::PkgVersion: 4.300002
     Dist::Zilla::Plugin::PodCoverageTests: 4.300002
@@ -142,8 +150,8 @@ x_BuiltWith:
     Dist::Zilla::Plugin::ReadmeFromPod: 0.14
     Dist::Zilla::Plugin::ReportVersions::Tiny: 1.03
     Dist::Zilla::Plugin::Test::CPAN::Changes: 0.005
-    Dist::Zilla::Plugin::Test::Compile: 1.112400
-    Dist::Zilla::Plugin::Test::Kwalitee: 2.020000
+    Dist::Zilla::Plugin::Test::Compile: 1.112820
+    Dist::Zilla::Plugin::Test::Kwalitee: 2.03
     Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
     Dist::Zilla::Plugin::TestRelease: 4.300002
     Dist::Zilla::Plugin::Twitter: 0.011
@@ -157,7 +165,7 @@ x_BuiltWith:
     File::Temp: 0.22
     File::pushd: 1.001
     FindBin: 1.50
-    IO::Socket::SSL: 1.44
+    IO::Socket::SSL: 1.46
     JSON: 2.53
     LWP::Protocol::https: 6.02
     Module::Build: 0.38
@@ -165,20 +173,23 @@ x_BuiltWith:
     Moose::Autobox: 0.11
     MooseX::Has::Sugar: 0.05070419
     MooseX::Types: 0.30
-    Net::SSLeay: 1.41
+    Net::SSLeay: 1.42
     Path::Class: 0.24
     Perl::PrereqScanner: 1.007
     Pod::Coverage::TrustPod: 0.100001
+    Pod::Weaver::Plugin::Encoding: 0.01
     String::Formatter: 0.102082
     Test::CPAN::Meta: 0.18
     Test::DZil: 4.300002
     Test::EOL: 0.9
     Test::Fatal: 0.006
-    Test::File::ShareDir: 0.3.0
+    Test::File::ShareDir: 0.3.1
     Test::More: 0.98
     Test::Output: 1.01
     namespace::autoclean: 0.13
+    perl: 'NA(skipped: perl)'
     strict: 1.04
+    version: 0.94
     warnings: 1.12
   perl:
     original: v5.14.2
@@ -188,7 +199,7 @@ x_BuiltWith:
       - 14
       - 2
   platform: linux
-  uname: 'Linux 3.0.4-gentoo x86_64 GenuineIntel GNU/Linux'
+  uname: 'Linux 3.0.6-gentoo x86_64 GenuineIntel GNU/Linux'
 x_Dist_Zilla:
   plugins:
     -
@@ -210,7 +221,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GithubMeta
       name: '@Author::KENTNL/GithubMeta'
-      version: 0.20
+      version: 0.26
     -
       class: Dist::Zilla::Plugin::License
       name: '@Author::KENTNL/License'
@@ -284,6 +295,14 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/Prereqs/BundleDevelSuggests'
       version: 4.300002
     -
+      class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
+      name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
+      version: ~
+    -
+      class: Dist::Zilla::Plugin::Test::MinimumVersion
+      name: '@Author::KENTNL/Test::MinimumVersion'
+      version: 2.0.1
+    -
       class: Dist::Zilla::Plugin::MetaData::BuiltWith
       config:
         Dist::Zilla::Plugin::MetaData::BuiltWith:
@@ -298,7 +317,7 @@ x_Dist_Zilla:
               - '-i'
             uname_call: uname
       name: '@Author::KENTNL/MetaData::BuiltWith'
-      version: 0.01018204
+      version: 0.01018205
     -
       class: Dist::Zilla::Plugin::Test::CPAN::Changes
       name: '@Author::KENTNL/Test::CPAN::Changes'
@@ -306,7 +325,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Compile
       name: '@Author::KENTNL/Test::Compile'
-      version: 1.112400
+      version: 1.112820
     -
       class: Dist::Zilla::Plugin::Test::Perl::Critic
       name: '@Author::KENTNL/Test::Perl::Critic'
@@ -330,7 +349,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
-      version: 2.020000
+      version: 2.03
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@Author::KENTNL/EOLTests'

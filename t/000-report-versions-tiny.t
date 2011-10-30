@@ -12,7 +12,7 @@ my $v = "\n";
 
 eval {                     # no excuses!
     # report our Perl details
-    my $want = "any version";
+    my $want = '5.10.0';
     my $pv = ($^V || $]);
     $v .= "perl: $pv (wanted $want) on $^O from $^X\n\n";
 };
@@ -77,6 +77,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::MetaProvides','1.12044518') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MetaProvides::Package','1.11044404') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MetaTests','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MetaYAML','any version') };
+eval { $v .= pmver('Dist::Zilla::Plugin::MinimumPerl','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ModuleBuild','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PkgVersion','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PodCoverageTests','any version') };
@@ -93,7 +94,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::Test::Perl::Critic','1.102280') };
 eval { $v .= pmver('Dist::Zilla::Plugin::TestRelease','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Twitter','0.011') };
 eval { $v .= pmver('Dist::Zilla::Plugin::UploadToCPAN','any version') };
-eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','1.0.0') };
+eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','1.1.0') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','0.01009803') };
 eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','any version') };
 eval { $v .= pmver('Dist::Zilla::Role::MintingProfile::ShareDir','any version') };
@@ -114,6 +115,7 @@ eval { $v .= pmver('Net::SSLeay','1.36') };
 eval { $v .= pmver('Path::Class','any version') };
 eval { $v .= pmver('Perl::PrereqScanner','1.006') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
+eval { $v .= pmver('Pod::Weaver::Plugin::Encoding','any version') };
 eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::DZil','any version') };
@@ -124,6 +126,7 @@ eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::Output','any version') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
 eval { $v .= pmver('strict','any version') };
+eval { $v .= pmver('version','any version') };
 eval { $v .= pmver('warnings','any version') };
 
 

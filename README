@@ -3,7 +3,7 @@ NAME
     build your distributions.
 
 VERSION
-    version 1.0.22
+    version 1.1.0
 
 SYNOPSIS
         [@Author::KENTNL]
@@ -65,21 +65,15 @@ NAMING SCHEME
     @Author::OLIVER - Oliver Gorwits', Author Bundle.
     "Dist::Zilla::PluginBundle::Author::" namespace <http://bit.ly/dIovQI> -
     Oliver Gorwit's blog on the subject.
-    "Dist::Zilla::PluginBundle::Author::LESPEA" - Adam Lesperance's, Author
-    Bundle.
-    "Dist::Zilla::PluginBundle::Author::ALEXBIO" - Alessandro Ghedini's,
-    Author Bundle.
-    "Dist::Zilla::PluginBundle::Author::RWSTAUNER" - Randy Stauner's, Author
-    Bundle.
-    "Dist::Zilla::PluginBundle::Author::WOLVERIAN" - Ilmari Vacklin's,
-    Author Bundle.
-    "Dist::Zilla::PluginBundle::Author::YANICK" - Yanick Champoux's, Author
-    Bundle.
-    "Dist::Zilla::PluginBundle::Author::RUSSOZ" - Alexei Znamensky's, Author
-    Bundle.
+    @Author::LESPEA - Adam Lesperance's, Author Bundle.
+    @Author::ALEXBIO - Alessandro Ghedini's, Author Bundle.
+    @Author::RWSTAUNER - Randy Stauner's, Author Bundle.
+    @Author::WOLVERIAN - Ilmari Vacklin's, Author Bundle.
+    @Author::YANICK - Yanick Champoux's, Author Bundle.
+    @Author::RUSSOZ - Alexei Znamensky's, Author Bundle.
 
 METHODS
-  bundle_config
+  "bundle_config"
     See the "PluginBundle" role for what this is for, it is a method to
     satisfy that role.
 

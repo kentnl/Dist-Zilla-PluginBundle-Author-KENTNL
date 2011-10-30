@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.0.22';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.1.0';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -224,23 +224,24 @@ sub bundle_config {
         -name                                       => 'BundleDevelSuggests',
         -phase                                      => 'develop',
         -type                                       => 'suggests',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.0.0',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.1.0',
       }
     ],
-
-    [ 'MetaData::BuiltWith' => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () } ],
-    [ 'Test::CPAN::Changes' => {} ],
-    [ 'Test::Compile'       => {} ],
-    [ 'Test::Perl::Critic'  => {} ],
-    [ 'MetaTests'           => {} ],
-    [ 'PodCoverageTests'    => {} ],
-    [ 'PodSyntaxTests'      => {} ],
-    [ 'ReportVersions::Tiny' => {} ],
-    [ 'Test::Kwalitee'       => {} ],
-    [ 'EOLTests'             => { trailing_whitespace => 1, } ],
-    [ 'CheckExtraTests'      => {} ],
-    [ 'TestRelease'          => {} ],
-    [ 'ConfirmRelease'       => {} ],
+    [ 'Author::KENTNL::MinimumPerl' => {} ],
+    [ 'Test::MinimumVersion'        => {} ],
+    [ 'MetaData::BuiltWith'         => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () } ],
+    [ 'Test::CPAN::Changes'         => {} ],
+    [ 'Test::Compile'               => {} ],
+    [ 'Test::Perl::Critic'          => {} ],
+    [ 'MetaTests'                   => {} ],
+    [ 'PodCoverageTests'            => {} ],
+    [ 'PodSyntaxTests'              => {} ],
+    [ 'ReportVersions::Tiny'        => {} ],
+    [ 'Test::Kwalitee'              => {} ],
+    [ 'EOLTests'        => { trailing_whitespace => 1, } ],
+    [ 'CheckExtraTests' => {} ],
+    [ 'TestRelease'     => {} ],
+    [ 'ConfirmRelease'  => {} ],
     _if_twitter(
       $arg,
       [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => $twitter_conf, ], ],
@@ -270,13 +271,15 @@ no Moose;
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your distributions.
 
 =head1 VERSION
 
-version 1.0.22
+version 1.1.0
 
 =head1 SYNOPSIS
 
@@ -331,23 +334,23 @@ I wish to give proper respect to the people out there already implementing this 
 
 =item L<< C<Dist::Zilla::PluginBundle::Author::> namespace |http://bit.ly/dIovQI >> - Oliver Gorwit's blog on the subject.
 
-=item L<< C<Dist::Zilla::PluginBundle::Author::LESPEA> |Dist::Zilla::PluginBundle::Author::LESPEA >> - Adam Lesperance's, Author Bundle.
+=item L<< C<@Author::LESPEA> |Dist::Zilla::PluginBundle::Author::LESPEA >> - Adam Lesperance's, Author Bundle.
 
-=item L<< C<Dist::Zilla::PluginBundle::Author::ALEXBIO> |Dist::Zilla::PluginBundle::Author::ALEXBIO >> - Alessandro Ghedini's, Author Bundle.
+=item L<< C<@Author::ALEXBIO> |Dist::Zilla::PluginBundle::Author::ALEXBIO >> - Alessandro Ghedini's, Author Bundle.
 
-=item L<< C<Dist::Zilla::PluginBundle::Author::RWSTAUNER> |Dist::Zilla::PluginBundle::Author::RWSTAUNER >> - Randy Stauner's, Author Bundle.
+=item L<< C<@Author::RWSTAUNER> |Dist::Zilla::PluginBundle::Author::RWSTAUNER >> - Randy Stauner's, Author Bundle.
 
-=item L<< C<Dist::Zilla::PluginBundle::Author::WOLVERIAN> |Dist::Zilla::PluginBundle::Author::WOLVERIAN >> - Ilmari Vacklin's, Author Bundle.
+=item L<< C<@Author::WOLVERIAN> |Dist::Zilla::PluginBundle::Author::WOLVERIAN >> - Ilmari Vacklin's, Author Bundle.
 
-=item L<< C<Dist::Zilla::PluginBundle::Author::YANICK> |Dist::Zilla::PluginBundle::Author::YANICK >> - Yanick Champoux's, Author Bundle.
+=item L<< C<@Author::YANICK> |Dist::Zilla::PluginBundle::Author::YANICK >> - Yanick Champoux's, Author Bundle.
 
-=item L<< C<Dist::Zilla::PluginBundle::Author::RUSSOZ> |Dist::Zilla::PluginBundle::Author::RUSSOZ >> - Alexei Znamensky's, Author Bundle.
+=item L<< C<@Author::RUSSOZ> |Dist::Zilla::PluginBundle::Author::RUSSOZ >> - Alexei Znamensky's, Author Bundle.
 
 =back
 
 =head1 METHODS
 
-=head2 bundle_config
+=head2 C<bundle_config>
 
 See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what this is for, it is a method to satisfy that role.
 
