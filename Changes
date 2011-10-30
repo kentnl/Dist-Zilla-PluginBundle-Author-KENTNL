@@ -1,6 +1,20 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.0.23 2011-10-30T17:30:15Z
+1.0.23 2011-10-30T17:37:06Z
+ [Dependencies]
+ - new: runtime requires Dist::Zilla::Plugin::MinimumPerl
+ - new: runtime requires perl 5.10.0
+ - new: runtime requires version
+
+ [Packages]
+ - new: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl, contains an
+   additional 3-part version check that forces Perl 5.10.0
+
+ [Packaging]
+
+
+ [Tests]
+ - new: xt/release/minimum-version.t
 
 1.0.22 2011-10-07T21:14:49Z
  [Dependencies]
