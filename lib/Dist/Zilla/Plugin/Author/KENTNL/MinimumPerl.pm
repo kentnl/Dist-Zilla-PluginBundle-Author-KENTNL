@@ -54,7 +54,7 @@ sub _build_detected_perl {
           })
       });
     use Data::Dump qw( pp );
-    say pp [ map { $_ }  @{ $vnodes || [] } ];
+    say pp [ map { $_->content }  @{ $vnodes || [] } ];
   }
 
   # Write out the minimum perl found
