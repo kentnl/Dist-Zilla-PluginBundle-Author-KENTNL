@@ -124,7 +124,7 @@ version 1.1.0
 
 =head1 METHODS
 
-=head2 minperl
+=head2 C<minperl>
 
 Returns the maximum of either the version requested for perl, or the version detected for perl.
 
