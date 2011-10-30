@@ -1,17 +1,27 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.1.0 2011-10-30T18:12:32Z
+1.1.0 2011-10-30T18:16:49Z
  [Dependencies]
  - new: runtime requires Dist::Zilla::Plugin::MinimumPerl
  - new: runtime requires perl 5.10.0
  - new: runtime requires version
+ - new: runtime requires Pod::Weaver::Plugin::Encoding
+
+ [Features]
+ - All newly minted dists get [-Encoding] for free
+ - All dists now get xt/minimum-version.t
+ - All dists will have their Perl's set to 5.10 if they are 3-part.
+ - New dists will dep on 1.1.0
+ - Existing dists will suggest 1.1.0
 
  [Packages]
  - new: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl, contains an
    additional 3-part version check that forces Perl 5.10.0
 
  [Packaging]
-
+ - Reformated Props list.
+ - Wrap method names in C<>
+ - Encoding POD lines added.
 
  [Tests]
  - new: xt/release/minimum-version.t

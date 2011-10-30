@@ -224,7 +224,7 @@ sub bundle_config {
         -name                                       => 'BundleDevelSuggests',
         -phase                                      => 'develop',
         -type                                       => 'suggests',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.0.0',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.1.0',
       }
     ],
     [ 'Author::KENTNL::MinimumPerl' => {} ],
