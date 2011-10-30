@@ -227,7 +227,7 @@ EOF
       develop   => {
         recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '0.01009803' },
         requires   => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 },
-        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       => 'v1.0.0' },
+        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       => 'v1.1.0' },
       },
       runtime => {
         requires => {
