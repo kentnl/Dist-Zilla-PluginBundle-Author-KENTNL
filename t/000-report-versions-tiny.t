@@ -12,7 +12,7 @@ my $v = "\n";
 
 eval {                     # no excuses!
     # report our Perl details
-    my $want = '5.008000';
+    my $want = '5.010000';
     my $pv = ($^V || $]);
     $v .= "perl: $pv (wanted $want) on $^O from $^X\n\n";
 };
@@ -51,6 +51,7 @@ sub pmver {
 eval { $v .= pmver('Capture::Tiny','any version') };
 eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Class::Load','any version') };
+eval { $v .= pmver('Data::Dump','any version') };
 eval { $v .= pmver('Dist::Zilla','4.300000') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Authority','any version') };
@@ -77,6 +78,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::MetaProvides','1.12044518') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MetaProvides::Package','1.11044404') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MetaTests','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MetaYAML','any version') };
+eval { $v .= pmver('Dist::Zilla::Plugin::MinimumPerl','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ModuleBuild','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PkgVersion','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PodCoverageTests','any version') };
@@ -124,6 +126,7 @@ eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::Output','any version') };
 eval { $v .= pmver('namespace::autoclean','0.09') };
 eval { $v .= pmver('strict','any version') };
+eval { $v .= pmver('version','any version') };
 eval { $v .= pmver('warnings','any version') };
 
 

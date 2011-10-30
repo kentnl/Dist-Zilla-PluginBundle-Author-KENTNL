@@ -32,12 +32,16 @@ provides:
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
     version: v1.0.23
+  Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
+    file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
+    version: v1.0.23
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
     version: v1.0.23
 requires:
   Carp: 0
   Class::Load: 0
+  Data::Dump: 0
   Dist::Zilla: 4.300000
   Dist::Zilla::File::FromCode: 0
   Dist::Zilla::Plugin::Authority: 0
@@ -63,6 +67,7 @@ requires:
   Dist::Zilla::Plugin::MetaProvides::Package: 1.11044404
   Dist::Zilla::Plugin::MetaTests: 0
   Dist::Zilla::Plugin::MetaYAML: 0
+  Dist::Zilla::Plugin::MinimumPerl: 0
   Dist::Zilla::Plugin::ModuleBuild: 0
   Dist::Zilla::Plugin::PkgVersion: 0
   Dist::Zilla::Plugin::PodCoverageTests: 0
@@ -95,8 +100,9 @@ requires:
   Test::CPAN::Meta: 0
   Test::EOL: 0.9
   namespace::autoclean: 0.09
-  perl: 5.008000
+  perl: 5.010000
   strict: 0
+  version: 0
   warnings: 0
 resources:
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
@@ -107,6 +113,7 @@ x_BuiltWith:
     Capture::Tiny: 0.11
     Carp: 1.23
     Class::Load: 0.11
+    Data::Dump: 1.21
     Dist::Zilla: 4.300002
     Dist::Zilla::File::FromCode: 4.300002
     Dist::Zilla::Plugin::Authority: 1.005
@@ -122,7 +129,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Git::CommitBuild: 1.112510
     Dist::Zilla::Plugin::Git::NextVersion: 1.112510
     Dist::Zilla::Plugin::Git::Tag: 1.112510
-    Dist::Zilla::Plugin::GithubMeta: 0.22
+    Dist::Zilla::Plugin::GithubMeta: 0.26
     Dist::Zilla::Plugin::License: 4.300002
     Dist::Zilla::Plugin::Manifest: 4.300002
     Dist::Zilla::Plugin::ManifestSkip: 4.300002
@@ -133,6 +140,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaProvides::Package: 1.12060501
     Dist::Zilla::Plugin::MetaTests: 4.300002
     Dist::Zilla::Plugin::MetaYAML: 4.300002
+    Dist::Zilla::Plugin::MinimumPerl: 1.003
     Dist::Zilla::Plugin::ModuleBuild: 4.300002
     Dist::Zilla::Plugin::PkgVersion: 4.300002
     Dist::Zilla::Plugin::PodCoverageTests: 4.300002
@@ -181,6 +189,7 @@ x_BuiltWith:
     namespace::autoclean: 0.13
     perl: 'NA(skipped: perl)'
     strict: 1.04
+    version: 0.94
     warnings: 1.12
   perl:
     original: v5.14.2
@@ -212,7 +221,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GithubMeta
       name: '@Author::KENTNL/GithubMeta'
-      version: 0.22
+      version: 0.26
     -
       class: Dist::Zilla::Plugin::License
       name: '@Author::KENTNL/License'
@@ -382,9 +391,9 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/Twitter'
       version: 0.011
     -
-      class: Dist::Zilla::Plugin::MinimumPerl
-      name: MinimumPerl
-      version: 1.003
+      class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
+      name: Author::KENTNL::MinimumPerl
+      version: ~
     -
       class: Dist::Zilla::Plugin::Test::MinimumVersion
       name: Test::MinimumVersion

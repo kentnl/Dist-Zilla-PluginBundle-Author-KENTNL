@@ -10,6 +10,7 @@ corpus/global/config.ini
 dist.ini
 lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
+lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
 lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 perlcritic.rc
 share/profiles/default/ModuleTemplate.pm.tpl
