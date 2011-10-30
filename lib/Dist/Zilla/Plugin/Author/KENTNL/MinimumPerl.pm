@@ -24,9 +24,34 @@ has 'detected_perl' => (
   lazy_build => 1,
 );
 
+sub _3part_check {
+  my ( $self, $file, $pmv, $minver ) = @_;
+  my $perl_required = version->parse('5.10.0');
+  return $minver if $minver >= $perl_required;
+  my $document            = $pmv->Document;
+  my $version_declaration = sub {
+    $_[1]->isa('PPI::Token::Symbol') and $_[1]->content =~ /::VERSION$/;
+  };
+  my $version_match = sub {
+    $_[1]->class eq 'PPI::Token::Quote::Single' and $_[1]->parent->find_any($version_declaration);
+  };
+  my (@versions) = @{ $document->find($version_match) || [] };
+  for my $versiondecl (@versions) {
+    next
+      if $minver >= $perl_required;
+    my $v = eval $versiondecl;
+    if ( $v =~ /\d+\.\d+\./ ) {
+      $minver = $perl_required;
+      $self->log_debug( [ "Upgraded to 5.10 due to %s having x.y.z", $file->name ] );
+    }
+  }
+  return $minver;
+}
+
 sub _build_detected_perl {
   my ($self) = @_;
   my $minver;
+
   foreach my $file ( @{ $self->found_files } ) {
 
     # TODO should we scan the content for the perl shebang?
@@ -45,24 +70,7 @@ sub _build_detected_perl {
     if ( !defined $minver or $ver > $minver ) {
       $minver = $ver;
     }
-    if ( $minver < version->parse('5.10.0') ) {
-      my $document = $pmv->Document;
-      for my $versiondecl (@{
-        $document->find( 
-        sub { 
-            $_[1]->class eq 'PPI::Token::Quote::Single'
-              and $_[1]->parent->find_any(sub{ 
-                $_[1]->isa('PPI::Token::Symbol') and  $_[1]->content =~ /::VERSION$/
-            })
-        }) || []
-      }){
-        my $v = eval $versiondecl;
-        if ( $v =~ /\d+\.\d+\./ and $minver < version->parse('5.10.0') ) {
-          $minver = version->parse('5.10.0');
-          say "Upgraded to 5.10 due to " . $file->name . " having x.y.z";
-        }
-    }
-  }
+    $minver = $self->_3part_check( $file, $pmv, $minver );
   }
 
   # Write out the minimum perl found
