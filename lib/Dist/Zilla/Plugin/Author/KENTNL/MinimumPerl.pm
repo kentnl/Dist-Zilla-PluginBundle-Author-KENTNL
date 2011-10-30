@@ -59,7 +59,7 @@ sub _build_detected_perl {
         my $v = eval $versiondecl;
         if ( $v =~ /\d+\.\d+\./ and $minver < version->parse('5.10.0') ) {
           $minver = version->parse('5.10.0');
-          say "Upgraded to 5.10";
+          say "Upgraded to 5.10 due to $file having x.y.z";
         }
     }
   }
