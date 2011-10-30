@@ -70,7 +70,7 @@ use String::Formatter named_stringf => {
   },
 };
 
-=method gather_files
+=method C<gather_files>
 
 generates a C<dist.ini> file.
 
