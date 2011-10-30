@@ -115,6 +115,7 @@ eval { $v .= pmver('Net::SSLeay','1.36') };
 eval { $v .= pmver('Path::Class','any version') };
 eval { $v .= pmver('Perl::PrereqScanner','1.006') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
+eval { $v .= pmver('Pod::Weaver::Plugin::Encoding','any version') };
 eval { $v .= pmver('String::Formatter','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::DZil','any version') };

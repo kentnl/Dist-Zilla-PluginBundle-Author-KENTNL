@@ -94,6 +94,7 @@
             "Net::SSLeay" : "1.36",
             "Perl::PrereqScanner" : "1.006",
             "Pod::Coverage::TrustPod" : 0,
+            "Pod::Weaver::Plugin::Encoding" : 0,
             "String::Formatter" : 0,
             "Test::CPAN::Meta" : 0,
             "Test::EOL" : "0.9",
@@ -218,6 +219,7 @@
          "Path::Class" : "0.24",
          "Perl::PrereqScanner" : "1.007",
          "Pod::Coverage::TrustPod" : "0.100001",
+         "Pod::Weaver::Plugin::Encoding" : "0.01",
          "String::Formatter" : "0.102082",
          "Test::CPAN::Meta" : "0.18",
          "Test::DZil" : "4.300002",
@@ -365,6 +367,16 @@
             "version" : "4.300002"
          },
          {
+            "class" : "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
+            "name" : "@Author::KENTNL/Author::KENTNL::MinimumPerl",
+            "version" : null
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Test::MinimumVersion",
+            "name" : "@Author::KENTNL/Test::MinimumVersion",
+            "version" : "2.0.1"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",
             "config" : {
                "Dist::Zilla::Plugin::MetaData::BuiltWith" : {
@@ -484,16 +496,6 @@
             "class" : "Dist::Zilla::Plugin::Twitter",
             "name" : "@Author::KENTNL/Twitter",
             "version" : "0.011"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
-            "name" : "Author::KENTNL::MinimumPerl",
-            "version" : null
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Test::MinimumVersion",
-            "name" : "Test::MinimumVersion",
-            "version" : "2.0.1"
          },
          {
             "class" : "Dist::Zilla::Plugin::ModuleShareDirs",
