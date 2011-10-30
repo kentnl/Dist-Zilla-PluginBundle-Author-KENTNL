@@ -80,7 +80,6 @@ sub _build_detected_perl {
   }
   return $self->log_fatal('Found no perl files, check your dist?');
 }
-
 sub minperl {
   require version;
   my $self = shift;
@@ -122,6 +121,12 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 =head1 VERSION
 
 version 1.1.0
+
+=head1 METHODS
+
+=head2 minperl
+
+Returns the maximum of either the version requested for perl, or the version detected for perl.
 
 =head1 AUTHOR
 
