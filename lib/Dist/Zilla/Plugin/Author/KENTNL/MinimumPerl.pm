@@ -60,14 +60,14 @@ sub _build_detected_perl {
 
     # TODO skip "bad" files and not die, just warn?
     my $pmv = Perl::MinimumVersion->new( \$file->content );
-    if ( !defined $pmv ) {
-      $self->log_fatal( [ 'Unable to parse \'%s\'' , $file->name ] );
+    if ( not defined $pmv ) {
+      $self->log_fatal( [ 'Unable to parse \'%s\'', $file->name ] );
     }
     my $ver = $pmv->minimum_version;
-    if ( !defined $ver ) {
+    if ( not defined $ver ) {
       $self->log_fatal( [ 'Unable to extract MinimumPerl from \'%s\'', $file->name ] );
     }
-    if ( !defined $minver or $ver > $minver ) {
+    if ( ( not defined $minver ) or $ver > $minver ) {
       $minver = $ver;
     }
     $minver = $self->_3part_check( $file, $pmv, $minver );
@@ -99,7 +99,7 @@ override register_prereqs => sub {
 
   my $minperl = $self->minperl;
 
-  $self->log_debug([ 'Minimum Perl is v%s' , $minperl ] );
+  $self->log_debug( [ 'Minimum Perl is v%s', $minperl ] );
   $self->zilla->register_prereqs( { phase => 'runtime' }, perl => $minperl->stringify, );
 
 };
