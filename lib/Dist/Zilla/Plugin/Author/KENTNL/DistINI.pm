@@ -154,7 +154,7 @@ relative frame of reference.
 
 =head1 METHODS
 
-=head2 gather_files
+=head2 C<gather_files>
 
 generates a C<dist.ini> file.
 

@@ -80,6 +80,8 @@ sub _build_detected_perl {
   }
   return $self->log_fatal('Found no perl files, check your dist?');
 }
+
+
 sub minperl {
   require version;
   my $self = shift;
