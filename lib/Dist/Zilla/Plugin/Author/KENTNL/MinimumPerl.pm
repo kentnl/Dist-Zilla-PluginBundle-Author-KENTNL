@@ -126,7 +126,7 @@ version 1.1.0
 
 =head2 C<minperl>
 
-Returns the maximum of either the version requested for perl, or the version detected for perl.
+Returns the maximum of either the version requested for Perl, or the version detected for Perl.
 
 =head1 AUTHOR
 
