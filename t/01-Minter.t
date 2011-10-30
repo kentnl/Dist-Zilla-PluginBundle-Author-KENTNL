@@ -195,6 +195,7 @@ EOF
     xt/release/distmeta.t
     xt/release/eol.t
     xt/release/kwalitee.t
+    xt/release/minimum-version.t
     xt/release/pod-coverage.t
     xt/release/pod-syntax.t
   );
@@ -232,6 +233,7 @@ EOF
         requires => {
           'Moose'                 => 0,
           'SomethingReallyWanted' => 0,
+          'perl'                  => 'v5.10.0',
           'warnings'              => 0,
           'strict'                => 0,
         },
