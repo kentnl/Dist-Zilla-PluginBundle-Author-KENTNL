@@ -30,7 +30,7 @@ sub _3part_check {
   return $minver if $minver >= $perl_required;
   my $document            = $pmv->Document;
   my $version_declaration = sub {
-    $_[1]->isa('PPI::Token::Symbol') and $_[1]->content =~ /::VERSION$/;
+    $_[1]->isa('PPI::Token::Symbol') and $_[1]->content =~ /::VERSION\z/msx;
   };
   my $version_match = sub {
     $_[1]->class eq 'PPI::Token::Quote::Single' and $_[1]->parent->find_any($version_declaration);
@@ -40,9 +40,9 @@ sub _3part_check {
     next
       if $minver >= $perl_required;
     my $v = eval $versiondecl;
-    if ( $v =~ /\d+\.\d+\./ ) {
+    if ( $v =~ /\A\d+\.\d+\./msx ) {
       $minver = $perl_required;
-      $self->log_debug( [ "Upgraded to 5.10 due to %s having x.y.z", $file->name ] );
+      $self->log_debug( [ 'Upgraded to 5.10 due to %s having x.y.z', $file->name ] );
     }
   }
   return $minver;
@@ -56,16 +56,16 @@ sub _build_detected_perl {
 
     # TODO should we scan the content for the perl shebang?
     # Only check .t and .pm/pl files, thanks RT#67355 and DOHERTY
-    next unless $file->name =~ /\.(?:t|p[ml])$/i;
+    next unless $file->name =~ /\.(?:t|p[ml])\z/imsx;
 
     # TODO skip "bad" files and not die, just warn?
     my $pmv = Perl::MinimumVersion->new( \$file->content );
     if ( !defined $pmv ) {
-      $self->log_fatal( "Unable to parse '" . $file->name . "'" );
+      $self->log_fatal( [ 'Unable to parse \'%s\'' , $file->name ] );
     }
     my $ver = $pmv->minimum_version;
     if ( !defined $ver ) {
-      $self->log_fatal( "Unable to extract MinimumPerl from '" . $file->name . "'" );
+      $self->log_fatal( [ 'Unable to extract MinimumPerl from \'%s\'', $file->name ] );
     }
     if ( !defined $minver or $ver > $minver ) {
       $minver = $ver;
@@ -99,7 +99,7 @@ override register_prereqs => sub {
 
   my $minperl = $self->minperl;
 
-  $self->log_debug( 'Minimum Perl is v' . $minperl );
+  $self->log_debug([ 'Minimum Perl is v%s' , $minperl ] );
   $self->zilla->register_prereqs( { phase => 'runtime' }, perl => $minperl->stringify, );
 
 };
