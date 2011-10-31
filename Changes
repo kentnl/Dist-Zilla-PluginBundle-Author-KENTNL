@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.1.1 2011-10-31T04:24:07Z
+1.1.1 2011-10-31T04:25:07Z
  [Dependencies]
  - new: Dist::Zilla::Plugin::Test::MinimumVersion
 
