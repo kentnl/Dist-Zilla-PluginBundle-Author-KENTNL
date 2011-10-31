@@ -90,6 +90,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::ReportVersions::Tiny','1.01') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Test::CPAN::Changes','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Test::Compile','1.112400') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Test::Kwalitee','1.112410') };
+eval { $v .= pmver('Dist::Zilla::Plugin::Test::MinimumVersion','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Test::Perl::Critic','1.102280') };
 eval { $v .= pmver('Dist::Zilla::Plugin::TestRelease','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Twitter','0.011') };
