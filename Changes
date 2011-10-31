@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies]
+ - new: Dist::Zilla::Plugin::Test::MinimumVersion
 
 1.1.0 2011-10-30T18:18:21Z
  [Dependencies]
