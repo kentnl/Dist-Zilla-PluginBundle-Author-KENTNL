@@ -1,5 +1,18 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.2.0 2011-11-05T06:33:40Z
+ [Dependencies]
+ - changed: develop sugggests Dist::Zilla::PluginBundle::Author::KENTNL
+   v1.1.0 -> v1.2.0
+ - removed: runtime requires Dist::Zilla::Plugin::AutoVersion::Relative
+
+ [Features]
+ - Removed twitter-only mode.
+ - removed support for autoversion. Git versions now mandatory.
+
+ [Internals]
+ - Reorganised plugin configuration.
+
 1.1.1 2011-10-31T04:25:07Z
  [Dependencies]
  - new: Dist::Zilla::Plugin::Test::MinimumVersion

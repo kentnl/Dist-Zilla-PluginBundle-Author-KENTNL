@@ -3,14 +3,13 @@ NAME
     build your distributions.
 
 VERSION
-    version 1.1.1
+    version 1.2.0
 
 SYNOPSIS
         [@Author::KENTNL]
         no_cpan = 1 ; skip upload to cpan and twitter.
         no_git  = 1 ; skip things that work with git.
-        twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
-        release_fail = 1 ; asplode!. ( non-twitter only )
+        release_fail = 1 ; asplode!.
         git_versions = 1 ;  use git::nextversion for versioning
 
 DESCRIPTION
@@ -85,9 +84,6 @@ ENVIRONMENT
 
   KENTNL_NOCPAN
     same as no_cpan = 1
-
-  KENTNL_TWITTER_ONLY
-    same as twitter_only=1
 
   KENTNL_RELEASE_FAIL
     same as release_fail=1
