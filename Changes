@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.2.0 2011-11-05T06:33:40Z
  [Dependencies]
  - changed: develop sugggests Dist::Zilla::PluginBundle::Author::KENTNL
    v1.1.0 -> v1.2.0
