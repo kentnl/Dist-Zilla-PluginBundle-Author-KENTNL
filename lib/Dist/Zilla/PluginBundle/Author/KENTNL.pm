@@ -18,8 +18,7 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
     [@Author::KENTNL]
     no_cpan = 1 ; skip upload to cpan and twitter.
     no_git  = 1 ; skip things that work with git.
-    twitter_only = 1 ; skip uploading to cpan, don't git, but twitter with fakerelease.
-    release_fail = 1 ; asplode!. ( non-twitter only )
+    release_fail = 1 ; asplode!.
     git_versions = 1 ;  use git::nextversion for versioning
 
 =head1 DESCRIPTION
@@ -96,10 +95,6 @@ the same as no_git=1
 =head2 KENTNL_NOCPAN
 
 same as no_cpan = 1
-
-=head2 KENTNL_TWITTER_ONLY
-
-same as twitter_only=1
 
 =head2 KENTNL_RELEASE_FAIL
 
@@ -185,22 +180,6 @@ sub _release_fail {
   return $ref;
 }
 
-sub _if_twitter {
-  my ( $args, $twitter, $else ) = @_;
-  return @{$twitter} if ( exists $ENV{KENTNL_TWITTER_ONLY} );
-  return @{$twitter} if ( exists $args->{twitter_only} );
-  return @{$else};
-}
-
-sub _if_git_versions {
-  my ( $args, $gitversions, $else ) = @_;
-  return @{$gitversions} if exists $ENV{KENTNL_GITVERSIONS};
-  return @{$gitversions} if exists $args->{git_versions};
-  require Carp;
-  Carp::croak('Sorry, Git based versions are now mandatory');
-  return @{$else};
-}
-
 sub _params_list {
   return (
     qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail )
@@ -233,25 +212,27 @@ sub _param_checker {
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
-sub bundle_config {
-  my ( $self, $section ) = @_;
-  my $class = ( ref $self ) || $self;
-
-  my $arg = $section->{payload};
+sub bundle_config_inner {
+  my ( $class, $arg ) = @_;
 
   ## no critic (RequireInterpolationOfMetachars)
   my $twitter_conf = {
     hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ),
     tweet_url => 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes',
   };
+
   my $extra_hash = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
   $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
-  my $warn_no_git = _if_git_versions( $arg, [1], [0] );
 
-  my $checker = $self->_param_checker;
+  if ( not exists $arg->{git_versions} ) {
+    require Carp;
+    Carp::croak('Sorry, Git based versions are now mandatory');
+  }
+
+  my $checker = $class->_param_checker;
 
   for my $param ( keys %{$arg} ) {
-    $checker->( $self, $param );
+    $checker->( $class, $param );
   }
 
   if ( not defined $arg->{authority} ) {
@@ -266,23 +247,37 @@ sub bundle_config {
     Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
   }
 
-  my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
-    [ _if_git_versions( $arg, [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.1.0' } ], ) ],
-    [ 'GatherDir'  => { include_dotfiles => 1 } ],
+  my (@version) = ( [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.1.0' } ], );
+  my (@metadata) = (
     [ 'MetaConfig' => {} ],
-    [ 'PruneCruft' => { except           => '^.perltidyrc' } ],
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
-    [ 'License'               => {} ],
-    [ 'PkgVersion'            => {} ],
-    [ 'Authority'             => { authority => $arg->{authority}, do_metadata => 1 } ],
-    [ 'PodWeaver'             => {} ],
     [ 'MetaProvides::Package' => {} ],
-    [ 'MetaJSON'              => {} ],
-    [ 'MetaYAML'              => {} ],
-    [ 'ModuleBuild'           => {} ],
-    [ 'ReadmeFromPod'         => {} ],
-    [ 'ManifestSkip'          => {} ],
-    [ 'Manifest'              => {} ],
+    [ 'MetaData::BuiltWith'   => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () } ],
+
+  );
+
+  my (@sharedir) = ();
+
+  my (@gatherfiles) = (
+    [ 'GatherDir'            => { include_dotfiles    => 1 } ],
+    [ 'License'              => {} ],
+    [ 'MetaJSON'             => {} ],
+    [ 'MetaYAML'             => {} ],
+    [ 'Manifest'             => {} ],
+    [ 'MetaTests'            => {} ],
+    [ 'PodCoverageTests'     => {} ],
+    [ 'PodSyntaxTests'       => {} ],
+    [ 'ReportVersions::Tiny' => {} ],
+    [ 'Test::Kwalitee'       => {} ],
+    [ 'EOLTests'             => { trailing_whitespace => 1, } ],
+    [ 'Test::MinimumVersion' => {} ],
+    [ 'Test::Compile'        => {} ],
+    [ 'Test::Perl::Critic'   => {} ],
+  );
+
+  my (@prunefiles) = ( [ 'PruneCruft' => { except => '^.perltidyrc' } ], [ 'ManifestSkip' => {} ], );
+
+  my (@regprereqs) = (
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
     [
       'Prereqs' => {
@@ -305,43 +300,53 @@ sub bundle_config {
         -name                                       => 'BundleDevelSuggests',
         -phase                                      => 'develop',
         -type                                       => 'suggests',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.1.0',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.2.0',
       }
     ],
     [ 'Author::KENTNL::MinimumPerl' => {} ],
-    [ 'Test::MinimumVersion'        => {} ],
-    [ 'MetaData::BuiltWith'         => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () } ],
-    [ 'Test::CPAN::Changes'         => {} ],
-    [ 'Test::Compile'               => {} ],
-    [ 'Test::Perl::Critic'          => {} ],
-    [ 'MetaTests'                   => {} ],
-    [ 'PodCoverageTests'            => {} ],
-    [ 'PodSyntaxTests'              => {} ],
-    [ 'ReportVersions::Tiny'        => {} ],
-    [ 'Test::Kwalitee'              => {} ],
-    [ 'EOLTests'        => { trailing_whitespace => 1, } ],
-    [ 'CheckExtraTests' => {} ],
-    [ 'TestRelease'     => {} ],
-    [ 'ConfirmRelease'  => {} ],
-    _if_twitter(
-      $arg,
-      [ [ 'FakeRelease' => { user => 'KENTNL' }, ], [ 'Twitter' => $twitter_conf, ], ],
-      [
-        _release_fail($arg),
-        _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
-        [ 'NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } ],
-        _only_git( $arg, [ [ 'Git::Tag', 'tag_master' ] => { tag_format => '%v-source' } ] ),
-        _only_git( $arg, [ 'Git::Commit' => {} ] ),
-        _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ] ),
-        _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { branch => 'releases', tag_format => '%v' } ] ),
-        _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
-        _only_cpan( $arg, _only_twitter( $arg, [ 'Twitter' => $twitter_conf ] ) ),
-      ]
-    )
   );
+  my (@mungers) = (
+    [ 'PkgVersion'  => {} ],
+    [ 'PodWeaver'   => {} ],
+    [ 'NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } ],
+  );
+
+  return (
+    @version,
+    @metadata,
+    @sharedir,
+    @gatherfiles,
+    @prunefiles,
+    @mungers,
+    [ 'Authority'           => { authority => $arg->{authority}, do_metadata => 1 } ],
+    [ 'ModuleBuild'         => {} ],
+    [ 'ReadmeFromPod'       => {} ],
+    [ 'Test::CPAN::Changes' => {} ],
+    [ 'CheckExtraTests'     => {} ],
+    [ 'TestRelease'         => {} ],
+    [ 'ConfirmRelease'      => {} ],
+    _release_fail($arg),
+    _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
+    _only_git( $arg, [ [ 'Git::Tag', 'tag_master' ] => { tag_format => '%v-source' } ] ),
+    _only_git( $arg, [ 'Git::Commit' => {} ] ),
+    _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ] ),
+    _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { branch => 'releases', tag_format => '%v' } ] ),
+    _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
+    [ 'Twitter' => $twitter_conf ],
+  );
+}
+
+sub bundle_config {
+  my ( $self, $section ) = @_;
+  my $class = ( ref $self ) || $self;
+
+  my $arg = $section->{payload};
+
+  my @config = map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner($arg);
   load_class( $_->[1] ) for @config;
   return @config;
 }
+
 __PACKAGE__->meta->make_immutable;
 no Moose;
 
