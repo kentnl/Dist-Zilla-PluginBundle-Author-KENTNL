@@ -196,14 +196,14 @@ sub _if_git_versions {
   my ( $args, $gitversions, $else ) = @_;
   return @{$gitversions} if exists $ENV{KENTNL_GITVERSIONS};
   return @{$gitversions} if exists $args->{git_versions};
+  require Carp;
+  Carp::croak('Sorry, Git based versions are now mandatory');
   return @{$else};
 }
 
 sub _params_list {
   return (
-    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags ),
-    ( map { 'version_' . $_ } qw( major minor ), ( map { 'rel_' . $_ } qw( year month day hour time_zone ) ) ),
-    qw( release_fail )
+    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail )
   );
 }
 
@@ -267,23 +267,7 @@ sub bundle_config {
   }
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } (
-    [
-      _if_git_versions(
-        $arg,
-        [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.1.0' } ],
-        [
-          'AutoVersion::Relative' => {
-            major     => _defined_or( $arg, version_major         => 0,                  $warn_no_git ),
-            minor     => _defined_or( $arg, version_minor         => 1,                  $warn_no_git ),
-            year      => _defined_or( $arg, version_rel_year      => 2010,               $warn_no_git ),
-            month     => _defined_or( $arg, version_rel_month     => 5,                  $warn_no_git ),
-            day       => _defined_or( $arg, version_rel_day       => 16,                 $warn_no_git ),
-            hour      => _defined_or( $arg, version_rel_hour      => 20,                 $warn_no_git ),
-            time_zone => _defined_or( $arg, version_rel_time_zone => 'Pacific/Auckland', $warn_no_git ),
-          }
-        ]
-      )
-    ],
+    [ _if_git_versions( $arg, [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.1.0' } ], ) ],
     [ 'GatherDir'  => { include_dotfiles => 1 } ],
     [ 'MetaConfig' => {} ],
     [ 'PruneCruft' => { except           => '^.perltidyrc' } ],
