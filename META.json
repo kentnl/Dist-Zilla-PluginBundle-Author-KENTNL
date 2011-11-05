@@ -44,7 +44,6 @@
             "Dist::Zilla::File::FromCode" : 0,
             "Dist::Zilla::Plugin::Authority" : 0,
             "Dist::Zilla::Plugin::AutoPrereqs" : "4.200011",
-            "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01035617",
             "Dist::Zilla::Plugin::CheckExtraTests" : 0,
             "Dist::Zilla::Plugin::ConfirmRelease" : 0,
             "Dist::Zilla::Plugin::EOLTests" : "0.02",
@@ -126,19 +125,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "v1.2.0"
+         "version" : "v1.1.2"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "v1.2.0"
+         "version" : "v1.1.2"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "v1.2.0"
+         "version" : "v1.1.2"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "v1.2.0"
+         "version" : "v1.1.2"
       }
    },
    "release_status" : "stable",
@@ -150,7 +149,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "1.2.0",
+   "version" : "1.1.2",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.11",
@@ -160,7 +159,6 @@
          "Dist::Zilla::File::FromCode" : "4.300002",
          "Dist::Zilla::Plugin::Authority" : "1.005",
          "Dist::Zilla::Plugin::AutoPrereqs" : "4.300002",
-         "Dist::Zilla::Plugin::AutoVersion::Relative" : "0.01060309",
          "Dist::Zilla::Plugin::Bootstrap::lib" : "0.01023600",
          "Dist::Zilla::Plugin::CheckExtraTests" : "0.004",
          "Dist::Zilla::Plugin::ConfirmRelease" : "4.300002",

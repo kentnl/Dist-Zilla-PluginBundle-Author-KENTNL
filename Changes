@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.2.0 2011-11-05T01:40:24Z
+1.1.2 2011-11-05T06:18:50Z
+ [Dependencies]
+ - changed: develop sugggests Dist::Zilla::PluginBundle::Author::KENTNL v1.1.0 -> v1.2.0
 
 1.1.1 2011-10-31T04:25:07Z
  [Dependencies]

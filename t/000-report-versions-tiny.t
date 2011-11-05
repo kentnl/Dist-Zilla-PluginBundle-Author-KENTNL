@@ -55,7 +55,6 @@ eval { $v .= pmver('Dist::Zilla','4.300000') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Authority','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoPrereqs','4.200011') };
-eval { $v .= pmver('Dist::Zilla::Plugin::AutoVersion::Relative','0.01035617') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Bootstrap::lib','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::CheckExtraTests','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ConfirmRelease','any version') };
