@@ -100,14 +100,14 @@ requires:
   Test::CPAN::Meta: 0
   Test::EOL: 0.9
   namespace::autoclean: 0.09
-  perl: 5.10.0
+  perl: 5.010000
   strict: 0
   version: 0
   warnings: 0
 resources:
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.2.0
+version: v1.2.0
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.11
