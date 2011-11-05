@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.1.2';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.2.0';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -274,7 +274,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.1.2
+version 1.2.0
 
 =head1 SYNOPSIS
 
@@ -365,6 +365,7 @@ same as no_cpan = 1
 same as release_fail=1
 
 =for Pod::Coverage   mvp_multivalue_args
+  bundle_config_inner
 
 =head1 AUTHOR
 
