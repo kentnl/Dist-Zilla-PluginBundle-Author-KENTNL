@@ -318,6 +318,7 @@ sub bundle_config_inner {
     @gatherfiles,
     @prunefiles,
     @mungers,
+    @regprereqs,
     [ 'Authority'           => { authority => $arg->{authority}, do_metadata => 1 } ],
     [ 'ModuleBuild'         => {} ],
     [ 'ReadmeFromPod'       => {} ],
