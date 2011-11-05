@@ -205,6 +205,7 @@ sub _param_checker {
 =begin Pod::Coverage
 
   mvp_multivalue_args
+  bundle_config_inner
 
 =end Pod::Coverage
 
