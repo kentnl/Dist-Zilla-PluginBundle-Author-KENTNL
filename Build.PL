@@ -29,7 +29,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.2.0",
+  "dist_version" => "1.2.1",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -95,6 +95,7 @@ my %module_build_args = (
     "String::Formatter" => 0,
     "Test::CPAN::Meta" => 0,
     "Test::EOL" => "0.9",
+    "Test::Perl::Critic" => 0,
     "namespace::autoclean" => "0.09",
     "perl" => "5.10.0",
     "strict" => 0,
