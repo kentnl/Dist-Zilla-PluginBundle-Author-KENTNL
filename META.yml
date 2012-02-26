@@ -137,7 +137,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaData::BuiltWith: 0.01018205
     Dist::Zilla::Plugin::MetaJSON: 4.300009
     Dist::Zilla::Plugin::MetaProvides: 1.14000000
-    Dist::Zilla::Plugin::MetaProvides::Package: 1.14000000
+    Dist::Zilla::Plugin::MetaProvides::Package: 1.14000001
     Dist::Zilla::Plugin::MetaTests: 4.300009
     Dist::Zilla::Plugin::MetaYAML: 4.300009
     Dist::Zilla::Plugin::MinimumPerl: 1.003
@@ -219,7 +219,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MetaProvides::Package
       name: '@Author::KENTNL/MetaProvides::Package'
-      version: 1.14000000
+      version: 1.14000001
     -
       class: Dist::Zilla::Plugin::MetaData::BuiltWith
       config:
