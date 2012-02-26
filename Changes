@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.2.1 2012-02-26T20:56:59Z
+1.2.1 2012-02-26T20:57:37Z
 
  [Dependencies::New]
  - runtime requires : Test::Perl::Critic
