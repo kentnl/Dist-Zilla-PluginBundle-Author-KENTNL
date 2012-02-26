@@ -2,6 +2,12 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+ [Dependencies::New]
+ - runtime requires : Test::Perl::Critic
+
+ [Packaging]
+ - Update LICENSE (Year, Indent)
+
 1.2.0 2011-11-05T06:33:40Z
  [Dependencies]
  - changed: develop sugggests Dist::Zilla::PluginBundle::Author::KENTNL
