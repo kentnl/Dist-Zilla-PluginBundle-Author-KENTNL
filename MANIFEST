@@ -1,6 +1,7 @@
 .perltidyrc
 Build.PL
 Changes
+Changes~
 LICENSE
 MANIFEST
 META.json
