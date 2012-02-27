@@ -1,4 +1,19 @@
-Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
+﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
+
+1.2.1 2012-02-27T05:12:12Z
+ [Dependencies::Changed]
+ - runtime requires : Dist::Zilla::Plugin::MetaProvides
+   1.12044518 -> 1.14000000
+ - runtime requires : Dist::Zilla::Plugin::MetaProvides::Package
+   1.11044404 -> 1.14000001
+ - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith
+   0.01014716 -> 0.02000100
+
+ [Dependencies::New]
+ - runtime requires : Test::Perl::Critic
+
+ [Packaging]
+ - Update LICENSE (Year, Indent)
 
 1.2.0 2011-11-05T06:33:40Z
  [Dependencies]

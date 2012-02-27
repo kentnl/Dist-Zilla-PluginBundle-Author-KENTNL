@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.2.0';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.2.1';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -274,7 +274,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.2.0
+version 1.2.1
 
 =head1 SYNOPSIS
 
@@ -373,7 +373,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Kent Fredric.
+This software is copyright (c) 2012 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
