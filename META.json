@@ -58,9 +58,9 @@
             "Dist::Zilla::Plugin::Manifest" : "0",
             "Dist::Zilla::Plugin::ManifestSkip" : "0",
             "Dist::Zilla::Plugin::MetaConfig" : "0",
-            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01014716",
+            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.02000000",
             "Dist::Zilla::Plugin::MetaJSON" : "0",
-            "Dist::Zilla::Plugin::MetaProvides" : "1.12044518",
+            "Dist::Zilla::Plugin::MetaProvides" : "1.14000000",
             "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
             "Dist::Zilla::Plugin::MetaTests" : "0",
             "Dist::Zilla::Plugin::MetaYAML" : "0",
@@ -176,7 +176,7 @@
          "Dist::Zilla::Plugin::Manifest" : "4.300009",
          "Dist::Zilla::Plugin::ManifestSkip" : "4.300009",
          "Dist::Zilla::Plugin::MetaConfig" : "4.300009",
-         "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.01018205",
+         "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.02000000",
          "Dist::Zilla::Plugin::MetaJSON" : "4.300009",
          "Dist::Zilla::Plugin::MetaProvides" : "1.14000000",
          "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
@@ -289,7 +289,7 @@
                }
             },
             "name" : "@Author::KENTNL/MetaData::BuiltWith",
-            "version" : "0.01018205"
+            "version" : "0.02000000"
          },
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
