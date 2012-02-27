@@ -58,7 +58,7 @@
             "Dist::Zilla::Plugin::Manifest" : "0",
             "Dist::Zilla::Plugin::ManifestSkip" : "0",
             "Dist::Zilla::Plugin::MetaConfig" : "0",
-            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.02000000",
+            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.02000100",
             "Dist::Zilla::Plugin::MetaJSON" : "0",
             "Dist::Zilla::Plugin::MetaProvides" : "1.14000000",
             "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
@@ -153,7 +153,6 @@
    "version" : "1.2.1",
    "x_BuiltWith" : {
       "modules" : {
-         "" : "1.02",
          "Capture::Tiny" : "0.17",
          "Carp" : "1.25",
          "Class::Load" : "0.18",
@@ -176,7 +175,7 @@
          "Dist::Zilla::Plugin::Manifest" : "4.300009",
          "Dist::Zilla::Plugin::ManifestSkip" : "4.300009",
          "Dist::Zilla::Plugin::MetaConfig" : "4.300009",
-         "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.02000000",
+         "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.02000100",
          "Dist::Zilla::Plugin::MetaJSON" : "4.300009",
          "Dist::Zilla::Plugin::MetaProvides" : "1.14000000",
          "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
@@ -230,6 +229,7 @@
          "Test::File::ShareDir" : "0.3.1",
          "Test::More" : "0.98",
          "Test::Output" : "1.01",
+         "Test::Perl::Critic" : "1.02",
          "namespace::autoclean" : "0.13",
          "perl" : "NA(skipped: perl)",
          "strict" : "1.06",
@@ -289,7 +289,7 @@
                }
             },
             "name" : "@Author::KENTNL/MetaData::BuiltWith",
-            "version" : "0.02000000"
+            "version" : "0.02000100"
          },
          {
             "class" : "Dist::Zilla::Plugin::GatherDir",
