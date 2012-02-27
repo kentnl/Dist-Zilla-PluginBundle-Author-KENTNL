@@ -1,4 +1,4 @@
-Revision history for {{$dist->name}}
+﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
  [Dependencies::Changed]
@@ -6,6 +6,8 @@ Revision history for {{$dist->name}}
    1.12044518 -> 1.14000000
  - runtime requires : Dist::Zilla::Plugin::MetaProvides::Package
    1.11044404 -> 1.14000001
+ - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith
+   0.01014716 -> 0.02000100
 
  [Dependencies::New]
  - runtime requires : Test::Perl::Critic
