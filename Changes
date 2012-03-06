@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.3.0 2012-03-06T22:16:41Z
+1.3.0 2012-03-06T22:17:31Z
  [Features]
  - Can now disable the 5.10.0 explit x.y.z upgrade via KETNNL_NOFIVETEN=1 and no_fiveten=1
 
