@@ -94,6 +94,7 @@ sub minperl {
   require version;
   my $self = shift;
   if ( not $self->_has_perl ) {
+    $self->log_debug(['Explicit declaration found on %s', $self->detected_perl ]);
     return $self->detected_perl;
   }
   my ($x) = version->parse( $self->perl );
