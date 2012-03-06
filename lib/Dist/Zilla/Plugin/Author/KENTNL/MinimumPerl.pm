@@ -74,10 +74,14 @@ sub _build_detected_perl {
       $self->log_fatal( [ 'Unable to extract MinimumPerl from \'%s\'', $file->name ] );
     }
     if ( ( not defined $minver ) or $ver > $minver ) {
+      $self->log_debug( [ 'Increasing perl dep to %s due to %s', $ver, $file->name ]);
       $minver = $ver;
     }
     if( $self->fiveten ){
-        $minver = $self->_3part_check( $file, $pmv, $minver );
+        $ver = $self->_3part_check( $file, $pmv, $minver );
+        if( "$ver" ne "$minver" ){
+            $self->log_debug( [ 'Increasing perl dep to %s due to 3-part in %s', $ver, $file->name ]);
+        }
     }
   }
 
@@ -93,7 +97,6 @@ sub minperl {
   require version;
   my $self = shift;
   if ( not $self->_has_perl ) {
-    $self->log_debug(['Explicit declaration found on %s', $self->detected_perl ]);
     return $self->detected_perl;
   }
   my ($x) = version->parse( $self->perl );
