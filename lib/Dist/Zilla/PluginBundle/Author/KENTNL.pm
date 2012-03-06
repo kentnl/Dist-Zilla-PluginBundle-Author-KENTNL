@@ -98,7 +98,7 @@ sub _release_fail {
 
 sub _params_list {
   return (
-    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail fiveten )
+    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail no_fiveten )
   );
 }
 
