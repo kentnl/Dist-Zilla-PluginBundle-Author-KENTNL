@@ -7,7 +7,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '1.2.1';
+  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '1.2.2';
 }
 
 # FILENAME: MinimumPerl.pm
@@ -22,6 +22,12 @@ has 'detected_perl' => (
   is         => 'rw',
   isa        => 'Object',
   lazy_build => 1,
+);
+
+has 'fiveten' => (
+    isa => 'Bool',
+    is => 'rw',
+    default => sub { undef },
 );
 
 sub _3part_check {
@@ -71,7 +77,9 @@ sub _build_detected_perl {
     if ( ( not defined $minver ) or $ver > $minver ) {
       $minver = $ver;
     }
-    $minver = $self->_3part_check( $file, $pmv, $minver );
+    if( $self->fiveten ){
+        $minver = $self->_3part_check( $file, $pmv, $minver );
+    }
   }
 
   # Write out the minimum perl found
@@ -122,7 +130,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 1.2.1
+version 1.2.2
 
 =head1 METHODS
 

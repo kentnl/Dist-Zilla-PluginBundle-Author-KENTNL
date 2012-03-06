@@ -12,7 +12,7 @@ my $v = "\n";
 
 eval {                     # no excuses!
     # report our Perl details
-    my $want = '5.10.0';
+    my $want = 'v5.10.0';
     my $pv = ($^V || $]);
     $v .= "perl: $pv (wanted $want) on $^O from $^X\n\n";
 };
@@ -94,7 +94,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::Test::Perl::Critic','1.102280') };
 eval { $v .= pmver('Dist::Zilla::Plugin::TestRelease','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Twitter','0.011') };
 eval { $v .= pmver('Dist::Zilla::Plugin::UploadToCPAN','any version') };
-eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','1.2.0') };
+eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.2.0') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','0.01009803') };
 eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','any version') };
 eval { $v .= pmver('Dist::Zilla::Role::MintingProfile::ShareDir','any version') };
@@ -121,7 +121,7 @@ eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::DZil','any version') };
 eval { $v .= pmver('Test::EOL','0.9') };
 eval { $v .= pmver('Test::Fatal','any version') };
-eval { $v .= pmver('Test::File::ShareDir','0.3.0') };
+eval { $v .= pmver('Test::File::ShareDir','v0.3.0') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::Output','any version') };
 eval { $v .= pmver('Test::Perl::Critic','any version') };

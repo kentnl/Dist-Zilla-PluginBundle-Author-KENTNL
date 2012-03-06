@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.2.2 2012-03-06T21:54:15Z
+
 1.2.1 2012-02-27T05:12:12Z
  [Dependencies::Changed]
  - runtime requires : Dist::Zilla::Plugin::MetaProvides
