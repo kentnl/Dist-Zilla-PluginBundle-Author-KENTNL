@@ -212,9 +212,7 @@ sub bundle_config_inner {
         'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.2.0',
       }
     ],
-    [ 'Author::KENTNL::MinimumPerl' => {
-         _only_fiveten($arg,  fiveten => 1  ) 
-    } ],
+    [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
   );
   my (@mungers) = (
     [ 'PkgVersion'  => {} ],

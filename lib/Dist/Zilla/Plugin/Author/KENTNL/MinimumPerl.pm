@@ -24,9 +24,9 @@ has 'detected_perl' => (
 );
 
 has 'fiveten' => (
-    isa => 'Bool',
-    is => 'rw',
-    default => sub { undef },
+  isa     => 'Bool',
+  is      => 'rw',
+  default => sub { undef },
 );
 
 sub _3part_check {
@@ -74,15 +74,15 @@ sub _build_detected_perl {
       $self->log_fatal( [ 'Unable to extract MinimumPerl from \'%s\'', $file->name ] );
     }
     if ( ( not defined $minver ) or $ver > $minver ) {
-      $self->log_debug( [ 'Increasing perl dep to %s due to %s', $ver, $file->name ]);
+      $self->log_debug( [ 'Increasing perl dep to %s due to %s', $ver, $file->name ] );
       $minver = $ver;
     }
-    if( $self->fiveten ){
-        $ver = $self->_3part_check( $file, $pmv, $minver );
-        if( "$ver" ne "$minver" ){
-            $self->log_debug( [ 'Increasing perl dep to %s due to 3-part in %s', $ver, $file->name ]);
-            $minver = $ver;
-        }
+    if ( $self->fiveten ) {
+      $ver = $self->_3part_check( $file, $pmv, $minver );
+      if ( "$ver" ne "$minver" ) {
+        $self->log_debug( [ 'Increasing perl dep to %s due to 3-part in %s', $ver, $file->name ] );
+        $minver = $ver;
+      }
     }
   }
 
