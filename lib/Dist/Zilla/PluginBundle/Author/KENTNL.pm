@@ -11,7 +11,7 @@ use Class::Load qw( :all );
 
 with 'Dist::Zilla::Role::PluginBundle';
 
-use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail )];
+use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 
 =head1 SYNOPSIS
 
@@ -163,6 +163,7 @@ BEGIN {
   _mk_only(qw( git GIT git ));
   _mk_only(qw( cpan CPAN cpan ));
   _mk_only(qw( twitter TWITTER twitter ));
+  _mk_only(qw( fiveten FIVETEN fiveten ));
 }
 
 sub _release_fail {
@@ -182,7 +183,7 @@ sub _release_fail {
 
 sub _params_list {
   return (
-    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail )
+    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail no_fiveten )
   );
 }
 
@@ -304,7 +305,7 @@ sub bundle_config_inner {
         'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.2.0',
       }
     ],
-    [ 'Author::KENTNL::MinimumPerl' => {} ],
+    [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
   );
   my (@mungers) = (
     [ 'PkgVersion'  => {} ],
