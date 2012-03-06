@@ -81,6 +81,7 @@ sub _build_detected_perl {
         $ver = $self->_3part_check( $file, $pmv, $minver );
         if( "$ver" ne "$minver" ){
             $self->log_debug( [ 'Increasing perl dep to %s due to 3-part in %s', $ver, $file->name ]);
+            $minver = $ver;
         }
     }
   }
