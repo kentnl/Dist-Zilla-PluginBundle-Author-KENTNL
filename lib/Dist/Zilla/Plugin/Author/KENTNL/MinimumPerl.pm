@@ -48,7 +48,7 @@ sub _3part_check {
     my $v = eval $versiondecl;
     if ( $v =~ /\A\d+[.]\d+[.]/msx ) {
       $minver = $perl_required;
-      $self->log_debug( [ 'Upgraded to 5.10 due to %s having x.y.z', $file->name ] );
+      $self->log_debug( [ 'Upgraded to %s due to %s having x.y.z', $minver, $file->name ] );
     }
   }
   return $minver;
