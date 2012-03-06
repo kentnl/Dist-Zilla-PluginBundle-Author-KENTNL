@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.2.1';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.3.0';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -17,7 +17,7 @@ use Class::Load qw( :all );
 
 with 'Dist::Zilla::Role::PluginBundle';
 
-use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail )];
+use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 
 
 
@@ -78,6 +78,7 @@ BEGIN {
   _mk_only(qw( git GIT git ));
   _mk_only(qw( cpan CPAN cpan ));
   _mk_only(qw( twitter TWITTER twitter ));
+  _mk_only(qw( fiveten FIVETEN fiveten ));
 }
 
 sub _release_fail {
@@ -97,7 +98,7 @@ sub _release_fail {
 
 sub _params_list {
   return (
-    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail )
+    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail no_fiveten )
   );
 }
 
@@ -211,7 +212,7 @@ sub bundle_config_inner {
         'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.2.0',
       }
     ],
-    [ 'Author::KENTNL::MinimumPerl' => {} ],
+    [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
   );
   my (@mungers) = (
     [ 'PkgVersion'  => {} ],
@@ -274,7 +275,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.2.1
+version 1.3.0
 
 =head1 SYNOPSIS
 

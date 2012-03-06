@@ -1,4 +1,3 @@
-use 5.010000;
 use strict;
 use warnings;
 
@@ -7,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '1.2.1';
+  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '1.3.0';
 }
 
 # FILENAME: MinimumPerl.pm
@@ -22,6 +21,12 @@ has 'detected_perl' => (
   is         => 'rw',
   isa        => 'Object',
   lazy_build => 1,
+);
+
+has 'fiveten' => (
+  isa     => 'Bool',
+  is      => 'rw',
+  default => sub { undef },
 );
 
 sub _3part_check {
@@ -43,7 +48,7 @@ sub _3part_check {
     my $v = eval $versiondecl;
     if ( $v =~ /\A\d+[.]\d+[.]/msx ) {
       $minver = $perl_required;
-      $self->log_debug( [ 'Upgraded to 5.10 due to %s having x.y.z', $file->name ] );
+      $self->log_debug( [ 'Upgraded to %s due to %s having x.y.z', $minver, $file->name ] );
     }
   }
   return $minver;
@@ -69,9 +74,16 @@ sub _build_detected_perl {
       $self->log_fatal( [ 'Unable to extract MinimumPerl from \'%s\'', $file->name ] );
     }
     if ( ( not defined $minver ) or $ver > $minver ) {
+      $self->log_debug( [ 'Increasing perl dep to %s due to %s', $ver, $file->name ] );
       $minver = $ver;
     }
-    $minver = $self->_3part_check( $file, $pmv, $minver );
+    if ( $self->fiveten ) {
+      $ver = $self->_3part_check( $file, $pmv, $minver );
+      if ( "$ver" ne "$minver" ) {
+        $self->log_debug( [ 'Increasing perl dep to %s due to 3-part in %s', $ver, $file->name ] );
+        $minver = $ver;
+      }
+    }
   }
 
   # Write out the minimum perl found
@@ -122,7 +134,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 1.2.1
+version 1.3.0
 
 =head1 METHODS
 
