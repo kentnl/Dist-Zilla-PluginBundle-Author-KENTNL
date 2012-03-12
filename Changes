@@ -1,6 +1,16 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Changed]
+ - develop recommends : Dist::Zilla::PluginBundle::Author::KENTNL::Lite
+   0.01009803 -> v1.3.0
+ - develop suggests : Dist::Zilla::PluginBundle::Author::KENTNL
+   v1.2.0 -> v1.3.0
+ - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith
+   0.02000100 -> 0.03000000
+
+ [Features]
+ - enabled the show_config option of metadata::builtwith
 
 1.3.0 2012-03-06T22:21:22Z
  [Features]
