@@ -254,7 +254,7 @@ sub bundle_config_inner {
     [ 'MetaConfig' => {} ],
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'MetaProvides::Package' => {} ],
-    [ 'MetaData::BuiltWith'   => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () } ],
+    [ 'MetaData::BuiltWith'   => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () , show_config => 1 } ],
 
   );
 
@@ -294,7 +294,7 @@ sub bundle_config_inner {
         -name                                             => 'BundleDevelRecommends',
         -phase                                            => 'develop',
         -type                                             => 'recommends',
-        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0.01009803
+        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
       }
     ],
     [
@@ -302,7 +302,7 @@ sub bundle_config_inner {
         -name                                       => 'BundleDevelSuggests',
         -phase                                      => 'develop',
         -type                                       => 'suggests',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.2.0',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
       }
     ],
     [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
