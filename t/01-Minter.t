@@ -225,7 +225,7 @@ EOF
       build     => { requires => { 'Module::Build' => '0.3601' }, },
       configure => { requires => { 'Module::Build' => '0.3601' }, },
       develop   => {
-        recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '0.01009803' },
+        recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.3.0' },
         requires   => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 },
         suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       => 'v1.3.0' },
       },
