@@ -200,6 +200,13 @@ x_BuiltWith:
       - 5
       - 15
       - 8
+  perl-config:
+    gccversion: 4.5.3
+    git_commit_date: '2012-03-10 16:25:11 -0500'
+    git_commit_id: b3d2d31294c88848b7d3066b6ccab2297ff2e796
+    git_describe: v5.15.8-93-gb3d2d31
+    myarchname: x86_64-linux
+    osname: linux
   platform: linux
   uname: 'Linux 3.2.9-gentoo x86_64 GenuineIntel GNU/Linux'
 x_Dist_Zilla:
@@ -225,7 +232,7 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::MetaData::BuiltWith:
           _stash_key: x_BuiltWith
-          show_config: 0
+          show_config: 1
           show_uname: 1
           uname:
             uname_args:

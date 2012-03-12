@@ -161,7 +161,7 @@ sub bundle_config_inner {
     [ 'MetaConfig' => {} ],
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'MetaProvides::Package' => {} ],
-    [ 'MetaData::BuiltWith'   => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () } ],
+    [ 'MetaData::BuiltWith'   => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () , show_config => 1 } ],
 
   );
 
