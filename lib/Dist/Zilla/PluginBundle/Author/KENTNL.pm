@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.3.0';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.3.1';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -201,7 +201,7 @@ sub bundle_config_inner {
         -name                                             => 'BundleDevelRecommends',
         -phase                                            => 'develop',
         -type                                             => 'recommends',
-        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0.01009803
+        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
       }
     ],
     [
@@ -209,7 +209,7 @@ sub bundle_config_inner {
         -name                                       => 'BundleDevelSuggests',
         -phase                                      => 'develop',
         -type                                       => 'suggests',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.2.0',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
       }
     ],
     [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
@@ -275,7 +275,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.3.0
+version 1.3.1
 
 =head1 SYNOPSIS
 
