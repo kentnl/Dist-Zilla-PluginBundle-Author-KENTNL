@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.4.0 2012-04-11T20:24:43Z
  [Dependencies::New]
  - test requires : Git::Wrapper
 
