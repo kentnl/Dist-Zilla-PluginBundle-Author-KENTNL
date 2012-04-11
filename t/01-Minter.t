@@ -111,10 +111,11 @@ subtest 'build minting' => sub {
 
   };
 
+  my $pmfile;
   subtest 'Create fake pm with deps to be ignored' => sub {
 
-    my $fn = $tmpdir->subdir('lib')->subdir('DZT')->file('Mintiniator.pm');
-    my $fh = $fn->openw();
+    my $pmfile = $tmpdir->subdir('lib')->subdir('DZT')->file('Mintiniator.pm');
+    my $fh     = $pmfile->openw();
 
     print $fh <<'EOF';
 use strict;
@@ -133,6 +134,18 @@ if(0){ # Stop it actually failing
 EOF
 
     pass('Generated file');
+    note "$pmfile";
+    ok( -f $pmfile, "Generated file exists" );
+
+  };
+  subtest "Add generated file to git" => sub {
+    require Git::Wrapper;
+    my $git = Git::Wrapper->new("$tmpdir");
+    $git->add("$pmfile");
+    is( eval { $git->commit( { message => "Test Commit" } ); 'pass' }, 'pass', "Committed Successfully" );
+    my (@files) = $git->ls_files();
+    is( (scalar grep { $_ =~ /Mintiniator\.pm$/ } @files ), 1, "Exactly one copy of Mintiniator.pm is found by git" );
+
   };
 
   my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $global }, );
