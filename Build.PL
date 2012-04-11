@@ -12,6 +12,7 @@ my %module_build_args = (
     "File::Temp" => 0,
     "File::pushd" => 0,
     "FindBin" => 0,
+    "Git::Wrapper" => 0,
     "JSON" => 0,
     "Module::Build" => "0.3601",
     "Path::Class" => 0,
@@ -29,7 +30,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.3.1",
+  "dist_version" => "1.4.0",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
