@@ -114,8 +114,8 @@ subtest 'build minting' => sub {
   my $pmfile;
   subtest 'Create fake pm with deps to be ignored' => sub {
 
-    my $pmfile = $tmpdir->subdir('lib')->subdir('DZT')->file('Mintiniator.pm');
-    my $fh     = $pmfile->openw();
+    $pmfile = $tmpdir->subdir('lib')->subdir('DZT')->file('Mintiniator.pm');
+    my $fh = $pmfile->openw();
 
     print $fh <<'EOF';
 use strict;
@@ -144,7 +144,7 @@ EOF
     $git->add("$pmfile");
     is( eval { $git->commit( { message => "Test Commit" } ); 'pass' }, 'pass', "Committed Successfully" );
     my (@files) = $git->ls_files();
-    is( (scalar grep { $_ =~ /Mintiniator\.pm$/ } @files ), 1, "Exactly one copy of Mintiniator.pm is found by git" );
+    is( ( scalar grep { $_ =~ /Mintiniator\.pm$/ } @files ), 1, "Exactly one copy of Mintiniator.pm is found by git" );
 
   };
 
