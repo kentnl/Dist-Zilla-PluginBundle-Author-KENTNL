@@ -63,6 +63,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::FakeRelease','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::GatherDir','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Git::Check','1.102040') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Git::CommitBuild','1.102040') };
+eval { $v .= pmver('Dist::Zilla::Plugin::Git::GatherDir','1.120970') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Git::NextVersion','1.102810') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Git::Tag','1.102040') };
 eval { $v .= pmver('Dist::Zilla::Plugin::GithubMeta','0.08') };

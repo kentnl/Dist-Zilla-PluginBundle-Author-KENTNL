@@ -51,6 +51,7 @@
             "Dist::Zilla::Plugin::GatherDir" : "0",
             "Dist::Zilla::Plugin::Git::Check" : "1.102040",
             "Dist::Zilla::Plugin::Git::CommitBuild" : "1.102040",
+            "Dist::Zilla::Plugin::Git::GatherDir" : "1.120970",
             "Dist::Zilla::Plugin::Git::NextVersion" : "1.102810",
             "Dist::Zilla::Plugin::Git::Tag" : "1.102040",
             "Dist::Zilla::Plugin::GithubMeta" : "0.08",
@@ -127,19 +128,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "v1.4.0"
+         "version" : "v1.4.1"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "v1.4.0"
+         "version" : "v1.4.1"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "v1.4.0"
+         "version" : "v1.4.1"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "v1.4.0"
+         "version" : "v1.4.1"
       }
    },
    "release_status" : "stable",
@@ -151,7 +152,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "1.4.0",
+   "version" : "1.4.1",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.17",
@@ -169,6 +170,7 @@
          "Dist::Zilla::Plugin::GatherDir" : "4.300014",
          "Dist::Zilla::Plugin::Git::Check" : "1.121010",
          "Dist::Zilla::Plugin::Git::CommitBuild" : "1.121010",
+         "Dist::Zilla::Plugin::Git::GatherDir" : "1.121010",
          "Dist::Zilla::Plugin::Git::NextVersion" : "1.121010",
          "Dist::Zilla::Plugin::Git::Tag" : "1.121010",
          "Dist::Zilla::Plugin::GithubMeta" : "0.28",
@@ -253,7 +255,7 @@
          "osname" : "linux"
       },
       "platform" : "linux",
-      "uname" : "Linux 3.3.0-gentoo x86_64 GenuineIntel GNU/Linux"
+      "uname" : "Linux 3.3.1-gentoo x86_64 GenuineIntel GNU/Linux"
    },
    "x_Dist_Zilla" : {
       "plugins" : [
