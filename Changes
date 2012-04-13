@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::New]
+ - runtime requires : Dist::Zilla::Plugin::Git::GatherDir 1.120970
 
 1.4.0 2012-04-11T20:24:43Z
  [Dependencies::New]
