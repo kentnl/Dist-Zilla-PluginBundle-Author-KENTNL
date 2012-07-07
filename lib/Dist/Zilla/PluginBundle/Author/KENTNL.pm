@@ -308,6 +308,7 @@ sub bundle_config_inner {
       }
     ],
     [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
+    [ 'Author::KENTNL::Prereqs::Latest::Selective' => {} ],
   );
   my (@mungers) = (
     [ 'PkgVersion'  => {} ],
