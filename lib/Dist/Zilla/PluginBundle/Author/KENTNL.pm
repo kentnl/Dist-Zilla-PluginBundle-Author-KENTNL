@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.3.1';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.4.2';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -161,14 +161,16 @@ sub bundle_config_inner {
     [ 'MetaConfig' => {} ],
     _only_git( $arg, [ 'GithubMeta' => {} ] ),
     [ 'MetaProvides::Package' => {} ],
-    [ 'MetaData::BuiltWith'   => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : () , show_config => 1 } ],
+    [
+      'MetaData::BuiltWith' => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : (), show_config => 1 }
+    ],
 
   );
 
   my (@sharedir) = ();
 
   my (@gatherfiles) = (
-    [ 'GatherDir'            => { include_dotfiles    => 1 } ],
+    [ 'Git::GatherDir'       => { include_dotfiles    => 1 } ],
     [ 'License'              => {} ],
     [ 'MetaJSON'             => {} ],
     [ 'MetaYAML'             => {} ],
@@ -213,6 +215,7 @@ sub bundle_config_inner {
       }
     ],
     [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
+    [ 'Author::KENTNL::Prereqs::Latest::Selective' => {} ],
   );
   my (@mungers) = (
     [ 'PkgVersion'  => {} ],
@@ -275,7 +278,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.3.1
+version 1.4.2
 
 =head1 SYNOPSIS
 
