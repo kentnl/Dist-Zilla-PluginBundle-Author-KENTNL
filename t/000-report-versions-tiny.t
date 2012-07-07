@@ -85,6 +85,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::PodCoverageTests','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PodSyntaxTests','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PodWeaver','3.093321') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Prereqs','any version') };
+eval { $v .= pmver('Dist::Zilla::Plugin::Prereqs::Latest::Selective','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PruneCruft','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReadmeFromPod','0.12') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReportVersions::Tiny','1.01') };
