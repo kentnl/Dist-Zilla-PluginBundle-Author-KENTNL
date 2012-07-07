@@ -256,7 +256,7 @@ EOF
         requires => {
           'File::Find' => 0,
           'File::Temp' => 0,
-          'Test::More' => '0.88',
+          'Test::More' => $Test::More::VERSION,
         },
       }
     },
