@@ -231,6 +231,7 @@ EOF
   my $data = from_json( dir( $bzil->tempdir )->subdir('build')->file('META.json')->slurp() );
 
   note explain $data;
+  require version;
 
   is_deeply(
     $data->{prereqs},
@@ -240,7 +241,7 @@ EOF
       develop   => {
         recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.3.0' },
         requires   => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 },
-        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       =>  Dist::Zilla::PluginBundle::Author::KENTNL->VERSION },
+        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       =>  version->parse(Dist::Zilla::PluginBundle::Author::KENTNL->VERSION)->normal },
       },
       runtime => {
         requires => {
