@@ -240,7 +240,7 @@ EOF
       develop   => {
         recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.3.0' },
         requires   => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 },
-        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       =>  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION },
+        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       =>  Dist::Zilla::PluginBundle::Author::KENTNL->VERSION },
       },
       runtime => {
         requires => {
