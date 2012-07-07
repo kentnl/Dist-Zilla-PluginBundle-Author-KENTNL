@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.4.2 2012-07-07T15:29:36Z
+1.4.2 2012-07-07T15:29:52Z
  [Dependencies::Added::Runtime]
  - requires : Dist::Zilla::Plugin::Bootstrap::lib
  - requires :
