@@ -231,16 +231,17 @@ EOF
   my $data = from_json( dir( $bzil->tempdir )->subdir('build')->file('META.json')->slurp() );
 
   note explain $data;
+  require version;
 
   is_deeply(
     $data->{prereqs},
     {
-      build     => { requires => { 'Module::Build' => '0.3601' }, },
-      configure => { requires => { 'Module::Build' => '0.3601' }, },
+      build     => { requires => { 'Module::Build' => $Module::Build::VERSION }, },
+      configure => { requires => { 'Module::Build' => $Module::Build::VERSION }, },
       develop   => {
         recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.3.0' },
         requires   => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 },
-        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       => 'v1.3.0' },
+        suggests   => { 'Dist::Zilla::PluginBundle::Author::KENTNL'       =>  version->parse(Dist::Zilla::PluginBundle::Author::KENTNL->VERSION)->normal },
       },
       runtime => {
         requires => {
@@ -255,7 +256,7 @@ EOF
         requires => {
           'File::Find' => 0,
           'File::Temp' => 0,
-          'Test::More' => '0.88',
+          'Test::More' => $Test::More::VERSION,
         },
       }
     },
