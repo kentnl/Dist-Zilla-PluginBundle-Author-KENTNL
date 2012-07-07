@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.4.2 2012-07-07T15:40:38Z
  [Dependencies::Added::Runtime]
  - requires : Dist::Zilla::Plugin::Bootstrap::lib
  - requires :
