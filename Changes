@@ -1,5 +1,23 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.4.2 2012-07-07T15:40:38Z
+ [Dependencies::Added::Runtime]
+ - requires : Dist::Zilla::Plugin::Bootstrap::lib
+ - requires :
+   Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective
+
+ [Dependencies::Changed::Build]
+ - requires : Module::Build 0.3601 -> 0.4001
+
+ [Dependencies::Changed::Configure]
+ - requires : Module::Build 0.3601 -> 0.4001
+
+ [Dependencies::Changed::Test]
+ - requires : Test::More 0.88 -> 0.98
+
+ [Dependencies::Removed::Develop]
+ - requires : Dist::Zilla::Plugin::Bootstrap::lib
+
 1.4.1 2012-04-13T03:21:36Z
  [Dependencies::New]
  - runtime requires : Dist::Zilla::Plugin::Git::GatherDir 1.120970
@@ -94,7 +112,7 @@
 
  [Internals]
  - Now properly creates non-broken URI's on -TRIAL releases.
-   ( 1.0.21-source-2-gca0180a )
+   ( 1.0.21-source-2-gca0180a )
 
 1.0.21 2011-09-10T20:26:52Z
  [Features]

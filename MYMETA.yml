@@ -20,7 +20,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.4001
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300020, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.4001, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -90,6 +90,7 @@ requires:
   Dist::Zilla::Role::FileGatherer: 0
   Dist::Zilla::Role::MintingProfile::ShareDir: 0
   Dist::Zilla::Role::PluginBundle: 0
+  File::ShareDir: 1.00
   IO::Socket::SSL: 0
   LWP::Protocol::https: 6.00
   Moose: 1.01

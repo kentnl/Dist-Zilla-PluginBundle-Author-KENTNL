@@ -14,23 +14,23 @@ my %module_build_args = (
     "FindBin" => 0,
     "Git::Wrapper" => 0,
     "JSON" => 0,
-    "Module::Build" => "0.3601",
+    "Module::Build" => "0.4001",
     "Path::Class" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
     "Test::File::ShareDir" => "v0.3.0",
-    "Test::More" => "0.88",
+    "Test::More" => "0.98",
     "Test::Output" => 0
   },
   "configure_requires" => {
-    "Module::Build" => "0.3601"
+    "Module::Build" => "0.4001"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.4.1",
+  "dist_version" => "1.4.2",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -40,8 +40,10 @@ my %module_build_args = (
     "Class::Load" => 0,
     "Dist::Zilla" => "4.300000",
     "Dist::Zilla::File::FromCode" => 0,
+    "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective" => 0,
     "Dist::Zilla::Plugin::Authority" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => "4.200011",
+    "Dist::Zilla::Plugin::Bootstrap::lib" => 0,
     "Dist::Zilla::Plugin::CheckExtraTests" => 0,
     "Dist::Zilla::Plugin::ConfirmRelease" => 0,
     "Dist::Zilla::Plugin::EOLTests" => "0.02",
