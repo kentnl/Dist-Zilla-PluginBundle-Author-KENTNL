@@ -236,8 +236,8 @@ EOF
   is_deeply(
     $data->{prereqs},
     {
-      build     => { requires => { 'Module::Build' => '0.3601' }, },
-      configure => { requires => { 'Module::Build' => '0.3601' }, },
+      build     => { requires => { 'Module::Build' => $Module::Build::VERSION }, },
+      configure => { requires => { 'Module::Build' => $Module::Build::VERSION }, },
       develop   => {
         recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.3.0' },
         requires   => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0 },
