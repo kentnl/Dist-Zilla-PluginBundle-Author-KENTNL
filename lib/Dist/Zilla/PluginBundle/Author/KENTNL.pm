@@ -307,7 +307,7 @@ sub bundle_config_inner {
         'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
       }
     ],
-    [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
+    [ 'Author::KENTNL::MinimumPerl'                => { _only_fiveten( $arg, fiveten => 1 ) } ],
     [ 'Author::KENTNL::Prereqs::Latest::Selective' => {} ],
   );
   my (@mungers) = (
