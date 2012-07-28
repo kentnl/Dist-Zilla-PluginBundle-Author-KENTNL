@@ -17,7 +17,7 @@ do{ my $x = [
          'recommends' => {},
          'pod_files' => undef,
          'config_dir' => '_build',
-         'dist_version' => '1.4.2',
+         'dist_version' => '1.4.3',
          'sign' => undef,
          'recurse_into' => [],
          'build_bat' => 0,
@@ -29,12 +29,12 @@ do{ my $x = [
                                     'conflicts',
                                     'recommends'
                                   ],
-         'base_dir' => '/home/kent/perl/Dist-Zilla-PluginBundle-Author-KENTNL/Dist-Zilla-PluginBundle-Author-KENTNL-1.4.2',
+         'base_dir' => '/home/kent/perl/Dist-Zilla-PluginBundle-Author-KENTNL/Dist-Zilla-PluginBundle-Author-KENTNL-1.4.3',
          'allow_mb_mismatch' => 0,
          'xs_files' => undef,
          'destdir' => undef,
          'metafile' => 'META.yml',
-         'mb_version' => '0.4001',
+         'mb_version' => '0.4002',
          'use_tap_harness' => 0,
          'test_file_exts' => [
                                '.t'
@@ -55,7 +55,7 @@ do{ my $x = [
          'bundle_inc' => [],
          'use_rcfile' => 1,
          'configure_requires' => {
-                                   'Module::Build' => '0.4001'
+                                   'Module::Build' => '0.4002'
                                  },
          'test_files' => undef,
          'dist_abstract' => 'BeLike::KENTNL when you build your distributions.',
@@ -91,7 +91,7 @@ do{ my $x = [
                              ],
          'release_status' => 'stable',
          'needs_compiler' => '',
-         'orig_dir' => '/home/kent/perl/Dist-Zilla-PluginBundle-Author-KENTNL/Dist-Zilla-PluginBundle-Author-KENTNL-1.4.2',
+         'orig_dir' => '/home/kent/perl/Dist-Zilla-PluginBundle-Author-KENTNL/Dist-Zilla-PluginBundle-Author-KENTNL-1.4.3',
          'include_dirs' => [],
          'installdirs' => 'site',
          'mymetafile' => 'MYMETA.yml',
@@ -128,9 +128,9 @@ do{ my $x = [
                          'namespace::autoclean' => '0.09',
                          'Dist::Zilla::Plugin::TestRelease' => 0,
                          'Dist::Zilla::Plugin::Bootstrap::lib' => 0,
-                         'Dist::Zilla::Plugin::MetaData::BuiltWith' => '0.03000000',
+                         'Dist::Zilla::Plugin::MetaData::BuiltWith' => '0.03000100',
                          'version' => 0,
-                         'Dist::Zilla::Plugin::MetaProvides' => '1.14000000',
+                         'Dist::Zilla::Plugin::MetaProvides' => '1.14000001',
                          'Dist::Zilla::Plugin::Authority' => 0,
                          'Carp' => 0,
                          'perl' => 'v5.10.0',
@@ -152,6 +152,7 @@ do{ my $x = [
                          'Dist::Zilla::Plugin::CheckExtraTests' => 0,
                          'Dist::Zilla::Plugin::Test::MinimumVersion' => 0,
                          'Dist::Zilla::Plugin::UploadToCPAN' => 0,
+                         'Dist::Zilla::Util::EmulatePhase' => '0.01025802',
                          'Dist::Zilla::Plugin::PodSyntaxTests' => 0,
                          'Dist::Zilla::Plugin::Manifest' => 0,
                          'Dist::Zilla::Plugin::Test::Compile' => '1.112400',
@@ -200,7 +201,7 @@ do{ my $x = [
                                'Path::Class' => 0,
                                'Test::Output' => 0,
                                'JSON' => 0,
-                               'Module::Build' => '0.4001'
+                               'Module::Build' => '0.4002'
                              },
          'config' => undef,
          'blib' => 'blib',

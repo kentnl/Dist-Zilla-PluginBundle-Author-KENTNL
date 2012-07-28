@@ -1,5 +1,15 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.4.3 2012-07-28T20:37:33Z
+ [Dependencies::Changed]
+ - build requires : Module::Build 0.4001 -> 0.4002
+ - configure requires : Module::Build 0.4001 -> 0.4002
+ - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith 0.03000000 -> 0.03000100
+ - runtime requires : Dist::Zilla::Plugin::MetaProvides 1.14000000 -> 1.14000001
+
+ [Dependencies::Added]
+ - runtime requires : Dist::Zilla::Util::EmulatePhase 0.01025802
+
 1.4.2 2012-07-07T15:40:38Z
  [Dependencies::Added::Runtime]
  - requires : Dist::Zilla::Plugin::Bootstrap::lib

@@ -4,7 +4,7 @@
       "Kent Fredric <kentnl@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Build version 0.4001, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4002, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -23,7 +23,7 @@
             "FindBin" : "0",
             "Git::Wrapper" : "0",
             "JSON" : "0",
-            "Module::Build" : "0.4001",
+            "Module::Build" : "0.4002",
             "Path::Class" : "0",
             "Test::DZil" : "0",
             "Test::Fatal" : "0",
@@ -34,7 +34,7 @@
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.4001"
+            "Module::Build" : "0.4002"
          }
       },
       "runtime" : {
@@ -62,9 +62,9 @@
             "Dist::Zilla::Plugin::Manifest" : "0",
             "Dist::Zilla::Plugin::ManifestSkip" : "0",
             "Dist::Zilla::Plugin::MetaConfig" : "0",
-            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.03000000",
+            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.03000100",
             "Dist::Zilla::Plugin::MetaJSON" : "0",
-            "Dist::Zilla::Plugin::MetaProvides" : "1.14000000",
+            "Dist::Zilla::Plugin::MetaProvides" : "1.14000001",
             "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
             "Dist::Zilla::Plugin::MetaTests" : "0",
             "Dist::Zilla::Plugin::MetaYAML" : "0",
@@ -89,6 +89,7 @@
             "Dist::Zilla::Role::FileGatherer" : "0",
             "Dist::Zilla::Role::MintingProfile::ShareDir" : "0",
             "Dist::Zilla::Role::PluginBundle" : "0",
+            "Dist::Zilla::Util::EmulatePhase" : "0.01025802",
             "File::ShareDir" : "1.00",
             "IO::Socket::SSL" : "0",
             "LWP::Protocol::https" : "6.00",
@@ -115,19 +116,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "v1.4.2"
+         "version" : "v1.4.3"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "v1.4.2"
+         "version" : "v1.4.3"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "v1.4.2"
+         "version" : "v1.4.3"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "v1.4.2"
+         "version" : "v1.4.3"
       }
    },
    "release_status" : "stable",
@@ -137,12 +138,12 @@
          "url" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git"
       }
    },
-   "version" : "1.4.2",
+   "version" : "1.4.3",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.18",
          "Carp" : "1.26",
-         "Class::Load" : "0.19",
+         "Class::Load" : "0.20",
          "Dist::Zilla" : "4.300020",
          "Dist::Zilla::File::FromCode" : "4.300020",
          "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective" : "0.1.0",
@@ -164,9 +165,9 @@
          "Dist::Zilla::Plugin::Manifest" : "4.300020",
          "Dist::Zilla::Plugin::ManifestSkip" : "4.300020",
          "Dist::Zilla::Plugin::MetaConfig" : "4.300020",
-         "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.03000000",
+         "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.03000100",
          "Dist::Zilla::Plugin::MetaJSON" : "4.300020",
-         "Dist::Zilla::Plugin::MetaProvides" : "1.14000000",
+         "Dist::Zilla::Plugin::MetaProvides" : "1.14000001",
          "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
          "Dist::Zilla::Plugin::MetaTests" : "4.300020",
          "Dist::Zilla::Plugin::MetaYAML" : "4.300020",
@@ -193,15 +194,16 @@
          "Dist::Zilla::Role::FileGatherer" : "4.300020",
          "Dist::Zilla::Role::MintingProfile::ShareDir" : "4.300020",
          "Dist::Zilla::Role::PluginBundle" : "4.300020",
+         "Dist::Zilla::Util::EmulatePhase" : "0.01025802",
          "File::Find" : "1.20",
          "File::Temp" : "0.22",
          "File::pushd" : "1.002",
          "FindBin" : "1.51",
-         "Git::Wrapper" : "0.023",
+         "Git::Wrapper" : "0.025",
          "IO::Socket::SSL" : "1.76",
          "JSON" : "2.53",
          "LWP::Protocol::https" : "6.03",
-         "Module::Build" : "0.4001",
+         "Module::Build" : "0.4002",
          "Moose" : "2.0603",
          "Moose::Autobox" : "0.12",
          "MooseX::Has::Sugar" : "0.05070420",
@@ -241,7 +243,7 @@
          "osname" : "linux"
       },
       "platform" : "linux",
-      "uname" : "Linux 3.4.4-gentoo x86_64 GenuineIntel GNU/Linux"
+      "uname" : "Linux 3.5.0-gentoo x86_64 GenuineIntel GNU/Linux"
    },
    "x_Dist_Zilla" : {
       "plugins" : [
@@ -285,7 +287,7 @@
                }
             },
             "name" : "@Author::KENTNL/MetaData::BuiltWith",
-            "version" : "0.03000000"
+            "version" : "0.03000100"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::GatherDir",
