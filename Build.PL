@@ -14,7 +14,7 @@ my %module_build_args = (
     "FindBin" => 0,
     "Git::Wrapper" => 0,
     "JSON" => 0,
-    "Module::Build" => "0.4001",
+    "Module::Build" => "0.4002",
     "Path::Class" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
@@ -23,14 +23,14 @@ my %module_build_args = (
     "Test::Output" => 0
   },
   "configure_requires" => {
-    "Module::Build" => "0.4001"
+    "Module::Build" => "0.4002"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.4.2",
+  "dist_version" => "1.4.3",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -59,9 +59,9 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::Manifest" => 0,
     "Dist::Zilla::Plugin::ManifestSkip" => 0,
     "Dist::Zilla::Plugin::MetaConfig" => 0,
-    "Dist::Zilla::Plugin::MetaData::BuiltWith" => "0.03000000",
+    "Dist::Zilla::Plugin::MetaData::BuiltWith" => "0.03000100",
     "Dist::Zilla::Plugin::MetaJSON" => 0,
-    "Dist::Zilla::Plugin::MetaProvides" => "1.14000000",
+    "Dist::Zilla::Plugin::MetaProvides" => "1.14000001",
     "Dist::Zilla::Plugin::MetaProvides::Package" => "1.14000001",
     "Dist::Zilla::Plugin::MetaTests" => 0,
     "Dist::Zilla::Plugin::MetaYAML" => 0,
@@ -86,6 +86,7 @@ my %module_build_args = (
     "Dist::Zilla::Role::FileGatherer" => 0,
     "Dist::Zilla::Role::MintingProfile::ShareDir" => 0,
     "Dist::Zilla::Role::PluginBundle" => 0,
+    "Dist::Zilla::Util::EmulatePhase" => "0.01025802",
     "IO::Socket::SSL" => 0,
     "LWP::Protocol::https" => "6.00",
     "Moose" => "1.01",
