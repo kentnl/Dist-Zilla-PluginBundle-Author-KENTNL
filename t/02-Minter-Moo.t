@@ -28,7 +28,7 @@ my $tzil;
 subtest 'mint files' => sub {
 
   $tzil =
-    Minter->_new_from_profile( [ 'Author::KENTNL' => 'default' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
+    Minter->_new_from_profile( [ 'Author::KENTNL' => 'moo' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
 
   pass('Loaded minter config');
 
