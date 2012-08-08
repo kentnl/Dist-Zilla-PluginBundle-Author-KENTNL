@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.5.0 2012-08-08T02:55:47Z
+1.5.0 2012-08-08T02:56:12Z
  [Features]
  - added three additional profiles: moo, moo-role and moose-role
    ( inc tests )
