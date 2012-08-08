@@ -27,8 +27,11 @@ my $tzil;
 
 subtest 'mint files' => sub {
 
-  $tzil =
-    Minter->_new_from_profile( [ 'Author::KENTNL' => 'moose-role' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
+  $tzil = Minter->_new_from_profile(
+    [ 'Author::KENTNL'   => 'moose-role' ],
+    { name               => 'DZT-Minty', },
+    { global_config_root => $global },
+  );
 
   pass('Loaded minter config');
 
@@ -248,7 +251,7 @@ EOF
       },
       runtime => {
         requires => {
-          'Moose::Role'                 => 0,
+          'Moose::Role'           => 0,
           'SomethingReallyWanted' => 0,
           'perl'                  => 'v5.10.0',
           'warnings'              => 0,
