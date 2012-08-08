@@ -248,7 +248,7 @@ EOF
       },
       runtime => {
         requires => {
-          'Moose'                 => 0,
+          'Moo'                 => 0,
           'SomethingReallyWanted' => 0,
           'perl'                  => 'v5.10.0',
           'warnings'              => 0,
