@@ -248,7 +248,7 @@ EOF
       },
       runtime => {
         requires => {
-          'Moo::Role'                 => 0,
+          'Moo::Role'             => 0,
           'SomethingReallyWanted' => 0,
           'perl'                  => 'v5.10.0',
           'warnings'              => 0,
