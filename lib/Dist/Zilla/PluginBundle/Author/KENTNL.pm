@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.5.0';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.5.1';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -266,8 +266,8 @@ no Moose;
 ## no critic (RequireEndWithOne)
 'I go to prepare a perl module for you, if it were not so, I would have told you';
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -278,7 +278,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.5.0
+version 1.5.1
 
 =head1 SYNOPSIS
 
@@ -383,4 +383,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

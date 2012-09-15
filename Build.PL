@@ -14,7 +14,7 @@ my %module_build_args = (
     "FindBin" => 0,
     "Git::Wrapper" => 0,
     "JSON" => 0,
-    "Module::Build" => "0.4002",
+    "Module::Build" => "0.4003",
     "Path::Class" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
@@ -23,14 +23,14 @@ my %module_build_args = (
     "Test::Output" => 0
   },
   "configure_requires" => {
-    "Module::Build" => "0.4002"
+    "Module::Build" => "0.4003"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.5.0",
+  "dist_version" => "1.5.1",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
