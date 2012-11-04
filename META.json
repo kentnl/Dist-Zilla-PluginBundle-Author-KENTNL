@@ -252,16 +252,16 @@
          "warnings" : "1.13"
       },
       "perl" : {
-         "original" : "v5.16.0",
+         "original" : "v5.16.2",
          "qv" : 1,
          "version" : [
             5,
             16,
-            0
+            2
          ]
       },
       "perl-config" : {
-         "gccversion" : "4.6.3",
+         "gccversion" : "4.7.2",
          "myarchname" : "x86_64-linux",
          "osname" : "linux"
       },
@@ -270,7 +270,7 @@
    },
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.016000"
+         "version" : "5.016002"
       },
       "plugins" : [
          {
