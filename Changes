@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.5.1 2012-11-04T16:03:42Z
  - maintenance release
 
  [Dependencies::Changed]
