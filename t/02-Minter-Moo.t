@@ -240,15 +240,15 @@ EOF
       configure => { requires => { 'Module::Build' => $Module::Build::VERSION }, },
       develop   => {
         recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.3.0' },
-        requires   => { 
-            'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0,
-            'Test::Pod::Coverage' => '1.08',
-            'Test::Pod' => '1.41',
-            'Pod::Coverage::TrustPod' => 0,
-            'version' => '0.9901',
-            'Test::CPAN::Meta' => 0,
+        requires   => {
+          'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0,
+          'Test::Pod::Coverage'                             => '1.08',
+          'Test::Pod'                                       => '1.41',
+          'Pod::Coverage::TrustPod'                         => 0,
+          'version'                                         => '0.9901',
+          'Test::CPAN::Meta'                                => 0,
         },
-        suggests   => {
+        suggests => {
           'Dist::Zilla::PluginBundle::Author::KENTNL' =>
             version->parse( Dist::Zilla::PluginBundle::Author::KENTNL->VERSION )->normal
         },
