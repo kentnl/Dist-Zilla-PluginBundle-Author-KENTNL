@@ -13,7 +13,7 @@ do{ my $x = {
                              'Path::Class' => 0,
                              'Test::Output' => 0,
                              'JSON' => 0,
-                             'Module::Build' => '0.4002'
+                             'Module::Build' => '0.4003'
                            },
        'conflicts' => {},
        'requires' => {

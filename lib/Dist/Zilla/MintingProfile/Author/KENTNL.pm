@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::MintingProfile::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '1.5.0';
+  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '1.5.1';
 }
 
 # ABSTRACT: KENTNL's Minting Profile
@@ -21,6 +21,7 @@ no Moose;
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -31,7 +32,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 1.5.0
+version 1.5.1
 
 =head1 SYNOPSIS
 
@@ -49,4 +50,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

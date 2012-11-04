@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '1.5.0';
+  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '1.5.1';
 }
 
 # FILENAME: MinimumPerl.pm
@@ -122,8 +122,8 @@ no Moose;
 __PACKAGE__->meta->make_immutable;
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -134,7 +134,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 1.5.0
+version 1.5.1
 
 =head1 METHODS
 
@@ -154,4 +154,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
