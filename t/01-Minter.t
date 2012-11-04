@@ -244,6 +244,7 @@ EOF
             'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0,
             'Test::Pod::Coverage' => '1.08',
             'Test::Pod' => '1.45',
+            'Pod::Coverage::TrustPod' => 0,
         },
         suggests   => {
           'Dist::Zilla::PluginBundle::Author::KENTNL' =>
