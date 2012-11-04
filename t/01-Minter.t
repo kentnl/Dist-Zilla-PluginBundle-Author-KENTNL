@@ -246,6 +246,7 @@ EOF
             'Test::Pod' => '1.45',
             'Pod::Coverage::TrustPod' => 0,
             'version' => '0.9901',
+            'Test::CPAN::Meta' => 0,
         },
         suggests   => {
           'Dist::Zilla::PluginBundle::Author::KENTNL' =>
