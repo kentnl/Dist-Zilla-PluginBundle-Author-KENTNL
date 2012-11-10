@@ -164,6 +164,7 @@ BEGIN {
   _mk_only(qw( cpan CPAN cpan ));
   _mk_only(qw( twitter TWITTER twitter ));
   _mk_only(qw( fiveten FIVETEN fiveten ));
+  _mk_only(qw( ghissues GHISSUES ghissues ));
 }
 
 sub _release_fail {
@@ -252,7 +253,7 @@ sub bundle_config_inner {
   my (@version) = ( [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.1.0' } ], );
   my (@metadata) = (
     [ 'MetaConfig' => {} ],
-    _only_git( $arg, [ 'GithubMeta' => {} ] ),
+    _only_git( $arg, [ 'GithubMeta' => { _only_ghissues( $arg, issues => 1 ), } ] ),
     [ 'MetaProvides::Package' => {} ],
     [
       'MetaData::BuiltWith' => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : (), show_config => 1 }

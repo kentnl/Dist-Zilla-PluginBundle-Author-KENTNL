@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Features]
+ - Bug tracker now defaults to github issues
+ - use <<no_ghissues>> to disable.
 
 1.5.1 2012-11-04T16:03:42Z
  - maintenance release
