@@ -29,16 +29,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: v1.5.1
+    version: v1.6.0
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: v1.5.1
+    version: v1.6.0
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: v1.5.1
+    version: v1.6.0
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: v1.5.1
+    version: v1.6.0
 requires:
   Carp: 0
   Class::Load: 0
@@ -112,9 +112,10 @@ requires:
   version: 0
   warnings: 0
 resources:
+  bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.5.1
+version: 1.6.0
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.20
@@ -131,11 +132,11 @@ x_BuiltWith:
     Dist::Zilla::Plugin::EOLTests: 0.02
     Dist::Zilla::Plugin::FakeRelease: 4.300028
     Dist::Zilla::Plugin::GatherDir: 4.300028
-    Dist::Zilla::Plugin::Git::Check: 2.001
-    Dist::Zilla::Plugin::Git::CommitBuild: 2.001
-    Dist::Zilla::Plugin::Git::GatherDir: 2.001
-    Dist::Zilla::Plugin::Git::NextVersion: 2.001
-    Dist::Zilla::Plugin::Git::Tag: 2.001
+    Dist::Zilla::Plugin::Git::Check: 2.002
+    Dist::Zilla::Plugin::Git::CommitBuild: 2.002
+    Dist::Zilla::Plugin::Git::GatherDir: 2.002
+    Dist::Zilla::Plugin::Git::NextVersion: 2.002
+    Dist::Zilla::Plugin::Git::Tag: 2.002
     Dist::Zilla::Plugin::GithubMeta: 0.28
     Dist::Zilla::Plugin::License: 4.300028
     Dist::Zilla::Plugin::Manifest: 4.300028
@@ -225,7 +226,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::KENTNL/Git::NextVersion'
-      version: 2.001
+      version: 2.002
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::KENTNL/MetaConfig'
@@ -258,7 +259,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       name: '@Author::KENTNL/Git::GatherDir'
-      version: 2.001
+      version: 2.002
     -
       class: Dist::Zilla::Plugin::License
       name: '@Author::KENTNL/License'
@@ -398,23 +399,23 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Author::KENTNL/Git::Check'
-      version: 2.001
+      version: 2.002
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::KENTNL/Git::Tag/tag_master'
-      version: 2.001
+      version: 2.002
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: '@Author::KENTNL/Git::Commit'
-      version: 2.001
+      version: 2.002
     -
       class: Dist::Zilla::Plugin::Git::CommitBuild
       name: '@Author::KENTNL/Git::CommitBuild'
-      version: 2.001
+      version: 2.002
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::KENTNL/Git::Tag/tag_release'
-      version: 2.001
+      version: 2.002
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
       name: '@Author::KENTNL/UploadToCPAN'
