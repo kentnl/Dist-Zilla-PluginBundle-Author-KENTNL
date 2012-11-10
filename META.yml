@@ -106,7 +106,7 @@ requires:
   Test::EOL: 0.9
   Test::Perl::Critic: 0
   namespace::autoclean: 0.09
-  perl: v5.10.0
+  perl: 5.006
   strict: 0
   version: 0
   warnings: 0
@@ -114,7 +114,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.6.0
+version: v1.6
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.20

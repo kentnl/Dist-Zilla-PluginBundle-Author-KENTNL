@@ -30,7 +30,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.6.0",
+  "dist_version" => "v1.6",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -102,7 +102,7 @@ my %module_build_args = (
     "Test::EOL" => "0.9",
     "Test::Perl::Critic" => 0,
     "namespace::autoclean" => "0.09",
-    "perl" => "v5.10.0",
+    "perl" => "5.006",
     "strict" => 0,
     "version" => 0,
     "warnings" => 0

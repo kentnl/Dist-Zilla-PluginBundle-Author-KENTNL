@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.6.0 2012-11-10T13:27:11Z
+v1.6 2012-11-10T13:27:43Z
  [Features]
  - Bug tracker now defaults to github issues
  - use <<no_ghissues>> to disable.
