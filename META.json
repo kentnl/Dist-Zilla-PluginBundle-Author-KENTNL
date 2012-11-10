@@ -108,7 +108,7 @@
             "Test::EOL" : "0.9",
             "Test::Perl::Critic" : "0",
             "namespace::autoclean" : "0.09",
-            "perl" : "5.006",
+            "perl" : "v5.10.0",
             "strict" : "0",
             "version" : "0",
             "warnings" : "0"
@@ -162,7 +162,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "v1.6",
+   "version" : "1.6.0",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.20",
