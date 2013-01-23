@@ -179,11 +179,11 @@
          "Dist::Zilla::Plugin::EOLTests" : "0.02",
          "Dist::Zilla::Plugin::FakeRelease" : "4.300028",
          "Dist::Zilla::Plugin::GatherDir" : "4.300028",
-         "Dist::Zilla::Plugin::Git::Check" : "2.003",
-         "Dist::Zilla::Plugin::Git::CommitBuild" : "2.003",
-         "Dist::Zilla::Plugin::Git::GatherDir" : "2.003",
-         "Dist::Zilla::Plugin::Git::NextVersion" : "2.003",
-         "Dist::Zilla::Plugin::Git::Tag" : "2.003",
+         "Dist::Zilla::Plugin::Git::Check" : "2.006",
+         "Dist::Zilla::Plugin::Git::CommitBuild" : "2.006",
+         "Dist::Zilla::Plugin::Git::GatherDir" : "2.006",
+         "Dist::Zilla::Plugin::Git::NextVersion" : "2.006",
+         "Dist::Zilla::Plugin::Git::Tag" : "2.006",
          "Dist::Zilla::Plugin::GithubMeta" : "0.28",
          "Dist::Zilla::Plugin::License" : "4.300028",
          "Dist::Zilla::Plugin::Manifest" : "4.300028",
@@ -224,7 +224,7 @@
          "File::pushd" : "1.003",
          "FindBin" : "1.51",
          "Git::Wrapper" : "0.028",
-         "IO::Socket::SSL" : "1.79",
+         "IO::Socket::SSL" : "1.81",
          "JSON" : "2.53",
          "LWP::Protocol::https" : "6.03",
          "Module::Build" : "0.4003",
@@ -232,9 +232,9 @@
          "Moose::Autobox" : "0.13",
          "MooseX::Has::Sugar" : "0.05070421",
          "MooseX::Types" : "0.35",
-         "Net::SSLeay" : "1.49",
-         "Path::Class" : "0.26",
-         "Perl::PrereqScanner" : "1.014",
+         "Net::SSLeay" : "1.52",
+         "Path::Class" : "0.29",
+         "Perl::PrereqScanner" : "1.015",
          "Pod::Coverage::TrustPod" : "0.100002",
          "Pod::Weaver::Plugin::Encoding" : "0.01",
          "String::Formatter" : "0.102082",
@@ -269,7 +269,7 @@
          "osname" : "linux"
       },
       "platform" : "linux",
-      "uname" : "Linux 3.6.8-gentoo x86_64 GenuineIntel GNU/Linux"
+      "uname" : "Linux 3.7.3-gentoo x86_64 GenuineIntel GNU/Linux"
    },
    "x_Dist_Zilla" : {
       "perl" : {
@@ -279,7 +279,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
             "name" : "@Author::KENTNL/Git::NextVersion",
-            "version" : "2.003"
+            "version" : "2.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
@@ -321,7 +321,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::GatherDir",
             "name" : "@Author::KENTNL/Git::GatherDir",
-            "version" : "2.003"
+            "version" : "2.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
@@ -499,27 +499,27 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
             "name" : "@Author::KENTNL/Git::Check",
-            "version" : "2.003"
+            "version" : "2.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "@Author::KENTNL/Git::Tag/tag_master",
-            "version" : "2.003"
+            "version" : "2.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
             "name" : "@Author::KENTNL/Git::Commit",
-            "version" : "2.003"
+            "version" : "2.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::CommitBuild",
             "name" : "@Author::KENTNL/Git::CommitBuild",
-            "version" : "2.003"
+            "version" : "2.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "@Author::KENTNL/Git::Tag/tag_release",
-            "version" : "2.003"
+            "version" : "2.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
