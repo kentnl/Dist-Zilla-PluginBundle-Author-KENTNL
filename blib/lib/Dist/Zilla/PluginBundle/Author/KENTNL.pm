@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.6.0';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.7.0';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -232,9 +232,16 @@ sub bundle_config_inner {
     @prunefiles,
     @mungers,
     @regprereqs,
-    [ 'Authority'           => { authority => $arg->{authority}, do_metadata => 1 } ],
-    [ 'ModuleBuild'         => {} ],
-    [ 'ReadmeFromPod'       => {} ],
+    [ 'Authority'     => { authority => $arg->{authority}, do_metadata => 1 } ],
+    [ 'ModuleBuild'   => {} ],
+    [ 'ReadmeFromPod' => {} ],
+    [
+      'ReadmeAnyFromPod' => {
+        type     => 'markdown',
+        filename => 'README.mkdn',
+        location => 'root',
+      }
+    ],
     [ 'Test::CPAN::Changes' => {} ],
     [ 'CheckExtraTests'     => {} ],
     [ 'TestRelease'         => {} ],
@@ -279,7 +286,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.6.0
+version 1.7.0
 
 =head1 SYNOPSIS
 
@@ -378,7 +385,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric.
+This software is copyright (c) 2013 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
