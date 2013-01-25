@@ -325,9 +325,16 @@ sub bundle_config_inner {
     @prunefiles,
     @mungers,
     @regprereqs,
-    [ 'Authority'           => { authority => $arg->{authority}, do_metadata => 1 } ],
-    [ 'ModuleBuild'         => {} ],
-    [ 'ReadmeFromPod'       => {} ],
+    [ 'Authority'     => { authority => $arg->{authority}, do_metadata => 1 } ],
+    [ 'ModuleBuild'   => {} ],
+    [ 'ReadmeFromPod' => {} ],
+    [
+      'ReadmeAnyFromPod' => {
+        type     => 'markdown',
+        filename => 'README.mkdn',
+        location => 'root',
+      }
+    ],
     [ 'Test::CPAN::Changes' => {} ],
     [ 'CheckExtraTests'     => {} ],
     [ 'TestRelease'         => {} ],
