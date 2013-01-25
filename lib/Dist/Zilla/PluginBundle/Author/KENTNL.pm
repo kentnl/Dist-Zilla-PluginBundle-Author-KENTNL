@@ -235,6 +235,11 @@ sub bundle_config_inner {
     [ 'Authority'           => { authority => $arg->{authority}, do_metadata => 1 } ],
     [ 'ModuleBuild'         => {} ],
     [ 'ReadmeFromPod'       => {} ],
+    [ 'ReadmeAnyFromPod'    => { 
+            type => 'markdown',
+            filename => 'README.mkdn',
+            location => 'root',
+    } ],
     [ 'Test::CPAN::Changes' => {} ],
     [ 'CheckExtraTests'     => {} ],
     [ 'TestRelease'         => {} ],
