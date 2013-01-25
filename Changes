@@ -1,10 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.0 2013-01-25T04:22:07Z
- [!Features]
- - Add README.mkdn to all dists
- - Dependencies Ramped.
-
+1.7.0 2013-01-25T04:23:44Z
  [Dependencies::Changed / runtime requires]
  - Dist::Zilla 4.300000 -> 4.300029
  - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective
@@ -36,7 +32,7 @@
  - Dist::Zilla::Plugin::PodWeaver 0 -> 3.101641
  - Dist::Zilla::Plugin::Prereqs 0 -> 4.300029
  - Dist::Zilla::Plugin::PruneCruft 0 -> 4.300029
- - Dist::Zilla::Plugin::ReadmeFromPod 0.12 -> 0.20
+ - Dist::Zilla::Plugin::ReadmeFromPod 0.12 -> 0.16
  - Dist::Zilla::Plugin::ReportVersions::Tiny 1.01 -> 1.08
  - Dist::Zilla::Plugin::Test::CPAN::Changes 0 -> 0.005
  - Dist::Zilla::Plugin::Test::Compile 1.112400 -> 1.112820
@@ -55,6 +51,10 @@
 
  [Documentation]
  - Copyright license updated ( Year )
+
+ [!Features]
+ - Add README.mkdn to all dists
+ - Dependencies Ramped.
 
 1.6.0 2012-11-10T13:31:13Z
  [Features]
