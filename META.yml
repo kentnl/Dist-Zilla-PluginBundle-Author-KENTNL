@@ -71,6 +71,7 @@ requires:
   Dist::Zilla::Plugin::MetaYAML: 4.300029
   Dist::Zilla::Plugin::MinimumPerl: 0
   Dist::Zilla::Plugin::ModuleBuild: 4.300029
+  Dist::Zilla::Plugin::PerlTidy: 0
   Dist::Zilla::Plugin::PkgVersion: 4.300029
   Dist::Zilla::Plugin::PodCoverageTests: 4.300029
   Dist::Zilla::Plugin::PodSyntaxTests: 4.300029
@@ -151,6 +152,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaYAML: 4.300029
     Dist::Zilla::Plugin::MinimumPerl: 1.003
     Dist::Zilla::Plugin::ModuleBuild: 4.300029
+    Dist::Zilla::Plugin::PerlTidy: 0.12
     Dist::Zilla::Plugin::PkgVersion: 4.300029
     Dist::Zilla::Plugin::PodCoverageTests: 4.300029
     Dist::Zilla::Plugin::PodSyntaxTests: 4.300029

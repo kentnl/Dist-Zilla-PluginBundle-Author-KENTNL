@@ -67,6 +67,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::MetaYAML" => "4.300029",
     "Dist::Zilla::Plugin::MinimumPerl" => 0,
     "Dist::Zilla::Plugin::ModuleBuild" => "4.300029",
+    "Dist::Zilla::Plugin::PerlTidy" => 0,
     "Dist::Zilla::Plugin::PkgVersion" => "4.300029",
     "Dist::Zilla::Plugin::PodCoverageTests" => "4.300029",
     "Dist::Zilla::Plugin::PodSyntaxTests" => "4.300029",

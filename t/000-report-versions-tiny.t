@@ -80,6 +80,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::MetaTests','4.300029') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MetaYAML','4.300029') };
 eval { $v .= pmver('Dist::Zilla::Plugin::MinimumPerl','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ModuleBuild','4.300029') };
+eval { $v .= pmver('Dist::Zilla::Plugin::PerlTidy','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PkgVersion','4.300029') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PodCoverageTests','4.300029') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PodSyntaxTests','4.300029') };
