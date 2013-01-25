@@ -442,6 +442,22 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Prereqs:
           phase: runtime
           type: requires
+      name: dzil
+      version: 4.300029
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: requires
+      name: git
+      version: 4.300029
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: requires
       name: Prereqs
       version: 4.300029
     -
