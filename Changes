@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.0 2013-01-25T04:23:44Z
+1.7.0 2013-01-25T04:24:14Z
  [Dependencies::Changed / runtime requires]
  - Dist::Zilla 4.300000 -> 4.300029
  - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective
