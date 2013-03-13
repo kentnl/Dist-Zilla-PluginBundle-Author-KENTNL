@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.7.1 2013-03-13T13:31:16Z
  - Minor release to test changes to DZP:Git
 
  [Documentation]
