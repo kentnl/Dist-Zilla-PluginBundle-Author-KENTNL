@@ -1,12 +1,27 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.1 2013-03-13T13:27:21Z
+1.7.1 2013-03-13T13:30:47Z
  - Minor release to test changes to DZP:Git
 
+ [Documentation]
+ - utf8ify changes.
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla::Plugin::Git::Check 2.006 → 2.009
+ - Dist::Zilla::Plugin::Git::CommitBuild 2.006 → 2.009
+ - Dist::Zilla::Plugin::Git::GatherDir 2.006 → 2.009
+ - Dist::Zilla::Plugin::Git::NextVersion 2.006 → 2.009
+ - Dist::Zilla::Plugin::Git::Tag 2.006 → 2.009
+
 1.7.0 2013-01-25T04:24:14Z
+ [!Features]
+ - Add README.mkdn to all dists
+ - Dependencies Ramped.
+
  [Dependencies::Changed / runtime requires]
  - Dist::Zilla 4.300000 → 4.300029
- - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective 0 → v0.1.0
+ - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective
+   0 → v0.1.0
  - Dist::Zilla::Plugin:Authority 0 → 1.006
  - Dist::Zilla::Plugin::AutoPrereqs 4.200011 → 4.300029
  - Dist::Zilla::Plugin::Bootstrap::lib 0 → 0.01023601
@@ -54,10 +69,6 @@
  [Documentation]
  - Copyright license updated ( Year )
 
- [!Features]
- - Add README.mkdn to all dists
- - Dependencies Ramped.
-
 1.6.0 2012-11-10T13:31:13Z
  [Features]
  - Bug tracker now defaults to github issues
@@ -92,8 +103,10 @@
  [Dependencies::Changed]
  - build requires : Module::Build 0.4001 → 0.4002
  - configure requires : Module::Build 0.4001 → 0.4002
- - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith 0.03000000 → 0.03000100
- - runtime requires : Dist::Zilla::Plugin::MetaProvides 1.14000000 → 1.14000001
+ - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith
+   0.03000000 → 0.03000100
+ - runtime requires : Dist::Zilla::Plugin::MetaProvides
+   1.14000000 → 1.14000001
 
 1.4.2 2012-07-07T15:40:38Z
  [Dependencies::Added::Runtime]
@@ -127,9 +140,12 @@
 
 1.3.1 2012-03-12T15:17:53Z
  [Dependencies::Changed]
- - develop recommends : Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803 → v1.3.0
- - develop suggests : Dist::Zilla::PluginBundle::Author::KENTNL v1.2.0 → v1.3.0
- - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith 0.02000100 → 0.03000000
+ - develop recommends : Dist::Zilla::PluginBundle::Author::KENTNL::Lite
+   0.01009803 → v1.3.0
+ - develop suggests : Dist::Zilla::PluginBundle::Author::KENTNL
+   v1.2.0 → v1.3.0
+ - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith
+   0.02000100 → 0.03000000
 
  [Features]
  - enabled the show_config option of metadata::builtwith
@@ -141,9 +157,12 @@
 
 1.2.1 2012-02-27T05:12:12Z
  [Dependencies::Changed]
- - runtime requires : Dist::Zilla::Plugin::MetaProvides 1.12044518 → 1.14000000
- - runtime requires : Dist::Zilla::Plugin::MetaProvides::Package 1.11044404 → 1.14000001
- - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith 0.01014716 → 0.02000100
+ - runtime requires : Dist::Zilla::Plugin::MetaProvides
+   1.12044518 → 1.14000000
+ - runtime requires : Dist::Zilla::Plugin::MetaProvides::Package
+   1.11044404 → 1.14000001
+ - runtime requires : Dist::Zilla::Plugin::MetaData::BuiltWith
+   0.01014716 → 0.02000100
 
  [Dependencies::New]
  - runtime requires : Test::Perl::Critic
@@ -153,7 +172,8 @@
 
 1.2.0 2011-11-05T06:33:40Z
  [Dependencies]
- - changed: develop sugggests Dist::Zilla::PluginBundle::Author::KENTNL v1.1.0 → v1.2.0
+ - changed: develop sugggests Dist::Zilla::PluginBundle::Author::KENTNL
+   v1.1.0 → v1.2.0
  - removed: runtime requires Dist::Zilla::Plugin::AutoVersion::Relative
 
  [Features]
