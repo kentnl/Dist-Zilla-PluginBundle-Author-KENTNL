@@ -7,30 +7,17 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Capture::Tiny" => 0,
-    "File::Find" => 0,
-    "File::Temp" => 0,
-    "File::pushd" => 0,
-    "FindBin" => 0,
-    "Git::Wrapper" => 0,
-    "JSON" => 0,
-    "Module::Build" => "0.4003",
-    "Path::Class" => 0,
-    "Test::DZil" => 0,
-    "Test::Fatal" => 0,
-    "Test::File::ShareDir" => "v0.3.0",
-    "Test::More" => "0.98",
-    "Test::Output" => 0
+    "Module::Build" => "0.4004"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4003"
+    "Module::Build" => "0.4004"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.7.1",
+  "dist_version" => "1.7.2",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -103,6 +90,7 @@ my %module_build_args = (
     "Test::CPAN::Meta" => 0,
     "Test::EOL" => "0.9",
     "Test::Perl::Critic" => 0,
+    "Test::Pod" => 0,
     "Test::Pod::Coverage" => 0,
     "namespace::autoclean" => "0.09",
     "perl" => "v5.10.0",
@@ -115,9 +103,37 @@ my %module_build_args = (
     "module" => {
       "Dist::Zilla::MintingProfile::Author::KENTNL" => "share/profiles"
     }
+  },
+  "test_requires" => {
+    "Capture::Tiny" => 0,
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "File::pushd" => 0,
+    "FindBin" => 0,
+    "Git::Wrapper" => 0,
+    "JSON" => 0,
+    "Path::Class" => 0,
+    "Test::DZil" => 0,
+    "Test::Fatal" => 0,
+    "Test::File::ShareDir" => "v0.3.0",
+    "Test::More" => "0.98",
+    "Test::Output" => 0
   }
 );
 
+
+unless ( eval { Module::Build->VERSION(0.4004) } ) {
+  my $tr = delete $module_build_args{test_requires};
+  my $br = $module_build_args{build_requires};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 my $build = Module::Build->new(%module_build_args);
 
