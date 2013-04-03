@@ -90,6 +90,7 @@ my %module_build_args = (
     "Test::CPAN::Meta" => 0,
     "Test::EOL" => "0.9",
     "Test::Perl::Critic" => 0,
+    "Test::Pod" => 0,
     "Test::Pod::Coverage" => 0,
     "namespace::autoclean" => "0.09",
     "perl" => "v5.10.0",

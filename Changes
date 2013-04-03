@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.2 2013-04-03T02:32:57Z
+1.7.2 2013-04-03T02:34:08Z
  - minor release, packaging / update Module::Build
 
  [Dependencies::Changed / build requires]
