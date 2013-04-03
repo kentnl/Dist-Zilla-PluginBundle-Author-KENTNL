@@ -1,12 +1,25 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ - minor release, packaging / update Module::Build
+
+ [Dependencies::Added / runtime requires]
+ - Test::Pod
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.4003 → 0.4004
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.4003 → 0.4004
+
+ [Documentation]
+ - Sort changes previous.
+
+ [Packaging]
+ - Update to Module::Build 0.4004 to properly support test requires
 
 1.7.1 2013-03-13T13:31:16Z
  - Minor release to test changes to DZP:Git
-
- [Documentation]
- - utf8ify changes.
 
  [Dependencies::Changed / runtime requires]
  - Dist::Zilla::Plugin::Git::Check 2.006 → 2.009
@@ -14,6 +27,9 @@
  - Dist::Zilla::Plugin::Git::GatherDir 2.006 → 2.009
  - Dist::Zilla::Plugin::Git::NextVersion 2.006 → 2.009
  - Dist::Zilla::Plugin::Git::Tag 2.006 → 2.009
+
+ [Documentation]
+ - utf8ify changes.
 
 1.7.0 2013-01-25T04:24:14Z
  [!Features]
