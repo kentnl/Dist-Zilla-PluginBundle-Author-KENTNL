@@ -1,6 +1,19 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ - Bugfix for minting failure with Plugin::Test::CPAN::Changes
+ - Ramp bootstrap::lib
+ - add a small arsenal of utils
+
+ [Dependencies::Added / develop requires]
+ - Test::CPAN::Changes 0.19
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.3.0 → v1.7.3
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.01023601 → 0.02000100 
+ - Dist::Zilla::Plugin::Test::CPAN::Changes 0.005 → 0.008
 
 1.7.2 2013-04-03T02:39:06Z
  - minor release, packaging / update Module::Build
