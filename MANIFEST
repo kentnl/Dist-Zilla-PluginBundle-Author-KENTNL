@@ -47,7 +47,13 @@ t/01-Minter.t
 t/02-Minter-Moo-Role.t
 t/02-Minter-Moo.t
 t/02-Minter-Moose-Role.t
+utils/clone.pl
+utils/delta_deps.pl
+utils/delta_meta.pl
+utils/delta_meta.sh
+utils/git_fastcat.pl
 utils/normalize.pl
+utils/remove_bom.pl
 utils/zuluize.pl
 weaver.ini
 xt/author/critic.t
