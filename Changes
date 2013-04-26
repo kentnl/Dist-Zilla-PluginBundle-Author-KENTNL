@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.3 2013-04-26T19:08:58Z
+1.7.3 2013-04-26T19:09:26Z
  - Bugfix for minting failure with Plugin::Test::CPAN::Changes
  - Ramp bootstrap::lib
  - add a small arsenal of utils
