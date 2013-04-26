@@ -42,27 +42,108 @@ sub get_module {
 
 my $cache;
 
+sub cache_key {
+    my ( $type, $phase ) = @_ ; 
+    return 'Dependencies::' . ucfirst($type) . ' / ' . $phase; 
+}
+
+sub add_dep {
+    my ( $phase, $module, $version ) = @_ ; 
+    my $cache_key = cache_key( 'Added', $phase );
+    my $dep_cache = ( $cache->{$cache_key} ||= [] );
+    if ( $version eq '0' ){
+        push @{$dep_cache}, $module;
+        return;
+    }
+    push @{$dep_cache}, $module . ' ' . $version;
+    return;
+}
+sub remove_dep {
+    my ( $phase, $module, $version ) = @_ ; 
+    my $cache_key = cache_key( 'Removed', $phase );
+    my $dep_cache = ( $cache->{$cache_key} ||= [] );
+    if ( $version eq '0' ){
+        push @{$dep_cache}, $module;
+        return;
+    }
+    push @{$dep_cache}, $module . ' ' . $version;
+    return;
+}
+sub change_dep {
+    my ( $phase, $module, $old_version, $new_version ) = @_ ; 
+    my $cache_key = cache_key( 'Changed', $phase );
+    my $dep_cache = ( $cache->{$cache_key} ||= [] );
+    push @{$dep_cache}, $module . ' ' . $old_version . chr(0xA0) . chr(0x2192) . chr(0xA0) . $new_version;
+}
+
+sub cache_change { 
+    my ( $type, $path, $remove , $add ) = @_;
+    if ( $type eq 'added' ){
+        return add_dep( $path->[0] . ' ' . $path->[1] , $path->[2] ,  $add  );  
+    }
+    if ( $type eq 'removed' ){ 
+        return remove_dep( $path->[0] . ' ' . $path->[1] , $path->[2] , $remove );
+    }
+    if ( $type eq 'changed' ) {
+        return change_dep( $path->[0] . ' ' . $path->[1] , $path->[2] , $remove, $add );
+    }
+    die "unknown type $type";
+}
+sub change_rel { 
+    my ( $type, $path, $remove, $add ) = @_ ; 
+    if ( $type eq 'added' ) {
+
+        for my $key ( sort keys %{$add} ) {
+            my $new_path = [ @{$path}, $key ];
+            cache_change( $type, $new_path, undef , $add->{$key} );
+        }
+        return;
+    }
+    if ( $type eq 'removed' ) {
+        for my $key ( sort keys %{$remove} ) {
+            my $new_path = [ @{$path}, $key ];
+            cache_change( $type, $new_path, $remove->{$key}, undef );
+        }
+        return;
+    }
+
+    die "Unhandled change_rel $type";
+}
+sub change_phase {
+    my ( $type, $path, $remove, $add ) = @_;
+    if ( $type eq 'added' ) {
+
+        for my $key ( sort keys %{$add} ) {
+            my $new_path = [ @{$path}, $key ];
+            change_rel( $type, $new_path, undef , $add->{$key} );
+        }
+        return;
+    }
+    if ( $type eq 'removed' ) {
+        for my $key ( sort keys %{$remove} ) {
+            my $new_path = [ @{$path}, $key ];
+            change_rel( $type, $new_path, $remove->{$key}, undef );
+        }
+        return;
+    }
+    die "Unhandled change_phase $type";
+}
+
 for my $d ( data_diff( $lp, $rp )) {
     my $type = get_type($d);
-    my $cache_url = 'Dependencies::' . ucfirst( $type ) . ' / ' . get_phase($d);
-    my $lcache = ( $cache->{$cache_url} ||= [] );
-    if ( $type eq 'added' or $type eq 'removed' ) { 
-        my $version;
-        $version = $d->{a} if exists $d->{a};
-        $version = $d->{b} if exists $d->{b};
-
-        my $line = get_module( $d );
-        if( $version != 0 ) { 
-            $line .= ' ' . $version;
-        }
-        push @{$lcache}, $line;
+    if ( scalar @{ $d->{path} } == 3 ) {
+        cache_change( $type, $d->{path}, $d->{a}, $d->{b} );
         next;
     }
-    if ( $type eq 'changed' ) { 
-        my $line = get_module( $d ) . ' ' . $d->{a} . chr(0xA0) . chr(0x2192) . chr(0xA0) . $d->{b};
-        push @{$lcache}, $line;
+    if( scalar @{ $d->{path} } == 2 ) {
+        change_rel( $type, $d->{path}, $d->{a}, $d->{b} );
         next;
     }
+    if( scalar @{ $d->{path} } == 1 ) {
+        change_phase( $type, $d->{path}, $d->{a}, $d->{b} );
+        next;
+    }
+    die "Path not a known length";
 }
 
 binmode(*STDOUT,':utf8');
