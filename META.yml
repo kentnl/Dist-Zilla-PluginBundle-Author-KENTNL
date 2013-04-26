@@ -171,7 +171,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::TestRelease: 4.300034
     Dist::Zilla::Plugin::Twitter: 0.020
     Dist::Zilla::Plugin::UploadToCPAN: 4.300034
-    Dist::Zilla::PluginBundle::Author::KENTNL: NA(undef)
+    Dist::Zilla::PluginBundle::Author::KENTNL: 1.7.3
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     Dist::Zilla::Role::FileGatherer: 4.300034
     Dist::Zilla::Role::MintingProfile::ShareDir: 4.300034
@@ -372,7 +372,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: ~
+      version: 1.7.3
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective
       name: '@Author::KENTNL/Author::KENTNL::Prereqs::Latest::Selective'
