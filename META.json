@@ -16,12 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.4004"
+            "Module::Build" : "0.4005"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.4004"
+            "Module::Build" : "0.4005"
          }
       },
       "develop" : {
@@ -140,19 +140,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "v1.7.3"
+         "version" : "v1.7.4"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "v1.7.3"
+         "version" : "v1.7.4"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "v1.7.3"
+         "version" : "v1.7.4"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "v1.7.3"
+         "version" : "v1.7.4"
       }
    },
    "release_status" : "stable",
@@ -167,7 +167,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "1.7.3",
+   "version" : "1.7.4",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.22",
@@ -197,7 +197,7 @@
          "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.03000100",
          "Dist::Zilla::Plugin::MetaJSON" : "4.300034",
          "Dist::Zilla::Plugin::MetaProvides" : "1.14000001",
-         "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
+         "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000002",
          "Dist::Zilla::Plugin::MetaTests" : "4.300034",
          "Dist::Zilla::Plugin::MetaYAML" : "4.300034",
          "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
@@ -213,7 +213,7 @@
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.18",
          "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.08",
          "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
-         "Dist::Zilla::Plugin::Test::Compile" : "2.001",
+         "Dist::Zilla::Plugin::Test::Compile" : "2.002",
          "Dist::Zilla::Plugin::Test::Kwalitee" : "2.03",
          "Dist::Zilla::Plugin::Test::MinimumVersion" : "2.000004",
          "Dist::Zilla::Plugin::Test::Perl::Critic" : "2.112410",
@@ -227,15 +227,15 @@
          "Dist::Zilla::Role::PluginBundle" : "4.300034",
          "Dist::Zilla::Util::EmulatePhase" : "0.01025802",
          "File::Find" : "1.23",
-         "File::Temp" : "0.23",
+         "File::Temp" : "0.2301",
          "File::pushd" : "1.005",
          "FindBin" : "1.51",
-         "Git::Wrapper" : "0.028",
-         "IO::Socket::SSL" : "1.84",
+         "Git::Wrapper" : "0.029",
+         "IO::Socket::SSL" : "1.88",
          "JSON" : "2.57",
-         "LWP::Protocol::https" : "6.03",
-         "Module::Build" : "0.4004",
-         "Moose" : "2.0801",
+         "LWP::Protocol::https" : "6.04",
+         "Module::Build" : "0.4005",
+         "Moose" : "2.0802",
          "Moose::Autobox" : "0.13",
          "MooseX::Has::Sugar" : "0.05070421",
          "MooseX::Types" : "0.35",
@@ -245,7 +245,7 @@
          "Pod::Coverage::TrustPod" : "0.100002",
          "Pod::Weaver::Plugin::Encoding" : "0.01",
          "String::Formatter" : "0.102082",
-         "Test::CPAN::Changes" : "0.19",
+         "Test::CPAN::Changes" : "0.20",
          "Test::CPAN::Meta" : "0.23",
          "Test::DZil" : "4.300034",
          "Test::EOL" : "1.5",
@@ -254,7 +254,7 @@
          "Test::More" : "0.98",
          "Test::Output" : "1.01",
          "Test::Perl::Critic" : "1.02",
-         "Test::Pod" : "1.46",
+         "Test::Pod" : "1.48",
          "Test::Pod::Coverage" : "1.08",
          "namespace::autoclean" : "0.13",
          "perl" : "NA(skipped: perl)",
@@ -280,7 +280,7 @@
          "osname" : "linux"
       },
       "platform" : "linux",
-      "uname" : "Linux 3.8.2-gentoo x86_64 GenuineIntel GNU/Linux"
+      "uname" : "Linux 3.9.0-gentoo x86_64 GenuineIntel GNU/Linux"
    },
    "x_Dist_Zilla" : {
       "perl" : {
@@ -305,7 +305,7 @@
          {
             "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
             "name" : "@Author::KENTNL/MetaProvides::Package",
-            "version" : "1.14000001"
+            "version" : "1.14000002"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",
@@ -392,7 +392,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::Compile",
             "name" : "@Author::KENTNL/Test::Compile",
-            "version" : "2.001"
+            "version" : "2.002"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Perl::Critic",
