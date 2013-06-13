@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.4 2013-05-18T10:51:27Z
+1.7.4 2013-06-13T22:16:53Z
 
 1.7.3 2013-04-26T19:09:26Z
  - Bugfix for minting failure with Plugin::Test::CPAN::Changes

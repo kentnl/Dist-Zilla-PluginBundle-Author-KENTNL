@@ -22,6 +22,7 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 
 
+
 sub _expand {
   my ( $class, $suffix, $conf ) = @_;
   ## no critic ( RequireInterpolationOfMetachars )
@@ -359,6 +360,18 @@ I wish to give proper respect to the people out there already implementing this 
 =head2 C<bundle_config>
 
 See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what this is for, it is a method to satisfy that role.
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::PluginBundle::Author::KENTNL",
+    "interface":"class",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::PluginBundle"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 ENVIRONMENT
 

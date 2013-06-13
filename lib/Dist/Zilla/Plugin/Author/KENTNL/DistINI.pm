@@ -11,6 +11,7 @@ BEGIN {
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
 
+
 use Moose;
 
 with qw(Dist::Zilla::Role::FileGatherer);
@@ -158,6 +159,18 @@ relative frame of reference.
 =head2 C<gather_files>
 
 generates a C<dist.ini> file.
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::DistINI",
+    "interface":"class",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::FileGatherer"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 NAMING RATIONALE
 
