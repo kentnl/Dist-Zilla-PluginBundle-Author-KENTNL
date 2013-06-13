@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.7.3';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.7.4';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -18,6 +18,7 @@ use Class::Load qw( :all );
 with 'Dist::Zilla::Role::PluginBundle';
 
 use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
+
 
 
 
@@ -286,7 +287,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.7.3
+version 1.7.4
 
 =head1 SYNOPSIS
 
@@ -359,6 +360,18 @@ I wish to give proper respect to the people out there already implementing this 
 =head2 C<bundle_config>
 
 See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what this is for, it is a method to satisfy that role.
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::PluginBundle::Author::KENTNL",
+    "interface":"class",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::PluginBundle"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 ENVIRONMENT
 

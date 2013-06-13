@@ -6,10 +6,11 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::DistINI::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.7.3';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.7.4';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
+
 
 use Moose;
 
@@ -121,7 +122,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Autho
 
 =head1 VERSION
 
-version 1.7.3
+version 1.7.4
 
 =head1 SYNOPSIS
 
@@ -158,6 +159,18 @@ relative frame of reference.
 =head2 C<gather_files>
 
 generates a C<dist.ini> file.
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::DistINI",
+    "interface":"class",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::FileGatherer"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 NAMING RATIONALE
 

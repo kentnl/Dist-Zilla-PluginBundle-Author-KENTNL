@@ -7,17 +7,17 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4004"
+    "Module::Build" => "0.4005"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4004"
+    "Module::Build" => "0.4005"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.7.3",
+  "dist_version" => "1.7.4",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -70,7 +70,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::Test::MinimumVersion" => "2.000002",
     "Dist::Zilla::Plugin::Test::Perl::Critic" => "2.112410",
     "Dist::Zilla::Plugin::TestRelease" => "4.300029",
-    "Dist::Zilla::Plugin::Twitter" => "0.017",
+    "Dist::Zilla::Plugin::Twitter" => "0.021",
     "Dist::Zilla::Plugin::UploadToCPAN" => "4.300029",
     "Dist::Zilla::Role::FileGatherer" => 0,
     "Dist::Zilla::Role::MintingProfile::ShareDir" => 0,

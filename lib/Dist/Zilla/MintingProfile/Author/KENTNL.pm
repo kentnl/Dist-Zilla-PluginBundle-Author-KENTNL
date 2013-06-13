@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::MintingProfile::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '1.7.3';
+  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '1.7.4';
 }
 
 # ABSTRACT: KENTNL's Minting Profile
@@ -14,6 +14,7 @@ BEGIN {
 use Moose;
 use namespace::autoclean;
 with 'Dist::Zilla::Role::MintingProfile::ShareDir';
+
 
 
 __PACKAGE__->meta->make_immutable;
@@ -32,11 +33,23 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 1.7.3
+version 1.7.4
 
 =head1 SYNOPSIS
 
     dzil new -P Author::KENTNL Some::Dist::Name
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::MintingProfile::Author::KENTNL",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::MintingProfile::ShareDir",
+    "interface":"class"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 AUTHOR
 

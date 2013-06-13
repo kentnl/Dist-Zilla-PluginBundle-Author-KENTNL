@@ -8,6 +8,8 @@ META.yml
 README
 corpus/global/config.ini
 dist.ini
+layout/self_structure.dot
+layout/self_structure.png
 lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm

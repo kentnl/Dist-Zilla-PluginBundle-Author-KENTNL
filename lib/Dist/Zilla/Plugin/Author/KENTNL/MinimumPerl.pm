@@ -6,14 +6,16 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '1.7.3';
+  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '1.7.4';
 }
 
 # FILENAME: MinimumPerl.pm
 # CREATED: 31/10/11 05:25:54 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
+
 use Moose;
+
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
 
@@ -134,13 +136,24 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 1.7.3
+version 1.7.4
 
 =head1 METHODS
 
 =head2 C<minperl>
 
 Returns the maximum of either the version requested for Perl, or the version detected for Perl.
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
+    "interface":"class",
+    "inherits":"Dist::Zilla::Plugin::MinimumPerl"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 AUTHOR
 
