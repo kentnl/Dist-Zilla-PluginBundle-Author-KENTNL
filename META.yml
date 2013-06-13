@@ -87,7 +87,7 @@ requires:
   Dist::Zilla::Plugin::Test::MinimumVersion: 2.000002
   Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
   Dist::Zilla::Plugin::TestRelease: 4.300029
-  Dist::Zilla::Plugin::Twitter: 0.017
+  Dist::Zilla::Plugin::Twitter: 0.021
   Dist::Zilla::Plugin::UploadToCPAN: 4.300029
   Dist::Zilla::Role::FileGatherer: 0
   Dist::Zilla::Role::MintingProfile::ShareDir: 0
