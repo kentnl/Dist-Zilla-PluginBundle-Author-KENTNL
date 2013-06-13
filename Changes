@@ -1,6 +1,24 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.4 2013-06-13T22:52:02Z
+1.7.4 2013-06-13T22:55:12Z
+ - Maintenance release
+ - ::Twitter bumped for API v1.0 deprecation
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.4004 → 0.4005
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.4004 → 0.4005
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.3 → v1.7.4
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla::Plugin::Twitter 0.017 → 0.021
+
+ [Documentation]
+ - Retroactively modernize Changes
+ - Add MetaPOD and Class Graph
 
 1.7.3 2013-04-26T19:09:26Z
  - Bugfix for minting failure with Plugin::Test::CPAN::Changes
