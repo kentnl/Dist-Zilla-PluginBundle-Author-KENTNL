@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 # VERSION
 
-version 1.7.3
+version 1.7.4
 
 # SYNOPSIS
 
@@ -65,6 +65,15 @@ I wish to give proper respect to the people out there already implementing this 
 ## `bundle_config`
 
 See [the `PluginBundle` role](http://search.cpan.org/perldoc?Dist::Zilla::Role::PluginBundle) for what this is for, it is a method to satisfy that role.
+
+{
+    "namespace":"Dist::Zilla::PluginBundle::Author::KENTNL",
+    "interface":"class",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::PluginBundle"
+}
+
+
 
 # ENVIRONMENT
 
