@@ -1,0 +1,21 @@
+strict digraph Perl {
+	graph [compound=1, concentrate=1, overlap=false, rankdir=LR, ranksep=1, smoothing=triangle, splines=spline];
+	node [label="\N", shape=record, style=dotted];
+	edge [minlen=1];
+	"Dist::Zilla::MintingProfile::Author::KENTNL" [label="{{<port1> class}|<port2> Dist::Zilla::MintingProfile::Author::KENTNL}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::Plugin::Author::KENTNL::DistINI" [label="{{<port1> class}|<port2> Dist::Zilla::Plugin::Author::KENTNL::DistINI}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" [label="{{<port1> class}|<port2> Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::Plugin::MinimumPerl" [label="<port1> Dist::Zilla::Plugin::MinimumPerl"];
+	"Dist::Zilla::PluginBundle::Author::KENTNL" [label="{{<port1> class}|<port2> Dist::Zilla::PluginBundle::Author::KENTNL}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::Role::FileGatherer" [label="<port1> Dist::Zilla::Role::FileGatherer"];
+	"Dist::Zilla::Role::MintingProfile::ShareDir" [label="<port1> Dist::Zilla::Role::MintingProfile::ShareDir"];
+	"Dist::Zilla::Role::PluginBundle" [label="<port1> Dist::Zilla::Role::PluginBundle"];
+	"Moose::Object" [label="<port1> Moose::Object"];
+	"Moose::Object" -> "Dist::Zilla::MintingProfile::Author::KENTNL" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+	"Dist::Zilla::Role::MintingProfile::ShareDir" -> "Dist::Zilla::MintingProfile::Author::KENTNL" [arrowhead=open, arrowsize="0.5", color="#653700", dir=forward, fontsize=6, headclip=1, label="consumed by", samehead=head, tailclip=1, weight=5];
+	"Moose::Object" -> "Dist::Zilla::PluginBundle::Author::KENTNL" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+	"Dist::Zilla::Role::PluginBundle" -> "Dist::Zilla::PluginBundle::Author::KENTNL" [arrowhead=open, arrowsize="0.5", color="#653700", dir=forward, fontsize=6, headclip=1, label="consumed by", samehead=head, tailclip=1, weight=5];
+	"Moose::Object" -> "Dist::Zilla::Plugin::Author::KENTNL::DistINI" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+	"Dist::Zilla::Role::FileGatherer" -> "Dist::Zilla::Plugin::Author::KENTNL::DistINI" [arrowhead=open, arrowsize="0.5", color="#653700", dir=forward, fontsize=6, headclip=1, label="consumed by", samehead=head, tailclip=1, weight=5];
+	"Dist::Zilla::Plugin::MinimumPerl" -> "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+}
