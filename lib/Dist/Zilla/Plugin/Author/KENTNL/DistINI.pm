@@ -5,6 +5,19 @@ package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::DistINI",
+    "interface":"class",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::FileGatherer"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 use Moose;
 
 with qw(Dist::Zilla::Role::FileGatherer);

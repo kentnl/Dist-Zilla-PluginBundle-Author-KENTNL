@@ -7,7 +7,20 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 # CREATED: 31/10/11 05:25:54 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
+    "interface":"class",
+    "inherits":"Dist::Zilla::Plugin::MinimumPerl"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 use Moose;
+
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
 

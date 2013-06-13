@@ -13,6 +13,19 @@ with 'Dist::Zilla::Role::PluginBundle';
 
 use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::PluginBundle::Author::KENTNL",
+    "interface":"class",
+    "inherits":"Moose::Object",
+    "does":"Dist::Zilla::Role::PluginBundle"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 =head1 SYNOPSIS
 
     [@Author::KENTNL]
