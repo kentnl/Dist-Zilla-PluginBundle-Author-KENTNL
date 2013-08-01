@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.5 2013-08-01T09:43:39Z
+1.7.5 2013-08-01T09:45:07Z
  - Minor Changes, backend deps switched.
 
  [Dependencies::Added / runtime requires]
