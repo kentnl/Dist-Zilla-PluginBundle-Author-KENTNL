@@ -217,9 +217,6 @@ sub bundle_config_inner {
       }
     ],
     [ 'Author::KENTNL::MinimumPerl'                => { _only_fiveten( $arg, fiveten => 1 ) } ],
-    [ 'Prereqs::MatchInstalled' => {
-            modules => [ qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],    
-    } ],
   );
   my (@mungers) = (
     [ 'PkgVersion'  => {} ],
@@ -257,6 +254,9 @@ sub bundle_config_inner {
     _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { branch => 'releases', tag_format => '%v' } ] ),
     _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
     [ 'Twitter' => $twitter_conf ],
+    [ 'Prereqs::MatchInstalled' => {
+            modules => [ qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],    
+    } ],
   );
 }
 
