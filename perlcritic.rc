@@ -10,7 +10,7 @@ allow_includes = 1
 [CodeLayout::ProhibitTrailingWhitespace]
 
 [Documentation::PodSpelling]
-stop_words = metadata KiokuDB KENTNL KENTNL's CPAN blogged CPANized PluginBundles CPANID's CPANID dists DPCHRIST everyones irc cpan Doherty's Gorwits namespace Gorwit's blog PluginBundle Lesperance's Ghedini's Stauner's Ilmari Vacklin's Yanick Champoux's Znamensky's MinimumPerl Plugin minperl
+stop_words = metadata KiokuDB KENTNL KENTNL's CPAN blogged CPANized PluginBundles CPANID's CPANID dists DPCHRIST everyones irc cpan Doherty's Gorwits namespace Gorwit's blog PluginBundle Lesperance's Ghedini's Stauner's Ilmari Vacklin's Yanick Champoux's Znamensky's MinimumPerl Plugin minperl Alessandro
 
 [Subroutines::ProhibitUnusedPrivateSubroutines]
 private_name_regex = _(?!build_)\w

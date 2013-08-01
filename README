@@ -3,7 +3,7 @@ NAME
     build your distributions.
 
 VERSION
-    version 1.7.4
+    version 1.7.5
 
 SYNOPSIS
         [@Author::KENTNL]
@@ -21,7 +21,7 @@ NAMING SCHEME
     As I blogged about on "blog.fox.geek.nz" : Making a Minting Profile as a
     CPANized Dist <http://bit.ly/hAwl4S>, this bundle advocates a new naming
     system for people who are absolutely convinced they want their
-    Author-Centric distribution uploaded to CPAN.
+    "Author-Centric" distribution uploaded to CPAN.
 
     As we have seen with Dist::Zilla there have been a slew of PluginBundles
     with CPANID's in their name, to the point that there is a copious amount

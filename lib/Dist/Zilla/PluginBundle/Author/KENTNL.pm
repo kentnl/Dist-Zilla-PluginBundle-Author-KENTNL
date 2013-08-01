@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.7.4';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.7.5';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -216,8 +216,7 @@ sub bundle_config_inner {
         'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
       }
     ],
-    [ 'Author::KENTNL::MinimumPerl'                => { _only_fiveten( $arg, fiveten => 1 ) } ],
-    [ 'Author::KENTNL::Prereqs::Latest::Selective' => {} ],
+    [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
   );
   my (@mungers) = (
     [ 'PkgVersion'  => {} ],
@@ -255,6 +254,11 @@ sub bundle_config_inner {
     _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { branch => 'releases', tag_format => '%v' } ] ),
     _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
     [ 'Twitter' => $twitter_conf ],
+    [
+      'Prereqs::MatchInstalled' => {
+        modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
+      }
+    ],
   );
 }
 
@@ -287,7 +291,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.7.4
+version 1.7.5
 
 =head1 SYNOPSIS
 
@@ -305,7 +309,7 @@ and wants others to be using what he's using if they want to be doing work on hi
 =head1 NAMING SCHEME
 
 As I blogged about on L<< C<blog.fox.geek.nz> : Making a Minting Profile as a CPANized Dist |http://bit.ly/hAwl4S >>,
-this bundle advocates a new naming system for people who are absolutely convinced they want their Author-Centric distribution uploaded to CPAN.
+this bundle advocates a new naming system for people who are absolutely convinced they want their C<Author-Centric> distribution uploaded to CPAN.
 
 As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is a copious amount of name-space pollution
 in the PluginBundle name-space, and more Author bundles than task-bundles, which was really what the name-space was designed for, and I'm petitioning you to help reduce
