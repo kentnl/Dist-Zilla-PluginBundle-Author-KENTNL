@@ -27,7 +27,6 @@ my %module_build_args = (
     "Class::Load" => 0,
     "Dist::Zilla" => "4.300029",
     "Dist::Zilla::File::FromCode" => 0,
-    "Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective" => "v0.1.0",
     "Dist::Zilla::Plugin::Authority" => "1.006",
     "Dist::Zilla::Plugin::AutoPrereqs" => "4.300029",
     "Dist::Zilla::Plugin::Bootstrap::lib" => "0.02000100",

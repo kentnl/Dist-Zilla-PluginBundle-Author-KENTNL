@@ -53,7 +53,6 @@ eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Class::Load','any version') };
 eval { $v .= pmver('Dist::Zilla','4.300029') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','any version') };
-eval { $v .= pmver('Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective','v0.1.0') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Authority','1.006') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoPrereqs','4.300029') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Bootstrap::lib','0.02000100') };

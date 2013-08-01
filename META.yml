@@ -44,7 +44,6 @@ requires:
   Class::Load: 0
   Dist::Zilla: 4.300029
   Dist::Zilla::File::FromCode: 0
-  Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective: v0.1.0
   Dist::Zilla::Plugin::Authority: 1.006
   Dist::Zilla::Plugin::AutoPrereqs: 4.300029
   Dist::Zilla::Plugin::Bootstrap::lib: 0.02000100
@@ -127,7 +126,6 @@ x_BuiltWith:
     Class::Load: 0.20
     Dist::Zilla: 4.300035
     Dist::Zilla::File::FromCode: 4.300035
-    Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective: 0.1.0
     Dist::Zilla::Plugin::Authority: 1.007
     Dist::Zilla::Plugin::AutoPrereqs: 4.300035
     Dist::Zilla::Plugin::Bootstrap::lib: 0.02000100
