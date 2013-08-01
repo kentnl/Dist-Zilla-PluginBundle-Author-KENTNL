@@ -7,17 +7,17 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4005"
+    "Module::Build" => "0.3601"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4005"
+    "Module::Build" => "0.3601"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.7.4",
+  "dist_version" => "1.7.5",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},

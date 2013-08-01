@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.7.4';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.7.5';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -217,7 +217,9 @@ sub bundle_config_inner {
       }
     ],
     [ 'Author::KENTNL::MinimumPerl'                => { _only_fiveten( $arg, fiveten => 1 ) } ],
-    [ 'Author::KENTNL::Prereqs::Latest::Selective' => {} ],
+    [ 'Prereqs::MatchInstalled' => {
+            modules => [ qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],    
+    } ],
   );
   my (@mungers) = (
     [ 'PkgVersion'  => {} ],
@@ -287,7 +289,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.7.4
+version 1.7.5
 
 =head1 SYNOPSIS
 
