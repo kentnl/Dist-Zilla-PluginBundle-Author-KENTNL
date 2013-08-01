@@ -16,12 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "Module::Build" : "0.4005"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "Module::Build" : "0.4005"
          }
       },
       "develop" : {
@@ -465,49 +465,6 @@
             "version" : "1.7.5"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereqs::MatchInstalled",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : {
-                  "applyto" : [
-                     "build.requires",
-                     "build.recommends",
-                     "build.suggests",
-                     "test.requires",
-                     "test.recommends",
-                     "test.suggests",
-                     "runtime.requires",
-                     "runtime.recommends",
-                     "runtime.suggests",
-                     "configure.requires",
-                     "configure.recommends",
-                     "configure.suggests",
-                     "develop.requires",
-                     "develop.recommends",
-                     "develop.suggests"
-                  ],
-                  "applyto_phase" : [
-                     "build",
-                     "test",
-                     "runtime",
-                     "configure",
-                     "develop"
-                  ],
-                  "applyto_relation" : [
-                     "requires",
-                     "recommends",
-                     "suggests"
-                  ],
-                  "modules" : [
-                     "Module::Build",
-                     "Test::More",
-                     "Dist::Zilla::PluginBundle::Author::KENTNL"
-                  ]
-               }
-            },
-            "name" : "@Author::KENTNL/Prereqs::MatchInstalled",
-            "version" : "0.1.0"
-         },
-         {
             "class" : "Dist::Zilla::Plugin::Authority",
             "name" : "@Author::KENTNL/Authority",
             "version" : "1.007"
@@ -581,6 +538,49 @@
             "class" : "Dist::Zilla::Plugin::Twitter",
             "name" : "@Author::KENTNL/Twitter",
             "version" : "0.021"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs::MatchInstalled",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : {
+                  "applyto" : [
+                     "build.requires",
+                     "build.recommends",
+                     "build.suggests",
+                     "test.requires",
+                     "test.recommends",
+                     "test.suggests",
+                     "runtime.requires",
+                     "runtime.recommends",
+                     "runtime.suggests",
+                     "configure.requires",
+                     "configure.recommends",
+                     "configure.suggests",
+                     "develop.requires",
+                     "develop.recommends",
+                     "develop.suggests"
+                  ],
+                  "applyto_phase" : [
+                     "build",
+                     "test",
+                     "runtime",
+                     "configure",
+                     "develop"
+                  ],
+                  "applyto_relation" : [
+                     "requires",
+                     "recommends",
+                     "suggests"
+                  ],
+                  "modules" : [
+                     "Module::Build",
+                     "Test::More",
+                     "Dist::Zilla::PluginBundle::Author::KENTNL"
+                  ]
+               }
+            },
+            "name" : "@Author::KENTNL/Prereqs::MatchInstalled",
+            "version" : "0.1.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::ModuleShareDirs",

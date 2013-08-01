@@ -10,7 +10,7 @@ build_requires:
   FindBin: 0
   Git::Wrapper: 0
   JSON: 0
-  Module::Build: 0.3601
+  Module::Build: 0.4005
   Path::Class: 0
   Test::DZil: 0
   Test::Fatal: 0
@@ -18,7 +18,7 @@ build_requires:
   Test::More: 0.98
   Test::Output: 0
 configure_requires:
-  Module::Build: 0.3601
+  Module::Build: 0.4005
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
 license: perl
@@ -371,42 +371,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
       version: 1.7.5
     -
-      class: Dist::Zilla::Plugin::Prereqs::MatchInstalled
-      config:
-        Dist::Zilla::Plugin::Prereqs::MatchInstalled:
-          applyto:
-            - build.requires
-            - build.recommends
-            - build.suggests
-            - test.requires
-            - test.recommends
-            - test.suggests
-            - runtime.requires
-            - runtime.recommends
-            - runtime.suggests
-            - configure.requires
-            - configure.recommends
-            - configure.suggests
-            - develop.requires
-            - develop.recommends
-            - develop.suggests
-          applyto_phase:
-            - build
-            - test
-            - runtime
-            - configure
-            - develop
-          applyto_relation:
-            - requires
-            - recommends
-            - suggests
-          modules:
-            - Module::Build
-            - Test::More
-            - Dist::Zilla::PluginBundle::Author::KENTNL
-      name: '@Author::KENTNL/Prereqs::MatchInstalled'
-      version: 0.1.0
-    -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
       version: 1.007
@@ -466,6 +430,42 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Twitter
       name: '@Author::KENTNL/Twitter'
       version: 0.021
+    -
+      class: Dist::Zilla::Plugin::Prereqs::MatchInstalled
+      config:
+        Dist::Zilla::Plugin::Prereqs::MatchInstalled:
+          applyto:
+            - build.requires
+            - build.recommends
+            - build.suggests
+            - test.requires
+            - test.recommends
+            - test.suggests
+            - runtime.requires
+            - runtime.recommends
+            - runtime.suggests
+            - configure.requires
+            - configure.recommends
+            - configure.suggests
+            - develop.requires
+            - develop.recommends
+            - develop.suggests
+          applyto_phase:
+            - build
+            - test
+            - runtime
+            - configure
+            - develop
+          applyto_relation:
+            - requires
+            - recommends
+            - suggests
+          modules:
+            - Module::Build
+            - Test::More
+            - Dist::Zilla::PluginBundle::Author::KENTNL
+      name: '@Author::KENTNL/Prereqs::MatchInstalled'
+      version: 0.1.0
     -
       class: Dist::Zilla::Plugin::ModuleShareDirs
       name: ModuleShareDirs
