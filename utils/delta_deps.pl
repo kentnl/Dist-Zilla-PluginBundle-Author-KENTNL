@@ -159,5 +159,6 @@ for my $key ( sort keys %{$cache} ) {
   for my $entry ( @{ $cache->{$key} } ) {
     print ' - ' . $entry . qq[\n];
   }
+  print qq[\n];
 }
 
