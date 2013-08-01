@@ -60,6 +60,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::PodSyntaxTests" => "4.300029",
     "Dist::Zilla::Plugin::PodWeaver" => "3.101641",
     "Dist::Zilla::Plugin::Prereqs" => "4.300029",
+    "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => 0,
     "Dist::Zilla::Plugin::PruneCruft" => "4.300029",
     "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.120120",
     "Dist::Zilla::Plugin::ReadmeFromPod" => "0.16",
