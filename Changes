@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.7.5 2013-08-01T09:48:11Z
  - Minor Changes, backend deps switched.
 
  [Dependencies::Added / runtime requires]
