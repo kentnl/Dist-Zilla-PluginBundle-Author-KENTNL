@@ -22,7 +22,7 @@ and wants others to be using what he's using if they want to be doing work on hi
 # NAMING SCHEME
 
 As I blogged about on [`blog.fox.geek.nz` : Making a Minting Profile as a CPANized Dist ](http://bit.ly/hAwl4S),
-this bundle advocates a new naming system for people who are absolutely convinced they want their Author-Centric distribution uploaded to CPAN.
+this bundle advocates a new naming system for people who are absolutely convinced they want their `Author-Centric` distribution uploaded to CPAN.
 
 As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is a copious amount of name-space pollution
 in the PluginBundle name-space, and more Author bundles than task-bundles, which was really what the name-space was designed for, and I'm petitioning you to help reduce
