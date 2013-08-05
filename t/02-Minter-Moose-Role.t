@@ -268,8 +268,7 @@ EOF
       },
       test => {
         requires => {
-          'File::Find' => 0,
-          'File::Temp' => 0,
+          'blib' => 0,
           'Test::More' => $Test::More::VERSION,
         },
       }

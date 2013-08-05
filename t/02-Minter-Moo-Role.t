@@ -265,6 +265,7 @@ EOF
       },
       test => {
         requires => {
+          'blib'   => 0,
           'Test::More' => $Test::More::VERSION,
         },
       }
