@@ -1,6 +1,35 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Added / test requires]
+ - blib
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.4005 → 0.4007
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.4005 → 0.4007
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.5 → v1.7.6
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla::Plugin::Authority 1.006 → 1.007
+ - Dist::Zilla::Plugin::CheckExtraTests 0.007 → 0.011
+ - Dist::Zilla::Plugin::GithubMeta 0.28 → 0.30
+ - Dist::Zilla::Plugin::MetaProvides::Package 1.14000001 → 1.14000003
+ - Dist::Zilla::Plugin::PerlTidy 0 → 0.13
+ - Dist::Zilla::Plugin::PodWeaver 3.101641 → 3.101642
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled 0 → v0.1.0
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.120120 → 0.131500
+ - Dist::Zilla::Plugin::ReadmeFromPod 0.16 → 0.18
+ - Dist::Zilla::Plugin::ReportVersions::Tiny 1.08 → 1.09
+ - Dist::Zilla::Plugin::Test::Compile 1.112820 → 2.018
+ - Dist::Zilla::Plugin::Test::MinimumVersion 2.000002 → 2.000005
+
+ [Dependencies::Removed / test requires]
+ - File::Find
+ - File::Temp
 
 1.7.5 2013-08-01T09:48:11Z
  - Minor Changes, backend deps switched.
