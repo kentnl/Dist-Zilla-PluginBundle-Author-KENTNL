@@ -266,6 +266,7 @@ EOF
       test => {
         requires => {
           'blib'   => 0,
+          'Capture::Tiny' => 0,
           'Test::More' => $Test::More::VERSION,
         },
       }
