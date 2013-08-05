@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.7.6 2013-08-05T07:33:33Z
  [BugFix]
  - Fix test failures introduced by new dependencies
 
