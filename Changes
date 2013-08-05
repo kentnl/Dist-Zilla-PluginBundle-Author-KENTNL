@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [BugFix]
+ - Fix test failures introduced by new dependencies
+
  [Dependencies::Added / test requires]
  - blib
 
