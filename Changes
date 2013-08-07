@@ -1,6 +1,15 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.7.7 2013-08-07T17:31:23Z
+1.7.7 2013-08-07T17:33:54Z
+ [BugFix]
+ - Accidentally upgraded dependency on Plugin::Authority to a version that
+   is not on CPAN. Solved. Thanks to Sander Lepik for reporting.
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.6 → v1.7.7
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla::Plugin::Authority 1.007 → 1.006
 
 1.7.6 2013-08-05T07:33:33Z
  [BugFix]
