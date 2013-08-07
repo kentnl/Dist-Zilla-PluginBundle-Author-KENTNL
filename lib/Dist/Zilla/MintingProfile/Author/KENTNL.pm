@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::MintingProfile::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '1.7.6';
+  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '1.7.7';
 }
 
 # ABSTRACT: KENTNL's Minting Profile
@@ -33,7 +33,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 1.7.6
+version 1.7.7
 
 =head1 SYNOPSIS
 

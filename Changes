@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.7.7 2013-08-07T17:06:01Z
+
 1.7.6 2013-08-05T07:33:33Z
  [BugFix]
  - Fix test failures introduced by new dependencies
