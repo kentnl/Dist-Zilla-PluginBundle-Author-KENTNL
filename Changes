@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.7.7 2013-08-07T17:33:54Z
  [BugFix]
  - Accidentally upgraded dependency on Plugin::Authority to a version that
    is not on CPAN. Solved. Thanks to Sander Lepik for reporting.
