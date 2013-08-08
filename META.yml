@@ -43,7 +43,7 @@ requires:
   Class::Load: 0.20
   Dist::Zilla: 4.300035
   Dist::Zilla::File::FromCode: 4.300035
-  Dist::Zilla::Plugin::Authority: 0
+  Dist::Zilla::Plugin::Authority: 1.006
   Dist::Zilla::Plugin::AutoPrereqs: 4.300035
   Dist::Zilla::Plugin::Bootstrap::lib: 0.02000100
   Dist::Zilla::Plugin::CheckExtraTests: 0.011
@@ -131,6 +131,7 @@ x_BuiltWith:
     Class::Load: 0.20
     Dist::Zilla: 4.300035
     Dist::Zilla::File::FromCode: 4.300035
+    Dist::Zilla::Plugin::Authority: 1.007
     Dist::Zilla::Plugin::Bootstrap::lib: 0.02000100
     Dist::Zilla::Plugin::FakeRelease: 4.300035
     Dist::Zilla::Plugin::MetaProvides: 1.14000001
