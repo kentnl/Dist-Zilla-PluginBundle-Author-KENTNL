@@ -42,7 +42,7 @@ requires:
   Carp: 1.29
   Class::Load: 0.20
   Dist::Zilla::File::FromCode: 4.300035
-  Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl: v1.7.7
+  Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl: 0
   Dist::Zilla::Plugin::Authority: 0
   Dist::Zilla::Plugin::AutoPrereqs: 4.300035
   Dist::Zilla::Plugin::CheckExtraTests: 0.011
@@ -113,7 +113,7 @@ x_BuiltWith:
     Class::Load: 0.20
     Dist::Zilla::File::FromCode: 4.300035
     Dist::Zilla::Plugin::MinimumPerl: 1.003
-    Dist::Zilla::PluginBundle::Author::KENTNL: 1.7.7
+    Dist::Zilla::PluginBundle::Author::KENTNL: NA(undef)
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     Dist::Zilla::Role::FileGatherer: 4.300035
     Dist::Zilla::Role::MintingProfile::ShareDir: 4.300035
@@ -306,7 +306,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 1.7.7
+      version: ~
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
