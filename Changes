@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-0.8.0 2013-08-08T00:54:36Z
+1.8.0 2013-08-08T00:55:31Z
  [!Major]
  - The way dependencies are declared for this module are aggressively
    overhauled and much more tightly follow upstream versions. This is
