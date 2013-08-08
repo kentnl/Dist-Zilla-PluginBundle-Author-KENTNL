@@ -1,6 +1,94 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [!Major]
+ - The way dependencies are declared for this module are aggressively
+   overhauled and much more tightly follow upstream versions. This is
+   mostly to smoke out any dependencies that need to be added to the
+   exclusion list.
+
+ [Dependencies::Added / runtime requires]
+ - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.009
+ - Dist::Zilla::Plugin::FinderCode 4.300035
+ - Dist::Zilla::Plugin::Git::Commit 2.014
+ - Dist::Zilla::Plugin::ModuleShareDirs 4.300035
+ - Dist::Zilla::Plugin::NextRelease 4.300035
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.0
+ - Dist::Zilla::Plugin::Prereqs::Plugins v0.1.0
+
+ [Dependencies::Changed / develop requires]
+ - Pod::Coverage::TrustPod 0 → 0.100002
+ - Test::CPAN::Changes 0.19 → 0.22
+ - Test::CPAN::Meta 0 → 0.23
+ - Test::Pod 1.41 → 1.48
+ - version 0.9901 → 0.9902
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.7 → v1.3.0
+
+ [Dependencies::Changed / runtime requires]
+ - Class::Load 0 → 0.20
+ - Dist::Zilla 4.300029 → 4.300035
+ - Dist::Zilla::File::FromCode 0 → 4.300035
+ - Dist::Zilla::Plugin::AutoPrereqs 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::ConfirmRelease 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::FakeRelease 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::Git::Check 2.009 → 2.014
+ - Dist::Zilla::Plugin::Git::CommitBuild 2.009 → 2.014
+ - Dist::Zilla::Plugin::Git::GatherDir 2.009 → 2.014
+ - Dist::Zilla::Plugin::Git::NextVersion 2.009 → 2.014
+ - Dist::Zilla::Plugin::Git::Tag 2.009 → 2.014
+ - Dist::Zilla::Plugin::License 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::Manifest 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::ManifestSkip 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::MetaConfig 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::MetaJSON 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::MetaTests 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::MetaYAML 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::MinimumPerl 0 → 1.003
+ - Dist::Zilla::Plugin::ModuleBuild 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::PkgVersion 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::PodCoverageTests 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::PodSyntaxTests 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::Prereqs 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled v0.1.0 → v0.1.1
+ - Dist::Zilla::Plugin::PruneCruft 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::TestRelease 4.300029 → 4.300035
+ - Dist::Zilla::Plugin::UploadToCPAN 4.300029 → 4.300035
+ - Dist::Zilla::Role::FileGatherer 0 → 4.300035
+ - Dist::Zilla::Role::MintingProfile::ShareDir 0 → 4.300035
+ - Dist::Zilla::Role::PluginBundle 0 → 4.300035
+ - IO::Socket::SSL 1.81 → 1.953
+ - LWP::Protocol::https 6.00 → 6.04
+ - Moose 1.01 → 2.1005
+ - Moose::Autobox 0 → 0.13
+ - MooseX::Has::Sugar 0.05044 → 0.05070421
+ - MooseX::Types 0.21 → 0.36
+ - Net::SSLeay 1.36 → 1.55
+ - Perl::PrereqScanner 1.006 → 1.016
+ - Pod::Coverage::TrustPod 0 → 0.100002
+ - String::Formatter 0 → 0.102082
+ - Test::CPAN::Meta 0 → 0.23
+ - Test::EOL 0.9 → 1.5
+ - Test::Perl::Critic 0 → 1.02
+ - Test::Pod 0 → 1.48
+ - Test::Pod::Coverage 0 → 1.08
+ - namespace::autoclean 0.09 → 0.13
+ - version 0 → 0.9902
+
+ [Dependencies::Changed / test requires]
+ - Capture::Tiny 0 → 0.22
+ - File::pushd 0 → 1.005
+ - Git::Wrapper 0 → 0.030
+ - JSON 0 → 2.59
+ - Path::Class 0 → 0.32
+ - Test::DZil 0 → 4.300035
+ - Test::Fatal 0 → 0.010
+ - Test::File::ShareDir v0.3.0 → v0.3.3
+ - Test::Output 0 → 1.02
+
+ [Dependencies::Removed / runtime requires]
+ - Dist::Zilla::Plugin::GatherDir 4.300029
 
 1.7.7 2013-08-07T17:33:54Z
  [BugFix]
