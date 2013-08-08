@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.7.8",
+  "dist_version" => "0.8.0",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -34,6 +34,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::CheckPrereqsIndexed" => "0.009",
     "Dist::Zilla::Plugin::ConfirmRelease" => "4.300035",
     "Dist::Zilla::Plugin::EOLTests" => "0.02",
+    "Dist::Zilla::Plugin::FakeRelease" => "4.300035",
     "Dist::Zilla::Plugin::FinderCode" => "4.300035",
     "Dist::Zilla::Plugin::Git::Check" => "2.014",
     "Dist::Zilla::Plugin::Git::Commit" => "2.014",
@@ -112,7 +113,7 @@ my %module_build_args = (
   "test_requires" => {
     "Capture::Tiny" => "0.22",
     "File::pushd" => "1.005",
-    "FindBin" => "1.51",
+    "FindBin" => 0,
     "Git::Wrapper" => "0.030",
     "JSON" => "2.59",
     "Path::Class" => "0.32",
