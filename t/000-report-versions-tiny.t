@@ -49,7 +49,7 @@ sub pmver {
 }
 
 eval { $v .= pmver('Capture::Tiny','0.22') };
-eval { $v .= pmver('Carp','1.29') };
+eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Class::Load','0.20') };
 eval { $v .= pmver('Dist::Zilla','4.300035') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','4.300035') };
