@@ -27,7 +27,6 @@ my %module_build_args = (
     "Class::Load" => "0.20",
     "Dist::Zilla" => "4.300035",
     "Dist::Zilla::File::FromCode" => "4.300035",
-    "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" => "v1.7.8",
     "Dist::Zilla::Plugin::Authority" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => "4.300035",
     "Dist::Zilla::Plugin::Bootstrap::lib" => "0.02000100",
@@ -100,9 +99,9 @@ my %module_build_args = (
     "Test::Pod::Coverage" => "1.08",
     "namespace::autoclean" => "0.13",
     "perl" => "v5.10.0",
-    "strict" => "1.07",
+    "strict" => 0,
     "version" => "0.9902",
-    "warnings" => "1.18"
+    "warnings" => 0
   },
   "script_files" => [],
   "share_dir" => {
@@ -122,7 +121,7 @@ my %module_build_args = (
     "Test::File::ShareDir" => "v0.3.3",
     "Test::More" => "0.98",
     "Test::Output" => "1.02",
-    "blib" => "1.06"
+    "blib" => 0
   }
 );
 

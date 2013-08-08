@@ -53,7 +53,6 @@ eval { $v .= pmver('Carp','1.29') };
 eval { $v .= pmver('Class::Load','0.20') };
 eval { $v .= pmver('Dist::Zilla','4.300035') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','4.300035') };
-eval { $v .= pmver('Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl','v1.7.8') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Authority','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::AutoPrereqs','4.300035') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Bootstrap::lib','0.02000100') };
@@ -138,11 +137,11 @@ eval { $v .= pmver('Test::Output','1.02') };
 eval { $v .= pmver('Test::Perl::Critic','1.02') };
 eval { $v .= pmver('Test::Pod','1.48') };
 eval { $v .= pmver('Test::Pod::Coverage','1.08') };
-eval { $v .= pmver('blib','1.06') };
+eval { $v .= pmver('blib','any version') };
 eval { $v .= pmver('namespace::autoclean','0.13') };
-eval { $v .= pmver('strict','1.07') };
+eval { $v .= pmver('strict','any version') };
 eval { $v .= pmver('version','0.9902') };
-eval { $v .= pmver('warnings','1.18') };
+eval { $v .= pmver('warnings','any version') };
 
 
 # All done.

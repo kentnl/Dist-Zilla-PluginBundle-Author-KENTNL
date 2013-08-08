@@ -15,7 +15,7 @@ build_requires:
   Test::File::ShareDir: v0.3.3
   Test::More: 0.98
   Test::Output: 1.02
-  blib: 1.06
+  blib: 0
 configure_requires:
   Module::Build: 0.4007
 dynamic_config: 0
@@ -43,7 +43,6 @@ requires:
   Class::Load: 0.20
   Dist::Zilla: 4.300035
   Dist::Zilla::File::FromCode: 4.300035
-  Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl: v1.7.8
   Dist::Zilla::Plugin::Authority: 0
   Dist::Zilla::Plugin::AutoPrereqs: 4.300035
   Dist::Zilla::Plugin::Bootstrap::lib: 0.02000100
@@ -116,9 +115,9 @@ requires:
   Test::Pod::Coverage: 1.08
   namespace::autoclean: 0.13
   perl: v5.10.0
-  strict: 1.07
+  strict: 0
   version: 0.9902
-  warnings: 1.18
+  warnings: 0
 resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
@@ -451,7 +450,8 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Prereqs::Plugins
       config:
         Dist::Zilla::Plugin::Prereqs::Plugins:
-          exclude: []
+          exclude:
+            - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
           phase: runtime
           relation: requires
       name: Prereqs::Plugins
@@ -490,6 +490,9 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Prereqs::MatchInstalled::All:
           exclude:
             - Dist::Zilla::Plugin::Authority
+            - blib
+            - strict
+            - warnings
           upgrade_perl: ~
       name: Prereqs::MatchInstalled::All
       version: 0.1.0
