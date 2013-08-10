@@ -134,7 +134,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaProvides: 1.14000001
     Dist::Zilla::Plugin::MinimumPerl: 1.003
     Dist::Zilla::Plugin::PerlTidy: 0.13
-    Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.0
+    Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.1
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     Dist::Zilla::Role::FileGatherer: 4.300035
     Dist::Zilla::Role::MintingProfile::ShareDir: 4.300035
@@ -336,7 +336,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 1.8.0
+      version: 1.8.1
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
