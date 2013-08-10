@@ -107,6 +107,7 @@ eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.8.0') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','4.300035') };
 eval { $v .= pmver('Dist::Zilla::Role::MintingProfile::ShareDir','4.300035') };
+eval { $v .= pmver('Dist::Zilla::Role::PluginBundle','4.300035') };
 eval { $v .= pmver('Dist::Zilla::Util::EmulatePhase','0.01025802') };
 eval { $v .= pmver('File::pushd','1.005') };
 eval { $v .= pmver('FindBin','any version') };

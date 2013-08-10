@@ -12,17 +12,7 @@ BEGIN {
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moo;
-around does => sub {
-    my ( $orig, $self, @args ) = @_;
-    return 1 if $args[0] eq 'Dist::Zilla::Role::PluginBundle';
-    $self->$orig(@args);
-};
-sub register_component {
-  my ($class, $name, $arg, $self) = @_;
-  # ... we should register a placeholder so MetaConfig can tell us about the
-  # pluginbundle that was loaded
-}
-
+with 'Dist::Zilla::Role::PluginBundle';
 
 #use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 

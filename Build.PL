@@ -79,6 +79,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::UploadToCPAN" => "4.300035",
     "Dist::Zilla::Role::FileGatherer" => "4.300035",
     "Dist::Zilla::Role::MintingProfile::ShareDir" => "4.300035",
+    "Dist::Zilla::Role::PluginBundle" => "4.300035",
     "Dist::Zilla::Util::EmulatePhase" => "0.01025802",
     "IO::Socket::SSL" => "1.953",
     "LWP::Protocol::https" => "6.04",
