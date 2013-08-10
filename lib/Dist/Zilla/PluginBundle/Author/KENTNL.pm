@@ -11,7 +11,7 @@ BEGIN {
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-use Moo;
+use Moose;
 with 'Dist::Zilla::Role::PluginBundle';
 
 #use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];

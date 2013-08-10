@@ -116,7 +116,6 @@ eval { $v .= pmver('IO::Socket::SSL','1.953') };
 eval { $v .= pmver('JSON','2.59') };
 eval { $v .= pmver('LWP::Protocol::https','6.04') };
 eval { $v .= pmver('Module::Build','0.4007') };
-eval { $v .= pmver('Moo','1.003') };
 eval { $v .= pmver('Moose','2.1005') };
 eval { $v .= pmver('MooseX::Has::Sugar','0.05070421') };
 eval { $v .= pmver('MooseX::Types','0.36') };
