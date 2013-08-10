@@ -6,9 +6,6 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose;
-use Moose::Autobox;
-use Class::Load qw( :all );
-
 with 'Dist::Zilla::Role::PluginBundle';
 
 use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
@@ -374,7 +371,6 @@ sub bundle_config {
   my $arg = $section->{payload};
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner($arg);
-  load_class( $_->[1] ) for @config;
   return @config;
 }
 
