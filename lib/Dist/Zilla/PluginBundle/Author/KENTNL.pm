@@ -11,10 +11,9 @@ BEGIN {
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-use Moose;
-with 'Dist::Zilla::Role::PluginBundle';
+use Moo;
 
-use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
+#use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 
 
 
@@ -268,9 +267,6 @@ sub bundle_config {
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner($arg);
   return @config;
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
 
 ## no critic (RequireEndWithOne)
 'I go to prepare a perl module for you, if it were not so, I would have told you';
