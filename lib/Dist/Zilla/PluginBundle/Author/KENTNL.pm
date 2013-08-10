@@ -6,15 +6,12 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.8.0';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.8.1';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose;
-use Moose::Autobox;
-use Class::Load qw( :all );
-
 with 'Dist::Zilla::Role::PluginBundle';
 
 use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
@@ -269,7 +266,6 @@ sub bundle_config {
   my $arg = $section->{payload};
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner($arg);
-  load_class( $_->[1] ) for @config;
   return @config;
 }
 
@@ -291,7 +287,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.8.0
+version 1.8.1
 
 =head1 SYNOPSIS
 

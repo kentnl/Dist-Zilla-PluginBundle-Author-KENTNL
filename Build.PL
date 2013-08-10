@@ -17,14 +17,13 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.8.0",
+  "dist_version" => "1.8.1",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Carp" => 0,
-    "Class::Load" => "0.20",
     "Dist::Zilla" => "4.300035",
     "Dist::Zilla::File::FromCode" => "4.300035",
     "Dist::Zilla::Plugin::Authority" => "1.006",
@@ -85,7 +84,6 @@ my %module_build_args = (
     "IO::Socket::SSL" => "1.953",
     "LWP::Protocol::https" => "6.04",
     "Moose" => "2.1005",
-    "Moose::Autobox" => "0.13",
     "MooseX::Has::Sugar" => "0.05070421",
     "MooseX::Types" => "0.36",
     "Net::SSLeay" => "1.55",

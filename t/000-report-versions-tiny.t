@@ -50,7 +50,6 @@ sub pmver {
 
 eval { $v .= pmver('Capture::Tiny','0.22') };
 eval { $v .= pmver('Carp','any version') };
-eval { $v .= pmver('Class::Load','0.20') };
 eval { $v .= pmver('Dist::Zilla','4.300035') };
 eval { $v .= pmver('Dist::Zilla::File::FromCode','4.300035') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Authority','1.006') };
@@ -104,7 +103,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::Test::Perl::Critic','2.112410') };
 eval { $v .= pmver('Dist::Zilla::Plugin::TestRelease','4.300035') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Twitter','0.021') };
 eval { $v .= pmver('Dist::Zilla::Plugin::UploadToCPAN','4.300035') };
-eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.8.0') };
+eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.3.0') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('Dist::Zilla::Role::FileGatherer','4.300035') };
 eval { $v .= pmver('Dist::Zilla::Role::MintingProfile::ShareDir','4.300035') };
@@ -118,7 +117,6 @@ eval { $v .= pmver('JSON','2.59') };
 eval { $v .= pmver('LWP::Protocol::https','6.04') };
 eval { $v .= pmver('Module::Build','0.4007') };
 eval { $v .= pmver('Moose','2.1005') };
-eval { $v .= pmver('Moose::Autobox','0.13') };
 eval { $v .= pmver('MooseX::Has::Sugar','0.05070421') };
 eval { $v .= pmver('MooseX::Types','0.36') };
 eval { $v .= pmver('Net::SSLeay','1.55') };
