@@ -232,48 +232,12 @@ EOF
 
   note explain $data;
   require version;
-
+  is_deeply( $data->{prereqs}->{build}->{requires}, { 'Module::Build' => $Module::Build::VERSION }, 'prereqs.build is sane' );
   is_deeply(
-    $data->{prereqs},
-    {
-      build     => { requires => { 'Module::Build' => $Module::Build::VERSION }, },
-      configure => { requires => { 'Module::Build' => $Module::Build::VERSION }, },
-      develop   => {
-        recommends => { 'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.3.0' },
-        requires   => {
-          'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0,
-          'Test::Pod::Coverage'                             => '1.08',
-          'Test::Pod'                                       => '1.41',
-          'Pod::Coverage::TrustPod'                         => 0,
-          'version'                                         => '0.9901',
-          'Test::CPAN::Meta'                                => 0,
-          'Test::CPAN::Changes'                             => '0.19',
-        },
-        suggests => {
-          'Dist::Zilla::PluginBundle::Author::KENTNL' =>
-            version->parse( Dist::Zilla::PluginBundle::Author::KENTNL->VERSION )->normal
-        },
-      },
-      runtime => {
-        requires => {
-          'Moo'                   => 0,
-          'SomethingReallyWanted' => 0,
-          'perl'                  => 'v5.10.0',
-          'warnings'              => 0,
-          'strict'                => 0,
-        },
-      },
-      test => {
-        requires => {
-          'blib' => 0,
-          'Capture::Tiny' => 0,
-          'Test::More' => $Test::More::VERSION,
-        },
-      }
-    },
-    'Autodetected pre-reqs are sane'
+    $data->{prereqs}->{configure}->{requires},
+    { 'Module::Build' => $Module::Build::VERSION },
+    'prereqs.configure is sane'
   );
-
 };
 
 done_testing;
