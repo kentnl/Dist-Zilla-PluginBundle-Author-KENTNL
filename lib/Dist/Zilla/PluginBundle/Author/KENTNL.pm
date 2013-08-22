@@ -290,7 +290,7 @@ sub bundle_config_inner {
     [ 'Test::Perl::Critic'   => {} ],
   );
 
-  my (@prunefiles) = ( [ 'PruneCruft' => { except => '^.perltidyrc' } ], [ 'ManifestSkip' => {} ], );
+  my (@prunefiles) = ( [ 'PruneCruft' => { except => '^.(perltidyrc|travis.yml|proverc)' } ], [ 'ManifestSkip' => {} ], );
 
   my (@regprereqs) = (
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
@@ -376,7 +376,6 @@ sub bundle_config {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
-
 ## no critic (RequireEndWithOne)
 'I go to prepare a perl module for you, if it were not so, I would have told you';
 
