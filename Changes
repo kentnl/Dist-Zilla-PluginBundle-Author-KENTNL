@@ -1,6 +1,30 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bug Fixes]
+ - stop dropping travis.yml files
+ - stop being dependent on specific contents for develop_requires
+ - stop loading modules, Dzil does that for us, and doing so inhibits
+   modules that reverse-engineer bundles
+ - stop using autobox, its slow and inhibits us from dropping Moose
+
+ [Dependencies::Added / develop requires]
+ - Test::Kwalitee 1.13
+
+ [Dependencies::Changed / develop requires]
+ - Test::CPAN::Changes 0.22 → 0.23
+ - version 0.9902 → 0.9903
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.0 → v1.8.1
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla::Plugin::Test::Kwalitee 2.03 → 2.06
+ - version 0.9902 → 0.9903
+
+ [Dependencies::Removed / runtime requires]
+ - Class::Load 0.20
+ - Moose::Autobox 0.13
 
 1.8.0 2013-08-08T00:57:13Z
  [!Major]
