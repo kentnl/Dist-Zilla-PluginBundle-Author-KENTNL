@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.8.1 2013-08-22T16:56:50Z
  [Bug Fixes]
  - stop dropping travis.yml files
  - stop being dependent on specific contents for develop_requires
