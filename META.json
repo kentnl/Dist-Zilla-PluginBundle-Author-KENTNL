@@ -31,20 +31,20 @@
          "requires" : {
             "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "0",
             "Pod::Coverage::TrustPod" : "0.100002",
-            "Test::CPAN::Changes" : "0.22",
+            "Test::CPAN::Changes" : "0.23",
             "Test::CPAN::Meta" : "0.23",
+            "Test::Kwalitee" : "1.13",
             "Test::Pod" : "1.48",
             "Test::Pod::Coverage" : "1.08",
-            "version" : "0.9902"
+            "version" : "0.9903"
          },
          "suggests" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.8.0"
+            "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.8.1"
          }
       },
       "runtime" : {
          "requires" : {
             "Carp" : "0",
-            "Class::Load" : "0.20",
             "Dist::Zilla" : "4.300035",
             "Dist::Zilla::File::FromCode" : "4.300035",
             "Dist::Zilla::Plugin::Authority" : "1.006",
@@ -92,7 +92,7 @@
             "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.09",
             "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
             "Dist::Zilla::Plugin::Test::Compile" : "2.018",
-            "Dist::Zilla::Plugin::Test::Kwalitee" : "2.03",
+            "Dist::Zilla::Plugin::Test::Kwalitee" : "2.06",
             "Dist::Zilla::Plugin::Test::MinimumVersion" : "2.000005",
             "Dist::Zilla::Plugin::Test::Perl::Critic" : "2.112410",
             "Dist::Zilla::Plugin::TestRelease" : "4.300035",
@@ -105,7 +105,6 @@
             "IO::Socket::SSL" : "1.953",
             "LWP::Protocol::https" : "6.04",
             "Moose" : "2.1005",
-            "Moose::Autobox" : "0.13",
             "MooseX::Has::Sugar" : "0.05070421",
             "MooseX::Types" : "0.36",
             "Net::SSLeay" : "1.55",
@@ -121,7 +120,7 @@
             "namespace::autoclean" : "0.13",
             "perl" : "v5.10.0",
             "strict" : "0",
-            "version" : "0.9902",
+            "version" : "0.9903",
             "warnings" : "0"
          }
       },
@@ -145,19 +144,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "v1.8.0"
+         "version" : "v1.8.1"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "v1.8.0"
+         "version" : "v1.8.1"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "v1.8.0"
+         "version" : "v1.8.1"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "v1.8.0"
+         "version" : "v1.8.1"
       }
    },
    "release_status" : "stable",
@@ -172,12 +171,11 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "1.8.0",
+   "version" : "1.8.1",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.22",
          "Carp" : "1.29",
-         "Class::Load" : "0.20",
          "Dist::Zilla" : "4.300035",
          "Dist::Zilla::File::FromCode" : "4.300035",
          "Dist::Zilla::Plugin::Authority" : "1.007",
@@ -186,7 +184,7 @@
          "Dist::Zilla::Plugin::MetaProvides" : "1.14000001",
          "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
          "Dist::Zilla::Plugin::PerlTidy" : "0.13",
-         "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.8.0",
+         "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.8.1",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "NA(possibly not installed)",
          "Dist::Zilla::Role::FileGatherer" : "4.300035",
          "Dist::Zilla::Role::MintingProfile::ShareDir" : "4.300035",
@@ -200,7 +198,6 @@
          "LWP::Protocol::https" : "6.04",
          "Module::Build" : "0.4007",
          "Moose" : "2.1005",
-         "Moose::Autobox" : "0.13",
          "MooseX::Has::Sugar" : "0.05070421",
          "MooseX::Types" : "0.36",
          "Net::SSLeay" : "1.55",
@@ -209,12 +206,13 @@
          "Pod::Coverage::TrustPod" : "0.100002",
          "Pod::Weaver::Plugin::Encoding" : "0.01",
          "String::Formatter" : "0.102082",
-         "Test::CPAN::Changes" : "0.22",
+         "Test::CPAN::Changes" : "0.23",
          "Test::CPAN::Meta" : "0.23",
          "Test::DZil" : "4.300035",
          "Test::EOL" : "1.5",
          "Test::Fatal" : "0.010",
          "Test::File::ShareDir" : "0.3.3",
+         "Test::Kwalitee" : "1.13",
          "Test::More" : "0.98",
          "Test::Output" : "1.02",
          "Test::Perl::Critic" : "1.02",
@@ -224,7 +222,7 @@
          "namespace::autoclean" : "0.13",
          "perl" : "NA(skipped: perl)",
          "strict" : "1.07",
-         "version" : "0.9902",
+         "version" : "0.9903",
          "warnings" : "1.18"
       },
       "perl" : {
@@ -339,7 +337,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::Kwalitee",
             "name" : "@Author::KENTNL/Test::Kwalitee",
-            "version" : "2.03"
+            "version" : "2.06"
          },
          {
             "class" : "Dist::Zilla::Plugin::EOLTests",
@@ -437,7 +435,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
             "name" : "@Author::KENTNL/Author::KENTNL::MinimumPerl",
-            "version" : "1.8.0"
+            "version" : "1.8.1"
          },
          {
             "class" : "Dist::Zilla::Plugin::Authority",
