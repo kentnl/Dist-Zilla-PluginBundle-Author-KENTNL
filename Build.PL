@@ -71,7 +71,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::ReportVersions::Tiny" => "1.09",
     "Dist::Zilla::Plugin::Test::CPAN::Changes" => "0.008",
     "Dist::Zilla::Plugin::Test::Compile" => "2.018",
-    "Dist::Zilla::Plugin::Test::Kwalitee" => "2.03",
+    "Dist::Zilla::Plugin::Test::Kwalitee" => "2.06",
     "Dist::Zilla::Plugin::Test::MinimumVersion" => "2.000005",
     "Dist::Zilla::Plugin::Test::Perl::Critic" => "2.112410",
     "Dist::Zilla::Plugin::TestRelease" => "4.300035",
@@ -99,7 +99,7 @@ my %module_build_args = (
     "namespace::autoclean" => "0.13",
     "perl" => "v5.10.0",
     "strict" => 0,
-    "version" => "0.9902",
+    "version" => "0.9903",
     "warnings" => 0
   },
   "script_files" => [],

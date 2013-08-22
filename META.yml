@@ -87,7 +87,7 @@ requires:
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.09
   Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
   Dist::Zilla::Plugin::Test::Compile: 2.018
-  Dist::Zilla::Plugin::Test::Kwalitee: 2.03
+  Dist::Zilla::Plugin::Test::Kwalitee: 2.06
   Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
   Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
   Dist::Zilla::Plugin::TestRelease: 4.300035
@@ -115,7 +115,7 @@ requires:
   namespace::autoclean: 0.13
   perl: v5.10.0
   strict: 0
-  version: 0.9902
+  version: 0.9903
   warnings: 0
 resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
@@ -156,12 +156,13 @@ x_BuiltWith:
     Pod::Coverage::TrustPod: 0.100002
     Pod::Weaver::Plugin::Encoding: 0.01
     String::Formatter: 0.102082
-    Test::CPAN::Changes: 0.22
+    Test::CPAN::Changes: 0.23
     Test::CPAN::Meta: 0.23
     Test::DZil: 4.300035
     Test::EOL: 1.5
     Test::Fatal: 0.010
     Test::File::ShareDir: 0.3.3
+    Test::Kwalitee: 1.13
     Test::More: 0.98
     Test::Output: 1.02
     Test::Perl::Critic: 1.02
@@ -171,7 +172,7 @@ x_BuiltWith:
     namespace::autoclean: 0.13
     perl: 'NA(skipped: perl)'
     strict: 1.07
-    version: 0.9902
+    version: 0.9903
     warnings: 1.18
   perl:
     original: v5.18.0
@@ -262,7 +263,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
-      version: 2.03
+      version: 2.06
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@Author::KENTNL/EOLTests'

@@ -14,7 +14,7 @@ BEGIN {
 use Moose;
 with 'Dist::Zilla::Role::PluginBundle';
 
-#use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
+use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 
 
 
@@ -185,7 +185,7 @@ sub bundle_config_inner {
     [ 'Test::Perl::Critic'   => {} ],
   );
 
-  my (@prunefiles) = ( [ 'PruneCruft' => { except => '^.perltidyrc' } ], [ 'ManifestSkip' => {} ], );
+  my (@prunefiles) = ( [ 'PruneCruft' => { except => '^.(perltidyrc|travis.yml|proverc)' } ], [ 'ManifestSkip' => {} ], );
 
   my (@regprereqs) = (
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
@@ -269,6 +269,8 @@ sub bundle_config {
   return @config;
 }
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
 ## no critic (RequireEndWithOne)
 'I go to prepare a perl module for you, if it were not so, I would have told you';
 
