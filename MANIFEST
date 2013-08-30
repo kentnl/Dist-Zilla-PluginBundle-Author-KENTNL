@@ -51,6 +51,7 @@ t/02-Minter-Moo-Role.t
 t/02-Minter-Moo.t
 t/02-Minter-Moose-Role.t
 utils/clone.pl
+utils/cpan_changes_markdown.pl
 utils/delta_deps.pl
 utils/delta_meta.pl
 utils/delta_meta.sh
