@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # Replace DZIL style date-time with W3CDTF style while keeping the time right.
 use strict;

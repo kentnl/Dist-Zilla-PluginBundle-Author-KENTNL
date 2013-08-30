@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 self=$(realpath $0);
 selfdir=$(dirname $self);
