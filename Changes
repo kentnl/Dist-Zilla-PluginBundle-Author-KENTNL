@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.8.2 2013-08-30T20:05:26Z
+1.8.2 2013-08-30T20:05:35Z
  [!Minor]
  - Ramping all Dzil deps to latest
  - Bumping to get newer Test::Compile test
