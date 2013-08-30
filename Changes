@@ -1,5 +1,16 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.8.3 2013-08-30T20:30:21Z
+ [!Minor]
+ - Revert some far too aggressive version bumps on core things.
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.2 → v1.8.3
+
+ [Dependencies::Changed / test requires]
+ - IO::Handle 1.34 → 0
+ - IPC::Open3 1.13 → 0
+
 1.8.2 2013-08-30T20:05:35Z
  [!Minor]
  - Ramping all Dzil deps to latest
