@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.8.3 2013-08-30T20:30:21Z
  [!Minor]
  - Revert some far too aggressive version bumps on core things.
 
