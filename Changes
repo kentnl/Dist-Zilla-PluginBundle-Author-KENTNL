@@ -1,5 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+1.8.3 2013-08-30T20:13:04Z
+ [!Minor]
+ - Revert some far too aggressive version bumps on core things.
+
 1.8.2 2013-08-30T20:05:35Z
  [!Minor]
  - Ramping all Dzil deps to latest
