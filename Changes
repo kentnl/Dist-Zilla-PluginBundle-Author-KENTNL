@@ -1,6 +1,57 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.8.2 2013-08-30T19:56:18Z
+1.8.2 2013-08-30T20:01:30Z
+ [!Minor]
+ - Ramping all Dzil deps to latest
+ - Bumping to get newer Test::Compile test
+
+ [Dependencies::Added / test requires]
+ - IO::Handle 1.34
+ - IPC::Open3 1.13
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.1 → v1.8.2
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla 4.300035 → 4.300037
+ - Dist::Zilla::File::FromCode 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::AutoPrereqs 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::ConfirmRelease 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::FakeRelease 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::FinderCode 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::GithubMeta 0.30 → 0.32
+ - Dist::Zilla::Plugin::License 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::Manifest 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::ManifestSkip 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::MetaConfig 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::MetaJSON 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::MetaTests 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::MetaYAML 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::ModuleBuild 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::ModuleShareDirs 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::NextRelease 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::PkgVersion 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::PodCoverageTests 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::PodSyntaxTests 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::Prereqs 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::PruneCruft 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::Test::Compile 2.018 → 2.023
+ - Dist::Zilla::Plugin::TestRelease 4.300035 → 4.300037
+ - Dist::Zilla::Plugin::UploadToCPAN 4.300035 → 4.300037
+ - Dist::Zilla::Role::FileGatherer 4.300035 → 4.300037
+ - Dist::Zilla::Role::MintingProfile::ShareDir 4.300035 → 4.300037
+ - Dist::Zilla::Role::PluginBundle 4.300035 → 4.300037
+
+ [Dependencies::Changed / test requires]
+ - Test::DZil 4.300035 → 4.300037
+
+ [Dependencies::Removed / test requires]
+ - blib
+
+ [Utils]
+ - new utility utils/cpan_changes_markdown.pl
+ - utilities +x by default
+ - using /usr/bin/env everywhere instead of /usr/bin/perl
 
 1.8.1 2013-08-22T16:56:50Z
  [Bug Fixes]
