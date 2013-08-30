@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+1.8.2 2013-08-30T20:05:35Z
  [!Minor]
  - Ramping all Dzil deps to latest
  - Bumping to get newer Test::Compile test
