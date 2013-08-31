@@ -49,7 +49,7 @@
             "Dist::Zilla::File::FromCode" : "4.300037",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "4.300037",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "0.02000100",
+            "Dist::Zilla::Plugin::Bootstrap::lib" : "0.03000000",
             "Dist::Zilla::Plugin::CheckExtraTests" : "0.011",
             "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.009",
             "Dist::Zilla::Plugin::ConfirmRelease" : "4.300037",
@@ -145,19 +145,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "v1.8.3"
+         "version" : "v1.8.4"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "v1.8.3"
+         "version" : "v1.8.4"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "v1.8.3"
+         "version" : "v1.8.4"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "v1.8.3"
+         "version" : "v1.8.4"
       }
    },
    "release_status" : "stable",
@@ -172,7 +172,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "1.8.3",
+   "version" : "1.8.4",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.22",
@@ -180,7 +180,7 @@
          "Dist::Zilla" : "4.300037",
          "Dist::Zilla::File::FromCode" : "4.300037",
          "Dist::Zilla::Plugin::Authority" : "1.007",
-         "Dist::Zilla::Plugin::Bootstrap::lib" : "0.02000100",
+         "Dist::Zilla::Plugin::Bootstrap::lib" : "0.03000000",
          "Dist::Zilla::Plugin::FakeRelease" : "4.300037",
          "Dist::Zilla::Plugin::MetaProvides" : "1.14000001",
          "Dist::Zilla::Plugin::MinimumPerl" : "1.003",

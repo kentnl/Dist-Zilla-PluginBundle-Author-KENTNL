@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "1.8.3",
+  "dist_version" => "1.8.4",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -28,7 +28,7 @@ my %module_build_args = (
     "Dist::Zilla::File::FromCode" => "4.300037",
     "Dist::Zilla::Plugin::Authority" => "1.006",
     "Dist::Zilla::Plugin::AutoPrereqs" => "4.300037",
-    "Dist::Zilla::Plugin::Bootstrap::lib" => "0.02000100",
+    "Dist::Zilla::Plugin::Bootstrap::lib" => "0.03000000",
     "Dist::Zilla::Plugin::CheckExtraTests" => "0.011",
     "Dist::Zilla::Plugin::CheckPrereqsIndexed" => "0.009",
     "Dist::Zilla::Plugin::ConfirmRelease" => "4.300037",
