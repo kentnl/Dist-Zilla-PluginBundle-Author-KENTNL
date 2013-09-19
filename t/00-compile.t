@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.023
+# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.031
 
 use Test::More  tests => 4 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
@@ -28,7 +28,8 @@ for my $lib (@module_files)
     my $stdin = '';     # converted to a gensym by open3
     my $stderr = IO::Handle->new;
 
-    my $pid = open3($stdin, '>&STDERR', $stderr, qq{$^X -Mblib -e"require q[$lib]"});
+    my $pid = open3($stdin, '>&STDERR', $stderr, $^X, '-Mblib', '-e', "require q[$lib]");
+    binmode $stderr, ':crlf' if $^O; # eq 'MSWin32';
     waitpid($pid, 0);
     is($? >> 8, 0, "$lib loaded ok");
 
