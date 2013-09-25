@@ -4,7 +4,7 @@ author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   Capture::Tiny: 0.22
-  File::Spec: 3.44
+  File::Spec: 0
   File::pushd: 1.005
   FindBin: 0
   Git::Wrapper: 0.030
@@ -521,6 +521,8 @@ x_Dist_Zilla:
             - Carp
             - IO::Handle
             - IPC::Open3
+            - File::Spec
+            - Cwd
           upgrade_perl: ~
       name: Prereqs::MatchInstalled::All
       version: 0.1.2

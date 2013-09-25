@@ -110,7 +110,7 @@ my %module_build_args = (
   },
   "test_requires" => {
     "Capture::Tiny" => "0.22",
-    "File::Spec" => "3.44",
+    "File::Spec" => 0,
     "File::pushd" => "1.005",
     "FindBin" => 0,
     "Git::Wrapper" => "0.030",

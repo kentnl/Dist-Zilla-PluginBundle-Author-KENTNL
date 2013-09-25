@@ -11,7 +11,7 @@ env:
 before_install:
   - perl ./maint-travis-ci/sterilize_env.pl
 install:
-  - cpanm -v --notest --mirror http://cpan.metacpan.org/ --installdeps .
+  - cpanm --notest --mirror http://cpan.metacpan.org/ --installdeps .
 branches:
   only:
     - "build/master"
