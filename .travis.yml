@@ -5,6 +5,8 @@ perl:
   - "5.18"
   - "5.19"
 env:
+  global:
+    - PERL_CPANM_OPT="$PERL_CPANM_OPT --mirror http://cpan.metacpan.org/"
   matrix:
     - STERILIZE_ENV=0
     - STERILIZE_ENV=1
