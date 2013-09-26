@@ -343,8 +343,8 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Prereqs:
           phase: develop
-          type: recommends
-      name: '@Author::KENTNL/Prereqs/BundleDevelRecommends'
+          type: suggests
+      name: '@Author::KENTNL/Prereqs/BundleDevelSuggests'
       version: 4.300039
     -
       class: Dist::Zilla::Plugin::Prereqs

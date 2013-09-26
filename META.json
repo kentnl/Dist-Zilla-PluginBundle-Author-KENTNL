@@ -25,9 +25,6 @@
          }
       },
       "develop" : {
-         "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "v1.7.2"
-         },
          "requires" : {
             "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.8.5",
             "Pod::Coverage::TrustPod" : "0.100002",
@@ -37,6 +34,9 @@
             "Test::Pod" : "1.48",
             "Test::Pod::Coverage" : "1.08",
             "version" : "0.9904"
+         },
+         "suggests" : {
+            "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "v1.7.2"
          }
       },
       "runtime" : {
@@ -439,10 +439,10 @@
             "config" : {
                "Dist::Zilla::Plugin::Prereqs" : {
                   "phase" : "develop",
-                  "type" : "recommends"
+                  "type" : "suggests"
                }
             },
-            "name" : "@Author::KENTNL/Prereqs/BundleDevelRecommends",
+            "name" : "@Author::KENTNL/Prereqs/BundleDevelSuggests",
             "version" : "4.300039"
          },
          {
