@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.8.4';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.9.0';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -191,25 +191,17 @@ sub bundle_config_inner {
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
     [
       'Prereqs' => {
-        -name                                             => 'BundleDevelNeeds',
+        -name                                             => 'BundleDevelSuggests',
         -phase                                            => 'develop',
-        -type                                             => 'requires',
-        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 0
-      }
-    ],
-    [
-      'Prereqs' => {
-        -name                                             => 'BundleDevelRecommends',
-        -phase                                            => 'develop',
-        -type                                             => 'recommends',
+        -type                                             => 'suggests',
         'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
       }
     ],
     [
       'Prereqs' => {
-        -name                                       => 'BundleDevelSuggests',
+        -name                                       => 'BundleDevelRequires',
         -phase                                      => 'develop',
-        -type                                       => 'suggests',
+        -type                                       => 'requires',
         'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
       }
     ],
@@ -286,7 +278,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.8.4
+version 1.9.0
 
 =head1 SYNOPSIS
 
