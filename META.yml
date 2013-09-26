@@ -136,7 +136,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaProvides: 1.15000000
     Dist::Zilla::Plugin::MinimumPerl: 1.003
     Dist::Zilla::Plugin::PerlTidy: 0.13
-    Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.4
+    Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.5
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
     Dist::Zilla::Role::FileGatherer: 4.300039
     Dist::Zilla::Role::MintingProfile::ShareDir: 4.300039
@@ -343,14 +343,6 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Prereqs:
           phase: develop
-          type: requires
-      name: '@Author::KENTNL/Prereqs/BundleDevelNeeds'
-      version: 4.300039
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: develop
           type: recommends
       name: '@Author::KENTNL/Prereqs/BundleDevelRecommends'
       version: 4.300039
@@ -359,13 +351,13 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Prereqs:
           phase: develop
-          type: suggests
-      name: '@Author::KENTNL/Prereqs/BundleDevelSuggests'
+          type: requires
+      name: '@Author::KENTNL/Prereqs/BundleDevelRequires'
       version: 4.300039
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 1.8.4
+      version: 1.8.5
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
