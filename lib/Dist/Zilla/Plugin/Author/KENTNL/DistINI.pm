@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::DistINI::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.8.3';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '1.8.4';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
@@ -42,7 +42,7 @@ sub gather_files {
       'license          = %{license}s',                                          #
       'copyright_holder = %{copyrightholder}s',                                  #
       $empty,                                                                    #
-      q(; Uncomment this to bootstrap via self ),                                #
+      q(; Uncomment this to bootstrap via self),                                 #
       q(; [Bootstrap::lib]),                                                     #
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
@@ -122,7 +122,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Autho
 
 =head1 VERSION
 
-version 1.8.3
+version 1.8.4
 
 =head1 SYNOPSIS
 
