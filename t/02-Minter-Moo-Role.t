@@ -241,7 +241,6 @@ EOF
     'prereqs.configure is sane'
   );
 
-
 };
 
 done_testing;

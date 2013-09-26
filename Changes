@@ -1,6 +1,29 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Major]
+ - Well not hugely major, declared develop depends change starting this
+   release.
+ - @Author::KENTNL is develop_required ( as you will need that bundle if
+   you do any dev work on consuming things without modifiying them )
+ - @Author::KENTNL::Lite is now develop_suggests only, to indicate that
+   bundle can be somewhat used to work on consuming things, as long as you
+   edit the right dist.ini's to make it so.
+
+ [Dependencies::Added / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.9.0
+
+ [Dependencies::Added / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.7.2
+
+ [Dependencies::Removed / develop recommends]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.7.2
+
+ [Dependencies::Removed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.7.2
+
+ [Dependencies::Removed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.4
 
 1.8.4 2013-09-26T11:16:23Z
  [Bugfix / Minor]
