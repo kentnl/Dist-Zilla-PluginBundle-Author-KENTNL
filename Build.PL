@@ -117,6 +117,7 @@ my %module_build_args = (
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "JSON" => "2.59",
+    "Module::Build" => "0.4007",
     "Path::Class" => "0.32",
     "Test::DZil" => "4.300039",
     "Test::Fatal" => "0.013",
