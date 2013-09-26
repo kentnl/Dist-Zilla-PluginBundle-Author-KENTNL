@@ -8,6 +8,7 @@
 
  [Dependencies::Added / test requires]
  - File::Spec
+ - Module::Build 0.4007
 
  [Dependencies::Changed / develop recommends]
  - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0 → v1.7.2
