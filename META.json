@@ -67,7 +67,7 @@
             "Dist::Zilla::Plugin::Manifest" : "4.300039",
             "Dist::Zilla::Plugin::ManifestSkip" : "4.300039",
             "Dist::Zilla::Plugin::MetaConfig" : "4.300039",
-            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.03000100",
+            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "0.04000000",
             "Dist::Zilla::Plugin::MetaJSON" : "4.300039",
             "Dist::Zilla::Plugin::MetaProvides" : "1.15000000",
             "Dist::Zilla::Plugin::MetaProvides::Package" : "1.15000000",
@@ -81,7 +81,7 @@
             "Dist::Zilla::Plugin::PkgVersion" : "4.300039",
             "Dist::Zilla::Plugin::PodCoverageTests" : "4.300039",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "4.300039",
-            "Dist::Zilla::Plugin::PodWeaver" : "3.101642",
+            "Dist::Zilla::Plugin::PodWeaver" : "3.102000",
             "Dist::Zilla::Plugin::Prereqs" : "4.300039",
             "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : "v0.1.4",
             "Dist::Zilla::Plugin::Prereqs::MatchInstalled::All" : "v0.1.2",
@@ -224,7 +224,6 @@
          "Test::Pod" : "1.48",
          "Test::Pod::Coverage" : "1.08",
          "namespace::autoclean" : "0.13",
-         "perl" : "NA(skipped: perl)",
          "strict" : "1.08",
          "version" : "0.9904",
          "warnings" : "1.18"
@@ -317,7 +316,7 @@
                }
             },
             "name" : "@Author::KENTNL/MetaData::BuiltWith",
-            "version" : "0.03000100"
+            "version" : "0.04000000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::GatherDir",
@@ -416,8 +415,16 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::PodWeaver",
+            "config" : {
+               "Dist::Zilla::Plugin::PodWeaver" : {
+                  "finder" : [
+                     ":InstallModules",
+                     ":ExecFiles"
+                  ]
+               }
+            },
             "name" : "@Author::KENTNL/PodWeaver",
-            "version" : "3.101642"
+            "version" : "3.102000"
          },
          {
             "class" : "Dist::Zilla::Plugin::NextRelease",
