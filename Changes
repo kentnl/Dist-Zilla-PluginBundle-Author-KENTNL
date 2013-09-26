@@ -1,8 +1,10 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
- [Bugfix]
+ [Bugfix / Minor]
  - Update to avoid Win32 Test::Compile issues.
+ - Add a strip eol util
+ - Remove EOL from generated dist.ini
 
  [Dependencies::Added / test requires]
  - File::Spec
