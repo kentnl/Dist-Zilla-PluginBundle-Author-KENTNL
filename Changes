@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-1.8.4 2013-09-26T08:08:49Z
+1.8.4 2013-09-26T08:11:00Z
  [Bugfix]
  - Update to avoid Win32 Test::Compile issues.
 

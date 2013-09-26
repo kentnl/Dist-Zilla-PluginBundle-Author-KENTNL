@@ -232,6 +232,7 @@ EOF
 
   note explain $data;
   require version;
+  require Module::Build;
 
   is_deeply( $data->{prereqs}->{build}->{requires}, { 'Module::Build' => $Module::Build::VERSION }, 'prereqs.build is sane' );
   is_deeply(
