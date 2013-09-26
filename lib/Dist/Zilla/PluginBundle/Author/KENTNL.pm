@@ -191,9 +191,9 @@ sub bundle_config_inner {
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
    [
       'Prereqs' => {
-        -name                                             => 'BundleDevelRecommends',
+        -name                                             => 'BundleDevelSuggests',
         -phase                                            => 'develop',
-        -type                                             => 'recommends',
+        -type                                             => 'suggests',
         'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
       }
     ],
