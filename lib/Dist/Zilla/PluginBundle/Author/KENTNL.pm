@@ -189,7 +189,7 @@ sub bundle_config_inner {
 
   my (@regprereqs) = (
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
-   [
+    [
       'Prereqs' => {
         -name                                             => 'BundleDevelSuggests',
         -phase                                            => 'develop',

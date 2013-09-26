@@ -10,17 +10,20 @@ use Path::Tiny qw( path );
 my $rule = Path::Iterator::Rule->new();
 
 $rule->skip_vcs;
-$rule->skip_dirs(qr/^.build$/, qr/^[A-Z].*[0-9]+(-TRIAL)?/);
+$rule->skip_dirs( qr/^.build$/, qr/^[A-Z].*[0-9]+(-TRIAL)?/ );
 $rule->file->nonempty;
 $rule->file->not_binary;
 $rule->file->line_match(qr/\s\n/);
 
-my $next = $rule->iter(find_dev('./'), {
+my $next = $rule->iter(
+  find_dev('./'),
+  {
     follow_symlinks => 0,
     sorted          => 0,
-});
+  }
+);
 
 while ( my $file = $next->() ) {
-    my $path = path( $file );
-    system 'sed', '-i', 's/\s*$//', "$path";
+  my $path = path($file);
+  system 'sed', '-i', 's/\s*$//', "$path";
 }
