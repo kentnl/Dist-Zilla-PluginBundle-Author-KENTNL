@@ -42,7 +42,7 @@ sub gather_files {
       'license          = %{license}s',                                          #
       'copyright_holder = %{copyrightholder}s',                                  #
       $empty,                                                                    #
-      q(; Uncomment this to bootstrap via self ),                                #
+      q(; Uncomment this to bootstrap via self),                                 #
       q(; [Bootstrap::lib]),                                                     #
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
