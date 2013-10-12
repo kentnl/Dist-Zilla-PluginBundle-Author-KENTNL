@@ -3,7 +3,8 @@
 {{$NEXT}}
  [00 Major]
  - Versioning scheme now back to single-decimal.
- - If you are downstream and this breaks things, please learn to normalise upstream versions.
+ - If you are downstream and this breaks things, please learn to normalise
+   upstream versions.
  - Default versioning scheme for new dists is now single-decimal.
 
  [Dependencies::Added / runtime requires]
