@@ -91,6 +91,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::Prereqs','4.300039') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Prereqs::MatchInstalled','v0.1.4') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Prereqs::MatchInstalled::All','v0.1.2') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Prereqs::Plugins','v0.1.3') };
+eval { $v .= pmver('Dist::Zilla::Plugin::Prereqs::SyncVersions','0.001000') };
 eval { $v .= pmver('Dist::Zilla::Plugin::PruneCruft','4.300039') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReadmeAnyFromPod','0.131500') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReadmeFromPod','0.18') };

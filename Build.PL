@@ -65,6 +65,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => "v0.1.4",
     "Dist::Zilla::Plugin::Prereqs::MatchInstalled::All" => "v0.1.2",
     "Dist::Zilla::Plugin::Prereqs::Plugins" => "v0.1.3",
+    "Dist::Zilla::Plugin::Prereqs::SyncVersions" => "0.001000",
     "Dist::Zilla::Plugin::PruneCruft" => "4.300039",
     "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.131500",
     "Dist::Zilla::Plugin::ReadmeFromPod" => "0.18",
