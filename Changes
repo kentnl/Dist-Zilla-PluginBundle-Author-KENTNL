@@ -1,5 +1,29 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.000000 2013-10-12T05:23:24Z
+ [00 Major]
+ - Versioning scheme now back to single-decimal.
+ - If you are downstream and this breaks things, please learn to normalise
+   upstream versions.
+ - Default versioning scheme for new dists is now single-decimal.
+
+ [Dependencies::Added / runtime requires]
+ - Dist::Zilla::Plugin::Prereqs::SyncVersions 0.001000
+
+ [Dependencies::Changed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.9.0 → 2.000000
+ - Test::CPAN::Changes 0.23 → 0.25
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla::Plugin::GithubMeta 0.38 → 0.42
+ - Dist::Zilla::Plugin::ReportVersions::Tiny 1.09 → 1.10
+ - Dist::Zilla::Plugin::Test::Compile 2.033 → 2.034
+ - Dist::Zilla::Plugin::Twitter 0.021 → 0.022
+ - IO::Socket::SSL 1.954 → 1.955
+ - Perl::PrereqScanner 1.016 → 1.017
+ - namespace::autoclean 0.13 → 0.14
+ - perl v5.10.0 → 5.006
+
 1.9.0 2013-09-26T12:07:46Z
  [00 Major]
  - Well not hugely major, declared develop depends change starting this

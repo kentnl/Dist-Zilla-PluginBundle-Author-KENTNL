@@ -21,7 +21,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.4007
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132661'
+generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132830'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -30,16 +30,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: v1.9.0
+    version: 2.000000
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: v1.9.0
+    version: 2.000000
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: v1.9.0
+    version: 2.000000
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: v1.9.0
+    version: 2.000000
 requires:
   Carp: 0
   Dist::Zilla: 4.300039
@@ -59,7 +59,7 @@ requires:
   Dist::Zilla::Plugin::Git::GatherDir: 2.014
   Dist::Zilla::Plugin::Git::NextVersion: 2.014
   Dist::Zilla::Plugin::Git::Tag: 2.014
-  Dist::Zilla::Plugin::GithubMeta: 0.38
+  Dist::Zilla::Plugin::GithubMeta: 0.42
   Dist::Zilla::Plugin::License: 4.300039
   Dist::Zilla::Plugin::Manifest: 4.300039
   Dist::Zilla::Plugin::ManifestSkip: 4.300039
@@ -83,29 +83,30 @@ requires:
   Dist::Zilla::Plugin::Prereqs::MatchInstalled: v0.1.4
   Dist::Zilla::Plugin::Prereqs::MatchInstalled::All: v0.1.2
   Dist::Zilla::Plugin::Prereqs::Plugins: v0.1.3
+  Dist::Zilla::Plugin::Prereqs::SyncVersions: 0.001000
   Dist::Zilla::Plugin::PruneCruft: 4.300039
   Dist::Zilla::Plugin::ReadmeAnyFromPod: 0.131500
   Dist::Zilla::Plugin::ReadmeFromPod: 0.18
-  Dist::Zilla::Plugin::ReportVersions::Tiny: 1.09
+  Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
   Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
-  Dist::Zilla::Plugin::Test::Compile: 2.033
+  Dist::Zilla::Plugin::Test::Compile: 2.034
   Dist::Zilla::Plugin::Test::Kwalitee: 2.06
   Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
   Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
   Dist::Zilla::Plugin::TestRelease: 4.300039
-  Dist::Zilla::Plugin::Twitter: 0.021
+  Dist::Zilla::Plugin::Twitter: 0.022
   Dist::Zilla::Plugin::UploadToCPAN: 4.300039
   Dist::Zilla::Role::FileGatherer: 4.300039
   Dist::Zilla::Role::MintingProfile::ShareDir: 4.300039
   Dist::Zilla::Role::PluginBundle: 4.300039
   Dist::Zilla::Util::EmulatePhase: 0.01025802
-  IO::Socket::SSL: 1.954
+  IO::Socket::SSL: 1.955
   LWP::Protocol::https: 6.04
   Moose: 2.1005
   MooseX::Has::Sugar: 0.05070421
   MooseX::Types: 0.38
   Net::SSLeay: 1.55
-  Perl::PrereqScanner: 1.016
+  Perl::PrereqScanner: 1.017
   Pod::Coverage::TrustPod: 0.100002
   Pod::Weaver::Plugin::Encoding: 0.01
   String::Formatter: 0.102082
@@ -114,8 +115,8 @@ requires:
   Test::Perl::Critic: 1.02
   Test::Pod: 1.48
   Test::Pod::Coverage: 1.08
-  namespace::autoclean: 0.13
-  perl: v5.10.0
+  namespace::autoclean: 0.14
+  perl: 5.006
   strict: 0
   version: 0.9904
   warnings: 0
@@ -123,7 +124,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 1.9.0
+version: 2.000000
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.22
@@ -136,7 +137,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaProvides: 1.15000000
     Dist::Zilla::Plugin::MinimumPerl: 1.003
     Dist::Zilla::Plugin::PerlTidy: 0.13
-    Dist::Zilla::PluginBundle::Author::KENTNL: 1.9.0
+    Dist::Zilla::PluginBundle::Author::KENTNL: 2.000000
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
     Dist::Zilla::Role::FileGatherer: 4.300039
     Dist::Zilla::Role::MintingProfile::ShareDir: 4.300039
@@ -147,7 +148,7 @@ x_BuiltWith:
     FindBin: 1.51
     Git::Wrapper: 0.030
     IO::Handle: 1.35
-    IO::Socket::SSL: 1.954
+    IO::Socket::SSL: 1.955
     IPC::Open3: 1.15
     JSON: 2.59
     LWP::Protocol::https: 6.04
@@ -157,11 +158,11 @@ x_BuiltWith:
     MooseX::Types: 0.38
     Net::SSLeay: 1.55
     Path::Class: 0.32
-    Perl::PrereqScanner: 1.016
+    Perl::PrereqScanner: 1.017
     Pod::Coverage::TrustPod: 0.100002
     Pod::Weaver::Plugin::Encoding: 0.01
     String::Formatter: 0.102082
-    Test::CPAN::Changes: 0.23
+    Test::CPAN::Changes: 0.25
     Test::CPAN::Meta: 0.23
     Test::DZil: 4.300039
     Test::EOL: 1.5
@@ -173,7 +174,7 @@ x_BuiltWith:
     Test::Perl::Critic: 1.02
     Test::Pod: 1.48
     Test::Pod::Coverage: 1.08
-    namespace::autoclean: 0.13
+    namespace::autoclean: 0.14
     strict: 1.08
     version: 0.9904
     warnings: 1.18
@@ -189,7 +190,7 @@ x_BuiltWith:
     myarchname: x86_64-linux
     osname: linux
   platform: linux
-  uname: 'Linux 3.11.1-gentoo x86_64 GenuineIntel GNU/Linux'
+  uname: 'Linux 3.11.4-gentoo x86_64 GenuineIntel GNU/Linux'
 x_Dist_Zilla:
   perl:
     version: 5.019003
@@ -215,7 +216,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GithubMeta
       name: '@Author::KENTNL/GithubMeta'
-      version: 0.38
+      version: 0.42
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: '@Author::KENTNL/MetaProvides::Package/AUTOVIV/:InstallModulesPM'
@@ -282,7 +283,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ReportVersions::Tiny
       name: '@Author::KENTNL/ReportVersions::Tiny'
-      version: 1.09
+      version: 1.10
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
@@ -304,7 +305,7 @@ x_Dist_Zilla:
           script_finder:
             - ':ExecFiles'
       name: '@Author::KENTNL/Test::Compile'
-      version: 2.033
+      version: 2.034
     -
       class: Dist::Zilla::Plugin::Test::Perl::Critic
       name: '@Author::KENTNL/Test::Perl::Critic'
@@ -357,7 +358,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 1.9.0
+      version: 2.000000
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
@@ -417,7 +418,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Twitter
       name: '@Author::KENTNL/Twitter'
-      version: 0.021
+      version: 0.022
     -
       class: Dist::Zilla::Plugin::Prereqs::MatchInstalled
       config:
@@ -522,6 +523,24 @@ x_Dist_Zilla:
           upgrade_perl: ~
       name: Prereqs::MatchInstalled::All
       version: 0.1.2
+    -
+      class: Dist::Zilla::Plugin::Prereqs::SyncVersions
+      config:
+        Dist::Zilla::Plugin::Prereqs::SyncVersions:
+          applyto:
+            - build.requires
+            - test.requires
+            - runtime.requires
+            - configure.requires
+          applyto_phase:
+            - build
+            - test
+            - runtime
+            - configure
+          applyto_relation:
+            - requires
+      name: Prereqs::SyncVersions
+      version: 0.001000
     -
       class: Dist::Zilla::Plugin::CheckPrereqsIndexed
       name: CheckPrereqsIndexed

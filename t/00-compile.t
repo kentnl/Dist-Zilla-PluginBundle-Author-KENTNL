@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.033
+# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.034
 
 use Test::More  tests => 4 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
@@ -33,7 +33,7 @@ for my $lib (@module_files)
     binmode $stderr, ':crlf' if $^O eq 'MSWin32';
     my @_warnings = <$stderr>;
     waitpid($pid, 0);
-    is($? >> 8, 0, "$lib loaded ok");
+    is($?, 0, "$lib loaded ok");
 
     if (@_warnings)
     {

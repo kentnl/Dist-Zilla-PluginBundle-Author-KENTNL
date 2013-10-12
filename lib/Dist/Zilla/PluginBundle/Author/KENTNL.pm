@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '1.9.0';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.000000';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -155,7 +155,7 @@ sub bundle_config_inner {
     Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
   }
 
-  my (@version) = ( [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.1.0' } ], );
+  my (@version) = ( [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.001000' } ], );
   my (@metadata) = (
     [ 'MetaConfig' => {} ],
     _only_git( $arg, [ 'GithubMeta' => { _only_ghissues( $arg, issues => 1 ), } ] ),
@@ -278,7 +278,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 1.9.0
+version 2.000000
 
 =head1 SYNOPSIS
 
