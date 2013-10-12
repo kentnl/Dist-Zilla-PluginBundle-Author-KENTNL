@@ -260,7 +260,7 @@ sub bundle_config_inner {
     Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
   }
 
-  my (@version) = ( [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.1.0' } ], );
+  my (@version) = ( [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.001000' } ], );
   my (@metadata) = (
     [ 'MetaConfig' => {} ],
     _only_git( $arg, [ 'GithubMeta' => { _only_ghissues( $arg, issues => 1 ), } ] ),
