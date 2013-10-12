@@ -6,6 +6,9 @@
  - If you are downstream and this breaks things, please learn to normalise upstream versions.
  - Default versioning scheme for new dists is now single-decimal.
 
+ [Dependencies::Added / runtime requires]
+ - Dist::Zilla::Plugin::Prereqs::SyncVersions 0.001000
+
  [Dependencies::Changed / develop requires]
  - Dist::Zilla::PluginBundle::Author::KENTNL v1.9.0 → 2.000000
  - Test::CPAN::Changes 0.23 → 0.25
