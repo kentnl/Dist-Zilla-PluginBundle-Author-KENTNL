@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.000000';
+  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.000001';
 }
 
 # FILENAME: MinimumPerl.pm
@@ -128,7 +128,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -136,7 +136,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.000000
+version 2.000001
 
 =head1 METHODS
 

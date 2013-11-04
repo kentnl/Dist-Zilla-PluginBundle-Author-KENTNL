@@ -6,13 +6,14 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.000000';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.000001';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose;
 with 'Dist::Zilla::Role::PluginBundle';
+with 'Dist::Zilla::Role::BundleDeps';
 
 use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 
@@ -222,7 +223,7 @@ sub bundle_config_inner {
     @mungers,
     @regprereqs,
     [ 'Authority'     => { authority => $arg->{authority}, do_metadata => 1 } ],
-    [ 'ModuleBuild'   => {} ],
+    [ 'ModuleBuild'   => { ':version' => '5' } ],
     [ 'ReadmeFromPod' => {} ],
     [
       'ReadmeAnyFromPod' => {
@@ -270,7 +271,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -278,7 +279,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.000000
+version 2.000001
 
 =head1 SYNOPSIS
 
