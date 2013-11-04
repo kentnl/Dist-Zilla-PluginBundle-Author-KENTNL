@@ -44,7 +44,7 @@
             "Carp" : "0",
             "Dist::Zilla" : "5.005",
             "Dist::Zilla::File::FromCode" : "5.005",
-            "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : "2.000001",
+            "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : "0",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.005",
             "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000001",
@@ -692,7 +692,8 @@
                      "IO::Handle",
                      "IPC::Open3",
                      "File::Spec",
-                     "Cwd"
+                     "Cwd",
+                     "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
                   ],
                   "upgrade_perl" : null
                }

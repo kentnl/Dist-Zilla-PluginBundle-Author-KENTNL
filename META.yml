@@ -44,7 +44,7 @@ requires:
   Carp: 0
   Dist::Zilla: 5.005
   Dist::Zilla::File::FromCode: 5.005
-  Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl: 2.000001
+  Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl: 0
   Dist::Zilla::Plugin::Authority: 1.006
   Dist::Zilla::Plugin::AutoPrereqs: 5.005
   Dist::Zilla::Plugin::Bootstrap::lib: 0.04000001
@@ -557,6 +557,7 @@ x_Dist_Zilla:
             - IPC::Open3
             - File::Spec
             - Cwd
+            - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
           upgrade_perl: ~
       name: Prereqs::MatchInstalled::All
       version: 0.1.2
