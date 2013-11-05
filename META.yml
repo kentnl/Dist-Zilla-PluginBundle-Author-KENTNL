@@ -393,7 +393,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 2.000001
+      version: 2.001000
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
