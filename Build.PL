@@ -7,90 +7,82 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4007"
+    "Module::Build" => "0.4008"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4007"
+    "Module::Build" => "0.4008"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "2.000000",
+  "dist_version" => "2.001000",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Carp" => 0,
-    "Dist::Zilla" => "4.300039",
-    "Dist::Zilla::File::FromCode" => "4.300039",
+    "Dist::Zilla" => "5.005",
+    "Dist::Zilla::File::FromCode" => "5.005",
     "Dist::Zilla::Plugin::Authority" => "1.006",
-    "Dist::Zilla::Plugin::AutoPrereqs" => "4.300039",
+    "Dist::Zilla::Plugin::AutoPrereqs" => "5.005",
     "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000001",
-    "Dist::Zilla::Plugin::CheckExtraTests" => "0.011",
-    "Dist::Zilla::Plugin::CheckPrereqsIndexed" => "0.009",
-    "Dist::Zilla::Plugin::ConfirmRelease" => "4.300039",
+    "Dist::Zilla::Plugin::CheckExtraTests" => "0.015",
+    "Dist::Zilla::Plugin::ConfirmRelease" => "5.005",
     "Dist::Zilla::Plugin::EOLTests" => "0.02",
-    "Dist::Zilla::Plugin::FakeRelease" => "4.300039",
-    "Dist::Zilla::Plugin::FinderCode" => "4.300039",
-    "Dist::Zilla::Plugin::Git::Check" => "2.014",
-    "Dist::Zilla::Plugin::Git::Commit" => "2.014",
-    "Dist::Zilla::Plugin::Git::CommitBuild" => "2.014",
-    "Dist::Zilla::Plugin::Git::GatherDir" => "2.014",
-    "Dist::Zilla::Plugin::Git::NextVersion" => "2.014",
-    "Dist::Zilla::Plugin::Git::Tag" => "2.014",
+    "Dist::Zilla::Plugin::Git::Check" => "2.017",
+    "Dist::Zilla::Plugin::Git::Commit" => "2.017",
+    "Dist::Zilla::Plugin::Git::CommitBuild" => "2.017",
+    "Dist::Zilla::Plugin::Git::GatherDir" => "2.017",
+    "Dist::Zilla::Plugin::Git::NextVersion" => "2.017",
+    "Dist::Zilla::Plugin::Git::Tag" => "2.017",
     "Dist::Zilla::Plugin::GithubMeta" => "0.42",
-    "Dist::Zilla::Plugin::License" => "4.300039",
-    "Dist::Zilla::Plugin::Manifest" => "4.300039",
-    "Dist::Zilla::Plugin::ManifestSkip" => "4.300039",
-    "Dist::Zilla::Plugin::MetaConfig" => "4.300039",
+    "Dist::Zilla::Plugin::License" => "5.005",
+    "Dist::Zilla::Plugin::Manifest" => "5.005",
+    "Dist::Zilla::Plugin::ManifestSkip" => "5.005",
+    "Dist::Zilla::Plugin::MetaConfig" => "5.005",
     "Dist::Zilla::Plugin::MetaData::BuiltWith" => "0.04000000",
-    "Dist::Zilla::Plugin::MetaJSON" => "4.300039",
-    "Dist::Zilla::Plugin::MetaProvides" => "1.15000000",
+    "Dist::Zilla::Plugin::MetaJSON" => "5.005",
     "Dist::Zilla::Plugin::MetaProvides::Package" => "1.15000000",
-    "Dist::Zilla::Plugin::MetaTests" => "4.300039",
-    "Dist::Zilla::Plugin::MetaYAML" => "4.300039",
+    "Dist::Zilla::Plugin::MetaTests" => "5.005",
+    "Dist::Zilla::Plugin::MetaYAML" => "5.005",
     "Dist::Zilla::Plugin::MinimumPerl" => "1.003",
-    "Dist::Zilla::Plugin::ModuleBuild" => "4.300039",
-    "Dist::Zilla::Plugin::ModuleShareDirs" => "4.300039",
-    "Dist::Zilla::Plugin::NextRelease" => "4.300039",
+    "Dist::Zilla::Plugin::ModuleBuild" => "5.005",
+    "Dist::Zilla::Plugin::NextRelease" => "5.005",
     "Dist::Zilla::Plugin::PerlTidy" => "0.13",
-    "Dist::Zilla::Plugin::PkgVersion" => "4.300039",
-    "Dist::Zilla::Plugin::PodCoverageTests" => "4.300039",
-    "Dist::Zilla::Plugin::PodSyntaxTests" => "4.300039",
-    "Dist::Zilla::Plugin::PodWeaver" => "3.102000",
-    "Dist::Zilla::Plugin::Prereqs" => "4.300039",
+    "Dist::Zilla::Plugin::PkgVersion" => "5.005",
+    "Dist::Zilla::Plugin::PodCoverageTests" => "5.005",
+    "Dist::Zilla::Plugin::PodSyntaxTests" => "5.005",
+    "Dist::Zilla::Plugin::PodWeaver" => "4.001",
+    "Dist::Zilla::Plugin::Prereqs" => "5.005",
     "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => "v0.1.4",
-    "Dist::Zilla::Plugin::Prereqs::MatchInstalled::All" => "v0.1.2",
-    "Dist::Zilla::Plugin::Prereqs::Plugins" => "v0.1.3",
-    "Dist::Zilla::Plugin::Prereqs::SyncVersions" => "0.001000",
-    "Dist::Zilla::Plugin::PruneCruft" => "4.300039",
+    "Dist::Zilla::Plugin::PruneCruft" => "5.005",
     "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.131500",
-    "Dist::Zilla::Plugin::ReadmeFromPod" => "0.18",
+    "Dist::Zilla::Plugin::ReadmeFromPod" => "0.21",
     "Dist::Zilla::Plugin::ReportVersions::Tiny" => "1.10",
     "Dist::Zilla::Plugin::Test::CPAN::Changes" => "0.008",
-    "Dist::Zilla::Plugin::Test::Compile" => "2.034",
-    "Dist::Zilla::Plugin::Test::Kwalitee" => "2.06",
+    "Dist::Zilla::Plugin::Test::Compile" => "2.037",
+    "Dist::Zilla::Plugin::Test::Kwalitee" => "2.07",
     "Dist::Zilla::Plugin::Test::MinimumVersion" => "2.000005",
     "Dist::Zilla::Plugin::Test::Perl::Critic" => "2.112410",
-    "Dist::Zilla::Plugin::TestRelease" => "4.300039",
-    "Dist::Zilla::Plugin::Twitter" => "0.022",
-    "Dist::Zilla::Plugin::UploadToCPAN" => "4.300039",
-    "Dist::Zilla::Role::FileGatherer" => "4.300039",
-    "Dist::Zilla::Role::MintingProfile::ShareDir" => "4.300039",
-    "Dist::Zilla::Role::PluginBundle" => "4.300039",
-    "Dist::Zilla::Util::EmulatePhase" => "0.01025802",
+    "Dist::Zilla::Plugin::TestRelease" => "5.005",
+    "Dist::Zilla::Plugin::Twitter" => "0.023",
+    "Dist::Zilla::Plugin::UploadToCPAN" => "5.005",
+    "Dist::Zilla::Role::BundleDeps" => "0.001000",
+    "Dist::Zilla::Role::FileGatherer" => "5.005",
+    "Dist::Zilla::Role::MintingProfile::ShareDir" => "5.005",
+    "Dist::Zilla::Role::PluginBundle" => "5.005",
+    "Dist::Zilla::Util::EmulatePhase" => "0.01025803",
     "IO::Socket::SSL" => "1.955",
     "LWP::Protocol::https" => "6.04",
     "Moose" => "2.1005",
     "MooseX::Has::Sugar" => "0.05070421",
     "MooseX::Types" => "0.38",
     "Net::SSLeay" => "1.55",
-    "Perl::PrereqScanner" => "1.017",
+    "Perl::PrereqScanner" => "1.018",
     "Pod::Coverage::TrustPod" => "0.100002",
-    "Pod::Weaver::Plugin::Encoding" => "0.01",
     "String::Formatter" => "0.102082",
     "Test::CPAN::Meta" => "0.23",
     "Test::EOL" => "1.5",
@@ -110,36 +102,47 @@ my %module_build_args = (
     }
   },
   "test_requires" => {
-    "Capture::Tiny" => "0.22",
+    "Capture::Tiny" => "0.23",
     "File::Spec" => 0,
     "File::pushd" => "1.005",
     "FindBin" => 0,
     "Git::Wrapper" => "0.030",
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
-    "JSON" => "2.59",
-    "Module::Build" => "0.4007",
+    "JSON" => "2.90",
+    "Module::Build" => "0.4008",
     "Path::Class" => "0.32",
-    "Test::DZil" => "4.300039",
+    "Test::DZil" => "5.005",
     "Test::Fatal" => "0.013",
     "Test::File::ShareDir" => "v0.3.3",
-    "Test::More" => "0.98",
+    "Test::More" => "1.001002",
     "Test::Output" => "1.02"
   }
 );
 
 
+my %fallback_build_requires = (
+  "Capture::Tiny" => "0.23",
+  "File::Spec" => 0,
+  "File::pushd" => "1.005",
+  "FindBin" => 0,
+  "Git::Wrapper" => "0.030",
+  "IO::Handle" => 0,
+  "IPC::Open3" => 0,
+  "JSON" => "2.90",
+  "Module::Build" => "0.4008",
+  "Path::Class" => "0.32",
+  "Test::DZil" => "5.005",
+  "Test::Fatal" => "0.013",
+  "Test::File::ShareDir" => "v0.3.3",
+  "Test::More" => "1.001002",
+  "Test::Output" => "1.02"
+);
+
+
 unless ( eval { Module::Build->VERSION(0.4004) } ) {
-  my $tr = delete $module_build_args{test_requires};
-  my $br = $module_build_args{build_requires};
-  for my $mod ( keys %$tr ) {
-    if ( exists $br->{$mod} ) {
-      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
-    }
-    else {
-      $br->{$mod} = $tr->{$mod};
-    }
-  }
+  delete $module_build_args{test_requires};
+  $module_build_args{build_requires} = \%fallback_build_requires;
 }
 
 my $build = Module::Build->new(%module_build_args);

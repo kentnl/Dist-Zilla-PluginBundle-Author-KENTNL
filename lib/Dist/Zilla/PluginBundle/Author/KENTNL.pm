@@ -6,13 +6,14 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.000000';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.001000';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose;
 with 'Dist::Zilla::Role::PluginBundle';
+with 'Dist::Zilla::Role::BundleDeps';
 
 use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 
@@ -81,7 +82,7 @@ BEGIN {
 }
 
 sub _release_fail {
-  my ( $args, $ref ) = ( shift, [ 'FakeRelease' => {} ] );
+  my ( $args, $ref ) = ( shift, [ 'FakeRelease' => { ':version' => '4.300029' } ] );
   ## no critic (RequireLocalizedPunctuationVars)
 
   if ( exists $ENV{KENTNL_RELEASE_FAIL} ) {
@@ -159,7 +160,7 @@ sub bundle_config_inner {
   my (@metadata) = (
     [ 'MetaConfig' => {} ],
     _only_git( $arg, [ 'GithubMeta' => { _only_ghissues( $arg, issues => 1 ), } ] ),
-    [ 'MetaProvides::Package' => {} ],
+    [ 'MetaProvides::Package' => { ':version' => '1.14000001' } ],
     [
       'MetaData::BuiltWith' => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : (), show_config => 1 }
     ],
@@ -221,7 +222,7 @@ sub bundle_config_inner {
     @prunefiles,
     @mungers,
     @regprereqs,
-    [ 'Authority'     => { authority => $arg->{authority}, do_metadata => 1 } ],
+    [ 'Authority'     => { ':version' => '1.006', authority => $arg->{authority}, do_metadata => 1 } ],
     [ 'ModuleBuild'   => {} ],
     [ 'ReadmeFromPod' => {} ],
     [
@@ -270,7 +271,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -278,7 +279,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.000000
+version 2.001000
 
 =head1 SYNOPSIS
 

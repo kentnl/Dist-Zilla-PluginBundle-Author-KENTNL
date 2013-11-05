@@ -16,10 +16,17 @@ lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
 lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 maint-travis-ci/README.mkdn
+maint-travis-ci/before_script.pl
+maint-travis-ci/install_deps.pl
+maint-travis-ci/lib/tools.pm
 maint-travis-ci/merge_travis_yml.pl
+maint-travis-ci/report_fail_ctx.pl
+maint-travis-ci/script.pl
 maint-travis-ci/sterilize_env.pl
 maint-travis-ci/sync_tree.pl
+maint-travis-ci/yamls/sterile.mkdn
 maint-travis-ci/yamls/sterile.yaml
+maint-travis-ci/yamls/sterile2.yaml
 perlcritic.rc
 share/profiles/default/ModuleTemplate.pm.tpl
 share/profiles/default/profile.ini
