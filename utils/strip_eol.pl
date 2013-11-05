@@ -10,20 +10,20 @@ use Path::Tiny qw( path );
 my $rule = Path::Iterator::Rule->new();
 
 $rule->skip_vcs;
-$rule->skip(sub {
+$rule->skip(
+  sub {
     return if not -d $_;
     if ( $_[1] =~ qr/^\.build$/ ) {
-        *STDERR->print("\e[34mIgnoring \e[33m$_\e[34m ( .build )\e[0m\n");
-        return 1;
+      *STDERR->print("\e[34mIgnoring \e[33m$_\e[34m ( .build )\e[0m\n");
+      return 1;
     }
-    if ( $_[1] =~ qr/^[A-Z].*-[0-9.]+(-TRIAL)?$/  ) {
-        *STDERR->print("\e[34mIgnoring \e[33m$_\e[34m ( dzil build tree )\e[0m\n");
-        return 1;
+    if ( $_[1] =~ qr/^[A-Z].*-[0-9.]+(-TRIAL)?$/ ) {
+      *STDERR->print("\e[34mIgnoring \e[33m$_\e[34m ( dzil build tree )\e[0m\n");
+      return 1;
     }
     return;
-});
-$rule->skip_dirs( qr/^\.build$/ );
-#$rule->skip_dirs( qr/^[A-Z].*[0-9]+(-TRIAL)?$/ );
+  }
+);
 $rule->file->nonempty;
 $rule->file->not_binary;
 $rule->file->line_match(qr/\s\n/);
