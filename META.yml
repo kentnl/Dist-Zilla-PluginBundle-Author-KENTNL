@@ -84,9 +84,6 @@ resources:
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
 version: 2.000001
 x_BuiltWith:
-  failures:
-    Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl: 'Module::MetaData could not parse a version from /home/kent/perl/Dist-Zilla-PluginBundle-Author-KENTNL/lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm'
-    Dist::Zilla::PluginBundle::Author::KENTNL: 'Module::MetaData could not parse a version from /home/kent/perl/Dist-Zilla-PluginBundle-Author-KENTNL/lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm'
   modules:
     Capture::Tiny: 0.23
     Carp: 1.32
@@ -363,7 +360,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: ~
+      version: 2.000001
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
@@ -490,7 +487,9 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::RemovePhasedPrereqs:
           remove_build: []
           remove_configure: []
-          remove_develop: []
+          remove_develop:
+            - Dist::Zilla::PluginBundle::Author::KENTNL
+            - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
           remove_runtime:
             - Dist::Zilla::PluginBundle::Author::KENTNL
             - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl

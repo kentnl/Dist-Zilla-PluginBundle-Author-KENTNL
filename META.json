@@ -26,7 +26,6 @@
       },
       "develop" : {
          "requires" : {
-            "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : "0",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.005",
             "Dist::Zilla::Plugin::CheckExtraTests" : "0.015",
@@ -68,7 +67,6 @@
             "Dist::Zilla::Plugin::TestRelease" : "5.005",
             "Dist::Zilla::Plugin::Twitter" : "0.023",
             "Dist::Zilla::Plugin::UploadToCPAN" : "5.005",
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.3.0",
             "Pod::Coverage::TrustPod" : "0.100002",
             "Test::CPAN::Changes" : "0.25",
             "Test::CPAN::Meta" : "0.23",
@@ -174,10 +172,6 @@
    },
    "version" : "2.000001",
    "x_BuiltWith" : {
-      "failures" : {
-         "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : "Module::MetaData could not parse a version from /home/kent/perl/Dist-Zilla-PluginBundle-Author-KENTNL/lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "Dist::Zilla::PluginBundle::Author::KENTNL" : "Module::MetaData could not parse a version from /home/kent/perl/Dist-Zilla-PluginBundle-Author-KENTNL/lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm"
-      },
       "modules" : {
          "Capture::Tiny" : "0.23",
          "Carp" : "1.32",
@@ -508,7 +502,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
             "name" : "@Author::KENTNL/Author::KENTNL::MinimumPerl",
-            "version" : null
+            "version" : "2.000001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Authority",
@@ -666,7 +660,10 @@
                "Dist::Zilla::Plugin::RemovePhasedPrereqs" : {
                   "remove_build" : [],
                   "remove_configure" : [],
-                  "remove_develop" : [],
+                  "remove_develop" : [
+                     "Dist::Zilla::PluginBundle::Author::KENTNL",
+                     "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
+                  ],
                   "remove_runtime" : [
                      "Dist::Zilla::PluginBundle::Author::KENTNL",
                      "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
