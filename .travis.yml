@@ -38,7 +38,9 @@ after_failure:
   - perl ./maint-travis-ci/report_fail_ctx.pl
 branches:
   only:
-    - "master"
+    # Master is un-testable because dependencies in the bundle itself (aka: a role)
+    # don't show up to authordeps, and cause a compile failure before listdeps is usable
+    # - "master"
     - "build/master"
     - "releases"
 
