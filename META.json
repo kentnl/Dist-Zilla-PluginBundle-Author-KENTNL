@@ -16,12 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.40_09"
+            "Module::Build" : "0.4008"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.40_09"
+            "Module::Build" : "0.4008"
          }
       },
       "develop" : {
@@ -132,7 +132,7 @@
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
             "JSON" : "2.90",
-            "Module::Build" : "0.40_09",
+            "Module::Build" : "0.4008",
             "Path::Class" : "0.32",
             "Test::DZil" : "5.005",
             "Test::Fatal" : "0.013",
@@ -243,7 +243,7 @@
          "IPC::Open3" : "1.15",
          "JSON" : "2.90",
          "LWP::Protocol::https" : "6.04",
-         "Module::Build" : "0.40_09",
+         "Module::Build" : "0.4008",
          "Moose" : "2.1105",
          "MooseX::Has::Sugar" : "0.05070421",
          "MooseX::Types" : "0.38",

@@ -7,10 +7,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.40_09"
+    "Module::Build" => "0.4008"
   },
   "configure_requires" => {
-    "Module::Build" => "0.40_09"
+    "Module::Build" => "0.4008"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
@@ -111,7 +111,7 @@ my %module_build_args = (
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "JSON" => "2.90",
-    "Module::Build" => "0.40_09",
+    "Module::Build" => "0.4008",
     "Path::Class" => "0.32",
     "Test::DZil" => "5.005",
     "Test::Fatal" => "0.013",
@@ -131,7 +131,7 @@ my %fallback_build_requires = (
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
   "JSON" => "2.90",
-  "Module::Build" => "0.40_09",
+  "Module::Build" => "0.4008",
   "Path::Class" => "0.32",
   "Test::DZil" => "5.005",
   "Test::Fatal" => "0.013",

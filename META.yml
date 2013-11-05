@@ -11,7 +11,7 @@ build_requires:
   IO::Handle: 0
   IPC::Open3: 0
   JSON: 2.90
-  Module::Build: 0.40_09
+  Module::Build: 0.4008
   Path::Class: 0.32
   Test::DZil: 5.005
   Test::Fatal: 0.013
@@ -19,7 +19,7 @@ build_requires:
   Test::More: 1.001002
   Test::Output: 1.02
 configure_requires:
-  Module::Build: 0.40_09
+  Module::Build: 0.4008
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.005, CPAN::Meta::Converter version 2.132830'
 license: perl
@@ -188,7 +188,7 @@ x_BuiltWith:
     IPC::Open3: 1.15
     JSON: 2.90
     LWP::Protocol::https: 6.04
-    Module::Build: 0.40_09
+    Module::Build: 0.4008
     Moose: 2.1105
     MooseX::Has::Sugar: 0.05070421
     MooseX::Types: 0.38

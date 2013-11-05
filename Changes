@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.000001 2013-11-05T06:18:10Z
+2.000001 2013-11-05T06:27:19Z
  [00 Minor]
  - Reasonably sizeable tooling changes to propagate more develop deps
 
