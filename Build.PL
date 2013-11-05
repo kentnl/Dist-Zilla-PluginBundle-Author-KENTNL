@@ -7,10 +7,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4007"
+    "Module::Build" => "0.40_09"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4007"
+    "Module::Build" => "0.40_09"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
@@ -26,12 +26,15 @@ my %module_build_args = (
     "Carp" => 0,
     "Dist::Zilla" => "5.005",
     "Dist::Zilla::File::FromCode" => "5.005",
-    "Dist::Zilla::Plugin::Authority" => "1.006",
     "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000001",
-    "Dist::Zilla::Plugin::FakeRelease" => "5.005",
-    "Dist::Zilla::Plugin::MetaProvides" => "1.15000000",
+    "Dist::Zilla::Plugin::CheckPrereqsIndexed" => "0.009",
     "Dist::Zilla::Plugin::MinimumPerl" => "1.003",
+    "Dist::Zilla::Plugin::ModuleShareDirs" => "5.005",
     "Dist::Zilla::Plugin::PerlTidy" => "0.13",
+    "Dist::Zilla::Plugin::Prereqs" => "5.005",
+    "Dist::Zilla::Plugin::Prereqs::AuthorDeps" => "0.002",
+    "Dist::Zilla::Plugin::Prereqs::MatchInstalled::All" => "v0.1.2",
+    "Dist::Zilla::Plugin::RemovePhasedPrereqs" => "0.002",
     "Dist::Zilla::Role::BundleDeps" => "0.001000",
     "Dist::Zilla::Role::FileGatherer" => "5.005",
     "Dist::Zilla::Role::MintingProfile::ShareDir" => "5.005",
@@ -73,12 +76,12 @@ my %module_build_args = (
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "JSON" => "2.90",
-    "Module::Build" => "0.4007",
+    "Module::Build" => "0.40_09",
     "Path::Class" => "0.32",
     "Test::DZil" => "5.005",
     "Test::Fatal" => "0.013",
     "Test::File::ShareDir" => "v0.3.3",
-    "Test::More" => "0.99",
+    "Test::More" => "1.001002",
     "Test::Output" => "1.02"
   }
 );
@@ -93,12 +96,12 @@ my %fallback_build_requires = (
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
   "JSON" => "2.90",
-  "Module::Build" => "0.4007",
+  "Module::Build" => "0.40_09",
   "Path::Class" => "0.32",
   "Test::DZil" => "5.005",
   "Test::Fatal" => "0.013",
   "Test::File::ShareDir" => "v0.3.3",
-  "Test::More" => "0.99",
+  "Test::More" => "1.001002",
   "Test::Output" => "1.02"
 );
 
