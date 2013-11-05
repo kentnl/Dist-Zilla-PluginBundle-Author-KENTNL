@@ -1,6 +1,91 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.000001 2013-11-05T05:09:31Z
+2.000001 2013-11-05T06:18:10Z
+ [00 Minor]
+ - Reasonably sizeable tooling changes to propagate more develop deps
+
+ [Dependencies::Added / develop requires]
+ - Dist::Zilla 5.005
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.04000001
+ - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.009
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.005
+ - Dist::Zilla::Plugin::Prereqs 5.005
+ - Dist::Zilla::Plugin::Prereqs::AuthorDeps 0.002
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.2
+ - Dist::Zilla::Plugin::RemovePhasedPrereqs 0.002
+
+ [Dependencies::Added / runtime requires]
+ - Dist::Zilla::Role::BundleDeps 0.001000
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.4007 → 0.40_09
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.4007 → 0.40_09
+
+ [Dependencies::Changed / develop requires]
+ - Test::Kwalitee 1.15 → 1.17
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla 4.300039 → 5.005
+ - Dist::Zilla::File::FromCode 4.300039 → 5.005
+ - Dist::Zilla::Plugin::AutoPrereqs 4.300039 → 5.005
+ - Dist::Zilla::Plugin::CheckExtraTests 0.011 → 0.015
+ - Dist::Zilla::Plugin::ConfirmRelease 4.300039 → 5.005
+ - Dist::Zilla::Plugin::Git::Check 2.014 → 2.017
+ - Dist::Zilla::Plugin::Git::Commit 2.014 → 2.017
+ - Dist::Zilla::Plugin::Git::CommitBuild 2.014 → 2.017
+ - Dist::Zilla::Plugin::Git::GatherDir 2.014 → 2.017
+ - Dist::Zilla::Plugin::Git::NextVersion 2.014 → 2.017
+ - Dist::Zilla::Plugin::Git::Tag 2.014 → 2.017
+ - Dist::Zilla::Plugin::License 4.300039 → 5.005
+ - Dist::Zilla::Plugin::Manifest 4.300039 → 5.005
+ - Dist::Zilla::Plugin::ManifestSkip 4.300039 → 5.005
+ - Dist::Zilla::Plugin::MetaConfig 4.300039 → 5.005
+ - Dist::Zilla::Plugin::MetaJSON 4.300039 → 5.005
+ - Dist::Zilla::Plugin::MetaTests 4.300039 → 5.005
+ - Dist::Zilla::Plugin::MetaYAML 4.300039 → 5.005
+ - Dist::Zilla::Plugin::ModuleBuild 4.300039 → 5.005
+ - Dist::Zilla::Plugin::NextRelease 4.300039 → 5.005
+ - Dist::Zilla::Plugin::PkgVersion 4.300039 → 5.005
+ - Dist::Zilla::Plugin::PodCoverageTests 4.300039 → 5.005
+ - Dist::Zilla::Plugin::PodSyntaxTests 4.300039 → 5.005
+ - Dist::Zilla::Plugin::PodWeaver 3.102000 → 4.001
+ - Dist::Zilla::Plugin::Prereqs 4.300039 → 5.005
+ - Dist::Zilla::Plugin::PruneCruft 4.300039 → 5.005
+ - Dist::Zilla::Plugin::ReadmeFromPod 0.18 → 0.21
+ - Dist::Zilla::Plugin::Test::Compile 2.034 → 2.037
+ - Dist::Zilla::Plugin::Test::Kwalitee 2.06 → 2.07
+ - Dist::Zilla::Plugin::TestRelease 4.300039 → 5.005
+ - Dist::Zilla::Plugin::Twitter 0.022 → 0.023
+ - Dist::Zilla::Plugin::UploadToCPAN 4.300039 → 5.005
+ - Dist::Zilla::Role::FileGatherer 4.300039 → 5.005
+ - Dist::Zilla::Role::MintingProfile::ShareDir 4.300039 → 5.005
+ - Dist::Zilla::Role::PluginBundle 4.300039 → 5.005
+ - Dist::Zilla::Util::EmulatePhase 0.01025802 → 0.01025803
+ - Moose 2.1005 → 2.1105
+ - Perl::PrereqScanner 1.017 → 1.018
+ - Pod::Weaver::Plugin::Encoding 0.01 → 0.02
+
+ [Dependencies::Changed / test requires]
+ - Capture::Tiny 0.22 → 0.23
+ - JSON 2.59 → 2.90
+ - Module::Build 0.4007 → 0.40_09
+ - Test::DZil 4.300039 → 5.005
+ - Test::More 0.98 → 1.001002
+
+ [Dependencies::Removed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.000000
+
+ [Dependencies::Removed / runtime requires]
+ - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.009
+ - Dist::Zilla::Plugin::FakeRelease 4.300039
+ - Dist::Zilla::Plugin::FinderCode 4.300039
+ - Dist::Zilla::Plugin::MetaProvides 1.15000000
+ - Dist::Zilla::Plugin::ModuleShareDirs 4.300039
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.2
+ - Dist::Zilla::Plugin::Prereqs::Plugins v0.1.3
+ - Dist::Zilla::Plugin::Prereqs::SyncVersions 0.001000
 
 2.000000 2013-10-12T05:23:24Z
  [00 Major]
