@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.000001 2013-11-05T07:25:04Z
+2.001000 2013-11-05T07:34:30Z
  [00 Minor]
  - Reasonably sizeable tooling changes to propagate more develop deps
 
@@ -18,10 +18,10 @@
  - Dist::Zilla::Role::BundleDeps 0.001000
 
  [Dependencies::Changed / build requires]
- - Module::Build 0.4007 → 0.40_09
+ - Module::Build 0.4007 → 0.4008
 
  [Dependencies::Changed / configure requires]
- - Module::Build 0.4007 → 0.40_09
+ - Module::Build 0.4007 → 0.4008
 
  [Dependencies::Changed / develop requires]
  - Test::Kwalitee 1.15 → 1.17
@@ -63,14 +63,12 @@
  - Dist::Zilla::Role::MintingProfile::ShareDir 4.300039 → 5.005
  - Dist::Zilla::Role::PluginBundle 4.300039 → 5.005
  - Dist::Zilla::Util::EmulatePhase 0.01025802 → 0.01025803
- - Moose 2.1005 → 2.1105
  - Perl::PrereqScanner 1.017 → 1.018
- - Pod::Weaver::Plugin::Encoding 0.01 → 0.02
 
  [Dependencies::Changed / test requires]
  - Capture::Tiny 0.22 → 0.23
  - JSON 2.59 → 2.90
- - Module::Build 0.4007 → 0.40_09
+ - Module::Build 0.4007 → 0.4008
  - Test::DZil 4.300039 → 5.005
  - Test::More 0.98 → 1.001002
 
@@ -86,6 +84,7 @@
  - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.2
  - Dist::Zilla::Plugin::Prereqs::Plugins v0.1.3
  - Dist::Zilla::Plugin::Prereqs::SyncVersions 0.001000
+ - Pod::Weaver::Plugin::Encoding 0.01
 
 2.000000 2013-10-12T05:23:24Z
  [00 Major]
