@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.002000 2013-11-11T10:29:42Z
+2.002000 2013-11-11T11:09:48Z
  [00 Minor]
  - Swap out Test::Compile with Test::Compile::PerFile, which is marginally
    faster.
