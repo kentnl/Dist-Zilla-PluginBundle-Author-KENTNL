@@ -334,8 +334,8 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
             - lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-            - lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
             - lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
+            - lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
             - lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
           path_translator: base64_filter
           prefix: t/00-compile
