@@ -203,7 +203,6 @@ EOF
     META.json
     META.yml
     README
-    t/00-compile.t
     t/000-report-versions-tiny.t
     xt/author/critic.t
     xt/release/cpan-changes.t
