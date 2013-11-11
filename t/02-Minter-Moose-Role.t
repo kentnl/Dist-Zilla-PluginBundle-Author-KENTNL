@@ -75,8 +75,8 @@ subtest 'mint files' => sub {
 
   note explain { got => \%got_files, expected => \%expected_files };
 
-  for my $file (keys %expected_files) {
-      ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
+  for my $file ( keys %expected_files ) {
+    ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
   }
 
 };
@@ -230,8 +230,8 @@ EOF
 
   note explain [ $bzil->log_messages ];
 
-  for my $file (keys %expected_files) {
-      ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
+  for my $file ( keys %expected_files ) {
+    ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
   }
 
   my $data = from_json( dir( $bzil->tempdir )->subdir('build')->file('META.json')->slurp() );
