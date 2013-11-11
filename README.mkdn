@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 # VERSION
 
-version 2.001000
+version 2.002000
 
 # SYNOPSIS
 
@@ -50,21 +50,21 @@ likely of only personal use from those that have more general application.
 
 I wish to give proper respect to the people out there already implementing this scheme:
 
-- [`@Author::DOHERTY` ](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Author::DOHERTY) - Mike Doherty's, Author Bundle.
-- [`@Author::OLIVER` ](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Author::OLIVER) - Oliver Gorwits', Author Bundle.
+- [`@Author::DOHERTY` ](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Author::DOHERTY) - Mike Doherty's, Author Bundle.
+- [`@Author::OLIVER` ](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Author::OLIVER) - Oliver Gorwits', Author Bundle.
 - [`Dist::Zilla::PluginBundle::Author::` namespace ](http://bit.ly/dIovQI) - Oliver Gorwit's blog on the subject.
-- [`@Author::LESPEA` ](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Author::LESPEA) - Adam Lesperance's, Author Bundle.
-- [`@Author::ALEXBIO` ](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Author::ALEXBIO) - Alessandro Ghedini's, Author Bundle.
-- [`@Author::RWSTAUNER` ](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Author::RWSTAUNER) - Randy Stauner's, Author Bundle.
-- [`@Author::WOLVERIAN` ](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Author::WOLVERIAN) - Ilmari Vacklin's, Author Bundle.
-- [`@Author::YANICK` ](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Author::YANICK) - Yanick Champoux's, Author Bundle.
-- [`@Author::RUSSOZ` ](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Author::RUSSOZ) - Alexei Znamensky's, Author Bundle.
+- [`@Author::LESPEA` ](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Author::LESPEA) - Adam Lesperance's, Author Bundle.
+- [`@Author::ALEXBIO` ](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Author::ALEXBIO) - Alessandro Ghedini's, Author Bundle.
+- [`@Author::RWSTAUNER` ](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Author::RWSTAUNER) - Randy Stauner's, Author Bundle.
+- [`@Author::WOLVERIAN` ](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Author::WOLVERIAN) - Ilmari Vacklin's, Author Bundle.
+- [`@Author::YANICK` ](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Author::YANICK) - Yanick Champoux's, Author Bundle.
+- [`@Author::RUSSOZ` ](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Author::RUSSOZ) - Alexei Znamensky's, Author Bundle.
 
 # METHODS
 
 ## `bundle_config`
 
-See [the `PluginBundle` role](http://search.cpan.org/perldoc?Dist::Zilla::Role::PluginBundle) for what this is for, it is a method to satisfy that role.
+See [the `PluginBundle` role](https://metacpan.org/pod/Dist::Zilla::Role::PluginBundle) for what this is for, it is a method to satisfy that role.
 
 {
     "namespace":"Dist::Zilla::PluginBundle::Author::KENTNL",
