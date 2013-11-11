@@ -75,7 +75,9 @@ subtest 'mint files' => sub {
 
   note explain { got => \%got_files, expected => \%expected_files };
 
-  is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
+  for my $file ( keys %expected_files ) {
+    ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
+  }
 
 };
 
@@ -204,7 +206,6 @@ EOF
     META.json
     META.yml
     README
-    t/00-compile.t
     t/000-report-versions-tiny.t
     xt/author/critic.t
     xt/release/cpan-changes.t
@@ -229,7 +230,9 @@ EOF
 
   note explain [ $bzil->log_messages ];
 
-  is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
+  for my $file ( keys %expected_files ) {
+    ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
+  }
 
   my $data = from_json( dir( $bzil->tempdir )->subdir('build')->file('META.json')->slurp() );
 
