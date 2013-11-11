@@ -275,20 +275,20 @@ sub bundle_config_inner {
   my (@sharedir) = ();
 
   my (@gatherfiles) = (
-    [ 'Git::GatherDir'       => { include_dotfiles    => 1 } ],
-    [ 'License'              => {} ],
-    [ 'MetaJSON'             => {} ],
-    [ 'MetaYAML'             => {} ],
-    [ 'Manifest'             => {} ],
-    [ 'MetaTests'            => {} ],
-    [ 'PodCoverageTests'     => {} ],
-    [ 'PodSyntaxTests'       => {} ],
-    [ 'ReportVersions::Tiny' => {} ],
-    [ 'Test::Kwalitee'       => {} ],
-    [ 'EOLTests'             => { trailing_whitespace => 1, } ],
-    [ 'Test::MinimumVersion' => {} ],
-    [ 'Test::Compile'        => {} ],
-    [ 'Test::Perl::Critic'   => {} ],
+    [ 'Git::GatherDir'         => { include_dotfiles    => 1 } ],
+    [ 'License'                => {} ],
+    [ 'MetaJSON'               => {} ],
+    [ 'MetaYAML'               => {} ],
+    [ 'Manifest'               => {} ],
+    [ 'MetaTests'              => {} ],
+    [ 'PodCoverageTests'       => {} ],
+    [ 'PodSyntaxTests'         => {} ],
+    [ 'ReportVersions::Tiny'   => {} ],
+    [ 'Test::Kwalitee'         => {} ],
+    [ 'EOLTests'               => { trailing_whitespace => 1, } ],
+    [ 'Test::MinimumVersion'   => {} ],
+    [ 'Test::Compile::PerFile' => {} ],
+    [ 'Test::Perl::Critic'     => {} ],
   );
 
   my (@prunefiles) = ( [ 'PruneCruft' => { except => '^.(perltidyrc|travis.yml|proverc)' } ], [ 'ManifestSkip' => {} ], );
