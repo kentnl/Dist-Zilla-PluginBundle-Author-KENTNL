@@ -52,7 +52,7 @@ subtest 'mint files' => sub {
     .perltidyrc
     .gitignore
     dist.ini
-  );
+ );
 
   my %got_files;
 
@@ -72,7 +72,9 @@ subtest 'mint files' => sub {
 
   note explain { got => \%got_files, expected => \%expected_files };
 
-  is_deeply( \%got_files, \%expected_files, 'All expected mint files exist' );
+  for my $file (keys %expected_files) {
+      ok( exists $got_files{$file}, 'Expected file ' . $file . 'expected mint files exists' );
+  }
 
 };
 
