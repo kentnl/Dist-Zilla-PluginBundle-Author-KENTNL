@@ -81,7 +81,7 @@ requires:
   Dist::Zilla::Plugin::ReadmeFromPod: 0.21
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
   Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
-  Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001000
+  Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001001
   Dist::Zilla::Plugin::Test::Kwalitee: 2.07
   Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
   Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
@@ -165,7 +165,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::RemovePhasedPrereqs: 0.002
     Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
     Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
-    Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001000
+    Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001001
     Dist::Zilla::Plugin::Test::Kwalitee: 2.07
     Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
     Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
@@ -339,17 +339,17 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
-            - lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
+            - lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
             - lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
             - lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-            - lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
+            - lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
           path_translator: base64_filter
           prefix: t/00-compile
           skip: []
           test_template: 01-basic.t.tpl
           xt_mode: ~
       name: '@Author::KENTNL/Test::Compile::PerFile'
-      version: 0.001000
+      version: 0.001001
     -
       class: Dist::Zilla::Plugin::Test::Perl::Critic
       name: '@Author::KENTNL/Test::Perl::Critic'
