@@ -108,14 +108,16 @@ my %module_build_args = (
     "Git::Wrapper" => "0.030",
     "JSON" => "2.90",
     "Module::Build" => "0.4200",
+    "Module::Metadata" => "1.000019",
     "Path::Class" => "0.32",
+    "Path::Class::Dir" => "0.32",
+    "Path::Tiny" => "0.044",
     "Test::DZil" => "5.006",
     "Test::Fatal" => "0.013",
     "Test::File::ShareDir" => "v0.3.3",
     "Test::More" => "1.001002",
     "Test::Output" => "1.02",
-    "lib" => "0.63",
-    "tshare" => 0
+    "lib" => "0.63"
   }
 );
 
@@ -127,14 +129,16 @@ my %fallback_build_requires = (
   "Git::Wrapper" => "0.030",
   "JSON" => "2.90",
   "Module::Build" => "0.4200",
+  "Module::Metadata" => "1.000019",
   "Path::Class" => "0.32",
+  "Path::Class::Dir" => "0.32",
+  "Path::Tiny" => "0.044",
   "Test::DZil" => "5.006",
   "Test::Fatal" => "0.013",
   "Test::File::ShareDir" => "v0.3.3",
   "Test::More" => "1.001002",
   "Test::Output" => "1.02",
-  "lib" => "0.63",
-  "tshare" => 0
+  "lib" => "0.63"
 );
 
 

@@ -9,14 +9,16 @@ build_requires:
   Git::Wrapper: 0.030
   JSON: 2.90
   Module::Build: 0.4200
+  Module::Metadata: 1.000019
   Path::Class: 0.32
+  Path::Class::Dir: 0.32
+  Path::Tiny: 0.044
   Test::DZil: 5.006
   Test::Fatal: 0.013
   Test::File::ShareDir: v0.3.3
   Test::More: 1.001002
   Test::Output: 1.02
   lib: 0.63
-  tshare: 0
 configure_requires:
   Module::Build: 0.4200
 dynamic_config: 0
@@ -117,8 +119,6 @@ resources:
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
 version: 2.002001
 x_BuiltWith:
-  failures:
-    tshare: 'module was not found in INC'
   modules:
     Capture::Tiny: 0.23
     Carp: 1.32
@@ -186,11 +186,14 @@ x_BuiltWith:
     JSON: 2.90
     LWP::Protocol::https: 6.04
     Module::Build: 0.4200
+    Module::Metadata: 1.000019
     Moose: 2.1106
     MooseX::Has::Sugar: 0.05070421
     MooseX::Types: 0.38
     Net::SSLeay: 1.55
     Path::Class: 0.32
+    Path::Class::Dir: 0.32
+    Path::Tiny: 0.044
     Perl::PrereqScanner: 1.018
     Pod::Coverage::TrustPod: 0.100003
     String::Formatter: 0.102084
@@ -338,10 +341,10 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
-            - lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
             - lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-            - lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
             - lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
+            - lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
+            - lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
           path_translator: base64_filter
           prefix: t/00-compile
           skip: []
