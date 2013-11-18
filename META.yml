@@ -8,15 +8,18 @@ build_requires:
   FindBin: 0
   Git::Wrapper: 0.030
   JSON: 2.90
-  Module::Build: 0.4008
-  Path::Class: 0.32
+  Module::Build: 0.4200
+  Module::Metadata: 1.000019
+  Path::Class::Dir: 0.32
+  Path::Tiny: 0.044
   Test::DZil: 5.006
   Test::Fatal: 0.013
   Test::File::ShareDir: v0.3.3
   Test::More: 1.001002
   Test::Output: 1.02
+  lib: 0
 configure_requires:
-  Module::Build: 0.4008
+  Module::Build: 0.4200
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830'
 license: perl
@@ -27,16 +30,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: 2.002000
+    version: 2.002001
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 2.002000
+    version: 2.002001
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: 2.002000
+    version: 2.002001
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: 2.002000
+    version: 2.002001
 requires:
   Carp: 0
   Dist::Zilla: 5.006
@@ -70,7 +73,7 @@ requires:
   Dist::Zilla::Plugin::PkgVersion: 5.006
   Dist::Zilla::Plugin::PodCoverageTests: 5.006
   Dist::Zilla::Plugin::PodSyntaxTests: 5.006
-  Dist::Zilla::Plugin::PodWeaver: 4.001
+  Dist::Zilla::Plugin::PodWeaver: 4.002
   Dist::Zilla::Plugin::Prereqs: 5.006
   Dist::Zilla::Plugin::Prereqs::MatchInstalled: v0.1.4
   Dist::Zilla::Plugin::PruneCruft: 5.006
@@ -78,7 +81,7 @@ requires:
   Dist::Zilla::Plugin::ReadmeFromPod: 0.21
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
   Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
-  Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001000
+  Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001001
   Dist::Zilla::Plugin::Test::Kwalitee: 2.07
   Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
   Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
@@ -90,7 +93,7 @@ requires:
   Dist::Zilla::Role::MintingProfile::ShareDir: 5.006
   Dist::Zilla::Role::PluginBundle: 5.006
   Dist::Zilla::Util::EmulatePhase: 0.01025803
-  IO::Socket::SSL: 1.956
+  IO::Socket::SSL: 1.960
   LWP::Protocol::https: 6.04
   Moose: 2.1005
   MooseX::Has::Sugar: 0.05070421
@@ -113,7 +116,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 2.002000
+version: 2.002001
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.23
@@ -151,7 +154,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::PkgVersion: 5.006
     Dist::Zilla::Plugin::PodCoverageTests: 5.006
     Dist::Zilla::Plugin::PodSyntaxTests: 5.006
-    Dist::Zilla::Plugin::PodWeaver: 4.001
+    Dist::Zilla::Plugin::PodWeaver: 4.002
     Dist::Zilla::Plugin::Prereqs: 5.006
     Dist::Zilla::Plugin::Prereqs::AuthorDeps: 0.002
     Dist::Zilla::Plugin::Prereqs::MatchInstalled: 0.1.4
@@ -162,7 +165,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::RemovePhasedPrereqs: 0.002
     Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
     Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
-    Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001000
+    Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001001
     Dist::Zilla::Plugin::Test::Kwalitee: 2.07
     Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
     Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
@@ -178,15 +181,17 @@ x_BuiltWith:
     File::pushd: 1.005
     FindBin: 1.51
     Git::Wrapper: 0.030
-    IO::Socket::SSL: 1.956
+    IO::Socket::SSL: 1.960
     JSON: 2.90
     LWP::Protocol::https: 6.04
-    Module::Build: 0.4008
-    Moose: 2.1005
+    Module::Build: 0.4200
+    Module::Metadata: 1.000019
+    Moose: 2.1106
     MooseX::Has::Sugar: 0.05070421
     MooseX::Types: 0.38
     Net::SSLeay: 1.55
-    Path::Class: 0.32
+    Path::Class::Dir: 0.32
+    Path::Tiny: 0.044
     Perl::PrereqScanner: 1.018
     Pod::Coverage::TrustPod: 0.100003
     String::Formatter: 0.102084
@@ -202,6 +207,7 @@ x_BuiltWith:
     Test::Perl::Critic: 1.02
     Test::Pod: 1.48
     Test::Pod::Coverage: 1.08
+    lib: 0.63
     namespace::autoclean: 0.14
     strict: 1.08
     version: 0.9904
@@ -333,17 +339,17 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
-            - lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
+            - lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
             - lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
             - lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-            - lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
+            - lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
           path_translator: base64_filter
           prefix: t/00-compile
           skip: []
           test_template: 01-basic.t.tpl
           xt_mode: ~
       name: '@Author::KENTNL/Test::Compile::PerFile'
-      version: 0.001000
+      version: 0.001001
     -
       class: Dist::Zilla::Plugin::Test::Perl::Critic
       name: '@Author::KENTNL/Test::Perl::Critic'
@@ -367,8 +373,93 @@ x_Dist_Zilla:
           finder:
             - ':InstallModules'
             - ':ExecFiles'
+          plugins:
+            -
+              class: Pod::Weaver::Plugin::EnsurePod5
+              name: '@CorePrep/EnsurePod5'
+              version: 4.004
+            -
+              class: Pod::Weaver::Plugin::H1Nester
+              name: '@CorePrep/H1Nester'
+              version: 4.004
+            -
+              class: Pod::Weaver::Plugin::SingleEncoding
+              name: '-SingleEncoding'
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Name
+              name: Name
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Version
+              name: Version
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Region
+              name: prelude
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Generic
+              name: SYNOPSIS
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Generic
+              name: DESCRIPTION
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Generic
+              name: NAMING_SCHEME
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Generic
+              name: OVERVIEW
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Collect
+              name: METHODS
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Collect
+              name: ATTRIBUTES
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Collect
+              name: FILTER_METHODS
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Collect
+              name: TERMINATOR_LIST_METHODS
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Collect
+              name: MIRROR_LIST_METHODS
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Collect
+              name: PRIVATE_ATTRIBUTES
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Collect
+              name: PRIVATE_METHODS
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Leftovers
+              name: Leftovers
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Region
+              name: postlude
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Authors
+              name: Authors
+              version: 4.004
+            -
+              class: Pod::Weaver::Section::Legal
+              name: Legal
+              version: 4.004
       name: '@Author::KENTNL/PodWeaver'
-      version: 4.001
+      version: 4.002
     -
       class: Dist::Zilla::Plugin::NextRelease
       name: '@Author::KENTNL/NextRelease'
@@ -396,7 +487,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 2.002000
+      version: 2.002001
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
@@ -567,6 +658,7 @@ x_Dist_Zilla:
           exclude:
             - Dist::Zilla::Plugin::Authority
             - blib
+            - lib
             - strict
             - warnings
             - FindBin
