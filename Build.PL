@@ -7,17 +7,17 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4008"
+    "Module::Build" => "0.4200"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4008"
+    "Module::Build" => "0.4200"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "2.002000",
+  "dist_version" => "2.002001",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -55,7 +55,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::PkgVersion" => "5.006",
     "Dist::Zilla::Plugin::PodCoverageTests" => "5.006",
     "Dist::Zilla::Plugin::PodSyntaxTests" => "5.006",
-    "Dist::Zilla::Plugin::PodWeaver" => "4.001",
+    "Dist::Zilla::Plugin::PodWeaver" => "4.002",
     "Dist::Zilla::Plugin::Prereqs" => "5.006",
     "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => "v0.1.4",
     "Dist::Zilla::Plugin::PruneCruft" => "5.006",
@@ -75,7 +75,7 @@ my %module_build_args = (
     "Dist::Zilla::Role::MintingProfile::ShareDir" => "5.006",
     "Dist::Zilla::Role::PluginBundle" => "5.006",
     "Dist::Zilla::Util::EmulatePhase" => "0.01025803",
-    "IO::Socket::SSL" => "1.956",
+    "IO::Socket::SSL" => "1.960",
     "LWP::Protocol::https" => "6.04",
     "Moose" => "2.1005",
     "MooseX::Has::Sugar" => "0.05070421",
@@ -107,13 +107,15 @@ my %module_build_args = (
     "FindBin" => 0,
     "Git::Wrapper" => "0.030",
     "JSON" => "2.90",
-    "Module::Build" => "0.4008",
+    "Module::Build" => "0.4200",
     "Path::Class" => "0.32",
     "Test::DZil" => "5.006",
     "Test::Fatal" => "0.013",
     "Test::File::ShareDir" => "v0.3.3",
     "Test::More" => "1.001002",
-    "Test::Output" => "1.02"
+    "Test::Output" => "1.02",
+    "lib" => "0.63",
+    "tshare" => 0
   }
 );
 
@@ -124,13 +126,15 @@ my %fallback_build_requires = (
   "FindBin" => 0,
   "Git::Wrapper" => "0.030",
   "JSON" => "2.90",
-  "Module::Build" => "0.4008",
+  "Module::Build" => "0.4200",
   "Path::Class" => "0.32",
   "Test::DZil" => "5.006",
   "Test::Fatal" => "0.013",
   "Test::File::ShareDir" => "v0.3.3",
   "Test::More" => "1.001002",
-  "Test::Output" => "1.02"
+  "Test::Output" => "1.02",
+  "lib" => "0.63",
+  "tshare" => 0
 );
 
 
