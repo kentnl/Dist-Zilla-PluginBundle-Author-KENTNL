@@ -1,11 +1,16 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.002001 2013-11-18T03:17:38Z
+2.002001 2013-11-18T03:19:12Z
+ [00 Bugfix]
+ - Use Module::Metadata to get Module::Build version ( avoid bugs with
+   mantissa shortening in tests )
+ - Refactor code to share more logic
+
  [Dependencies::Added / test requires]
  - Module::Metadata 1.000019
  - Path::Class::Dir 0.32
  - Path::Tiny 0.044
- - lib 0.63
+ - lib
 
  [Dependencies::Changed / build requires]
  - Module::Build 0.4008 → 0.4200
