@@ -158,7 +158,7 @@ EOF
     sub {
       $exception = exception {
         require File::pushd;
-        $target = File::pushd::pushd( dir( $bzil->tempdir )->subdir('build') );
+        $target = File::pushd::pushd( $bzil->tempdir->subdir('build') );
         system( $^X , 'Build.PL' ) and die "error with Build.PL\n";
         system( $^X , 'Build' )    and die "error running $^X Build\n";
         system( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
