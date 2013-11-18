@@ -4,31 +4,19 @@ use warnings;
 
 use Test::More;
 use FindBin;
-use Path::Class qw( dir );
 use Test::Output qw();
 use JSON qw( from_json );
 
-my ( $root, $corpus, $global );
+use lib 't/lib';
+use tshare;
 
-BEGIN {
-  $root   = dir("$FindBin::Bin")->parent->absolute;
-  $corpus = $root->subdir('corpus');
-  $global = $corpus->subdir('global');
-}
-
-$ENV{'GIT_AUTHOR_NAME'}  = $ENV{'GIT_COMMITTER_NAME'}  = 'Anon Y. Mus';
-$ENV{'GIT_AUTHOR_EMAIL'} = $ENV{'GIT_COMMITTER_EMAIL'} = 'anonymus@example.org';
-
-use Test::File::ShareDir 0.3.0 -share =>
-  { -module => { 'Dist::Zilla::MintingProfile::Author::KENTNL' => $root->subdir('share')->subdir('profiles') }, };
 use Test::DZil;
 
 my $tzil;
 
 subtest 'mint files' => sub {
 
-  $tzil =
-    Minter->_new_from_profile( [ 'Author::KENTNL' => 'moo' ], { name => 'DZT-Minty', }, { global_config_root => $global }, );
+  $tzil = tshare->mk_minter('moo');
 
   pass('Loaded minter config');
 
@@ -150,7 +138,7 @@ EOF
 
   };
 
-  my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => $global }, );
+  my $bzil = Builder->from_config( { dist_root => $tmpdir }, {}, { global_config_root => tshare->global }, );
 
   pass("Loaded builder configuration");
 
@@ -170,7 +158,7 @@ EOF
     sub {
       $exception = exception {
         require File::pushd;
-        $target = File::pushd::pushd( dir( $bzil->tempdir )->subdir('build') );
+        $target = File::pushd::pushd( $bzil->tempdir->subdir('build') );
         system( $^X , 'Build.PL' ) and die "error with Build.PL\n";
         system( $^X , 'Build' )    and die "error running $^X Build\n";
         system( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
@@ -231,18 +219,22 @@ EOF
     ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
   }
 
-  my $data = from_json( dir( $bzil->tempdir )->subdir('build')->file('META.json')->slurp() );
+  my $data = from_json( $bzil->tempdir->subdir('build')->file('META.json')->slurp() );
 
   note explain $data;
   require version;
-  require Module::Build;
 
-  is_deeply( $data->{prereqs}->{build}->{requires}, { 'Module::Build' => $Module::Build::VERSION }, 'prereqs.build is sane' );
+  is_deeply(
+    $data->{prereqs}->{build}->{requires},
+    { 'Module::Build' => tshare->module_build_version() },
+    'prereqs.build is sane'
+  );
   is_deeply(
     $data->{prereqs}->{configure}->{requires},
-    { 'Module::Build' => $Module::Build::VERSION },
+    { 'Module::Build' => tshare->module_build_version() },
     'prereqs.configure is sane'
   );
+
 };
 
 done_testing;
