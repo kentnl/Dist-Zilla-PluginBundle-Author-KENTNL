@@ -128,9 +128,7 @@
             "FindBin" : "0",
             "Git::Wrapper" : "0.030",
             "JSON" : "2.90",
-            "Module::Build" : "0.4200",
             "Module::Metadata" : "1.000019",
-            "Path::Class" : "0.32",
             "Path::Class::Dir" : "0.32",
             "Path::Tiny" : "0.044",
             "Test::DZil" : "5.006",
@@ -246,7 +244,6 @@
          "MooseX::Has::Sugar" : "0.05070421",
          "MooseX::Types" : "0.38",
          "Net::SSLeay" : "1.55",
-         "Path::Class" : "0.32",
          "Path::Class::Dir" : "0.32",
          "Path::Tiny" : "0.044",
          "Perl::PrereqScanner" : "1.018",
@@ -430,10 +427,10 @@
             "config" : {
                "Dist::Zilla::Plugin::Test::Compile::PerFile" : {
                   "file" : [
+                     "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
                      "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
                      "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-                     "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-                     "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm"
+                     "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm"
                   ],
                   "path_translator" : "base64_filter",
                   "prefix" : "t/00-compile",
@@ -620,7 +617,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
             "name" : "@Author::KENTNL/Author::KENTNL::MinimumPerl",
-            "version" : "2.002001"
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::Authority",

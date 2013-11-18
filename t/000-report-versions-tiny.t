@@ -113,7 +113,6 @@ eval { $v .= pmver('Moose','2.1005') };
 eval { $v .= pmver('MooseX::Has::Sugar','0.05070421') };
 eval { $v .= pmver('MooseX::Types','0.38') };
 eval { $v .= pmver('Net::SSLeay','1.55') };
-eval { $v .= pmver('Path::Class','0.32') };
 eval { $v .= pmver('Path::Class::Dir','0.32') };
 eval { $v .= pmver('Path::Tiny','0.044') };
 eval { $v .= pmver('Perl::PrereqScanner','1.018') };
