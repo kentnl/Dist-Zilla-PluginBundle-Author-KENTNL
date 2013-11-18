@@ -219,7 +219,7 @@ EOF
     ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
   }
 
-  my $data = from_json( dir( $bzil->tempdir )->subdir('build')->file('META.json')->slurp() );
+  my $data = from_json( $bzil->tempdir->subdir('build')->file('META.json')->slurp() );
 
   note explain $data;
   require version;
