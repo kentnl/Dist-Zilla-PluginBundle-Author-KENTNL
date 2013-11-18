@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.002001 2013-11-18T03:19:48Z
+2.002001 2013-11-18T03:36:33Z
  [00 Bugfix]
  - Use Module::Metadata to get Module::Build version ( avoid bugs with
    mantissa shortening in tests )
