@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.002001 2013-11-18T03:17:20Z
+2.002001 2013-11-18T03:17:38Z
  [Dependencies::Added / test requires]
  - Module::Metadata 1.000019
  - Path::Class::Dir 0.32
