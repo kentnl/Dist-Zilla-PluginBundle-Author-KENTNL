@@ -1,6 +1,26 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.002001 2013-11-18T03:15:18Z
+2.002001 2013-11-18T03:17:20Z
+ [Dependencies::Added / test requires]
+ - Module::Metadata 1.000019
+ - Path::Class::Dir 0.32
+ - Path::Tiny 0.044
+ - lib 0.63
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.4008 → 0.4200
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.4008 → 0.4200
+
+ [Dependencies::Changed / runtime requires]
+ - Dist::Zilla::Plugin::PodWeaver 4.001 → 4.002
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.001000 → 0.001001
+ - IO::Socket::SSL 1.956 → 1.960
+
+ [Dependencies::Removed / test requires]
+ - Module::Build 0.4008
+ - Path::Class 0.32
 
 2.002000 2013-11-11T11:09:48Z
  [00 Minor]

@@ -17,7 +17,7 @@ build_requires:
   Test::File::ShareDir: v0.3.3
   Test::More: 1.001002
   Test::Output: 1.02
-  lib: 0.63
+  lib: 0
 configure_requires:
   Module::Build: 0.4200
 dynamic_config: 0
@@ -658,6 +658,7 @@ x_Dist_Zilla:
           exclude:
             - Dist::Zilla::Plugin::Authority
             - blib
+            - lib
             - strict
             - warnings
             - FindBin

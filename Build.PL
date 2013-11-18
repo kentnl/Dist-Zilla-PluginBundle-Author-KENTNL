@@ -115,7 +115,7 @@ my %module_build_args = (
     "Test::File::ShareDir" => "v0.3.3",
     "Test::More" => "1.001002",
     "Test::Output" => "1.02",
-    "lib" => "0.63"
+    "lib" => 0
   }
 );
 
@@ -135,7 +135,7 @@ my %fallback_build_requires = (
   "Test::File::ShareDir" => "v0.3.3",
   "Test::More" => "1.001002",
   "Test::Output" => "1.02",
-  "lib" => "0.63"
+  "lib" => 0
 );
 
 
