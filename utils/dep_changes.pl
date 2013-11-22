@@ -55,7 +55,7 @@ my $changes_dev = CPAN::Changes->new();
 
 my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/{{\$NEXT}}/ );
 
-while ( @tags > 2 ) {
+while ( @tags > 1 ) {
   my ( $old, $new ) = ( $tags[-2], $tags[-1] );
   pop @tags;
 
