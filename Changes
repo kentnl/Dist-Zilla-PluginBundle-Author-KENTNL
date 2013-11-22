@@ -1,6 +1,12 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - change diff tool augmented to inject statistics into Changes where
+   relevant
+ - change diff tool auto injects references into Changes
+ - change diff tool now +x
+
  [Dependencies::Stats]
  - Dependencies changed, see Changes.deps{,.all,.dev} for details
  - develop: ↑1
