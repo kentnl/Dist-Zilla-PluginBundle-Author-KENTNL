@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.002002 2013-11-22T00:12:30Z
+2.003000 2013-11-22T00:22:08Z
  [00 Minor]
  - New utility to generate Prereq changes by iterating git tags.
  - All non-dev prereq changes → Changes.deps
@@ -12,7 +12,7 @@
  - Use Module::Metadata to get Module::Build version ( avoid bugs with
    mantissa shortening in tests )
  - Refactor code to share more logic
- 
+
 2.002000 2013-11-11T11:09:48Z
  [00 Minor]
  - Swap out Test::Compile with Test::Compile::PerFile, which is marginally
@@ -66,7 +66,6 @@
  - stop loading modules, Dzil does that for us, and doing so inhibits
    modules that reverse-engineer bundles
  - stop using autobox, its slow and inhibits us from dropping Moose
-
 
 1.8.0 2013-08-08T00:57:13Z
  [!Major]
@@ -144,7 +143,6 @@
 1.4.2 2012-07-07T15:40:38Z
 
 1.4.0 2012-04-11T20:24:43Z
-
  [Features]
  - moved from GatherDir to Git::GatherDir, faster, and less prone to
    picking up cruft.
