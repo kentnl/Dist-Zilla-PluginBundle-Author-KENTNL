@@ -30,16 +30,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: 2.003000
+    version: 2.003001
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 2.003000
+    version: 2.003001
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: 2.003000
+    version: 2.003001
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: 2.003000
+    version: 2.003001
 requires:
   Carp: 0
   Dist::Zilla: 5.006
@@ -116,7 +116,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 2.003000
+version: 2.003001
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.23
@@ -195,7 +195,7 @@ x_BuiltWith:
     Perl::PrereqScanner: 1.018
     Pod::Coverage::TrustPod: 0.100003
     String::Formatter: 0.102084
-    Test::CPAN::Changes: 0.25
+    Test::CPAN::Changes: 0.26
     Test::CPAN::Meta: 0.23
     Test::DZil: 5.006
     Test::EOL: 1.5
@@ -487,7 +487,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 2.003000
+      version: ~
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
