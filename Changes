@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.003000 2013-11-22T00:30:56Z
  [00 Minor]
  - New utility to generate Prereq changes by iterating git tags.
  - All non-dev prereq changes → Changes.deps
