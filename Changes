@@ -3,7 +3,7 @@
 {{$NEXT}}
  [00 Bugfix]
  - Don't keep trying to parse tree data if no tree data responds to a path
-
+ - Skip tags that are not versions
 
 2.004000 2013-11-22T03:04:44Z
  [00 Minor]

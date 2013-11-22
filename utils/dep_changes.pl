@@ -26,6 +26,9 @@ my @tags;
 
 for my $tag ( $git->tag() ) {
   next if $tag =~ /-source$/;
+  if ( not eval { version->parse($tag); 1 } ) {
+    print "tag $tag skipped";
+  }
   push @tags, $tag;
 
   #print "$tag\n";
