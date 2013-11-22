@@ -47,6 +47,7 @@ use CPAN::Changes;
 
 my $changes     = CPAN::Changes->new();
 my $changes_all = CPAN::Changes->new();
+my $changes_dev = CPAN::Changes->new();
 
 my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8 );
 
@@ -68,6 +69,7 @@ while ( @tags > 2 ) {
   };
   $changes->add_release(     {%$params} );
   $changes_all->add_release( {%$params} );
+  $changes_dev->add_release( {%$params} );
 
   my $old_meta_sha1 = file_sha( $old, 'META.json' );
   my $new_meta_sha1 = file_sha( $new, 'META.json' );
@@ -99,8 +101,12 @@ while ( @tags > 2 ) {
     if ( $key !~ /develop/ ) {
       $changes->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
     }
+    else {
+      $changes_dev->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
+    }
   }
 }
 path('./Changes.deps.all')->spew_utf8( $changes_all->serialize );
 path('./Changes.deps')->spew_utf8( $changes->serialize );
+path('./Changes.deps.dev')->spew_utf8( $changes_dev->serialize );
 
