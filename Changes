@@ -363,7 +363,7 @@
 
 1.0.22 2011-10-07T21:14:49Z
  [Dependencies]
- - Update dependency on ::Twitter for TRIAL support. 
+ - Update dependency on ::Twitter for TRIAL support.
 
  [Dependencies::Stats]
  - Dependencies changed, see Changes.deps{,.all,.dev} for details
