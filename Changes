@@ -1,170 +1,27 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.003000 2013-11-22T00:30:56Z
+ [00 Minor]
+ - New utility to generate Prereq changes by iterating git tags.
+ - All non-dev prereq changes → Changes.deps
+ - All prereq changes including dev → Changes.deps.all
+ - All dev prereq changes → Changes.deps.dev
+ - Changelog retroactively tidied
+
 2.002001 2013-11-18T03:36:33Z
  [00 Bugfix]
  - Use Module::Metadata to get Module::Build version ( avoid bugs with
    mantissa shortening in tests )
  - Refactor code to share more logic
 
- [Dependencies::Added / test requires]
- - Module::Metadata 1.000019
- - Path::Class::Dir 0.32
- - Path::Tiny 0.044
- - lib
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4008 → 0.4200
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4008 → 0.4200
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::PodWeaver 4.001 → 4.002
- - Dist::Zilla::Plugin::Test::Compile::PerFile 0.001000 → 0.001001
- - IO::Socket::SSL 1.956 → 1.960
-
- [Dependencies::Removed / test requires]
- - Module::Build 0.4008
- - Path::Class 0.32
-
 2.002000 2013-11-11T11:09:48Z
  [00 Minor]
  - Swap out Test::Compile with Test::Compile::PerFile, which is marginally
    faster.
 
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Test::Compile::PerFile 0.001000
-
- [Dependencies::Changed / develop requires]
- - Dist::Zilla 5.005 → 5.006
- - Dist::Zilla::Plugin::ModuleShareDirs 5.005 → 5.006
- - Dist::Zilla::Plugin::Prereqs 5.005 → 5.006
- - Pod::Coverage::TrustPod 0.100002 → 0.100003
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla 5.005 → 5.006
- - Dist::Zilla::File::FromCode 5.005 → 5.006
- - Dist::Zilla::Plugin::AutoPrereqs 5.005 → 5.006
- - Dist::Zilla::Plugin::ConfirmRelease 5.005 → 5.006
- - Dist::Zilla::Plugin::License 5.005 → 5.006
- - Dist::Zilla::Plugin::Manifest 5.005 → 5.006
- - Dist::Zilla::Plugin::ManifestSkip 5.005 → 5.006
- - Dist::Zilla::Plugin::MetaConfig 5.005 → 5.006
- - Dist::Zilla::Plugin::MetaJSON 5.005 → 5.006
- - Dist::Zilla::Plugin::MetaTests 5.005 → 5.006
- - Dist::Zilla::Plugin::MetaYAML 5.005 → 5.006
- - Dist::Zilla::Plugin::ModuleBuild 5.005 → 5.006
- - Dist::Zilla::Plugin::NextRelease 5.005 → 5.006
- - Dist::Zilla::Plugin::PkgVersion 5.005 → 5.006
- - Dist::Zilla::Plugin::PodCoverageTests 5.005 → 5.006
- - Dist::Zilla::Plugin::PodSyntaxTests 5.005 → 5.006
- - Dist::Zilla::Plugin::Prereqs 5.005 → 5.006
- - Dist::Zilla::Plugin::PruneCruft 5.005 → 5.006
- - Dist::Zilla::Plugin::TestRelease 5.005 → 5.006
- - Dist::Zilla::Plugin::UploadToCPAN 5.005 → 5.006
- - Dist::Zilla::Role::FileGatherer 5.005 → 5.006
- - Dist::Zilla::Role::MintingProfile::ShareDir 5.005 → 5.006
- - Dist::Zilla::Role::PluginBundle 5.005 → 5.006
- - IO::Socket::SSL 1.955 → 1.956
- - Pod::Coverage::TrustPod 0.100002 → 0.100003
- - String::Formatter 0.102082 → 0.102084
-
- [Dependencies::Changed / test requires]
- - Test::DZil 5.005 → 5.006
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::Test::Compile 2.037
-
- [Dependencies::Removed / test requires]
- - File::Spec
- - IO::Handle
- - IPC::Open3
-
 2.001000 2013-11-05T09:25:27Z
  [00 Minor]
  - Reasonably sizeable tooling changes to propagate more develop deps
-
- [Dependencies::Added / develop requires]
- - Dist::Zilla 5.005
- - Dist::Zilla::Plugin::Bootstrap::lib 0.04000001
- - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.009
- - Dist::Zilla::Plugin::ModuleShareDirs 5.005
- - Dist::Zilla::Plugin::Prereqs 5.005
- - Dist::Zilla::Plugin::Prereqs::AuthorDeps 0.002
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.2
- - Dist::Zilla::Plugin::RemovePhasedPrereqs 0.002
-
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Role::BundleDeps 0.001000
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4007 → 0.4008
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4007 → 0.4008
-
- [Dependencies::Changed / develop requires]
- - Test::Kwalitee 1.15 → 1.17
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla 4.300039 → 5.005
- - Dist::Zilla::File::FromCode 4.300039 → 5.005
- - Dist::Zilla::Plugin::AutoPrereqs 4.300039 → 5.005
- - Dist::Zilla::Plugin::CheckExtraTests 0.011 → 0.015
- - Dist::Zilla::Plugin::ConfirmRelease 4.300039 → 5.005
- - Dist::Zilla::Plugin::Git::Check 2.014 → 2.017
- - Dist::Zilla::Plugin::Git::Commit 2.014 → 2.017
- - Dist::Zilla::Plugin::Git::CommitBuild 2.014 → 2.017
- - Dist::Zilla::Plugin::Git::GatherDir 2.014 → 2.017
- - Dist::Zilla::Plugin::Git::NextVersion 2.014 → 2.017
- - Dist::Zilla::Plugin::Git::Tag 2.014 → 2.017
- - Dist::Zilla::Plugin::License 4.300039 → 5.005
- - Dist::Zilla::Plugin::Manifest 4.300039 → 5.005
- - Dist::Zilla::Plugin::ManifestSkip 4.300039 → 5.005
- - Dist::Zilla::Plugin::MetaConfig 4.300039 → 5.005
- - Dist::Zilla::Plugin::MetaJSON 4.300039 → 5.005
- - Dist::Zilla::Plugin::MetaTests 4.300039 → 5.005
- - Dist::Zilla::Plugin::MetaYAML 4.300039 → 5.005
- - Dist::Zilla::Plugin::ModuleBuild 4.300039 → 5.005
- - Dist::Zilla::Plugin::NextRelease 4.300039 → 5.005
- - Dist::Zilla::Plugin::PkgVersion 4.300039 → 5.005
- - Dist::Zilla::Plugin::PodCoverageTests 4.300039 → 5.005
- - Dist::Zilla::Plugin::PodSyntaxTests 4.300039 → 5.005
- - Dist::Zilla::Plugin::PodWeaver 3.102000 → 4.001
- - Dist::Zilla::Plugin::Prereqs 4.300039 → 5.005
- - Dist::Zilla::Plugin::PruneCruft 4.300039 → 5.005
- - Dist::Zilla::Plugin::ReadmeFromPod 0.18 → 0.21
- - Dist::Zilla::Plugin::Test::Compile 2.034 → 2.037
- - Dist::Zilla::Plugin::Test::Kwalitee 2.06 → 2.07
- - Dist::Zilla::Plugin::TestRelease 4.300039 → 5.005
- - Dist::Zilla::Plugin::Twitter 0.022 → 0.023
- - Dist::Zilla::Plugin::UploadToCPAN 4.300039 → 5.005
- - Dist::Zilla::Role::FileGatherer 4.300039 → 5.005
- - Dist::Zilla::Role::MintingProfile::ShareDir 4.300039 → 5.005
- - Dist::Zilla::Role::PluginBundle 4.300039 → 5.005
- - Dist::Zilla::Util::EmulatePhase 0.01025802 → 0.01025803
- - Perl::PrereqScanner 1.017 → 1.018
-
- [Dependencies::Changed / test requires]
- - Capture::Tiny 0.22 → 0.23
- - JSON 2.59 → 2.90
- - Module::Build 0.4007 → 0.4008
- - Test::DZil 4.300039 → 5.005
- - Test::More 0.98 → 1.001002
-
- [Dependencies::Removed / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.000000
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.009
- - Dist::Zilla::Plugin::FakeRelease 4.300039
- - Dist::Zilla::Plugin::FinderCode 4.300039
- - Dist::Zilla::Plugin::MetaProvides 1.15000000
- - Dist::Zilla::Plugin::ModuleShareDirs 4.300039
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.2
- - Dist::Zilla::Plugin::Prereqs::Plugins v0.1.3
- - Dist::Zilla::Plugin::Prereqs::SyncVersions 0.001000
- - Pod::Weaver::Plugin::Encoding 0.01
 
 2.000000 2013-10-12T05:23:24Z
  [00 Major]
@@ -172,23 +29,6 @@
  - If you are downstream and this breaks things, please learn to normalise
    upstream versions.
  - Default versioning scheme for new dists is now single-decimal.
-
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Prereqs::SyncVersions 0.001000
-
- [Dependencies::Changed / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.9.0 → 2.000000
- - Test::CPAN::Changes 0.23 → 0.25
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::GithubMeta 0.38 → 0.42
- - Dist::Zilla::Plugin::ReportVersions::Tiny 1.09 → 1.10
- - Dist::Zilla::Plugin::Test::Compile 2.033 → 2.034
- - Dist::Zilla::Plugin::Twitter 0.021 → 0.022
- - IO::Socket::SSL 1.954 → 1.955
- - Perl::PrereqScanner 1.016 → 1.017
- - namespace::autoclean 0.13 → 0.14
- - perl v5.10.0 → 5.006
 
 1.9.0 2013-09-26T12:07:46Z
  [00 Major]
@@ -200,145 +40,20 @@
    bundle can be somewhat used to work on consuming things, as long as you
    edit the right dist.ini's to make it so.
 
- [Dependencies::Added / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.9.0
-
- [Dependencies::Added / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.7.2
-
- [Dependencies::Removed / develop recommends]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.7.2
-
- [Dependencies::Removed / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.7.2
-
- [Dependencies::Removed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.4
-
 1.8.4 2013-09-26T11:16:23Z
  [Bugfix / Minor]
  - Update to avoid Win32 Test::Compile issues.
  - Add a strip eol util
  - Remove EOL from generated dist.ini
 
- [Dependencies::Added / test requires]
- - File::Spec
- - Module::Build 0.4007
-
- [Dependencies::Changed / develop recommends]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0 → v1.7.2
-
- [Dependencies::Changed / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0 → v1.7.2
- - Test::Kwalitee 1.13 → 1.15
- - version 0.9903 → 0.9904
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.3 → v1.8.4
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla 4.300037 → 4.300039
- - Dist::Zilla::File::FromCode 4.300037 → 4.300039
- - Dist::Zilla::Plugin::AutoPrereqs 4.300037 → 4.300039
- - Dist::Zilla::Plugin::Bootstrap::lib 0.02000100 → 0.04000001
- - Dist::Zilla::Plugin::ConfirmRelease 4.300037 → 4.300039
- - Dist::Zilla::Plugin::FakeRelease 4.300037 → 4.300039
- - Dist::Zilla::Plugin::FinderCode 4.300037 → 4.300039
- - Dist::Zilla::Plugin::GithubMeta 0.32 → 0.38
- - Dist::Zilla::Plugin::License 4.300037 → 4.300039
- - Dist::Zilla::Plugin::Manifest 4.300037 → 4.300039
- - Dist::Zilla::Plugin::ManifestSkip 4.300037 → 4.300039
- - Dist::Zilla::Plugin::MetaConfig 4.300037 → 4.300039
- - Dist::Zilla::Plugin::MetaData::BuiltWith 0.03000100 → 0.04000000
- - Dist::Zilla::Plugin::MetaJSON 4.300037 → 4.300039
- - Dist::Zilla::Plugin::MetaProvides 1.14000001 → 1.15000000
- - Dist::Zilla::Plugin::MetaProvides::Package 1.14000003 → 1.15000000
- - Dist::Zilla::Plugin::MetaTests 4.300037 → 4.300039
- - Dist::Zilla::Plugin::MetaYAML 4.300037 → 4.300039
- - Dist::Zilla::Plugin::ModuleBuild 4.300037 → 4.300039
- - Dist::Zilla::Plugin::ModuleShareDirs 4.300037 → 4.300039
- - Dist::Zilla::Plugin::NextRelease 4.300037 → 4.300039
- - Dist::Zilla::Plugin::PkgVersion 4.300037 → 4.300039
- - Dist::Zilla::Plugin::PodCoverageTests 4.300037 → 4.300039
- - Dist::Zilla::Plugin::PodSyntaxTests 4.300037 → 4.300039
- - Dist::Zilla::Plugin::PodWeaver 3.101642 → 3.102000
- - Dist::Zilla::Plugin::Prereqs 4.300037 → 4.300039
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled v0.1.1 → v0.1.4
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.0 → v0.1.2
- - Dist::Zilla::Plugin::Prereqs::Plugins v0.1.0 → v0.1.3
- - Dist::Zilla::Plugin::PruneCruft 4.300037 → 4.300039
- - Dist::Zilla::Plugin::Test::Compile 2.023 → 2.033
- - Dist::Zilla::Plugin::TestRelease 4.300037 → 4.300039
- - Dist::Zilla::Plugin::UploadToCPAN 4.300037 → 4.300039
- - Dist::Zilla::Role::FileGatherer 4.300037 → 4.300039
- - Dist::Zilla::Role::MintingProfile::ShareDir 4.300037 → 4.300039
- - Dist::Zilla::Role::PluginBundle 4.300037 → 4.300039
- - IO::Socket::SSL 1.953 → 1.954
- - MooseX::Types 0.36 → 0.38
- - version 0.9903 → 0.9904
-
- [Dependencies::Changed / test requires]
- - Test::DZil 4.300037 → 4.300039
- - Test::Fatal 0.010 → 0.013
-
 1.8.3 2013-08-30T20:30:21Z
  [!Minor]
  - Revert some far too aggressive version bumps on core things.
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.2 → v1.8.3
-
- [Dependencies::Changed / test requires]
- - IO::Handle 1.34 → 0
- - IPC::Open3 1.13 → 0
 
 1.8.2 2013-08-30T20:05:35Z
  [!Minor]
  - Ramping all Dzil deps to latest
  - Bumping to get newer Test::Compile test
-
- [Dependencies::Added / test requires]
- - IO::Handle 1.34
- - IPC::Open3 1.13
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.1 → v1.8.2
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla 4.300035 → 4.300037
- - Dist::Zilla::File::FromCode 4.300035 → 4.300037
- - Dist::Zilla::Plugin::AutoPrereqs 4.300035 → 4.300037
- - Dist::Zilla::Plugin::ConfirmRelease 4.300035 → 4.300037
- - Dist::Zilla::Plugin::FakeRelease 4.300035 → 4.300037
- - Dist::Zilla::Plugin::FinderCode 4.300035 → 4.300037
- - Dist::Zilla::Plugin::GithubMeta 0.30 → 0.32
- - Dist::Zilla::Plugin::License 4.300035 → 4.300037
- - Dist::Zilla::Plugin::Manifest 4.300035 → 4.300037
- - Dist::Zilla::Plugin::ManifestSkip 4.300035 → 4.300037
- - Dist::Zilla::Plugin::MetaConfig 4.300035 → 4.300037
- - Dist::Zilla::Plugin::MetaJSON 4.300035 → 4.300037
- - Dist::Zilla::Plugin::MetaTests 4.300035 → 4.300037
- - Dist::Zilla::Plugin::MetaYAML 4.300035 → 4.300037
- - Dist::Zilla::Plugin::ModuleBuild 4.300035 → 4.300037
- - Dist::Zilla::Plugin::ModuleShareDirs 4.300035 → 4.300037
- - Dist::Zilla::Plugin::NextRelease 4.300035 → 4.300037
- - Dist::Zilla::Plugin::PkgVersion 4.300035 → 4.300037
- - Dist::Zilla::Plugin::PodCoverageTests 4.300035 → 4.300037
- - Dist::Zilla::Plugin::PodSyntaxTests 4.300035 → 4.300037
- - Dist::Zilla::Plugin::Prereqs 4.300035 → 4.300037
- - Dist::Zilla::Plugin::PruneCruft 4.300035 → 4.300037
- - Dist::Zilla::Plugin::Test::Compile 2.018 → 2.023
- - Dist::Zilla::Plugin::TestRelease 4.300035 → 4.300037
- - Dist::Zilla::Plugin::UploadToCPAN 4.300035 → 4.300037
- - Dist::Zilla::Role::FileGatherer 4.300035 → 4.300037
- - Dist::Zilla::Role::MintingProfile::ShareDir 4.300035 → 4.300037
- - Dist::Zilla::Role::PluginBundle 4.300035 → 4.300037
-
- [Dependencies::Changed / test requires]
- - Test::DZil 4.300035 → 4.300037
-
- [Dependencies::Removed / test requires]
- - blib
 
  [Utils]
  - new utility utils/cpan_changes_markdown.pl
@@ -353,24 +68,6 @@
    modules that reverse-engineer bundles
  - stop using autobox, its slow and inhibits us from dropping Moose
 
- [Dependencies::Added / develop requires]
- - Test::Kwalitee 1.13
-
- [Dependencies::Changed / develop requires]
- - Test::CPAN::Changes 0.22 → 0.23
- - version 0.9902 → 0.9903
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.0 → v1.8.1
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::Test::Kwalitee 2.03 → 2.06
- - version 0.9902 → 0.9903
-
- [Dependencies::Removed / runtime requires]
- - Class::Load 0.20
- - Moose::Autobox 0.13
-
 1.8.0 2013-08-08T00:57:13Z
  [!Major]
  - The way dependencies are declared for this module are aggressively
@@ -378,161 +75,21 @@
    mostly to smoke out any dependencies that need to be added to the
    exclusion list.
 
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.009
- - Dist::Zilla::Plugin::FinderCode 4.300035
- - Dist::Zilla::Plugin::Git::Commit 2.014
- - Dist::Zilla::Plugin::ModuleShareDirs 4.300035
- - Dist::Zilla::Plugin::NextRelease 4.300035
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.0
- - Dist::Zilla::Plugin::Prereqs::Plugins v0.1.0
-
- [Dependencies::Changed / develop requires]
- - Pod::Coverage::TrustPod 0 → 0.100002
- - Test::CPAN::Changes 0.19 → 0.22
- - Test::CPAN::Meta 0 → 0.23
- - Test::Pod 1.41 → 1.48
- - version 0.9901 → 0.9902
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.7 → v1.3.0
-
- [Dependencies::Changed / runtime requires]
- - Class::Load 0 → 0.20
- - Dist::Zilla 4.300029 → 4.300035
- - Dist::Zilla::File::FromCode 0 → 4.300035
- - Dist::Zilla::Plugin::AutoPrereqs 4.300029 → 4.300035
- - Dist::Zilla::Plugin::ConfirmRelease 4.300029 → 4.300035
- - Dist::Zilla::Plugin::FakeRelease 4.300029 → 4.300035
- - Dist::Zilla::Plugin::Git::Check 2.009 → 2.014
- - Dist::Zilla::Plugin::Git::CommitBuild 2.009 → 2.014
- - Dist::Zilla::Plugin::Git::GatherDir 2.009 → 2.014
- - Dist::Zilla::Plugin::Git::NextVersion 2.009 → 2.014
- - Dist::Zilla::Plugin::Git::Tag 2.009 → 2.014
- - Dist::Zilla::Plugin::License 4.300029 → 4.300035
- - Dist::Zilla::Plugin::Manifest 4.300029 → 4.300035
- - Dist::Zilla::Plugin::ManifestSkip 4.300029 → 4.300035
- - Dist::Zilla::Plugin::MetaConfig 4.300029 → 4.300035
- - Dist::Zilla::Plugin::MetaJSON 4.300029 → 4.300035
- - Dist::Zilla::Plugin::MetaTests 4.300029 → 4.300035
- - Dist::Zilla::Plugin::MetaYAML 4.300029 → 4.300035
- - Dist::Zilla::Plugin::MinimumPerl 0 → 1.003
- - Dist::Zilla::Plugin::ModuleBuild 4.300029 → 4.300035
- - Dist::Zilla::Plugin::PkgVersion 4.300029 → 4.300035
- - Dist::Zilla::Plugin::PodCoverageTests 4.300029 → 4.300035
- - Dist::Zilla::Plugin::PodSyntaxTests 4.300029 → 4.300035
- - Dist::Zilla::Plugin::Prereqs 4.300029 → 4.300035
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled v0.1.0 → v0.1.1
- - Dist::Zilla::Plugin::PruneCruft 4.300029 → 4.300035
- - Dist::Zilla::Plugin::TestRelease 4.300029 → 4.300035
- - Dist::Zilla::Plugin::UploadToCPAN 4.300029 → 4.300035
- - Dist::Zilla::Role::FileGatherer 0 → 4.300035
- - Dist::Zilla::Role::MintingProfile::ShareDir 0 → 4.300035
- - Dist::Zilla::Role::PluginBundle 0 → 4.300035
- - IO::Socket::SSL 1.81 → 1.953
- - LWP::Protocol::https 6.00 → 6.04
- - Moose 1.01 → 2.1005
- - Moose::Autobox 0 → 0.13
- - MooseX::Has::Sugar 0.05044 → 0.05070421
- - MooseX::Types 0.21 → 0.36
- - Net::SSLeay 1.36 → 1.55
- - Perl::PrereqScanner 1.006 → 1.016
- - Pod::Coverage::TrustPod 0 → 0.100002
- - String::Formatter 0 → 0.102082
- - Test::CPAN::Meta 0 → 0.23
- - Test::EOL 0.9 → 1.5
- - Test::Perl::Critic 0 → 1.02
- - Test::Pod 0 → 1.48
- - Test::Pod::Coverage 0 → 1.08
- - namespace::autoclean 0.09 → 0.13
- - version 0 → 0.9902
-
- [Dependencies::Changed / test requires]
- - Capture::Tiny 0 → 0.22
- - File::pushd 0 → 1.005
- - Git::Wrapper 0 → 0.030
- - JSON 0 → 2.59
- - Path::Class 0 → 0.32
- - Test::DZil 0 → 4.300035
- - Test::Fatal 0 → 0.010
- - Test::File::ShareDir v0.3.0 → v0.3.3
- - Test::Output 0 → 1.02
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::GatherDir 4.300029
-
 1.7.7 2013-08-07T17:33:54Z
  [BugFix]
  - Accidentally upgraded dependency on Plugin::Authority to a version that
    is not on CPAN. Solved. Thanks to Sander Lepik for reporting.
 
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.6 → v1.7.7
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::Authority 1.007 → 1.006
-
 1.7.6 2013-08-05T07:33:33Z
  [BugFix]
  - Fix test failures introduced by new dependencies
 
- [Dependencies::Added / test requires]
- - blib
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4005 → 0.4007
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4005 → 0.4007
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.5 → v1.7.6
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::Authority 1.006 → 1.007
- - Dist::Zilla::Plugin::CheckExtraTests 0.007 → 0.011
- - Dist::Zilla::Plugin::GithubMeta 0.28 → 0.30
- - Dist::Zilla::Plugin::MetaProvides::Package 1.14000001 → 1.14000003
- - Dist::Zilla::Plugin::PerlTidy 0 → 0.13
- - Dist::Zilla::Plugin::PodWeaver 3.101641 → 3.101642
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled 0 → v0.1.0
- - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.120120 → 0.131500
- - Dist::Zilla::Plugin::ReadmeFromPod 0.16 → 0.18
- - Dist::Zilla::Plugin::ReportVersions::Tiny 1.08 → 1.09
- - Dist::Zilla::Plugin::Test::Compile 1.112820 → 2.018
- - Dist::Zilla::Plugin::Test::MinimumVersion 2.000002 → 2.000005
-
- [Dependencies::Removed / test requires]
- - File::Find
- - File::Temp
-
 1.7.5 2013-08-01T09:48:11Z
  - Minor Changes, backend deps switched.
-
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.4 → v1.7.5
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective v0.1.0
 
 1.7.4 2013-06-13T22:56:08Z
  - Maintenance release
  - ::Twitter bumped for API v1.0 deprecation
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4004 → 0.4005
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4004 → 0.4005
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.3 → v1.7.4
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::Twitter 0.017 → 0.021
 
  [Documentation]
  - Retroactively modernize Changes
@@ -543,27 +100,8 @@
  - Ramp bootstrap::lib
  - add a small arsenal of utils
 
- [Dependencies::Added / develop requires]
- - Test::CPAN::Changes 0.19
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.3.0 → v1.7.3
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::Bootstrap::lib 0.01023601 → 0.02000100
- - Dist::Zilla::Plugin::Test::CPAN::Changes 0.005 → 0.008
-
 1.7.2 2013-04-03T02:39:06Z
  - minor release, packaging / update Module::Build
-
- [Dependencies::Added / runtime requires]
- - Test::Pod
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4003 → 0.4004
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4003 → 0.4004
 
  [Documentation]
  - Sort changes previous.
@@ -574,13 +112,6 @@
 1.7.1 2013-03-13T13:31:16Z
  - Minor release to test changes to DZP:Git
 
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::Git::Check 2.006 → 2.009
- - Dist::Zilla::Plugin::Git::CommitBuild 2.006 → 2.009
- - Dist::Zilla::Plugin::Git::GatherDir 2.006 → 2.009
- - Dist::Zilla::Plugin::Git::NextVersion 2.006 → 2.009
- - Dist::Zilla::Plugin::Git::Tag 2.006 → 2.009
-
  [Documentation]
  - utf8ify changes.
 
@@ -588,55 +119,6 @@
  [!Features]
  - Add README.mkdn to all dists
  - Dependencies Ramped.
-
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::PerlTidy
- - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.120120
- - Test::Pod::Coverage
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla 4.300000 → 4.300029
- - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective
-   0 → v0.1.0
- - Dist::Zilla::Plugin::Authority 0 → 1.006
- - Dist::Zilla::Plugin::AutoPrereqs 4.200011 → 4.300029
- - Dist::Zilla::Plugin::Bootstrap::lib 0 → 0.01023601
- - Dist::Zilla::Plugin::CheckExtraTests 0 → 0.007
- - Dist::Zilla::Plugin::ConfirmRelease 0 → 4.300029
- - Dist::Zilla::Plugin::FakeRelease 0 → 4.300029
- - Dist::Zilla::Plugin::GatherDir 0 → 4.300029
- - Dist::Zilla::Plugin::Git::Check 1.102040 → 2.006
- - Dist::Zilla::Plugin::Git::CommitBuild 1.102040 → 2.006
- - Dist::Zilla::Plugin::Git::GatherDir 1.120970 → 2.006
- - Dist::Zilla::Plugin::Git::NextVersion 1.102810 → 2.006
- - Dist::Zilla::Plugin::Git::Tag 1.102040 → 2.006
- - Dist::Zilla::Plugin::GithubMeta 0.08 → 0.28
- - Dist::Zilla::Plugin::License 0 → 4.300029
- - Dist::Zilla::Plugin::Manifest 0 → 4.300029
- - Dist::Zilla::Plugin::ManifestSkip 0 → 4.300029
- - Dist::Zilla::Plugin::MetaConfig 0 → 4.300029
- - Dist::Zilla::Plugin::MetaJSON 0 → 4.300029
- - Dist::Zilla::Plugin::MetaTests 0 → 4.300029
- - Dist::Zilla::Plugin::MetaYAML 0 → 4.300029
- - Dist::Zilla::Plugin::ModuleBuild 0 → 4.300029
- - Dist::Zilla::Plugin::PkgVersion 0 → 4.300029
- - Dist::Zilla::Plugin::PodCoverageTests 0 → 4.300029
- - Dist::Zilla::Plugin::PodSyntaxTests 0 → 4.300029
- - Dist::Zilla::Plugin::PodWeaver 3.093321 → 3.101641
- - Dist::Zilla::Plugin::Prereqs 0 → 4.300029
- - Dist::Zilla::Plugin::PruneCruft 0 → 4.300029
- - Dist::Zilla::Plugin::ReadmeFromPod 0.12 → 0.16
- - Dist::Zilla::Plugin::ReportVersions::Tiny 1.01 → 1.08
- - Dist::Zilla::Plugin::Test::CPAN::Changes 0 → 0.005
- - Dist::Zilla::Plugin::Test::Compile 1.112400 → 1.112820
- - Dist::Zilla::Plugin::Test::Kwalitee 1.112410 → 2.03
- - Dist::Zilla::Plugin::Test::MinimumVersion 0 → 2.000002
- - Dist::Zilla::Plugin::Test::Perl::Critic 1.102280 → 2.112410
- - Dist::Zilla::Plugin::TestRelease 0 → 4.300029
- - Dist::Zilla::Plugin::Twitter 0.011 → 0.017
- - Dist::Zilla::Plugin::UploadToCPAN 0 → 4.300029
- - IO::Socket::SSL 0 → 1.81
- - Pod::Weaver::Plugin::Encoding 0 → 0.01
 
  [Documentation]
  - Copyright license updated ( Year )
@@ -649,19 +131,6 @@
 1.5.1 2012-11-04T16:03:42Z
  - maintenance release
 
- [Dependencies::Added / develop requires]
- - Pod::Coverage::TrustPod
- - Test::CPAN::Meta
- - Test::Pod 1.41
- - Test::Pod::Coverage 1.08
- - version 0.9901
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4002 → 0.4003
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4002 → 0.4003
-
  [Tests]
  - regenerated t/000-report-versions-tiny.t
 
@@ -671,58 +140,15 @@
    ( inc tests )
 
 1.4.3 2012-07-28T20:37:33Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Util::EmulatePhase 0.01025802
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4001 → 0.4002
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4001 → 0.4002
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::MetaData::BuiltWith 0.03000000 → 0.03000100
- - Dist::Zilla::Plugin::MetaProvides 1.14000000 → 1.14000001
 
 1.4.2 2012-07-07T15:40:38Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective
- - Dist::Zilla::Plugin::Bootstrap::lib
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.3601 → 0.4001
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.3601 → 0.4001
-
- [Dependencies::Changed / test requires]
- - Test::More 0.88 → 0.98
-
- [Dependencies::Removed / develop requires]
- - Dist::Zilla::Plugin::Bootstrap::lib
-
-1.4.1 2012-04-13T03:21:36Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Git::GatherDir 1.120970
 
 1.4.0 2012-04-11T20:24:43Z
- [Dependencies::Added / test requires]
- - Git::Wrapper
-
  [Features]
  - moved from GatherDir to Git::GatherDir, faster, and less prone to
    picking up cruft.
 
 1.3.1 2012-03-12T15:17:53Z
- [Dependencies::Changed / develop recommends]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803 → v1.3.0
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.2.0 → v1.3.0
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::MetaData::BuiltWith 0.02000100 → 0.03000000
-
  [Features]
  - enabled the show_config option of metadata::builtwith
 
@@ -732,24 +158,10 @@
    and no_fiveten=1
 
 1.2.1 2012-02-27T05:12:12Z
- [Dependencies::Added / runtime requires]
- - Test::Perl::Critic
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::MetaData::BuiltWith 0.01014716 → 0.02000100
- - Dist::Zilla::Plugin::MetaProvides 1.12044518 → 1.14000000
- - Dist::Zilla::Plugin::MetaProvides::Package 1.11044404 → 1.14000001
-
  [Packaging]
  - Update LICENSE (Year, Indent)
 
 1.2.0 2011-11-05T06:33:40Z
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.1.0 → v1.2.0
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::AutoVersion::Relative 0.01035617
-
  [Features]
  - Removed twitter-only mode.
  - removed support for autoversion. Git versions now mandatory.
@@ -758,19 +170,8 @@
  - Reorganised plugin configuration.
 
 1.1.1 2011-10-31T04:25:07Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Test::MinimumVersion
 
 1.1.0 2011-10-30T18:18:21Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::MinimumPerl
- - Pod::Weaver::Plugin::Encoding
- - perl v5.10.0
- - version
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 → v1.1.0
-
  [Features]
  - All newly minted dists get [-Encoding] for free
  - All dists now get xt/minimum-version.t
@@ -795,9 +196,6 @@
  - Update dependency on ::Twitter for TRIAL support. (
    1.0.21-source-2-gca0180a )
 
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::Twitter 0.007 → 0.011
-
  [Internals]
  - Now properly creates non-broken URI's on -TRIAL releases.
    ( 1.0.21-source-2-gca0180a )
@@ -807,9 +205,6 @@
  - Tweets URL to the Changelog on MetaCPAN.
 
 1.0.20 2011-09-10T19:45:36Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Authority
-
  [Features]
  - Use Authority.
 
@@ -826,35 +221,7 @@
  - Update Test::Compile to circumvent a bug with __END__
  - Update Test::Kwalitee 1.112410 to avoid a bug with 'plan'
 
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Test::Kwalitee 1.112410
- - Dist::Zilla::Plugin::Test::Perl::Critic 1.102280
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::Test::Compile 1.112392 → 1.112400
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::CriticTests 1.102280
- - Dist::Zilla::Plugin::KwaliteeTests 1.101420
-
- [Dependencies::Removed / runtime suggests]
- - Dist::Zilla::Plugin::Test::Compile 1.112393
-
 1.0.16 2011-08-28T07:59:59Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::CheckExtraTests
- - Dist::Zilla::Plugin::Test::Compile 1.112392
-
- [Dependencies::Added / runtime suggests]
- - Dist::Zilla::Plugin::Test::Compile 1.112393
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::CompileTests 1.110930
- - Dist::Zilla::Plugin::ExtraTests
-
- [Dependencies::Removed / test requires]
- - English
-
  [Packaging]
  - All extra-tests now shipped in xt/ instead of t/, and they're only
    called by Dzil.
@@ -864,23 +231,12 @@
  - Recent Dist::Zilla / Prereq Scanners report strict/warnings which broke
    tests. Fixed now, thanks tjmc.
 
- [Dependencies::Added / runtime requires]
- - Perl::PrereqScanner 1.006
- - strict
- - warnings
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla 4.101612 → 4.300000
-
  [Internals]
  - Versions no longer declared in BEGIN { } # new dzil.
 
 1.0.14 2011-07-18T21:23:49Z
  [Bugs]
  - Reworked handling of auto_prereqs_skip not to carp needlessly.
-
- [Dependencies::Added / test requires]
- - JSON
 
  [Features]
  - Can use multiple values of auto_prereqs_skip now.
@@ -901,9 +257,6 @@
  - Dist::Zilla 4.200011 is now the minimum requirement, as that has the
    adjusted Autoprereqs
 
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::AutoPrereqs 0 → 4.200011
-
  [Packaging]
  - Web metadata now uses HTTPS:// urls.
 
@@ -911,9 +264,6 @@
  [Dependencies]
  - Version explicit dependency added to Test::File::ShareDir 0.3.0 which is
    required for -root to be optional.
-
- [Dependencies::Changed / test requires]
- - Test::File::ShareDir 0 → v0.3.0
 
 1.0.11 2011-07-11T04:56:38Z
  [Tests]
@@ -931,16 +281,6 @@
    sane-ish and doesn't report weirdness.
 
 1.0.9 2011-06-13T23:50:29Z
- [Dependencies::Added / test requires]
- - Capture::Tiny
- - File::pushd
- - FindBin
- - Path::Class
- - Test::DZil
- - Test::Fatal
- - Test::File::ShareDir
- - Test::Output
-
  [Features]
  - Comments out autoversion_relative fields in generated dist.ini as a move
    towards eliminating it.
@@ -965,19 +305,10 @@
  [Dependencies]
  - Depend on LWP::Protocol::https >= 6.0 to make sure ::Twitter works.
 
- [Dependencies::Added / runtime requires]
- - LWP::Protocol::https 6.00
-
  [Utils]
  - Use CPAN::Changes 0.17 instead of hacking it ourself.
 
 1.0.6 2011-04-13T13:15:49Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::Test::CPAN::Changes
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::CPANChangesTests
-
  [Features]
  - Replace CPANChangesTests with Test::CPAN::Changes
 
@@ -998,9 +329,6 @@
  [Dependencies]
  - Upgrade deps to avoid rt#67183
 
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::CompileTests 1.101800 → 1.110930
-
  [Features]
  - Removed extra whitespace padding on injected release stamp lines. This
    results in the generated file being the same as a parsed and
@@ -1010,9 +338,6 @@
  - Rebuilt with rt#67183 test annoyance solved.
 
 1.0.3 2011-04-03T01:00:33Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::CPANChangesTests
-
  [Features]
  - Now generate versions in W3CDTF form for compatibility with CPAN
    Changes.
@@ -1023,24 +348,6 @@
    be more informative.
 
 1.0.2 2011-02-07T14:53:13Z
- [Dependencies::Added / develop recommends]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803
-
- [Dependencies::Added / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite
-
- [Dependencies::Added / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0
-
- [Dependencies::Removed / develop recommends]
- - Dist::Zilla::PluginBundle::KENTNL::Lite 0.01009803
-
- [Dependencies::Removed / develop requires]
- - Dist::Zilla::PluginBundle::KENTNL::Lite
-
- [Dependencies::Removed / develop suggests]
- - Dist::Zilla::PluginBundle::KENTNL v1.0.0
-
  [Documentation]
  - Added a rant section on the Author:: scheme.
  - Cite other authors using the Author:: scheme.
@@ -1049,9 +356,6 @@
  - Moved to being @Author::KENTNL
 
 1.0.1 2011-01-12T19:03:19Z
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::KENTNL 0.01017119 → v1.0.0
-
  [Packaging]
  - Fix the default version to be unpadded. Its useless with padding anyway.
 
@@ -1063,23 +367,11 @@
  - Migrate to Gentoo style version numbers.
 
 0.01023312 2011-01-01T20:01:33Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::AutoPrereqs
- - Dist::Zilla::Plugin::Git::NextVersion 1.102810
- - Dist::Zilla::Plugin::Prereqs
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::AutoPrereq
- - Dist::Zilla::Plugin::PortabilityTests 1.101420
 
 0.01023311 2011-01-01T19:31:37Z
  [BugFixes]
  - Ini generation previously produced "Prereq" instead of the now-standard
    "Prereqs". This is now fixed.
-
- [Dependencies::Added / runtime requires]
- - Class::Load
- - Dist::Zilla::Role::MintingProfile::ShareDir
 
  [Features]
  - Ships now with minting profile 'Author::KENTNL'. New dists can be minted
@@ -1094,21 +386,8 @@
  - Internal Loading code replaced with Class::Load.
 
 0.01017322 2010-11-04T06:56:23Z
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::MetaData::BuiltWith 0.01005122 → 0.01014716
- - Dist::Zilla::Plugin::MetaProvides 1.11034201 → 1.12044518
- - Dist::Zilla::Plugin::MetaProvides::Package 1.11034304 → 1.11044404
 
 0.01017122 2010-11-02T06:00:35Z
- [Dependencies::Added / develop recommends]
- - Dist::Zilla::PluginBundle::KENTNL::Lite 0.01009803
-
- [Dependencies::Added / develop requires]
- - Dist::Zilla::PluginBundle::KENTNL::Lite
-
- [Dependencies::Added / develop suggests]
- - Dist::Zilla::PluginBundle::KENTNL 0.01017119
-
  [Features]
  - Injects PluginBundle dependencies and suggestions for all modules built
    with this as "Develop" time requirements.
@@ -1119,23 +398,10 @@
  - Use Prereqs instead of Prereq in the Bundle.
 
 0.01010423 2010-08-28T07:47:18Z
- [Dependencies::Added / develop requires]
- - Dist::Zilla::Plugin::Bootstrap::lib
-
  [Features]
  - Author::KENTNL::DistINI injects "Bootstrap::lib" instead of "=inc::lib".
 
 0.01009310 2010-08-16T18:13:54Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::CriticTests 1.102280
-
- [Dependencies::Added / test requires]
- - English
-
- [Dependencies::Removed / test requires]
- - File::Spec
- - FindBin
-
  [Packaging]
  - Now uses Bootstrap::lib during develop time instead of bundling an inc::
    file in every dist.
@@ -1145,49 +411,11 @@
  - Removed redundant noeol.t which existed purely as a temporary solution.
 
 0.01008321 2010-08-07T05:56:23Z
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::AutoVersion::Relative 0.01034313 → 0.01035617
-
  [Features]
  - Author::KENTNL::DistINI generation now inserts in a default 'hash_tags='
    for twitter.
 
 0.01007922 2010-08-03T06:25:33Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::AutoPrereq
- - Dist::Zilla::Plugin::ConfirmRelease
- - Dist::Zilla::Plugin::ExtraTests
- - Dist::Zilla::Plugin::FakeRelease
- - Dist::Zilla::Plugin::GatherDir
- - Dist::Zilla::Plugin::Git::Check 1.102040
- - Dist::Zilla::Plugin::Git::CommitBuild 1.102040
- - Dist::Zilla::Plugin::Git::Tag 1.102040
- - Dist::Zilla::Plugin::License
- - Dist::Zilla::Plugin::Manifest
- - Dist::Zilla::Plugin::ManifestSkip
- - Dist::Zilla::Plugin::MetaConfig
- - Dist::Zilla::Plugin::MetaJSON
- - Dist::Zilla::Plugin::MetaTests
- - Dist::Zilla::Plugin::MetaYAML
- - Dist::Zilla::Plugin::ModuleBuild
- - Dist::Zilla::Plugin::PkgVersion
- - Dist::Zilla::Plugin::PodCoverageTests
- - Dist::Zilla::Plugin::PodSyntaxTests
- - Dist::Zilla::Plugin::PruneCruft
- - Dist::Zilla::Plugin::TestRelease
- - Dist::Zilla::Plugin::UploadToCPAN
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::AutoVersion::Relative 0.01006104 → 0.01034313
- - Dist::Zilla::Plugin::MetaData::BuiltWith 0.01000022 → 0.01005122
- - Dist::Zilla::Plugin::MetaProvides 1.11 → 1.11034201
- - Dist::Zilla::Plugin::MetaProvides::Package 1.11 → 1.11034304
- - MooseX::Has::Sugar 0.05 → 0.05044
- - Test::EOL 0.8 → 0.9
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::Git 1.102040
-
  [Features]
  - Uses new features in MetaData::BuiltWith to display a customised result
    from uname
@@ -1196,25 +424,11 @@
  [Dependencies]
  - Upgraded a few deps for MetaProvides split.
 
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::MetaProvides::Package 1.11
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::MetaProvides 1.10027518 → 1.11
- - MooseX::Has::Sugar 0.0405 → 0.05
-
- [Dependencies::Removed / test requires]
- - Test::Perl::Critic
-
  [Features]
  - Consumer can now specify hash tags to append to the tweeted release
    notice via 'hash_tags'
 
 0.01006912 2010-07-23T20:56:10Z
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla::Plugin::CompileTests 1.092870 → 1.101800
- - Dist::Zilla::Plugin::Git 1.093410 → 1.102040
-
  [Documentation]
  - Various style and formatting fixes.
  - A Smattering of spelling fixes.
@@ -1226,42 +440,18 @@
    you want to use the same plugin twice ).
 
 0.01002610 2010-06-11T18:44:05Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::GithubMeta 0.08
- - Dist::Zilla::Plugin::MetaData::BuiltWith 0.01000022
-
- [Dependencies::Changed / runtime requires]
- - Dist::Zilla 4.101582 → 4.101612
- - Test::EOL 0.7 → 0.8
-
- [Dependencies::Removed / runtime requires]
- - Dist::Zilla::Plugin::Repository 0.11
-
  [Features]
  - Dists will now ship with MetaData explaining What they were built with.
  - Metadata plugins that do work with Git repos now only triggered when git
    is enabled.
 
 0.01002504 2010-06-10T12:10:51Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::File::FromCode
- - Dist::Zilla::Role::FileGatherer
- - String::Formatter
-
  [Features]
  - Now ships Dist::Zilla::Plugin::Author::KENTNL::DistINI to make dist
    minting easier. Now I can just 'dzil new Module-Name' and start hacking
    =).
 
 0.01002419 2010-06-10T03:38:51Z
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Plugin::EOLTests 0.02
- - Test::EOL 0.7
-
- [Dependencies::Added / test requires]
- - File::Spec
- - FindBin
-
  [Features]
  - Adds End of line Tests via EOLTests plugin.
 
@@ -1272,10 +462,6 @@
 0.01002321 2010-06-09T05:13:23Z
  [Dependencies]
  - added precursors for Net::Twitter on Win32
-
- [Dependencies::Added / runtime requires]
- - IO::Socket::SSL
- - Net::SSLeay 1.36
 
  [Packaging]
  - This release is also intending to test my patched version of
