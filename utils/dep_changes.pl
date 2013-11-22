@@ -49,7 +49,7 @@ my $changes     = CPAN::Changes->new();
 my $changes_all = CPAN::Changes->new();
 my $changes_dev = CPAN::Changes->new();
 
-my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8 );
+my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/{{\$NEXT}}/ );
 
 while ( @tags > 2 ) {
   my ( $old, $new ) = ( $tags[-2], $tags[-1] );
@@ -59,6 +59,15 @@ while ( @tags > 2 ) {
   my $master_release;
   if ( $master_release = $master_changes->release($new) ) {
     $date = $master_release->date();
+  }
+  else {
+    print "$new not on master Changelog\n";
+    if ( $new eq 'build/master' ) {
+      $master_release = [ $master_changes->releases ]->[-1];
+      print " ... using " . $master_release->version . " instead \n";
+
+      #('{{$NEXT}}');
+    }
   }
   my $version = $new;
   if ( $new eq 'build/master' ) {
