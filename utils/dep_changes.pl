@@ -16,6 +16,7 @@ sub file_sha {
   my ( $commit, $path ) = @_;
   my $rev = [ $git->rev_parse($commit) ]->[0];
   my $tree = [ $git->ls_tree( $rev, $path ) ]->[0];
+  return unless $tree;
   my ( $left, $right ) = $tree =~ /^([^\t]+)\t(.*$)/;
   my ( $flags, $type, $sha ) = split / /, $left;
   return $sha;
