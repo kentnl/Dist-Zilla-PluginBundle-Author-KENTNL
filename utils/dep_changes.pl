@@ -7,6 +7,8 @@ use FindBin;
 use lib "$FindBin::Bin/lib";
 use Git::Wrapper;
 use depsdiff;
+use version;
+use Version::Next qw(next_version);
 use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
 
@@ -16,6 +18,7 @@ sub file_sha {
   my ( $commit, $path ) = @_;
   my $rev = [ $git->rev_parse($commit) ]->[0];
   my $tree = [ $git->ls_tree( $rev, $path ) ]->[0];
+  return unless $tree;
   my ( $left, $right ) = $tree =~ /^([^\t]+)\t(.*$)/;
   my ( $flags, $type, $sha ) = split / /, $left;
   return $sha;
@@ -25,12 +28,13 @@ my @tags;
 
 for my $tag ( $git->tag() ) {
   next if $tag =~ /-source$/;
+  if ( not eval { version->parse($tag); 1 } ) {
+    print "tag $tag skipped";
+  }
   push @tags, $tag;
 
   #print "$tag\n";
 }
-
-use Version::Next qw(next_version);
 
 my $build_master_version;
 
@@ -51,7 +55,7 @@ my $changes_dev = CPAN::Changes->new();
 
 my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/{{\$NEXT}}/ );
 
-while ( @tags > 2 ) {
+while ( @tags > 1 ) {
   my ( $old, $new ) = ( $tags[-2], $tags[-1] );
   pop @tags;
 
@@ -112,7 +116,7 @@ while ( @tags > 2 ) {
           else {
             if ( $entry =~ /(\S+)\s+→\s+(\S+)/ ) {
               my ( $lhs, $rhs ) = ( $1, $2 );
-              require version;
+
               my $lhs_v = version->parse($lhs);
               my $rhs_v = version->parse($rhs);
               if ( $lhs_v < $rhs_v ) {
