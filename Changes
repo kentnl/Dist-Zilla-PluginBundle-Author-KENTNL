@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.004000 2013-11-22T03:04:44Z
  [00 Minor]
  - change diff tool augmented to inject statistics into Changes where
    relevant
