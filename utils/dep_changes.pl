@@ -7,6 +7,8 @@ use FindBin;
 use lib "$FindBin::Bin/lib";
 use Git::Wrapper;
 use depsdiff;
+use version;
+use Version::Next qw(next_version);
 use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
 
@@ -33,8 +35,6 @@ for my $tag ( $git->tag() ) {
 
   #print "$tag\n";
 }
-
-use Version::Next qw(next_version);
 
 my $build_master_version;
 
@@ -116,7 +116,7 @@ while ( @tags > 1 ) {
           else {
             if ( $entry =~ /(\S+)\s+→\s+(\S+)/ ) {
               my ( $lhs, $rhs ) = ( $1, $2 );
-              require version;
+
               my $lhs_v = version->parse($lhs);
               my $rhs_v = version->parse($rhs);
               if ( $lhs_v < $rhs_v ) {
