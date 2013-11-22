@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.002002 2013-11-22T00:12:10Z
+2.002002 2013-11-22T00:12:30Z
  [00 Minor]
  - New utility to generate Prereq changes by iterating git tags.
  - All non-dev prereq changes → Changes.deps
