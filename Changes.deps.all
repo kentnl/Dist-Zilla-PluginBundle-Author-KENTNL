@@ -1,4 +1,8 @@
-2.003000
+2.004000
+ [Changed / develop requires]
+ - Test::CPAN::Changes 0.25 → 0.26
+
+2.003000 2013-11-22T00:30:56Z
  [Changed / build requires]
  - Module::Build 0.4200 → 0.4202
 
