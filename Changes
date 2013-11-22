@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.004001 2013-11-22T09:03:47Z
+2.004001 2013-11-22T09:04:03Z
  [00 Bugfix]
  - Don't keep trying to parse tree data if no tree data responds to a path
  - Skip tags that are not versions
