@@ -77,9 +77,6 @@ while ( @tags > 2 ) {
   next unless defined $old_meta_sha1 and length $old_meta_sha1;
   next unless defined $new_meta_sha1 and length $new_meta_sha1;
 
-  open my $old_meta, '-|', 'git', 'cat-file', '-p', $old_meta_sha1;
-  open my $new_meta, '-|', 'git', 'cat-file', '-p', $new_meta_sha1;
-
   my $diff = depsdiff->new(
     json_a => ( join qq[\n], $git->cat_file( '-p', $old_meta_sha1 ) ),
     json_b => ( join qq[\n], $git->cat_file( '-p', $new_meta_sha1 ) ),
