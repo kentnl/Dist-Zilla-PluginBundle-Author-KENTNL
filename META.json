@@ -617,7 +617,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
             "name" : "@Author::KENTNL/Author::KENTNL::MinimumPerl",
-            "version" : "2.003001"
+            "version" : "2.004000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Authority",
