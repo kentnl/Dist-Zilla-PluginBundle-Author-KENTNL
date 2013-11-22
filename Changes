@@ -1,8 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.004000 2013-11-22T03:03:44Z
+2.004000 2013-11-22T03:04:44Z
  [00 Minor]
- - change diff tool augmented to inject statistics into Changes where relevant
+ - change diff tool augmented to inject statistics into Changes where
+   relevant
  - change diff tool auto injects references into Changes
  - change diff tool now +x
 
