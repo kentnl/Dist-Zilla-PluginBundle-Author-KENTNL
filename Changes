@@ -1,6 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.004002 2013-11-28T12:53:18Z
+2.004002 2013-11-28T12:54:17Z
+ [Bugfix]
+ - Actually skip unwanted tags.
+
  [Dependencies::Noteworthy]
  - requires Module::Build 0.4203
  - requires new versions of lots of plugins

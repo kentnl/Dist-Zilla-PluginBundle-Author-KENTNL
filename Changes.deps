@@ -20,7 +20,7 @@
  - IO::Socket::SSL 1.960 → 1.962
 
  [Changed / test requires]
- - Path::Tiny 0.044 → 0.046
+ - Path::Tiny 0.044 → 0.047
 
 2.004001 2013-11-22T09:04:57Z
  [Changed / runtime requires]
