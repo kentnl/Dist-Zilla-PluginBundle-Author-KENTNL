@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.004002 2013-11-28T12:45:56Z
+
 2.004001 2013-11-22T09:04:57Z
  [00 Bugfix]
  - Don't keep trying to parse tree data if no tree data responds to a path
