@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugfix]
+ - Actually skip unwanted tags.
+
  [Dependencies::Noteworthy]
  - requires Module::Build 0.4203
  - requires new versions of lots of plugins
