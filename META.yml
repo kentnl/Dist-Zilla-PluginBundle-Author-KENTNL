@@ -11,7 +11,7 @@ build_requires:
   Module::Build: 0.4203
   Module::Metadata: 1.000019
   Path::Class::Dir: 0.32
-  Path::Tiny: 0.046
+  Path::Tiny: 0.047
   Test::DZil: 5.006
   Test::Fatal: 0.013
   Test::File::ShareDir: v0.4.1
@@ -191,7 +191,7 @@ x_BuiltWith:
     MooseX::Types: 0.38
     Net::SSLeay: 1.55
     Path::Class::Dir: 0.32
-    Path::Tiny: 0.046
+    Path::Tiny: 0.047
     Perl::PrereqScanner: 1.018
     Pod::Coverage::TrustPod: 0.100003
     String::Formatter: 0.102084
@@ -487,7 +487,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 2.004001
+      version: 2.004002
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
