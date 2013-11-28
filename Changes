@@ -1,6 +1,16 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Noteworthy]
+ - requires Module::Build 0.4203
+ - requires new versions of lots of plugins
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - build: ↑1
+ - configure: ↑1
+ - runtime: ↑12
+ - test: ↑1
 
 2.004001 2013-11-22T09:04:57Z
  [00 Bugfix]
@@ -8,6 +18,10 @@
  - Skip tags that are not versions
  - Make sure to include the last diff instead of only as far as the second
    last diff
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - runtime: ↑2
 
 2.004000 2013-11-22T03:04:44Z
  [00 Minor]
