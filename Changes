@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.005000 2013-11-29T19:31:25Z
  - Stop using PruneCruft as the number of exclusions being added just keeps
    growing, and it sucks.
  - We use Git::GatherDir anyway.
