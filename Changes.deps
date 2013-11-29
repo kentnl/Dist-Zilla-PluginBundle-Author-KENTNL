@@ -1,4 +1,8 @@
-2.004002
+2.005000
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::PruneCruft 5.006
+
+2.004002 2013-11-28T13:27:17Z
  [Changed / build requires]
  - Module::Build 0.4202 → 0.4203
 

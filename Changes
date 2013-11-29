@@ -1,6 +1,13 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ - Stop using PruneCruft as the number of exclusions being added just keeps
+   growing, and it sucks.
+ - We use Git::GatherDir anyway.
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - runtime: -1
 
 2.004002 2013-11-28T13:27:17Z
  [Bugfix]

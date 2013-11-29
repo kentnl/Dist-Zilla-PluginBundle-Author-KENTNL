@@ -291,7 +291,7 @@ sub bundle_config_inner {
     [ 'Test::Perl::Critic'     => {} ],
   );
 
-  my (@prunefiles) = ( [ 'PruneCruft' => { except => '^.(perltidyrc|travis.yml|proverc)' } ], [ 'ManifestSkip' => {} ], );
+  my (@prunefiles) = ( [ 'ManifestSkip' => {} ], );
 
   my (@regprereqs) = (
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
