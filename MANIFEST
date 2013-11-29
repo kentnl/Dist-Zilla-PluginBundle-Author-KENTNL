@@ -1,6 +1,5 @@
 .gitignore
 .perltidyrc
-.test
 .travis.yml
 Build.PL
 Changes
