@@ -1,5 +1,7 @@
+.gitignore
 .perltidyrc
 .travis.yml
+.travis_early_installdeps.master
 Build.PL
 Changes
 Changes.deps
@@ -22,6 +24,7 @@ maint-travis-ci/README.mkdn
 maint-travis-ci/before_script.pl
 maint-travis-ci/branch_reset.pl
 maint-travis-ci/install_deps.pl
+maint-travis-ci/install_deps_early.pl
 maint-travis-ci/lib/tools.pm
 maint-travis-ci/merge_travis_yml.pl
 maint-travis-ci/report_fail_ctx.pl

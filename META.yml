@@ -30,16 +30,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: 2.004002
+    version: 2.005000
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 2.004002
+    version: 2.005000
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: 2.004002
+    version: 2.005000
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: 2.004002
+    version: 2.005000
 requires:
   Carp: 0
   Dist::Zilla: 5.006
@@ -76,7 +76,6 @@ requires:
   Dist::Zilla::Plugin::PodWeaver: 4.002
   Dist::Zilla::Plugin::Prereqs: 5.006
   Dist::Zilla::Plugin::Prereqs::MatchInstalled: v0.1.5
-  Dist::Zilla::Plugin::PruneCruft: 5.006
   Dist::Zilla::Plugin::ReadmeAnyFromPod: 0.133290
   Dist::Zilla::Plugin::ReadmeFromPod: 0.21
   Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
@@ -116,7 +115,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 2.004002
+version: 2.005000
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.23
@@ -159,7 +158,6 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Prereqs::AuthorDeps: 0.002
     Dist::Zilla::Plugin::Prereqs::MatchInstalled: 0.1.5
     Dist::Zilla::Plugin::Prereqs::MatchInstalled::All: 0.1.2
-    Dist::Zilla::Plugin::PruneCruft: 5.006
     Dist::Zilla::Plugin::ReadmeAnyFromPod: 0.133290
     Dist::Zilla::Plugin::ReadmeFromPod: 0.21
     Dist::Zilla::Plugin::RemovePhasedPrereqs: 0.002
@@ -355,10 +353,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/Test::Perl::Critic'
       version: 2.112410
     -
-      class: Dist::Zilla::Plugin::PruneCruft
-      name: '@Author::KENTNL/PruneCruft'
-      version: 5.006
-    -
       class: Dist::Zilla::Plugin::ManifestSkip
       name: '@Author::KENTNL/ManifestSkip'
       version: 5.006
@@ -487,7 +481,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 2.004002
+      version: 2.005000
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'

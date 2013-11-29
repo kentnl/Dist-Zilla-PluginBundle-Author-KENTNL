@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.004002';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.005000';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -186,7 +186,7 @@ sub bundle_config_inner {
     [ 'Test::Perl::Critic'     => {} ],
   );
 
-  my (@prunefiles) = ( [ 'PruneCruft' => { except => '^.(perltidyrc|travis.yml|proverc)' } ], [ 'ManifestSkip' => {} ], );
+  my (@prunefiles) = ( [ 'ManifestSkip' => {} ], );
 
   my (@regprereqs) = (
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
@@ -279,7 +279,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.004002
+version 2.005000
 
 =head1 SYNOPSIS
 
