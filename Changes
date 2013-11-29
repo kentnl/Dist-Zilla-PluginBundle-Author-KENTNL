@@ -1,6 +1,10 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.005000 2013-11-29T19:16:31Z
+2.005000 2013-11-29T19:20:27Z
+ - Stop using PruneCruft as the number of exclusions being added just keeps
+   growing, and it sucks.
+ - We use Git::GatherDir anyway.
+
  [Dependencies::Stats]
  - Dependencies changed, see Changes.deps{,.all,.dev} for details
  - runtime: -1
