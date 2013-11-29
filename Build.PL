@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "2.004002",
+  "dist_version" => "2.004003",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -58,7 +58,6 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::PodWeaver" => "4.002",
     "Dist::Zilla::Plugin::Prereqs" => "5.006",
     "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => "v0.1.5",
-    "Dist::Zilla::Plugin::PruneCruft" => "5.006",
     "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.133290",
     "Dist::Zilla::Plugin::ReadmeFromPod" => "0.21",
     "Dist::Zilla::Plugin::ReportVersions::Tiny" => "1.10",

@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.004003 2013-11-29T19:14:06Z
+
 2.004002 2013-11-28T13:27:17Z
  [Bugfix]
  - Actually skip unwanted tags.
