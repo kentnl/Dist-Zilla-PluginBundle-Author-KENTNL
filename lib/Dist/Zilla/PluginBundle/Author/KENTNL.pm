@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.005000';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.005001';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -254,6 +254,9 @@ sub bundle_config_inner {
 
 sub bundle_config {
   my ( $self, $section ) = @_;
+  if ( not ref $self ) {
+      warn "Bundle called without instance";
+  }
   my $class = ( ref $self ) || $self;
 
   my $arg = $section->{payload};
@@ -279,7 +282,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.005000
+version 2.005001
 
 =head1 SYNOPSIS
 
