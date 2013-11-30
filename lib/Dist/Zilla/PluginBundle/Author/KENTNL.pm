@@ -304,9 +304,6 @@ sub auto_add_plugins {
 
 sub bundle_config {
   my ( $self, $section ) = @_;
-  if ( not ref $self ) {
-    warn "Bundle called without instance";
-  }
   my $class = ( ref $self ) || $self;
 
   my $instance = $class->new( $section->{payload} );
