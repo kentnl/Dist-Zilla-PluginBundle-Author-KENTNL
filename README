@@ -79,10 +79,10 @@ METHODS
   "add_plugin"
         $bundle_object->add_plugin("Basename" => { config_hash } );
 
-  "add_plugin"
+  "add_named_plugin"
         $bundle_object->add_named_plugin("alias" => "Basename" => { config_hash } );
 
-  <configure>
+  "configure"
     Called by in "bundle_config" after "new"
 
 AUTHOR

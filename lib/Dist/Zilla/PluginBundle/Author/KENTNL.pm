@@ -292,11 +292,11 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 
     $bundle_object->add_plugin("Basename" => { config_hash } );
 
-=head2 C<add_plugin>
+=head2 C<add_named_plugin>
 
     $bundle_object->add_named_plugin("alias" => "Basename" => { config_hash } );
 
-=head2 <configure>
+=head2 C<configure>
 
 Called by in C<bundle_config> after C<new>
 
