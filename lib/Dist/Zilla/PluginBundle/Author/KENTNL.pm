@@ -28,8 +28,9 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
+has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] });
+
 has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1 );
-has plugins                 => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
 has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
 has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
 has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { '' } );
@@ -74,7 +75,7 @@ sub add_named_plugin {
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
-sub auto_add_plugins {
+sub configure {
   my ($self) = @_;
 
   # Version
@@ -138,7 +139,7 @@ sub auto_add_plugins {
     }
   );
 
-  $self->add_plugin( 'Dist::Zilla::Plugin::MinimumPerl' => {} );
+  $self->add_plugin( 'MinimumPerl'=> {} );
   $self->add_plugin( 'Authority' => { ':version' => '1.006', authority => $self->authority, do_metadata => 1 } );
 
   $self->add_plugin( 'ModuleBuild'   => {} );
@@ -163,7 +164,10 @@ sub auto_add_plugins {
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
   $self->add_plugin(
-    'Prereqs::MatchInstalled' => { modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )], } );
+    'Prereqs::MatchInstalled' => {
+      modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
+    }
+  );
 
 }
 
@@ -172,7 +176,7 @@ sub bundle_config {
   my $class = ( ref $self ) || $self;
 
   my $instance = $class->new( $section->{payload} );
-  $instance->auto_add_plugins();
+  $instance->configure();
 
   return @{ $instance->plugins };
 }

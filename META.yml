@@ -483,9 +483,9 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/BundleDevelRequires'
       version: 5.006
     -
-      class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
-      name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 2.005001
+      class: Dist::Zilla::Plugin::MinimumPerl
+      name: '@Author::KENTNL/MinimumPerl'
+      version: 1.003
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
