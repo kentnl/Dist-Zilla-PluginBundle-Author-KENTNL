@@ -28,7 +28,7 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
-has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] });
+has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] } );
 
 has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1 );
 has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
@@ -139,7 +139,7 @@ sub configure {
     }
   );
 
-  $self->add_plugin( 'MinimumPerl'=> {} );
+  $self->add_plugin( 'MinimumPerl' => {} );
   $self->add_plugin( 'Authority' => { ':version' => '1.006', authority => $self->authority, do_metadata => 1 } );
 
   $self->add_plugin( 'ModuleBuild'   => {} );
@@ -152,7 +152,7 @@ sub configure {
     }
   );
   $self->add_plugin( 'Test::CPAN::Changes' => {} );
-  $self->add_plugin( 'CheckExtraTests'     => {} );
+  $self->add_plugin( 'RunExtraTests'     => {} );
   $self->add_plugin( 'TestRelease'         => {} );
   $self->add_plugin( 'ConfirmRelease'      => {} );
 
