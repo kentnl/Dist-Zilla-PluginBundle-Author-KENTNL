@@ -156,7 +156,6 @@ sub bundle_config_inner {
     Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
   }
 
-  my (@version) = ( [ 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.001000' } ], );
   my (@metadata) = (
     [ 'MetaConfig' => {} ],
     _only_git( $arg, [ 'GithubMeta' => { _only_ghissues( $arg, issues => 1 ), } ] ),
@@ -215,7 +214,6 @@ sub bundle_config_inner {
   );
 
   return (
-    @version,
     @metadata,
     @sharedir,
     @gatherfiles,
@@ -252,18 +250,35 @@ sub bundle_config_inner {
   );
 }
 
+has plugins => ( is => 'ro', isa => 'ArrayRef', default => sub { [] }, lazy => 1 );
+has authority => ( is => 'ro', isa => 'Str', default => sub { 'cpan:KENTNL' }, lazy => 1 );
+has auto_prereqs_skip => ( is => 'ro', isa => 'ArrayRef', default => sub { [] }, lazy => 1 );
+
+sub add_plugin {
+  my ( $self, $suffix, $conf ) = @_;
+  my $class = ( ref $self ) || $self;
+  push @{ $self->plugins }, _expand( $class, $suffix, $conf );
+}
+
+sub auto_add_plugins {
+  my ($self) = @_;
+  $self->add_plugin('Git::NextVersion' =>  { version_regexp => '^(.*)-source$', first_version => '0.001000' } );
+
+}
+
 sub bundle_config {
   my ( $self, $section ) = @_;
   if ( not ref $self ) {
-      warn "Bundle called without instance";
+    warn "Bundle called without instance";
   }
   my $class = ( ref $self ) || $self;
 
-  my $instance = $class->new($section->{payload});
+  my $instance = $class->new( $section->{payload} );
+  $instance->auto_add_plugins();
 
-  my $arg = $section->{payload};
+  my @config = @{ $instance->plugins };
 
-  my @config = map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner($arg);
+  push @config, map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner( $section->{payload} );
   return @config;
 }
 
