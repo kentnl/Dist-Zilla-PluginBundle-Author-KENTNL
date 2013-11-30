@@ -1,1 +1,3 @@
 Dist::Zilla::Role::BundleDeps
+MooseX::StrictConstructor
+MooseX::AttributeShortcuts
