@@ -103,7 +103,7 @@
             "Moose" : "2.1005",
             "MooseX::AttributeShortcuts" : "0.022",
             "MooseX::Has::Sugar" : "0.05070422",
-            "MooseX::StrictConstructor" : "0",
+            "MooseX::StrictConstructor" : "0.19",
             "MooseX::Types" : "0.38",
             "Net::SSLeay" : "1.55",
             "Perl::PrereqScanner" : "1.018",
@@ -172,9 +172,6 @@
    },
    "version" : "2.005001",
    "x_BuiltWith" : {
-      "failures" : {
-         "MooseX::StrictConstructor" : "module was not found in INC"
-      },
       "modules" : {
          "Capture::Tiny" : "0.23",
          "Dist::Zilla" : "5.006",
@@ -244,6 +241,7 @@
          "Moose" : "2.1107",
          "MooseX::AttributeShortcuts" : "0.022",
          "MooseX::Has::Sugar" : "0.05070422",
+         "MooseX::StrictConstructor" : "0.19",
          "MooseX::Types" : "0.38",
          "Net::SSLeay" : "1.55",
          "Path::Class::Dir" : "0.32",
