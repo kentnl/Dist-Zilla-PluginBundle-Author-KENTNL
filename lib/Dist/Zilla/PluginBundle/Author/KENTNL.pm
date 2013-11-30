@@ -43,150 +43,8 @@ sub _expand {
 }
 
 
-sub _defined_or {
-
-  # Backcompat way of doing // in < 5.10
-  my ( $hash, $field, $default, $nowarn ) = @_;
-  $nowarn = 0 if not defined $nowarn;
-  if ( not( defined $hash && ref $hash eq 'HASH' && exists $hash->{$field} && defined $hash->{$field} ) ) {
-    require Carp;
-    ## no critic (RequireInterpolationOfMetachars)
-    Carp::carp( '[@Author::KENTNL]' . " Warning: autofilling $field with $default " ) unless $nowarn;
-    return $default;
-  }
-  return $hash->{$field};
-}
-
-sub _mk_only {
-  my ( $subname, $envname, $argfield ) = @_;
-  my $sub = sub {
-    my ( $args, @rest ) = @_;
-    return () if exists $ENV{ 'KENTNL_NO' . $envname };
-    return @rest unless defined $args;
-    return @rest unless ref $args eq 'HASH';
-    return @rest unless exists $args->{ 'no_' . $argfield };
-    return ();
-  };
-  {
-    ## no critic (ProhibitNoStrict)
-    no strict 'refs';
-    *{ __PACKAGE__ . '::_only_' . $subname } = $sub;
-  }
-  return 1;
-}
-
-BEGIN {
-  _mk_only(qw( cpan CPAN cpan ));
-  _mk_only(qw( twitter TWITTER twitter ));
-  _mk_only(qw( fiveten FIVETEN fiveten ));
-  _mk_only(qw( ghissues GHISSUES ghissues ));
-}
-
-sub _release_fail {
-  my ( $args, $ref ) = ( shift, [ 'FakeRelease' => { ':version' => '4.300029' } ] );
-  ## no critic (RequireLocalizedPunctuationVars)
-
-  if ( exists $ENV{KENTNL_RELEASE_FAIL} ) {
-    $ENV{DZIL_FAKERELEASE_FAIL} = 1;
-    return $ref;
-  }
-  return () unless defined $args;
-  return () unless ref $args eq 'HASH';
-  return () unless exists( $args->{release_fail} );
-  $ENV{DZIL_FAKERELEASE_FAIL} = 1;
-  return $ref;
-}
-
-sub _params_list {
-  return (
-    qw( :version authority auto_prereqs_skip git_versions twitter_only release_fail no_cpan no_git no_twitter twitter_hash_tags twitter_extra_hash_tags release_fail no_fiveten )
-  );
-}
-
-sub _param_checker {
-  my $_self = shift;
-
-  my %params_hash = map { $_ => 1 } $_self->_params_list;
-
-  return sub {
-
-    my ( $self, $param ) = @_;
-    if ( not exists $params_hash{$param} ) {
-      require Carp;
-      Carp::croak("[Author::KENTNL] Parameter $param doesn't appear to be supported");
-    }
-
-  };
-}
-
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
-
-sub bundle_config_inner {
-  my ( $class, $arg ) = @_;
-
-  ## no critic (RequireInterpolationOfMetachars)
-  my $twitter_conf = {
-    hash_tags => _defined_or( $arg, twitter_hash_tags => '#perl #cpan' ),
-    tweet_url => 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes',
-  };
-
-  my $extra_hash = _defined_or( $arg, twitter_extra_hash_tags => q{}, 1 );
-  $twitter_conf->{hash_tags} .= q{ } . $extra_hash if $extra_hash;
-
-  if ( not exists $arg->{git_versions} ) {
-    require Carp;
-    Carp::croak('Sorry, Git based versions are now mandatory');
-  }
-
-  my $checker = $class->_param_checker;
-
-  for my $param ( keys %{$arg} ) {
-    $checker->( $class, $param );
-  }
-
-  if ( not defined $arg->{authority} ) {
-    $arg->{authority} = 'cpan:KENTNL';
-  }
-  if ( not defined $arg->{auto_prereqs_skip} ) {
-    $arg->{auto_prereqs_skip} = [];
-  }
-
-  if ( not ref $arg->{auto_prereqs_skip} eq 'ARRAY' ) {
-    require Carp;
-    Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
-  }
-
-  return (
-    [ 'Authority'     => { ':version' => '1.006', authority => $arg->{authority}, do_metadata => 1 } ],
-    [ 'ModuleBuild'   => {} ],
-    [ 'ReadmeFromPod' => {} ],
-    [
-      'ReadmeAnyFromPod' => {
-        type     => 'markdown',
-        filename => 'README.mkdn',
-        location => 'root',
-      }
-    ],
-    [ 'Test::CPAN::Changes' => {} ],
-    [ 'CheckExtraTests'     => {} ],
-    [ 'TestRelease'         => {} ],
-    [ 'ConfirmRelease'      => {} ],
-    _release_fail($arg),
-    _only_git( $arg, [ 'Git::Check' => { filename => 'Changes' } ] ),
-    _only_git( $arg, [ [ 'Git::Tag', 'tag_master' ] => { tag_format => '%v-source' } ] ),
-    _only_git( $arg, [ 'Git::Commit' => {} ] ),
-    _only_git( $arg, [ 'Git::CommitBuild' => { release_branch => 'releases' } ] ),
-    _only_git( $arg, [ [ 'Git::Tag', 'tag_release' ] => { branch => 'releases', tag_format => '%v' } ] ),
-    _only_cpan( $arg, [ 'UploadToCPAN' => {} ] ),
-    [ 'Twitter' => $twitter_conf ],
-    [
-      'Prereqs::MatchInstalled' => {
-        modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
-      }
-    ],
-  );
-}
 
 has git_versions            => ( is => 'ro', isa   => 'Bool',     required => 1 );
 has plugins                 => ( is => 'ro', isa   => 'ArrayRef', lazy     => 1, builder => sub { [] }, );
@@ -215,8 +73,12 @@ has no_fiveten => ( is => ro =>, isa => 'Bool', lazy => 1, builder => sub { unde
 
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
-  my $class = ( ref $self ) || $self;
-  push @{ $self->plugins }, _expand( $class, $suffix, $conf );
+  push @{ $self->plugins }, [ q{@Author::KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+}
+
+sub add_named_plugin {
+  my ( $self, $name, $suffix, $conf ) = @_;
+  push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
 sub auto_add_plugins {
@@ -268,17 +130,15 @@ sub auto_add_plugins {
   # Prereqs
 
   $self->add_plugin( 'AutoPrereqs' => { skip => $self->auto_prereqs_skip } );
-  $self->add_plugin(
-    'Prereqs' => {
-      -name                                             => 'BundleDevelSuggests',
+  $self->add_named_plugin(
+    'BundleDevelSuggests' => 'Prereqs' => {
       -phase                                            => 'develop',
       -type                                             => 'suggests',
       'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
     }
   );
   $self->add_plugin(
-    'Prereqs' => {
-      -name                                       => 'BundleDevelRequires',
+    'BundleDevelRequires' => 'Prereqs' => {
       -phase                                      => 'develop',
       -type                                       => 'requires',
       'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
@@ -310,10 +170,10 @@ sub auto_add_plugins {
   $self->add_plugin( 'ConfirmRelease'      => {} );
 
   $self->add_plugin( 'Git::Check' => { filename => 'Changes' } );
-  $self->add_plugin( [ 'Git::Tag', 'tag_master' ] => { tag_format => '%v-source' } );
+  $self->add_named_plugin( 'tag_master', => 'Git::Tag' => { tag_format => '%v-source' } );
   $self->add_plugin( 'Git::Commit' => {} );
   $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );
-  $self->add_plugin( [ 'Git::Tag', 'tag_release' ] => { branch => 'releases', tag_format => '%v' } );
+  $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
   $self->add_plugin(

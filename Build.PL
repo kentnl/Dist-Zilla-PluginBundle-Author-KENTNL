@@ -23,7 +23,6 @@ my %module_build_args = (
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Carp" => 0,
     "Dist::Zilla" => "5.006",
     "Dist::Zilla::File::FromCode" => "5.006",
     "Dist::Zilla::Plugin::Authority" => "1.006",

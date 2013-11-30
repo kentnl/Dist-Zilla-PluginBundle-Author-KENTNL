@@ -41,7 +41,6 @@ provides:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
     version: 2.005001
 requires:
-  Carp: 0
   Dist::Zilla: 5.006
   Dist::Zilla::File::FromCode: 5.006
   Dist::Zilla::Plugin::Authority: 1.006
@@ -120,7 +119,6 @@ version: 2.005001
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.23
-    Carp: 1.32
     Dist::Zilla: 5.006
     Dist::Zilla::File::FromCode: 5.006
     Dist::Zilla::Plugin::Authority: 1.006
