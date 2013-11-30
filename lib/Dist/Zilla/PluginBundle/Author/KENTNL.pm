@@ -240,7 +240,7 @@ sub configure {
     }
   );
   $self->add_plugin( 'Test::CPAN::Changes' => {} );
-  $self->add_plugin( 'CheckExtraTests'     => {} );
+  $self->add_plugin( 'RunExtraTests'       => {} );
   $self->add_plugin( 'TestRelease'         => {} );
   $self->add_plugin( 'ConfirmRelease'      => {} );
 
