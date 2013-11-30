@@ -26,16 +26,14 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 
 
-
-
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
-has git_versions            => ( is => 'ro', isa   => enum([1]),     required => 1 );
-has plugins                 => ( is => 'ro', isa   => 'ArrayRef', lazy     => 1, builder => sub { [] }, );
-has authority               => ( is => 'ro', isa   => 'Str',      lazy     => 1, builder => sub { 'cpan:KENTNL' }, );
-has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy     => 1, builder => sub { [] }, );
-has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy     => 1, builder => sub { '' } );
-has twitter_hash_tags => (
+has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1 );
+has plugins                 => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
+has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
+has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { '' } );
+has twitter_hash_tags       => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
@@ -53,15 +51,14 @@ has tweet_url => (
     return 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes';
   }
 );
-has no_fiveten => ( is => ro =>, isa => 'Bool', lazy => 1, builder => sub { undef } );
 
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
-      $conf = {};
+    $conf = {};
   }
   if ( not ref $conf or not ref $conf eq 'HASH' ) {
-      die "Conf must be a hash";
+    die "Conf must be a hash";
   }
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
@@ -69,10 +66,10 @@ sub add_plugin {
 sub add_named_plugin {
   my ( $self, $name, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
-      $conf = {};
+    $conf = {};
   }
   if ( not ref $conf or not ref $conf eq 'HASH' ) {
-      die "Conf must be a hash";
+    die "Conf must be a hash";
   }
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
@@ -141,14 +138,7 @@ sub auto_add_plugins {
     }
   );
 
-  if ( $self->no_fiveten ) {
-    $self->add_plugin( 'Author::KENTNL::MinimumPerl' => {} );
-  }
-  else {
-    $self->add_plugin( 'Author::KENTNL::MinimumPerl' => { fiveten => 1 } );
-
-  }
-
+  $self->add_plugin( 'Dist::Zilla::Plugin::MinimumPerl' => {} );
   $self->add_plugin( 'Authority' => { ':version' => '1.006', authority => $self->authority, do_metadata => 1 } );
 
   $self->add_plugin( 'ModuleBuild'   => {} );
@@ -289,22 +279,6 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 
 
 =end MetaPOD::JSON
-
-=head1 ENVIRONMENT
-
-all of these have to merely exist to constitute a "true" status.
-
-=head2 KENTNL_NOGIT
-
-the same as no_git=1
-
-=head2 KENTNL_NOCPAN
-
-same as no_cpan = 1
-
-=head2 KENTNL_RELEASE_FAIL
-
-same as release_fail=1
 
 =for Pod::Coverage   mvp_multivalue_args
   bundle_config_inner

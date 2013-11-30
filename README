@@ -76,18 +76,6 @@ METHODS
     See the "PluginBundle" role for what this is for, it is a method to
     satisfy that role.
 
-ENVIRONMENT
-    all of these have to merely exist to constitute a "true" status.
-
-  KENTNL_NOGIT
-    the same as no_git=1
-
-  KENTNL_NOCPAN
-    same as no_cpan = 1
-
-  KENTNL_RELEASE_FAIL
-    same as release_fail=1
-
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
