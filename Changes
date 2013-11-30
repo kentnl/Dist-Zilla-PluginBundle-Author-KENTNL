@@ -1,6 +1,16 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.6.0 2013-11-30T19:18:15Z
+2.6.0 2013-11-30T19:23:47Z
+ [00 Major Changes]
+ - Internals revamped to use Object Oriented style closer to
+   ::Role::PluginBundle::Easy, except parameters to bundles are top-level
+   attributes instead of hidden uselessly in ->payload.
+ - Use RunExtraTests instead of CheckExtraTests
+ - All ENV vars are gone, we never used them
+ - No longer upgrades dep to 5.10 when seeing dotted-decimal versions
+ - Experimental utility added that generates a source ⇄ release conversion
+   patch.
+
  [Dependencies::Stats]
  - Dependencies changed, see Changes.deps{,.all,.dev} for details
  - runtime: +4 ↑1 -1
