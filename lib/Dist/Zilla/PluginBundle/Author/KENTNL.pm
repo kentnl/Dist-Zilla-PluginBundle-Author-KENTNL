@@ -118,10 +118,10 @@ sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
 has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] } );
 
-has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1 );
+has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1, );
 has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
 has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
-has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { '' } );
+has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { q[] }, );
 has twitter_hash_tags       => (
   is      => 'ro',
   isa     => 'Str',
@@ -130,16 +130,23 @@ has twitter_hash_tags       => (
     my ($self) = @_;
     return '#perl #cpan' unless $self->has_twitter_extra_hash_tags;
     return '#perl #cpan ' . $self->twitter_extra_hash_tags;
-  }
+  },
 );
 has tweet_url => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
   builder => sub {
-    return 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes';
-  }
+    ## no critic (RequireInterpolationOfMetachars)
+    return q[https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes];
+  },
 );
+
+=method C<add_plugin>
+
+    $bundle_object->add_plugin("Basename" => { config_hash } );
+
+=cut
 
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
@@ -147,10 +154,19 @@ sub add_plugin {
     $conf = {};
   }
   if ( not ref $conf or not ref $conf eq 'HASH' ) {
-    die "Conf must be a hash";
+    require Carp;
+    Carp::croak('Conf must be a hash');
   }
+  ## no critic (RequireInterpolationOfMetachars)
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+  return;
 }
+
+=method C<add_named_plugin>
+
+    $bundle_object->add_named_plugin("alias" => "Basename" => { config_hash } );
+
+=cut
 
 sub add_named_plugin {
   my ( $self, $name, $suffix, $conf ) = @_;
@@ -158,10 +174,19 @@ sub add_named_plugin {
     $conf = {};
   }
   if ( not ref $conf or not ref $conf eq 'HASH' ) {
-    die "Conf must be a hash";
+    require Carp;
+    Carp::croak('Conf must be a hash');
   }
+  ## no critic (RequireInterpolationOfMetachars)
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+  return;
 }
+
+=method C<configure>
+
+Called by in C<bundle_config> after C<new>
+
+=cut
 
 sub configure {
   my ($self) = @_;
@@ -256,7 +281,7 @@ sub configure {
       modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
     }
   );
-
+  return;
 }
 
 sub bundle_config {
@@ -268,6 +293,7 @@ sub bundle_config {
     $wanted_version = delete $section->{payload}->{':version'};
   }
   my $instance = $class->new( $section->{payload} );
+
   $instance->configure();
 
   return @{ $instance->plugins };

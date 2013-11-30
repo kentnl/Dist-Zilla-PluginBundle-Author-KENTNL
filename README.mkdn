@@ -66,6 +66,18 @@ I wish to give proper respect to the people out there already implementing this 
 
 See [the `PluginBundle` role](https://metacpan.org/pod/Dist::Zilla::Role::PluginBundle) for what this is for, it is a method to satisfy that role.
 
+## `add_plugin`
+
+    $bundle_object->add_plugin("Basename" => { config_hash } );
+
+## `add_named_plugin`
+
+    $bundle_object->add_named_plugin("alias" => "Basename" => { config_hash } );
+
+## `configure`
+
+Called by in `bundle_config` after `new`
+
 {
     "namespace":"Dist::Zilla::PluginBundle::Author::KENTNL",
     "interface":"class",
