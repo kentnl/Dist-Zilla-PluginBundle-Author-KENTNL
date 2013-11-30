@@ -259,6 +259,8 @@ sub bundle_config {
   }
   my $class = ( ref $self ) || $self;
 
+  my $instance = $class->new($section->{payload});
+
   my $arg = $section->{payload};
 
   my @config = map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner($arg);
