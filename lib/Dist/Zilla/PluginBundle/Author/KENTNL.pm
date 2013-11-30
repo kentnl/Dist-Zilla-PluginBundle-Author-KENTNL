@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '0.3.0';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.6.0';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -213,7 +213,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 0.3.0
+version 2.6.0
 
 =head1 SYNOPSIS
 
