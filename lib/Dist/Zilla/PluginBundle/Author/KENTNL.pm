@@ -23,24 +23,6 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 
 
-sub _expand {
-  my ( $class, $suffix, $conf ) = @_;
-  ## no critic ( RequireInterpolationOfMetachars )
-  if ( ref $suffix ) {
-    my ( $corename, $rename ) = @{$suffix};
-    if ( exists $conf->{-name} ) {
-      $rename = delete $conf->{-name};
-    }
-    return [ q{@Author::KENTNL/} . $corename . q{/} . $rename, 'Dist::Zilla::Plugin::' . $corename, $conf ];
-  }
-  if ( exists $conf->{-name} ) {
-    my $rename;
-    $rename = sprintf q{%s/%s}, $suffix, ( delete $conf->{-name} );
-    return [ q{@Author::KENTNL/} . $rename, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
-
-  }
-  return [ q{@Author::KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
-}
 
 
 
@@ -201,9 +183,6 @@ sub bundle_config {
   $instance->auto_add_plugins();
 
   return @{ $instance->plugins };
-
-  #push @config, map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner( $section->{payload} );
-  #  return @config;
 }
 
 __PACKAGE__->meta->make_immutable;
