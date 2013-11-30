@@ -73,11 +73,23 @@ has no_fiveten => ( is => ro =>, isa => 'Bool', lazy => 1, builder => sub { unde
 
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
+  if ( not defined $conf ) {
+      $conf = {};
+  }
+  if ( not ref $conf or not ref $conf eq 'HASH' ) {
+      die "Conf must be a hash";
+  }
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
 sub add_named_plugin {
   my ( $self, $name, $suffix, $conf ) = @_;
+  if ( not defined $conf ) {
+      $conf = {};
+  }
+  if ( not ref $conf or not ref $conf eq 'HASH' ) {
+      die "Conf must be a hash";
+  }
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
 }
 
@@ -137,7 +149,7 @@ sub auto_add_plugins {
       'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
     }
   );
-  $self->add_plugin(
+  $self->add_named_plugin(
     'BundleDevelRequires' => 'Prereqs' => {
       -phase                                      => 'develop',
       -type                                       => 'requires',

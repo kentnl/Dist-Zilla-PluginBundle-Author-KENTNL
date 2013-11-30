@@ -593,7 +593,7 @@
                   "type" : "suggests"
                }
             },
-            "name" : "@Author::KENTNL/Prereqs/BundleDevelSuggests",
+            "name" : "@Author::KENTNL/BundleDevelSuggests",
             "version" : "5.006"
          },
          {
@@ -604,13 +604,13 @@
                   "type" : "requires"
                }
             },
-            "name" : "@Author::KENTNL/Prereqs/BundleDevelRequires",
+            "name" : "@Author::KENTNL/BundleDevelRequires",
             "version" : "5.006"
          },
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
             "name" : "@Author::KENTNL/Author::KENTNL::MinimumPerl",
-            "version" : "2.005001"
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::Authority",
@@ -659,7 +659,7 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
-            "name" : "@Author::KENTNL/Git::Tag/tag_master",
+            "name" : "@Author::KENTNL/tag_master",
             "version" : "2.019"
          },
          {
@@ -674,7 +674,7 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
-            "name" : "@Author::KENTNL/Git::Tag/tag_release",
+            "name" : "@Author::KENTNL/tag_release",
             "version" : "2.019"
          },
          {
