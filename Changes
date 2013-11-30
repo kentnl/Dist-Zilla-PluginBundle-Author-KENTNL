@@ -1,6 +1,19 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Major Changes]
+ - Internals revamped to use Object Oriented style closer to
+   ::Role::PluginBundle::Easy, except parameters to bundles are top-level
+   attributes instead of hidden uselessly in ->payload.
+ - Use RunExtraTests instead of CheckExtraTests
+ - All ENV vars are gone, we never used them
+ - No longer upgrades dep to 5.10 when seeing dotted-decimal versions
+ - Experimental utility added that generates a source ⇄ release conversion
+   patch.
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - runtime: +4 ↑1 -1
 
 2.005000 2013-11-29T19:31:25Z
  - Stop using PruneCruft as the number of exclusions being added just keeps

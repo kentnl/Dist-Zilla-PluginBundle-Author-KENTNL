@@ -1,4 +1,17 @@
-2.005000
+2.6.0
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::RunExtraTests 0.016
+ - Moose::Util::TypeConstraints 2.1107
+ - MooseX::AttributeShortcuts 0.022
+ - MooseX::StrictConstructor 0.19
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled v0.1.5 → v0.1.6
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::CheckExtraTests 0.016
+
+2.005000 2013-11-29T19:31:25Z
  [Removed / runtime requires]
  - Dist::Zilla::Plugin::PruneCruft 5.006
 
