@@ -30,10 +30,10 @@ sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
 has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] } );
 
-has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1 );
+has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1, );
 has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
 has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
-has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { '' } );
+has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { q[] }, );
 has twitter_hash_tags       => (
   is      => 'ro',
   isa     => 'Str',
@@ -42,15 +42,16 @@ has twitter_hash_tags       => (
     my ($self) = @_;
     return '#perl #cpan' unless $self->has_twitter_extra_hash_tags;
     return '#perl #cpan ' . $self->twitter_extra_hash_tags;
-  }
+  },
 );
 has tweet_url => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
   builder => sub {
-    return 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes';
-  }
+    ## no critic (RequireInterpolationOfMetachars)
+    return q[https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes];
+  },
 );
 
 sub add_plugin {
@@ -59,9 +60,12 @@ sub add_plugin {
     $conf = {};
   }
   if ( not ref $conf or not ref $conf eq 'HASH' ) {
-    die "Conf must be a hash";
+    require Carp;
+    Carp::croak('Conf must be a hash');
   }
+  ## no critic (RequireInterpolationOfMetachars)
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $suffix, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+  return;
 }
 
 sub add_named_plugin {
@@ -70,9 +74,12 @@ sub add_named_plugin {
     $conf = {};
   }
   if ( not ref $conf or not ref $conf eq 'HASH' ) {
-    die "Conf must be a hash";
+    require Carp;
+    Carp::croak('Conf must be a hash');
   }
+  ## no critic (RequireInterpolationOfMetachars)
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
+  return;
 }
 
 sub configure {
@@ -175,9 +182,9 @@ sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
 
-  my $wanted_version; 
-  if ( exists $section->{payload}->{':version'} ){ 
-      $wanted_version = delete $section->{payload}->{':version'};
+  my $wanted_version;
+  if ( exists $section->{payload}->{':version'} ) {
+    $wanted_version = delete $section->{payload}->{':version'};
   }
   my $instance = $class->new( $section->{payload} );
 
