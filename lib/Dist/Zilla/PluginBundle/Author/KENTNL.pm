@@ -70,7 +70,6 @@ sub add_plugin {
 }
 
 
-
 sub add_named_plugin {
   my ( $self, $name, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
