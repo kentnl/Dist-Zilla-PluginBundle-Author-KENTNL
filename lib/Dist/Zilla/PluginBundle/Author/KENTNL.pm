@@ -57,13 +57,6 @@ sub _defined_or {
   return $hash->{$field};
 }
 
-has use_git => (
-  is      => ro  =>,
-  isa     => 'Bool',
-  lazy    => 1,
-  builder => sub { 1 }
-);
-
 sub _mk_only {
   my ( $subname, $envname, $argfield ) = @_;
   my $sub = sub {
@@ -83,7 +76,6 @@ sub _mk_only {
 }
 
 BEGIN {
-  _mk_only(qw( git GIT git ));
   _mk_only(qw( cpan CPAN cpan ));
   _mk_only(qw( twitter TWITTER twitter ));
   _mk_only(qw( fiveten FIVETEN fiveten ));
@@ -165,38 +157,7 @@ sub bundle_config_inner {
     Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
   }
 
-  my (@prunefiles) = ();
-
-  my (@regprereqs) = (
-    [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
-    [
-      'Prereqs' => {
-        -name                                             => 'BundleDevelSuggests',
-        -phase                                            => 'develop',
-        -type                                             => 'suggests',
-        'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
-      }
-    ],
-    [
-      'Prereqs' => {
-        -name                                       => 'BundleDevelRequires',
-        -phase                                      => 'develop',
-        -type                                       => 'requires',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
-      }
-    ],
-    [ 'Author::KENTNL::MinimumPerl' => { _only_fiveten( $arg, fiveten => 1 ) } ],
-  );
-  my (@mungers) = (
-    [ 'PkgVersion'  => {} ],
-    [ 'PodWeaver'   => {} ],
-    [ 'NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } ],
-  );
-
   return (
-    @prunefiles,
-    @mungers,
-    @regprereqs,
     [ 'Authority'     => { ':version' => '1.006', authority => $arg->{authority}, do_metadata => 1 } ],
     [ 'ModuleBuild'   => {} ],
     [ 'ReadmeFromPod' => {} ],
@@ -250,6 +211,7 @@ has tweet_url => (
     return 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes';
   }
 );
+has no_fiveten => ( is => ro =>, isa => 'Bool', lazy => 1, builder => sub { undef } );
 
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
@@ -266,9 +228,7 @@ sub auto_add_plugins {
   # Metadata
   $self->add_plugin( 'MetaConfig' => {} );
 
-  if ( $self->use_git ) {
-    $self->add_plugin( 'GithubMeta' => { issues => 1 } );
-  }
+  $self->add_plugin( 'GithubMeta' => { issues => 1 } );
 
   $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' } );
 
@@ -300,6 +260,65 @@ sub auto_add_plugins {
 
   $self->add_plugin( 'ManifestSkip' => {} );
 
+  # Mungers
+  $self->add_plugin( 'PkgVersion'  => {} );
+  $self->add_plugin( 'PodWeaver'   => {} );
+  $self->add_plugin( 'NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
+
+  # Prereqs
+
+  $self->add_plugin( 'AutoPrereqs' => { skip => $self->auto_prereqs_skip } );
+  $self->add_plugin(
+    'Prereqs' => {
+      -name                                             => 'BundleDevelSuggests',
+      -phase                                            => 'develop',
+      -type                                             => 'suggests',
+      'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
+    }
+  );
+  $self->add_plugin(
+    'Prereqs' => {
+      -name                                       => 'BundleDevelRequires',
+      -phase                                      => 'develop',
+      -type                                       => 'requires',
+      'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
+    }
+  );
+
+  if ( $self->no_fiveten ) {
+    $self->add_plugin( 'Author::KENTNL::MinimumPerl' => {} );
+  }
+  else {
+    $self->add_plugin( 'Author::KENTNL::MinimumPerl' => { fiveten => 1 } );
+
+  }
+
+  $self->add_plugin( 'Authority' => { ':version' => '1.006', authority => $self->authority, do_metadata => 1 } );
+
+  $self->add_plugin( 'ModuleBuild'   => {} );
+  $self->add_plugin( 'ReadmeFromPod' => {} );
+  $self->add_plugin(
+    'ReadmeAnyFromPod' => {
+      type     => 'markdown',
+      filename => 'README.mkdn',
+      location => 'root',
+    }
+  );
+  $self->add_plugin( 'Test::CPAN::Changes' => {} );
+  $self->add_plugin( 'CheckExtraTests'     => {} );
+  $self->add_plugin( 'TestRelease'         => {} );
+  $self->add_plugin( 'ConfirmRelease'      => {} );
+
+  $self->add_plugin( 'Git::Check' => { filename => 'Changes' } );
+  $self->add_plugin( [ 'Git::Tag', 'tag_master' ] => { tag_format => '%v-source' } );
+  $self->add_plugin( 'Git::Commit' => {} );
+  $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );
+  $self->add_plugin( [ 'Git::Tag', 'tag_release' ] => { branch => 'releases', tag_format => '%v' } );
+  $self->add_plugin( 'UploadToCPAN' => {} );
+  $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
+  $self->add_plugin(
+    'Prereqs::MatchInstalled' => { modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )], } );
+
 }
 
 sub bundle_config {
@@ -309,10 +328,10 @@ sub bundle_config {
   my $instance = $class->new( $section->{payload} );
   $instance->auto_add_plugins();
 
-  my @config = @{ $instance->plugins };
+  return @{ $instance->plugins };
 
-  push @config, map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner( $section->{payload} );
-  return @config;
+  #push @config, map { _expand( $class, $_->[0], $_->[1] ) } $class->bundle_config_inner( $section->{payload} );
+  #  return @config;
 }
 
 __PACKAGE__->meta->make_immutable;
