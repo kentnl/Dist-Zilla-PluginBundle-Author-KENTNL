@@ -54,6 +54,7 @@ has tweet_url => (
   },
 );
 
+
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
@@ -68,6 +69,8 @@ sub add_plugin {
   return;
 }
 
+
+
 sub add_named_plugin {
   my ( $self, $name, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
@@ -81,6 +84,7 @@ sub add_named_plugin {
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
   return;
 }
+
 
 sub configure {
   my ($self) = @_;
@@ -175,7 +179,7 @@ sub configure {
       modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
     }
   );
-
+  return;
 }
 
 sub bundle_config {
@@ -283,6 +287,18 @@ I wish to give proper respect to the people out there already implementing this 
 =head2 C<bundle_config>
 
 See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what this is for, it is a method to satisfy that role.
+
+=head2 C<add_plugin>
+
+    $bundle_object->add_plugin("Basename" => { config_hash } );
+
+=head2 C<add_plugin>
+
+    $bundle_object->add_named_plugin("alias" => "Basename" => { config_hash } );
+
+=head2 <configure>
+
+Called by in C<bundle_config> after C<new>
 
 =begin MetaPOD::JSON v1.1.0
 
