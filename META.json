@@ -53,7 +53,6 @@
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.006",
             "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000002",
-            "Dist::Zilla::Plugin::CheckExtraTests" : "0.016",
             "Dist::Zilla::Plugin::ConfirmRelease" : "5.006",
             "Dist::Zilla::Plugin::EOLTests" : "0.02",
             "Dist::Zilla::Plugin::Git::Check" : "2.019",
@@ -85,6 +84,7 @@
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.133290",
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
             "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.10",
+            "Dist::Zilla::Plugin::RunExtraTests" : "0.016",
             "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
             "Dist::Zilla::Plugin::Test::Compile::PerFile" : "0.001001",
             "Dist::Zilla::Plugin::Test::Kwalitee" : "2.07",
@@ -180,7 +180,6 @@
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.006",
          "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000002",
-         "Dist::Zilla::Plugin::CheckExtraTests" : "0.016",
          "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.009",
          "Dist::Zilla::Plugin::ConfirmRelease" : "5.006",
          "Dist::Zilla::Plugin::EOLTests" : "0.02",
@@ -217,6 +216,7 @@
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
          "Dist::Zilla::Plugin::RemovePhasedPrereqs" : "0.002",
          "Dist::Zilla::Plugin::ReportVersions::Tiny" : "1.10",
+         "Dist::Zilla::Plugin::RunExtraTests" : "0.016",
          "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
          "Dist::Zilla::Plugin::Test::Compile::PerFile" : "0.001001",
          "Dist::Zilla::Plugin::Test::Kwalitee" : "2.07",
@@ -642,8 +642,8 @@
             "version" : "0.008"
          },
          {
-            "class" : "Dist::Zilla::Plugin::CheckExtraTests",
-            "name" : "@Author::KENTNL/CheckExtraTests",
+            "class" : "Dist::Zilla::Plugin::RunExtraTests",
+            "name" : "@Author::KENTNL/RunExtraTests",
             "version" : "0.016"
          },
          {
