@@ -263,6 +263,10 @@ sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
 
+  my $wanted_version;
+  if ( exists $section->{payload}->{':version'} ) {
+    $wanted_version = delete $section->{payload}->{':version'};
+  }
   my $instance = $class->new( $section->{payload} );
   $instance->configure();
 
