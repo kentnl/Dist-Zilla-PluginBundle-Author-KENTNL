@@ -12,6 +12,8 @@ BEGIN {
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose;
+use MooseX::AttributeShortcuts;
+
 with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::BundleDeps';
 
@@ -54,6 +56,13 @@ sub _defined_or {
   }
   return $hash->{$field};
 }
+
+has use_git => (
+  is      => ro  =>,
+  isa     => 'Bool',
+  lazy    => 1,
+  builder => sub { 1 }
+);
 
 sub _mk_only {
   my ( $subname, $envname, $argfield ) = @_;
@@ -156,36 +165,7 @@ sub bundle_config_inner {
     Carp::carp('[Author::KENTNL] auto_prereqs_skip is expected to be an array ref');
   }
 
-  my (@metadata) = (
-    [ 'MetaConfig' => {} ],
-    _only_git( $arg, [ 'GithubMeta' => { _only_ghissues( $arg, issues => 1 ), } ] ),
-    [ 'MetaProvides::Package' => { ':version' => '1.14000001' } ],
-    [
-      'MetaData::BuiltWith' => { $^O eq 'linux' ? ( show_uname => 1, uname_args => q{ -s -o -r -m -i } ) : (), show_config => 1 }
-    ],
-
-  );
-
-  my (@sharedir) = ();
-
-  my (@gatherfiles) = (
-    [ 'Git::GatherDir'         => { include_dotfiles    => 1 } ],
-    [ 'License'                => {} ],
-    [ 'MetaJSON'               => {} ],
-    [ 'MetaYAML'               => {} ],
-    [ 'Manifest'               => {} ],
-    [ 'MetaTests'              => {} ],
-    [ 'PodCoverageTests'       => {} ],
-    [ 'PodSyntaxTests'         => {} ],
-    [ 'ReportVersions::Tiny'   => {} ],
-    [ 'Test::Kwalitee'         => {} ],
-    [ 'EOLTests'               => { trailing_whitespace => 1, } ],
-    [ 'Test::MinimumVersion'   => {} ],
-    [ 'Test::Compile::PerFile' => {} ],
-    [ 'Test::Perl::Critic'     => {} ],
-  );
-
-  my (@prunefiles) = ( [ 'ManifestSkip' => {} ], );
+  my (@prunefiles) = ();
 
   my (@regprereqs) = (
     [ 'AutoPrereqs' => { skip => $arg->{auto_prereqs_skip} } ],
@@ -214,9 +194,6 @@ sub bundle_config_inner {
   );
 
   return (
-    @metadata,
-    @sharedir,
-    @gatherfiles,
     @prunefiles,
     @mungers,
     @regprereqs,
@@ -250,9 +227,29 @@ sub bundle_config_inner {
   );
 }
 
-has plugins => ( is => 'ro', isa => 'ArrayRef', default => sub { [] }, lazy => 1 );
-has authority => ( is => 'ro', isa => 'Str', default => sub { 'cpan:KENTNL' }, lazy => 1 );
-has auto_prereqs_skip => ( is => 'ro', isa => 'ArrayRef', default => sub { [] }, lazy => 1 );
+has git_versions            => ( is => 'ro', isa   => 'Bool',     required => 1 );
+has plugins                 => ( is => 'ro', isa   => 'ArrayRef', lazy     => 1, builder => sub { [] }, );
+has authority               => ( is => 'ro', isa   => 'Str',      lazy     => 1, builder => sub { 'cpan:KENTNL' }, );
+has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy     => 1, builder => sub { [] }, );
+has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy     => 1, builder => sub { '' } );
+has twitter_hash_tags => (
+  is      => 'ro',
+  isa     => 'Str',
+  lazy    => 1,
+  builder => sub {
+    my ($self) = @_;
+    return '#perl #cpan' unless $self->has_twitter_extra_hash_tags;
+    return '#perl #cpan ' . $self->twitter_extra_hash_tags;
+  }
+);
+has tweet_url => (
+  is      => 'ro',
+  isa     => 'Str',
+  lazy    => 1,
+  builder => sub {
+    return 'https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes';
+  }
+);
 
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
@@ -262,7 +259,46 @@ sub add_plugin {
 
 sub auto_add_plugins {
   my ($self) = @_;
-  $self->add_plugin('Git::NextVersion' =>  { version_regexp => '^(.*)-source$', first_version => '0.001000' } );
+
+  # Version
+  $self->add_plugin( 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.001000' } );
+
+  # Metadata
+  $self->add_plugin( 'MetaConfig' => {} );
+
+  if ( $self->use_git ) {
+    $self->add_plugin( 'GithubMeta' => { issues => 1 } );
+  }
+
+  $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' } );
+
+  if ( $^O eq 'linux' ) {
+    $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 } );
+  }
+  else {
+    $self->add_plugin( 'MetaData::BuiltWith' => { show_config => 1 } );
+  }
+
+  # Gather Files
+
+  $self->add_plugin( 'Git::GatherDir' => { include_dotfiles => 1 } );
+  $self->add_plugin( 'License'        => {} );
+  $self->add_plugin( 'MetaJSON'       => {} );
+  $self->add_plugin( 'MetaYAML'       => {} );
+  $self->add_plugin( 'Manifest'       => {} );
+  $self->add_plugin( 'MetaTests'      => {} );
+  $self->add_plugin( 'PodCoverageTests'       => {} );
+  $self->add_plugin( 'PodSyntaxTests'         => {} );
+  $self->add_plugin( 'ReportVersions::Tiny'   => {} );
+  $self->add_plugin( 'Test::Kwalitee'         => {} );
+  $self->add_plugin( 'EOLTests'               => { trailing_whitespace => 1, } );
+  $self->add_plugin( 'Test::MinimumVersion'   => {} );
+  $self->add_plugin( 'Test::Compile::PerFile' => {} );
+  $self->add_plugin( 'Test::Perl::Critic'     => {} );
+
+  # Prune files
+
+  $self->add_plugin( 'ManifestSkip' => {} );
 
 }
 

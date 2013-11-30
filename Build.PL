@@ -77,6 +77,7 @@ my %module_build_args = (
     "IO::Socket::SSL" => "1.962",
     "LWP::Protocol::https" => "6.04",
     "Moose" => "2.1005",
+    "MooseX::AttributeShortcuts" => "0.022",
     "MooseX::Has::Sugar" => "0.05070422",
     "MooseX::Types" => "0.38",
     "Net::SSLeay" => "1.55",
