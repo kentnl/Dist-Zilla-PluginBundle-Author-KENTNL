@@ -152,7 +152,7 @@ sub configure {
     }
   );
   $self->add_plugin( 'Test::CPAN::Changes' => {} );
-  $self->add_plugin( 'RunExtraTests'     => {} );
+  $self->add_plugin( 'RunExtraTests'       => {} );
   $self->add_plugin( 'TestRelease'         => {} );
   $self->add_plugin( 'ConfirmRelease'      => {} );
 
@@ -175,7 +175,12 @@ sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
 
+  my $wanted_version; 
+  if ( exists $section->{payload}->{':version'} ){ 
+      $wanted_version = delete $section->{payload}->{':version'};
+  }
   my $instance = $class->new( $section->{payload} );
+
   $instance->configure();
 
   return @{ $instance->plugins };
