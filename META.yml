@@ -94,6 +94,7 @@ requires:
   IO::Socket::SSL: 1.962
   LWP::Protocol::https: 6.04
   Moose: 2.1005
+  Moose::Util::TypeConstraints: 2.1107
   MooseX::AttributeShortcuts: 0.022
   MooseX::Has::Sugar: 0.05070422
   MooseX::StrictConstructor: 0.19
@@ -185,6 +186,7 @@ x_BuiltWith:
     Module::Build: 0.4203
     Module::Metadata: 1.000019
     Moose: 2.1107
+    Moose::Util::TypeConstraints: 2.1107
     MooseX::AttributeShortcuts: 0.022
     MooseX::Has::Sugar: 0.05070422
     MooseX::StrictConstructor: 0.19

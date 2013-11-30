@@ -108,6 +108,7 @@ eval { $v .= pmver('LWP::Protocol::https','6.04') };
 eval { $v .= pmver('Module::Build','0.4203') };
 eval { $v .= pmver('Module::Metadata','1.000019') };
 eval { $v .= pmver('Moose','2.1005') };
+eval { $v .= pmver('Moose::Util::TypeConstraints','2.1107') };
 eval { $v .= pmver('MooseX::AttributeShortcuts','0.022') };
 eval { $v .= pmver('MooseX::Has::Sugar','0.05070422') };
 eval { $v .= pmver('MooseX::StrictConstructor','0.19') };

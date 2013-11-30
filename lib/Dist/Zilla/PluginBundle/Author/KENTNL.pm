@@ -12,6 +12,7 @@ BEGIN {
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose;
+use Moose::Util::TypeConstraints qw(enum);
 use MooseX::StrictConstructor;
 use MooseX::AttributeShortcuts;
 
@@ -29,7 +30,7 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
-has git_versions            => ( is => 'ro', isa   => 'Bool',     required => 1 );
+has git_versions            => ( is => 'ro', isa   => enum([1]),     required => 1 );
 has plugins                 => ( is => 'ro', isa   => 'ArrayRef', lazy     => 1, builder => sub { [] }, );
 has authority               => ( is => 'ro', isa   => 'Str',      lazy     => 1, builder => sub { 'cpan:KENTNL' }, );
 has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy     => 1, builder => sub { [] }, );
