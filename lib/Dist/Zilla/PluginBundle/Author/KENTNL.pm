@@ -12,6 +12,7 @@ BEGIN {
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose;
+use MooseX::StrictConstructor;
 use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::PluginBundle';

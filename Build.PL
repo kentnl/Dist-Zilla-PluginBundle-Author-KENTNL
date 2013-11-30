@@ -78,6 +78,7 @@ my %module_build_args = (
     "Moose" => "2.1005",
     "MooseX::AttributeShortcuts" => "0.022",
     "MooseX::Has::Sugar" => "0.05070422",
+    "MooseX::StrictConstructor" => 0,
     "MooseX::Types" => "0.38",
     "Net::SSLeay" => "1.55",
     "Perl::PrereqScanner" => "1.018",
