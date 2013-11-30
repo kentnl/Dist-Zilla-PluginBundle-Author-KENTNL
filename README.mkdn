@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 # VERSION
 
-version 2.005000
+version 2.005001
 
 # SYNOPSIS
 
@@ -74,22 +74,6 @@ See [the `PluginBundle` role](https://metacpan.org/pod/Dist::Zilla::Role::Plugin
 }
 
 
-
-# ENVIRONMENT
-
-all of these have to merely exist to constitute a "true" status.
-
-## KENTNL\_NOGIT
-
-the same as no\_git=1
-
-## KENTNL\_NOCPAN
-
-same as no\_cpan = 1
-
-## KENTNL\_RELEASE\_FAIL
-
-same as release\_fail=1
 
 # AUTHOR
 
