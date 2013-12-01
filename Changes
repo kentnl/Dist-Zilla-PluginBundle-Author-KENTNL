@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.006001 2013-12-01T05:07:52Z
  - That last release is about to unhappen. kentnl--
 
  [Dependencies::Stats]
