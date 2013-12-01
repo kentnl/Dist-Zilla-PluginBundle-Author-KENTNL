@@ -163,7 +163,9 @@ while ( @tags > 1 ) {
     }
   }
 }
-path('./Changes.deps.all')->spew_utf8( $changes_all->serialize );
-path('./Changes.deps')->spew_utf8( $changes->serialize );
-path('./Changes.deps.dev')->spew_utf8( $changes_dev->serialize );
-path('./Changes')->spew_utf8( $master_changes->serialize );
+sub _maybe { return $_[0] if defined $_[0]; return q[] }
+
+path('./Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize ) );
+path('./Changes.deps')->spew_utf8( _maybe( $changes->serialize ) );
+path('./Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
+path('./Changes')->spew_utf8( _maybe( $master_changes->serialize ) );
