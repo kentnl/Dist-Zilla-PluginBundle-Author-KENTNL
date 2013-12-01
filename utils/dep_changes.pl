@@ -26,17 +26,24 @@ sub file_sha {
 
 my @tags;
 
-for my $tag ( $git->tag() ) {
-  next if $tag =~ /-source$/;
-  if ( not eval { version->parse($tag); 1 } ) {
-    print "tag $tag skipped\n";
+for my $line ( reverse $git->RUN( 'log', '--pretty=format:%d', 'releases' ) ) {
+  if ( $line =~ /\(tag:\s*([^ ),]+)/ ) {
+    my $tag = $1;
+    next if $tag =~ /-source$/;
+    if ( not eval { version->parse($tag); 1 } ) {
+      print "tag $tag skipped\n";
+      next;
+    }
+    push @tags, $tag;
+
+    #print "$tag\n";
     next;
   }
-  push @tags, $tag;
-
-  #print "$tag\n";
+  if ( $line =~ /\(/ ) {
+    print "Skipped decoration $line\n";
+    next;
+  }
 }
-
 my $build_master_version;
 
 if ( $ENV{V} ) {
@@ -58,6 +65,7 @@ my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, 
 
 while ( @tags > 1 ) {
   my ( $old, $new ) = ( $tags[-2], $tags[-1] );
+  print "$old - $new\n";
   pop @tags;
 
   my $date;
@@ -149,7 +157,7 @@ while ( @tags > 1 ) {
       push @changes, $phase . ': ' . ( join q[ ], @parts );
     }
     $master_release->add_changes( { group => 'Dependencies::Stats' },
-      'Dependencies changed, see Changes.deps{,.all,.dev} for details', @changes );
+      'Dependencies changed since ' . $old . ', see Changes.deps{,.all,.dev} for details', @changes );
   }
   for my $key ( sort keys %{ $diff->cache } ) {
     my $label = $key;
