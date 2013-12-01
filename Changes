@@ -1,6 +1,11 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ - That last release is about to unhappen. kentnl--
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - runtime: ↑1
 
 2.6.0 2013-12-01T02:35:19Z
  [00 Major Changes]

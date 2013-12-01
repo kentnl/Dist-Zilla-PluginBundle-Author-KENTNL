@@ -1,4 +1,6 @@
-2.6.1
+2.006001
+ [Changed / runtime requires]
+ - MooseX::Types 0.38 → 0.39
 
 2.6.0 2013-12-01T02:35:19Z
  [Added / runtime requires]
