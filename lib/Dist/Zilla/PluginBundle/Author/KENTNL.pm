@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.006001';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.006002';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
@@ -30,6 +30,8 @@ sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
 has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] } );
 
+has normal_form => ( is => ro =>, isa => 'Str', builder => sub { 'numify' } );
+has mantissa    => ( is => ro =>, isa => 'Int', builder => sub { 6 } );
 has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1, );
 has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
 has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
@@ -89,7 +91,14 @@ sub configure {
   my ($self) = @_;
 
   # Version
-  $self->add_plugin( 'Git::NextVersion' => { version_regexp => '^(.*)-source$', first_version => '0.001000' } );
+  $self->add_plugin(
+    'Git::NextVersion::Sanitized' => {
+      version_regexp => '^(.*)-source$',
+      first_version  => '0.001000',
+      normal_form    => $self->normal_form,
+      mantissa       => $self->mantissa,
+    }
+  );
 
   # Metadata
   $self->add_plugin( 'MetaConfig' => {} );
@@ -213,7 +222,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.006001
+version 2.006002
 
 =head1 SYNOPSIS
 
