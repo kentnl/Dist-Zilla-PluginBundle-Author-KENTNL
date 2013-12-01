@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.006001 2013-12-01T05:05:12Z
+
 2.6.0 2013-12-01T02:35:19Z
  [00 Major Changes]
  - Internals revamped to use Object Oriented style closer to
