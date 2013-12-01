@@ -109,6 +109,8 @@ sub gather_files {
       '[@Author::KENTNL]',                                                       #
       ':version          = 1.2.0',                                               #
       'git_versions      = 1',                                                   #
+      'normal_form       = numify',
+      'mantissa          = 6',
       '; version_major     = 0',                                                 #
       '; version_minor     = 1',                                                 #
       q(; the following data denotes when this minor was minted),                #
