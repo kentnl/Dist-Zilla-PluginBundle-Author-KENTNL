@@ -95,7 +95,7 @@ requires:
   IO::Socket::SSL: 1.962
   LWP::Protocol::https: 6.04
   Moose: 2.1005
-  Moose::Util::TypeConstraints: 2.1107
+  Moose::Util::TypeConstraints: 0
   MooseX::AttributeShortcuts: 0.022
   MooseX::Has::Sugar: 0.05070422
   MooseX::StrictConstructor: 0.19
@@ -670,6 +670,7 @@ x_Dist_Zilla:
             - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
             - Dist::Zilla::PluginBundle::Author::KENTNL
             - Moose
+            - Moose::Util::TypeConstraints
           upgrade_perl: ~
       name: Prereqs::MatchInstalled::All
       version: 0.1.2
