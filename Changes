@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ - Switch to Git::NextVersion::Sanitized
+
  [Dependencies::Stats]
  - Dependencies changed since 2.006001, see Changes.deps{,.all,.dev} for
    details
