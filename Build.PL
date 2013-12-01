@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "2.6.0",
+  "dist_version" => "2.006001",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -81,7 +81,7 @@ my %module_build_args = (
     "MooseX::AttributeShortcuts" => "0.022",
     "MooseX::Has::Sugar" => "0.05070422",
     "MooseX::StrictConstructor" => "0.19",
-    "MooseX::Types" => "0.38",
+    "MooseX::Types" => "0.39",
     "Net::SSLeay" => "1.55",
     "Perl::PrereqScanner" => "1.018",
     "Pod::Coverage::TrustPod" => "0.100003",
