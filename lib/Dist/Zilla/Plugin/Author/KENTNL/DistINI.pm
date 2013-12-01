@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::DistINI::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.006001';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.007000';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
@@ -48,6 +48,8 @@ sub gather_files {
       '[@Author::KENTNL]',                                                       #
       ':version          = 1.2.0',                                               #
       'git_versions      = 1',                                                   #
+      'normal_form       = numify',
+      'mantissa          = 6',
       '; version_major     = 0',                                                 #
       '; version_minor     = 1',                                                 #
       q(; the following data denotes when this minor was minted),                #
@@ -75,7 +77,6 @@ sub gather_files {
 
     # TODO: support >1 authors. Too lazy atm, its just me. -- Kentnl - 2010-06-10
     # TODO: Actually workout whatever localtime is where Kentnl lives. Atm, its overkill. -- Kentnl - 2010-06-10
-    ## no critic (ProhibitMagicNumbers)
     my $content = str_rf(
       $template,
       {
@@ -122,7 +123,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Autho
 
 =head1 VERSION
 
-version 2.006001
+version 2.007000
 
 =head1 SYNOPSIS
 

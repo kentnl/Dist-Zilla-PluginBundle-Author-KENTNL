@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "2.006001",
+  "dist_version" => "2.007000",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -35,7 +35,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::Git::Commit" => "2.019",
     "Dist::Zilla::Plugin::Git::CommitBuild" => "2.019",
     "Dist::Zilla::Plugin::Git::GatherDir" => "2.019",
-    "Dist::Zilla::Plugin::Git::NextVersion" => "2.019",
+    "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" => "0.001000",
     "Dist::Zilla::Plugin::Git::Tag" => "2.019",
     "Dist::Zilla::Plugin::GithubMeta" => "0.42",
     "Dist::Zilla::Plugin::License" => "5.006",
