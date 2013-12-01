@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.007000 2013-12-01T11:42:18Z
  - Switch to Git::NextVersion::Sanitized
 
  [Dependencies::Stats]
