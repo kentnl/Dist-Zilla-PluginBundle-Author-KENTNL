@@ -136,7 +136,6 @@ sub gather_files {
 
     # TODO: support >1 authors. Too lazy atm, its just me. -- Kentnl - 2010-06-10
     # TODO: Actually workout whatever localtime is where Kentnl lives. Atm, its overkill. -- Kentnl - 2010-06-10
-    ## no critic (ProhibitMagicNumbers)
     my $content = str_rf(
       $template,
       {
