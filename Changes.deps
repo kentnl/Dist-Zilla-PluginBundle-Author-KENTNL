@@ -1,4 +1,11 @@
-2.006001
+2.007000
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Git::NextVersion::Sanitized 0.001000
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::Git::NextVersion 2.019
+
+2.006001 2013-12-01T05:07:52Z
  [Changed / runtime requires]
  - MooseX::Types 0.38 → 0.39
 
@@ -587,45 +594,10 @@
 
 1.1.0 2011-10-30T18:18:21Z
  [Added / runtime requires]
- - Dist::Zilla::Plugin::Authority
- - Dist::Zilla::Plugin::CheckExtraTests
  - Dist::Zilla::Plugin::MinimumPerl
- - Dist::Zilla::Plugin::Test::CPAN::Changes
- - Dist::Zilla::Plugin::Test::Compile 1.112400
- - Dist::Zilla::Plugin::Test::Kwalitee 1.112410
- - Dist::Zilla::Plugin::Test::Perl::Critic 1.102280
- - LWP::Protocol::https 6.00
- - Perl::PrereqScanner 1.006
  - Pod::Weaver::Plugin::Encoding
  - perl v5.10.0
- - strict
  - version
- - warnings
-
- [Added / test requires]
- - Capture::Tiny
- - File::pushd
- - FindBin
- - JSON
- - Path::Class
- - Test::DZil
- - Test::Fatal
- - Test::File::ShareDir v0.3.0
- - Test::Output
-
- [Changed / runtime requires]
- - Dist::Zilla 4.101612 → 4.300000
- - Dist::Zilla::Plugin::AutoPrereqs 0 → 4.200011
- - Dist::Zilla::Plugin::Twitter 0.007 → 0.011
-
- [Removed / runtime requires]
- - Dist::Zilla::Plugin::CompileTests 1.101800
- - Dist::Zilla::Plugin::CriticTests 1.102280
- - Dist::Zilla::Plugin::ExtraTests
- - Dist::Zilla::Plugin::KwaliteeTests 1.101420
-
- [Removed / test requires]
- - English
 
 1.0.22 2011-10-07T21:14:49Z
  [Changed / runtime requires]
@@ -636,39 +608,6 @@
 1.0.20 2011-09-10T19:45:36Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Authority
- - Dist::Zilla::Plugin::CheckExtraTests
- - Dist::Zilla::Plugin::Test::CPAN::Changes
- - Dist::Zilla::Plugin::Test::Compile 1.112400
- - Dist::Zilla::Plugin::Test::Kwalitee 1.112410
- - Dist::Zilla::Plugin::Test::Perl::Critic 1.102280
- - LWP::Protocol::https 6.00
- - Perl::PrereqScanner 1.006
- - strict
- - warnings
-
- [Added / test requires]
- - Capture::Tiny
- - File::pushd
- - FindBin
- - JSON
- - Path::Class
- - Test::DZil
- - Test::Fatal
- - Test::File::ShareDir v0.3.0
- - Test::Output
-
- [Changed / runtime requires]
- - Dist::Zilla 4.101612 → 4.300000
- - Dist::Zilla::Plugin::AutoPrereqs 0 → 4.200011
-
- [Removed / runtime requires]
- - Dist::Zilla::Plugin::CompileTests 1.101800
- - Dist::Zilla::Plugin::CriticTests 1.102280
- - Dist::Zilla::Plugin::ExtraTests
- - Dist::Zilla::Plugin::KwaliteeTests 1.101420
-
- [Removed / test requires]
- - English
 
 1.0.19 2011-09-06T19:42:54Z
 
@@ -728,22 +667,6 @@
 1.0.11 2011-07-11T04:56:38Z
 
 1.0.10 2011-07-11T03:41:19Z
- [Added / runtime requires]
- - Dist::Zilla::Plugin::Test::CPAN::Changes
- - LWP::Protocol::https 6.00
-
- [Added / test requires]
- - Capture::Tiny
- - File::pushd
- - FindBin
- - Path::Class
- - Test::DZil
- - Test::Fatal
- - Test::File::ShareDir
- - Test::Output
-
- [Changed / runtime requires]
- - Dist::Zilla::Plugin::CompileTests 1.101800 → 1.110930
 
 1.0.9 2011-06-13T23:50:29Z
  [Added / test requires]
@@ -778,97 +701,12 @@
 1.0.3 2011-04-03T01:00:33Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::CPANChangesTests
- - Dist::Zilla::Plugin::CompileTests 1.101800
- - Dist::Zilla::Plugin::CriticTests 1.102280
- - Dist::Zilla::Plugin::ExtraTests
- - Dist::Zilla::Plugin::KwaliteeTests 1.101420
-
- [Added / test requires]
- - English
-
- [Changed / runtime requires]
- - Dist::Zilla 4.300000 → 4.101612
- - Dist::Zilla::Plugin::AutoPrereqs 4.200011 → 0
- - Dist::Zilla::Plugin::Twitter 0.011 → 0.007
-
- [Removed / runtime requires]
- - Dist::Zilla::Plugin::Authority
- - Dist::Zilla::Plugin::CheckExtraTests
- - Dist::Zilla::Plugin::Test::CPAN::Changes
- - Dist::Zilla::Plugin::Test::Compile 1.112400
- - Dist::Zilla::Plugin::Test::Kwalitee 1.112410
- - Dist::Zilla::Plugin::Test::Perl::Critic 1.102280
- - LWP::Protocol::https 6.00
- - Perl::PrereqScanner 1.006
- - strict
- - warnings
-
- [Removed / test requires]
- - Capture::Tiny
- - File::pushd
- - FindBin
- - JSON
- - Path::Class
- - Test::DZil
- - Test::Fatal
- - Test::File::ShareDir v0.3.0
- - Test::Output
 
 1.0.2 2011-02-07T14:53:13Z
- [Added / runtime requires]
- - Dist::Zilla::Plugin::CompileTests 1.101800
- - Dist::Zilla::Plugin::CriticTests 1.102280
- - Dist::Zilla::Plugin::ExtraTests
- - Dist::Zilla::Plugin::KwaliteeTests 1.101420
-
- [Added / test requires]
- - English
-
- [Changed / runtime requires]
- - Dist::Zilla 4.300000 → 4.101612
- - Dist::Zilla::Plugin::AutoPrereqs 4.200011 → 0
-
- [Removed / runtime requires]
- - Dist::Zilla::Plugin::CheckExtraTests
- - Dist::Zilla::Plugin::Test::CPAN::Changes
- - Dist::Zilla::Plugin::Test::Compile 1.112400
- - Dist::Zilla::Plugin::Test::Kwalitee 1.112410
- - Dist::Zilla::Plugin::Test::Perl::Critic 1.102280
- - LWP::Protocol::https 6.00
- - Perl::PrereqScanner 1.006
- - strict
- - warnings
-
- [Removed / test requires]
- - Capture::Tiny
- - File::pushd
- - FindBin
- - JSON
- - Path::Class
- - Test::DZil
- - Test::Fatal
- - Test::File::ShareDir v0.3.0
- - Test::Output
 
 1.0.1 2011-01-12T19:03:19Z
 
 1.000.000 2011-01-09T10:15:06Z
- [Changed / runtime requires]
- - Dist::Zilla::Plugin::CompileTests 1.110930 → 1.101800
-
- [Removed / runtime requires]
- - Dist::Zilla::Plugin::Test::CPAN::Changes
- - LWP::Protocol::https 6.00
-
- [Removed / test requires]
- - Capture::Tiny
- - File::pushd
- - FindBin
- - Path::Class
- - Test::DZil
- - Test::Fatal
- - Test::File::ShareDir
- - Test::Output
 
 0.01023312 2011-01-01T20:01:33Z
  [Added / runtime requires]
