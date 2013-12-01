@@ -1,7 +1,9 @@
-2.6.0
+2.6.1
+
+2.6.0 2013-12-01T02:35:19Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::RunExtraTests 0.016
- - Moose::Util::TypeConstraints 2.1107
+ - Moose::Util::TypeConstraints
  - MooseX::AttributeShortcuts 0.022
  - MooseX::StrictConstructor 0.19
 
