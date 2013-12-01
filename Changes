@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.6.0 2013-12-01T02:35:19Z
  [00 Major Changes]
  - Internals revamped to use Object Oriented style closer to
    ::Role::PluginBundle::Easy, except parameters to bundles are top-level
