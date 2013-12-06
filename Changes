@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.007001 2013-12-06T16:47:11Z
+
 2.007000 2013-12-01T11:42:18Z
  - Switch to Git::NextVersion::Sanitized
 
