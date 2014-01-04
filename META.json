@@ -75,7 +75,7 @@
             "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
             "Dist::Zilla::Plugin::ModuleBuild" : "5.008",
             "Dist::Zilla::Plugin::NextRelease" : "5.008",
-            "Dist::Zilla::Plugin::PerlTidy" : "0.13",
+            "Dist::Zilla::Plugin::PerlTidy" : "0.14",
             "Dist::Zilla::Plugin::PkgVersion" : "5.008",
             "Dist::Zilla::Plugin::PodCoverageTests" : "5.008",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "5.008",
@@ -137,7 +137,7 @@
             "Test::Fatal" : "0.013",
             "Test::File::ShareDir" : "v0.4.1",
             "Test::More" : "1.001002",
-            "Test::Output" : "1.02",
+            "Test::Output" : "1.03",
             "lib" : "0"
          }
       }
@@ -145,19 +145,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.007001"
+         "version" : "2.007002"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.007001"
+         "version" : "2.007002"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.007001"
+         "version" : "2.007002"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.007001"
+         "version" : "2.007002"
       }
    },
    "release_status" : "stable",
@@ -172,7 +172,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.007001",
+   "version" : "2.007002",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.23",
@@ -205,7 +205,7 @@
          "Dist::Zilla::Plugin::ModuleBuild" : "5.008",
          "Dist::Zilla::Plugin::ModuleShareDirs" : "5.008",
          "Dist::Zilla::Plugin::NextRelease" : "5.008",
-         "Dist::Zilla::Plugin::PerlTidy" : "0.13",
+         "Dist::Zilla::Plugin::PerlTidy" : "0.14",
          "Dist::Zilla::Plugin::PkgVersion" : "5.008",
          "Dist::Zilla::Plugin::PodCoverageTests" : "5.008",
          "Dist::Zilla::Plugin::PodSyntaxTests" : "5.008",
@@ -261,7 +261,7 @@
          "Test::File::ShareDir" : "0.4.1",
          "Test::Kwalitee" : "1.17",
          "Test::More" : "1.001002",
-         "Test::Output" : "1.02",
+         "Test::Output" : "1.03",
          "Test::Perl::Critic" : "1.02",
          "Test::Pod" : "1.48",
          "Test::Pod::Coverage" : "1.08",

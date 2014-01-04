@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.007001';
+  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.007002';
 }
 
 # FILENAME: MinimumPerl.pm
@@ -136,7 +136,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.007001
+version 2.007002
 
 =head1 METHODS
 
@@ -161,7 +161,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::DistINI::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.007001';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.007002';
 }
 
 # ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
@@ -123,7 +123,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Autho
 
 =head1 VERSION
 
-version 2.007001
+version 2.007002
 
 =head1 SYNOPSIS
 
@@ -198,7 +198,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

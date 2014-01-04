@@ -18,7 +18,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-KENTNL",
-  "dist_version" => "2.007001",
+  "dist_version" => "2.007002",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::KENTNL",
   "recommends" => {},
@@ -51,7 +51,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::MinimumPerl" => "1.003",
     "Dist::Zilla::Plugin::ModuleBuild" => "5.008",
     "Dist::Zilla::Plugin::NextRelease" => "5.008",
-    "Dist::Zilla::Plugin::PerlTidy" => "0.13",
+    "Dist::Zilla::Plugin::PerlTidy" => "0.14",
     "Dist::Zilla::Plugin::PkgVersion" => "5.008",
     "Dist::Zilla::Plugin::PodCoverageTests" => "5.008",
     "Dist::Zilla::Plugin::PodSyntaxTests" => "5.008",
@@ -117,7 +117,7 @@ my %module_build_args = (
     "Test::Fatal" => "0.013",
     "Test::File::ShareDir" => "v0.4.1",
     "Test::More" => "1.001002",
-    "Test::Output" => "1.02",
+    "Test::Output" => "1.03",
     "lib" => 0
   }
 );
@@ -137,7 +137,7 @@ my %fallback_build_requires = (
   "Test::Fatal" => "0.013",
   "Test::File::ShareDir" => "v0.4.1",
   "Test::More" => "1.001002",
-  "Test::Output" => "1.02",
+  "Test::Output" => "1.03",
   "lib" => 0
 );
 
