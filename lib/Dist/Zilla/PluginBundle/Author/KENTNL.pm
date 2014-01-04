@@ -12,7 +12,7 @@ BEGIN {
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-use Moose;
+use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
 use MooseX::StrictConstructor;
 use MooseX::AttributeShortcuts;
