@@ -15,8 +15,7 @@ BEGIN {
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
 
-use Moose qw( has extends meta override );
-
+use Moose qw( has extends override );
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
 
