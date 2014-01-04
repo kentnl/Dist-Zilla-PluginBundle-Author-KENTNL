@@ -1,3 +1,4 @@
+use 5.006; # warnings
 use strict;
 use warnings;
 
@@ -9,10 +10,10 @@ BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.007002';
 }
 
-# ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
+# ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
 
-use Moose;
+use Moose qw( with );
 
 with qw(Dist::Zilla::Role::FileGatherer);
 
@@ -93,7 +94,7 @@ sub gather_files {
         rel_hour        => (localtime)[2],
         tz              => 'Pacific/Auckland',
         tags            => '#perl #cpan',
-      }
+      },
     );
     return $content;
   };
@@ -101,7 +102,7 @@ sub gather_files {
     {
       name => 'dist.ini',
       code => $code,
-    }
+    },
   );
   $self->add_file($file);
   return 1;
@@ -119,7 +120,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Author::KENTNL projects.
+Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::KENTNL projects.
 
 =head1 VERSION
 
