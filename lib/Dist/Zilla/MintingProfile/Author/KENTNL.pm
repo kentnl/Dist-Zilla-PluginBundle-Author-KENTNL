@@ -12,7 +12,7 @@ BEGIN {
 
 # ABSTRACT: KENTNL's Minting Profile
 
-use Moose;
+use Moose qw( meta with );
 use namespace::autoclean;
 with 'Dist::Zilla::Role::MintingProfile::ShareDir';
 
