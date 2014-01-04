@@ -1,3 +1,4 @@
+use 5.004; # __PACKAGE__
 use strict;
 use warnings;
 
