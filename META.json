@@ -101,8 +101,8 @@
             "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
             "IO::Socket::SSL" : "1.962",
             "LWP::Protocol::https" : "6.04",
-            "Moose" : "2.1005",
-            "Moose::Util::TypeConstraints" : "0",
+            "Moose" : "2.1200",
+            "Moose::Util::TypeConstraints" : "2.1200",
             "MooseX::AttributeShortcuts" : "0.022",
             "MooseX::Has::Sugar" : "0.05070422",
             "MooseX::StrictConstructor" : "0.19",
@@ -145,19 +145,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.007002"
+         "version" : "2.007003"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.007002"
+         "version" : "2.007003"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.007002"
+         "version" : "2.007003"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.007002"
+         "version" : "2.007003"
       }
    },
    "release_status" : "stable",
@@ -172,7 +172,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.007002",
+   "version" : "2.007003",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.23",
@@ -843,9 +843,7 @@
                      "File::Spec",
                      "Cwd",
                      "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
-                     "Dist::Zilla::PluginBundle::Author::KENTNL",
-                     "Moose",
-                     "Moose::Util::TypeConstraints"
+                     "Dist::Zilla::PluginBundle::Author::KENTNL"
                   ],
                   "upgrade_perl" : null
                }
