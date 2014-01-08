@@ -1,4 +1,9 @@
-2.007002
+2.007003
+ [Changed / runtime requires]
+ - Moose 2.1005 → 2.1200
+ - Moose::Util::TypeConstraints 0 → 2.1200
+
+2.007002 2014-01-08T03:20:39Z
  [Changed / runtime requires]
  - Dist::Zilla 5.008 → 5.009
  - Dist::Zilla::File::FromCode 5.008 → 5.009
