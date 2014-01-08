@@ -1,4 +1,11 @@
-2.007001
+2.007002
+ [Changed / develop requires]
+ - Dist::Zilla 5.008 → 5.009
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.008 → 5.009
+ - Dist::Zilla::Plugin::Prereqs 5.008 → 5.009
+ - version 0.9904 → 0.9906
+
+2.007001 2013-12-29T09:10:42Z
  [Changed / develop requires]
  - Dist::Zilla 5.006 → 5.008
  - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.009 → 0.010

@@ -5,6 +5,12 @@
  - Dependency update to fix UTF8 Encoding problems
  - Apply some stricter PerlCritic policies
 
+ [Dependencies::Stats]
+ - Dependencies changed since 2.007001, see Changes.deps{,.all,.dev} for
+   details
+ - develop: ↑4
+ - runtime: ↑26
+ - test: ↑2
 
 2.007001 2013-12-29T09:10:42Z
  [Dependencies::Stats]
