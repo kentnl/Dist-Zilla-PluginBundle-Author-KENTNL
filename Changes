@@ -1,5 +1,14 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.007003 2014-01-08T03:36:44Z
+ [00 Minor]
+ - Upgrade Moose depenencies to 2.1200
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.007002, see Changes.deps{,.all,.dev} for
+   details
+ - runtime: ↑2
+
 2.007002 2014-01-08T03:20:39Z
  [00 Minor]
  - Dependency update to fix UTF8 Encoding problems
