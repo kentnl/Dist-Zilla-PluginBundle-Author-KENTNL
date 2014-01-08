@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
-# ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
+# ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
 =begin MetaPOD::JSON v1.1.0
 
