@@ -1,6 +1,10 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - Dependency update to fix UTF8 Encoding problems
+ - Apply some stricter PerlCritic policies
+
 
 2.007001 2013-12-29T09:10:42Z
  [Dependencies::Stats]
