@@ -2,6 +2,10 @@ use 5.006;    # warnings
 use strict;
 use warnings;
 
+=encoding UTF-8
+
+=cut
+
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
@@ -70,7 +74,7 @@ And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::
 
 =head1 THEFT
 
-This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken =).
+This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken C<< ☺ >>.
 
 =cut
 
