@@ -1,18 +1,20 @@
+use 5.006;    # warnings
 use strict;
 use warnings;
+
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::DistINI::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.007001';
+  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.007002';
 }
 
-# ABSTRACT: Generate a C<dist.ini> for @Author::KENTNL projects.
+# ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
 
-use Moose;
+use Moose qw( with );
 
 with qw(Dist::Zilla::Role::FileGatherer);
 
@@ -93,7 +95,7 @@ sub gather_files {
         rel_hour        => (localtime)[2],
         tz              => 'Pacific/Auckland',
         tags            => '#perl #cpan',
-      }
+      },
     );
     return $content;
   };
@@ -101,7 +103,7 @@ sub gather_files {
     {
       name => 'dist.ini',
       code => $code,
-    }
+    },
   );
   $self->add_file($file);
   return 1;
@@ -119,11 +121,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a C<dist.ini> for @Author::KENTNL projects.
+Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::KENTNL projects.
 
 =head1 VERSION
 
-version 2.007001
+version 2.007002
 
 =head1 SYNOPSIS
 
@@ -190,7 +192,7 @@ And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::
 
 =head1 THEFT
 
-This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken =).
+This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken C<< ☺ >>.
 
 =head1 AUTHOR
 
@@ -198,7 +200,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

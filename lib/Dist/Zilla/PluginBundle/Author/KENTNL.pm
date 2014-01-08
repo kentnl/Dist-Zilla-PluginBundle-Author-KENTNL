@@ -1,3 +1,4 @@
+use 5.006;    # warnings
 use strict;
 use warnings;
 
@@ -6,12 +7,12 @@ BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.007001';
+  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.007002';
 }
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-use Moose;
+use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
 use MooseX::StrictConstructor;
 use MooseX::AttributeShortcuts;
@@ -97,18 +98,18 @@ sub configure {
       first_version  => '0.001000',
       normal_form    => $self->normal_form,
       mantissa       => $self->mantissa,
-    }
+    },
   );
 
   # Metadata
-  $self->add_plugin( 'MetaConfig' => {} );
+  $self->add_plugin( 'MetaConfig' => {}, );
 
-  $self->add_plugin( 'GithubMeta' => { issues => 1 } );
+  $self->add_plugin( 'GithubMeta' => { issues => 1 }, );
 
-  $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' } );
+  $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
   if ( $^O eq 'linux' ) {
-    $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 } );
+    $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 }, );
   }
   else {
     $self->add_plugin( 'MetaData::BuiltWith' => { show_config => 1 } );
@@ -148,14 +149,14 @@ sub configure {
       -phase                                            => 'develop',
       -type                                             => 'suggests',
       'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
-    }
+    },
   );
   $self->add_named_plugin(
     'BundleDevelRequires' => 'Prereqs' => {
       -phase                                      => 'develop',
       -type                                       => 'requires',
       'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
-    }
+    },
   );
 
   $self->add_plugin( 'MinimumPerl' => {} );
@@ -168,7 +169,7 @@ sub configure {
       type     => 'markdown',
       filename => 'README.mkdn',
       location => 'root',
-    }
+    },
   );
   $self->add_plugin( 'Test::CPAN::Changes' => {} );
   $self->add_plugin( 'RunExtraTests'       => {} );
@@ -185,7 +186,7 @@ sub configure {
   $self->add_plugin(
     'Prereqs::MatchInstalled' => {
       modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
-    }
+    },
   );
   return;
 }
@@ -222,7 +223,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.007001
+version 2.007002
 
 =head1 SYNOPSIS
 
@@ -329,7 +330,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
