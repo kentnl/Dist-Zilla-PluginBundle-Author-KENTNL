@@ -20,8 +20,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 
 =cut
 
-use Moose;
-
+use Moose qw( has extends override );
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
 

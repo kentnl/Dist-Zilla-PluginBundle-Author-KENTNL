@@ -19,7 +19,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 =cut
 
-use Moose;
+use Moose qw( with );
 
 with qw(Dist::Zilla::Role::FileGatherer);
 
