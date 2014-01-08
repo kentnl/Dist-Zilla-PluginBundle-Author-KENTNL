@@ -15,8 +15,8 @@ stop_words = metadata KiokuDB KENTNL KENTNL's CPAN blogged CPANized PluginBundle
 [Subroutines::ProhibitUnusedPrivateSubroutines]
 private_name_regex = _(?!build_)\w
 
-;[Subroutines::ProhibitCallsToUndeclaredSubs]
-;exempt_subs = str_rf
+[Subroutines::ProhibitCallsToUndeclaredSubs]
+exempt_subs = Dist::Zilla::Plugin::Author::KENTNL::DistINI::str_rf
 
 [TestingAndDebugging::RequireUseStrict]
 equivalent_modules = Moose
