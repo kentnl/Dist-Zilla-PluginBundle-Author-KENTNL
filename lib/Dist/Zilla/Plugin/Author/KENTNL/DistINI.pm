@@ -155,7 +155,7 @@ sub gather_files {
         rel_hour        => (localtime)[2],
         tz              => 'Pacific/Auckland',
         tags            => '#perl #cpan',
-      }
+      },
     );
     return $content;
   };
@@ -163,7 +163,7 @@ sub gather_files {
     {
       name => 'dist.ini',
       code => $code,
-    }
+    },
   );
   $self->add_file($file);
   return 1;

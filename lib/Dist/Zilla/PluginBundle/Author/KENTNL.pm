@@ -201,18 +201,18 @@ sub configure {
       first_version  => '0.001000',
       normal_form    => $self->normal_form,
       mantissa       => $self->mantissa,
-    }
+    },
   );
 
   # Metadata
-  $self->add_plugin( 'MetaConfig' => {} );
+  $self->add_plugin( 'MetaConfig' => {}, );
 
-  $self->add_plugin( 'GithubMeta' => { issues => 1 } );
+  $self->add_plugin( 'GithubMeta' => { issues => 1 }, );
 
-  $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' } );
+  $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
   if ( $^O eq 'linux' ) {
-    $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 } );
+    $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 }, );
   }
   else {
     $self->add_plugin( 'MetaData::BuiltWith' => { show_config => 1 } );
@@ -252,14 +252,14 @@ sub configure {
       -phase                                            => 'develop',
       -type                                             => 'suggests',
       'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
-    }
+    },
   );
   $self->add_named_plugin(
     'BundleDevelRequires' => 'Prereqs' => {
       -phase                                      => 'develop',
       -type                                       => 'requires',
       'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
-    }
+    },
   );
 
   $self->add_plugin( 'MinimumPerl' => {} );
@@ -272,7 +272,7 @@ sub configure {
       type     => 'markdown',
       filename => 'README.mkdn',
       location => 'root',
-    }
+    },
   );
   $self->add_plugin( 'Test::CPAN::Changes' => {} );
   $self->add_plugin( 'RunExtraTests'       => {} );
@@ -289,7 +289,7 @@ sub configure {
   $self->add_plugin(
     'Prereqs::MatchInstalled' => {
       modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
-    }
+    },
   );
   return;
 }
