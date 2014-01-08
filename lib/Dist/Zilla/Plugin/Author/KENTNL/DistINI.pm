@@ -1,7 +1,6 @@
 use 5.006; # warnings
 use strict;
 use warnings;
-use utf8;
 
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
