@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.008000';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.009000';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose qw( with has );
@@ -228,7 +228,7 @@ sub configure {
   $self->add_plugin( 'MetaTests'      => {} );
   $self->add_plugin( 'PodCoverageTests'       => {} );
   $self->add_plugin( 'PodSyntaxTests'         => {} );
-  $self->add_plugin( 'ReportVersions::Tiny'   => {} );
+  $self->add_plugin( 'Test::ReportPrereqs'    => {} );
   $self->add_plugin( 'Test::Kwalitee'         => {} );
   $self->add_plugin( 'EOLTests'               => { trailing_whitespace => 1, } );
   $self->add_plugin( 'Test::MinimumVersion'   => {} );
@@ -329,7 +329,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.008000
+version 2.009000
 
 =head1 SYNOPSIS
 
