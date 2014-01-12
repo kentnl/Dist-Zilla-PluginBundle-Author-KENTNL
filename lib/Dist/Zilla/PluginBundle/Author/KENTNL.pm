@@ -245,8 +245,8 @@ sub configure {
   $self->add_plugin( 'PkgVersion' => {} );
   $self->add_plugin(
     'PodWeaver' => {
-      replacer => 'replace_with_blank'
-    }
+      replacer => 'replace_with_blank',
+    },
   );
   $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
 
