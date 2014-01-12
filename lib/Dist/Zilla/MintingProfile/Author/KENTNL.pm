@@ -1,4 +1,4 @@
-use 5.006;    # warning pragma
+use 5.008;    # utf8 pragma
 use strict;
 use warnings;
 use utf8;
