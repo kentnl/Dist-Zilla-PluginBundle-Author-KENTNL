@@ -1,6 +1,16 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Major]
+ - use Git::NextVersion for commit-oriented timestamps in Changes
+ - use PerlMunger replace-with-blank for better line consistency.
+ - usual dependency bumping
+
+ [Dependencies::Noteworthy]
+ - need Dist::Zilla::Plugin::Git::NextRelease
+ - need Pod::Elemental::PerlMunger 0.200000
+ - Module::Build upgraded
+
 
 2.007003 2014-01-08T03:36:44Z
  [00 Minor]
