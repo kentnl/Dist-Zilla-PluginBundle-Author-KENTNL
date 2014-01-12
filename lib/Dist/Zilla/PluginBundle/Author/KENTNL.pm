@@ -227,7 +227,7 @@ sub configure {
   $self->add_plugin( 'MetaTests'      => {} );
   $self->add_plugin( 'PodCoverageTests'       => {} );
   $self->add_plugin( 'PodSyntaxTests'         => {} );
-  $self->add_plugin( 'ReportVersions::Tiny'   => {} );
+  $self->add_plugin( 'Test::ReportPrereqs'    => {} );
   $self->add_plugin( 'Test::Kwalitee'         => {} );
   $self->add_plugin( 'EOLTests'               => { trailing_whitespace => 1, } );
   $self->add_plugin( 'Test::MinimumVersion'   => {} );
