@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.008000 2014-01-12T02:41:36Z
+2.008000 2014-01-12T02:48:08Z
  [00 Major]
  - use Git::NextVersion for commit-oriented timestamps in Changes
  - use PerlMunger replace-with-blank for better line consistency.
