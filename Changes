@@ -10,6 +10,8 @@
  - need Dist::Zilla::Plugin::Git::NextRelease
  - need Pod::Elemental::PerlMunger 0.200000
  - Module::Build upgraded
+ - perl 5.8 minimum ( Unusable below 5.10 anyway )
+ - Dzil upgrade for new package version magic
 
  [Dependencies::Stats]
  - Dependencies changed since 2.007003, see Changes.deps{,.all,.dev} for
