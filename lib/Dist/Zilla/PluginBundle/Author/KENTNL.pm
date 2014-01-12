@@ -125,8 +125,8 @@ sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
 has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] } );
 
-has normal_form => ( is => ro =>, isa => 'Str', required => 1 );#builder => sub { 'numify' } );
-has mantissa    => ( is => ro =>, isa => 'Int', required => 1 );#builder => sub { 6 } );
+has normal_form => ( is => ro =>, isa => 'Str', required => 1 );    #builder => sub { 'numify' } );
+has mantissa    => ( is => ro =>, isa => 'Int', required => 1 );    #builder => sub { 6 } );
 
 has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1, );
 has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
@@ -247,10 +247,12 @@ sub configure {
   $self->add_plugin( 'ManifestSkip' => {} );
 
   # Mungers
-  $self->add_plugin( 'PkgVersion'  => {} );
-  $self->add_plugin( 'PodWeaver'   => {
-        replacer      => 'replace_with_blank'
-  } );
+  $self->add_plugin( 'PkgVersion' => {} );
+  $self->add_plugin(
+    'PodWeaver' => {
+      replacer => 'replace_with_blank'
+    }
+  );
   $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
 
   # Prereqs
