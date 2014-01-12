@@ -96,7 +96,7 @@ my %module_build_args = (
     "namespace::autoclean" => "0.15",
     "perl" => "5.008",
     "strict" => 0,
-    "utf8" => "1.13",
+    "utf8" => 0,
     "version" => "0.9906",
     "warnings" => 0
   },

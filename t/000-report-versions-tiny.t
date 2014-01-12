@@ -134,7 +134,7 @@ eval { $v .= pmver('Test::Pod::Coverage','1.08') };
 eval { $v .= pmver('lib','any version') };
 eval { $v .= pmver('namespace::autoclean','0.15') };
 eval { $v .= pmver('strict','any version') };
-eval { $v .= pmver('utf8','1.13') };
+eval { $v .= pmver('utf8','any version') };
 eval { $v .= pmver('version','0.9906') };
 eval { $v .= pmver('warnings','any version') };
 
