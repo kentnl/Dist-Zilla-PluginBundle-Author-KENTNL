@@ -6,10 +6,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::AUTHORITY = 'cpan:KENTNL';
 }
-{
-  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.007004';
-}
-
+$Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.007004';
 # FILENAME: MinimumPerl.pm
 # CREATED: 31/10/11 05:25:54 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: The MinimumPerl Plugin with a few hacks

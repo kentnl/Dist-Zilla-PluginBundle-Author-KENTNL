@@ -6,10 +6,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
-{
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.007004';
-}
-
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.007004';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose qw( with has );

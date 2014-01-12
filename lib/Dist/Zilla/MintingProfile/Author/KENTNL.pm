@@ -6,10 +6,7 @@ package Dist::Zilla::MintingProfile::Author::KENTNL;
 BEGIN {
   $Dist::Zilla::MintingProfile::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
-{
-  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.007004';
-}
-
+$Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.007004';
 # ABSTRACT: KENTNL's Minting Profile
 
 use Moose qw( with );
