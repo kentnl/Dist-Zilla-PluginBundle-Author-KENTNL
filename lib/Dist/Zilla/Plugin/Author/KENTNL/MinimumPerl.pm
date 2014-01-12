@@ -125,7 +125,7 @@ sub minperl {
 }
 
 override register_prereqs => sub {
-  my ( $self, @args ) = @_;
+  my ( $self ) = @_;
 
   my $minperl = $self->minperl;
 
