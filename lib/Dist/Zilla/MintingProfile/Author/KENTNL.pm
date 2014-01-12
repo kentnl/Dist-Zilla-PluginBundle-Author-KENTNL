@@ -1,20 +1,37 @@
-use 5.006;    # warning pragma
+use 5.008;    # utf8 pragma
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::MintingProfile::Author::KENTNL;
 BEGIN {
   $Dist::Zilla::MintingProfile::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
-{
-  $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.007003';
-}
-
+$Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.008000';
 # ABSTRACT: KENTNL's Minting Profile
 
 use Moose qw( with );
 use namespace::autoclean;
 with 'Dist::Zilla::Role::MintingProfile::ShareDir';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -34,7 +51,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 2.007003
+version 2.008000
 
 =head1 SYNOPSIS
 

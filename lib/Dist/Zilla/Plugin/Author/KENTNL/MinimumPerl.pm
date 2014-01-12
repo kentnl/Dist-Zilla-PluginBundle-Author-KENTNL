@@ -1,18 +1,27 @@
-use 5.006;    # warnings
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::AUTHORITY = 'cpan:KENTNL';
 }
-{
-  $Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.007003';
-}
-
+$Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.008000';
 # FILENAME: MinimumPerl.pm
 # CREATED: 31/10/11 05:25:54 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
+
+
+
+
+
+
+
+
+
+
+
 
 
 use Moose qw( has extends override );
@@ -40,7 +49,7 @@ sub _3part_check {
     $_[1]->isa('PPI::Token::Symbol') and $_[1]->content =~ /::VERSION\z/msx;
   };
   my $version_match = sub {
-    $_[1]->class eq 'PPI::Token::Quote::Single' and $_[1]->parent->find_any($version_declaration);
+    'PPI::Token::Quote::Single' eq $_[1]->class and $_[1]->parent->find_any($version_declaration);
   };
   my (@versions) = @{ $document->find($version_match) || [] };
   for my $versiondecl (@versions) {
@@ -96,6 +105,11 @@ sub _build_detected_perl {
 }
 
 
+
+
+
+
+
 sub minperl {
   require version;
   my $self = shift;
@@ -111,7 +125,7 @@ sub minperl {
 }
 
 override register_prereqs => sub {
-  my ( $self, @args ) = @_;
+  my ($self) = @_;
 
   my $minperl = $self->minperl;
 
@@ -136,7 +150,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.007003
+version 2.008000
 
 =head1 METHODS
 

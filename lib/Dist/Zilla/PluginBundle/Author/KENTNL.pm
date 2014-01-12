@@ -1,15 +1,13 @@
-use 5.006;    # warnings
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
 }
-{
-  $Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.007003';
-}
-
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.008000';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 use Moose qw( with has );
@@ -20,7 +18,96 @@ use MooseX::AttributeShortcuts;
 with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::BundleDeps';
 
-use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
+use namespace::autoclean '-also' => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -29,15 +116,16 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
-has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] } );
+has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'builder' => sub { [] } );
 
-has normal_form => ( is => ro =>, isa => 'Str', builder => sub { 'numify' } );
-has mantissa    => ( is => ro =>, isa => 'Int', builder => sub { 6 } );
-has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1, );
-has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
-has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
-has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { q[] }, );
-has twitter_hash_tags       => (
+has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', 'required' => 1 );    #builder => sub { 'numify' } );
+has 'mantissa'    => ( 'is' => ro =>, 'isa' => 'Int', 'required' => 1 );    #builder => sub { 6 } );
+
+has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
+has 'authority'               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+has 'auto_prereqs_skip'       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
+has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { q[] }, );
+has 'twitter_hash_tags'       => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
@@ -47,7 +135,7 @@ has twitter_hash_tags       => (
     return '#perl #cpan ' . $self->twitter_extra_hash_tags;
   },
 );
-has tweet_url => (
+has 'tweet_url' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
@@ -58,12 +146,17 @@ has tweet_url => (
 );
 
 
+
+
+
+
+
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
     $conf = {};
   }
-  if ( not ref $conf or not ref $conf eq 'HASH' ) {
+  if ( not ref $conf or not 'HASH' eq ref $conf ) {
     require Carp;
     Carp::croak('Conf must be a hash');
   }
@@ -73,12 +166,17 @@ sub add_plugin {
 }
 
 
+
+
+
+
+
 sub add_named_plugin {
   my ( $self, $name, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
     $conf = {};
   }
-  if ( not ref $conf or not ref $conf eq 'HASH' ) {
+  if ( not ref $conf or not 'HASH' eq ref $conf ) {
     require Carp;
     Carp::croak('Conf must be a hash');
   }
@@ -86,6 +184,11 @@ sub add_named_plugin {
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
   return;
 }
+
+
+
+
+
 
 
 sub configure {
@@ -108,7 +211,7 @@ sub configure {
 
   $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
-  if ( $^O eq 'linux' ) {
+  if ( 'linux' eq $^O ) {
     $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 }, );
   }
   else {
@@ -137,9 +240,13 @@ sub configure {
   $self->add_plugin( 'ManifestSkip' => {} );
 
   # Mungers
-  $self->add_plugin( 'PkgVersion'  => {} );
-  $self->add_plugin( 'PodWeaver'   => {} );
-  $self->add_plugin( 'NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
+  $self->add_plugin( 'PkgVersion' => {} );
+  $self->add_plugin(
+    'PodWeaver' => {
+      replacer => 'replace_with_blank',
+    },
+  );
+  $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
 
   # Prereqs
 
@@ -208,8 +315,7 @@ sub bundle_config {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
-## no critic (RequireEndWithOne)
-'I go to prepare a perl module for you, if it were not so, I would have told you';
+1;
 
 __END__
 
@@ -223,7 +329,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.007003
+version 2.008000
 
 =head1 SYNOPSIS
 
@@ -241,22 +347,24 @@ and wants others to be using what he's using if they want to be doing work on hi
 =head1 NAMING SCHEME
 
 As I blogged about on L<< C<blog.fox.geek.nz> : Making a Minting Profile as a CPANized Dist |http://bit.ly/hAwl4S >>,
-this bundle advocates a new naming system for people who are absolutely convinced they want their C<Author-Centric> distribution uploaded to CPAN.
+this bundle advocates a new naming system for people who are absolutely convinced they want their C<Author-Centric> distribution
+uploaded to CPAN.
 
-As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is a copious amount of name-space pollution
-in the PluginBundle name-space, and more Author bundles than task-bundles, which was really what the name-space was designed for, and I'm petitioning you to help reduce
-this annoyance in future modules.
+As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is
+a copious amount of name-space pollution in the PluginBundle name-space, and more Author bundles than task-bundles, which was
+really what the name-space was designed for, and I'm petitioning you to help reduce this annoyance in future modules.
 
-From a CPAN testers perspective, the annoyance of lots of CPANID-dists is similar to the annoyance of the whole DPCHRIST:: subspace, and that if this pattern continues,
-it will mean for the testers who do not wish to test everyones personal modules, that they will have to work hard to avoid this. If DPCHRIST:: had used something like
-Author::DPCHRIST:: instead, I doubt so many people would be horrified by it, because you can just have a policy/rule that excludes ^Author::, and everyone else who goes
-that way can be quietly ignored.
+From a CPAN testers perspective, the annoyance of lots of CPANID-dists is similar to the annoyance of the whole DPCHRIST::
+subspace, and that if this pattern continues, it will mean for the testers who do not wish to test everyones personal modules,
+that they will have to work hard to avoid this. If DPCHRIST:: had used something like Author::DPCHRIST:: instead, I doubt so many
+people would be horrified by it, because you can just have a policy/rule that excludes ^Author::, and everyone else who goes that
+way can be quietly ignored.
 
-Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and so-forth, and possibly even apply special indexing restrictions
-or something so people wouldn't even have to know those modules exist on cpan!
+Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and so-forth, and
+possibly even apply special indexing restrictions or something so people wouldn't even have to know those modules exist on cpan!
 
-So, for the sake of cleanliness, semantics, and general global sanity, I ask you to join me with my Author:: naming policy to voluntarily segregate modules that are most
-likely of only personal use from those that have more general application.
+So, for the sake of cleanliness, semantics, and general global sanity, I ask you to join me with my Author:: naming policy to
+voluntarily segregate modules that are most likely of only personal use from those that have more general application.
 
     Dist::Zilla::Plugin::Foo                    # [Foo]                 dist-zilla plugins for general use
     Dist::Zilla::Plugin::Author::KENTNL::Foo    # [Author::KENTNL::Foo] foo that only KENTNL will probably have use for
