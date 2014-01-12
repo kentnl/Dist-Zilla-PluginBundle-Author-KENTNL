@@ -33,16 +33,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: 2.009000
+    version: 2.008001
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 2.009000
+    version: 2.008001
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: 2.009000
+    version: 2.008001
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: 2.009000
+    version: 2.008001
 requires:
   Carp: 0
   Dist::Zilla: 5.010
@@ -123,7 +123,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 2.009000
+version: 2.008001
 x_BuiltWith:
   modules:
     CPAN::Meta: 2.133380
