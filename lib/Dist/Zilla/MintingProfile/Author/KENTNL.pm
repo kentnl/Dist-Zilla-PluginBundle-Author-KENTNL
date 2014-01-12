@@ -1,6 +1,7 @@
 use 5.006;    # warning pragma
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::MintingProfile::Author::KENTNL;
 BEGIN {
@@ -12,6 +13,8 @@ $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.007004';
 use Moose qw( with );
 use namespace::autoclean;
 with 'Dist::Zilla::Role::MintingProfile::ShareDir';
+
+
 
 
 
