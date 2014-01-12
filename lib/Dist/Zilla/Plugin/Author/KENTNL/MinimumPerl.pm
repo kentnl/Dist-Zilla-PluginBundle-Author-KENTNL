@@ -1,6 +1,7 @@
-use 5.006;    # warnings
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 BEGIN {
@@ -48,7 +49,7 @@ sub _3part_check {
     $_[1]->isa('PPI::Token::Symbol') and $_[1]->content =~ /::VERSION\z/msx;
   };
   my $version_match = sub {
-    $_[1]->class eq 'PPI::Token::Quote::Single' and $_[1]->parent->find_any($version_declaration);
+    'PPI::Token::Quote::Single' eq $_[1]->class and $_[1]->parent->find_any($version_declaration);
   };
   my (@versions) = @{ $document->find($version_match) || [] };
   for my $versiondecl (@versions) {

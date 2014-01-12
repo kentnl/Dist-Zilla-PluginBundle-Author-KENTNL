@@ -1,6 +1,7 @@
-use 5.006;    # warnings
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 
 
@@ -81,6 +82,8 @@ with qw(Dist::Zilla::Role::FileGatherer);
 
 
 
+
+
 use Dist::Zilla::File::FromCode;
 use String::Formatter named_stringf => {
   -as   => 'str_rf',
@@ -98,7 +101,7 @@ use String::Formatter named_stringf => {
 
 
 sub gather_files {
-  my ( $self, $arg ) = @_;
+  my ( $self, ) = @_;
   my $zilla = $self->zilla;
   my $empty = q{};
   my $template;
@@ -255,7 +258,9 @@ name-space pollution:
   Plugin::EOLTests  # Would prefer Plugin::Test::EOL
   Plugin::PodSyntaxTests # Would prefer Plugin::Test::Pod::Syntax
 
-And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::Zilla::PluginBundle::KENTNL >> to be C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful for people other than ... well.. me. Call me a counter-egotist, if you will.
+And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::Zilla::PluginBundle::KENTNL >> to be
+C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful
+for people other than ... well.. me. Call me a counter-egotist, if you will.
 
 =head1 THEFT
 
