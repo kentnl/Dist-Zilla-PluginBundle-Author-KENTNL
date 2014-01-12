@@ -1,8 +1,19 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.008001 2014-01-12T22:12:04Z
+ [00 Maintenace]
+ - Dep ramping
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.008000, see Changes.deps{,.all,.dev} for
+   details
+ - develop: ↑3
+ - runtime: ↑22
+ - test: ↑1
+
 2.008000 2014-01-12T11:21:22Z
  [00 Major]
- - use Git::NextVersion for commit-oriented timestamps in Changes
+ - use Git::NextRelease for commit-oriented timestamps in Changes
  - use PerlMunger replace-with-blank for better line consistency.
  - usual dependency bumping
 
