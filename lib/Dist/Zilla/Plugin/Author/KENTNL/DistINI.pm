@@ -71,7 +71,9 @@ name-space pollution:
   Plugin::EOLTests  # Would prefer Plugin::Test::EOL
   Plugin::PodSyntaxTests # Would prefer Plugin::Test::Pod::Syntax
 
-And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::Zilla::PluginBundle::KENTNL >> to be C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful for people other than ... well.. me. Call me a counter-egotist, if you will.
+And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::Zilla::PluginBundle::KENTNL >> to be
+C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful
+for people other than ... well.. me. Call me a counter-egotist, if you will.
 
 =head1 THEFT
 

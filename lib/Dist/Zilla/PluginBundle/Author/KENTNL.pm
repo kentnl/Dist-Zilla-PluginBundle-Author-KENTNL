@@ -43,27 +43,27 @@ use namespace::autoclean '-also' => [qw( _expand _defined_or _only_git _only_cpa
 This is the plug-in bundle that KENTNL uses. It exists mostly because he is very lazy
 and wants others to be using what he's using if they want to be doing work on his modules.
 
-=cut
-
 =head1 NAMING SCHEME
 
 As I blogged about on L<< C<blog.fox.geek.nz> : Making a Minting Profile as a CPANized Dist |http://bit.ly/hAwl4S >>,
-this bundle advocates a new naming system for people who are absolutely convinced they want their C<Author-Centric> distribution uploaded to CPAN.
+this bundle advocates a new naming system for people who are absolutely convinced they want their C<Author-Centric> distribution
+uploaded to CPAN.
 
-As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is a copious amount of name-space pollution
-in the PluginBundle name-space, and more Author bundles than task-bundles, which was really what the name-space was designed for, and I'm petitioning you to help reduce
-this annoyance in future modules.
+As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is
+a copious amount of name-space pollution in the PluginBundle name-space, and more Author bundles than task-bundles, which was
+really what the name-space was designed for, and I'm petitioning you to help reduce this annoyance in future modules.
 
-From a CPAN testers perspective, the annoyance of lots of CPANID-dists is similar to the annoyance of the whole DPCHRIST:: subspace, and that if this pattern continues,
-it will mean for the testers who do not wish to test everyones personal modules, that they will have to work hard to avoid this. If DPCHRIST:: had used something like
-Author::DPCHRIST:: instead, I doubt so many people would be horrified by it, because you can just have a policy/rule that excludes ^Author::, and everyone else who goes
-that way can be quietly ignored.
+From a CPAN testers perspective, the annoyance of lots of CPANID-dists is similar to the annoyance of the whole DPCHRIST::
+subspace, and that if this pattern continues, it will mean for the testers who do not wish to test everyones personal modules,
+that they will have to work hard to avoid this. If DPCHRIST:: had used something like Author::DPCHRIST:: instead, I doubt so many
+people would be horrified by it, because you can just have a policy/rule that excludes ^Author::, and everyone else who goes that
+way can be quietly ignored.
 
-Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and so-forth, and possibly even apply special indexing restrictions
-or something so people wouldn't even have to know those modules exist on cpan!
+Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and so-forth, and
+possibly even apply special indexing restrictions or something so people wouldn't even have to know those modules exist on cpan!
 
-So, for the sake of cleanliness, semantics, and general global sanity, I ask you to join me with my Author:: naming policy to voluntarily segregate modules that are most
-likely of only personal use from those that have more general application.
+So, for the sake of cleanliness, semantics, and general global sanity, I ask you to join me with my Author:: naming policy to
+voluntarily segregate modules that are most likely of only personal use from those that have more general application.
 
     Dist::Zilla::Plugin::Foo                    # [Foo]                 dist-zilla plugins for general use
     Dist::Zilla::Plugin::Author::KENTNL::Foo    # [Author::KENTNL::Foo] foo that only KENTNL will probably have use for
@@ -96,16 +96,11 @@ I wish to give proper respect to the people out there already implementing this 
 
 =item L<< C<@Author::RUSSOZ> |Dist::Zilla::PluginBundle::Author::RUSSOZ >> - Alexei Znamensky's, Author Bundle.
 
-
 =back
-
-=cut
 
 =method C<bundle_config>
 
 See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what this is for, it is a method to satisfy that role.
-
-=cut
 
 =begin Pod::Coverage
 
