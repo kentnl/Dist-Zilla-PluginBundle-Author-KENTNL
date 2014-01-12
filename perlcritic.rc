@@ -1,5 +1,5 @@
 severity = 1
-exclude = RequireTidyCode RequirePodSections ProhibitPostfixControls RequireRcsKeywords RequireExplicitPackage ProhibitPunctuationVars ProhibitMagicNumbers RequireExplicitInclusion PodMinimumVersion ProhibitEmptyCommas ProhibitFlagComments Editor::RequireEmacsFileVariables Documentation::RequirePODUseEncodingUTF8
+exclude = RequireTidyCode RequirePodSections ProhibitPostfixControls RequireRcsKeywords RequireExplicitPackage ProhibitPunctuationVars ProhibitMagicNumbers RequireExplicitInclusion PodMinimumVersion ProhibitEmptyCommas ProhibitFlagComments Editor::RequireEmacsFileVariables Documentation::RequirePODUseEncodingUTF8 CodeLayout::ProhibitHashBarewords
 include = Moose::ProhibitMultipleWiths Moose::ProhibitNewMethod Moose::RequireCleanNamespace Moose::RequireMakeImmutable
 color = 1
 verbose = 9

@@ -161,7 +161,7 @@ sub add_plugin {
   if ( not defined $conf ) {
     $conf = {};
   }
-  if ( not ref $conf or not ref $conf eq 'HASH' ) {
+  if ( not ref $conf or not 'HASH' eq ref $conf ) {
     require Carp;
     Carp::croak('Conf must be a hash');
   }
@@ -181,7 +181,7 @@ sub add_named_plugin {
   if ( not defined $conf ) {
     $conf = {};
   }
-  if ( not ref $conf or not ref $conf eq 'HASH' ) {
+  if ( not ref $conf or not 'HASH' eq ref $conf ) {
     require Carp;
     Carp::croak('Conf must be a hash');
   }
@@ -216,7 +216,7 @@ sub configure {
 
   $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
-  if ( $^O eq 'linux' ) {
+  if ( 'linux' eq $^O ) {
     $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 }, );
   }
   else {
@@ -248,8 +248,8 @@ sub configure {
   $self->add_plugin( 'PkgVersion' => {} );
   $self->add_plugin(
     'PodWeaver' => {
-      replacer => 'replace_with_blank'
-    }
+      replacer => 'replace_with_blank',
+    },
   );
   $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
 
@@ -321,7 +321,7 @@ sub bundle_config {
 __PACKAGE__->meta->make_immutable;
 no Moose;
 ## no critic (RequireEndWithOne)
-'I go to prepare a perl module for you, if it were not so, I would have told you';
+'I go to prepare a perl module for you,' . ' if it were not so, I would have told you';
 
 __END__
 
