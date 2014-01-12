@@ -11,6 +11,8 @@ use Moose qw( with );
 use namespace::autoclean;
 with 'Dist::Zilla::Role::MintingProfile::ShareDir';
 
+=encoding UTF-8
+
 =begin MetaPOD::JSON v1.1.0
 
 {
