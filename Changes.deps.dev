@@ -1,4 +1,8 @@
 2.008000
+ [Changed / develop requires]
+ - Dist::Zilla 5.009 → 5.010
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.009 → 5.010
+ - Dist::Zilla::Plugin::Prereqs 5.009 → 5.010
 
 2.007003 2014-01-08T03:36:44Z
 

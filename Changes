@@ -18,7 +18,9 @@
    details
  - build: ↑1
  - configure: ↑1
- - runtime: +2 ↑4 -1
+ - develop: ↑3
+ - runtime: +3 ↑26 -1
+ - test: ↑1
 
 2.007003 2014-01-08T03:36:44Z
  [00 Minor]
