@@ -15,7 +15,7 @@ use MooseX::AttributeShortcuts;
 with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::BundleDeps';
 
-use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
+use namespace::autoclean '-also' => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -118,16 +118,16 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
-has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] } );
+has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'builder' => sub { [] } );
 
-has normal_form => ( is => ro =>, isa => 'Str', required => 1 );    #builder => sub { 'numify' } );
-has mantissa    => ( is => ro =>, isa => 'Int', required => 1 );    #builder => sub { 6 } );
+has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', 'required' => 1 );    #builder => sub { 'numify' } );
+has 'mantissa'    => ( 'is' => ro =>, 'isa' => 'Int', 'required' => 1 );    #builder => sub { 6 } );
 
-has git_versions => ( is => 'ro', isa => enum( [1] ), required => 1, );
-has authority               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
-has auto_prereqs_skip       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
-has twitter_extra_hash_tags => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { q[] }, );
-has twitter_hash_tags       => (
+has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
+has 'authority'               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+has 'auto_prereqs_skip'       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
+has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { q[] }, );
+has 'twitter_hash_tags'       => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
@@ -137,7 +137,7 @@ has twitter_hash_tags       => (
     return '#perl #cpan ' . $self->twitter_extra_hash_tags;
   },
 );
-has tweet_url => (
+has 'tweet_url' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
