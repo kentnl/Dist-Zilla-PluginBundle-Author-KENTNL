@@ -96,9 +96,9 @@ generates a C<dist.ini> file.
 =cut
 
 sub gather_files {
-  my ( $self, $arg ) = @_;
-  my $zilla = $self->zilla;
-  my $empty = q{};
+  my ( $self, ) = @_;
+  my $zilla     = $self->zilla;
+  my $empty     = q{};
   my $template;
   {
     ## no critic (RequireInterpolationOfMetachars)
