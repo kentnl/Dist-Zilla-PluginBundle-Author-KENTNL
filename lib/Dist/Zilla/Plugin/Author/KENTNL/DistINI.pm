@@ -102,8 +102,8 @@ use String::Formatter named_stringf => {
 
 sub gather_files {
   my ( $self, ) = @_;
-  my $zilla = $self->zilla;
-  my $empty = q{};
+  my $zilla     = $self->zilla;
+  my $empty     = q{};
   my $template;
   {
     ## no critic (RequireInterpolationOfMetachars)
