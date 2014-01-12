@@ -317,6 +317,5 @@ sub bundle_config {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
-## no critic (RequireEndWithOne)
-'I go to prepare a perl module for you, if it were not so, I would have told you';
+1;
 
