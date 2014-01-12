@@ -158,7 +158,7 @@ sub add_plugin {
   if ( not defined $conf ) {
     $conf = {};
   }
-  if ( not ref $conf or not ref $conf eq 'HASH' ) {
+  if ( not ref $conf or not 'HASH' eq ref $conf ) {
     require Carp;
     Carp::croak('Conf must be a hash');
   }
@@ -178,7 +178,7 @@ sub add_named_plugin {
   if ( not defined $conf ) {
     $conf = {};
   }
-  if ( not ref $conf or not ref $conf eq 'HASH' ) {
+  if ( not ref $conf or not 'HASH' eq ref $conf ) {
     require Carp;
     Carp::croak('Conf must be a hash');
   }
@@ -213,7 +213,7 @@ sub configure {
 
   $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
-  if ( $^O eq 'linux' ) {
+  if ( 'linux' eq $^O ) {
     $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 }, );
   }
   else {
