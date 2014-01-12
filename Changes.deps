@@ -2,7 +2,7 @@
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Git::NextRelease 0.001000
  - Pod::Elemental::PerlMunger 0.200000
- - utf8 1.13
+ - utf8
 
  [Changed / build requires]
  - Module::Build 0.4203 → 0.4204
