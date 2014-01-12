@@ -27,6 +27,100 @@ use namespace::autoclean -also => [qw( _expand _defined_or _only_git _only_cpan 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
 has plugins => ( is => ro =>, isa => 'ArrayRef', init_arg => undef, lazy => 1, builder => sub { [] } );
@@ -59,6 +153,11 @@ has tweet_url => (
 );
 
 
+
+
+
+
+
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
@@ -74,6 +173,11 @@ sub add_plugin {
 }
 
 
+
+
+
+
+
 sub add_named_plugin {
   my ( $self, $name, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
@@ -87,6 +191,11 @@ sub add_named_plugin {
   push @{ $self->plugins }, [ q{@Author::KENTNL/} . $name, 'Dist::Zilla::Plugin::' . $suffix, $conf ];
   return;
 }
+
+
+
+
+
 
 
 sub configure {

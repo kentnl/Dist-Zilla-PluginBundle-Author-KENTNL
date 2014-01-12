@@ -15,6 +15,17 @@ BEGIN {
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
 
+
+
+
+
+
+
+
+
+
+
+
 use Moose qw( has extends override );
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
@@ -94,6 +105,11 @@ sub _build_detected_perl {
   }
   return $self->log_fatal('Found no perl files, check your dist?');
 }
+
+
+
+
+
 
 
 sub minperl {

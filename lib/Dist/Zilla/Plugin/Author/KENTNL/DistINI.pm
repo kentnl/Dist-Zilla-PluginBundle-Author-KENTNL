@@ -3,6 +3,9 @@ use strict;
 use warnings;
 
 
+
+
+
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 BEGIN {
   $Dist::Zilla::Plugin::Author::KENTNL::DistINI::AUTHORITY = 'cpan:KENTNL';
@@ -14,9 +17,71 @@ BEGIN {
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 use Moose qw( with );
 
 with qw(Dist::Zilla::Role::FileGatherer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 use Dist::Zilla::File::FromCode;
@@ -28,6 +93,11 @@ use String::Formatter named_stringf => {
     n => sub { int $_ },
   },
 };
+
+
+
+
+
 
 
 sub gather_files {
