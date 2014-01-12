@@ -86,6 +86,7 @@ my %module_build_args = (
     "Net::SSLeay" => "1.57",
     "Perl::PrereqScanner" => "1.019",
     "Pod::Coverage::TrustPod" => "0.100003",
+    "Pod::Elemental::PerlMunger" => "0.200000",
     "String::Formatter" => "0.102084",
     "Test::CPAN::Meta" => "0.23",
     "Test::EOL" => "1.5",

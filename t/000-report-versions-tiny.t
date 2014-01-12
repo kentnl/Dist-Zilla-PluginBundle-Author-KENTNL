@@ -119,6 +119,7 @@ eval { $v .= pmver('Path::Class::Dir','0.33') };
 eval { $v .= pmver('Path::Tiny','0.051') };
 eval { $v .= pmver('Perl::PrereqScanner','1.019') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','0.100003') };
+eval { $v .= pmver('Pod::Elemental::PerlMunger','0.200000') };
 eval { $v .= pmver('String::Formatter','0.102084') };
 eval { $v .= pmver('Test::CPAN::Meta','0.23') };
 eval { $v .= pmver('Test::DZil','5.009') };
