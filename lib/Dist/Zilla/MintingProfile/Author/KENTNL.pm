@@ -7,6 +7,8 @@ package Dist::Zilla::MintingProfile::Author::KENTNL;
 $Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.008002';
 # ABSTRACT: KENTNL's Minting Profile
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moose qw( with );
 use namespace::autoclean;
 with 'Dist::Zilla::Role::MintingProfile::ShareDir';
