@@ -264,7 +264,14 @@ sub configure {
   );
 
   $self->add_plugin( 'MinimumPerl' => {} );
-  $self->add_plugin( 'Authority' => { ':version' => '1.006', authority => $self->authority, do_metadata => 1 } );
+  $self->add_plugin(
+    'Authority' => {
+      ':version'     => '1.006',
+      authority      => $self->authority,
+      do_metadata    => 1,
+      locate_comment => 1,
+    },
+  );
 
   $self->add_plugin( 'ModuleBuild'   => {} );
   $self->add_plugin( 'ReadmeFromPod' => {} );
