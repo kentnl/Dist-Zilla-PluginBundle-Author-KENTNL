@@ -11,6 +11,8 @@ package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
+# AUTHORITY
+
 =begin MetaPOD::JSON v1.1.0
 
 {
