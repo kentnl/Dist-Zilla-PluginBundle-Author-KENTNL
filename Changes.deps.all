@@ -1,4 +1,9 @@
-2.008001
+2.009000
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Git::NextRelease 0.001000 → 0.001001
+ - Dist::Zilla::Plugin::MetaProvides::Package 1.15000002 → 1.15000003
+
+2.008001 2014-01-12T22:12:04Z
  [Changed / develop requires]
  - Dist::Zilla 5.010 → 5.011
  - Dist::Zilla::Plugin::ModuleShareDirs 5.010 → 5.011

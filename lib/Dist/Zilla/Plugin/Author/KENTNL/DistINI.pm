@@ -8,11 +8,10 @@ use utf8;
 
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
-BEGIN {
-  $Dist::Zilla::Plugin::Author::KENTNL::DistINI::AUTHORITY = 'cpan:KENTNL';
-}
-$Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.008001';
+$Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.009000';
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
@@ -195,7 +194,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::
 
 =head1 VERSION
 
-version 2.008001
+version 2.009000
 
 =head1 SYNOPSIS
 
