@@ -1,5 +1,16 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.010000 2014-01-14T23:07:57Z
+ [00 Major]
+ - use Test::ReportPrereqs
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.009000, see Changes.deps{,.all,.dev} for
+   details
+ - develop: -1
+ - runtime: +1 ↑2 -1
+ - test: +5 ↑1
+
 2.009000 2014-01-13T07:42:49Z
  [00 Major]
  - use # AUTHORITY comments

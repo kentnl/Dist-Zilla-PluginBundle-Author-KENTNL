@@ -191,7 +191,7 @@ EOF
     META.json
     META.yml
     README
-    t/000-report-versions-tiny.t
+    t/00-report-prereqs.t
     xt/author/critic.t
     xt/release/cpan-changes.t
     xt/release/distmeta.t

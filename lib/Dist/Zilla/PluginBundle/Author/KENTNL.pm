@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.009000';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.010000';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -227,7 +227,7 @@ sub configure {
   $self->add_plugin( 'MetaTests'      => {} );
   $self->add_plugin( 'PodCoverageTests'       => {} );
   $self->add_plugin( 'PodSyntaxTests'         => {} );
-  $self->add_plugin( 'ReportVersions::Tiny'   => {} );
+  $self->add_plugin( 'Test::ReportPrereqs'    => {} );
   $self->add_plugin( 'Test::Kwalitee'         => {} );
   $self->add_plugin( 'EOLTests'               => { trailing_whitespace => 1, } );
   $self->add_plugin( 'Test::MinimumVersion'   => {} );
@@ -321,6 +321,8 @@ sub bundle_config {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
+no Moose::Util::TypeConstraints;
+
 1;
 
 __END__
@@ -335,7 +337,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.009000
+version 2.010000
 
 =head1 SYNOPSIS
 
