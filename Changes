@@ -1,9 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.010000 2014-01-14T22:09:42Z
- [00 Major]
- - s/ReportVersions::Tiny/Test::ReportPrereqs/
-
+2.010000 2014-01-14T22:11:20Z
 
 2.009000 2014-01-13T07:42:49Z
  [00 Major]

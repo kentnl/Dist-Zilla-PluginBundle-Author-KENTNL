@@ -132,7 +132,7 @@
          "requires" : {
             "Capture::Tiny" : "0.23",
             "ExtUtils::MakeMaker" : "6.86",
-            "File::Spec::Functions" : "3.45",
+            "File::Spec::Functions" : "0",
             "File::pushd" : "1.005",
             "FindBin" : "0",
             "Git::Wrapper" : "0.030",
@@ -859,6 +859,7 @@
                      "IO::Handle",
                      "IPC::Open3",
                      "File::Spec",
+                     "File::Spec::Functions",
                      "Cwd",
                      "utf8",
                      "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
