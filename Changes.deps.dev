@@ -1,4 +1,8 @@
-2.009000
+2.010000
+ [Removed / develop requires]
+ - version 0.9906
+
+2.009000 2014-01-13T07:42:49Z
 
 2.008001 2014-01-12T22:12:04Z
  [Changed / develop requires]
