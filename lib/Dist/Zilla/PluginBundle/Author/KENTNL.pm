@@ -321,6 +321,8 @@ sub bundle_config {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
+no Moose::Util::TypeConstraints;
+
 1;
 
 __END__
