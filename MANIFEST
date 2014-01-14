@@ -70,7 +70,7 @@ t/00-compile/lib_Dist_Zilla_MintingProfile_Author_KENTNL_pm.t
 t/00-compile/lib_Dist_Zilla_PluginBundle_Author_KENTNL_pm.t
 t/00-compile/lib_Dist_Zilla_Plugin_Author_KENTNL_DistINI_pm.t
 t/00-compile/lib_Dist_Zilla_Plugin_Author_KENTNL_MinimumPerl_pm.t
-t/00-report-prereqs.t
+t/000-report-versions-tiny.t
 t/01-Minter.t
 t/02-Minter-Moo-Role.t
 t/02-Minter-Moo.t

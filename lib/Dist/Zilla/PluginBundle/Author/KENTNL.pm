@@ -4,11 +4,10 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-BEGIN {
-  $Dist::Zilla::PluginBundle::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
-}
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.009000';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.010000';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
@@ -267,7 +266,14 @@ sub configure {
   );
 
   $self->add_plugin( 'MinimumPerl' => {} );
-  $self->add_plugin( 'Authority' => { ':version' => '1.006', authority => $self->authority, do_metadata => 1 } );
+  $self->add_plugin(
+    'Authority' => {
+      ':version'     => '1.006',
+      authority      => $self->authority,
+      do_metadata    => 1,
+      locate_comment => 1,
+    },
+  );
 
   $self->add_plugin( 'ModuleBuild'   => {} );
   $self->add_plugin( 'ReadmeFromPod' => {} );
@@ -329,7 +335,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.009000
+version 2.010000
 
 =head1 SYNOPSIS
 

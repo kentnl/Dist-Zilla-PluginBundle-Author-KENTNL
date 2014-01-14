@@ -4,11 +4,10 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::MintingProfile::Author::KENTNL;
-BEGIN {
-  $Dist::Zilla::MintingProfile::Author::KENTNL::AUTHORITY = 'cpan:KENTNL';
-}
-$Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.009000';
+$Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.010000';
 # ABSTRACT: KENTNL's Minting Profile
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with );
 use namespace::autoclean;
@@ -51,7 +50,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 2.009000
+version 2.010000
 
 =head1 SYNOPSIS
 
