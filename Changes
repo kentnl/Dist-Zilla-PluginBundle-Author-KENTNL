@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Major]
+ - use Test::ReportPrereqs
+
 
 2.009000 2014-01-13T07:42:49Z
  [00 Major]
