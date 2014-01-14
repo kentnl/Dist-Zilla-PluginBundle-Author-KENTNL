@@ -1,4 +1,27 @@
-2.009000
+2.010000
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.012
+
+ [Added / test recommends]
+ - CPAN::Meta 2.133380
+ - CPAN::Meta::Requirements 2.125
+
+ [Added / test requires]
+ - ExtUtils::MakeMaker 6.86
+ - File::Spec::Functions
+ - List::Util 1.35
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Git::NextRelease 0.001001 → 0.002000
+ - IO::Socket::SSL 1.962 → 1.963
+
+ [Changed / test requires]
+ - Path::Tiny 0.051 → 0.052
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::ReportVersions::Tiny 1.10
+
+2.009000 2014-01-13T07:42:49Z
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Git::NextRelease 0.001000 → 0.001001
  - Dist::Zilla::Plugin::MetaProvides::Package 1.15000002 → 1.15000003
