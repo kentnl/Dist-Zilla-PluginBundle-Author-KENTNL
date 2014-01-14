@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.010000 2014-01-14T23:07:57Z
  [00 Major]
  - use Test::ReportPrereqs
 
