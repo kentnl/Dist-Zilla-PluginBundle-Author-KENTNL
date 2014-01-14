@@ -4,10 +4,13 @@ author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   Capture::Tiny: 0.23
+  ExtUtils::MakeMaker: 6.86
+  File::Spec::Functions: 0
   File::pushd: 1.005
   FindBin: 0
   Git::Wrapper: 0.030
   JSON: 2.90
+  List::Util: 1.35
   Module::Build: 0.4204
   Module::Metadata: 1.000019
   Path::Class::Dir: 0.33
@@ -77,13 +80,13 @@ requires:
   Dist::Zilla::Plugin::Prereqs::MatchInstalled: v0.1.6
   Dist::Zilla::Plugin::ReadmeAnyFromPod: 0.133360
   Dist::Zilla::Plugin::ReadmeFromPod: 0.21
-  Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
   Dist::Zilla::Plugin::RunExtraTests: 0.016
   Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
   Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001001
   Dist::Zilla::Plugin::Test::Kwalitee: 2.07
   Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
   Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
+  Dist::Zilla::Plugin::Test::ReportPrereqs: 0.012
   Dist::Zilla::Plugin::TestRelease: 5.011
   Dist::Zilla::Plugin::Twitter: 0.024
   Dist::Zilla::Plugin::UploadToCPAN: 5.011
@@ -123,6 +126,8 @@ resources:
 version: 2.010000
 x_BuiltWith:
   modules:
+    CPAN::Meta: 2.133380
+    CPAN::Meta::Requirements: 2.125
     Capture::Tiny: 0.23
     Carp: 1.32
     Dist::Zilla: 5.011
@@ -165,13 +170,13 @@ x_BuiltWith:
     Dist::Zilla::Plugin::ReadmeAnyFromPod: 0.133360
     Dist::Zilla::Plugin::ReadmeFromPod: 0.21
     Dist::Zilla::Plugin::RemovePhasedPrereqs: 0.002
-    Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
     Dist::Zilla::Plugin::RunExtraTests: 0.016
     Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
     Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001001
     Dist::Zilla::Plugin::Test::Kwalitee: 2.07
     Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
     Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
+    Dist::Zilla::Plugin::Test::ReportPrereqs: 0.012
     Dist::Zilla::Plugin::TestRelease: 5.011
     Dist::Zilla::Plugin::Twitter: 0.024
     Dist::Zilla::Plugin::UploadToCPAN: 5.011
@@ -181,12 +186,15 @@ x_BuiltWith:
     Dist::Zilla::Role::MintingProfile::ShareDir: 5.011
     Dist::Zilla::Role::PluginBundle: 5.011
     Dist::Zilla::Util::EmulatePhase: 0.01025803
+    ExtUtils::MakeMaker: 6.86
+    File::Spec::Functions: 3.45
     File::pushd: 1.005
     FindBin: 1.51
     Git::Wrapper: 0.030
     IO::Socket::SSL: 1.963
     JSON: 2.90
     LWP::Protocol::https: 6.04
+    List::Util: 1.35
     Module::Build: 0.4204
     Module::Metadata: 1.000019
     Moose: 2.1201
@@ -328,9 +336,9 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/PodSyntaxTests'
       version: 5.011
     -
-      class: Dist::Zilla::Plugin::ReportVersions::Tiny
-      name: '@Author::KENTNL/ReportVersions::Tiny'
-      version: 1.10
+      class: Dist::Zilla::Plugin::Test::ReportPrereqs
+      name: '@Author::KENTNL/Test::ReportPrereqs'
+      version: 0.012
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
