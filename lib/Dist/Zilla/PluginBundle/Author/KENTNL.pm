@@ -122,10 +122,11 @@ has 'mantissa' => (
   'is'    => ro =>,
   'isa'   => 'Int',
   'lazy'  => 1,
-  builder => sub {
+  'builder' => sub {
     my ($self) = @_;
     if ( $self->normal_form eq 'numify' ) {
-      return $self->log_fatal('mantissa required but not specified');
+        require Carp;
+        return Carp::croak('mantissa required but not specified');
     }
     return 6;
   }
