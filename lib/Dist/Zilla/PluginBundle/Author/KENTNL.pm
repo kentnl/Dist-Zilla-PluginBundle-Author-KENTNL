@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.010000';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.010001';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -118,7 +118,19 @@ sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'builder' => sub { [] } );
 
 has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', 'required' => 1 );    #builder => sub { 'numify' } );
-has 'mantissa'    => ( 'is' => ro =>, 'isa' => 'Int', 'required' => 1 );    #builder => sub { 6 } );
+has 'mantissa' => (
+  'is'      => ro =>,
+  'isa'     => 'Int',
+  'lazy'    => 1,
+  'builder' => sub {
+    my ($self) = @_;
+    if ( 'numify' eq $self->normal_form ) {
+      require Carp;
+      return Carp::croak('mantissa required but not specified');
+    }
+    return 6;
+  },
+);
 
 has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
 has 'authority'               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
@@ -337,7 +349,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.010000
+version 2.010001
 
 =head1 SYNOPSIS
 
