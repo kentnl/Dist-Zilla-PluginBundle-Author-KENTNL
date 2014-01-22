@@ -1,4 +1,10 @@
-2.010000
+2.010001
+ [Changed / develop requires]
+ - Dist::Zilla 5.011 → 5.012
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.011 → 5.012
+ - Dist::Zilla::Plugin::Prereqs 5.011 → 5.012
+
+2.010000 2014-01-14T23:07:57Z
  [Removed / develop requires]
  - version 0.9906
 

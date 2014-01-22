@@ -1,6 +1,15 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.010001 2014-01-14T23:41:13Z
+2.010001 2014-01-22T01:59:51Z
+ [00 Bugfix]
+ - Mantissa should only be required if normal_form eq numify
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.010000, see Changes.deps{,.all,.dev} for
+   details
+ - develop: ↑3
+ - runtime: ↑28
+ - test: ↑2
 
 2.010000 2014-01-14T23:07:57Z
  [00 Major]
