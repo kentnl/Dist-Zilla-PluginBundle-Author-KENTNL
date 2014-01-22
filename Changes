@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Bugfix]
+ - Mantissa should only be required if normal_form eq numify
+
 
 2.010000 2014-01-14T23:07:57Z
  [00 Major]
