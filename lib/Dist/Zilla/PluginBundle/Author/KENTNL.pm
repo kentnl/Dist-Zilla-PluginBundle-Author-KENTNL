@@ -119,17 +119,17 @@ has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'l
 
 has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', 'required' => 1 );    #builder => sub { 'numify' } );
 has 'mantissa' => (
-  'is'    => ro =>,
-  'isa'   => 'Int',
-  'lazy'  => 1,
+  'is'      => ro =>,
+  'isa'     => 'Int',
+  'lazy'    => 1,
   'builder' => sub {
     my ($self) = @_;
-    if ( $self->normal_form eq 'numify' ) {
-        require Carp;
-        return Carp::croak('mantissa required but not specified');
+    if ( 'numify' eq $self->normal_form ) {
+      require Carp;
+      return Carp::croak('mantissa required but not specified');
     }
     return 6;
-  }
+  },
 );
 
 has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
