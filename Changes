@@ -9,7 +9,7 @@
    details
  - develop: ↑3
  - runtime: ↑28
- - test: ↑2
+ - test: ↑2 ↓1
 
 2.010000 2014-01-14T23:07:57Z
  [00 Major]
