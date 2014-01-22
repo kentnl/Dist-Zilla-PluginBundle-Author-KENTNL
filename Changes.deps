@@ -30,6 +30,7 @@
  - version 0.9906 → 0.9907
 
  [Changed / test requires]
+ - ExtUtils::MakeMaker 6.86 → 0
  - List::Util 1.35 → 1.37
  - Test::DZil 5.011 → 5.012
 
