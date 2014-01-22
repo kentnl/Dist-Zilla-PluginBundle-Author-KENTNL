@@ -131,7 +131,7 @@
          },
          "requires" : {
             "Capture::Tiny" : "0.23",
-            "ExtUtils::MakeMaker" : "6.86",
+            "ExtUtils::MakeMaker" : "6.87_03",
             "File::Spec::Functions" : "0",
             "File::pushd" : "1.005",
             "FindBin" : "0",
@@ -243,7 +243,7 @@
          "Dist::Zilla::Role::MintingProfile::ShareDir" : "5.012",
          "Dist::Zilla::Role::PluginBundle" : "5.012",
          "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
-         "ExtUtils::MakeMaker" : "6.86",
+         "ExtUtils::MakeMaker" : "6.87_03",
          "File::Spec::Functions" : "3.45",
          "File::pushd" : "1.005",
          "FindBin" : "1.51",

@@ -108,7 +108,7 @@ my %module_build_args = (
   },
   "test_requires" => {
     "Capture::Tiny" => "0.23",
-    "ExtUtils::MakeMaker" => "6.86",
+    "ExtUtils::MakeMaker" => "6.87_03",
     "File::Spec::Functions" => 0,
     "File::pushd" => "1.005",
     "FindBin" => 0,
@@ -130,7 +130,7 @@ my %module_build_args = (
 
 my %fallback_build_requires = (
   "Capture::Tiny" => "0.23",
-  "ExtUtils::MakeMaker" => "6.86",
+  "ExtUtils::MakeMaker" => "6.87_03",
   "File::Spec::Functions" => 0,
   "File::pushd" => "1.005",
   "FindBin" => 0,
