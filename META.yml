@@ -4,7 +4,7 @@ author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   Capture::Tiny: 0.23
-  ExtUtils::MakeMaker: 6.87_03
+  ExtUtils::MakeMaker: 0
   File::Spec::Functions: 0
   File::pushd: 1.005
   FindBin: 0
@@ -686,6 +686,7 @@ x_Dist_Zilla:
             - File::Spec::Functions
             - Cwd
             - utf8
+            - ExtUtils::MakeMaker
             - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
             - Dist::Zilla::PluginBundle::Author::KENTNL
           upgrade_perl: ~
