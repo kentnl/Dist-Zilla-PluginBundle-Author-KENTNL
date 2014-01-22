@@ -21,6 +21,7 @@ my @modules = qw(
   Dist::Zilla::Plugin::Authority
   Dist::Zilla::Plugin::AutoPrereqs
   Dist::Zilla::Plugin::Bootstrap::lib
+  Dist::Zilla::Plugin::CheckPrereqsIndexed
   Dist::Zilla::Plugin::ConfirmRelease
   Dist::Zilla::Plugin::EOLTests
   Dist::Zilla::Plugin::Git::Check
@@ -42,15 +43,19 @@ my @modules = qw(
   Dist::Zilla::Plugin::MetaYAML
   Dist::Zilla::Plugin::MinimumPerl
   Dist::Zilla::Plugin::ModuleBuild
+  Dist::Zilla::Plugin::ModuleShareDirs
   Dist::Zilla::Plugin::PerlTidy
   Dist::Zilla::Plugin::PkgVersion
   Dist::Zilla::Plugin::PodCoverageTests
   Dist::Zilla::Plugin::PodSyntaxTests
   Dist::Zilla::Plugin::PodWeaver
   Dist::Zilla::Plugin::Prereqs
+  Dist::Zilla::Plugin::Prereqs::AuthorDeps
   Dist::Zilla::Plugin::Prereqs::MatchInstalled
+  Dist::Zilla::Plugin::Prereqs::MatchInstalled::All
   Dist::Zilla::Plugin::ReadmeAnyFromPod
   Dist::Zilla::Plugin::ReadmeFromPod
+  Dist::Zilla::Plugin::RemovePhasedPrereqs
   Dist::Zilla::Plugin::RunExtraTests
   Dist::Zilla::Plugin::Test::CPAN::Changes
   Dist::Zilla::Plugin::Test::Compile::PerFile
@@ -61,6 +66,7 @@ my @modules = qw(
   Dist::Zilla::Plugin::TestRelease
   Dist::Zilla::Plugin::Twitter
   Dist::Zilla::Plugin::UploadToCPAN
+  Dist::Zilla::PluginBundle::Author::KENTNL::Lite
   Dist::Zilla::Role::BundleDeps
   Dist::Zilla::Role::FileGatherer
   Dist::Zilla::Role::MintingProfile::ShareDir
@@ -90,11 +96,13 @@ my @modules = qw(
   Pod::Coverage::TrustPod
   Pod::Elemental::PerlMunger
   String::Formatter
+  Test::CPAN::Changes
   Test::CPAN::Meta
   Test::DZil
   Test::EOL
   Test::Fatal
   Test::File::ShareDir
+  Test::Kwalitee
   Test::More
   Test::Output
   Test::Perl::Critic
