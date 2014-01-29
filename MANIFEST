@@ -3,6 +3,7 @@
 .perltidyrc
 .travis.yml
 .travis_early_installdeps.master
+Build.PL
 Changes
 Changes.deps
 Changes.deps.all
@@ -11,7 +12,6 @@ LICENSE
 MANIFEST
 META.json
 META.yml
-Makefile.PL
 README
 corpus/global/config.ini
 dist.ini

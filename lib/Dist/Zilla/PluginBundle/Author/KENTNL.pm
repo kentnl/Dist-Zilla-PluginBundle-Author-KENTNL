@@ -303,7 +303,7 @@ sub configure {
 
   $self->add_plugin( 'ModuleBuild'     => {} ) if 'mb' eq $self->toolkit;
   $self->add_plugin( 'MakeMaker'       => {} ) if 'eumm' eq $self->toolkit;
-  $self->add_plugin( 'ModuleBuildTiny' => {} ) if 'mbt' eq $self->toolkit;
+  $self->add_plugin( 'ModuleBuildTiny' => {} ) if 'mbtiny' eq $self->toolkit;
 
   $self->add_plugin( 'ReadmeFromPod' => {} );
   $self->add_plugin(
@@ -328,7 +328,7 @@ sub configure {
 
   my @extra_match_installed = qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL );
   unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
-  unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbt' eq $self->toolkit;
+  unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbtiny' eq $self->toolkit;
   unshift @extra_match_installed, 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
 
   if ( 'hard' eq $self->toolkit_hardness ) {
