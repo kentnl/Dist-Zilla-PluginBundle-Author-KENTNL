@@ -301,7 +301,10 @@ sub configure {
     },
   );
 
-  $self->add_plugin( 'ModuleBuild'   => {} );
+  $self->add_plugin( 'ModuleBuild'       => {} ) if 'mb' eq $self->toolkit;
+  $self->add_plugin( 'MakeMaker'         => {} ) if 'eumm' eq $self->toolkit;
+  $self->add_plugin( 'ModuleBuild::Tiny' => {} ) if 'mbt' eq $self->toolkit;
+
   $self->add_plugin( 'ReadmeFromPod' => {} );
   $self->add_plugin(
     'ReadmeAnyFromPod' => {
