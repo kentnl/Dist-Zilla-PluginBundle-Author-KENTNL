@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.010001';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.011000';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -156,6 +156,20 @@ has 'tweet_url' => (
   },
 );
 
+has 'toolkit_hardness' => (
+  is => ro =>,
+  isa => enum( [ 'hard', 'soft' ] ),
+  lazy    => 1,
+  builder => sub { 'hard' },
+);
+
+has 'toolkit' => (
+  is => ro =>,
+  isa => enum( [ 'mb', 'mbtiny', 'eumm' ] ),
+  lazy    => 1,
+  builder => sub { 'mb' },
+);
+
 
 
 
@@ -287,7 +301,10 @@ sub configure {
     },
   );
 
-  $self->add_plugin( 'ModuleBuild'   => {} );
+  $self->add_plugin( 'ModuleBuild'     => {} ) if 'mb' eq $self->toolkit;
+  $self->add_plugin( 'MakeMaker'       => {} ) if 'eumm' eq $self->toolkit;
+  $self->add_plugin( 'ModuleBuildTiny' => {} ) if 'mbtiny' eq $self->toolkit;
+
   $self->add_plugin( 'ReadmeFromPod' => {} );
   $self->add_plugin(
     'ReadmeAnyFromPod' => {
@@ -308,11 +325,26 @@ sub configure {
   $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
-  $self->add_plugin(
-    'Prereqs::MatchInstalled' => {
-      modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
-    },
-  );
+
+  my @extra_match_installed = qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL );
+  unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
+  unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbtiny' eq $self->toolkit;
+  unshift @extra_match_installed, 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
+
+  if ( 'hard' eq $self->toolkit_hardness ) {
+    $self->add_plugin(
+      'Prereqs::MatchInstalled' => {
+        modules => \@extra_match_installed,
+      },
+    );
+  }
+  if ( 'soft' eq $self->toolkit_hardness ) {
+    $self->add_plugin(
+      'Prereqs::Recommend::MatchInstalled' => {
+        modules => \@extra_match_installed,
+      },
+    );
+  }
   return;
 }
 
@@ -349,7 +381,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.010001
+version 2.011000
 
 =head1 SYNOPSIS
 
