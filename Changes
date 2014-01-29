@@ -28,7 +28,7 @@
  - configure: +1 ↓1
  - develop: ↑1
  - runtime: +19 ↑2 -1
- - test: +1 ↑1 ↓1
+ - test: +3 ↑1 ↓1
 
 2.010001 2014-01-22T03:16:45Z
  [00 Bugfix]
