@@ -52,7 +52,7 @@ recommends:
   Perl::Critic::More: 0
   Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter: 0
   Perl::Critic::Pulp: 0
-  Perl::Critic::StrictereSubs: 0
+  Perl::Critic::StricterSubs: 0
   Perl::Critic::Swift: 0
   Perl::Critic::Tics: 0
 requires:
@@ -137,8 +137,6 @@ resources:
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
 version: 2.010002
 x_BuiltWith:
-  failures:
-    Perl::Critic::StrictereSubs: 'module was not found in INC'
   modules:
     CPAN::Meta: 2.133380
     CPAN::Meta::Requirements: 2.125
@@ -228,6 +226,7 @@ x_BuiltWith:
     Perl::Critic::More: 1.003
     Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter: 0.002
     Perl::Critic::Pulp: 80
+    Perl::Critic::StricterSubs: 0.03
     Perl::Critic::Swift: v1.0.3
     Perl::Critic::Tics: 0.008
     Perl::PrereqScanner: 1.019

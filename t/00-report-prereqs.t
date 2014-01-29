@@ -84,7 +84,7 @@ my $static_prereqs = do { my $x = {
                                         'Perl::Critic::More' => '0',
                                         'Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter' => '0',
                                         'Perl::Critic::Pulp' => '0',
-                                        'Perl::Critic::StrictereSubs' => '0',
+                                        'Perl::Critic::StricterSubs' => '0',
                                         'Perl::Critic::Swift' => '0',
                                         'Perl::Critic::Tics' => '0'
                                       },
