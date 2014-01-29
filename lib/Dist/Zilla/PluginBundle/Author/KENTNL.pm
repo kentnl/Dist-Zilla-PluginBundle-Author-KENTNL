@@ -323,23 +323,22 @@ sub configure {
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
 
-  my @extra_match_installed;
-  push @extra_match_installed = 'Module::Build'       if 'mb' eq $self->toolkit;
-  push @extra_match_installed = 'Module::Build::Tiny' if 'mbt' eq $self->toolkit;
-  push @extra_match_installed = 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
+  my @extra_match_installed = qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL );
+  unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
+  unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbt' eq $self->toolkit;
+  unshift @extra_match_installed, 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
 
   if ( 'hard' eq $self->toolkit_hardness ) {
-
     $self->add_plugin(
       'Prereqs::MatchInstalled' => {
-        modules => [ @extra_match_installed, qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL ) ],
+        modules => \@extra_match_installed,
       },
     );
   }
   if ( 'soft' eq $self->toolkit_hardness ) {
     $self->add_plugin(
       'Prereqs::Recommend::MatchInstalled' => {
-        modules => [ @extra_match_installed, qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL ) ],
+        modules => \@extra_match_installed,
       },
     );
   }
@@ -366,8 +365,6 @@ no Moose;
 no Moose::Util::TypeConstraints;
 
 1;
-
-## Please see file perltidy.ERR
 
 __END__
 
