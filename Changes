@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.010002 2014-01-22T03:19:37Z
+
 2.010001 2014-01-22T03:16:45Z
  [00 Bugfix]
  - Mantissa should only be required if normal_form eq numify
