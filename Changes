@@ -18,6 +18,9 @@
  - All the perl critic modules I use are now pulled by --recommended
  - Both the hardness support modules are pulled by --recommended
 
+ [04 - Softer Deps on this dist]
+ - No more forced upgrading MB on Perl >5.11
+
 2.010001 2014-01-22T03:16:45Z
  [00 Bugfix]
  - Mantissa should only be required if normal_form eq numify
