@@ -127,6 +127,8 @@ my %module_build_args = (
   },
   "test_requires" => {
     "Capture::Tiny" => "0.23",
+    "Dist::Zilla::Plugin::ModuleBuild" => "5.012",
+    "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec::Functions" => 0,
     "File::pushd" => "1.005",
@@ -149,6 +151,8 @@ my %module_build_args = (
 
 my %fallback_build_requires = (
   "Capture::Tiny" => "0.23",
+  "Dist::Zilla::Plugin::ModuleBuild" => "5.012",
+  "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec::Functions" => 0,
   "File::pushd" => "1.005",

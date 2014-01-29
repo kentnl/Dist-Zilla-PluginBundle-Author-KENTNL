@@ -4,6 +4,8 @@ author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   Capture::Tiny: 0.23
+  Dist::Zilla::Plugin::ModuleBuild: 5.012
+  Dist::Zilla::Plugin::Prereqs::MatchInstalled: 0
   ExtUtils::MakeMaker: 0
   File::Spec::Functions: 0
   File::pushd: 1.005
@@ -731,6 +733,14 @@ x_Dist_Zilla:
           phase: runtime
           type: recommends
       name: conditionalpreqs
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: test
+          type: requires
+      name: testreqs
       version: 5.012
     -
       class: Dist::Zilla::Plugin::CheckPrereqsIndexed
