@@ -156,6 +156,20 @@ has 'tweet_url' => (
   },
 );
 
+has 'toolkit_hardness' => (
+  is => ro =>,
+  isa => enum( [ 'hard', 'soft' ] ),
+  lazy    => 1,
+  builder => sub { 'hard' },
+);
+
+has 'toolkit' => (
+  is => ro =>,
+  isa => enum( [ 'mb', 'mbtiny', 'eumm' ] ),
+  lazy    => 1,
+  builder => sub { 'mb' },
+);
+
 
 
 
@@ -308,11 +322,27 @@ sub configure {
   $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
-  $self->add_plugin(
-    'Prereqs::MatchInstalled' => {
-      modules => [qw( Module::Build Test::More Dist::Zilla::PluginBundle::Author::KENTNL )],
-    },
-  );
+
+  my @extra_match_installed;
+  push @extra_match_installed = 'Module::Build'       if 'mb' eq $self->toolkit;
+  push @extra_match_installed = 'Module::Build::Tiny' if 'mbt' eq $self->toolkit;
+  push @extra_match_installed = 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
+
+  if ( 'hard' eq $self->toolkit_hardness ) {
+
+    $self->add_plugin(
+      'Prereqs::MatchInstalled' => {
+        modules => [ @extra_match_installed, qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL ) ],
+      },
+    );
+  }
+  if ( 'soft' eq $self->toolkit_hardness ) {
+    $self->add_plugin(
+      'Prereqs::Recommend::MatchInstalled' => {
+        modules => [ @extra_match_installed, qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL ) ],
+      },
+    );
+  }
   return;
 }
 
@@ -336,6 +366,8 @@ no Moose;
 no Moose::Util::TypeConstraints;
 
 1;
+
+## Please see file perltidy.ERR
 
 __END__
 
