@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.010002';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.011000';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -381,7 +381,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.010002
+version 2.011000
 
 =head1 SYNOPSIS
 
