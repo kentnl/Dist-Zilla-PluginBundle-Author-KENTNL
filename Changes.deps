@@ -31,6 +31,10 @@
  [Added / test recommends]
  - Test::More 1.001002
 
+ [Added / test requires]
+ - Dist::Zilla::Plugin::ModuleBuild 5.012
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled
+
  [Changed / build requires]
  - Module::Build 0.4204 → 0.3601
 
