@@ -1,4 +1,55 @@
-2.010001
+2.011000
+ [Added / build recommends]
+ - Module::Build 0.4204
+
+ [Added / configure recommends]
+ - Module::Build 0.4204
+
+ [Added / runtime recommends]
+ - Dist::Zilla::Plugin::MakeMaker
+ - Dist::Zilla::Plugin::ModuleBuild
+ - Dist::Zilla::Plugin::ModuleBuildTiny
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
+ - Perl::Critic::Bangs
+ - Perl::Critic::Compatibility
+ - Perl::Critic::Deprecated
+ - Perl::Critic::Itch
+ - Perl::Critic::Lax
+ - Perl::Critic::More
+ - Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter
+ - Perl::Critic::Pulp
+ - Perl::Critic::StricterSubs
+ - Perl::Critic::Swift
+ - Perl::Critic::Tics
+
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.001000
+
+ [Added / test recommends]
+ - Test::More 1.001002
+
+ [Changed / build requires]
+ - Module::Build 0.4204 → 0.3601
+
+ [Changed / configure requires]
+ - Module::Build 0.4204 → 0.3601
+
+ [Changed / develop requires]
+ - Test::Kwalitee 1.17 → 1.18
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::PerlTidy 0.14 → 0.15
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.012 → 0.013
+
+ [Changed / test requires]
+ - List::Util 1.37 → 1.38
+ - Test::More 1.001002 → 0.89
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled v0.1.6
+
+2.010001 2014-01-22T03:16:45Z
  [Changed / develop requires]
  - Dist::Zilla 5.011 → 5.012
  - Dist::Zilla::Plugin::ModuleShareDirs 5.011 → 5.012

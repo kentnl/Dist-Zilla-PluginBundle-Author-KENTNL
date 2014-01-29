@@ -21,6 +21,15 @@
  [04 - Softer Deps on this dist]
  - No more forced upgrading MB on Perl >5.11
 
+ [Dependencies::Stats]
+ - Dependencies changed since 2.010001, see Changes.deps{,.all,.dev} for
+   details
+ - build: +1 ↓1
+ - configure: +1 ↓1
+ - develop: ↑1
+ - runtime: +17 ↑2 -1
+ - test: +1 ↑1 ↓1
+
 2.010001 2014-01-22T03:16:45Z
  [00 Bugfix]
  - Mantissa should only be required if normal_form eq numify
