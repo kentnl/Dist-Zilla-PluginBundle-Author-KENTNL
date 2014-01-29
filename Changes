@@ -1,7 +1,8 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.010002 2014-01-29T20:21:49Z
+2.010002 2014-01-29T20:50:50Z
  [00 Major]
+
  [01 - Toolkit alternation]
  - attribute `toolkit` now exists.
  - can be any of `eumm` `mb` or `mbtiny` and will do the right things.
@@ -9,12 +10,25 @@
  [02 - Toolkit hardness variation]
  - attribute `tookit_hardness` exists.
  - `hard` = ramp dependencies on toolkit so everyone gets the latest
- - `soft` = copy dependencies on toolkit to recommended, and ramp recommended
+ - `soft` = copy dependencies on toolkit to recommended, and ramp
+   recommended
 
  [03 - More Recommended deps by far]
  - All the top 3 are now pulled by --recommended
  - All the perl critic modules I use are now pulled by --recommended
  - Both the hardness support modules are pulled by --recommended
+
+ [04 - Softer Deps on this dist]
+ - No more forced upgrading MB on Perl >5.11
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.010001, see Changes.deps{,.all,.dev} for
+   details
+ - build: +1 ↓1
+ - configure: +1 ↓1
+ - develop: ↑1
+ - runtime: +17 ↑2 -1
+ - test: +1 ↑1 ↓1
 
 2.010001 2014-01-22T03:16:45Z
  [00 Bugfix]

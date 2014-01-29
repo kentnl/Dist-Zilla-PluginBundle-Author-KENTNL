@@ -1,4 +1,8 @@
-2.010001
+2.011000
+ [Changed / develop requires]
+ - Test::Kwalitee 1.17 → 1.18
+
+2.010001 2014-01-22T03:16:45Z
  [Changed / develop requires]
  - Dist::Zilla 5.011 → 5.012
  - Dist::Zilla::Plugin::ModuleShareDirs 5.011 → 5.012
