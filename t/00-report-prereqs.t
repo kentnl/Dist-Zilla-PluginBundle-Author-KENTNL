@@ -173,7 +173,7 @@ my $static_prereqs = do { my $x = {
                                    },
                    'requires' => {
                                    'Capture::Tiny' => '0.23',
-                                   'ExtUtils::MakeMaker' => '0',
+                                   'ExtUtils::MakeMaker' => '6.86',
                                    'File::Spec::Functions' => '0',
                                    'File::pushd' => '1.005',
                                    'FindBin' => '0',
