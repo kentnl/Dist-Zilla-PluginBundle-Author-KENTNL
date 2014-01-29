@@ -82,6 +82,11 @@ my $static_prereqs = do { my $x = {
                     },
        'runtime' => {
                       'recommends' => {
+                                        'Dist::Zilla::Plugin::MakeMaker' => '0',
+                                        'Dist::Zilla::Plugin::ModuleBuild' => '0',
+                                        'Dist::Zilla::Plugin::ModuleBuildTiny' => '0',
+                                        'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => '0',
+                                        'Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled' => '0',
                                         'Perl::Critic::Bangs' => '0',
                                         'Perl::Critic::Compatibility' => '0',
                                         'Perl::Critic::Deprecated' => '0',
