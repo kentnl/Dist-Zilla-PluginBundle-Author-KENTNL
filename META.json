@@ -14,14 +14,10 @@
    },
    "name" : "Dist-Zilla-PluginBundle-Author-KENTNL",
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Module::Build" : "0.4204"
-         }
-      },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.4204"
+            "ExtUtils::MakeMaker" : "6.86",
+            "File::ShareDir::Install" : "0.08"
          }
       },
       "develop" : {
@@ -77,6 +73,7 @@
             "Dist::Zilla::Plugin::Git::Tag" : "2.019",
             "Dist::Zilla::Plugin::GithubMeta" : "0.42",
             "Dist::Zilla::Plugin::License" : "5.012",
+            "Dist::Zilla::Plugin::MakeMaker" : "5.012",
             "Dist::Zilla::Plugin::Manifest" : "5.012",
             "Dist::Zilla::Plugin::ManifestSkip" : "5.012",
             "Dist::Zilla::Plugin::MetaConfig" : "5.012",
@@ -86,7 +83,6 @@
             "Dist::Zilla::Plugin::MetaTests" : "5.012",
             "Dist::Zilla::Plugin::MetaYAML" : "5.012",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
-            "Dist::Zilla::Plugin::ModuleBuild" : "5.012",
             "Dist::Zilla::Plugin::PerlTidy" : "0.15",
             "Dist::Zilla::Plugin::PkgVersion" : "5.012",
             "Dist::Zilla::Plugin::PodCoverageTests" : "5.012",
@@ -217,6 +213,7 @@
          "Dist::Zilla::Plugin::Git::Tag" : "2.019",
          "Dist::Zilla::Plugin::GithubMeta" : "0.42",
          "Dist::Zilla::Plugin::License" : "5.012",
+         "Dist::Zilla::Plugin::MakeMaker" : "5.012",
          "Dist::Zilla::Plugin::Manifest" : "5.012",
          "Dist::Zilla::Plugin::ManifestSkip" : "5.012",
          "Dist::Zilla::Plugin::MetaConfig" : "5.012",
@@ -226,7 +223,6 @@
          "Dist::Zilla::Plugin::MetaTests" : "5.012",
          "Dist::Zilla::Plugin::MetaYAML" : "5.012",
          "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
-         "Dist::Zilla::Plugin::ModuleBuild" : "5.012",
          "Dist::Zilla::Plugin::ModuleShareDirs" : "5.012",
          "Dist::Zilla::Plugin::PerlTidy" : "0.15",
          "Dist::Zilla::Plugin::PkgVersion" : "5.012",
@@ -257,6 +253,7 @@
          "Dist::Zilla::Role::PluginBundle" : "5.012",
          "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
          "ExtUtils::MakeMaker" : "6.86",
+         "File::ShareDir::Install" : "0.08",
          "File::Spec::Functions" : "3.40",
          "File::pushd" : "1.005",
          "FindBin" : "1.51",
@@ -265,7 +262,6 @@
          "JSON" : "2.90",
          "LWP::Protocol::https" : "6.04",
          "List::Util" : "1.38",
-         "Module::Build" : "0.4204",
          "Module::Metadata" : "1.000019",
          "Moose" : "2.1202",
          "Moose::Util::TypeConstraints" : "2.1202",
@@ -672,8 +668,8 @@
             "version" : "1.006"
          },
          {
-            "class" : "Dist::Zilla::Plugin::ModuleBuild",
-            "name" : "@Author::KENTNL/ModuleBuild",
+            "class" : "Dist::Zilla::Plugin::MakeMaker",
+            "name" : "@Author::KENTNL/MakeMaker",
             "version" : "5.012"
          },
          {
