@@ -71,10 +71,23 @@ my $static_prereqs = do { my $x = {
                                       'Test::Pod::Coverage' => '1.08'
                                     },
                       'suggests' => {
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.3.0'
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => 'v1.7.2'
                                     }
                     },
        'runtime' => {
+                      'recommends' => {
+                                        'Perl::Critic::Bangs' => '0',
+                                        'Perl::Critic::Compatibility' => '0',
+                                        'Perl::Critic::Deprecated' => '0',
+                                        'Perl::Critic::Itch' => '0',
+                                        'Perl::Critic::Lax' => '0',
+                                        'Perl::Critic::More' => '0',
+                                        'Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter' => '0',
+                                        'Perl::Critic::Pulp' => '0',
+                                        'Perl::Critic::StrictereSubs' => '0',
+                                        'Perl::Critic::Swift' => '0',
+                                        'Perl::Critic::Tics' => '0'
+                                      },
                       'requires' => {
                                       'Carp' => '0',
                                       'Dist::Zilla' => '5.012',
@@ -136,17 +149,6 @@ my $static_prereqs = do { my $x = {
                                       'MooseX::StrictConstructor' => '0.19',
                                       'MooseX::Types' => '0.41',
                                       'Net::SSLeay' => '1.58',
-                                      'Perl::Critic::Bangs' => '0',
-                                      'Perl::Critic::Compatibility' => '0',
-                                      'Perl::Critic::Deprecated' => '0',
-                                      'Perl::Critic::Itch' => '0',
-                                      'Perl::Critic::Lax' => '0',
-                                      'Perl::Critic::More' => '0',
-                                      'Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter' => '0',
-                                      'Perl::Critic::Pulp' => '0',
-                                      'Perl::Critic::StrictereSubs' => '0',
-                                      'Perl::Critic::Swift' => '0',
-                                      'Perl::Critic::Tics' => '0',
                                       'Perl::PrereqScanner' => '1.019',
                                       'Pod::Coverage::TrustPod' => '0.100003',
                                       'Pod::Elemental::PerlMunger' => '0.200001',
