@@ -6,11 +6,13 @@
  - Module::Build 0.4204
 
  [Added / runtime recommends]
+ - Data::Difference
  - Dist::Zilla::Plugin::MakeMaker
  - Dist::Zilla::Plugin::ModuleBuild
  - Dist::Zilla::Plugin::ModuleBuildTiny
  - Dist::Zilla::Plugin::Prereqs::MatchInstalled
  - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
+ - Net::GitHub
  - Perl::Critic::Bangs
  - Perl::Critic::Compatibility
  - Perl::Critic::Deprecated
