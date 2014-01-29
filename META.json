@@ -19,7 +19,7 @@
             "Module::Build" : "0.4204"
          },
          "requires" : {
-            "Module::Build" : "0.4204"
+            "Module::Build" : "0.3601"
          }
       },
       "configure" : {
@@ -27,7 +27,7 @@
             "Module::Build" : "0.4204"
          },
          "requires" : {
-            "Module::Build" : "0.4204"
+            "Module::Build" : "0.3601"
          }
       },
       "develop" : {
@@ -164,7 +164,7 @@
             "Test::DZil" : "5.012",
             "Test::Fatal" : "0.013",
             "Test::File::ShareDir" : "v0.4.1",
-            "Test::More" : "1.001002",
+            "Test::More" : "0.89",
             "Test::Output" : "1.03",
             "lib" : "0"
          }
@@ -879,6 +879,9 @@
                      "Cwd",
                      "utf8",
                      "ExtUtils::MakeMaker",
+                     "Module::Build",
+                     "Module::Build::Tiny",
+                     "Test::More",
                      "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl",
                      "Dist::Zilla::PluginBundle::Author::KENTNL"
                   ],

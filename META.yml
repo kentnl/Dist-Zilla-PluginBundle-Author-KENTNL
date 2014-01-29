@@ -11,18 +11,18 @@ build_requires:
   Git::Wrapper: 0.030
   JSON: 2.90
   List::Util: 1.38
-  Module::Build: 0.4204
+  Module::Build: 0.3601
   Module::Metadata: 1.000019
   Path::Class::Dir: 0.33
   Path::Tiny: 0.052
   Test::DZil: 5.012
   Test::Fatal: 0.013
   Test::File::ShareDir: v0.4.1
-  Test::More: 1.001002
+  Test::More: 0.89
   Test::Output: 1.03
   lib: 0
 configure_requires:
-  Module::Build: 0.4204
+  Module::Build: 0.3601
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.012, CPAN::Meta::Converter version 2.133380'
 license: perl
@@ -696,6 +696,9 @@ x_Dist_Zilla:
             - Cwd
             - utf8
             - ExtUtils::MakeMaker
+            - Module::Build
+            - Module::Build::Tiny
+            - Test::More
             - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
             - Dist::Zilla::PluginBundle::Author::KENTNL
           upgrade_perl: ~

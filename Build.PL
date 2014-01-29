@@ -8,10 +8,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4204"
+    "Module::Build" => "0.3601"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4204"
+    "Module::Build" => "0.3601"
   },
   "dist_abstract" => "BeLike::KENTNL when you build your distributions.",
   "dist_author" => [
@@ -133,7 +133,7 @@ my %module_build_args = (
     "Test::DZil" => "5.012",
     "Test::Fatal" => "0.013",
     "Test::File::ShareDir" => "v0.4.1",
-    "Test::More" => "1.001002",
+    "Test::More" => "0.89",
     "Test::Output" => "1.03",
     "lib" => 0
   }
@@ -149,14 +149,14 @@ my %fallback_build_requires = (
   "Git::Wrapper" => "0.030",
   "JSON" => "2.90",
   "List::Util" => "1.38",
-  "Module::Build" => "0.4204",
+  "Module::Build" => "0.3601",
   "Module::Metadata" => "1.000019",
   "Path::Class::Dir" => "0.33",
   "Path::Tiny" => "0.052",
   "Test::DZil" => "5.012",
   "Test::Fatal" => "0.013",
   "Test::File::ShareDir" => "v0.4.1",
-  "Test::More" => "1.001002",
+  "Test::More" => "0.89",
   "Test::Output" => "1.03",
   "lib" => 0
 );

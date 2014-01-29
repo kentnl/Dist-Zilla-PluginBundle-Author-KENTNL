@@ -48,7 +48,7 @@ my $static_prereqs = do { my $x = {
                                       'Module::Build' => '0.4204'
                                     },
                     'requires' => {
-                                    'Module::Build' => '0.4204'
+                                    'Module::Build' => '0.3601'
                                   }
                   },
        'configure' => {
@@ -56,7 +56,7 @@ my $static_prereqs = do { my $x = {
                                           'Module::Build' => '0.4204'
                                         },
                         'requires' => {
-                                        'Module::Build' => '0.4204'
+                                        'Module::Build' => '0.3601'
                                       }
                       },
        'develop' => {
@@ -193,7 +193,7 @@ my $static_prereqs = do { my $x = {
                                    'Test::DZil' => '5.012',
                                    'Test::Fatal' => '0.013',
                                    'Test::File::ShareDir' => 'v0.4.1',
-                                   'Test::More' => '1.001002',
+                                   'Test::More' => '0.89',
                                    'Test::Output' => '1.03',
                                    'lib' => '0'
                                  }
