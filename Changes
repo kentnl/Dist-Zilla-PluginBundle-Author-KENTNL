@@ -1,6 +1,22 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Major]
+
+ [01 - Toolkit alternation]
+ - attribute `toolkit` now exists.
+ - can be any of `eumm` `mb` or `mbtiny` and will do the right things.
+
+ [02 - Toolkit hardness variation]
+ - attribute `tookit_hardness` exists.
+ - `hard` = ramp dependencies on toolkit so everyone gets the latest
+ - `soft` = copy dependencies on toolkit to recommended, and ramp
+   recommended
+
+ [03 - More Recommended deps by far]
+ - All the top 3 are now pulled by --recommended
+ - All the perl critic modules I use are now pulled by --recommended
+ - Both the hardness support modules are pulled by --recommended
 
 2.010001 2014-01-22T03:16:45Z
  [00 Bugfix]
