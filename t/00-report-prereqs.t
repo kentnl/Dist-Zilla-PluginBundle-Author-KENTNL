@@ -135,6 +135,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Plugin::PodSyntaxTests' => '5.012',
                                       'Dist::Zilla::Plugin::PodWeaver' => '4.005',
                                       'Dist::Zilla::Plugin::Prereqs' => '5.012',
+                                      'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => 'v0.1.6',
                                       'Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled' => '0.001000',
                                       'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0.133360',
                                       'Dist::Zilla::Plugin::ReadmeFromPod' => '0.21',
@@ -188,7 +189,7 @@ my $static_prereqs = do { my $x = {
                    'requires' => {
                                    'Capture::Tiny' => '0.23',
                                    'Dist::Zilla::Plugin::ModuleBuild' => '5.012',
-                                   'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => '0',
+                                   'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => 'v0.1.6',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec::Functions' => '0',
                                    'File::pushd' => '1.005',

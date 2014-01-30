@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.011000';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.011001';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -275,7 +275,17 @@ sub configure {
 
   # Prereqs
 
-  $self->add_plugin( 'AutoPrereqs' => { skip => $self->auto_prereqs_skip } );
+  my $skips = $self->auto_prereqs_skip;
+  if ( not defined $skips ) {
+      $skips = [];
+  }
+  if ( 'ARRAY' ne ref $skips ){
+      $skips = [ $skips ];
+  }
+  if ( not @{$skips} ){
+      $skips = ['(*FAIL)'],
+  }
+  $self->add_plugin( 'AutoPrereqs' => { skips => $skips } );
   $self->add_named_plugin(
     'BundleDevelSuggests' => 'Prereqs' => {
       -phase                                            => 'develop',
@@ -326,7 +336,7 @@ sub configure {
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
 
-  my @extra_match_installed = qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL );
+  my @extra_match_installed = qw( Test::More );
   unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
   unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbtiny' eq $self->toolkit;
   unshift @extra_match_installed, 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
@@ -345,6 +355,14 @@ sub configure {
       },
     );
   }
+
+  $self->add_named_plugin(
+    'always_latest_develop_bundle' => 'Prereqs::MatchInstalled' => {
+      applyto_phase    => 'develop',
+      applyto_relation => 'requires',
+      modules          => [qw( Dist::Zilla::PluginBundle::Author::KENTNL )],
+    },
+  );
   return;
 }
 
@@ -381,7 +399,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.011000
+version 2.011001
 
 =head1 SYNOPSIS
 
