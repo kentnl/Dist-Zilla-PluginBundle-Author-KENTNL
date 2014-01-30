@@ -358,11 +358,9 @@ sub configure {
 
   $self->add_named_plugin(
     'always_latest_develop_bundle' => 'Prereqs::Recommend::MatchInstalled' => {
-      applyto_map => [
-        'develop.requires = develop.requires'
-      ],
-      applyto_phase => [ 'develop' ],
-      modules          => [qw( Dist::Zilla::PluginBundle::Author::KENTNL )],
+      applyto_map   => [ 'develop.requires = develop.requires', ],
+      applyto_phase => [ 'develop', ],
+      modules       => [ qw( Dist::Zilla::PluginBundle::Author::KENTNL ), ],
     },
   );
   return;
