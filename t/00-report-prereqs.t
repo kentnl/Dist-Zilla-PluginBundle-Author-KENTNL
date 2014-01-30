@@ -190,6 +190,7 @@ my $static_prereqs = do { my $x = {
                                    'Git::Wrapper' => '0.030',
                                    'JSON' => '2.90',
                                    'List::Util' => '1.38',
+                                   'Module::Build' => '0',
                                    'Module::Metadata' => '1.000019',
                                    'Path::Class::Dir' => '0.33',
                                    'Path::Tiny' => '0.052',
