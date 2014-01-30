@@ -630,10 +630,6 @@ x_Dist_Zilla:
           applyto_map:
             - 'develop.requires = develop.requires'
           applyto_phase:
-            - build
-            - test
-            - runtime
-            - configure
             - develop
           modules:
             - Dist::Zilla::PluginBundle::Author::KENTNL

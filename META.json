@@ -797,10 +797,6 @@
                      "develop.requires = develop.requires"
                   ],
                   "applyto_phase" : [
-                     "build",
-                     "test",
-                     "runtime",
-                     "configure",
                      "develop"
                   ],
                   "modules" : [
