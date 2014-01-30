@@ -361,6 +361,7 @@ sub configure {
       applyto_map => [
         'develop.requires = develop.requires'
       ],
+      applyto_phase => [ 'develop' ],
       modules          => [qw( Dist::Zilla::PluginBundle::Author::KENTNL )],
     },
   );
