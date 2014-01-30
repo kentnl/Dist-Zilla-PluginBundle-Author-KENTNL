@@ -12,6 +12,9 @@
  [Added / test recommends]
  - ExtUtils::MakeMaker 6.86
 
+ [Added / test requires]
+ - Module::Build
+
  [Changed / test requires]
  - Dist::Zilla::Plugin::ModuleBuild 5.012 → 0
 
