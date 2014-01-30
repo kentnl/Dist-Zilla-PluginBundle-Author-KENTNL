@@ -196,7 +196,7 @@ my $static_prereqs = do { my $x = {
                                    'Path::Tiny' => '0.052',
                                    'Test::DZil' => '5.012',
                                    'Test::Fatal' => '0.013',
-                                   'Test::File::ShareDir' => 'v0.4.1',
+                                   'Test::File::ShareDir' => '1.000000',
                                    'Test::More' => '0.89',
                                    'Test::Output' => '1.03',
                                    'lib' => '0'

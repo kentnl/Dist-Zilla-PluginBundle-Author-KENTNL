@@ -167,7 +167,7 @@
             "Path::Tiny" : "0.052",
             "Test::DZil" : "5.012",
             "Test::Fatal" : "0.013",
-            "Test::File::ShareDir" : "v0.4.1",
+            "Test::File::ShareDir" : "1.000000",
             "Test::More" : "0.89",
             "Test::Output" : "1.03",
             "lib" : "0"
@@ -177,19 +177,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.012000"
+         "version" : "2.012001"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.012000"
+         "version" : "2.012001"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.012000"
+         "version" : "2.012001"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.012000"
+         "version" : "2.012001"
       }
    },
    "release_status" : "stable",
@@ -204,7 +204,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.012000",
+   "version" : "2.012001",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.133380",
@@ -313,7 +313,7 @@
          "Test::DZil" : "5.012",
          "Test::EOL" : "1.5",
          "Test::Fatal" : "0.013",
-         "Test::File::ShareDir" : "0.4.1",
+         "Test::File::ShareDir" : "1.000000",
          "Test::Kwalitee" : "1.18",
          "Test::More" : "1.001002",
          "Test::Output" : "1.03",

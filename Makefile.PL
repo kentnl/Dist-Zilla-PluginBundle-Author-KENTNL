@@ -116,12 +116,12 @@ my %WriteMakefileArgs = (
     "Path::Tiny" => "0.052",
     "Test::DZil" => "5.012",
     "Test::Fatal" => "0.013",
-    "Test::File::ShareDir" => "v0.4.1",
+    "Test::File::ShareDir" => "1.000000",
     "Test::More" => "0.89",
     "Test::Output" => "1.03",
     "lib" => 0
   },
-  "VERSION" => "2.012000",
+  "VERSION" => "2.012001",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -211,7 +211,7 @@ my %FallbackPrereqs = (
   "Test::DZil" => "5.012",
   "Test::EOL" => "1.5",
   "Test::Fatal" => "0.013",
-  "Test::File::ShareDir" => "v0.4.1",
+  "Test::File::ShareDir" => "1.000000",
   "Test::More" => "0.89",
   "Test::Output" => "1.03",
   "Test::Perl::Critic" => "1.02",
