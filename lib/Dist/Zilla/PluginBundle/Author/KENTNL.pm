@@ -283,7 +283,7 @@ sub configure {
       $skips = [ $skips ];
   }
   if ( not @{$skips} ){
-      $skips = ['(*FAIL)'],
+      $skips = ['(*FAIL)'];
   }
   $self->add_plugin( 'AutoPrereqs' => { skips => $skips } );
   $self->add_named_plugin(
