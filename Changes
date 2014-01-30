@@ -1,6 +1,10 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Bugfix]
+ - Fix regression where hardness value regulated develop time dependencies.
+ - Work around weird behaviour in Config::MVP with attribute propagation
+   causing errors.
 
 2.011000 2014-01-29T21:19:25Z
  [00 Major]
