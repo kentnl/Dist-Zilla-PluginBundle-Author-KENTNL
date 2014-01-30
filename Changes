@@ -11,7 +11,7 @@
  - build: -2
  - configure: +3 -2
  - runtime: +1 -1
- - test: +1 ↓1
+ - test: +2 ↓1
 
 2.011001 2014-01-30T05:38:14Z
  [00 Bugfix]
