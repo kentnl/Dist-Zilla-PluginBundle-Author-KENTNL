@@ -336,7 +336,7 @@ sub configure {
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
 
-  my @extra_match_installed = qw( Test::More Dist::Zilla::PluginBundle::Author::KENTNL );
+  my @extra_match_installed = qw( Test::More );
   unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
   unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbtiny' eq $self->toolkit;
   unshift @extra_match_installed, 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
@@ -355,6 +355,16 @@ sub configure {
       },
     );
   }
+
+  $self->add_named_plugin(
+    'always_latest_develop_bundle' => 'Prereqs::Recommend::MatchInstalled' => {
+      applyto_map => [
+        'develop.requires = develop.requires'
+      ],
+      applyto_phase => [ 'develop' ],
+      modules          => [qw( Dist::Zilla::PluginBundle::Author::KENTNL )],
+    },
+  );
   return;
 }
 
