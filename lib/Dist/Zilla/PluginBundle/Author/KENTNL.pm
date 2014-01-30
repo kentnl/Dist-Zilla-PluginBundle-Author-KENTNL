@@ -133,10 +133,16 @@ has 'mantissa' => (
 );
 
 has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
-has 'authority'               => ( is => 'ro', isa   => 'Str',      lazy => 1, builder => sub { 'cpan:KENTNL' }, );
-has 'auto_prereqs_skip'       => ( is => 'ro', isa   => 'ArrayRef', lazy => 1, builder => sub { [] }, );
-has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str',      lazy => 1, builder => sub { q[] }, );
-has 'twitter_hash_tags'       => (
+has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+has 'auto_prereqs_skip' => (
+  is        => 'ro',
+  isa       => 'ArrayRef',
+  predicate => 'has_auto_prereqs_skip',
+  lazy      => 1,
+  builder   => sub { [] },
+);
+has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str', lazy => 1, builder => sub { q[] }, );
+has 'twitter_hash_tags' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
@@ -275,7 +281,11 @@ sub configure {
 
   # Prereqs
 
-  $self->add_plugin( 'AutoPrereqs' => { skip => $self->auto_prereqs_skip } );
+  {
+    my $autoprereqs_hash = {};
+    $autoprereqs_hash->{skips} = $self->auto_prereqs_skip if $self->has_auto_prereqs_skip;
+    $self->add_plugin( 'AutoPrereqs' => $autoprereqs_hash );
+  }
   $self->add_named_plugin(
     'BundleDevelSuggests' => 'Prereqs' => {
       -phase                                            => 'develop',
