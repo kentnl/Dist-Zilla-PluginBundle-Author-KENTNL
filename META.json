@@ -14,20 +14,13 @@
    },
    "name" : "Dist-Zilla-PluginBundle-Author-KENTNL",
    "prereqs" : {
-      "build" : {
-         "recommends" : {
-            "Module::Build" : "0.4204"
-         },
-         "requires" : {
-            "Module::Build" : "0.3601"
-         }
-      },
       "configure" : {
          "recommends" : {
-            "Module::Build" : "0.4204"
+            "ExtUtils::MakeMaker" : "6.86"
          },
          "requires" : {
-            "Module::Build" : "0.3601"
+            "ExtUtils::MakeMaker" : "6.30",
+            "File::ShareDir::Install" : "0.08"
          }
       },
       "develop" : {
@@ -90,6 +83,7 @@
             "Dist::Zilla::Plugin::Git::Tag" : "2.019",
             "Dist::Zilla::Plugin::GithubMeta" : "0.42",
             "Dist::Zilla::Plugin::License" : "5.012",
+            "Dist::Zilla::Plugin::MakeMaker" : "5.012",
             "Dist::Zilla::Plugin::Manifest" : "5.012",
             "Dist::Zilla::Plugin::ManifestSkip" : "5.012",
             "Dist::Zilla::Plugin::MetaConfig" : "5.012",
@@ -99,7 +93,6 @@
             "Dist::Zilla::Plugin::MetaTests" : "5.012",
             "Dist::Zilla::Plugin::MetaYAML" : "5.012",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
-            "Dist::Zilla::Plugin::ModuleBuild" : "5.012",
             "Dist::Zilla::Plugin::PerlTidy" : "0.15",
             "Dist::Zilla::Plugin::PkgVersion" : "5.012",
             "Dist::Zilla::Plugin::PodCoverageTests" : "5.012",
@@ -154,11 +147,12 @@
          "recommends" : {
             "CPAN::Meta" : "2.133380",
             "CPAN::Meta::Requirements" : "2.125",
+            "ExtUtils::MakeMaker" : "6.86",
             "Test::More" : "1.001002"
          },
          "requires" : {
             "Capture::Tiny" : "0.23",
-            "Dist::Zilla::Plugin::ModuleBuild" : "5.012",
+            "Dist::Zilla::Plugin::ModuleBuild" : "0",
             "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : "0",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec::Functions" : "0",
@@ -182,19 +176,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.011001"
+         "version" : "2.011002"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.011001"
+         "version" : "2.011002"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.011001"
+         "version" : "2.011002"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.011001"
+         "version" : "2.011002"
       }
    },
    "release_status" : "stable",
@@ -209,7 +203,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.011001",
+   "version" : "2.011002",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.133380",
@@ -277,6 +271,7 @@
          "Dist::Zilla::Role::PluginBundle" : "5.012",
          "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
          "ExtUtils::MakeMaker" : "6.86",
+         "File::ShareDir::Install" : "0.08",
          "File::Spec::Functions" : "3.40",
          "File::pushd" : "1.005",
          "FindBin" : "1.51",
@@ -285,7 +280,6 @@
          "JSON" : "2.90",
          "LWP::Protocol::https" : "6.04",
          "List::Util" : "1.38",
-         "Module::Build" : "0.4204",
          "Module::Metadata" : "1.000019",
          "Moose" : "2.1202",
          "Moose::Util::TypeConstraints" : "2.1202",
@@ -693,8 +687,8 @@
             "version" : "1.006"
          },
          {
-            "class" : "Dist::Zilla::Plugin::ModuleBuild",
-            "name" : "@Author::KENTNL/ModuleBuild",
+            "class" : "Dist::Zilla::Plugin::MakeMaker",
+            "name" : "@Author::KENTNL/MakeMaker",
             "version" : "5.012"
          },
          {
@@ -781,7 +775,7 @@
                      "develop"
                   ],
                   "modules" : [
-                     "Module::Build",
+                     "ExtUtils::MakeMaker",
                      "Test::More"
                   ]
                }
