@@ -1,5 +1,18 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.012000 2014-01-30T08:12:10Z
+ [00 Possible Downstream Toolbugs]
+ - This distribution switching to EUMM.
+ - Future release may default to EUMM
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.011001, see Changes.deps{,.all,.dev} for
+   details
+ - build: -2
+ - configure: +3 -2
+ - runtime: +1 -1
+ - test: +2 ↓1
+
 2.011001 2014-01-30T05:38:14Z
  [00 Bugfix]
  - Fix regression where hardness value regulated develop time dependencies.

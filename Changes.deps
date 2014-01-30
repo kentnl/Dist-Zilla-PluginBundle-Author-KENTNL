@@ -1,4 +1,39 @@
-2.011001
+2.012000
+ [Added / configure recommends]
+ - ExtUtils::MakeMaker 6.86
+
+ [Added / configure requires]
+ - ExtUtils::MakeMaker 6.30
+ - File::ShareDir::Install 0.08
+
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::MakeMaker 5.012
+
+ [Added / test recommends]
+ - ExtUtils::MakeMaker 6.86
+
+ [Added / test requires]
+ - Module::Build
+
+ [Changed / test requires]
+ - Dist::Zilla::Plugin::ModuleBuild 5.012 → 0
+
+ [Removed / build recommends]
+ - Module::Build 0.4204
+
+ [Removed / build requires]
+ - Module::Build 0.3601
+
+ [Removed / configure recommends]
+ - Module::Build 0.4204
+
+ [Removed / configure requires]
+ - Module::Build 0.3601
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::ModuleBuild 5.012
+
+2.011001 2014-01-30T05:38:14Z
 
 2.011000 2014-01-29T21:19:25Z
  [Added / build recommends]
