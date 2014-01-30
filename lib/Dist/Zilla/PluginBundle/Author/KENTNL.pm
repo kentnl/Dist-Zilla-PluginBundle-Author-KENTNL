@@ -134,8 +134,13 @@ has 'mantissa' => (
 
 has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
 has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, builder => sub { 'cpan:KENTNL' }, );
-has 'auto_prereqs_skip' =>
-  ( is => 'ro', isa => 'ArrayRef', predicate => 'has_auto_prereqs_skip' =>, lazy => 1, builder => sub { [] }, );
+has 'auto_prereqs_skip' => (
+  is        => 'ro',
+  isa       => 'ArrayRef',
+  predicate => 'has_auto_prereqs_skip',
+  lazy      => 1,
+  builder   => sub { [] },
+);
 has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str', lazy => 1, builder => sub { q[] }, );
 has 'twitter_hash_tags' => (
   is      => 'ro',
@@ -352,9 +357,10 @@ sub configure {
   }
 
   $self->add_named_plugin(
-    'always_latest_develop_bundle' => 'Prereqs::MatchInstalled' => {
-      applyto_phase    => 'develop',
-      applyto_relation => 'requires',
+    'always_latest_develop_bundle' => 'Prereqs::Recommend::MatchInstalled' => {
+      applyto_map => [
+        'develop.requires = develop.requires'
+      ],
       modules          => [qw( Dist::Zilla::PluginBundle::Author::KENTNL )],
     },
   );
