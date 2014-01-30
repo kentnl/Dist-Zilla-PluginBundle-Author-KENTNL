@@ -5,6 +5,13 @@
  - This distribution switching to EUMM.
  - Future release may default to EUMM
 
+ [Dependencies::Stats]
+ - Dependencies changed since 2.011001, see Changes.deps{,.all,.dev} for
+   details
+ - build: -2
+ - configure: +3 -2
+ - runtime: +1 -1
+ - test: +1 ↓1
 
 2.011001 2014-01-30T05:38:14Z
  [00 Bugfix]
