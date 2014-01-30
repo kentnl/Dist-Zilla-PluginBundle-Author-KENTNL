@@ -1,6 +1,10 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Possible Downstream Toolbugs]
+ - This distribution switching to EUMM.
+ - Future release may default to EUMM
+
 
 2.011001 2014-01-30T05:38:14Z
  [00 Bugfix]
