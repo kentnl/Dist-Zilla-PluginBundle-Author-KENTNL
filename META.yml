@@ -35,16 +35,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: 2.011000
+    version: 2.011001
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: 2.011000
+    version: 2.011001
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: 2.011000
+    version: 2.011001
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: 2.011000
+    version: 2.011001
 recommends:
   Data::Difference: 0
   Dist::Zilla::Plugin::MakeMaker: 0
@@ -144,7 +144,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: 2.011000
+version: 2.011001
 x_BuiltWith:
   modules:
     CPAN::Meta: 2.133380
@@ -621,8 +621,19 @@ x_Dist_Zilla:
           modules:
             - Module::Build
             - Test::More
-            - Dist::Zilla::PluginBundle::Author::KENTNL
       name: '@Author::KENTNL/Prereqs::Recommend::MatchInstalled'
+      version: 0.001000
+    -
+      class: Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
+      config:
+        Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled:
+          applyto_map:
+            - 'develop.requires = develop.requires'
+          applyto_phase:
+            - develop
+          modules:
+            - Dist::Zilla::PluginBundle::Author::KENTNL
+      name: '@Author::KENTNL/always_latest_develop_bundle'
       version: 0.001000
     -
       class: Dist::Zilla::Plugin::Prereqs
