@@ -151,7 +151,7 @@ my $static_prereqs = do { my $x = {
                                       'Moose' => '2.1202',
                                       'Moose::Util::TypeConstraints' => '2.1202',
                                       'MooseX::AttributeShortcuts' => '0.022',
-                                      'MooseX::Has::Sugar' => '0.05070422',
+                                      'MooseX::Has::Sugar' => '1.000000',
                                       'MooseX::StrictConstructor' => '0.19',
                                       'MooseX::Types' => '0.41',
                                       'Net::SSLeay' => '1.58',
