@@ -47,7 +47,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::MetaConfig" => "5.012",
     "Dist::Zilla::Plugin::MetaData::BuiltWith" => "0.04000002",
     "Dist::Zilla::Plugin::MetaJSON" => "5.012",
-    "Dist::Zilla::Plugin::MetaProvides::Package" => "1.15000003",
+    "Dist::Zilla::Plugin::MetaProvides::Package" => "2.000001",
     "Dist::Zilla::Plugin::MetaTests" => "5.012",
     "Dist::Zilla::Plugin::MetaYAML" => "5.012",
     "Dist::Zilla::Plugin::MinimumPerl" => "1.003",
@@ -96,7 +96,7 @@ my %WriteMakefileArgs = (
     "namespace::autoclean" => "0.15",
     "strict" => 0,
     "utf8" => 0,
-    "version" => "0.9907",
+    "version" => "0.9908",
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
@@ -153,7 +153,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla::Plugin::MetaConfig" => "5.012",
   "Dist::Zilla::Plugin::MetaData::BuiltWith" => "0.04000002",
   "Dist::Zilla::Plugin::MetaJSON" => "5.012",
-  "Dist::Zilla::Plugin::MetaProvides::Package" => "1.15000003",
+  "Dist::Zilla::Plugin::MetaProvides::Package" => "2.000001",
   "Dist::Zilla::Plugin::MetaTests" => "5.012",
   "Dist::Zilla::Plugin::MetaYAML" => "5.012",
   "Dist::Zilla::Plugin::MinimumPerl" => "1.003",
@@ -221,7 +221,7 @@ my %FallbackPrereqs = (
   "namespace::autoclean" => "0.15",
   "strict" => 0,
   "utf8" => 0,
-  "version" => "0.9907",
+  "version" => "0.9908",
   "warnings" => 0
 );
 

@@ -37,6 +37,8 @@ maint-travis-ci/travis_enable.pl
 maint-travis-ci/yamls/sterile.mkdn
 maint-travis-ci/yamls/sterile.yaml
 maint-travis-ci/yamls/sterile2.yaml
+maint/perlcritic.rc.gen.pl
+perlcritic.deps
 perlcritic.rc
 share/profiles/default/ModuleTemplate.pm.tpl
 share/profiles/default/profile.ini

@@ -118,7 +118,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Plugin::MetaConfig' => '5.012',
                                       'Dist::Zilla::Plugin::MetaData::BuiltWith' => '0.04000002',
                                       'Dist::Zilla::Plugin::MetaJSON' => '5.012',
-                                      'Dist::Zilla::Plugin::MetaProvides::Package' => '1.15000003',
+                                      'Dist::Zilla::Plugin::MetaProvides::Package' => '2.000001',
                                       'Dist::Zilla::Plugin::MetaTests' => '5.012',
                                       'Dist::Zilla::Plugin::MetaYAML' => '5.012',
                                       'Dist::Zilla::Plugin::MinimumPerl' => '1.003',
@@ -168,7 +168,7 @@ my $static_prereqs = do { my $x = {
                                       'perl' => '5.008',
                                       'strict' => '0',
                                       'utf8' => '0',
-                                      'version' => '0.9907',
+                                      'version' => '0.9908',
                                       'warnings' => '0'
                                     }
                     },

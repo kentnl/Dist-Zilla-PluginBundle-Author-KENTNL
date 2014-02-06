@@ -89,7 +89,7 @@ requires:
   Dist::Zilla::Plugin::MetaConfig: '5.012'
   Dist::Zilla::Plugin::MetaData::BuiltWith: '0.04000002'
   Dist::Zilla::Plugin::MetaJSON: '5.012'
-  Dist::Zilla::Plugin::MetaProvides::Package: '1.15000003'
+  Dist::Zilla::Plugin::MetaProvides::Package: '2.000001'
   Dist::Zilla::Plugin::MetaTests: '5.012'
   Dist::Zilla::Plugin::MetaYAML: '5.012'
   Dist::Zilla::Plugin::MinimumPerl: '1.003'
@@ -139,7 +139,7 @@ requires:
   perl: '5.008'
   strict: '0'
   utf8: '0'
-  version: '0.9907'
+  version: '0.9908'
   warnings: '0'
 resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
@@ -176,7 +176,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaConfig: '5.012'
     Dist::Zilla::Plugin::MetaData::BuiltWith: '0.04000002'
     Dist::Zilla::Plugin::MetaJSON: '5.012'
-    Dist::Zilla::Plugin::MetaProvides::Package: '1.15000003'
+    Dist::Zilla::Plugin::MetaProvides::Package: '2.000001'
     Dist::Zilla::Plugin::MetaTests: '5.012'
     Dist::Zilla::Plugin::MetaYAML: '5.012'
     Dist::Zilla::Plugin::MinimumPerl: '1.003'
@@ -265,7 +265,7 @@ x_BuiltWith:
     namespace::autoclean: '0.15'
     strict: '1.08'
     utf8: '1.13'
-    version: '0.9907'
+    version: '0.9908'
     warnings: '1.21'
   perl:
     original: v5.19.8
@@ -324,7 +324,7 @@ x_Dist_Zilla:
           inherit_version: '1'
           meta_noindex: '1'
       name: '@Author::KENTNL/MetaProvides::Package'
-      version: '1.15000003'
+      version: '2.000001'
     -
       class: Dist::Zilla::Plugin::MetaData::BuiltWith
       config:
