@@ -1,4 +1,20 @@
-2.012000
+2.012001
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.86 → 6.88
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Git::NextRelease 0.002001 → 0.002010
+ - Dist::Zilla::Plugin::MetaProvides::Package 1.15000003 → 2.000001
+ - MooseX::Has::Sugar 0.05070422 → 1.000000
+ - version 0.9907 → 0.9908
+
+ [Changed / test recommends]
+ - ExtUtils::MakeMaker 6.86 → 6.88
+
+ [Changed / test requires]
+ - Test::File::ShareDir v0.4.1 → 1.000000
+
+2.012000 2014-01-30T08:12:10Z
  [Added / configure recommends]
  - ExtUtils::MakeMaker 6.86
 
