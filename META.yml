@@ -36,16 +36,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.012001'
+    version: 2.012_00
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.012001'
+    version: 2.012_00
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.012001'
+    version: 2.012_00
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.012001'
+    version: 2.012_00
 recommends:
   Data::Difference: '0'
   Dist::Zilla::Plugin::MakeMaker: '0'
@@ -74,13 +74,13 @@ requires:
   Dist::Zilla::Plugin::Bootstrap::lib: '0.04000002'
   Dist::Zilla::Plugin::ConfirmRelease: '5.013'
   Dist::Zilla::Plugin::EOLTests: '0.02'
-  Dist::Zilla::Plugin::Git::Check: '2.019'
-  Dist::Zilla::Plugin::Git::Commit: '2.019'
-  Dist::Zilla::Plugin::Git::CommitBuild: '2.019'
-  Dist::Zilla::Plugin::Git::GatherDir: '2.019'
+  Dist::Zilla::Plugin::Git::Check: '2.020'
+  Dist::Zilla::Plugin::Git::Commit: '2.020'
+  Dist::Zilla::Plugin::Git::CommitBuild: '2.020'
+  Dist::Zilla::Plugin::Git::GatherDir: '2.020'
   Dist::Zilla::Plugin::Git::NextRelease: '0.002010'
   Dist::Zilla::Plugin::Git::NextVersion::Sanitized: '0.001000'
-  Dist::Zilla::Plugin::Git::Tag: '2.019'
+  Dist::Zilla::Plugin::Git::Tag: '2.020'
   Dist::Zilla::Plugin::GithubMeta: '0.42'
   Dist::Zilla::Plugin::License: '5.013'
   Dist::Zilla::Plugin::MakeMaker: '5.013'
@@ -102,7 +102,7 @@ requires:
   Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled: '0.001000'
   Dist::Zilla::Plugin::ReadmeAnyFromPod: '0.133360'
   Dist::Zilla::Plugin::ReadmeFromPod: '0.21'
-  Dist::Zilla::Plugin::RunExtraTests: '0.016'
+  Dist::Zilla::Plugin::RunExtraTests: '0.018'
   Dist::Zilla::Plugin::Test::CPAN::Changes: '0.008'
   Dist::Zilla::Plugin::Test::Compile::PerFile: '0.001001'
   Dist::Zilla::Plugin::Test::Kwalitee: '2.07'
@@ -145,7 +145,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.012001'
+version: 2.012_00
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.133380'
@@ -161,13 +161,13 @@ x_BuiltWith:
     Dist::Zilla::Plugin::CheckPrereqsIndexed: '0.010'
     Dist::Zilla::Plugin::ConfirmRelease: '5.013'
     Dist::Zilla::Plugin::EOLTests: '0.02'
-    Dist::Zilla::Plugin::Git::Check: '2.019'
-    Dist::Zilla::Plugin::Git::Commit: '2.019'
-    Dist::Zilla::Plugin::Git::CommitBuild: '2.019'
-    Dist::Zilla::Plugin::Git::GatherDir: '2.019'
+    Dist::Zilla::Plugin::Git::Check: '2.020'
+    Dist::Zilla::Plugin::Git::Commit: '2.020'
+    Dist::Zilla::Plugin::Git::CommitBuild: '2.020'
+    Dist::Zilla::Plugin::Git::GatherDir: '2.020'
     Dist::Zilla::Plugin::Git::NextRelease: '0.002010'
     Dist::Zilla::Plugin::Git::NextVersion::Sanitized: '0.001000'
-    Dist::Zilla::Plugin::Git::Tag: '2.019'
+    Dist::Zilla::Plugin::Git::Tag: '2.020'
     Dist::Zilla::Plugin::GithubMeta: '0.42'
     Dist::Zilla::Plugin::License: '5.013'
     Dist::Zilla::Plugin::MakeMaker: '5.013'
@@ -196,7 +196,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::ReadmeAnyFromPod: '0.133360'
     Dist::Zilla::Plugin::ReadmeFromPod: '0.21'
     Dist::Zilla::Plugin::RemovePhasedPrereqs: '0.002'
-    Dist::Zilla::Plugin::RunExtraTests: '0.016'
+    Dist::Zilla::Plugin::RunExtraTests: '0.018'
     Dist::Zilla::Plugin::Test::CPAN::Changes: '0.008'
     Dist::Zilla::Plugin::Test::Compile::PerFile: '0.001001'
     Dist::Zilla::Plugin::Test::Kwalitee: '2.07'
@@ -214,7 +214,7 @@ x_BuiltWith:
     Dist::Zilla::Util::EmulatePhase: '0.01025803'
     ExtUtils::MakeMaker: '6.88'
     File::ShareDir::Install: '0.08'
-    File::Spec::Functions: '3.40'
+    File::Spec::Functions: '3.47'
     File::pushd: '1.005'
     FindBin: '1.51'
     Git::Wrapper: '0.030'
@@ -222,7 +222,7 @@ x_BuiltWith:
     JSON: '2.90'
     LWP::Protocol::https: '6.04'
     List::Util: '1.38'
-    Module::Build: '0.4204'
+    Module::Build: '0.4205'
     Module::Metadata: '1.000019'
     Moose: '2.1204'
     Moose::Util::TypeConstraints: '2.1204'
@@ -234,7 +234,7 @@ x_BuiltWith:
     Net::SSLeay: '1.58'
     Path::Class::Dir: '0.33'
     Path::Tiny: '0.052'
-    Perl::Critic::Bangs: '1.10'
+    Perl::Critic::Bangs: 1.11_02
     Perl::Critic::Compatibility: '1.001'
     Perl::Critic::Deprecated: '1.119'
     Perl::Critic::Itch: '0.07'
@@ -266,23 +266,23 @@ x_BuiltWith:
     strict: '1.08'
     utf8: '1.13'
     version: '0.9908'
-    warnings: '1.21'
+    warnings: '1.22'
   perl:
-    original: v5.19.8
+    original: v5.19.9
     qv: 1
     version:
       - 5
       - 19
-      - 8
+      - 9
   perl-config:
-    gccversion: 4.7.3
+    gccversion: 4.8.2
     myarchname: x86_64-linux
     osname: linux
   platform: linux
   uname: 'Linux 3.13.0-gentoo-r1 x86_64 GenuineIntel GNU/Linux'
 x_Dist_Zilla:
   perl:
-    version: '5.019008'
+    version: '5.019009'
   plugins:
     -
       class: Dist::Zilla::Plugin::Bootstrap::lib
@@ -345,7 +345,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       name: '@Author::KENTNL/Git::GatherDir'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::License
       name: '@Author::KENTNL/License'
@@ -567,7 +567,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::RunExtraTests
       name: '@Author::KENTNL/RunExtraTests'
-      version: '0.016'
+      version: '0.018'
     -
       class: Dist::Zilla::Plugin::TestRelease
       name: '@Author::KENTNL/TestRelease'
@@ -579,23 +579,23 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Author::KENTNL/Git::Check'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::KENTNL/tag_master'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: '@Author::KENTNL/Git::Commit'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::Git::CommitBuild
       name: '@Author::KENTNL/Git::CommitBuild'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::KENTNL/tag_release'
-      version: '2.019'
+      version: '2.020'
     -
       class: Dist::Zilla::Plugin::UploadToCPAN
       name: '@Author::KENTNL/UploadToCPAN'
