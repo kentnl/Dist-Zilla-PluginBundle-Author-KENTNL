@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.012001 2014-03-17T18:55:42Z
+2.012001 2014-03-17T18:59:57Z
  [00 Minor]
  - default to jobs = 10
 
