@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 # VERSION
 
-version 2.012000
+version 2.012001
 
 # SYNOPSIS
 
@@ -79,15 +79,6 @@ See [the `PluginBundle` role](https://metacpan.org/pod/Dist::Zilla::Role::Plugin
 ## `configure`
 
 Called by in `bundle_config` after `new`
-
-{
-    "namespace":"Dist::Zilla::PluginBundle::Author::KENTNL",
-    "interface":"class",
-    "inherits":"Moose::Object",
-    "does":"Dist::Zilla::Role::PluginBundle"
-}
-
-
 
 # AUTHOR
 

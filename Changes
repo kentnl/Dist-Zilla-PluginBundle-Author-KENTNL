@@ -5,8 +5,9 @@
  - Dependencies changed since 2.012000, see Changes.deps{,.all,.dev} for
    details
  - configure: ↑1
- - runtime: ↑4
- - test: ↑2
+ - develop: ↑3
+ - runtime: ↑35
+ - test: ↑6
 
 2.012000 2014-01-30T08:12:10Z
  [00 Possible Downstream Toolbugs]
