@@ -1,5 +1,22 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.012001 2014-03-17T18:59:57Z
+ [00 Minor]
+ - default to jobs = 10
+
+ [Dependencies::Aggregate]
+ - 5.010 : 294 → 293
+ - 5.012 : 284 → 286
+ - 5.019 : 277 → 275
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.012000, see Changes.deps{,.all,.dev} for
+   details
+ - configure: ↑1
+ - develop: ↑3
+ - runtime: ↑35
+ - test: ↑6
+
 2.012000 2014-01-30T08:12:10Z
  [00 Possible Downstream Toolbugs]
  - This distribution switching to EUMM.

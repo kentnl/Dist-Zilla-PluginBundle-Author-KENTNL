@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.012000';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.012001';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -311,9 +311,9 @@ sub configure {
     },
   );
 
-  $self->add_plugin( 'ModuleBuild'     => {} ) if 'mb' eq $self->toolkit;
-  $self->add_plugin( 'MakeMaker'       => {} ) if 'eumm' eq $self->toolkit;
-  $self->add_plugin( 'ModuleBuildTiny' => {} ) if 'mbtiny' eq $self->toolkit;
+  $self->add_plugin( 'ModuleBuild'     => { default_jobs => 10 } ) if 'mb' eq $self->toolkit;
+  $self->add_plugin( 'MakeMaker'       => { default_jobs => 10 } ) if 'eumm' eq $self->toolkit;
+  $self->add_plugin( 'ModuleBuildTiny' => { default_jobs => 10 } ) if 'mbtiny' eq $self->toolkit;
 
   $self->add_plugin( 'ReadmeFromPod' => {} );
   $self->add_plugin(
@@ -324,7 +324,7 @@ sub configure {
     },
   );
   $self->add_plugin( 'Test::CPAN::Changes' => {} );
-  $self->add_plugin( 'RunExtraTests'       => {} );
+  $self->add_plugin( 'RunExtraTests'       => { default_jobs => 10 } );
   $self->add_plugin( 'TestRelease'         => {} );
   $self->add_plugin( 'ConfirmRelease'      => {} );
 
@@ -399,7 +399,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.012000
+version 2.012001
 
 =head1 SYNOPSIS
 
