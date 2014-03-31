@@ -1,6 +1,12 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - Update utils.
+ - dep_changes now qualifies numbers better
+ - strip_eol gives a little match context
+ - Dep bump
+
  [Dependencies::Stats]
  - Dependencies changed since 2.012001, see Changes.deps{,.all,.dev} for
    details
