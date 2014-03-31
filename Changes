@@ -1,6 +1,18 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.012002 2014-03-17T19:01:40Z
+2.012002 2014-03-31T01:37:01Z
+ [00 Minor]
+ - Update utils.
+ - dep_changes now qualifies numbers better
+ - strip_eol gives a little match context
+ - Dep bump
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.012001, see Changes.deps{,.all,.dev} for
+   details
+ - configure: (recommends: ↑1)
+ - runtime: ↑4
+ - test: ↑1 (recommends: ↑2)
 
 2.012001 2014-03-17T18:59:57Z
  [00 Minor]

@@ -1,4 +1,19 @@
 2.012002
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.92 → 6.94
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::PerlTidy 0.15 → 0.16
+ - Dist::Zilla::Plugin::RunExtraTests 0.018 → 0.021
+ - IO::Socket::SSL 1.969 → 1.973
+ - Pod::Elemental::PerlMunger 0.200001 → 0.200002
+
+ [Changed / test recommends]
+ - ExtUtils::MakeMaker 6.92 → 6.94
+ - Test::More 1.001002 → 1.001003
+
+ [Changed / test requires]
+ - File::pushd 1.005 → 1.006
 
 2.012001 2014-03-17T18:59:57Z
  [Changed / configure recommends]
