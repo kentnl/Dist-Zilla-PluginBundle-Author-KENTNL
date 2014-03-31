@@ -45,7 +45,7 @@ my %exclude = map {; $_ => 1 } qw(
 my $static_prereqs = do { my $x = {
        'configure' => {
                         'recommends' => {
-                                          'ExtUtils::MakeMaker' => '6.92'
+                                          'ExtUtils::MakeMaker' => '6.94'
                                         },
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '6.30',
@@ -122,7 +122,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Plugin::MetaTests' => '5.014',
                                       'Dist::Zilla::Plugin::MetaYAML' => '5.014',
                                       'Dist::Zilla::Plugin::MinimumPerl' => '1.003',
-                                      'Dist::Zilla::Plugin::PerlTidy' => '0.15',
+                                      'Dist::Zilla::Plugin::PerlTidy' => '0.16',
                                       'Dist::Zilla::Plugin::PkgVersion' => '5.014',
                                       'Dist::Zilla::Plugin::PodCoverageTests' => '5.014',
                                       'Dist::Zilla::Plugin::PodSyntaxTests' => '5.014',
@@ -131,7 +131,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled' => '0.001000',
                                       'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0.133360',
                                       'Dist::Zilla::Plugin::ReadmeFromPod' => '0.21',
-                                      'Dist::Zilla::Plugin::RunExtraTests' => '0.018',
+                                      'Dist::Zilla::Plugin::RunExtraTests' => '0.021',
                                       'Dist::Zilla::Plugin::Test::CPAN::Changes' => '0.008',
                                       'Dist::Zilla::Plugin::Test::Compile::PerFile' => '0.001001',
                                       'Dist::Zilla::Plugin::Test::Kwalitee' => '2.07',
@@ -146,7 +146,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Role::MintingProfile::ShareDir' => '5.014',
                                       'Dist::Zilla::Role::PluginBundle' => '5.014',
                                       'Dist::Zilla::Util::EmulatePhase' => '0.01025803',
-                                      'IO::Socket::SSL' => '1.969',
+                                      'IO::Socket::SSL' => '1.973',
                                       'LWP::Protocol::https' => '6.04',
                                       'Moose' => '2.1204',
                                       'Moose::Util::TypeConstraints' => '2.1204',
@@ -157,7 +157,7 @@ my $static_prereqs = do { my $x = {
                                       'Net::SSLeay' => '1.58',
                                       'Perl::PrereqScanner' => '1.019',
                                       'Pod::Coverage::TrustPod' => '0.100003',
-                                      'Pod::Elemental::PerlMunger' => '0.200001',
+                                      'Pod::Elemental::PerlMunger' => '0.200002',
                                       'String::Formatter' => '0.102084',
                                       'Test::CPAN::Meta' => '0.23',
                                       'Test::EOL' => '1.5',
@@ -176,8 +176,8 @@ my $static_prereqs = do { my $x = {
                    'recommends' => {
                                      'CPAN::Meta' => '2.140640',
                                      'CPAN::Meta::Requirements' => '2.125',
-                                     'ExtUtils::MakeMaker' => '6.92',
-                                     'Test::More' => '1.001002'
+                                     'ExtUtils::MakeMaker' => '6.94',
+                                     'Test::More' => '1.001003'
                                    },
                    'requires' => {
                                    'Capture::Tiny' => '0.24',
@@ -185,7 +185,7 @@ my $static_prereqs = do { my $x = {
                                    'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec::Functions' => '0',
-                                   'File::pushd' => '1.005',
+                                   'File::pushd' => '1.006',
                                    'FindBin' => '0',
                                    'Git::Wrapper' => '0.031',
                                    'JSON' => '2.90',

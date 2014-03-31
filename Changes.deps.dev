@@ -1,4 +1,6 @@
-2.012001
+2.012002
+
+2.012001 2014-03-17T18:59:57Z
  [Changed / develop requires]
  - Dist::Zilla 5.012 → 5.014
  - Dist::Zilla::Plugin::ModuleShareDirs 5.012 → 5.014

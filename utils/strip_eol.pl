@@ -46,5 +46,19 @@ while ( my $file = $next->() ) {
     *STDERR->print("\e[32m Applied!");
     system 'sed', '-i', 's/\s*$//', "$path";
   }
+  else {
+    my (@lines) = $path->lines( { chomp => 1 } );
+    print "\n";
+    for my $line (@lines) {
+      next unless $line =~ /\s$/;
+      my ( $before, $eol ) = $line =~ /^(.*?)(\s+)$/;
+      print "\e[37m";
+      print $before;
+      print "\e[0m\e[41m";
+      print $eol;
+      print "\e[0m";
+      print "\n";
+    }
+  }
   *STDERR->print("\e[0m\n");
 }

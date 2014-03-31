@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.012002 2014-03-17T19:01:40Z
+
 2.012001 2014-03-17T18:59:57Z
  [00 Minor]
  - default to jobs = 10
@@ -12,10 +14,10 @@
  [Dependencies::Stats]
  - Dependencies changed since 2.012000, see Changes.deps{,.all,.dev} for
    details
- - configure: ↑1
+ - configure: (recommends: ↑1)
  - develop: ↑3
  - runtime: ↑35
- - test: ↑6
+ - test: ↑4 (recommends: ↑2)
 
 2.012000 2014-01-30T08:12:10Z
  [00 Possible Downstream Toolbugs]
@@ -25,10 +27,10 @@
  [Dependencies::Stats]
  - Dependencies changed since 2.011001, see Changes.deps{,.all,.dev} for
    details
- - build: -2
- - configure: +3 -2
+ - build: -1 (recommends: -1)
+ - configure: +2 -1 (recommends: +1 -1)
  - runtime: +1 -1
- - test: +2 ↓1
+ - test: +1 ↓1 (recommends: +1)
 
 2.011001 2014-01-30T05:38:14Z
  [00 Bugfix]
@@ -60,11 +62,11 @@
  [Dependencies::Stats]
  - Dependencies changed since 2.010001, see Changes.deps{,.all,.dev} for
    details
- - build: +1 ↓1
- - configure: +1 ↓1
+ - build: ↓1 (recommends: +1)
+ - configure: ↓1 (recommends: +1)
  - develop: ↑1
- - runtime: +19 ↑2 -1
- - test: +3 ↑1 ↓1
+ - runtime: +1 ↑2 -1 (recommends: +18)
+ - test: +2 ↑1 ↓1 (recommends: +1)
 
 2.010001 2014-01-22T03:16:45Z
  [00 Bugfix]
@@ -86,7 +88,7 @@
    details
  - develop: -1
  - runtime: +1 ↑2 -1
- - test: +5 ↑1
+ - test: +3 ↑1 (recommends: +2)
 
 2.009000 2014-01-13T07:42:49Z
  [00 Major]
@@ -326,7 +328,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.8.4, see Changes.deps{,.all,.dev} for
    details
- - develop: +2 -3
+ - develop: +1 -1 (recommends: -1, suggests: +1 -1)
 
 1.8.4 2013-09-26T11:16:23Z
  [Bugfix / Minor]
@@ -337,7 +339,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.8.3, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑5
+ - develop: ↑3 (recommends: ↑1, suggests: ↑1)
  - runtime: ↑39
  - test: +2 ↑2
 
@@ -348,7 +350,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.8.2, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑1
+ - develop: (suggests: ↑1)
  - test: ↓2
 
 1.8.2 2013-08-30T20:05:35Z
@@ -359,7 +361,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.8.1, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑1
+ - develop: (suggests: ↑1)
  - runtime: ↑28
  - test: +2 ↑1 -1
 
@@ -379,7 +381,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.8.0, see Changes.deps{,.all,.dev} for
    details
- - develop: +1 ↑3
+ - develop: +1 ↑2 (suggests: ↑1)
  - runtime: ↑2 -2
 
 1.8.0 2013-08-08T00:57:13Z
@@ -392,7 +394,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.7.7, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑6
+ - develop: ↑5 (suggests: ↑1)
  - runtime: +7 ↑48 -1
  - test: ↑9
 
@@ -404,7 +406,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.7.6, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑1
+ - develop: (suggests: ↑1)
  - runtime: ↓1
 
 1.7.6 2013-08-05T07:33:33Z
@@ -416,7 +418,7 @@
    details
  - build: ↑1
  - configure: ↑1
- - develop: ↑1
+ - develop: (suggests: ↑1)
  - runtime: ↑12
  - test: +1 -2
 
@@ -426,7 +428,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.7.4, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑1
+ - develop: (suggests: ↑1)
  - runtime: +1 -1
 
 1.7.4 2013-06-13T22:56:08Z
@@ -438,7 +440,7 @@
    details
  - build: ↑1
  - configure: ↑1
- - develop: ↑1
+ - develop: (suggests: ↑1)
  - runtime: ↑1
 
  [Documentation]
@@ -453,7 +455,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.7.2, see Changes.deps{,.all,.dev} for
    details
- - develop: +1 ↑1
+ - develop: +1 (suggests: ↑1)
  - runtime: ↑2
 
 1.7.2 2013-04-03T02:39:06Z
@@ -553,7 +555,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.3.0, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑2
+ - develop: (recommends: ↑1, suggests: ↑1)
  - runtime: ↑1
 
  [Features]
@@ -577,7 +579,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.1.1, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑1
+ - develop: (suggests: ↑1)
  - runtime: -1
 
  [Features]
@@ -597,7 +599,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.0.22, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑1
+ - develop: (suggests: ↑1)
  - runtime: +4
 
  [Features]
@@ -660,13 +662,13 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.0.16, see Changes.deps{,.all,.dev} for
    details
- - runtime: +2 ↑1 -3
+ - runtime: +2 ↑1 -2 (suggests: -1)
 
 1.0.16 2011-08-28T07:59:59Z
  [Dependencies::Stats]
  - Dependencies changed since 1.0.15, see Changes.deps{,.all,.dev} for
    details
- - runtime: +3 -2
+ - runtime: +2 -2 (suggests: +1)
  - test: -1
 
  [Packaging]
@@ -843,7 +845,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.0.1, see Changes.deps{,.all,.dev} for
    details
- - develop: +3 -3
+ - develop: +1 -1 (recommends: +1 -1, suggests: +1 -1)
 
  [Documentation]
  - Added a rant section on the Author:: scheme.
@@ -856,7 +858,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 1.000.000, see Changes.deps{,.all,.dev} for
    details
- - develop: ↑1
+ - develop: (suggests: ↑1)
 
  [Packaging]
  - Fix the default version to be unpadded. Its useless with padding anyway.
@@ -906,7 +908,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 0.01017119, see Changes.deps{,.all,.dev} for
    details
- - develop: +3
+ - develop: +1 (recommends: +1, suggests: +1)
 
  [Features]
  - Injects PluginBundle dependencies and suggestions for all modules built
