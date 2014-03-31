@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
-$Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.012001';
+$Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl::VERSION = '2.012002';
 # FILENAME: MinimumPerl.pm
 # CREATED: 31/10/11 05:25:54 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
@@ -149,7 +149,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.012001
+version 2.012002
 
 =head1 METHODS
 

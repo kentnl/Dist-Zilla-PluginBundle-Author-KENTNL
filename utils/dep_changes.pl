@@ -112,15 +112,23 @@ while ( @tags > 1 ) {
 
   if ($master_release) {
     my $phases = {};
+
     for my $key ( sort keys %{ $diff->cache } ) {
       if ( $key =~ qr{^Dependencies::(\S+)\s+/\s+(\S+)\s+(\S+)$}msx ) {
         my ( $dir, $phase, $rel ) = ( $1, $2, $3 );
         my $phase_m = "$phase";
-        $phases->{$phase_m} = { Added => 0, Upgrade => 0, Downgrade => 0, Removed => 0 }
-          unless exists $phases->{$phase_m};
+        if ( not exists $phases->{$phase_m} ) {
+          $phases->{$phase_m} = {};
+        }
+        if ( not exists $phases->{$phase_m}->{$rel} ) {
+          $phases->{$phase_m}->{$rel} = { Added => 0, Upgrade => 0, Downgrade => 0, Removed => 0 };
+        }
+
+        my $stash = $phases->{$phase_m}->{$rel};
+
         for my $entry ( @{ $diff->cache->{$key} } ) {
           if ( $dir eq 'Added' or $dir eq 'Removed' ) {
-            $phases->{$phase_m}->{$dir}++;
+            $stash->{$dir}++;
           }
           else {
             if ( $entry =~ /(\S+)\s+→\s+(\S+)/ ) {
@@ -128,11 +136,12 @@ while ( @tags > 1 ) {
 
               my $lhs_v = version->parse($lhs);
               my $rhs_v = version->parse($rhs);
+
               if ( $lhs_v < $rhs_v ) {
-                $phases->{$phase_m}->{Upgrade}++;
+                $stash->{Upgrade}++;
               }
               else {
-                $phases->{$phase_m}->{Downgrade}++;
+                $stash->{Downgrade}++;
               }
             }
           }
@@ -140,21 +149,42 @@ while ( @tags > 1 ) {
       }
     }
     my @changes = ();
+
     for my $phase ( sort keys %{$phases} ) {
+
+      my $rel_lists = {};
+
+      my $add_thing = sub {
+        my ( $name, $token, $minortoken ) = @_;
+
+        for my $rel (qw( requires suggests recommends )) {
+          next unless exists $phases->{$phase}->{$rel};
+          next unless $phases->{$phase}->{$rel}->{$name} > 0;
+          $rel_lists->{$rel} = [] unless exists $rel_lists->{$rel};
+          push @{ $rel_lists->{$rel} }, $token . $phases->{$phase}->{$rel}->{$name};
+        }
+      };
+
+      $add_thing->( 'Added',     '+',   'm' );
+      $add_thing->( 'Upgrade',   "↑", 'm' );
+      $add_thing->( 'Downgrade', "↓", 'm' );
+      $add_thing->( 'Removed',   '-',   'm' );
+
       my @parts;
-      if ( $phases->{$phase}->{Added} > 0 ) {
-        push @parts, "+" . $phases->{$phase}->{Added};
+
+      if ( $rel_lists->{requires} ) {
+        push @parts, @{ delete $rel_lists->{requires} };
       }
-      if ( $phases->{$phase}->{Upgrade} > 0 ) {
-        push @parts, "↑" . $phases->{$phase}->{Upgrade};
+      my @extra;
+      for my $rel ( sort keys %{$rel_lists} ) {
+        push @extra, sprintf '%s: %s', $rel, join q[ ], @{ $rel_lists->{$rel} };
       }
-      if ( $phases->{$phase}->{Downgrade} > 0 ) {
-        push @parts, "↓" . $phases->{$phase}->{Downgrade};
+      if (@extra) {
+        push @parts, sprintf '(%s)', join q[, ], @extra;
       }
-      if ( $phases->{$phase}->{Removed} > 0 ) {
-        push @parts, "-" . $phases->{$phase}->{Removed};
+      if (@parts) {
+        push @changes, $phase . ': ' . ( join q[ ], @parts );
       }
-      push @changes, $phase . ': ' . ( join q[ ], @parts );
     }
     $master_release->add_changes( { group => 'Dependencies::Stats' },
       'Dependencies changed since ' . $old . ', see Changes.deps{,.all,.dev} for details', @changes );
