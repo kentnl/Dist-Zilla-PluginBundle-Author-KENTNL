@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.012002 2014-03-31T01:37:01Z
+2.012002 2014-03-31T04:16:46Z
  [00 Minor]
  - Update utils.
  - dep_changes now qualifies numbers better
@@ -11,8 +11,9 @@
  - Dependencies changed since 2.012001, see Changes.deps{,.all,.dev} for
    details
  - configure: (recommends: ↑1)
- - runtime: ↑4
- - test: ↑1 (recommends: ↑2)
+ - develop: ↑3
+ - runtime: ↑25
+ - test: ↑2 (recommends: ↑2)
 
 2.012001 2014-03-17T18:59:57Z
  [00 Minor]
