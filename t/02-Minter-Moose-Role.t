@@ -159,9 +159,9 @@ EOF
       $exception = exception {
         require File::pushd;
         $target = File::pushd::pushd( $bzil->tempdir->subdir('build') );
-        system( $^X , 'Build.PL' ) and die "error with Build.PL\n";
-        system( $^X , 'Build' )    and die "error running $^X Build\n";
-        system( $^X , 'Build', 'test', '--verbose' ) and die "error running $^X Build test\n";
+        system( $^X , 'Makefile.PL' ) and die "error with Makefile.PL\n";
+        system('make') and die "error running make\n";
+        system( 'make', 'test', 'TEST_VERBOSE=1' ) and die "error running make test TEST_VERBOSE=1\n";
       };
     }
   );
@@ -184,7 +184,7 @@ EOF
     Changes
     .perltidyrc
     dist.ini
-    Build.PL
+    Makefile.PL
     Changes
     LICENSE
     MANIFEST
@@ -222,18 +222,8 @@ EOF
   my $data = from_json( $bzil->tempdir->subdir('build')->file('META.json')->slurp() );
 
   note explain $data;
-  require version;
 
-  is_deeply(
-    $data->{prereqs}->{build}->{requires},
-    { 'Module::Build' => tshare->module_build_version() },
-    'prereqs.build is sane'
-  );
-  is_deeply(
-    $data->{prereqs}->{configure}->{requires},
-    { 'Module::Build' => tshare->module_build_version() },
-    'prereqs.configure is sane'
-  );
+  is_deeply( $data->{prereqs}->{configure}->{requires}, { 'ExtUtils::MakeMaker' => '6.30' }, 'prereqs.configure is sane' );
 
 };
 

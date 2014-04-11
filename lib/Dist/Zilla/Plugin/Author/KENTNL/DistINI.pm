@@ -8,7 +8,7 @@ use utf8;
 
 
 package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
-$Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.012002';
+$Dist::Zilla::Plugin::Author::KENTNL::DistINI::VERSION = '2.013000';
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -117,18 +117,12 @@ sub gather_files {
       q(; [Bootstrap::lib]),                                                     #
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
-      ':version          = 1.2.0',                                               #
+      ':version          = 2.012000',                                            #
       'git_versions      = 1',                                                   #
-      'normal_form       = numify',
-      'mantissa          = 6',
-      '; version_major     = 0',                                                 #
-      '; version_minor     = 1',                                                 #
-      q(; the following data denotes when this minor was minted),                #
-      '; version_rel_year  = %{rel_year}n',                                      #
-      '; version_rel_month = %{rel_month}n',                                     #
-      '; version_rel_day   = %{rel_day}n',                                       #
-      '; version_rel_hour  = %{rel_hour}n',                                      #
-      '; version_rel_time_zone = %{tz}s',                                        #
+      'normal_form       = numify',                                              #
+      'mantissa          = 6',                                                   #
+      'toolkit           = eumm',                                                #
+      'toolkit_hardness  = soft',                                                #
       'twitter_hash_tags = %{tags}s',                                            #
       '; auto_prereqs_skip = File::Find',                                        #
       $empty,                                                                    #
@@ -194,7 +188,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::
 
 =head1 VERSION
 
-version 2.012002
+version 2.013000
 
 =head1 SYNOPSIS
 

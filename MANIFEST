@@ -47,6 +47,8 @@ share/profiles/default/profile.ini
 share/profiles/default/skel/.gitignore
 share/profiles/default/skel/.perltidyrc
 share/profiles/default/skel/Changes
+share/profiles/default/skel/maint/perlcritic.rc.gen.pl
+share/profiles/default/skel/perlcritic.deps
 share/profiles/default/skel/perlcritic.rc
 share/profiles/default/skel/weaver.ini
 share/profiles/moo-role/ModuleTemplate.pm.tpl
@@ -54,6 +56,8 @@ share/profiles/moo-role/profile.ini
 share/profiles/moo-role/skel/.gitignore
 share/profiles/moo-role/skel/.perltidyrc
 share/profiles/moo-role/skel/Changes
+share/profiles/moo-role/skel/maint/perlcritic.rc.gen.pl
+share/profiles/moo-role/skel/perlcritic.deps
 share/profiles/moo-role/skel/perlcritic.rc
 share/profiles/moo-role/skel/weaver.ini
 share/profiles/moo/ModuleTemplate.pm.tpl
@@ -61,6 +65,8 @@ share/profiles/moo/profile.ini
 share/profiles/moo/skel/.gitignore
 share/profiles/moo/skel/.perltidyrc
 share/profiles/moo/skel/Changes
+share/profiles/moo/skel/maint/perlcritic.rc.gen.pl
+share/profiles/moo/skel/perlcritic.deps
 share/profiles/moo/skel/perlcritic.rc
 share/profiles/moo/skel/weaver.ini
 share/profiles/moose-role/ModuleTemplate.pm.tpl
@@ -68,6 +74,8 @@ share/profiles/moose-role/profile.ini
 share/profiles/moose-role/skel/.gitignore
 share/profiles/moose-role/skel/.perltidyrc
 share/profiles/moose-role/skel/Changes
+share/profiles/moose-role/skel/maint/perlcritic.rc.gen.pl
+share/profiles/moose-role/skel/perlcritic.deps
 share/profiles/moose-role/skel/perlcritic.rc
 share/profiles/moose-role/skel/weaver.ini
 t/00-compile/lib_Dist_Zilla_MintingProfile_Author_KENTNL_pm.t

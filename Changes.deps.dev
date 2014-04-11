@@ -1,4 +1,8 @@
-2.012002
+2.013000
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002 → 1.000001
+
+2.012002 2014-03-31T04:16:46Z
  [Changed / develop requires]
  - Dist::Zilla 5.014 → 5.015
  - Dist::Zilla::Plugin::ModuleShareDirs 5.014 → 5.015
