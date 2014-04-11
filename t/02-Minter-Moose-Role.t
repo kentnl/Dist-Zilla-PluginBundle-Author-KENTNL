@@ -160,8 +160,8 @@ EOF
         require File::pushd;
         $target = File::pushd::pushd( $bzil->tempdir->subdir('build') );
         system( $^X , 'Makefile.PL' ) and die "error with Makefile.PL\n";
-        system('make' )    and die "error running make\n";
-        system('make', 'test', 'TEST_VERBOSE=1' ) and die "error running make test TEST_VERBOSE=1\n";
+        system('make') and die "error running make\n";
+        system( 'make', 'test', 'TEST_VERBOSE=1' ) and die "error running make test TEST_VERBOSE=1\n";
       };
     }
   );
@@ -222,18 +222,8 @@ EOF
   my $data = from_json( $bzil->tempdir->subdir('build')->file('META.json')->slurp() );
 
   note explain $data;
-  require version;
 
-  is_deeply(
-    $data->{prereqs}->{build}->{requires},
-    { 'Module::Build' => tshare->module_build_version() },
-    'prereqs.build is sane'
-  );
-  is_deeply(
-    $data->{prereqs}->{configure}->{requires},
-    { 'Module::Build' => tshare->module_build_version() },
-    'prereqs.configure is sane'
-  );
+  is_deeply( $data->{prereqs}->{configure}->{requires}, { 'ExtUtils::MakeMaker' => '6.30' }, 'prereqs.configure is sane' );
 
 };
 
