@@ -1,4 +1,13 @@
-2.012002
+2.012003
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002 → 1.000001
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002 → 1.000001
+ - IO::Socket::SSL 1.973 → 1.981
+ - MooseX::AttributeShortcuts 0.022 → 0.023
+
+2.012002 2014-03-31T04:16:46Z
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 6.92 → 6.94
 

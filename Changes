@@ -1,6 +1,15 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.012003 2014-04-11T02:31:04Z
+2.012003 2014-04-11T02:54:10Z
+ [00 Major]
+ - Newly minted dists now default to EUMM
+ - Newly minted dists now default to soft tooling
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.012002, see Changes.deps{,.all,.dev} for
+   details
+ - develop: ↑1
+ - runtime: ↑3
 
 2.012002 2014-03-31T04:16:46Z
  [00 Minor]
