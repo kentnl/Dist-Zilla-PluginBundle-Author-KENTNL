@@ -1,9 +1,11 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.013000 2014-04-11T02:54:10Z
- [00 Major]
- - Newly minted dists now default to EUMM
- - Newly minted dists now default to soft tooling
+2.013000 2014-04-11T03:02:57Z
+ [00 Major - Dist Minting Changes]
+ - Now default to EUMM
+ - Now default to soft tooling
+ - Now come with my PerlCritic compiler thing
+ - Now come with a different perlcritic.rc
 
  [Dependencies::Stats]
  - Dependencies changed since 2.012002, see Changes.deps{,.all,.dev} for
