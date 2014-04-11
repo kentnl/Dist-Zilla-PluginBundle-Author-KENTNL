@@ -1,11 +1,14 @@
 #!/usr/bin/env perl
 ## no critic (Modules::RequireVersionVar)
+
 # ABSTRACT: Write an INI file from a bundle
 
 use 5.008;    # utf8
 use strict;
 use warnings;
 use utf8;
+
+our $VERSION = 0.001;
 
 use Carp qw( croak carp );
 use Perl::Critic::ProfileCompiler::Util qw( create_bundle );
