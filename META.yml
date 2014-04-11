@@ -36,16 +36,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.012003'
+    version: '2.013000'
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.012003'
+    version: '2.013000'
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.012003'
+    version: '2.013000'
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.012003'
+    version: '2.013000'
 recommends:
   Data::Difference: '0'
   Dist::Zilla::Plugin::MakeMaker: '0'
@@ -145,7 +145,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.012003'
+version: '2.013000'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.140640'
