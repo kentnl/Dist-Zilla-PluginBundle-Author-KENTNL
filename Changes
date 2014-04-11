@@ -5,6 +5,12 @@
  - Newly minted dists now default to EUMM
  - Newly minted dists now default to soft tooling
 
+ [Dependencies::Stats]
+ - Dependencies changed since 2.012002, see Changes.deps{,.all,.dev} for
+   details
+ - develop: ↑1
+ - runtime: ↑3
+
 2.012002 2014-03-31T04:16:46Z
  [00 Minor]
  - Update utils.
