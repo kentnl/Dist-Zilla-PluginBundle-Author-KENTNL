@@ -47,6 +47,8 @@ share/profiles/default/profile.ini
 share/profiles/default/skel/.gitignore
 share/profiles/default/skel/.perltidyrc
 share/profiles/default/skel/Changes
+share/profiles/default/skel/maint/perlcritic.rc.gen.pl
+share/profiles/default/skel/perlcritic.deps
 share/profiles/default/skel/perlcritic.rc
 share/profiles/default/skel/weaver.ini
 share/profiles/moo-role/ModuleTemplate.pm.tpl

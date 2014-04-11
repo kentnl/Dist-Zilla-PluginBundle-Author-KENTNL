@@ -26,7 +26,7 @@
       "develop" : {
          "requires" : {
             "Dist::Zilla" : "5.015",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000002",
+            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000001",
             "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.010",
             "Dist::Zilla::Plugin::ModuleShareDirs" : "5.015",
             "Dist::Zilla::Plugin::Prereqs" : "5.015",
@@ -71,7 +71,7 @@
             "Dist::Zilla::File::FromCode" : "5.015",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.015",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000002",
+            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000001",
             "Dist::Zilla::Plugin::ConfirmRelease" : "5.015",
             "Dist::Zilla::Plugin::EOLTests" : "0.02",
             "Dist::Zilla::Plugin::Git::Check" : "2.020",
@@ -117,11 +117,11 @@
             "Dist::Zilla::Role::MintingProfile::ShareDir" : "5.015",
             "Dist::Zilla::Role::PluginBundle" : "5.015",
             "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
-            "IO::Socket::SSL" : "1.973",
+            "IO::Socket::SSL" : "1.981",
             "LWP::Protocol::https" : "6.04",
             "Moose" : "2.1204",
             "Moose::Util::TypeConstraints" : "2.1204",
-            "MooseX::AttributeShortcuts" : "0.022",
+            "MooseX::AttributeShortcuts" : "0.023",
             "MooseX::Has::Sugar" : "1.000000",
             "MooseX::StrictConstructor" : "0.19",
             "MooseX::Types" : "0.44",
@@ -177,19 +177,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.012002"
+         "version" : "2.012003"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.012002"
+         "version" : "2.012003"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.012002"
+         "version" : "2.012003"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.012002"
+         "version" : "2.012003"
       }
    },
    "release_status" : "stable",
@@ -204,19 +204,19 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.012002",
+   "version" : "2.012003",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.140640",
          "CPAN::Meta::Requirements" : "2.125",
          "Capture::Tiny" : "0.24",
-         "Carp" : "1.33",
+         "Carp" : "1.3301",
          "Data::Difference" : "0.112850",
          "Dist::Zilla" : "5.015",
          "Dist::Zilla::File::FromCode" : "5.015",
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.015",
-         "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000002",
+         "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000001",
          "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.010",
          "Dist::Zilla::Plugin::ConfirmRelease" : "5.015",
          "Dist::Zilla::Plugin::EOLTests" : "0.02",
@@ -277,7 +277,7 @@
          "File::pushd" : "1.006",
          "FindBin" : "1.51",
          "Git::Wrapper" : "0.031",
-         "IO::Socket::SSL" : "1.973",
+         "IO::Socket::SSL" : "1.981",
          "JSON" : "2.90",
          "LWP::Protocol::https" : "6.04",
          "List::Util" : "1.38",
@@ -285,11 +285,11 @@
          "Module::Metadata" : "1.000019",
          "Moose" : "2.1204",
          "Moose::Util::TypeConstraints" : "2.1204",
-         "MooseX::AttributeShortcuts" : "0.022",
+         "MooseX::AttributeShortcuts" : "0.023",
          "MooseX::Has::Sugar" : "1.000000",
          "MooseX::StrictConstructor" : "0.19",
          "MooseX::Types" : "0.44",
-         "Net::GitHub" : "0.58",
+         "Net::GitHub" : "0.59",
          "Net::SSLeay" : "1.58",
          "Path::Class::Dir" : "0.33",
          "Path::Tiny" : "0.052",
@@ -300,7 +300,7 @@
          "Perl::Critic::Lax" : "0.010",
          "Perl::Critic::More" : "1.003",
          "Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter" : "0.002",
-         "Perl::Critic::Pulp" : "80",
+         "Perl::Critic::Pulp" : "81",
          "Perl::Critic::StricterSubs" : "0.03",
          "Perl::Critic::Swift" : "v1.0.3",
          "Perl::Critic::Tics" : "0.008",
@@ -342,7 +342,7 @@
          "osname" : "linux"
       },
       "platform" : "linux",
-      "uname" : "Linux 3.13.5-gentoo x86_64 GenuineIntel GNU/Linux"
+      "uname" : "Linux 3.14.0-gentoo x86_64 GenuineIntel GNU/Linux"
    },
    "x_Dist_Zilla" : {
       "perl" : {
@@ -360,7 +360,7 @@
                }
             },
             "name" : "Bootstrap::lib",
-            "version" : "0.04000002"
+            "version" : "1.000001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion::Sanitized",
