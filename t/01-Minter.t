@@ -225,13 +225,8 @@ EOF
   require version;
 
   is_deeply(
-    $data->{prereqs}->{build}->{requires},
-    { 'Module::Build' => tshare->module_build_version() },
-    'prereqs.build is sane'
-  );
-  is_deeply(
     $data->{prereqs}->{configure}->{requires},
-    { 'Module::Build' => tshare->module_build_version() },
+    { 'ExtUtils::MakeMaker' => '6.30' },
     'prereqs.configure is sane'
   );
 
