@@ -1,9 +1,11 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
- [00 Major]
- - Newly minted dists now default to EUMM
- - Newly minted dists now default to soft tooling
+ [00 Major - Dist Minting Changes]
+ - Now default to EUMM
+ - Now default to soft tooling
+ - Now come with my PerlCritic compiler thing
+ - Now come with a different perlcritic.rc
 
  [Dependencies::Stats]
  - Dependencies changed since 2.012002, see Changes.deps{,.all,.dev} for
