@@ -163,7 +163,7 @@ ATTRIBUTES
   "tweet_url"
       Str, ro, default =  q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew]
 
-    The URI to tweet to @kentnlrelease
+    The "URI" to tweet to @kentnlrelease
 
   "toolkit_hardness"
       enum( hard, soft ), ro, default = hard

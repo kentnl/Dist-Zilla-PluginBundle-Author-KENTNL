@@ -730,7 +730,7 @@ Populates C<extras> from C<twitter_extra_hash_tags>
 
   Str, ro, default =  q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew]
 
-The URI to tweet to C<@kentnlrelease>
+The C<URI> to tweet to C<@kentnlrelease>
 
 =head2 C<toolkit_hardness>
 
