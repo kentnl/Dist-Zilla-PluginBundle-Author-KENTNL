@@ -17,7 +17,7 @@ use MooseX::AttributeShortcuts;
 with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::BundleDeps';
 
-use namespace::autoclean '-also' => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
+use namespace::autoclean;
 
 =begin MetaPOD::JSON v1.1.0
 
