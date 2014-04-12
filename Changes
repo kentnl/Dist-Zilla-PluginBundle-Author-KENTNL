@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.013002 2014-04-12T19:23:55Z
  [00 Minor]
  - Change Tweet URL to point to the release page at #whatsnew instead of
    the full changelog
