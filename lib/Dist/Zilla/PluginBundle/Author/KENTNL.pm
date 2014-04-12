@@ -295,6 +295,8 @@ has 'tweet_url' => (
 
 
 
+
+
 has 'toolkit_hardness' => (
   is => ro =>,
   isa => enum( [ 'hard', 'soft' ] ),
@@ -745,6 +747,8 @@ forcing consumers to update aggressively on those parts.
 
 Copy the versions of important toolkit components the author was using as C<recommended> dependencies,
 so that only consumers who are installing with C<--with-recommended> get given the forced upgrade path.
+
+=back
 
 =head2 C<toolkit>
 

@@ -206,12 +206,9 @@ POD ERRORS
     Hey! The above document had some coding errors, which are explained
     below:
 
-    Around line 676:
+    Around line 678:
         Unterminated L< ... > sequence
 
-    Around line 684:
+    Around line 686:
         Unterminated L< ... > sequence
-
-    Around line 749:
-        You forgot a '=back' before '=head2'
 
