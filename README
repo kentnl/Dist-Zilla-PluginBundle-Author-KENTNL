@@ -3,14 +3,33 @@ NAME
     build your distributions.
 
 VERSION
-    version 2.013000
+    version 2.013001
 
 SYNOPSIS
         [@Author::KENTNL]
-        no_cpan = 1 ; skip upload to cpan and twitter.
-        no_git  = 1 ; skip things that work with git.
-        release_fail = 1 ; asplode!.
-        git_versions = 1 ;  use git::nextversion for versioning
+        git_versions = 1      ; Mandatory flag indicating the dist is adjusted to use git tag versioning
+                              ; otherwise use an older bundle version.
+
+        normal_form  = numify ; Mandatory for this bundle indicating normal form.
+                              ; see DZP::Git::NextVersion
+
+        mantissa     = 6      ; Mandatory for this bundle if normal_form is numify.
+                              ; see DZP::Git::NextVersion
+
+        authority    = cpan:KENTNL ; Optional, defaults to cpan:KENTNL
+
+        auto_prereqs_skip   = Some::Module  ; Hide these from autoprereqs
+        auto_prereqs_skip   = Other::Module
+
+        toolkit     = mb   ; Which toolkit to use. Either eumm or mb
+                             ; mb is default.
+
+        toolkit_hardness = hard ; Whether to upgrade *require* deps to the latest
+                                ; or wether to make them merely recomendations.
+                                ; Either 'soft' ( recommend ) or 'hard' ( require )
+                                ; default is 'hard'
+
+        twitter_extra_hash_tags = #foo #bar ; non-default hashtags to append to the tweet
 
 DESCRIPTION
     This is the plug-in bundle that KENTNL uses. It exists mostly because he
