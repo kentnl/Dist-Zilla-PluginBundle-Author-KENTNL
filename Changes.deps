@@ -1,4 +1,18 @@
-2.013000
+2.013001
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.94 → 6.96
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Git::Check 2.020 → 2.021
+ - Dist::Zilla::Plugin::Git::Commit 2.020 → 2.021
+ - Dist::Zilla::Plugin::Git::CommitBuild 2.020 → 2.021
+ - Dist::Zilla::Plugin::Git::GatherDir 2.020 → 2.021
+ - Dist::Zilla::Plugin::Git::Tag 2.020 → 2.021
+
+ [Changed / test recommends]
+ - ExtUtils::MakeMaker 6.94 → 6.96
+
+2.013000 2014-04-11T03:02:57Z
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002 → 1.000001
  - IO::Socket::SSL 1.973 → 1.981

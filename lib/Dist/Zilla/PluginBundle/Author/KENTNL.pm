@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.013000';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.013001';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -17,7 +17,27 @@ use MooseX::AttributeShortcuts;
 with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::BundleDeps';
 
-use namespace::autoclean '-also' => [qw( _expand _defined_or _only_git _only_cpan _release_fail _only_fiveten )];
+use namespace::autoclean;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -399,15 +419,34 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.013000
+version 2.013001
 
 =head1 SYNOPSIS
 
     [@Author::KENTNL]
-    no_cpan = 1 ; skip upload to cpan and twitter.
-    no_git  = 1 ; skip things that work with git.
-    release_fail = 1 ; asplode!.
-    git_versions = 1 ;  use git::nextversion for versioning
+    git_versions = 1      ; Mandatory flag indicating the dist is adjusted to use git tag versioning
+                          ; otherwise use an older bundle version.
+
+    normal_form  = numify ; Mandatory for this bundle indicating normal form.
+                          ; see DZP::Git::NextVersion
+
+    mantissa     = 6      ; Mandatory for this bundle if normal_form is numify.
+                          ; see DZP::Git::NextVersion
+
+    authority    = cpan:KENTNL ; Optional, defaults to cpan:KENTNL
+
+    auto_prereqs_skip   = Some::Module  ; Hide these from autoprereqs
+    auto_prereqs_skip   = Other::Module
+
+    toolkit     = mb   ; Which toolkit to use. Either eumm or mb
+                         ; mb is default.
+
+    toolkit_hardness = hard ; Whether to upgrade *require* deps to the latest
+                            ; or wether to make them merely recomendations.
+                            ; Either 'soft' ( recommend ) or 'hard' ( require )
+                            ; default is 'hard'
+
+    twitter_extra_hash_tags = #foo #bar ; non-default hashtags to append to the tweet
 
 =head1 DESCRIPTION
 
