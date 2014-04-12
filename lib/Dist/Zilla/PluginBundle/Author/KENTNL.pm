@@ -39,10 +39,10 @@ use namespace::autoclean;
                           ; otherwise use an older bundle version.
 
     normal_form  = numify ; Mandatory for this bundle indicating normal form.
-                          ; see DZP::Git::NextVersion
+                          ; see DZP::Git::NextVersion::Sanitized
 
     mantissa     = 6      ; Mandatory for this bundle if normal_form is numify.
-                          ; see DZP::Git::NextVersion
+                          ; see DZP::Git::NextVersion::Sanitized
 
     authority    = cpan:KENTNL ; Optional, defaults to cpan:KENTNL
 
@@ -135,9 +135,40 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
+=attr C<plugins>
+
+B<INTERNAL>.
+
+  ArrayRef, ro, default = [], no init arg.
+
+Populated during C<< $self➛configure >> and returned from C<< ➛bundle_config >>
+
+=cut
+
 has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'builder' => sub { [] } );
 
+=attr C<normal_form>
+
+  Str, ro, required
+
+A C<normal_form> to pass to L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >>.
+
+See L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
+
+=cut
+
 has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', 'required' => 1 );    #builder => sub { 'numify' } );
+
+=attr C<mantissa>
+
+  Int, ro, required if normal_form eq 'numify'
+
+Defines the length of the mantissa when normal form is C<numify>.
+
+See L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >> and L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
+
+=cut
+
 has 'mantissa' => (
   'is'      => ro =>,
   'isa'     => 'Int',
@@ -152,8 +183,45 @@ has 'mantissa' => (
   },
 );
 
+=attr C<git_versions>
+
+  enum([1]), ro, required
+
+=over 4
+
+=item * B<MUST BE SPECIFIED>
+
+=item * B<< MUST BE C<1> >>
+
+=back
+
+Setting as such indicates that the distribution in question is safe to use with C<Git::NextVersion>.
+
+As no logic exists any more to support using anything other than C<Git::NextVersion> with this bundle,
+this parameter must be turned on and you must use Git::NextVersion.
+
+=cut
+
 has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
+
+=attr C<authority>
+
+  Str, ro, default = cpan:KENTNL
+
+An authority string to use for C<< [Authority] >>.
+
+=cut
+
 has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+
+=attr C<auto_prereqs_skip>
+
+  ArrayRef, ro, multivalue, default = []
+
+A list of prerequisites to pass to C<< [AutoPrereqs].skips >>
+
+=cut
+
 has 'auto_prereqs_skip' => (
   is        => 'ro',
   isa       => 'ArrayRef',
@@ -161,7 +229,25 @@ has 'auto_prereqs_skip' => (
   lazy      => 1,
   builder   => sub { [] },
 );
+
+=attr C<twitter_extra_hash_tags>
+
+  Str, ro, default = ""
+
+Additional hash tags to append to twitter
+
+=cut
+
 has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str', lazy => 1, builder => sub { q[] }, );
+
+=attr C<twitter_hash_tags>
+
+  Str, ro, default = '#perl #cpan' . extras()
+
+Populates C<extras> from C<twitter_extra_hash_tags>
+
+=cut
+
 has 'twitter_hash_tags' => (
   is      => 'ro',
   isa     => 'Str',
@@ -172,6 +258,15 @@ has 'twitter_hash_tags' => (
     return '#perl #cpan ' . $self->twitter_extra_hash_tags;
   },
 );
+
+=attr C<tweet_url>
+
+  Str, ro, default =  q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew]
+
+The C<URI> to tweet to C<@kentnlrelease>
+
+=cut
+
 has 'tweet_url' => (
   is      => 'ro',
   isa     => 'Str',
@@ -182,12 +277,50 @@ has 'tweet_url' => (
   },
 );
 
+=attr C<toolkit_hardness>
+
+  enum( hard, soft ), ro, default = hard
+
+=over 4
+
+=item * C<hard>
+
+Copy the versions of important toolkit components the author was using as C<required> dependencies,
+forcing consumers to update aggressively on those parts.
+
+=item * C<soft>
+
+Copy the versions of important toolkit components the author was using as C<recommended> dependencies,
+so that only consumers who are installing with C<--with-recommended> get given the forced upgrade path.
+
+=back
+
+=cut
+
 has 'toolkit_hardness' => (
   is => ro =>,
   isa => enum( [ 'hard', 'soft' ] ),
   lazy    => 1,
   builder => sub { 'hard' },
 );
+
+=attr C<toolkit>
+
+  enum( mb, mbtiny, eumm ), ro, default = mb
+
+Determines which tooling to generate the distribution with
+
+=over 4
+
+=item * C<mb> : L<< C<Module::Build>|Module::Build >>
+
+=item * C<mbtiny> : L<< C<Module::Build::Tiny>|Module::Build::Tiny >>
+
+=item * C<eumm> : L<< C<ExtUtils::MakeMaker>|ExtUtils::MakeMaker >>
+
+=back
+
+=cut
 
 has 'toolkit' => (
   is => ro =>,
