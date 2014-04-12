@@ -3,7 +3,7 @@ NAME
     build your distributions.
 
 VERSION
-    version 2.013001
+    version 2.013002
 
 SYNOPSIS
         [@Author::KENTNL]
@@ -11,10 +11,10 @@ SYNOPSIS
                               ; otherwise use an older bundle version.
 
         normal_form  = numify ; Mandatory for this bundle indicating normal form.
-                              ; see DZP::Git::NextVersion
+                              ; see DZP::Git::NextVersion::Sanitized
 
         mantissa     = 6      ; Mandatory for this bundle if normal_form is numify.
-                              ; see DZP::Git::NextVersion
+                              ; see DZP::Git::NextVersion::Sanitized
 
         authority    = cpan:KENTNL ; Optional, defaults to cpan:KENTNL
 
@@ -104,6 +104,95 @@ METHODS
   "configure"
     Called by in "bundle_config" after "new"
 
+ATTRIBUTES
+  "plugins"
+    INTERNAL.
+
+      ArrayRef, ro, default = [], no init arg.
+
+    Populated during "$self➛configure" and returned from "➛bundle_config"
+
+  "normal_form"
+      Str, ro, required
+
+    A "normal_form" to pass to "[Git::NextVersion::Sanitized]".
+
+    See "[::Role::Version::Sanitize]|Dist::Zilla::Role::Version::Sanitize ">
+
+  "mantissa"
+      Int, ro, required if normal_form eq 'numify'
+
+    Defines the length of the mantissa when normal form is "numify".
+
+    See "[Git::NextVersion::Sanitized]" and
+    "[::Role::Version::Sanitize]|Dist::Zilla::Role::Version::Sanitize ">
+
+  "git_versions"
+      enum([1]), ro, required
+
+    *   MUST BE SPECIFIED
+
+    *   MUST BE 1
+
+    Setting as such indicates that the distribution in question is safe to
+    use with "Git::NextVersion".
+
+    As no logic exists any more to support using anything other than
+    "Git::NextVersion" with this bundle, this parameter must be turned on
+    and you must use Git::NextVersion.
+
+  "authority"
+      Str, ro, default = cpan:KENTNL
+
+    An authority string to use for "[Authority]".
+
+  "auto_prereqs_skip"
+      ArrayRef, ro, multivalue, default = []
+
+    A list of prerequisites to pass to "[AutoPrereqs].skips"
+
+  "twitter_extra_hash_tags"
+      Str, ro, default = ""
+
+    Additional hash tags to append to twitter
+
+  "twitter_hash_tags"
+      Str, ro, default = '#perl #cpan' . extras()
+
+    Populates "extras" from "twitter_extra_hash_tags"
+
+  "tweet_url"
+      Str, ro, default =  q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew]
+
+    The URI to tweet to @kentnlrelease
+
+  "toolkit_hardness"
+      enum( hard, soft ), ro, default = hard
+
+    *   "hard"
+
+        Copy the versions of important toolkit components the author was
+        using as "required" dependencies, forcing consumers to update
+        aggressively on those parts.
+
+    *   "soft"
+
+        Copy the versions of important toolkit components the author was
+        using as "recommended" dependencies, so that only consumers who are
+        installing with "--with-recommended" get given the forced upgrade
+        path.
+
+  "toolkit"
+      enum( mb, mbtiny, eumm ), ro, default = mb
+
+    Determines which tooling to generate the distribution with
+
+    *   "mb" : "Module::Build"
+
+    *   "mbtiny" : "Module::Build::Tiny"
+
+    *   "eumm" : "ExtUtils::MakeMaker"
+
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
@@ -112,4 +201,17 @@ COPYRIGHT AND LICENSE
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
+
+POD ERRORS
+    Hey! The above document had some coding errors, which are explained
+    below:
+
+    Around line 676:
+        Unterminated L< ... > sequence
+
+    Around line 684:
+        Unterminated L< ... > sequence
+
+    Around line 749:
+        You forgot a '=back' before '=head2'
 

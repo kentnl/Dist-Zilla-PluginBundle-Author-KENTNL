@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.013001';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.013002';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -135,9 +135,40 @@ use namespace::autoclean;
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip ) }
 
+
+
+
+
+
+
+
+
+
+
 has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'builder' => sub { [] } );
 
+
+
+
+
+
+
+
+
+
+
 has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', 'required' => 1 );    #builder => sub { 'numify' } );
+
+
+
+
+
+
+
+
+
+
+
 has 'mantissa' => (
   'is'      => ro =>,
   'isa'     => 'Int',
@@ -152,8 +183,45 @@ has 'mantissa' => (
   },
 );
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
+
+
+
+
+
+
+
+
+
 has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+
+
+
+
+
+
+
+
+
 has 'auto_prereqs_skip' => (
   is        => 'ro',
   isa       => 'ArrayRef',
@@ -161,7 +229,25 @@ has 'auto_prereqs_skip' => (
   lazy      => 1,
   builder   => sub { [] },
 );
+
+
+
+
+
+
+
+
+
 has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str', lazy => 1, builder => sub { q[] }, );
+
+
+
+
+
+
+
+
+
 has 'twitter_hash_tags' => (
   is      => 'ro',
   isa     => 'Str',
@@ -172,15 +258,42 @@ has 'twitter_hash_tags' => (
     return '#perl #cpan ' . $self->twitter_extra_hash_tags;
   },
 );
+
+
+
+
+
+
+
+
+
 has 'tweet_url' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
   builder => sub {
     ## no critic (RequireInterpolationOfMetachars)
-    return q[https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes];
+    return q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew];
   },
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 has 'toolkit_hardness' => (
   is => ro =>,
@@ -188,6 +301,24 @@ has 'toolkit_hardness' => (
   lazy    => 1,
   builder => sub { 'hard' },
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 has 'toolkit' => (
   is => ro =>,
@@ -419,7 +550,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.013001
+version 2.013002
 
 =head1 SYNOPSIS
 
@@ -428,10 +559,10 @@ version 2.013001
                           ; otherwise use an older bundle version.
 
     normal_form  = numify ; Mandatory for this bundle indicating normal form.
-                          ; see DZP::Git::NextVersion
+                          ; see DZP::Git::NextVersion::Sanitized
 
     mantissa     = 6      ; Mandatory for this bundle if normal_form is numify.
-                          ; see DZP::Git::NextVersion
+                          ; see DZP::Git::NextVersion::Sanitized
 
     authority    = cpan:KENTNL ; Optional, defaults to cpan:KENTNL
 
@@ -525,6 +656,111 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 =head2 C<configure>
 
 Called by in C<bundle_config> after C<new>
+
+=head1 ATTRIBUTES
+
+=head2 C<plugins>
+
+B<INTERNAL>.
+
+  ArrayRef, ro, default = [], no init arg.
+
+Populated during C<< $self➛configure >> and returned from C<< ➛bundle_config >>
+
+=head2 C<normal_form>
+
+  Str, ro, required
+
+A C<normal_form> to pass to L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >>.
+
+See L<< C<[::Role::Version::Sanitize]|Dist::Zilla::Role::Version::Sanitize >>
+
+=head2 C<mantissa>
+
+  Int, ro, required if normal_form eq 'numify'
+
+Defines the length of the mantissa when normal form is C<numify>.
+
+See L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >> and L<< C<[::Role::Version::Sanitize]|Dist::Zilla::Role::Version::Sanitize >>
+
+=head2 C<git_versions>
+
+  enum([1]), ro, required
+
+=over 4
+
+=item * B<MUST BE SPECIFIED>
+
+=item * B<< MUST BE C<1> >>
+
+=back
+
+Setting as such indicates that the distribution in question is safe to use with C<Git::NextVersion>.
+
+As no logic exists any more to support using anything other than C<Git::NextVersion> with this bundle,
+this parameter must be turned on and you must use Git::NextVersion.
+
+=head2 C<authority>
+
+  Str, ro, default = cpan:KENTNL
+
+An authority string to use for C<< [Authority] >>.
+
+=head2 C<auto_prereqs_skip>
+
+  ArrayRef, ro, multivalue, default = []
+
+A list of prerequisites to pass to C<< [AutoPrereqs].skips >>
+
+=head2 C<twitter_extra_hash_tags>
+
+  Str, ro, default = ""
+
+Additional hash tags to append to twitter
+
+=head2 C<twitter_hash_tags>
+
+  Str, ro, default = '#perl #cpan' . extras()
+
+Populates C<extras> from C<twitter_extra_hash_tags>
+
+=head2 C<tweet_url>
+
+  Str, ro, default =  q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew]
+
+The URI to tweet to C<@kentnlrelease>
+
+=head2 C<toolkit_hardness>
+
+  enum( hard, soft ), ro, default = hard
+
+=over 4
+
+=item * C<hard>
+
+Copy the versions of important toolkit components the author was using as C<required> dependencies,
+forcing consumers to update aggressively on those parts.
+
+=item * C<soft>
+
+Copy the versions of important toolkit components the author was using as C<recommended> dependencies,
+so that only consumers who are installing with C<--with-recommended> get given the forced upgrade path.
+
+=head2 C<toolkit>
+
+  enum( mb, mbtiny, eumm ), ro, default = mb
+
+Determines which tooling to generate the distribution with
+
+=over 4
+
+=item * C<mb> : L<< C<Module::Build>|Module::Build >>
+
+=item * C<mbtiny> : L<< C<Module::Build::Tiny>|Module::Build::Tiny >>
+
+=item * C<eumm> : L<< C<ExtUtils::MakeMaker>|ExtUtils::MakeMaker >>
+
+=back
 
 =begin MetaPOD::JSON v1.1.0
 

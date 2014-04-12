@@ -1,5 +1,10 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.013002 2014-04-12T19:13:51Z
+ [00 Minor]
+ - Change Tweet URL to point to the release page at #whatsnew instead of
+   the full changelog
+
 2.013001 2014-04-12T10:22:38Z
  [00 Minor]
  - Minor doc fixes.
