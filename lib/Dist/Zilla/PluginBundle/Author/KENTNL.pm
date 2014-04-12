@@ -675,7 +675,7 @@ Populated during C<< $self➛configure >> and returned from C<< ➛bundle_config
 
 A C<normal_form> to pass to L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >>.
 
-See L<< C<[::Role::Version::Sanitize]|Dist::Zilla::Role::Version::Sanitize >>
+See L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
 
 =head2 C<mantissa>
 

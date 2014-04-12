@@ -117,7 +117,7 @@ ATTRIBUTES
 
     A "normal_form" to pass to "[Git::NextVersion::Sanitized]".
 
-    See "[::Role::Version::Sanitize]|Dist::Zilla::Role::Version::Sanitize ">
+    See "[::Role::Version::Sanitize]"
 
   "mantissa"
       Int, ro, required if normal_form eq 'numify'
@@ -205,9 +205,6 @@ COPYRIGHT AND LICENSE
 POD ERRORS
     Hey! The above document had some coding errors, which are explained
     below:
-
-    Around line 678:
-        Unterminated L< ... > sequence
 
     Around line 686:
         Unterminated L< ... > sequence
