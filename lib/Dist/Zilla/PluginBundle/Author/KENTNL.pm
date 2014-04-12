@@ -683,7 +683,7 @@ See L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
 
 Defines the length of the mantissa when normal form is C<numify>.
 
-See L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >> and L<< C<[::Role::Version::Sanitize]|Dist::Zilla::Role::Version::Sanitize >>
+See L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >> and L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
 
 =head2 C<git_versions>
 

@@ -124,8 +124,7 @@ ATTRIBUTES
 
     Defines the length of the mantissa when normal form is "numify".
 
-    See "[Git::NextVersion::Sanitized]" and
-    "[::Role::Version::Sanitize]|Dist::Zilla::Role::Version::Sanitize ">
+    See "[Git::NextVersion::Sanitized]" and "[::Role::Version::Sanitize]"
 
   "git_versions"
       enum([1]), ro, required
@@ -201,11 +200,4 @@ COPYRIGHT AND LICENSE
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
-
-POD ERRORS
-    Hey! The above document had some coding errors, which are explained
-    below:
-
-    Around line 686:
-        Unterminated L< ... > sequence
 
