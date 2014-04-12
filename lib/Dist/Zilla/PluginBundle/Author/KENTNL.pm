@@ -178,7 +178,7 @@ has 'tweet_url' => (
   lazy    => 1,
   builder => sub {
     ## no critic (RequireInterpolationOfMetachars)
-    return q[https://metacpan.org/source/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}/Changes];
+    return q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew];
   },
 );
 
