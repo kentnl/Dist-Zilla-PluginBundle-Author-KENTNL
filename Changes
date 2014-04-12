@@ -98,7 +98,7 @@
 
 2.010001 2014-01-22T03:16:45Z
  [00 Bugfix]
- - Mantissa should only be required if normal_form eq numify
+ - mantissa should now only be required if normal_form eq numify
 
  [Dependencies::Stats]
  - Dependencies changed since 2.010000, see Changes.deps{,.all,.dev} for
@@ -140,7 +140,8 @@
 
 2.008000 2014-01-12T11:21:22Z
  [00 Major]
- - use Git::NextRelease for commit-oriented timestamps in Changes
+ - use Git::NextRelease for commit-oriented timestamps in Changes. This
+   adds 2 new mandatory parameters: normal_form and mantissa.
  - use PerlMunger replace-with-blank for better line consistency.
  - usual dependency bumping
 
