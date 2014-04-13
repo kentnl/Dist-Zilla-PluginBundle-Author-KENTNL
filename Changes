@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.013003 2014-04-13T03:30:32Z
+2.013003 2014-04-13T03:33:11Z
  [00 Minor]
  - Stop shortening the URLs and let twitter handle it.
  - Unmess something in the docs.

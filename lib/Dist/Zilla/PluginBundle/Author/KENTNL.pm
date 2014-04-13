@@ -492,7 +492,7 @@ sub configure {
       hash_tags     => $self->twitter_hash_tags,
       tweet_url     => $self->tweet_url,
       url_shortener => 'none',
-    }
+    },
   );
 
   my @extra_match_installed = qw( Test::More );
