@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.013002';
+$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.013003';
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -487,7 +487,13 @@ sub configure {
   $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );
   $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
-  $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
+  $self->add_plugin(
+    'Twitter' => {
+      hash_tags     => $self->twitter_hash_tags,
+      tweet_url     => $self->tweet_url,
+      url_shortener => 'none',
+    },
+  );
 
   my @extra_match_installed = qw( Test::More );
   unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
@@ -552,7 +558,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.013002
+version 2.013003
 
 =head1 SYNOPSIS
 
@@ -667,7 +673,7 @@ B<INTERNAL>.
 
   ArrayRef, ro, default = [], no init arg.
 
-Populated during C<< $self➛configure >> and returned from C<< ➛bundle_config >>
+Populated during C<< $self->configure >> and returned from C<< ->bundle_config >>
 
 =head2 C<normal_form>
 
