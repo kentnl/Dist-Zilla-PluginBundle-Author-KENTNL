@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - Stop shortening the URLs and let twitter handle it.
+ - Unmess something in the docs.
 
 2.013002 2014-04-12T19:23:55Z
  [00 Minor]
