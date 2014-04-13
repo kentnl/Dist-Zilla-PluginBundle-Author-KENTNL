@@ -110,7 +110,7 @@ ATTRIBUTES
 
       ArrayRef, ro, default = [], no init arg.
 
-    Populated during "$self➛configure" and returned from "➛bundle_config"
+    Populated during "$self->configure" and returned from "->bundle_config"
 
   "normal_form"
       Str, ro, required

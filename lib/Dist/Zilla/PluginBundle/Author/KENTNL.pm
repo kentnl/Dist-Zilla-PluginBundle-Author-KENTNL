@@ -673,7 +673,7 @@ B<INTERNAL>.
 
   ArrayRef, ro, default = [], no init arg.
 
-Populated during C<< $self➛configure >> and returned from C<< ➛bundle_config >>
+Populated during C<< $self->configure >> and returned from C<< ->bundle_config >>
 
 =head2 C<normal_form>
 
