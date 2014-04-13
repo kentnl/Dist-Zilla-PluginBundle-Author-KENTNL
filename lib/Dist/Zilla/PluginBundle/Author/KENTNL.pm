@@ -487,7 +487,13 @@ sub configure {
   $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );
   $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
-  $self->add_plugin( 'Twitter' => { hash_tags => $self->twitter_hash_tags, tweet_url => $self->tweet_url } );
+  $self->add_plugin(
+    'Twitter' => {
+      hash_tags     => $self->twitter_hash_tags,
+      tweet_url     => $self->tweet_url,
+      url_shortener => 'none',
+    }
+  );
 
   my @extra_match_installed = qw( Test::More );
   unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
