@@ -491,7 +491,7 @@ sub configure {
     'Twitter' => {
       hash_tags     => $self->twitter_hash_tags,
       tweet_url     => $self->tweet_url,
-      tweet         => 'Released {{$DIST}}-{{$VERSION}}{{$TRIAL}} {{$URL}}',
+#      tweet         => 'Released {{$DIST}}-{{$VERSION}}{{$TRIAL}} {{$URL}}',
       url_shortener => 'none',
     }
   );
