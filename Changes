@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.013004 2014-05-17T15:32:46Z
  [Bugfix]
  - dotfiles now install due to dzil fix for File::ShareDir::Install.
 
