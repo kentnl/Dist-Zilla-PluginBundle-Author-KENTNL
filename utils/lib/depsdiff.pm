@@ -10,6 +10,7 @@ use JSON;
 use Data::Dump qw( pp );
 use Path::Tiny qw( path );
 use Data::Difference qw( data_diff );
+use CPAN::Meta::Converter;
 
 use Class::Tiny qw(json_a json_b), {
   cache      => sub { return {} },
@@ -26,13 +27,20 @@ use Class::Tiny qw(json_a json_b), {
   },
   prereqs_a => sub {
     my ($self) = @_;
-    return $self->data_a->{prereqs};
+    return $self->_get_prereqs( $self->data_a );
   },
   prereqs_b => sub {
     my ($self) = @_;
-    return $self->data_b->{prereqs};
-    }
+    return $self->_get_prereqs( $self->data_b );
+  },
 };
+
+sub _get_prereqs {
+  my ( $self, $stash ) = @_;
+  my $c = CPAN::Meta::Converter->new($stash);
+  my $co = $c->convert( version => 2 );
+  return $co->{prereqs};
+}
 
 sub get_type {
   if ( not exists $_[0]->{b} and exists $_[0]->{a} ) {

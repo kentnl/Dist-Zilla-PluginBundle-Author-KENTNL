@@ -1,4 +1,62 @@
-2.013003
+2.013004
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.96 → 6.98
+
+ [Changed / develop requires]
+ - Dist::Zilla 5.015 → 5.017
+ - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.010 → 0.012
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.015 → 5.017
+ - Dist::Zilla::Plugin::Prereqs 5.015 → 5.017
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled::All v0.1.2 → 1.000000
+
+ [Changed / runtime requires]
+ - Dist::Zilla 5.015 → 5.017
+ - Dist::Zilla::File::FromCode 5.015 → 5.017
+ - Dist::Zilla::Plugin::AutoPrereqs 5.015 → 5.017
+ - Dist::Zilla::Plugin::ConfirmRelease 5.015 → 5.017
+ - Dist::Zilla::Plugin::Git::Check 2.021 → 2.022
+ - Dist::Zilla::Plugin::Git::Commit 2.021 → 2.022
+ - Dist::Zilla::Plugin::Git::CommitBuild 2.021 → 2.022
+ - Dist::Zilla::Plugin::Git::GatherDir 2.021 → 2.022
+ - Dist::Zilla::Plugin::Git::Tag 2.021 → 2.022
+ - Dist::Zilla::Plugin::GithubMeta 0.42 → 0.46
+ - Dist::Zilla::Plugin::License 5.015 → 5.017
+ - Dist::Zilla::Plugin::MakeMaker 5.015 → 5.017
+ - Dist::Zilla::Plugin::Manifest 5.015 → 5.017
+ - Dist::Zilla::Plugin::ManifestSkip 5.015 → 5.017
+ - Dist::Zilla::Plugin::MetaConfig 5.015 → 5.017
+ - Dist::Zilla::Plugin::MetaJSON 5.015 → 5.017
+ - Dist::Zilla::Plugin::MetaTests 5.015 → 5.017
+ - Dist::Zilla::Plugin::MetaYAML 5.015 → 5.017
+ - Dist::Zilla::Plugin::PkgVersion 5.015 → 5.017
+ - Dist::Zilla::Plugin::PodCoverageTests 5.015 → 5.017
+ - Dist::Zilla::Plugin::PodSyntaxTests 5.015 → 5.017
+ - Dist::Zilla::Plugin::Prereqs 5.015 → 5.017
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.133360 → 0.141120
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.001001 → 0.002000
+ - Dist::Zilla::Plugin::TestRelease 5.015 → 5.017
+ - Dist::Zilla::Plugin::UploadToCPAN 5.015 → 5.017
+ - Dist::Zilla::Role::FileGatherer 5.015 → 5.017
+ - Dist::Zilla::Role::MintingProfile::ShareDir 5.015 → 5.017
+ - Dist::Zilla::Role::PluginBundle 5.015 → 5.017
+ - Dist::Zilla::Util::EmulatePhase 0.01025803 → 1.000000
+ - IO::Socket::SSL 1.981 → 1.986
+ - Moose 2.1204 → 2.1206
+ - Moose::Util::TypeConstraints 2.1204 → 2.1206
+ - MooseX::AttributeShortcuts 0.023 → 0.024
+ - Net::SSLeay 1.58 → 1.61
+
+ [Changed / test recommends]
+ - CPAN::Meta 2.140640 → 2.141170
+ - ExtUtils::MakeMaker 6.96 → 6.98
+
+ [Changed / test requires]
+ - Git::Wrapper 0.031 → 0.032
+ - Module::Metadata 1.000019 → 1.000022
+ - Path::Tiny 0.052 → 0.054
+ - Test::DZil 5.015 → 5.017
+
+2.013003 2014-04-13T03:33:11Z
 
 2.013002 2014-04-12T19:23:55Z
 
@@ -1447,10 +1505,34 @@
  - Net::SSLeay 1.36
 
 0.01002309 2010-06-08T17:47:53Z
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::KwaliteeTests 1.101420
+ - Dist::Zilla::Plugin::PortabilityTests 1.101420
+ - Dist::Zilla::Plugin::ReportVersions::Tiny 1.01
+ - Pod::Coverage::TrustPod
+ - Test::CPAN::Meta
+
+ [Added / test requires]
+ - File::Find
+ - File::Temp
+ - Test::More 0.88
+ - Test::Perl::Critic
+
+ [Changed / runtime requires]
+ - Dist::Zilla 2.101310 → 4.101582
+ - Dist::Zilla::Plugin::ReadmeFromPod 0.04 → 0.12
+
+ [Removed / build requires]
+ - File::Find
+ - Test::Kwalitee
+ - Test::More
+ - Test::Perl::Critic
 
 0.01001714 2010-06-02T22:11:42Z
 
 0.01001713 2010-06-02T21:04:31Z
 
 0.01001712 2010-06-02T20:54:05Z
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Twitter 0.007
 

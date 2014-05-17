@@ -1,5 +1,24 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.013004 2014-05-17T15:32:46Z
+ [Bugfix]
+ - dotfiles now install due to dzil fix for File::ShareDir::Install.
+
+ [Dependencies::Aggregate]
+ - 5.010001 : 293 → 297
+ - 5.012005 : 286 → 290
+ - 5.018002 : 285
+ - 5.019009 : 275 → 277
+ - https://gist.github.com/kentfredric/1ac2697f6d6a4112c798#file-5-010-analysis
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.013003, see Changes.deps{,.all,.dev} for
+   details
+ - configure: (recommends: ↑1)
+ - develop: ↑5
+ - runtime: ↑35
+ - test: ↑4 (recommends: ↑2)
+
 2.013003 2014-04-13T03:33:11Z
  [00 Minor]
  - Stop shortening the URLs and let twitter handle it.
@@ -1110,6 +1129,13 @@
  - Test::More moves to 0.88
  - Test::Kwalitee removed as its only a release test now.
 
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01001714, see Changes.deps{,.all,.dev} for
+   details
+ - build: -4
+ - runtime: +5 ↑2
+ - test: +4
+
  [Features]
  - Twitter can be disabled via notwitter.
  - Adds MetaTests to the Test cycle.
@@ -1142,6 +1168,11 @@
 0.01001712 2010-06-02T20:54:05Z
  [Dependencies]
  - Added Dist::Zilla::Plugin::Twitter 0.007
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01000600, see Changes.deps{,.all,.dev} for
+   details
+ - runtime: +1
 
  [Features]
  - Can now tweet releases if your .netrc is set up correctly.
