@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 # VERSION
 
-version 2.013003
+version 2.013004
 
 # SYNOPSIS
 
@@ -103,7 +103,7 @@ Called by in `bundle_config` after `new`
 
 ## `plugins`
 
-__INTERNAL__.
+**INTERNAL**.
 
     ArrayRef, ro, default = [], no init arg.
 
@@ -129,8 +129,8 @@ See [`[Git::NextVersion::Sanitized]`](https://metacpan.org/pod/Dist::Zilla::Plug
 
     enum([1]), ro, required
 
-- __MUST BE SPECIFIED__
-- __MUST BE `1`__
+- **MUST BE SPECIFIED**
+- **MUST BE `1`**
 
 Setting as such indicates that the distribution in question is safe to use with `Git::NextVersion`.
 

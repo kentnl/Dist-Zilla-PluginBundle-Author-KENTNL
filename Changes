@@ -1,6 +1,13 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.013003, see Changes.deps{,.all,.dev} for
+   details
+ - configure: (recommends: ↑1)
+ - develop: ↑5
+ - runtime: ↑35
+ - test: ↑4 (recommends: ↑2)
 
 2.013003 2014-04-13T03:33:11Z
  [00 Minor]
@@ -1112,6 +1119,13 @@
  - Test::More moves to 0.88
  - Test::Kwalitee removed as its only a release test now.
 
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01001714, see Changes.deps{,.all,.dev} for
+   details
+ - build: -4
+ - runtime: +5 ↑2
+ - test: +4
+
  [Features]
  - Twitter can be disabled via notwitter.
  - Adds MetaTests to the Test cycle.
@@ -1144,6 +1158,11 @@
 0.01001712 2010-06-02T20:54:05Z
  [Dependencies]
  - Added Dist::Zilla::Plugin::Twitter 0.007
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.01000600, see Changes.deps{,.all,.dev} for
+   details
+ - runtime: +1
 
  [Features]
  - Can now tweet releases if your .netrc is set up correctly.
