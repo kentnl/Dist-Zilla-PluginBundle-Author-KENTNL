@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugfix]
+ - dotfiles now install due to dzil fix for File::ShareDir::Install.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.013003, see Changes.deps{,.all,.dev} for
    details
