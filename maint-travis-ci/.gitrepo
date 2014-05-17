@@ -6,6 +6,6 @@
 [subrepo]
 	remote = https://github.com/kentfredric/travis-scripts.git
 	branch = master
-	commit = 7c80dffae0d7e39b20582e368d85c290429219fa
-	parent = 9b1c4d006c7dfc70ef2a4a4009ca41d5fec45c00
+	commit = 05a379574e0582ec02d50406448464e99d3ca83d
+	parent = 8abd8a0caee9463b95356922a8059df0cd21bdce
 	cmdver = 0.1.0
