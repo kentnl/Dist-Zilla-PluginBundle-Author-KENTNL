@@ -4,6 +4,13 @@
  [Bugfix]
  - dotfiles now install due to dzil fix for File::ShareDir::Install.
 
+ [Dependencies::Aggregate]
+ - 5.010001 : 293 → 297
+ - 5.012005 : 286 → 290
+ - 5.018002 : 285
+ - 5.019009 : 275 → 277
+ - https://gist.github.com/kentfredric/1ac2697f6d6a4112c798#file-5-010-analysis
+
  [Dependencies::Stats]
  - Dependencies changed since 2.013003, see Changes.deps{,.all,.dev} for
    details
