@@ -1,6 +1,12 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.013004, see Changes.deps* for details
+ - develop: ↑3
+ - runtime: ↑24
+ - test: ↑1
+
  [utils/dep_changes]
  - Wrap length extended to 120 chars.
  - Line breaks no longer occur at (narrow)? no-break space
