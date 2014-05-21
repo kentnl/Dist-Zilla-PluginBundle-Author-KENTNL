@@ -1,4 +1,6 @@
-2.013004
+2.013005
+
+2.013004 2014-05-17T15:32:46Z
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 6.96 → 6.98
 
@@ -1099,8 +1101,7 @@
 
  [Changed / runtime requires]
  - Dist::Zilla 4.300000 → 4.300029
- - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective 0 →
-   v0.1.0
+ - Dist::Zilla::Plugin::Author::KENTNL::Prereqs::Latest::Selective 0 → v0.1.0
  - Dist::Zilla::Plugin::Authority 0 → 1.006
  - Dist::Zilla::Plugin::AutoPrereqs 4.200011 → 4.300029
  - Dist::Zilla::Plugin::Bootstrap::lib 0 → 0.01023601
