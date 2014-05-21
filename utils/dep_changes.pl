@@ -58,6 +58,7 @@ push @tags, 'build/master';
 use CPAN::Changes;
 
 my $changes     = CPAN::Changes->new();
+my $changes_opt = CPAN::Changes->new();
 my $changes_all = CPAN::Changes->new();
 my $changes_dev = CPAN::Changes->new();
 
@@ -91,6 +92,7 @@ while ( @tags > 1 ) {
     ( defined $date ? ( date => $date ) : () ),
   };
   $changes->add_release(     {%$params} );
+  $changes_opt->add_release( {%$params} );
   $changes_all->add_release( {%$params} );
   $changes_dev->add_release( {%$params} );
 
@@ -187,14 +189,18 @@ while ( @tags > 1 ) {
       }
     }
     $master_release->add_changes( { group => 'Dependencies::Stats' },
-      'Dependencies changed since ' . $old . ', see Changes.deps{,.all,.dev} for details', @changes );
+      'Dependencies changed since ' . $old . ', see Changes.deps* for details', @changes );
   }
   for my $key ( sort keys %{ $diff->cache } ) {
     my $label = $key;
     $label =~ s/Dependencies:://msx;
     $changes_all->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
     if ( $key !~ /develop/ ) {
-      $changes->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
+      if ( $key =~ /requires/ ) {
+          $changes->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
+      } else {
+        $changes_opt->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
+      }
     }
     else {
       $changes_dev->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
@@ -203,7 +209,12 @@ while ( @tags > 1 ) {
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 
+$Text::Wrap::columns=120;
+$Text::Wrap::break='(?![\x{00a0}\x{202f}])\s';
+$Text::Wrap::huge='overflow';
+
 path('./Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize ) );
 path('./Changes.deps')->spew_utf8( _maybe( $changes->serialize ) );
+path('./Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) );
 path('./Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
 path('./Changes')->spew_utf8( _maybe( $master_changes->serialize ) );

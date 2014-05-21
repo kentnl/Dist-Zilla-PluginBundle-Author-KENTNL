@@ -1,4 +1,6 @@
-2.013004
+2.013005
+
+2.013004 2014-05-17T15:32:46Z
  [Changed / develop requires]
  - Dist::Zilla 5.015 → 5.017
  - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.010 → 0.012
