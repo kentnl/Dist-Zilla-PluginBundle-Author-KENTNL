@@ -209,6 +209,10 @@ while ( @tags > 1 ) {
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 
+$Text::Wrap::columns=120;
+$Text::Wrap::break='(?![\x{00a0}\x{202f}])\s';
+$Text::Wrap::huge='overflow';
+
 path('./Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize ) );
 path('./Changes.deps')->spew_utf8( _maybe( $changes->serialize ) );
 path('./Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) );
