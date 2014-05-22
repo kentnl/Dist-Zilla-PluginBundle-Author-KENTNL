@@ -26,7 +26,6 @@
       "develop" : {
          "requires" : {
             "Dist::Zilla" : "5.019",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000001",
             "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.012",
             "Dist::Zilla::Plugin::ModuleShareDirs" : "5.019",
             "Dist::Zilla::Plugin::Prereqs" : "5.019",
@@ -349,19 +348,6 @@
          "version" : "5.019011"
       },
       "plugins" : [
-         {
-            "class" : "Dist::Zilla::Plugin::Bootstrap::lib",
-            "config" : {
-               "Dist::Zilla::Role::Bootstrap" : {
-                  "distname" : "Dist-Zilla-PluginBundle-Author-KENTNL",
-                  "fallback" : "1",
-                  "try_built" : "1",
-                  "try_built_method" : "mtime"
-               }
-            },
-            "name" : "Bootstrap::lib",
-            "version" : "1.000001"
-         },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion::Sanitized",
             "config" : {

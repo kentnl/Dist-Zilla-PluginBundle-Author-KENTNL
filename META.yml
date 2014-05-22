@@ -285,16 +285,6 @@ x_Dist_Zilla:
     version: '5.019011'
   plugins:
     -
-      class: Dist::Zilla::Plugin::Bootstrap::lib
-      config:
-        Dist::Zilla::Role::Bootstrap:
-          distname: Dist-Zilla-PluginBundle-Author-KENTNL
-          fallback: '1'
-          try_built: '1'
-          try_built_method: mtime
-      name: Bootstrap::lib
-      version: '1.000001'
-    -
       class: Dist::Zilla::Plugin::Git::NextVersion::Sanitized
       config:
         Dist::Zilla::Plugin::Git::NextVersion:
