@@ -394,14 +394,16 @@ sub configure {
   my ($self) = @_;
 
   # Version
-  $self->add_plugin(
-    'Git::NextVersion::Sanitized' => {
-      version_regexp => '^(.*)-source$',
-      first_version  => '0.001000',
-      normal_form    => $self->normal_form,
-      mantissa       => $self->mantissa,
-    },
-  );
+  if ( not $self->bumpversions ) {
+    $self->add_plugin(
+      'Git::NextVersion::Sanitized' => {
+        version_regexp => '^(.*)-source$',
+        first_version  => '0.001000',
+        normal_form    => $self->normal_form,
+        mantissa       => $self->mantissa,
+      },
+    );
+  }
 
   # Metadata
   $self->add_plugin( 'MetaConfig' => {}, );
@@ -440,7 +442,12 @@ sub configure {
 
   # Mungers
   if ( $self->bumpversions ) {
-    $self->add_plugin( 'RewriteVersion' => {} );
+    $self->add_plugin(
+      'RewriteVersion::Sanitized' => {
+        normal_form => $self->normal_form,
+        mantissa    => $self->mantissa,
+      }
+    );
   }
   else {
     $self->add_plugin( 'PkgVersion' => {} );
