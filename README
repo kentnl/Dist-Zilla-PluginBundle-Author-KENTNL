@@ -192,6 +192,12 @@ ATTRIBUTES
 
     *   "eumm" : "ExtUtils::MakeMaker"
 
+  "bumpversions"
+      bumpversions = 1
+
+    If true, use BumpVersionAfterRelease and RewriteVersions instead of
+    PkgVersion.
+
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 

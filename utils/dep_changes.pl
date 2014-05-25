@@ -197,8 +197,9 @@ while ( @tags > 1 ) {
     $changes_all->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
     if ( $key !~ /develop/ ) {
       if ( $key =~ /requires/ ) {
-          $changes->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
-      } else {
+        $changes->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
+      }
+      else {
         $changes_opt->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
       }
     }
@@ -209,9 +210,9 @@ while ( @tags > 1 ) {
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 
-$Text::Wrap::columns=120;
-$Text::Wrap::break='(?![\x{00a0}\x{202f}])\s';
-$Text::Wrap::huge='overflow';
+$Text::Wrap::columns = 120;
+$Text::Wrap::break   = '(?![\x{00a0}\x{202f}])\s';
+$Text::Wrap::huge    = 'overflow';
 
 path('./Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize ) );
 path('./Changes.deps')->spew_utf8( _maybe( $changes->serialize ) );
