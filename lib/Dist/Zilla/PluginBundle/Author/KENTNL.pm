@@ -7,6 +7,8 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
+our $VERSION = '2.013005';
+
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has );
@@ -394,15 +396,16 @@ sub configure {
   my ($self) = @_;
 
   # Version
-  $self->add_plugin(
-    'Git::NextVersion::Sanitized' => {
-      version_regexp => '^(.*)-source$',
-      first_version  => '0.001000',
-      normal_form    => $self->normal_form,
-      mantissa       => $self->mantissa,
-    },
-  );
-
+  if ( not $self->bumpversions ) {
+    $self->add_plugin(
+      'Git::NextVersion::Sanitized' => {
+        version_regexp => '^(.*)-source$',
+        first_version  => '0.001000',
+        normal_form    => $self->normal_form,
+        mantissa       => $self->mantissa,
+      },
+    );
+  }
   # Metadata
   $self->add_plugin( 'MetaConfig' => {}, );
 

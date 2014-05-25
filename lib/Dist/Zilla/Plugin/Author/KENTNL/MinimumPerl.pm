@@ -9,6 +9,8 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 # CREATED: 31/10/11 05:25:54 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
+our $VERSION = '2.013005';
+
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 

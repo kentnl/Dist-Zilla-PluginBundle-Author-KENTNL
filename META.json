@@ -80,7 +80,6 @@
             "Dist::Zilla::Plugin::Git::CommitBuild" : "2.022",
             "Dist::Zilla::Plugin::Git::GatherDir" : "2.022",
             "Dist::Zilla::Plugin::Git::NextRelease" : "0.002010",
-            "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" : "0.001000",
             "Dist::Zilla::Plugin::Git::Tag" : "2.022",
             "Dist::Zilla::Plugin::GithubMeta" : "0.46",
             "Dist::Zilla::Plugin::License" : "5.019",
@@ -227,7 +226,6 @@
          "Dist::Zilla::Plugin::Git::CommitBuild" : "2.022",
          "Dist::Zilla::Plugin::Git::GatherDir" : "2.022",
          "Dist::Zilla::Plugin::Git::NextRelease" : "0.002010",
-         "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" : "0.001000",
          "Dist::Zilla::Plugin::Git::Tag" : "2.022",
          "Dist::Zilla::Plugin::GithubMeta" : "0.46",
          "Dist::Zilla::Plugin::License" : "5.019",
@@ -363,25 +361,6 @@
             },
             "name" : "Bootstrap::lib",
             "version" : "1.000001"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Git::NextVersion::Sanitized",
-            "config" : {
-               "Dist::Zilla::Plugin::Git::NextVersion" : {
-                  "first_version" : "0.001000",
-                  "version_by_branch" : "0",
-                  "version_regexp" : "(?^:^(.*)-source$)"
-               },
-               "Dist::Zilla::Role::Git::Repo" : {
-                  "repo_root" : "."
-               },
-               "Dist::Zilla::Role::Version::Sanitize" : {
-                  "mantissa" : "6",
-                  "normal_form" : "numify"
-               }
-            },
-            "name" : "@Author::KENTNL/Git::NextVersion::Sanitized",
-            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
