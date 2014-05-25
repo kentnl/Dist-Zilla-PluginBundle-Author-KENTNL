@@ -130,7 +130,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled' => '0.001000',
                                       'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0.141120',
                                       'Dist::Zilla::Plugin::ReadmeFromPod' => '0.21',
-                                      'Dist::Zilla::Plugin::RewriteVersion' => '0.002',
+                                      'Dist::Zilla::Plugin::RewriteVersion::Sanitized' => '0.001000',
                                       'Dist::Zilla::Plugin::RunExtraTests' => '0.021',
                                       'Dist::Zilla::Plugin::Test::CPAN::Changes' => '0.008',
                                       'Dist::Zilla::Plugin::Test::Compile::PerFile' => '0.002000',

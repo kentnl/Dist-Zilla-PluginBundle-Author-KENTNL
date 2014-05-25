@@ -11,7 +11,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
-our $VERSION = '2.14';
+our $VERSION = '2.140000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -190,7 +190,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::
 
 =head1 VERSION
 
-version 2.14
+version 2.140000
 
 =head1 SYNOPSIS
 

@@ -60,7 +60,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" => "0.001000",
     "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.141120",
     "Dist::Zilla::Plugin::ReadmeFromPod" => "0.21",
-    "Dist::Zilla::Plugin::RewriteVersion" => "0.002",
+    "Dist::Zilla::Plugin::RewriteVersion::Sanitized" => "0.001000",
     "Dist::Zilla::Plugin::RunExtraTests" => "0.021",
     "Dist::Zilla::Plugin::Test::CPAN::Changes" => "0.008",
     "Dist::Zilla::Plugin::Test::Compile::PerFile" => "0.002000",
@@ -122,7 +122,7 @@ my %WriteMakefileArgs = (
     "Test::Output" => "1.03",
     "lib" => 0
   },
-  "VERSION" => "2.14",
+  "VERSION" => "2.140000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -168,7 +168,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" => "0.001000",
   "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.141120",
   "Dist::Zilla::Plugin::ReadmeFromPod" => "0.21",
-  "Dist::Zilla::Plugin::RewriteVersion" => "0.002",
+  "Dist::Zilla::Plugin::RewriteVersion::Sanitized" => "0.001000",
   "Dist::Zilla::Plugin::RunExtraTests" => "0.021",
   "Dist::Zilla::Plugin::Test::CPAN::Changes" => "0.008",
   "Dist::Zilla::Plugin::Test::Compile::PerFile" => "0.002000",
