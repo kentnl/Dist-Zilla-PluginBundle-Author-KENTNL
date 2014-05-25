@@ -329,6 +329,21 @@ has 'toolkit' => (
   builder => sub { 'mb' },
 );
 
+=attr C<bumpversions>
+
+  bumpversions = 1
+
+If true, use BumpVersionAfterRelease  and RewriteVersions instead of PkgVersion.
+
+=cut
+
+has 'bumpversions' => (
+  is      => ro  =>,
+  isa     => 'Bool',
+  lazy    => 1,
+  builder => sub { undef },
+);
+
 =method C<add_plugin>
 
     $bundle_object->add_plugin("Basename" => { config_hash } );
@@ -424,13 +439,17 @@ sub configure {
   $self->add_plugin( 'ManifestSkip' => {} );
 
   # Mungers
-  $self->add_plugin( 'PkgVersion' => {} );
+  if ( $self->bumpversions ) {
+    $self->add_plugin( 'RewriteVersion' => {} );
+  }
+  else {
+    $self->add_plugin( 'PkgVersion' => {} );
+  }
   $self->add_plugin(
     'PodWeaver' => {
       replacer => 'replace_with_blank',
     },
   );
-  $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
 
   # Prereqs
 
@@ -482,8 +501,18 @@ sub configure {
   $self->add_plugin( 'ConfirmRelease'      => {} );
 
   $self->add_plugin( 'Git::Check' => { filename => 'Changes' } );
+  $self->add_named_plugin( 'commit_dirty_files' => 'Git::Commit' => {} );
   $self->add_named_plugin( 'tag_master', => 'Git::Tag' => { tag_format => '%v-source' } );
-  $self->add_plugin( 'Git::Commit' => {} );
+  $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
+  if ( $self->bumpversions ) {
+    $self->add_plugin( 'BumpVersionAfterRelease' => {} );
+  }
+  $self->add_named_plugin(
+    'commit_release_changes' => 'Git::Commit' => {
+      allow_dirty_match => '^lib/',
+    }
+  );
+
   $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );
   $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
