@@ -285,6 +285,16 @@ x_Dist_Zilla:
     version: '5.020000'
   plugins:
     -
+      class: Dist::Zilla::Plugin::Bootstrap::lib
+      config:
+        Dist::Zilla::Role::Bootstrap:
+          distname: Dist-Zilla-PluginBundle-Author-KENTNL
+          fallback: '1'
+          try_built: '1'
+          try_built_method: mtime
+      name: Bootstrap::lib
+      version: '1.000001'
+    -
       class: Dist::Zilla::Plugin::Git::NextVersion::Sanitized
       config:
         Dist::Zilla::Plugin::Git::NextVersion:
@@ -518,10 +528,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/PodWeaver'
       version: '4.005'
     -
-      class: Dist::Zilla::Plugin::Git::NextRelease
-      name: '@Author::KENTNL/Git::NextRelease'
-      version: '0.002010'
-    -
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: '@Author::KENTNL/AutoPrereqs'
       version: '5.019'
@@ -599,20 +605,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/Git::Check'
       version: '2.022'
     -
-      class: Dist::Zilla::Plugin::Git::Tag
-      config:
-        Dist::Zilla::Plugin::Git::Tag:
-          branch: ~
-          signed: 0
-          tag: 2.013005-source
-          tag_format: '%v-source'
-          tag_message: v%v
-          time_zone: local
-        Dist::Zilla::Role::Git::Repo:
-          repo_root: .
-      name: '@Author::KENTNL/tag_master'
-      version: '2.022'
-    -
       class: Dist::Zilla::Plugin::Git::Commit
       config:
         Dist::Zilla::Plugin::Git::Commit:
@@ -627,7 +619,43 @@ x_Dist_Zilla:
           changelog: Changes
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
-      name: '@Author::KENTNL/Git::Commit'
+      name: '@Author::KENTNL/commit_dirty_files'
+      version: '2.022'
+    -
+      class: Dist::Zilla::Plugin::Git::Tag
+      config:
+        Dist::Zilla::Plugin::Git::Tag:
+          branch: ~
+          signed: 0
+          tag: 2.013005-source
+          tag_format: '%v-source'
+          tag_message: v%v
+          time_zone: local
+        Dist::Zilla::Role::Git::Repo:
+          repo_root: .
+      name: '@Author::KENTNL/tag_master'
+      version: '2.022'
+    -
+      class: Dist::Zilla::Plugin::Git::NextRelease
+      name: '@Author::KENTNL/Git::NextRelease'
+      version: '0.002010'
+    -
+      class: Dist::Zilla::Plugin::Git::Commit
+      config:
+        Dist::Zilla::Plugin::Git::Commit:
+          add_files_in: []
+          commit_msg: v%v%n%n%c
+          time_zone: local
+        Dist::Zilla::Role::Git::DirtyFiles:
+          allow_dirty:
+            - dist.ini
+            - Changes
+          allow_dirty_match:
+            - (?^:^lib/)
+          changelog: Changes
+        Dist::Zilla::Role::Git::Repo:
+          repo_root: .
+      name: '@Author::KENTNL/commit_release_changes'
       version: '2.022'
     -
       class: Dist::Zilla::Plugin::Git::CommitBuild

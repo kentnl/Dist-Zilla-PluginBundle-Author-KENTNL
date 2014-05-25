@@ -55,6 +55,7 @@ my $static_prereqs = do { my $x = {
        'develop' => {
                       'requires' => {
                                       'Dist::Zilla' => '5.019',
+                                      'Dist::Zilla::Plugin::Bootstrap::lib' => '1.000001',
                                       'Dist::Zilla::Plugin::CheckPrereqsIndexed' => '0.012',
                                       'Dist::Zilla::Plugin::ModuleShareDirs' => '5.019',
                                       'Dist::Zilla::Plugin::Prereqs' => '5.019',
