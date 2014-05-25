@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.013005 2014-05-25T19:18:03Z
+2.013005 2014-05-25T19:21:34Z
  [01 utils/dep_changes]
  - Wrap length extended to 120 chars.
  - Line breaks no longer occur at (narrow)? no-break space

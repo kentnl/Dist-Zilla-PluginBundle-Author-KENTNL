@@ -439,7 +439,7 @@ sub configure {
   $self->add_plugin( 'ManifestSkip' => {} );
 
   # Mungers
-  if ( $self->bumpversion ) {
+  if ( $self->bumpversions ) {
     $self->add_plugin( 'RewriteVersion' => {} );
   }
   else {
@@ -504,7 +504,9 @@ sub configure {
   $self->add_named_plugin( 'commit_dirty_files' => 'Git::Commit' => {} );
   $self->add_named_plugin( 'tag_master', => 'Git::Tag' => { tag_format => '%v-source' } );
   $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
-  $self->add_plugin( 'BumpVersionAfterRelease' => {} );
+  if ( $self->bumpversions ) {
+    $self->add_plugin( 'BumpVersionAfterRelease' => {} );
+  }
   $self->add_named_plugin(
     'commit_release_changes' => 'Git::Commit' => {
       allow_dirty_match => '^lib/',
