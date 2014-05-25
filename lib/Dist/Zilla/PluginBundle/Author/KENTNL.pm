@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.013005';
+our $VERSION = '2.14';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -445,7 +445,7 @@ sub configure {
   # Mungers
   if ( $self->bumpversions ) {
     $self->add_plugin(
-      'RewriteVersion' => {
+      'RewriteVersion::Sanitized' => {
         normal_form => $self->normal_form,
         mantissa    => $self->mantissa,
       }
@@ -596,7 +596,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.013005
+version 2.14
 
 =head1 SYNOPSIS
 
