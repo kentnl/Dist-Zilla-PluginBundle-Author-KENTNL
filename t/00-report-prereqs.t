@@ -76,6 +76,7 @@ my $static_prereqs = do { my $x = {
        'runtime' => {
                       'recommends' => {
                                         'Data::Difference' => '0',
+                                        'Dist::Zilla::Plugin::Git::NextVersion::Sanitized' => '0',
                                         'Dist::Zilla::Plugin::MakeMaker' => '0',
                                         'Dist::Zilla::Plugin::ModuleBuild' => '0',
                                         'Dist::Zilla::Plugin::ModuleBuildTiny' => '0',
@@ -181,6 +182,7 @@ my $static_prereqs = do { my $x = {
                                    },
                    'requires' => {
                                    'Capture::Tiny' => '0.24',
+                                   'Dist::Zilla::Plugin::Git::NextVersion::Sanitized' => '0',
                                    'Dist::Zilla::Plugin::ModuleBuild' => '0',
                                    'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => '0',
                                    'ExtUtils::MakeMaker' => '0',

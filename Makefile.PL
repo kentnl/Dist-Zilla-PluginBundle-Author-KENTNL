@@ -102,6 +102,7 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Capture::Tiny" => "0.24",
+    "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" => 0,
     "Dist::Zilla::Plugin::ModuleBuild" => 0,
     "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => 0,
     "ExtUtils::MakeMaker" => 0,
@@ -145,6 +146,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla::Plugin::Git::CommitBuild" => "2.022",
   "Dist::Zilla::Plugin::Git::GatherDir" => "2.022",
   "Dist::Zilla::Plugin::Git::NextRelease" => "0.002010",
+  "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" => 0,
   "Dist::Zilla::Plugin::Git::Tag" => "2.022",
   "Dist::Zilla::Plugin::GithubMeta" => "0.46",
   "Dist::Zilla::Plugin::License" => "5.019",
