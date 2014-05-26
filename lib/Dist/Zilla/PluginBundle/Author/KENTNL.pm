@@ -335,7 +335,8 @@ has 'toolkit' => (
 
   bumpversions = 1
 
-If true, use BumpVersionAfterRelease  and RewriteVersions instead of PkgVersion.
+If true, use C<[BumpVersionAfterRelease]>  and C<[RewriteVersions::Sanitized]> instead of C<[PkgVersion]> and
+C<[Git::NextVersion::Sanitized]>
 
 =cut
 
@@ -448,7 +449,7 @@ sub configure {
       'RewriteVersion::Sanitized' => {
         normal_form => $self->normal_form,
         mantissa    => $self->mantissa,
-      }
+      },
     );
   }
   else {
@@ -519,7 +520,7 @@ sub configure {
   $self->add_named_plugin(
     'commit_release_changes' => 'Git::Commit' => {
       allow_dirty_match => '^lib/',
-    }
+    },
   );
 
   $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );

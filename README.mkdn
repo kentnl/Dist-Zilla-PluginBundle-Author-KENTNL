@@ -195,7 +195,8 @@ Determines which tooling to generate the distribution with
 
     bumpversions = 1
 
-If true, use BumpVersionAfterRelease  and RewriteVersions instead of PkgVersion.
+If true, use `[BumpVersionAfterRelease]`  and `[RewriteVersions::Sanitized]` instead of `[PkgVersion]` and
+`[Git::NextVersion::Sanitized]`
 
 # AUTHOR
 
