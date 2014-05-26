@@ -1,7 +1,13 @@
 2.013005
+ [Added / runtime recommends]
+ - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
+
  [Added / runtime requires]
  - Dist::Zilla::Plugin::BumpVersionAfterRelease 0.002
  - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001000
+
+ [Added / test requires]
+ - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
 
  [Changed / develop requires]
  - Dist::Zilla 5.017 → 5.019
