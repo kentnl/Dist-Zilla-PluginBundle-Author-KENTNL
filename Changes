@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.013005 2014-05-26T01:05:39Z
+2.013005 2014-05-26T01:36:33Z
  [01 new experimental feature]
  - new attribute 'bumpversions'
  - uses a combination of BumpVersionAfterRelease and RewriteVersion::Santized instead of Git::NextVersion and
@@ -11,6 +11,12 @@
  - Line breaks no longer occur at (narrow)? no-break space
  - hugelines now 'overflow' instead of hard wrapping.
  - optional dependencies now have their own file.
+
+ [Dependencies::Aggregate]
+ - 5.010001 : 297 → 299
+ - 5.012005 : 290 → 292
+ - 5.018002 : 285 → 288
+ - 5.019009 : 277 → 279
 
  [Dependencies::Stats]
  - Dependencies changed since 2.013004, see Changes.deps* for details
