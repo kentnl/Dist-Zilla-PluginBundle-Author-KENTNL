@@ -12,6 +12,12 @@
  - hugelines now 'overflow' instead of hard wrapping.
  - optional dependencies now have their own file.
 
+ [Dependencies::Aggregate]
+ - 5.010001 : 297 → 299
+ - 5.012005 : 290 → 292
+ - 5.018002 : 285 → 288
+ - 5.019009 : 277 → 279
+
  [Dependencies::Stats]
  - Dependencies changed since 2.013004, see Changes.deps* for details
  - develop: ↑4
