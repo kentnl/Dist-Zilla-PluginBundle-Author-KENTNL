@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.013005 2014-05-26T01:36:33Z
+2.013005 2014-05-26T01:40:29Z
  [01 new experimental feature]
  - new attribute 'bumpversions'
  - uses a combination of BumpVersionAfterRelease and RewriteVersion::Santized instead of Git::NextVersion and
