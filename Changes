@@ -1,7 +1,12 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
- [01 utils/dep_changes]
+ [01 new experimental feature]
+ - new attribute 'bumpversions'
+ - uses a combination of BumpVersionAfterRelease and RewriteVersion::Santized instead of Git::NextVersion and
+   PkgVersion.
+
+ [02 utils/dep_changes]
  - Wrap length extended to 120 chars.
  - Line breaks no longer occur at (narrow)? no-break space
  - hugelines now 'overflow' instead of hard wrapping.
@@ -10,8 +15,8 @@
  [Dependencies::Stats]
  - Dependencies changed since 2.013004, see Changes.deps* for details
  - develop: ↑4
- - runtime: +2 ↑23 -2
- - test: ↑1
+ - runtime: +2 ↑23 -2 (recommends: +1)
+ - test: +1 ↑1
 
 2.013004 2014-05-17T15:32:46Z
  [Bugfix]

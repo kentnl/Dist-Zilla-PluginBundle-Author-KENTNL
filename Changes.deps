@@ -3,6 +3,9 @@
  - Dist::Zilla::Plugin::BumpVersionAfterRelease 0.002
  - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001000
 
+ [Added / test requires]
+ - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
+
  [Changed / runtime requires]
  - Dist::Zilla 5.017 → 5.019
  - Dist::Zilla::File::FromCode 5.017 → 5.019

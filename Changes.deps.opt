@@ -1,4 +1,6 @@
 2.013005
+ [Added / runtime recommends]
+ - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
 
 2.013004 2014-05-17T15:32:46Z
  [Changed / configure recommends]
