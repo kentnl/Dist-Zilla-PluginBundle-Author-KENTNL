@@ -4,8 +4,10 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
-$Dist::Zilla::PluginBundle::Author::KENTNL::VERSION = '2.013004';
+
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
+
+our $VERSION = '2.013005'; # TRIAL
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -335,6 +337,22 @@ has 'toolkit' => (
 
 
 
+
+
+
+has 'bumpversions' => (
+  is      => ro  =>,
+  isa     => 'Bool',
+  lazy    => 1,
+  builder => sub { undef },
+);
+
+
+
+
+
+
+
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
@@ -379,14 +397,16 @@ sub configure {
   my ($self) = @_;
 
   # Version
-  $self->add_plugin(
-    'Git::NextVersion::Sanitized' => {
-      version_regexp => '^(.*)-source$',
-      first_version  => '0.001000',
-      normal_form    => $self->normal_form,
-      mantissa       => $self->mantissa,
-    },
-  );
+  if ( not $self->bumpversions ) {
+    $self->add_plugin(
+      'Git::NextVersion::Sanitized' => {
+        version_regexp => '^(.*)-source$',
+        first_version  => '0.001000',
+        normal_form    => $self->normal_form,
+        mantissa       => $self->mantissa,
+      },
+    );
+  }
 
   # Metadata
   $self->add_plugin( 'MetaConfig' => {}, );
@@ -424,13 +444,22 @@ sub configure {
   $self->add_plugin( 'ManifestSkip' => {} );
 
   # Mungers
-  $self->add_plugin( 'PkgVersion' => {} );
+  if ( $self->bumpversions ) {
+    $self->add_plugin(
+      'RewriteVersion::Sanitized' => {
+        normal_form => $self->normal_form,
+        mantissa    => $self->mantissa,
+      },
+    );
+  }
+  else {
+    $self->add_plugin( 'PkgVersion' => {} );
+  }
   $self->add_plugin(
     'PodWeaver' => {
       replacer => 'replace_with_blank',
     },
   );
-  $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
 
   # Prereqs
 
@@ -482,8 +511,18 @@ sub configure {
   $self->add_plugin( 'ConfirmRelease'      => {} );
 
   $self->add_plugin( 'Git::Check' => { filename => 'Changes' } );
+  $self->add_named_plugin( 'commit_dirty_files' => 'Git::Commit' => {} );
   $self->add_named_plugin( 'tag_master', => 'Git::Tag' => { tag_format => '%v-source' } );
-  $self->add_plugin( 'Git::Commit' => {} );
+  $self->add_plugin( 'Git::NextRelease' => { time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ] } );
+  if ( $self->bumpversions ) {
+    $self->add_plugin( 'BumpVersionAfterRelease' => {} );
+  }
+  $self->add_named_plugin(
+    'commit_release_changes' => 'Git::Commit' => {
+      allow_dirty_match => '^lib/',
+    },
+  );
+
   $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );
   $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
@@ -558,7 +597,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.013004
+version 2.013005
 
 =head1 SYNOPSIS
 
@@ -771,6 +810,13 @@ Determines which tooling to generate the distribution with
 =item * C<eumm> : L<< C<ExtUtils::MakeMaker>|ExtUtils::MakeMaker >>
 
 =back
+
+=head2 C<bumpversions>
+
+  bumpversions = 1
+
+If true, use C<[BumpVersionAfterRelease]>  and C<[RewriteVersions::Sanitized]> instead of C<[PkgVersion]> and
+C<[Git::NextVersion::Sanitized]>
 
 =begin MetaPOD::JSON v1.1.0
 

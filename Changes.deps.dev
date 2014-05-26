@@ -1,4 +1,11 @@
-2.013004
+2.013005
+ [Changed / develop requires]
+ - Dist::Zilla 5.017 → 5.019
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.017 → 5.019
+ - Dist::Zilla::Plugin::Prereqs 5.017 → 5.019
+ - Dist::Zilla::Plugin::Prereqs::AuthorDeps 0.002 → 0.003
+
+2.013004 2014-05-17T15:32:46Z
  [Changed / develop requires]
  - Dist::Zilla 5.015 → 5.017
  - Dist::Zilla::Plugin::CheckPrereqsIndexed 0.010 → 0.012

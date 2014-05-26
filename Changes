@@ -1,5 +1,29 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.013005 2014-05-26T01:40:29Z
+ [01 new experimental feature]
+ - new attribute 'bumpversions'
+ - uses a combination of BumpVersionAfterRelease and RewriteVersion::Santized instead of Git::NextVersion and
+   PkgVersion.
+
+ [02 utils/dep_changes]
+ - Wrap length extended to 120 chars.
+ - Line breaks no longer occur at (narrow)? no-break space
+ - hugelines now 'overflow' instead of hard wrapping.
+ - optional dependencies now have their own file.
+
+ [Dependencies::Aggregate]
+ - 5.010001 : 297 → 299
+ - 5.012005 : 290 → 292
+ - 5.018002 : 285 → 288
+ - 5.019009 : 277 → 279
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.013004, see Changes.deps* for details
+ - develop: ↑4
+ - runtime: +2 ↑23 -2 (recommends: +1)
+ - test: +1 ↑1
+
 2.013004 2014-05-17T15:32:46Z
  [Bugfix]
  - dotfiles now install due to dzil fix for File::ShareDir::Install.
@@ -12,8 +36,7 @@
  - https://gist.github.com/kentfredric/1ac2697f6d6a4112c798#file-5-010-analysis
 
  [Dependencies::Stats]
- - Dependencies changed since 2.013003, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.013003, see Changes.deps* for details
  - configure: (recommends: ↑1)
  - develop: ↑5
  - runtime: ↑35
@@ -26,8 +49,7 @@
 
 2.013002 2014-04-12T19:23:55Z
  [00 Minor]
- - Change Tweet URL to point to the release page at #whatsnew instead of
-   the full changelog
+ - Change Tweet URL to point to the release page at #whatsnew instead of the full changelog
  - Fully document attributes and fix a few mistakes.
 
 2.013001 2014-04-12T10:22:38Z
@@ -36,8 +58,7 @@
  - Dep bumps
 
  [Dependencies::Stats]
- - Dependencies changed since 2.013000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.013000, see Changes.deps* for details
  - configure: (recommends: ↑1)
  - runtime: ↑5
  - test: (recommends: ↑1)
@@ -50,8 +71,7 @@
  - Now come with a different perlcritic.rc
 
  [Dependencies::Stats]
- - Dependencies changed since 2.012002, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.012002, see Changes.deps* for details
  - develop: ↑1
  - runtime: ↑3
 
@@ -63,8 +83,7 @@
  - Dep bump
 
  [Dependencies::Stats]
- - Dependencies changed since 2.012001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.012001, see Changes.deps* for details
  - configure: (recommends: ↑1)
  - develop: ↑3
  - runtime: ↑25
@@ -80,8 +99,7 @@
  - 5.019 : 277 → 275
 
  [Dependencies::Stats]
- - Dependencies changed since 2.012000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.012000, see Changes.deps* for details
  - configure: (recommends: ↑1)
  - develop: ↑3
  - runtime: ↑35
@@ -93,8 +111,7 @@
  - Future release may default to EUMM
 
  [Dependencies::Stats]
- - Dependencies changed since 2.011001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.011001, see Changes.deps* for details
  - build: -1 (recommends: -1)
  - configure: +2 -1 (recommends: +1 -1)
  - runtime: +1 -1
@@ -103,8 +120,7 @@
 2.011001 2014-01-30T05:38:14Z
  [00 Bugfix]
  - Fix regression where hardness value regulated develop time dependencies.
- - Work around weird behaviour in Config::MVP with attribute propagation
-   causing errors.
+ - Work around weird behaviour in Config::MVP with attribute propagation causing errors.
 
 2.011000 2014-01-29T21:19:25Z
  [00 Major]
@@ -116,8 +132,7 @@
  [02 - Toolkit hardness variation]
  - attribute `tookit_hardness` exists.
  - `hard` = ramp dependencies on toolkit so everyone gets the latest
- - `soft` = copy dependencies on toolkit to recommended, and ramp
-   recommended
+ - `soft` = copy dependencies on toolkit to recommended, and ramp recommended
 
  [03 - More Recommended deps by far]
  - All the top 3 are now pulled by --recommended
@@ -128,8 +143,7 @@
  - No more forced upgrading MB on Perl >5.11
 
  [Dependencies::Stats]
- - Dependencies changed since 2.010001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.010001, see Changes.deps* for details
  - build: ↓1 (recommends: +1)
  - configure: ↓1 (recommends: +1)
  - develop: ↑1
@@ -141,8 +155,7 @@
  - mantissa should now only be required if normal_form eq numify
 
  [Dependencies::Stats]
- - Dependencies changed since 2.010000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.010000, see Changes.deps* for details
  - develop: ↑3
  - runtime: ↑28
  - test: ↑2 ↓1
@@ -152,8 +165,7 @@
  - use Test::ReportPrereqs
 
  [Dependencies::Stats]
- - Dependencies changed since 2.009000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.009000, see Changes.deps* for details
  - develop: -1
  - runtime: +1 ↑2 -1
  - test: +3 ↑1 (recommends: +2)
@@ -163,8 +175,7 @@
  - use # AUTHORITY comments
 
  [Dependencies::Stats]
- - Dependencies changed since 2.008001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.008001, see Changes.deps* for details
  - runtime: ↑2
 
 2.008001 2014-01-12T22:12:04Z
@@ -172,16 +183,15 @@
  - Dep ramping
 
  [Dependencies::Stats]
- - Dependencies changed since 2.008000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.008000, see Changes.deps* for details
  - develop: ↑3
  - runtime: ↑22
  - test: ↑1
 
 2.008000 2014-01-12T11:21:22Z
  [00 Major]
- - use Git::NextRelease for commit-oriented timestamps in Changes. This
-   adds 2 new mandatory parameters: normal_form and mantissa.
+ - use Git::NextRelease for commit-oriented timestamps in Changes. This adds 2 new mandatory parameters: normal_form
+   and mantissa.
  - use PerlMunger replace-with-blank for better line consistency.
  - usual dependency bumping
 
@@ -193,8 +203,7 @@
  - Dzil upgrade for new package version magic
 
  [Dependencies::Stats]
- - Dependencies changed since 2.007003, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.007003, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: ↑3
@@ -206,8 +215,7 @@
  - Upgrade Moose depenencies to 2.1200
 
  [Dependencies::Stats]
- - Dependencies changed since 2.007002, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.007002, see Changes.deps* for details
  - runtime: ↑2
 
 2.007002 2014-01-08T03:20:39Z
@@ -216,16 +224,14 @@
  - Apply some stricter PerlCritic policies
 
  [Dependencies::Stats]
- - Dependencies changed since 2.007001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.007001, see Changes.deps* for details
  - develop: ↑4
  - runtime: ↑26
  - test: ↑2
 
 2.007001 2013-12-29T09:10:42Z
  [Dependencies::Stats]
- - Dependencies changed since 2.007000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.007000, see Changes.deps* for details
  - develop: ↑5
  - runtime: ↑25
  - test: ↑3
@@ -237,42 +243,35 @@
  - Switch to Git::NextVersion::Sanitized
 
  [Dependencies::Stats]
- - Dependencies changed since 2.006001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.006001, see Changes.deps* for details
  - runtime: +1 -1
 
 2.006001 2013-12-01T05:07:52Z
  - That last release is about to unhappen. kentnl--
 
  [Dependencies::Stats]
- - Dependencies changed since 2.6.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.6.0, see Changes.deps* for details
  - runtime: ↑1
 
 2.6.0 2013-12-01T02:35:19Z
  [00 Major Changes]
- - Internals revamped to use Object Oriented style closer to
-   ::Role::PluginBundle::Easy, except parameters to bundles are top-level
-   attributes instead of hidden uselessly in ->payload.
+ - Internals revamped to use Object Oriented style closer to ::Role::PluginBundle::Easy, except parameters to bundles
+   are top-level attributes instead of hidden uselessly in ->payload.
  - Use RunExtraTests instead of CheckExtraTests
  - All ENV vars are gone, we never used them
  - No longer upgrades dep to 5.10 when seeing dotted-decimal versions
- - Experimental utility added that generates a source ⇄ release conversion
-   patch.
+ - Experimental utility added that generates a source ⇄ release conversion patch.
 
  [Dependencies::Stats]
- - Dependencies changed since 2.005000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.005000, see Changes.deps* for details
  - runtime: +4 ↑1 -1
 
 2.005000 2013-11-29T19:31:25Z
- - Stop using PruneCruft as the number of exclusions being added just keeps
-   growing, and it sucks.
+ - Stop using PruneCruft as the number of exclusions being added just keeps growing, and it sucks.
  - We use Git::GatherDir anyway.
 
  [Dependencies::Stats]
- - Dependencies changed since 2.004002, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.004002, see Changes.deps* for details
  - runtime: -1
 
 2.004002 2013-11-28T13:27:17Z
@@ -284,8 +283,7 @@
  - requires new versions of lots of plugins
 
  [Dependencies::Stats]
- - Dependencies changed since 2.004001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.004001, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - runtime: ↑12
@@ -295,24 +293,20 @@
  [00 Bugfix]
  - Don't keep trying to parse tree data if no tree data responds to a path
  - Skip tags that are not versions
- - Make sure to include the last diff instead of only as far as the second
-   last diff
+ - Make sure to include the last diff instead of only as far as the second last diff
 
  [Dependencies::Stats]
- - Dependencies changed since 2.004000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.004000, see Changes.deps* for details
  - runtime: ↑2
 
 2.004000 2013-11-22T03:04:44Z
  [00 Minor]
- - change diff tool augmented to inject statistics into Changes where
-   relevant
+ - change diff tool augmented to inject statistics into Changes where relevant
  - change diff tool auto injects references into Changes
  - change diff tool now +x
 
  [Dependencies::Stats]
- - Dependencies changed since 2.003000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.003000, see Changes.deps* for details
  - develop: ↑1
 
 2.003000 2013-11-22T00:30:56Z
@@ -324,8 +318,7 @@
  - Changelog retroactively tidied
 
  [Dependencies::Stats]
- - Dependencies changed since 2.002001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.002001, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: ↑1
@@ -334,13 +327,11 @@
 
 2.002001 2013-11-18T03:36:33Z
  [00 Bugfix]
- - Use Module::Metadata to get Module::Build version ( avoid bugs with
-   mantissa shortening in tests )
+ - Use Module::Metadata to get Module::Build version ( avoid bugs with mantissa shortening in tests )
  - Refactor code to share more logic
 
  [Dependencies::Stats]
- - Dependencies changed since 2.002000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.002000, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - runtime: ↑3
@@ -348,12 +339,10 @@
 
 2.002000 2013-11-11T11:09:48Z
  [00 Minor]
- - Swap out Test::Compile with Test::Compile::PerFile, which is marginally
-   faster.
+ - Swap out Test::Compile with Test::Compile::PerFile, which is marginally faster.
 
  [Dependencies::Stats]
- - Dependencies changed since 2.001000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.001000, see Changes.deps* for details
  - develop: ↑4
  - runtime: +1 ↑26 -1
  - test: ↑1 -3
@@ -363,8 +352,7 @@
  - Reasonably sizeable tooling changes to propagate more develop deps
 
  [Dependencies::Stats]
- - Dependencies changed since 2.000000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 2.000000, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: +8 ↑1 -1
@@ -374,29 +362,24 @@
 2.000000 2013-10-12T05:23:24Z
  [00 Major]
  - Versioning scheme now back to single-decimal.
- - If you are downstream and this breaks things, please learn to normalise
-   upstream versions.
+ - If you are downstream and this breaks things, please learn to normalise upstream versions.
  - Default versioning scheme for new dists is now single-decimal.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.9.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.9.0, see Changes.deps* for details
  - develop: ↑2
  - runtime: +1 ↑7 ↓1
 
 1.9.0 2013-09-26T12:07:46Z
  [00 Major]
- - Well not hugely major, declared develop depends change starting this
-   release.
- - @Author::KENTNL is develop_required ( as you will need that bundle if
-   you do any dev work on consuming things without modifiying them )
- - @Author::KENTNL::Lite is now develop_suggests only, to indicate that
-   bundle can be somewhat used to work on consuming things, as long as you
-   edit the right dist.ini's to make it so.
+ - Well not hugely major, declared develop depends change starting this release.
+ - @Author::KENTNL is develop_required ( as you will need that bundle if you do any dev work on consuming things
+   without modifiying them )
+ - @Author::KENTNL::Lite is now develop_suggests only, to indicate that bundle can be somewhat used to work on
+   consuming things, as long as you edit the right dist.ini's to make it so.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.4, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.8.4, see Changes.deps* for details
  - develop: +1 -1 (recommends: -1, suggests: +1 -1)
 
 1.8.4 2013-09-26T11:16:23Z
@@ -406,8 +389,7 @@
  - Remove EOL from generated dist.ini
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.3, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.8.3, see Changes.deps* for details
  - develop: ↑3 (recommends: ↑1, suggests: ↑1)
  - runtime: ↑39
  - test: +2 ↑2
@@ -417,8 +399,7 @@
  - Revert some far too aggressive version bumps on core things.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.2, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.8.2, see Changes.deps* for details
  - develop: (suggests: ↑1)
  - test: ↓2
 
@@ -428,8 +409,7 @@
  - Bumping to get newer Test::Compile test
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.1, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.8.1, see Changes.deps* for details
  - develop: (suggests: ↑1)
  - runtime: ↑28
  - test: +2 ↑1 -1
@@ -443,38 +423,32 @@
  [Bug Fixes]
  - stop dropping travis.yml files
  - stop being dependent on specific contents for develop_requires
- - stop loading modules, Dzil does that for us, and doing so inhibits
-   modules that reverse-engineer bundles
+ - stop loading modules, Dzil does that for us, and doing so inhibits modules that reverse-engineer bundles
  - stop using autobox, its slow and inhibits us from dropping Moose
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.8.0, see Changes.deps* for details
  - develop: +1 ↑2 (suggests: ↑1)
  - runtime: ↑2 -2
 
 1.8.0 2013-08-08T00:57:13Z
  [!Major]
- - The way dependencies are declared for this module are aggressively
-   overhauled and much more tightly follow upstream versions. This is
-   mostly to smoke out any dependencies that need to be added to the
-   exclusion list.
+ - The way dependencies are declared for this module are aggressively overhauled and much more tightly follow upstream
+   versions. This is mostly to smoke out any dependencies that need to be added to the exclusion list.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.7, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.7.7, see Changes.deps* for details
  - develop: ↑5 (suggests: ↑1)
  - runtime: +7 ↑48 -1
  - test: ↑9
 
 1.7.7 2013-08-07T17:33:54Z
  [BugFix]
- - Accidentally upgraded dependency on Plugin::Authority to a version that
-   is not on CPAN. Solved. Thanks to Sander Lepik for reporting.
+ - Accidentally upgraded dependency on Plugin::Authority to a version that is not on CPAN. Solved. Thanks to Sander
+   Lepik for reporting.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.6, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.7.6, see Changes.deps* for details
  - develop: (suggests: ↑1)
  - runtime: ↓1
 
@@ -483,8 +457,7 @@
  - Fix test failures introduced by new dependencies
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.5, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.7.5, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: (suggests: ↑1)
@@ -495,8 +468,7 @@
  - Minor Changes, backend deps switched.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.4, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.7.4, see Changes.deps* for details
  - develop: (suggests: ↑1)
  - runtime: +1 -1
 
@@ -505,8 +477,7 @@
  - ::Twitter bumped for API v1.0 deprecation
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.3, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.7.3, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: (suggests: ↑1)
@@ -522,8 +493,7 @@
  - add a small arsenal of utils
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.2, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.7.2, see Changes.deps* for details
  - develop: +1 (suggests: ↑1)
  - runtime: ↑2
 
@@ -531,8 +501,7 @@
  - minor release, packaging / update Module::Build
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.1, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.7.1, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - runtime: +1
@@ -547,8 +516,7 @@
  - Minor release to test changes to DZP:Git
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.7.0, see Changes.deps* for details
  - runtime: ↑5
 
  [Documentation]
@@ -560,8 +528,7 @@
  - Dependencies Ramped.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.6.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.6.0, see Changes.deps* for details
  - runtime: +3 ↑41
 
  [Documentation]
@@ -576,8 +543,7 @@
  - maintenance release
 
  [Dependencies::Stats]
- - Dependencies changed since 1.5.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.5.0, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: +5
@@ -594,16 +560,14 @@
 
 1.4.3 2012-07-28T20:37:33Z
  [Dependencies::Stats]
- - Dependencies changed since 1.4.2, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.4.2, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - runtime: +1 ↑2
 
 1.4.2 2012-07-07T15:40:38Z
  [Dependencies::Stats]
- - Dependencies changed since 1.4.1, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.4.1, see Changes.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: -1
@@ -612,18 +576,15 @@
 
 1.4.0 2012-04-11T20:24:43Z
  [Dependencies::Stats]
- - Dependencies changed since 1.3.1, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.3.1, see Changes.deps* for details
  - test: +1
 
  [Features]
- - moved from GatherDir to Git::GatherDir, faster, and less prone to
-   picking up cruft.
+ - moved from GatherDir to Git::GatherDir, faster, and less prone to picking up cruft.
 
 1.3.1 2012-03-12T15:17:53Z
  [Dependencies::Stats]
- - Dependencies changed since 1.3.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.3.0, see Changes.deps* for details
  - develop: (recommends: ↑1, suggests: ↑1)
  - runtime: ↑1
 
@@ -632,13 +593,11 @@
 
 1.3.0 2012-03-06T22:21:22Z
  [Features]
- - Can now disable the 5.10.0 explit x.y.z upgrade via KETNNL_NOFIVETEN=1
-   and no_fiveten=1
+ - Can now disable the 5.10.0 explit x.y.z upgrade via KETNNL_NOFIVETEN=1 and no_fiveten=1
 
 1.2.1 2012-02-27T05:12:12Z
  [Dependencies::Stats]
- - Dependencies changed since 1.2.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.2.0, see Changes.deps* for details
  - runtime: +1 ↑3
 
  [Packaging]
@@ -646,8 +605,7 @@
 
 1.2.0 2011-11-05T06:33:40Z
  [Dependencies::Stats]
- - Dependencies changed since 1.1.1, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.1.1, see Changes.deps* for details
  - develop: (suggests: ↑1)
  - runtime: -1
 
@@ -660,14 +618,12 @@
 
 1.1.1 2011-10-31T04:25:07Z
  [Dependencies::Stats]
- - Dependencies changed since 1.1.0, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.1.0, see Changes.deps* for details
  - runtime: +1
 
 1.1.0 2011-10-30T18:18:21Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.22, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.22, see Changes.deps* for details
  - develop: (suggests: ↑1)
  - runtime: +4
 
@@ -679,8 +635,8 @@
  - Existing dists will suggest 1.1.0
 
  [Packages]
- - new: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl, contains an
-   additional 3-part version check that forces Perl 5.10.0
+ - new: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl, contains an additional 3-part version check that forces Perl
+   5.10.0
 
  [Packaging]
  - Reformated Props list.
@@ -695,8 +651,7 @@
  - Update dependency on ::Twitter for TRIAL support.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.21, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.21, see Changes.deps* for details
  - runtime: ↑1
 
  [Internals]
@@ -708,8 +663,7 @@
 
 1.0.20 2011-09-10T19:45:36Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.19, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.19, see Changes.deps* for details
  - runtime: +1
 
  [Features]
@@ -729,29 +683,24 @@
  - Update Test::Kwalitee 1.112410 to avoid a bug with 'plan'
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.16, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.16, see Changes.deps* for details
  - runtime: +2 ↑1 -2 (suggests: -1)
 
 1.0.16 2011-08-28T07:59:59Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.15, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.15, see Changes.deps* for details
  - runtime: +2 -2 (suggests: +1)
  - test: -1
 
  [Packaging]
- - All extra-tests now shipped in xt/ instead of t/, and they're only
-   called by Dzil.
+ - All extra-tests now shipped in xt/ instead of t/, and they're only called by Dzil.
 
 1.0.15 2011-08-23T21:48:10Z
  [Bugs]
- - Recent Dist::Zilla / Prereq Scanners report strict/warnings which broke
-   tests. Fixed now, thanks tjmc.
+ - Recent Dist::Zilla / Prereq Scanners report strict/warnings which broke tests. Fixed now, thanks tjmc.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.14, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.14, see Changes.deps* for details
  - runtime: +3 ↑1
 
  [Internals]
@@ -762,8 +711,7 @@
  - Reworked handling of auto_prereqs_skip not to carp needlessly.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.13, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.13, see Changes.deps* for details
  - test: +1
 
  [Features]
@@ -772,22 +720,18 @@
  - Minted dists now have an example auto_prereqs_skip
 
  [Tests]
- - Minter test now tests auto_prereq generation and the auto_prereqs_skip
-   flag.
+ - Minter test now tests auto_prereq generation and the auto_prereqs_skip flag.
 
 1.0.13 2011-07-17T01:06:15Z
  [Bugs]
- - Fixed an issue where the change of Dzil's Autoprereqs 'skip' parameter
-   started taking an array instead, by using an array. ( External interface
-   is still the same though )
+ - Fixed an issue where the change of Dzil's Autoprereqs 'skip' parameter started taking an array instead, by using an
+   array. ( External interface is still the same though )
 
  [Dependencies]
- - Dist::Zilla 4.200011 is now the minimum requirement, as that has the
-   adjusted Autoprereqs
+ - Dist::Zilla 4.200011 is now the minimum requirement, as that has the adjusted Autoprereqs
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.12, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.12, see Changes.deps* for details
  - runtime: ↑1
 
  [Packaging]
@@ -795,62 +739,52 @@
 
 1.0.12 2011-07-12T09:57:41Z
  [Dependencies]
- - Version explicit dependency added to Test::File::ShareDir 0.3.0 which is
-   required for -root to be optional.
+ - Version explicit dependency added to Test::File::ShareDir 0.3.0 which is required for -root to be optional.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.11, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.11, see Changes.deps* for details
  - test: ↑1
 
 1.0.11 2011-07-11T04:56:38Z
  [Tests]
- - Redo the git hack using ENV flags instead of a config file as it still
-   doesn't work as intended. Need both AUTHOR and CONFIG env variables.
- - Minting test now more detailed with arbitrary pass indicators to
-   indicate where fails occur.
+ - Redo the git hack using ENV flags instead of a config file as it still doesn't work as intended. Need both AUTHOR
+   and CONFIG env variables.
+ - Minting test now more detailed with arbitrary pass indicators to indicate where fails occur.
 
 1.0.10 2011-07-11T03:41:19Z
  [Packaging]
  - Retroactive Changes normalization
 
  [Tests]
- - Change git behaviour in the Minter test so git environment is always
-   sane-ish and doesn't report weirdness.
+ - Change git behaviour in the Minter test so git environment is always sane-ish and doesn't report weirdness.
 
 1.0.9 2011-06-13T23:50:29Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.8, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.8, see Changes.deps* for details
  - test: +8
 
  [Features]
- - Comments out autoversion_relative fields in generated dist.ini as a move
-   towards eliminating it.
+ - Comments out autoversion_relative fields in generated dist.ini as a move towards eliminating it.
  - Pre-Injects Abstract and Moose to new Modules.
  - Sets a custom template provider in the profile.
 
  [MiscFiles::New]
  - share/profiles/default/ModuleTemplate.pm, template for my modules.
- - corpus/global/config.ini,  a default "Global" configuaration for test
-   purposes.
+ - corpus/global/config.ini,  a default "Global" configuaration for test purposes.
 
  [Tests::New]
- - 01-Minter.t, A reasonably exhaustive mint > build > testbuild domino
-   test.
+ - 01-Minter.t, A reasonably exhaustive mint > build > testbuild domino test.
 
 1.0.8 2011-06-12T22:41:51Z
  [Features]
- - No longer warns about unspecified Autoversion::Relative params when
-   using Git::NextVersion
+ - No longer warns about unspecified Autoversion::Relative params when using Git::NextVersion
 
 1.0.7 2011-04-24T13:45:19Z
  [Dependencies]
  - Depend on LWP::Protocol::https >= 6.0 to make sure ::Twitter works.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.6, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.6, see Changes.deps* for details
  - runtime: +1
 
  [Utils]
@@ -858,8 +792,7 @@
 
 1.0.6 2011-04-13T13:15:49Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.5, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.5, see Changes.deps* for details
  - runtime: +1 -1
 
  [Features]
@@ -867,15 +800,12 @@
 
 1.0.5 2011-04-03T15:21:54Z
  [Features]
- - Can now pass 'auto_prereqs_skip' instead of having to filter the bundle
-   and mangle things.
+ - Can now pass 'auto_prereqs_skip' instead of having to filter the bundle and mangle things.
  - Newly Minted Changes file is more formal and CPAN::Changes-like.
 
  [Packaging]
- - Now comes with utils/zuluize.pl to translate Dist::Zilla style
-   datestamps to W3CDTF while retaining accuracy.
- - Now comes with utils/normalize.pl to run a Changes file through
-   CPAN::Changes and normalize the output.
+ - Now comes with utils/zuluize.pl to translate Dist::Zilla style datestamps to W3CDTF while retaining accuracy.
+ - Now comes with utils/normalize.pl to run a Changes file through CPAN::Changes and normalize the output.
  - All code run through Perl::Tidy.
 
 1.0.4 2011-04-03T12:08:53Z
@@ -883,37 +813,31 @@
  - Upgrade deps to avoid rt#67183
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.3, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.3, see Changes.deps* for details
  - runtime: ↑1
 
  [Features]
- - Removed extra whitespace padding on injected release stamp lines. This
-   results in the generated file being the same as a parsed and
-   re-serialized version of the same file as per how CPAN::Changes sees it.
+ - Removed extra whitespace padding on injected release stamp lines. This results in the generated file being the same
+   as a parsed and re-serialized version of the same file as per how CPAN::Changes sees it.
 
  [Packaging]
  - Rebuilt with rt#67183 test annoyance solved.
 
 1.0.3 2011-04-03T01:00:33Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.2, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.2, see Changes.deps* for details
  - runtime: +1
 
  [Features]
- - Now generate versions in W3CDTF form for compatibility with CPAN
-   Changes.
+ - Now generate versions in W3CDTF form for compatibility with CPAN Changes.
  - Add CPANChangesTests to all generated dists.
 
  [Packaging]
- - Reworked Changes file to be closer to CPAN::Changes spec, as well as to
-   be more informative.
+ - Reworked Changes file to be closer to CPAN::Changes spec, as well as to be more informative.
 
 1.0.2 2011-02-07T14:53:13Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.1, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.0.1, see Changes.deps* for details
  - develop: +1 -1 (recommends: +1 -1, suggests: +1 -1)
 
  [Documentation]
@@ -925,8 +849,7 @@
 
 1.0.1 2011-01-12T19:03:19Z
  [Dependencies::Stats]
- - Dependencies changed since 1.000.000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 1.000.000, see Changes.deps* for details
  - develop: (suggests: ↑1)
 
  [Packaging]
@@ -941,47 +864,40 @@
 
 0.01023312 2011-01-01T20:01:33Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01023311, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01023311, see Changes.deps* for details
  - runtime: +3 -2
 
 0.01023311 2011-01-01T19:31:37Z
  [BugFixes]
- - Ini generation previously produced "Prereq" instead of the now-standard
-   "Prereqs". This is now fixed.
+ - Ini generation previously produced "Prereq" instead of the now-standard "Prereqs". This is now fixed.
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01017322, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01017322, see Changes.deps* for details
  - runtime: +2
 
  [Features]
- - Ships now with minting profile 'Author::KENTNL'. New dists can be minted
-   via "dzil new -P Author::KENTNL Some::Dist::Name". This profile is
-   shipped in the ShareDir for this module name.
- - Consuming dists can now set 'git_versions = 1' as a flag to this plugin
-   to use Git::NextVersion instead of AutoVersion::Relative.
- - Now ship .perltidyrc files with all dists by adding an exclusion to
-   PruneCruft/GatherDir. Have to drop portability tests as a result.
+ - Ships now with minting profile 'Author::KENTNL'. New dists can be minted via "dzil new -P Author::KENTNL
+   Some::Dist::Name". This profile is shipped in the ShareDir for this module name.
+ - Consuming dists can now set 'git_versions = 1' as a flag to this plugin to use Git::NextVersion instead of
+   AutoVersion::Relative.
+ - Now ship .perltidyrc files with all dists by adding an exclusion to PruneCruft/GatherDir. Have to drop portability
+   tests as a result.
 
  [Internals]
  - Internal Loading code replaced with Class::Load.
 
 0.01017322 2010-11-04T06:56:23Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01017122, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01017122, see Changes.deps* for details
  - runtime: ↑3
 
 0.01017122 2010-11-02T06:00:35Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01017119, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01017119, see Changes.deps* for details
  - develop: +1 (recommends: +1, suggests: +1)
 
  [Features]
- - Injects PluginBundle dependencies and suggestions for all modules built
-   with this as "Develop" time requirements.
+ - Injects PluginBundle dependencies and suggestions for all modules built with this as "Develop" time requirements.
 
 0.01017119 2010-11-02T03:50:49Z
  [Internals]
@@ -990,8 +906,7 @@
 
 0.01010423 2010-08-28T07:47:18Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01009310, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01009310, see Changes.deps* for details
  - develop: +1
 
  [Features]
@@ -999,57 +914,47 @@
 
 0.01009310 2010-08-16T18:13:54Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01008321, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01008321, see Changes.deps* for details
  - runtime: +1
  - test: +1 -2
 
  [Packaging]
- - Now uses Bootstrap::lib during develop time instead of bundling an inc::
-   file in every dist.
+ - Now uses Bootstrap::lib during develop time instead of bundling an inc:: file in every dist.
  - inc:: now cleaned out as a result.
- - perlcriticrc moved to perlcritic.rc as a result of using CriticTests
-   instead of our own shipped tests.
+ - perlcriticrc moved to perlcritic.rc as a result of using CriticTests instead of our own shipped tests.
  - Removed redundant noeol.t which existed purely as a temporary solution.
 
 0.01008321 2010-08-07T05:56:23Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01007922, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01007922, see Changes.deps* for details
  - runtime: ↑1
 
  [Features]
- - Author::KENTNL::DistINI generation now inserts in a default 'hash_tags='
-   for twitter.
+ - Author::KENTNL::DistINI generation now inserts in a default 'hash_tags=' for twitter.
 
 0.01007922 2010-08-03T06:25:33Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01007006, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01007006, see Changes.deps* for details
  - runtime: +22 ↑6 -1
 
  [Features]
- - Uses new features in MetaData::BuiltWith to display a customised result
-   from uname
+ - Uses new features in MetaData::BuiltWith to display a customised result from uname
 
 0.01007006 2010-07-24T14:40:46Z
  [Dependencies]
  - Upgraded a few deps for MetaProvides split.
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01006912, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01006912, see Changes.deps* for details
  - runtime: +1 ↑2
  - test: -1
 
  [Features]
- - Consumer can now specify hash tags to append to the tweeted release
-   notice via 'hash_tags'
+ - Consumer can now specify hash tags to append to the tweeted release notice via 'hash_tags'
 
 0.01006912 2010-07-23T20:56:10Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01002610, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01002610, see Changes.deps* for details
  - runtime: ↑2
 
  [Documentation]
@@ -1057,37 +962,31 @@
  - A Smattering of spelling fixes.
 
  [Internals]
- - Now supports [ "Plugin" , "alias" ] for a plugin name to manually
-   specify the aliases name where it was previously autogenerated and
-   derived from the Plugin name itself. ( This proves to be a problem when
-   you want to use the same plugin twice ).
+ - Now supports [ "Plugin" , "alias" ] for a plugin name to manually specify the aliases name where it was previously
+   autogenerated and derived from the Plugin name itself. ( This proves to be a problem when you want to use the same
+   plugin twice ).
 
 0.01002610 2010-06-11T18:44:05Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01002504, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01002504, see Changes.deps* for details
  - runtime: +2 ↑2 -1
 
  [Features]
  - Dists will now ship with MetaData explaining What they were built with.
- - Metadata plugins that do work with Git repos now only triggered when git
-   is enabled.
+ - Metadata plugins that do work with Git repos now only triggered when git is enabled.
 
 0.01002504 2010-06-10T12:10:51Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01002419, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01002419, see Changes.deps* for details
  - runtime: +3
 
  [Features]
- - Now ships Dist::Zilla::Plugin::Author::KENTNL::DistINI to make dist
-   minting easier. Now I can just 'dzil new Module-Name' and start hacking
-   =).
+ - Now ships Dist::Zilla::Plugin::Author::KENTNL::DistINI to make dist minting easier. Now I can just 'dzil new
+   Module-Name' and start hacking =).
 
 0.01002419 2010-06-10T03:38:51Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01002321, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01002321, see Changes.deps* for details
  - runtime: +2
  - test: +2
 
@@ -1095,21 +994,18 @@
  - Adds End of line Tests via EOLTests plugin.
 
  [Packaging]
- - Ships a hardcoded temporary replacement for Test::EOL while Test::EOL
-   fixes get done.
+ - Ships a hardcoded temporary replacement for Test::EOL while Test::EOL fixes get done.
 
 0.01002321 2010-06-09T05:13:23Z
  [Dependencies]
  - added precursors for Net::Twitter on Win32
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01002309, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01002309, see Changes.deps* for details
  - runtime: +2
 
  [Packaging]
- - This release is also intending to test my patched version of
-   Dist::Zilla.
+ - This release is also intending to test my patched version of Dist::Zilla.
 
 0.01002309 2010-06-08T17:47:53Z
  [BugFix]
@@ -1130,8 +1026,7 @@
  - Test::Kwalitee removed as its only a release test now.
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01001714, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01001714, see Changes.deps* for details
  - build: -4
  - runtime: +5 ↑2
  - test: +4
@@ -1139,16 +1034,14 @@
  [Features]
  - Twitter can be disabled via notwitter.
  - Adds MetaTests to the Test cycle.
- - Adds ReportVersions::Tiny to all distributions to give nice installtime
-   diagnostics.
+ - Adds ReportVersions::Tiny to all distributions to give nice installtime diagnostics.
  - Adds Kwalitee and Portability release tests for QA purposes.
 
  [Internals]
  - Added small system for generating feature set toggles in the bundle.
 
  [Packaging]
- - Handwritten kwalitee.t is replaced by generated one from the
-   KwaliteeTests plugin.
+ - Handwritten kwalitee.t is replaced by generated one from the KwaliteeTests plugin.
 
 0.01001714 2010-06-02T22:11:42Z
  [Documentation]
@@ -1156,22 +1049,20 @@
  - Add ENV flags that also toggle things.
 
  [Features]
- - Can now specify that we only want to tweet a release with
-   KENTNL_TWITTER_ONLY=1 dzil release and get a dumb no-git no-cpan twitter
-   release.
+ - Can now specify that we only want to tweet a release with KENTNL_TWITTER_ONLY=1 dzil release and get a dumb no-git
+   no-cpan twitter release.
 
 0.01001713 2010-06-02T21:04:31Z
  [Packaging]
- - Re-attempted release of 0.01001712  except with a (hopefully) working
-   .netrc so  the twitter thing Actually Works(TM).
+ - Re-attempted release of 0.01001712  except with a (hopefully) working .netrc so  the twitter thing Actually
+   Works(TM).
 
 0.01001712 2010-06-02T20:54:05Z
  [Dependencies]
  - Added Dist::Zilla::Plugin::Twitter 0.007
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01000600, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.01000600, see Changes.deps* for details
  - runtime: +1
 
  [Features]

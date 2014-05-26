@@ -4,8 +4,10 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::MintingProfile::Author::KENTNL;
-$Dist::Zilla::MintingProfile::Author::KENTNL::VERSION = '2.013004';
+
 # ABSTRACT: KENTNL's Minting Profile
+
+our $VERSION = '2.013005'; # TRIAL
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -50,7 +52,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 2.013004
+version 2.013005
 
 =head1 SYNOPSIS
 

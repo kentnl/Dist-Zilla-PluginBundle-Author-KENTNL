@@ -3,7 +3,7 @@ NAME
     build your distributions.
 
 VERSION
-    version 2.013004
+    version 2.013005
 
 SYNOPSIS
         [@Author::KENTNL]
@@ -191,6 +191,13 @@ ATTRIBUTES
     *   "mbtiny" : "Module::Build::Tiny"
 
     *   "eumm" : "ExtUtils::MakeMaker"
+
+  "bumpversions"
+      bumpversions = 1
+
+    If true, use "[BumpVersionAfterRelease]" and
+    "[RewriteVersions::Sanitized]" instead of "[PkgVersion]" and
+    "[Git::NextVersion::Sanitized]"
 
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
