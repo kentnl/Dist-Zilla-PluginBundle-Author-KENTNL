@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.013005'; # TRIAL
+our $VERSION = '2.014000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -240,7 +240,13 @@ has 'auto_prereqs_skip' => (
 
 
 
-has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str', lazy => 1, builder => sub { q[] }, );
+has 'twitter_extra_hash_tags' => (
+  is        => 'ro',
+  'isa'     => 'Str',
+  lazy      => 1,
+  predicate => 'has_twitter_extra_hash_tags',
+  builder   => sub { q[] },
+);
 
 
 
@@ -257,6 +263,7 @@ has 'twitter_hash_tags' => (
   builder => sub {
     my ($self) = @_;
     return '#perl #cpan' unless $self->has_twitter_extra_hash_tags;
+
     return '#perl #cpan ' . $self->twitter_extra_hash_tags;
   },
 );
@@ -597,7 +604,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.013005
+version 2.014000
 
 =head1 SYNOPSIS
 

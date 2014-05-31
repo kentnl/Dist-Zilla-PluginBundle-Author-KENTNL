@@ -1,4 +1,13 @@
-2.013005
+2.014000
+ [Changed / runtime requires]
+ - IO::Socket::SSL 1.989 → 1.991
+ - Moose 2.1206 → 2.1207
+ - Moose::Util::TypeConstraints 2.1206 → 2.1207
+
+ [Changed / test requires]
+ - File::pushd 1.006 → 1.007
+
+2.013005 2014-05-26T01:40:29Z
  [Added / runtime recommends]
  - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
 
