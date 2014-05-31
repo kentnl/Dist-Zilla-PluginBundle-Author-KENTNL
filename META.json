@@ -118,10 +118,10 @@
             "Dist::Zilla::Role::MintingProfile::ShareDir" : "5.019",
             "Dist::Zilla::Role::PluginBundle" : "5.019",
             "Dist::Zilla::Util::EmulatePhase" : "1.000000",
-            "IO::Socket::SSL" : "1.989",
+            "IO::Socket::SSL" : "1.990",
             "LWP::Protocol::https" : "6.04",
-            "Moose" : "2.1206",
-            "Moose::Util::TypeConstraints" : "2.1206",
+            "Moose" : "2.1207",
+            "Moose::Util::TypeConstraints" : "2.1207",
             "MooseX::AttributeShortcuts" : "0.024",
             "MooseX::Has::Sugar" : "1.000000",
             "MooseX::StrictConstructor" : "0.19",
@@ -179,22 +179,22 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.013005"
+         "version" : "2.013006"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.013005"
+         "version" : "2.013006"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.013005"
+         "version" : "2.013006"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.013005"
+         "version" : "2.013006"
       }
    },
-   "release_status" : "testing",
+   "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues"
@@ -206,7 +206,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.013005",
+   "version" : "2.013006",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.141170",
@@ -280,19 +280,19 @@
          "File::pushd" : "1.006",
          "FindBin" : "1.51",
          "Git::Wrapper" : "0.032",
-         "IO::Socket::SSL" : "1.989",
+         "IO::Socket::SSL" : "1.990",
          "JSON" : "2.90",
          "LWP::Protocol::https" : "6.04",
          "List::Util" : "1.38",
          "Module::Build" : "0.4205",
          "Module::Metadata" : "1.000022",
-         "Moose" : "2.1206",
-         "Moose::Util::TypeConstraints" : "2.1206",
+         "Moose" : "2.1207",
+         "Moose::Util::TypeConstraints" : "2.1207",
          "MooseX::AttributeShortcuts" : "0.024",
          "MooseX::Has::Sugar" : "1.000000",
          "MooseX::StrictConstructor" : "0.19",
          "MooseX::Types" : "0.44",
-         "Net::GitHub" : "0.60",
+         "Net::GitHub" : "0.62",
          "Net::SSLeay" : "1.63",
          "Path::Class::Dir" : "0.33",
          "Path::Tiny" : "0.054",
@@ -784,7 +784,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "2.013005-source",
+                  "tag" : "2.013006-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -855,7 +855,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "2.013005",
+                  "tag" : "2.013006",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -1124,7 +1124,7 @@
       "zilla" : {
          "class" : "Dist::Zilla::Dist::Builder",
          "config" : {
-            "is_trial" : "1"
+            "is_trial" : "0"
          },
          "version" : "5.019"
       }
