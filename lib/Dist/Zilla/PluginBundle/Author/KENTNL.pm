@@ -241,11 +241,11 @@ has 'auto_prereqs_skip' => (
 
 
 has 'twitter_extra_hash_tags' => (
-  is      => 'ro',
-  'isa'   => 'Str',
-  lazy    => 1,
+  is        => 'ro',
+  'isa'     => 'Str',
+  lazy      => 1,
   predicate => 'has_twitter_extra_hash_tags',
-  builder => sub { q[] },
+  builder   => sub { q[] },
 );
 
 
