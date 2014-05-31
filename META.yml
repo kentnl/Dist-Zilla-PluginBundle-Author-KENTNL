@@ -37,16 +37,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.014000'
+    version: '2.013006'
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.014000'
+    version: '2.013006'
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.014000'
+    version: '2.013006'
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.014000'
+    version: '2.013006'
 recommends:
   Data::Difference: '0'
   Dist::Zilla::Plugin::Git::NextVersion::Sanitized: '0'
@@ -147,7 +147,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.014000'
+version: '2.013006'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.141170'
@@ -620,7 +620,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 2.014000-source
+          tag: 2.013006-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -674,7 +674,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '2.014000'
+          tag: '2.013006'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local

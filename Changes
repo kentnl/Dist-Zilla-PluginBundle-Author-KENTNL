@@ -1,6 +1,12 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.014000 2014-05-31T22:20:24Z
+2.013006 2014-05-31T22:25:17Z
+ [01 Non-Trial release of new experimental feature]
+ - See 'bumpversions' note in previous change entry.
+
+ [Bugfix]
+ - has_twitter_hash_tags predicate was not configured to exist.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.013005, see Changes.deps* for details
  - runtime: ↑3

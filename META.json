@@ -179,19 +179,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.014000"
+         "version" : "2.013006"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.014000"
+         "version" : "2.013006"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.014000"
+         "version" : "2.013006"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.014000"
+         "version" : "2.013006"
       }
    },
    "release_status" : "stable",
@@ -206,7 +206,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.014000",
+   "version" : "2.013006",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.141170",
@@ -784,7 +784,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "2.014000-source",
+                  "tag" : "2.013006-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -855,7 +855,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "2.014000",
+                  "tag" : "2.013006",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
