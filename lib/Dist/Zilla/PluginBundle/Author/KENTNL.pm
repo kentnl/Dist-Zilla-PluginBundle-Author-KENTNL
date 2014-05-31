@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.013006'; # TRIAL
+our $VERSION = '2.013006';    # TRIAL
 
 # AUTHORITY
 
@@ -240,7 +240,13 @@ Additional hash tags to append to twitter
 
 =cut
 
-has 'twitter_extra_hash_tags' => ( is => 'ro', 'isa' => 'Str', lazy => 1, builder => sub { q[] }, );
+has 'twitter_extra_hash_tags' => (
+  is        => 'ro',
+  'isa'     => 'Str',
+  lazy      => 1,
+  predicate => 'has_twitter_extra_hash_tags',
+  builder   => sub { q[] },
+);
 
 =attr C<twitter_hash_tags>
 
@@ -257,6 +263,7 @@ has 'twitter_hash_tags' => (
   builder => sub {
     my ($self) = @_;
     return '#perl #cpan' unless $self->has_twitter_extra_hash_tags;
+
     return '#perl #cpan ' . $self->twitter_extra_hash_tags;
   },
 );
