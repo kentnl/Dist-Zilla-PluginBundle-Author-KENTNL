@@ -1,4 +1,13 @@
-2.014000
+2.014001
+ [Changed / runtime requires]
+ - IO::Socket::SSL 1.991 → 1.992
+ - Moose 2.1207 → 2.1208
+ - Moose::Util::TypeConstraints 2.1207 → 2.1208
+
+ [Changed / test recommends]
+ - CPAN::Meta 2.141170 → 2.141520
+
+2.014000 2014-05-31T22:25:17Z
  [Changed / runtime requires]
  - IO::Socket::SSL 1.989 → 1.991
  - Moose 2.1206 → 2.1207

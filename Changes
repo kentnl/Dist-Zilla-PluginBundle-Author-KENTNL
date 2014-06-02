@@ -1,6 +1,13 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugfix]
+ - Remove trailing whitespace in a parameter.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.014000, see Changes.deps* for details
+ - runtime: ↑3
+ - test: (recommends: ↑1)
 
 2.014000 2014-05-31T22:25:17Z
  [01 Non-Trial release of new experimental feature]

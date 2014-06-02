@@ -423,7 +423,7 @@ sub configure {
   $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
   if ( 'linux' eq $^O ) {
-    $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{ -s -o -r -m -i }, show_config => 1 }, );
+    $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{-s -o -r -m -i}, show_config => 1 }, );
   }
   else {
     $self->add_plugin( 'MetaData::BuiltWith' => { show_config => 1 } );
