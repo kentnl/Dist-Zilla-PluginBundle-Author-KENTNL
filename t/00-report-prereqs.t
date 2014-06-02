@@ -147,10 +147,10 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Role::MintingProfile::ShareDir' => '5.019',
                                       'Dist::Zilla::Role::PluginBundle' => '5.019',
                                       'Dist::Zilla::Util::EmulatePhase' => '1.000000',
-                                      'IO::Socket::SSL' => '1.991',
+                                      'IO::Socket::SSL' => '1.992',
                                       'LWP::Protocol::https' => '6.04',
-                                      'Moose' => '2.1207',
-                                      'Moose::Util::TypeConstraints' => '2.1207',
+                                      'Moose' => '2.1208',
+                                      'Moose::Util::TypeConstraints' => '2.1208',
                                       'MooseX::AttributeShortcuts' => '0.024',
                                       'MooseX::Has::Sugar' => '1.000000',
                                       'MooseX::StrictConstructor' => '0.19',
@@ -175,7 +175,7 @@ my $static_prereqs = do { my $x = {
                     },
        'test' => {
                    'recommends' => {
-                                     'CPAN::Meta' => '2.141170',
+                                     'CPAN::Meta' => '2.141520',
                                      'CPAN::Meta::Requirements' => '2.125',
                                      'ExtUtils::MakeMaker' => '6.98',
                                      'Test::More' => '1.001003'
