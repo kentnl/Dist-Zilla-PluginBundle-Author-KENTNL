@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.014001 2014-06-02T10:43:25Z
  [Bugfix]
  - Remove trailing whitespace in a parameter.
 
