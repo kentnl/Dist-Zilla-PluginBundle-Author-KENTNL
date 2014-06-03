@@ -401,11 +401,11 @@ sub add_named_plugin {
 
 
 
-sub _is_bake { return current_cmd() and 'bakeini' eq current_cmd() }
+sub _is_bake { return (  current_cmd() and 'bakeini' eq current_cmd() ) }
 
 sub _configure_bumpversions_version {
   my ( $self, ) = @_;
-  return unless $self->bumpversions;
+  return if $self->bumpversions;
   $self->add_plugin(
     'Git::NextVersion::Sanitized' => {
       version_regexp => '^(.*)-source$',
