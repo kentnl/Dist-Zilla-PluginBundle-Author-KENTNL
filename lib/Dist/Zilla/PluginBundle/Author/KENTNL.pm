@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.014001';
+our $VERSION = '2.014002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -15,6 +15,7 @@ use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
 use MooseX::StrictConstructor;
 use MooseX::AttributeShortcuts;
+use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::BundleDeps';
@@ -480,15 +481,22 @@ sub configure {
       -phase                                            => 'develop',
       -type                                             => 'suggests',
       'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
+      (
+        'bakeini' eq current_cmd()
+        ? ( 'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.014000' )
+        : ()
+      )
     },
   );
-  $self->add_named_plugin(
-    'BundleDevelRequires' => 'Prereqs' => {
-      -phase                                      => 'develop',
-      -type                                       => 'requires',
-      'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
-    },
-  );
+  if ( 'bakeini' ne current_cmd() ) {
+    $self->add_named_plugin(
+      'BundleDevelRequires' => 'Prereqs' => {
+        -phase                                      => 'develop',
+        -type                                       => 'requires',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
+      }
+    );
+  }
 
   $self->add_plugin( 'MinimumPerl' => {} );
   $self->add_plugin(
@@ -604,7 +612,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.014001
+version 2.014002
 
 =head1 SYNOPSIS
 

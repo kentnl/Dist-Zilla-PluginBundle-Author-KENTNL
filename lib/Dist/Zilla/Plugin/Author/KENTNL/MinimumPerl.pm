@@ -9,7 +9,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 # CREATED: 31/10/11 05:25:54 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
-our $VERSION = '2.014001';
+our $VERSION = '2.014002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -151,7 +151,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.014001
+version 2.014002
 
 =head1 METHODS
 
