@@ -1,4 +1,53 @@
-2.014001
+2.015000
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Authority
+ - Dist::Zilla::Plugin::AutoPrereqs 5.019
+ - Dist::Zilla::Plugin::BumpVersionAfterRelease 0.002
+ - Dist::Zilla::Plugin::ConfirmRelease 5.019
+ - Dist::Zilla::Plugin::EOLTests 0.02
+ - Dist::Zilla::Plugin::Git::Check 2.022
+ - Dist::Zilla::Plugin::Git::Commit 2.022
+ - Dist::Zilla::Plugin::Git::CommitBuild 2.022
+ - Dist::Zilla::Plugin::Git::GatherDir 2.022
+ - Dist::Zilla::Plugin::Git::NextRelease 0.002010
+ - Dist::Zilla::Plugin::Git::Tag 2.022
+ - Dist::Zilla::Plugin::GithubMeta 0.46
+ - Dist::Zilla::Plugin::License 5.019
+ - Dist::Zilla::Plugin::MakeMaker 5.019
+ - Dist::Zilla::Plugin::Manifest 5.019
+ - Dist::Zilla::Plugin::ManifestSkip 5.019
+ - Dist::Zilla::Plugin::MetaConfig 5.019
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.000000
+ - Dist::Zilla::Plugin::MetaJSON 5.019
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.000001
+ - Dist::Zilla::Plugin::MetaTests 5.019
+ - Dist::Zilla::Plugin::MetaYAML 5.019
+ - Dist::Zilla::Plugin::MinimumPerl 1.003
+ - Dist::Zilla::Plugin::PodCoverageTests 5.019
+ - Dist::Zilla::Plugin::PodSyntaxTests 5.019
+ - Dist::Zilla::Plugin::PodWeaver 4.005
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.001000
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.141120
+ - Dist::Zilla::Plugin::ReadmeFromPod 0.21
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001000
+ - Dist::Zilla::Plugin::RunExtraTests 0.021
+ - Dist::Zilla::Plugin::Test::CPAN::Changes 0.008
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002000
+ - Dist::Zilla::Plugin::Test::Kwalitee 2.07
+ - Dist::Zilla::Plugin::Test::MinimumVersion 2.000005
+ - Dist::Zilla::Plugin::Test::Perl::Critic 2.112410
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.013
+ - Dist::Zilla::Plugin::TestRelease 5.019
+ - Dist::Zilla::Plugin::Twitter 0.025
+ - Dist::Zilla::Plugin::UploadToCPAN 5.019
+
+ [Added / develop suggests]
+ - Dist::Zilla::App::Command::bakeini 0.001000
+
+ [Removed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.7.2
+
+2.014001 2014-06-02T10:43:25Z
 
 2.014000 2014-05-31T22:25:17Z
 

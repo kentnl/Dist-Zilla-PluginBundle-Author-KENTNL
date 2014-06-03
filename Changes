@@ -1,6 +1,11 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.014001, see Changes.deps* for details
+ - develop: +40 (suggests: +1 -1)
+ - runtime: +1
+ - test: ↑1
 
 2.014001 2014-06-02T10:43:25Z
  [Bugfix]

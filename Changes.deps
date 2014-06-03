@@ -1,4 +1,11 @@
-2.014001
+2.015000
+ [Added / runtime requires]
+ - Dist::Zilla::Util::CurrentCmd 0.001000
+
+ [Changed / test requires]
+ - Module::Metadata 1.000022 → 1.000023
+
+2.014001 2014-06-02T10:43:25Z
  [Changed / runtime requires]
  - IO::Socket::SSL 1.991 → 1.992
  - Moose 2.1207 → 2.1208
