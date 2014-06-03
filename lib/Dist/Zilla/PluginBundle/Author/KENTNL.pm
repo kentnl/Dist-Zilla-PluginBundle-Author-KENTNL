@@ -401,43 +401,54 @@ sub add_named_plugin {
 
 
 
-sub configure {
-  my ($self) = @_;
+sub _is_bake { return current_cmd() and 'bakeini' eq current_cmd() }
 
-  # Version
-  if ( not $self->bumpversions ) {
-    $self->add_plugin(
-      'Git::NextVersion::Sanitized' => {
-        version_regexp => '^(.*)-source$',
-        first_version  => '0.001000',
-        normal_form    => $self->normal_form,
-        mantissa       => $self->mantissa,
-      },
-    );
-  }
+sub _configure_bumpversions_version {
+  my ( $self, ) = @_;
+  return unless $self->bumpversions;
+  $self->add_plugin(
+    'Git::NextVersion::Sanitized' => {
+      version_regexp => '^(.*)-source$',
+      first_version  => '0.001000',
+      normal_form    => $self->normal_form,
+      mantissa       => $self->mantissa,
+    },
+  );
+  return;
+}
 
-  # Metadata
-  $self->add_plugin( 'MetaConfig' => {}, );
+sub _configure_basic_metadata {
+  my ( $self, ) = @_;
 
-  $self->add_plugin( 'GithubMeta' => { issues => 1 }, );
-
+  $self->add_plugin( 'MetaConfig'            => {}, );
+  $self->add_plugin( 'GithubMeta'            => { issues => 1 }, );
   $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
+  my $builtwith_options = { show_config => 1 };
+
   if ( 'linux' eq $^O ) {
-    $self->add_plugin( 'MetaData::BuiltWith' => { show_uname => 1, uname_args => q{-s -o -r -m -i}, show_config => 1 }, );
-  }
-  else {
-    $self->add_plugin( 'MetaData::BuiltWith' => { show_config => 1 } );
+    $builtwith_options->{show_uname} = 1;
+    $builtwith_options->{uname_args} = q{-s -o -r -m -i};
   }
 
-  # Gather Files
+  $self->add_plugin( 'MetaData::BuiltWith' => $builtwith_options );
 
+  return;
+}
+
+sub _configure_basic_files {
+  my ($self) = @_;
   $self->add_plugin( 'Git::GatherDir' => { include_dotfiles => 1 } );
   $self->add_plugin( 'License'        => {} );
   $self->add_plugin( 'MetaJSON'       => {} );
   $self->add_plugin( 'MetaYAML'       => {} );
   $self->add_plugin( 'Manifest'       => {} );
-  $self->add_plugin( 'MetaTests'      => {} );
+  return;
+}
+
+sub _configure_basic_tests {
+  my ($self) = @_;
+  $self->add_plugin( 'MetaTests'              => {} );
   $self->add_plugin( 'PodCoverageTests'       => {} );
   $self->add_plugin( 'PodSyntaxTests'         => {} );
   $self->add_plugin( 'Test::ReportPrereqs'    => {} );
@@ -446,23 +457,132 @@ sub configure {
   $self->add_plugin( 'Test::MinimumVersion'   => {} );
   $self->add_plugin( 'Test::Compile::PerFile' => {} );
   $self->add_plugin( 'Test::Perl::Critic'     => {} );
+  return;
+}
+
+sub _configure_pkgversion_munger {
+  my ($self) = @_;
+  if ( not $self->bumpversions ) {
+    $self->add_plugin( 'PkgVersion' => {} );
+    return;
+  }
+  $self->add_plugin(
+    'RewriteVersion::Sanitized' => {
+      normal_form => $self->normal_form,
+      mantissa    => $self->mantissa,
+    },
+  );
+  return;
+}
+
+sub _configure_bundle_develop_suggests {
+  my ($self) = @_;
+  my $deps = {
+    -phase => 'develop',
+    -type  => 'suggests',
+  };
+  if ( _is_bake() ) {
+    $deps->{'Dist::Zilla::PluginBundle::Author::KENTNL'} = $VERSION;
+    $deps->{'Dist::Zilla::App::Command::bakeini'}        = '0.001000';
+  }
+  else {
+    $deps->{'Dist::Zilla::PluginBundle::Author::KENTNL::Lite'} = '1.3.0';
+  }
+  $self->add_named_plugin( 'BundleDevelSuggests' => 'Prereqs' => $deps );
+  return;
+}
+
+sub _configure_bundle_develop_requires {
+  my ($self) = @_;
+  return if _is_bake();
+  $self->add_named_plugin(
+    'BundleDevelRequires' => 'Prereqs' => {
+      -phase                                      => 'develop',
+      -type                                       => 'requires',
+      'Dist::Zilla::PluginBundle::Author::KENTNL' => $VERSION,
+    },
+  );
+  return;
+}
+
+sub _configure_toolkit {
+  my ($self) = @_;
+  my $tk = $self->toolkit;
+  if ( 'mb' eq $tk ) {
+    $self->add_plugin( 'ModuleBuild' => { default_jobs => 10 } );
+    return;
+  }
+  if ( 'eumm' eq $tk ) {
+    $self->add_plugin( 'MakeMaker' => { default_jobs => 10 } );
+    return;
+  }
+  if ( 'mbtiny' eq $tk ) {
+    $self->add_plugin( 'ModuleBuildTiny' => { default_jobs => 10 } );
+    return;
+  }
+  return;
+}
+
+sub _configure_toolkit_prereqs {
+  my ($self) = @_;
+
+  my @extra_match_installed = qw( Test::More );
+  unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
+  unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbtiny' eq $self->toolkit;
+  unshift @extra_match_installed, 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
+
+  if ( 'hard' eq $self->toolkit_hardness ) {
+    $self->add_plugin(
+      'Prereqs::MatchInstalled' => {
+        modules => \@extra_match_installed,
+      },
+    );
+  }
+  if ( 'soft' eq $self->toolkit_hardness ) {
+    $self->add_plugin(
+      'Prereqs::Recommend::MatchInstalled' => {
+        modules => \@extra_match_installed,
+      },
+    );
+  }
+
+  my $applymap = [ 'develop.requires = develop.requires', ];
+
+  $applymap = [ 'develop.suggests = develop.suggests', ] if _is_bake();
+
+  my @bundles = ('Dist::Zilla::PluginBundle::Author::KENTNL');
+
+  push @bundles, 'Dist::Zilla::App::Command::bakeini' if _is_bake();
+
+  $self->add_named_plugin(
+    'always_latest_develop_bundle' => 'Prereqs::Recommend::MatchInstalled' => {
+      applyto_map   => $applymap,
+      applyto_phase => [ 'develop', ],
+      modules       => [@bundles],
+    },
+  );
+
+}
+
+sub configure {
+  my ($self) = @_;
+
+  # Version
+  $self->_configure_bumpversions_version;
+
+  # MetaData
+  $self->_configure_basic_metadata;
+
+  # Gather Files
+  $self->_configure_basic_files;
+  $self->_configure_basic_tests;
 
   # Prune files
 
   $self->add_plugin( 'ManifestSkip' => {} );
 
   # Mungers
-  if ( $self->bumpversions ) {
-    $self->add_plugin(
-      'RewriteVersion::Sanitized' => {
-        normal_form => $self->normal_form,
-        mantissa    => $self->mantissa,
-      },
-    );
-  }
-  else {
-    $self->add_plugin( 'PkgVersion' => {} );
-  }
+  $self->_configure_pkgversion_munger;
   $self->add_plugin(
     'PodWeaver' => {
       replacer => 'replace_with_blank',
@@ -477,31 +597,9 @@ sub configure {
     $self->add_plugin( 'AutoPrereqs' => $autoprereqs_hash );
   }
 
-  {
-    my $bundle_deps_suggest = {
-      -phase => 'develop',
-      -type  => 'suggests',
-    };
-    if ( current_cmd() and 'bakeini' eq current_cmd() ) {
-      $bundle_deps_suggest->{'Dist::Zilla::PluginBundle::Author::KENTNL'} = $VERSION;
-      $bundle_deps_suggest->{'Dist::Zilla::App::Command::bakeini'}        = '0.001000';
-    }
-    else {
-      $bundle_deps_suggest->{'Dist::Zilla::PluginBundle::Author::KENTNL::Lite'} = '1.3.0';
-    }
+  $self->_configure_bundle_develop_suggests();
+  $self->_configure_bundle_develop_requires();
 
-    $self->add_named_plugin( 'BundleDevelSuggests' => 'Prereqs' => $bundle_deps_suggest );
-  }
-  {
-    last if current_cmd() and 'bakeini' eq current_cmd();
-    $self->add_named_plugin(
-      'BundleDevelRequires' => 'Prereqs' => {
-        -phase                                      => 'develop',
-        -type                                       => 'requires',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => $VERSION,
-      },
-    );
-  }
   $self->add_plugin( 'MinimumPerl' => {} );
   $self->add_plugin(
     'Authority' => {
@@ -512,9 +610,7 @@ sub configure {
     },
   );
 
-  $self->add_plugin( 'ModuleBuild'     => { default_jobs => 10 } ) if 'mb' eq $self->toolkit;
-  $self->add_plugin( 'MakeMaker'       => { default_jobs => 10 } ) if 'eumm' eq $self->toolkit;
-  $self->add_plugin( 'ModuleBuildTiny' => { default_jobs => 10 } ) if 'mbtiny' eq $self->toolkit;
+  $self->_configure_toolkit;
 
   $self->add_plugin( 'ReadmeFromPod' => {} );
   $self->add_plugin(
@@ -553,33 +649,8 @@ sub configure {
     },
   );
 
-  my @extra_match_installed = qw( Test::More );
-  unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
-  unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbtiny' eq $self->toolkit;
-  unshift @extra_match_installed, 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
+  $self->_configure_toolkit_prereqs;
 
-  if ( 'hard' eq $self->toolkit_hardness ) {
-    $self->add_plugin(
-      'Prereqs::MatchInstalled' => {
-        modules => \@extra_match_installed,
-      },
-    );
-  }
-  if ( 'soft' eq $self->toolkit_hardness ) {
-    $self->add_plugin(
-      'Prereqs::Recommend::MatchInstalled' => {
-        modules => \@extra_match_installed,
-      },
-    );
-  }
-
-  $self->add_named_plugin(
-    'always_latest_develop_bundle' => 'Prereqs::Recommend::MatchInstalled' => {
-      applyto_map   => [ 'develop.requires = develop.requires', ],
-      applyto_phase => [ 'develop', ],
-      modules       => [ qw( Dist::Zilla::PluginBundle::Author::KENTNL ), ],
-    },
-  );
   return;
 }
 
