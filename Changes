@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.015000 2014-06-03T05:21:36Z
  [00 Major]
  - Bundle now adjusted for use with `dzil bakeini`
  - ini file now baked and bundle free.
