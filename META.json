@@ -940,13 +940,14 @@
             "config" : {
                "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : {
                   "applyto_map" : [
-                     "develop.requires = develop.requires"
+                     "develop.suggests = develop.suggests"
                   ],
                   "applyto_phase" : [
                      "develop"
                   ],
                   "modules" : [
-                     "Dist::Zilla::PluginBundle::Author::KENTNL"
+                     "Dist::Zilla::PluginBundle::Author::KENTNL",
+                     "Dist::Zilla::App::Command::bakeini"
                   ]
                }
             },
