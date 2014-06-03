@@ -16,6 +16,7 @@ Makefile.PL
 README
 corpus/global/config.ini
 dist.ini
+dist.ini.meta
 layout/self_structure.dot
 layout/self_structure.png
 lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
