@@ -483,11 +483,11 @@ sub configure {
       -type  => 'suggests',
     };
     if ( 'bakeini' eq current_cmd() ) {
-      $bundle_deps_suggest{'Dist::Zilla::PluginBundle::Author::KENTNL'} = '2.014000';
-      $bundle_deps_suggest{'Dist::Zilla::App::Command::bakeini'}        = '0.001000';
+      $bundle_deps_suggest->{'Dist::Zilla::PluginBundle::Author::KENTNL'} = '2.014000';
+      $bundle_deps_suggest->{'Dist::Zilla::App::Command::bakeini'}        = '0.001000';
     }
     else {
-      $bundle_deps_suggest{'Dist::Zilla::PluginBundle::Author::KENTNL::Lite'} = '1.3.0';
+      $bundle_deps_suggest->{'Dist::Zilla::PluginBundle::Author::KENTNL::Lite'} = '1.3.0';
     }
 
     $self->add_named_plugin( 'BundleDevelSuggests' => 'Prereqs' => $bundle_deps_suggest );
