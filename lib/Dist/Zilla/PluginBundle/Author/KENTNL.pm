@@ -561,7 +561,7 @@ sub _configure_toolkit_prereqs {
       modules       => [@bundles],
     },
   );
-
+  return;
 }
 
 sub configure {
