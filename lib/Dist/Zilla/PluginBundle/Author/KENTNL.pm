@@ -483,7 +483,10 @@ sub configure {
       'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
       (
         'bakeini' eq current_cmd()
-        ? ( 'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.014000' )
+        ? (
+          'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.014000',
+          'Dist::Zilla::App::Command::bakeini'        => '0.001000',
+          )
         : ()
       )
     },

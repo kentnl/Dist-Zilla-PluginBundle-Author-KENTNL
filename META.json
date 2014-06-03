@@ -711,17 +711,6 @@
             "version" : "5.019"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "develop",
-                  "type" : "requires"
-               }
-            },
-            "name" : "@Author::KENTNL/BundleDevelRequires",
-            "version" : "5.019"
-         },
-         {
             "class" : "Dist::Zilla::Plugin::MinimumPerl",
             "name" : "@Author::KENTNL/MinimumPerl",
             "version" : "1.003"
