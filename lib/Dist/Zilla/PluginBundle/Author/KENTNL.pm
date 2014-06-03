@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.014002';
+our $VERSION = '2.015000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -483,7 +483,7 @@ sub configure {
       -type  => 'suggests',
     };
     if ( 'bakeini' eq current_cmd() ) {
-      $bundle_deps_suggest->{'Dist::Zilla::PluginBundle::Author::KENTNL'} = '2.014000';
+      $bundle_deps_suggest->{'Dist::Zilla::PluginBundle::Author::KENTNL'} = $VERSION;
       $bundle_deps_suggest->{'Dist::Zilla::App::Command::bakeini'}        = '0.001000';
     }
     else {
@@ -498,7 +498,7 @@ sub configure {
       'BundleDevelRequires' => 'Prereqs' => {
         -phase                                      => 'develop',
         -type                                       => 'requires',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.014000',
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => $VERSION,
       },
     );
   }
@@ -616,7 +616,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.014002
+version 2.015000
 
 =head1 SYNOPSIS
 
