@@ -110,7 +110,8 @@ my $static_prereqs = do { my $x = {
                                       'Test::Pod::Coverage' => '1.08'
                                     },
                       'suggests' => {
-                                      'Dist::Zilla::App::Command::bakeini' => '0.001000'
+                                      'Dist::Zilla::App::Command::bakeini' => '0.001000',
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.015000'
                                     }
                     },
        'runtime' => {
