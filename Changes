@@ -1,6 +1,11 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Major]
+ - Bundle now adjusted for use with `dzil bakeini`
+ - ini file now baked and bundle free.
+ - This means 'dzil authordeps' will cease needing a bundle install ;)
+
  [Dependencies::Stats]
  - Dependencies changed since 2.014001, see Changes.deps* for details
  - develop: +40 (suggests: +1 -1)
