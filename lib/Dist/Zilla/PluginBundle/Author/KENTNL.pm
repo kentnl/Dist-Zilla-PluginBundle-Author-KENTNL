@@ -482,7 +482,7 @@ sub configure {
       -phase => 'develop',
       -type  => 'suggests',
     };
-    if ( 'bakeini' eq current_cmd() ) {
+    if ( current_cmd() and 'bakeini' eq current_cmd() ) {
       $bundle_deps_suggest->{'Dist::Zilla::PluginBundle::Author::KENTNL'} = $VERSION;
       $bundle_deps_suggest->{'Dist::Zilla::App::Command::bakeini'}        = '0.001000';
     }
@@ -493,7 +493,7 @@ sub configure {
     $self->add_named_plugin( 'BundleDevelSuggests' => 'Prereqs' => $bundle_deps_suggest );
   }
   {
-    last if 'bakeini' eq current_cmd();
+    last if current_cmd() and 'bakeini' eq current_cmd();
     $self->add_named_plugin(
       'BundleDevelRequires' => 'Prereqs' => {
         -phase                                      => 'develop',
