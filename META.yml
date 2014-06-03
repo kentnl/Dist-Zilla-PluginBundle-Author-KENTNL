@@ -211,7 +211,6 @@ x_BuiltWith:
     Dist::Zilla::Plugin::TestRelease: '5.019'
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.019'
-    Dist::Zilla::PluginBundle::Author::KENTNL: '2.015000'
     Dist::Zilla::Role::BundleDeps: '0.001001'
     Dist::Zilla::Role::FileGatherer: '5.019'
     Dist::Zilla::Role::MintingProfile::ShareDir: '5.019'
@@ -750,6 +749,7 @@ x_Dist_Zilla:
           remove_build: []
           remove_configure: []
           remove_develop:
+            - Dist::Zilla::PluginBundle::Author::KENTNL
             - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
           remove_runtime:
             - Dist::Zilla::PluginBundle::Author::KENTNL
