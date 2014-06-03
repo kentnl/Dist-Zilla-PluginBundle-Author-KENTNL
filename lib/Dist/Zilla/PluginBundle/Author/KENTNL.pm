@@ -476,31 +476,32 @@ sub configure {
     $autoprereqs_hash->{skips} = $self->auto_prereqs_skip if $self->has_auto_prereqs_skip;
     $self->add_plugin( 'AutoPrereqs' => $autoprereqs_hash );
   }
-  $self->add_named_plugin(
-    'BundleDevelSuggests' => 'Prereqs' => {
-      -phase                                            => 'develop',
-      -type                                             => 'suggests',
-      'Dist::Zilla::PluginBundle::Author::KENTNL::Lite' => '1.3.0',
-      (
-        'bakeini' eq current_cmd()
-        ? (
-          'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.014000',
-          'Dist::Zilla::App::Command::bakeini'        => '0.001000',
-          )
-        : ()
-      )
-    },
-  );
-  if ( 'bakeini' ne current_cmd() ) {
+
+  {
+    my $bundle_deps_suggest = {
+      -phase => 'develop',
+      -type  => 'suggests',
+    };
+    if ( 'bakeini' eq current_cmd() ) {
+      $bundle_deps_suggest{'Dist::Zilla::PluginBundle::Author::KENTNL'} = '2.014000';
+      $bundle_deps_suggest{'Dist::Zilla::App::Command::bakeini'}        = '0.001000';
+    }
+    else {
+      $bundle_deps_suggest{'Dist::Zilla::PluginBundle::Author::KENTNL::Lite'} = '1.3.0';
+    }
+
+    $self->add_named_plugin( 'BundleDevelSuggests' => 'Prereqs' => $bundle_deps_suggest );
+  }
+  {
+    last if 'bakeini' eq current_cmd();
     $self->add_named_plugin(
       'BundleDevelRequires' => 'Prereqs' => {
         -phase                                      => 'develop',
         -type                                       => 'requires',
-        'Dist::Zilla::PluginBundle::Author::KENTNL' => '1.3.0',
-      }
+        'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.014000',
+      },
     );
   }
-
   $self->add_plugin( 'MinimumPerl' => {} );
   $self->add_plugin(
     'Authority' => {

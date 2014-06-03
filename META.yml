@@ -157,6 +157,7 @@ x_BuiltWith:
     Carp: '1.3301'
     Data::Difference: '0.112850'
     Dist::Zilla: '5.019'
+    Dist::Zilla::App::Command::bakeini: '0.001000'
     Dist::Zilla::File::FromCode: '5.019'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.019'
