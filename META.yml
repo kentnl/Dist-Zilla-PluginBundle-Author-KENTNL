@@ -211,7 +211,6 @@ x_BuiltWith:
     Dist::Zilla::Plugin::TestRelease: '5.019'
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.019'
-    Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
     Dist::Zilla::Role::BundleDeps: '0.001001'
     Dist::Zilla::Role::FileGatherer: '5.019'
     Dist::Zilla::Role::MintingProfile::ShareDir: '5.019'
