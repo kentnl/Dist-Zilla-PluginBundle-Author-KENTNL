@@ -32,6 +32,7 @@
             "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.002",
             "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.012",
             "Dist::Zilla::Plugin::ConfirmRelease" : "5.019",
+            "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.103510",
             "Dist::Zilla::Plugin::EOLTests" : "0.02",
             "Dist::Zilla::Plugin::Git::Check" : "2.022",
             "Dist::Zilla::Plugin::Git::Commit" : "2.022",
@@ -115,6 +116,7 @@
             "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000001",
             "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.002",
             "Dist::Zilla::Plugin::ConfirmRelease" : "5.019",
+            "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.103510",
             "Dist::Zilla::Plugin::EOLTests" : "0.02",
             "Dist::Zilla::Plugin::Git::Check" : "2.022",
             "Dist::Zilla::Plugin::Git::Commit" : "2.022",
@@ -264,6 +266,7 @@
          "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.002",
          "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.012",
          "Dist::Zilla::Plugin::ConfirmRelease" : "5.019",
+         "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.103510",
          "Dist::Zilla::Plugin::EOLTests" : "0.02",
          "Dist::Zilla::Plugin::Git::Check" : "2.022",
          "Dist::Zilla::Plugin::Git::Commit" : "2.022",
@@ -477,6 +480,11 @@
             "class" : "Dist::Zilla::Plugin::License",
             "name" : "@Author::KENTNL/License",
             "version" : "5.019"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::CopyFilesFromBuild",
+            "name" : "@Author::KENTNL/CopyLicense",
+            "version" : "0.103510"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
