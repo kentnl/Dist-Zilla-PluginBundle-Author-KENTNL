@@ -631,6 +631,7 @@ sub _configure_reademes {
 
   $self->add_plugin( 'ReadmeAnyFromPod' => { location => 'root', %{ $map->{$type} } }, );
 
+  return;
 }
 
 sub configure {
