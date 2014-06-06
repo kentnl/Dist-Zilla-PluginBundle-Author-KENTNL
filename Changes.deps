@@ -1,4 +1,16 @@
-2.015000
+2.016000
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::CopyFilesFromBuild 0.103510
+
+ [Changed / runtime requires]
+ - Moose 2.1208 → 2.1209
+ - Moose::Util::TypeConstraints 2.1208 → 2.1209
+
+ [Changed / test requires]
+ - List::Util 1.38 → 1.39
+ - Module::Metadata 1.000023 → 1.000024
+
+2.015000 2014-06-03T05:21:36Z
  [Added / runtime requires]
  - Dist::Zilla::Util::CurrentCmd 0.001000
 

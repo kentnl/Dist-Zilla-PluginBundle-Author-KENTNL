@@ -5,6 +5,12 @@
  - add copyfiles attribute to easily support copying files from build.
  - add srcreadme attribute to control how README is generated in the build tree.
 
+ [Dependencies::Stats]
+ - Dependencies changed since 2.015000, see Changes.deps* for details
+ - develop: +1
+ - runtime: +1 ↑2
+ - test: ↑2
+
 2.015000 2014-06-03T05:21:36Z
  [00 Major]
  - Bundle now adjusted for use with `dzil bakeini`
