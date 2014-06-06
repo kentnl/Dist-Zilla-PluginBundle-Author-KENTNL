@@ -19,6 +19,7 @@ toolkit           = eumm
 toolkit_hardness  = soft
 bumpversions      = 1
 copyfiles         = LICENSE
+srcreadme         = mkdn
 
 [ModuleShareDirs]
 Dist::Zilla::MintingProfile::Author::KENTNL = share/profiles
