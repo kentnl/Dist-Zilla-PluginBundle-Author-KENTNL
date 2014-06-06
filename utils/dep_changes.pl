@@ -189,7 +189,7 @@ while ( @tags > 1 ) {
       }
     }
     $master_release->add_changes( { group => 'Dependencies::Stats' },
-      'Dependencies changed since ' . $old . ', see Changes.deps* for details', @changes );
+      'Dependencies changed since ' . $old . ', see misc/*.deps* for details', @changes );
   }
   for my $key ( sort keys %{ $diff->cache } ) {
     my $label = $key;
@@ -214,8 +214,13 @@ $Text::Wrap::columns = 120;
 $Text::Wrap::break   = '(?![\x{00a0}\x{202f}])\s';
 $Text::Wrap::huge    = 'overflow';
 
-path('./Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize ) );
-path('./Changes.deps')->spew_utf8( _maybe( $changes->serialize ) );
-path('./Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) );
-path('./Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
+my $misc = path('./misc');
+if ( not -d $misc ) {
+  $misc->mkpath;
+}
+$misc->child('Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize ) );
+$misc->child('Changes.deps')->spew_utf8( _maybe( $changes->serialize ) );
+$misc->child('Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) );
+$misc->child('Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
+
 path('./Changes')->spew_utf8( _maybe( $master_changes->serialize ) );

@@ -1,5 +1,17 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.016000 2014-06-06T07:53:47Z
+ [00 Major]
+ - add copyfiles attribute to easily support copying files from build.
+ - add srcreadme attribute to control how README is generated in the build tree.
+ - Changes.deps* generator now writes files in misc/ to keep top level clutter down.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.015000, see misc/*.deps* for details
+ - develop: +1
+ - runtime: +1 ↑2
+ - test: ↑2
+
 2.015000 2014-06-03T05:21:36Z
  [00 Major]
  - Bundle now adjusted for use with `dzil bakeini`
@@ -7,7 +19,7 @@
  - This means 'dzil authordeps' will cease needing a bundle install ;)
 
  [Dependencies::Stats]
- - Dependencies changed since 2.014001, see Changes.deps* for details
+ - Dependencies changed since 2.014001, see misc/*.deps* for details
  - develop: +40 (suggests: +1 -1)
  - runtime: +1
  - test: ↑1
@@ -17,7 +29,7 @@
  - Remove trailing whitespace in a parameter.
 
  [Dependencies::Stats]
- - Dependencies changed since 2.014000, see Changes.deps* for details
+ - Dependencies changed since 2.014000, see misc/*.deps* for details
  - runtime: ↑3
  - test: (recommends: ↑1)
 
@@ -29,7 +41,7 @@
  - has_twitter_hash_tags predicate was not configured to exist.
 
  [Dependencies::Stats]
- - Dependencies changed since 2.013005, see Changes.deps* for details
+ - Dependencies changed since 2.013005, see misc/*.deps* for details
  - runtime: ↑3
  - test: ↑1
 
@@ -52,7 +64,7 @@
  - 5.019009 : 277 → 279
 
  [Dependencies::Stats]
- - Dependencies changed since 2.013004, see Changes.deps* for details
+ - Dependencies changed since 2.013004, see misc/*.deps* for details
  - develop: ↑4
  - runtime: +2 ↑23 -2 (recommends: +1)
  - test: +1 ↑1
@@ -69,7 +81,7 @@
  - https://gist.github.com/kentfredric/1ac2697f6d6a4112c798#file-5-010-analysis
 
  [Dependencies::Stats]
- - Dependencies changed since 2.013003, see Changes.deps* for details
+ - Dependencies changed since 2.013003, see misc/*.deps* for details
  - configure: (recommends: ↑1)
  - develop: ↑5
  - runtime: ↑35
@@ -91,7 +103,7 @@
  - Dep bumps
 
  [Dependencies::Stats]
- - Dependencies changed since 2.013000, see Changes.deps* for details
+ - Dependencies changed since 2.013000, see misc/*.deps* for details
  - configure: (recommends: ↑1)
  - runtime: ↑5
  - test: (recommends: ↑1)
@@ -104,7 +116,7 @@
  - Now come with a different perlcritic.rc
 
  [Dependencies::Stats]
- - Dependencies changed since 2.012002, see Changes.deps* for details
+ - Dependencies changed since 2.012002, see misc/*.deps* for details
  - develop: ↑1
  - runtime: ↑3
 
@@ -116,7 +128,7 @@
  - Dep bump
 
  [Dependencies::Stats]
- - Dependencies changed since 2.012001, see Changes.deps* for details
+ - Dependencies changed since 2.012001, see misc/*.deps* for details
  - configure: (recommends: ↑1)
  - develop: ↑3
  - runtime: ↑25
@@ -132,7 +144,7 @@
  - 5.019 : 277 → 275
 
  [Dependencies::Stats]
- - Dependencies changed since 2.012000, see Changes.deps* for details
+ - Dependencies changed since 2.012000, see misc/*.deps* for details
  - configure: (recommends: ↑1)
  - develop: ↑3
  - runtime: ↑35
@@ -144,7 +156,7 @@
  - Future release may default to EUMM
 
  [Dependencies::Stats]
- - Dependencies changed since 2.011001, see Changes.deps* for details
+ - Dependencies changed since 2.011001, see misc/*.deps* for details
  - build: -1 (recommends: -1)
  - configure: +2 -1 (recommends: +1 -1)
  - runtime: +1 -1
@@ -176,7 +188,7 @@
  - No more forced upgrading MB on Perl >5.11
 
  [Dependencies::Stats]
- - Dependencies changed since 2.010001, see Changes.deps* for details
+ - Dependencies changed since 2.010001, see misc/*.deps* for details
  - build: ↓1 (recommends: +1)
  - configure: ↓1 (recommends: +1)
  - develop: ↑1
@@ -188,7 +200,7 @@
  - mantissa should now only be required if normal_form eq numify
 
  [Dependencies::Stats]
- - Dependencies changed since 2.010000, see Changes.deps* for details
+ - Dependencies changed since 2.010000, see misc/*.deps* for details
  - develop: ↑3
  - runtime: ↑28
  - test: ↑2 ↓1
@@ -198,7 +210,7 @@
  - use Test::ReportPrereqs
 
  [Dependencies::Stats]
- - Dependencies changed since 2.009000, see Changes.deps* for details
+ - Dependencies changed since 2.009000, see misc/*.deps* for details
  - develop: -1
  - runtime: +1 ↑2 -1
  - test: +3 ↑1 (recommends: +2)
@@ -208,7 +220,7 @@
  - use # AUTHORITY comments
 
  [Dependencies::Stats]
- - Dependencies changed since 2.008001, see Changes.deps* for details
+ - Dependencies changed since 2.008001, see misc/*.deps* for details
  - runtime: ↑2
 
 2.008001 2014-01-12T22:12:04Z
@@ -216,7 +228,7 @@
  - Dep ramping
 
  [Dependencies::Stats]
- - Dependencies changed since 2.008000, see Changes.deps* for details
+ - Dependencies changed since 2.008000, see misc/*.deps* for details
  - develop: ↑3
  - runtime: ↑22
  - test: ↑1
@@ -236,7 +248,7 @@
  - Dzil upgrade for new package version magic
 
  [Dependencies::Stats]
- - Dependencies changed since 2.007003, see Changes.deps* for details
+ - Dependencies changed since 2.007003, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: ↑3
@@ -248,7 +260,7 @@
  - Upgrade Moose depenencies to 2.1200
 
  [Dependencies::Stats]
- - Dependencies changed since 2.007002, see Changes.deps* for details
+ - Dependencies changed since 2.007002, see misc/*.deps* for details
  - runtime: ↑2
 
 2.007002 2014-01-08T03:20:39Z
@@ -257,14 +269,14 @@
  - Apply some stricter PerlCritic policies
 
  [Dependencies::Stats]
- - Dependencies changed since 2.007001, see Changes.deps* for details
+ - Dependencies changed since 2.007001, see misc/*.deps* for details
  - develop: ↑4
  - runtime: ↑26
  - test: ↑2
 
 2.007001 2013-12-29T09:10:42Z
  [Dependencies::Stats]
- - Dependencies changed since 2.007000, see Changes.deps* for details
+ - Dependencies changed since 2.007000, see misc/*.deps* for details
  - develop: ↑5
  - runtime: ↑25
  - test: ↑3
@@ -276,14 +288,14 @@
  - Switch to Git::NextVersion::Sanitized
 
  [Dependencies::Stats]
- - Dependencies changed since 2.006001, see Changes.deps* for details
+ - Dependencies changed since 2.006001, see misc/*.deps* for details
  - runtime: +1 -1
 
 2.006001 2013-12-01T05:07:52Z
  - That last release is about to unhappen. kentnl--
 
  [Dependencies::Stats]
- - Dependencies changed since 2.6.0, see Changes.deps* for details
+ - Dependencies changed since 2.6.0, see misc/*.deps* for details
  - runtime: ↑1
 
 2.6.0 2013-12-01T02:35:19Z
@@ -296,7 +308,7 @@
  - Experimental utility added that generates a source ⇄ release conversion patch.
 
  [Dependencies::Stats]
- - Dependencies changed since 2.005000, see Changes.deps* for details
+ - Dependencies changed since 2.005000, see misc/*.deps* for details
  - runtime: +4 ↑1 -1
 
 2.005000 2013-11-29T19:31:25Z
@@ -304,7 +316,7 @@
  - We use Git::GatherDir anyway.
 
  [Dependencies::Stats]
- - Dependencies changed since 2.004002, see Changes.deps* for details
+ - Dependencies changed since 2.004002, see misc/*.deps* for details
  - runtime: -1
 
 2.004002 2013-11-28T13:27:17Z
@@ -316,7 +328,7 @@
  - requires new versions of lots of plugins
 
  [Dependencies::Stats]
- - Dependencies changed since 2.004001, see Changes.deps* for details
+ - Dependencies changed since 2.004001, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - runtime: ↑12
@@ -329,7 +341,7 @@
  - Make sure to include the last diff instead of only as far as the second last diff
 
  [Dependencies::Stats]
- - Dependencies changed since 2.004000, see Changes.deps* for details
+ - Dependencies changed since 2.004000, see misc/*.deps* for details
  - runtime: ↑2
 
 2.004000 2013-11-22T03:04:44Z
@@ -339,7 +351,7 @@
  - change diff tool now +x
 
  [Dependencies::Stats]
- - Dependencies changed since 2.003000, see Changes.deps* for details
+ - Dependencies changed since 2.003000, see misc/*.deps* for details
  - develop: ↑1
 
 2.003000 2013-11-22T00:30:56Z
@@ -351,7 +363,7 @@
  - Changelog retroactively tidied
 
  [Dependencies::Stats]
- - Dependencies changed since 2.002001, see Changes.deps* for details
+ - Dependencies changed since 2.002001, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: ↑1
@@ -364,7 +376,7 @@
  - Refactor code to share more logic
 
  [Dependencies::Stats]
- - Dependencies changed since 2.002000, see Changes.deps* for details
+ - Dependencies changed since 2.002000, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - runtime: ↑3
@@ -375,7 +387,7 @@
  - Swap out Test::Compile with Test::Compile::PerFile, which is marginally faster.
 
  [Dependencies::Stats]
- - Dependencies changed since 2.001000, see Changes.deps* for details
+ - Dependencies changed since 2.001000, see misc/*.deps* for details
  - develop: ↑4
  - runtime: +1 ↑26 -1
  - test: ↑1 -3
@@ -385,7 +397,7 @@
  - Reasonably sizeable tooling changes to propagate more develop deps
 
  [Dependencies::Stats]
- - Dependencies changed since 2.000000, see Changes.deps* for details
+ - Dependencies changed since 2.000000, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: +8 ↑1 -1
@@ -399,7 +411,7 @@
  - Default versioning scheme for new dists is now single-decimal.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.9.0, see Changes.deps* for details
+ - Dependencies changed since 1.9.0, see misc/*.deps* for details
  - develop: ↑2
  - runtime: +1 ↑7 ↓1
 
@@ -412,7 +424,7 @@
    consuming things, as long as you edit the right dist.ini's to make it so.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.4, see Changes.deps* for details
+ - Dependencies changed since 1.8.4, see misc/*.deps* for details
  - develop: +1 -1 (recommends: -1, suggests: +1 -1)
 
 1.8.4 2013-09-26T11:16:23Z
@@ -422,7 +434,7 @@
  - Remove EOL from generated dist.ini
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.3, see Changes.deps* for details
+ - Dependencies changed since 1.8.3, see misc/*.deps* for details
  - develop: ↑3 (recommends: ↑1, suggests: ↑1)
  - runtime: ↑39
  - test: +2 ↑2
@@ -432,7 +444,7 @@
  - Revert some far too aggressive version bumps on core things.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.2, see Changes.deps* for details
+ - Dependencies changed since 1.8.2, see misc/*.deps* for details
  - develop: (suggests: ↑1)
  - test: ↓2
 
@@ -442,7 +454,7 @@
  - Bumping to get newer Test::Compile test
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.1, see Changes.deps* for details
+ - Dependencies changed since 1.8.1, see misc/*.deps* for details
  - develop: (suggests: ↑1)
  - runtime: ↑28
  - test: +2 ↑1 -1
@@ -460,7 +472,7 @@
  - stop using autobox, its slow and inhibits us from dropping Moose
 
  [Dependencies::Stats]
- - Dependencies changed since 1.8.0, see Changes.deps* for details
+ - Dependencies changed since 1.8.0, see misc/*.deps* for details
  - develop: +1 ↑2 (suggests: ↑1)
  - runtime: ↑2 -2
 
@@ -470,7 +482,7 @@
    versions. This is mostly to smoke out any dependencies that need to be added to the exclusion list.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.7, see Changes.deps* for details
+ - Dependencies changed since 1.7.7, see misc/*.deps* for details
  - develop: ↑5 (suggests: ↑1)
  - runtime: +7 ↑48 -1
  - test: ↑9
@@ -481,7 +493,7 @@
    Lepik for reporting.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.6, see Changes.deps* for details
+ - Dependencies changed since 1.7.6, see misc/*.deps* for details
  - develop: (suggests: ↑1)
  - runtime: ↓1
 
@@ -490,7 +502,7 @@
  - Fix test failures introduced by new dependencies
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.5, see Changes.deps* for details
+ - Dependencies changed since 1.7.5, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: (suggests: ↑1)
@@ -501,7 +513,7 @@
  - Minor Changes, backend deps switched.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.4, see Changes.deps* for details
+ - Dependencies changed since 1.7.4, see misc/*.deps* for details
  - develop: (suggests: ↑1)
  - runtime: +1 -1
 
@@ -510,7 +522,7 @@
  - ::Twitter bumped for API v1.0 deprecation
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.3, see Changes.deps* for details
+ - Dependencies changed since 1.7.3, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: (suggests: ↑1)
@@ -526,7 +538,7 @@
  - add a small arsenal of utils
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.2, see Changes.deps* for details
+ - Dependencies changed since 1.7.2, see misc/*.deps* for details
  - develop: +1 (suggests: ↑1)
  - runtime: ↑2
 
@@ -534,7 +546,7 @@
  - minor release, packaging / update Module::Build
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.1, see Changes.deps* for details
+ - Dependencies changed since 1.7.1, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - runtime: +1
@@ -549,7 +561,7 @@
  - Minor release to test changes to DZP:Git
 
  [Dependencies::Stats]
- - Dependencies changed since 1.7.0, see Changes.deps* for details
+ - Dependencies changed since 1.7.0, see misc/*.deps* for details
  - runtime: ↑5
 
  [Documentation]
@@ -561,7 +573,7 @@
  - Dependencies Ramped.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.6.0, see Changes.deps* for details
+ - Dependencies changed since 1.6.0, see misc/*.deps* for details
  - runtime: +3 ↑41
 
  [Documentation]
@@ -576,7 +588,7 @@
  - maintenance release
 
  [Dependencies::Stats]
- - Dependencies changed since 1.5.0, see Changes.deps* for details
+ - Dependencies changed since 1.5.0, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: +5
@@ -593,14 +605,14 @@
 
 1.4.3 2012-07-28T20:37:33Z
  [Dependencies::Stats]
- - Dependencies changed since 1.4.2, see Changes.deps* for details
+ - Dependencies changed since 1.4.2, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - runtime: +1 ↑2
 
 1.4.2 2012-07-07T15:40:38Z
  [Dependencies::Stats]
- - Dependencies changed since 1.4.1, see Changes.deps* for details
+ - Dependencies changed since 1.4.1, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: -1
@@ -609,7 +621,7 @@
 
 1.4.0 2012-04-11T20:24:43Z
  [Dependencies::Stats]
- - Dependencies changed since 1.3.1, see Changes.deps* for details
+ - Dependencies changed since 1.3.1, see misc/*.deps* for details
  - test: +1
 
  [Features]
@@ -617,7 +629,7 @@
 
 1.3.1 2012-03-12T15:17:53Z
  [Dependencies::Stats]
- - Dependencies changed since 1.3.0, see Changes.deps* for details
+ - Dependencies changed since 1.3.0, see misc/*.deps* for details
  - develop: (recommends: ↑1, suggests: ↑1)
  - runtime: ↑1
 
@@ -630,7 +642,7 @@
 
 1.2.1 2012-02-27T05:12:12Z
  [Dependencies::Stats]
- - Dependencies changed since 1.2.0, see Changes.deps* for details
+ - Dependencies changed since 1.2.0, see misc/*.deps* for details
  - runtime: +1 ↑3
 
  [Packaging]
@@ -638,7 +650,7 @@
 
 1.2.0 2011-11-05T06:33:40Z
  [Dependencies::Stats]
- - Dependencies changed since 1.1.1, see Changes.deps* for details
+ - Dependencies changed since 1.1.1, see misc/*.deps* for details
  - develop: (suggests: ↑1)
  - runtime: -1
 
@@ -651,12 +663,12 @@
 
 1.1.1 2011-10-31T04:25:07Z
  [Dependencies::Stats]
- - Dependencies changed since 1.1.0, see Changes.deps* for details
+ - Dependencies changed since 1.1.0, see misc/*.deps* for details
  - runtime: +1
 
 1.1.0 2011-10-30T18:18:21Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.22, see Changes.deps* for details
+ - Dependencies changed since 1.0.22, see misc/*.deps* for details
  - develop: (suggests: ↑1)
  - runtime: +4
 
@@ -684,7 +696,7 @@
  - Update dependency on ::Twitter for TRIAL support.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.21, see Changes.deps* for details
+ - Dependencies changed since 1.0.21, see misc/*.deps* for details
  - runtime: ↑1
 
  [Internals]
@@ -696,7 +708,7 @@
 
 1.0.20 2011-09-10T19:45:36Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.19, see Changes.deps* for details
+ - Dependencies changed since 1.0.19, see misc/*.deps* for details
  - runtime: +1
 
  [Features]
@@ -716,12 +728,12 @@
  - Update Test::Kwalitee 1.112410 to avoid a bug with 'plan'
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.16, see Changes.deps* for details
+ - Dependencies changed since 1.0.16, see misc/*.deps* for details
  - runtime: +2 ↑1 -2 (suggests: -1)
 
 1.0.16 2011-08-28T07:59:59Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.15, see Changes.deps* for details
+ - Dependencies changed since 1.0.15, see misc/*.deps* for details
  - runtime: +2 -2 (suggests: +1)
  - test: -1
 
@@ -733,7 +745,7 @@
  - Recent Dist::Zilla / Prereq Scanners report strict/warnings which broke tests. Fixed now, thanks tjmc.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.14, see Changes.deps* for details
+ - Dependencies changed since 1.0.14, see misc/*.deps* for details
  - runtime: +3 ↑1
 
  [Internals]
@@ -744,7 +756,7 @@
  - Reworked handling of auto_prereqs_skip not to carp needlessly.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.13, see Changes.deps* for details
+ - Dependencies changed since 1.0.13, see misc/*.deps* for details
  - test: +1
 
  [Features]
@@ -764,7 +776,7 @@
  - Dist::Zilla 4.200011 is now the minimum requirement, as that has the adjusted Autoprereqs
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.12, see Changes.deps* for details
+ - Dependencies changed since 1.0.12, see misc/*.deps* for details
  - runtime: ↑1
 
  [Packaging]
@@ -775,7 +787,7 @@
  - Version explicit dependency added to Test::File::ShareDir 0.3.0 which is required for -root to be optional.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.11, see Changes.deps* for details
+ - Dependencies changed since 1.0.11, see misc/*.deps* for details
  - test: ↑1
 
 1.0.11 2011-07-11T04:56:38Z
@@ -793,7 +805,7 @@
 
 1.0.9 2011-06-13T23:50:29Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.8, see Changes.deps* for details
+ - Dependencies changed since 1.0.8, see misc/*.deps* for details
  - test: +8
 
  [Features]
@@ -817,7 +829,7 @@
  - Depend on LWP::Protocol::https >= 6.0 to make sure ::Twitter works.
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.6, see Changes.deps* for details
+ - Dependencies changed since 1.0.6, see misc/*.deps* for details
  - runtime: +1
 
  [Utils]
@@ -825,7 +837,7 @@
 
 1.0.6 2011-04-13T13:15:49Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.5, see Changes.deps* for details
+ - Dependencies changed since 1.0.5, see misc/*.deps* for details
  - runtime: +1 -1
 
  [Features]
@@ -846,7 +858,7 @@
  - Upgrade deps to avoid rt#67183
 
  [Dependencies::Stats]
- - Dependencies changed since 1.0.3, see Changes.deps* for details
+ - Dependencies changed since 1.0.3, see misc/*.deps* for details
  - runtime: ↑1
 
  [Features]
@@ -858,7 +870,7 @@
 
 1.0.3 2011-04-03T01:00:33Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.2, see Changes.deps* for details
+ - Dependencies changed since 1.0.2, see misc/*.deps* for details
  - runtime: +1
 
  [Features]
@@ -870,7 +882,7 @@
 
 1.0.2 2011-02-07T14:53:13Z
  [Dependencies::Stats]
- - Dependencies changed since 1.0.1, see Changes.deps* for details
+ - Dependencies changed since 1.0.1, see misc/*.deps* for details
  - develop: +1 -1 (recommends: +1 -1, suggests: +1 -1)
 
  [Documentation]
@@ -882,7 +894,7 @@
 
 1.0.1 2011-01-12T19:03:19Z
  [Dependencies::Stats]
- - Dependencies changed since 1.000.000, see Changes.deps* for details
+ - Dependencies changed since 1.000.000, see misc/*.deps* for details
  - develop: (suggests: ↑1)
 
  [Packaging]
@@ -897,7 +909,7 @@
 
 0.01023312 2011-01-01T20:01:33Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01023311, see Changes.deps* for details
+ - Dependencies changed since 0.01023311, see misc/*.deps* for details
  - runtime: +3 -2
 
 0.01023311 2011-01-01T19:31:37Z
@@ -905,7 +917,7 @@
  - Ini generation previously produced "Prereq" instead of the now-standard "Prereqs". This is now fixed.
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01017322, see Changes.deps* for details
+ - Dependencies changed since 0.01017322, see misc/*.deps* for details
  - runtime: +2
 
  [Features]
@@ -921,12 +933,12 @@
 
 0.01017322 2010-11-04T06:56:23Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01017122, see Changes.deps* for details
+ - Dependencies changed since 0.01017122, see misc/*.deps* for details
  - runtime: ↑3
 
 0.01017122 2010-11-02T06:00:35Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01017119, see Changes.deps* for details
+ - Dependencies changed since 0.01017119, see misc/*.deps* for details
  - develop: +1 (recommends: +1, suggests: +1)
 
  [Features]
@@ -939,7 +951,7 @@
 
 0.01010423 2010-08-28T07:47:18Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01009310, see Changes.deps* for details
+ - Dependencies changed since 0.01009310, see misc/*.deps* for details
  - develop: +1
 
  [Features]
@@ -947,7 +959,7 @@
 
 0.01009310 2010-08-16T18:13:54Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01008321, see Changes.deps* for details
+ - Dependencies changed since 0.01008321, see misc/*.deps* for details
  - runtime: +1
  - test: +1 -2
 
@@ -959,7 +971,7 @@
 
 0.01008321 2010-08-07T05:56:23Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01007922, see Changes.deps* for details
+ - Dependencies changed since 0.01007922, see misc/*.deps* for details
  - runtime: ↑1
 
  [Features]
@@ -967,7 +979,7 @@
 
 0.01007922 2010-08-03T06:25:33Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01007006, see Changes.deps* for details
+ - Dependencies changed since 0.01007006, see misc/*.deps* for details
  - runtime: +22 ↑6 -1
 
  [Features]
@@ -978,7 +990,7 @@
  - Upgraded a few deps for MetaProvides split.
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01006912, see Changes.deps* for details
+ - Dependencies changed since 0.01006912, see misc/*.deps* for details
  - runtime: +1 ↑2
  - test: -1
 
@@ -987,7 +999,7 @@
 
 0.01006912 2010-07-23T20:56:10Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01002610, see Changes.deps* for details
+ - Dependencies changed since 0.01002610, see misc/*.deps* for details
  - runtime: ↑2
 
  [Documentation]
@@ -1001,7 +1013,7 @@
 
 0.01002610 2010-06-11T18:44:05Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01002504, see Changes.deps* for details
+ - Dependencies changed since 0.01002504, see misc/*.deps* for details
  - runtime: +2 ↑2 -1
 
  [Features]
@@ -1010,7 +1022,7 @@
 
 0.01002504 2010-06-10T12:10:51Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01002419, see Changes.deps* for details
+ - Dependencies changed since 0.01002419, see misc/*.deps* for details
  - runtime: +3
 
  [Features]
@@ -1019,7 +1031,7 @@
 
 0.01002419 2010-06-10T03:38:51Z
  [Dependencies::Stats]
- - Dependencies changed since 0.01002321, see Changes.deps* for details
+ - Dependencies changed since 0.01002321, see misc/*.deps* for details
  - runtime: +2
  - test: +2
 
@@ -1034,7 +1046,7 @@
  - added precursors for Net::Twitter on Win32
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01002309, see Changes.deps* for details
+ - Dependencies changed since 0.01002309, see misc/*.deps* for details
  - runtime: +2
 
  [Packaging]
@@ -1059,7 +1071,7 @@
  - Test::Kwalitee removed as its only a release test now.
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01001714, see Changes.deps* for details
+ - Dependencies changed since 0.01001714, see misc/*.deps* for details
  - build: -4
  - runtime: +5 ↑2
  - test: +4
@@ -1095,7 +1107,7 @@
  - Added Dist::Zilla::Plugin::Twitter 0.007
 
  [Dependencies::Stats]
- - Dependencies changed since 0.01000600, see Changes.deps* for details
+ - Dependencies changed since 0.01000600, see misc/*.deps* for details
  - runtime: +1
 
  [Features]
