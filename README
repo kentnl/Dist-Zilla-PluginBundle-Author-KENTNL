@@ -208,6 +208,24 @@ ATTRIBUTES
 
     *   Copy LICENSE to "/" during build
 
+  "copymakefilepl"
+      copymakefilepl = 1
+
+    If true:
+
+    *   Ignore Makefile.PL in "/"
+
+    *   Copy Makefile.PL to "/" during build
+
+  "copymetajson"
+      copymakefilepl = 1
+
+    If true:
+
+    *   Ignore META.json in "/"
+
+    *   Copy META.json to "/" during build
+
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 

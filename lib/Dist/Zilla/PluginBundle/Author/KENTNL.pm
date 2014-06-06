@@ -384,6 +384,52 @@ has copylicense => (
 
 
 
+
+
+
+
+
+
+
+
+
+
+has copymakefilepl => (
+  is      => ro  =>,
+  isa     => 'Bool',
+  lazy    => 1,
+  builder => sub { undef },
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+has copymetajson => (
+  is      => ro  =>,
+  isa     => 'Bool',
+  lazy    => 1,
+  builder => sub { undef },
+);
+
+
+
+
+
+
+
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
@@ -462,17 +508,27 @@ sub _configure_basic_metadata {
 sub _configure_basic_files {
   my ($self) = @_;
   my $GGD = { include_dotfiles => 1 };
-  if ( $self->copylicense ) {
-    push @{ $GGD->{exclude_filename} }, q[LICENSE];
+  my @copylist;
+
+  push @copylist, q[LICENSE]     if $self->copylicense;
+  push @copylist, q[Makefile.PL] if $self->copymakefilepl;
+  push @copylist, q[META.json]   if $self->copymetajson;
+
+  if (@copylist) {
+    push $GGD->{exclude_filename} = [@copylist];
   }
+
   $self->add_plugin( 'Git::GatherDir' => $GGD );
   $self->add_plugin( 'License'        => {} );
-  if ( $self->copylicense ) {
-    $self->add_named_plugin( 'CopyLicense' => 'CopyFilesFromBuild', { copy => ['LICENSE'] } );
-  }
+
   $self->add_plugin( 'MetaJSON' => {} );
   $self->add_plugin( 'MetaYAML' => {} );
   $self->add_plugin( 'Manifest' => {} );
+
+  if (@copylist) {
+    $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [@copylist] } );
+  }
+
   return;
 }
 
@@ -949,6 +1005,34 @@ If true:
 =item * Ignore LICENSE in C</>
 
 =item * Copy LICENSE to C</> during build
+
+=back
+
+=head2 C<copymakefilepl>
+
+  copymakefilepl = 1
+
+If true:
+
+=over 4
+
+=item * Ignore Makefile.PL in C</>
+
+=item * Copy Makefile.PL to C</> during build
+
+=back
+
+=head2 C<copymetajson>
+
+  copymakefilepl = 1
+
+If true:
+
+=over 4
+
+=item * Ignore META.json in C</>
+
+=item * Copy META.json to C</> during build
 
 =back
 
