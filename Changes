@@ -1,8 +1,10 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.016000 2014-06-06T00:22:47Z
+2.016000 2014-06-06T01:52:58Z
  [00 Major]
  - add copylicense attribute to support/create LICENSE in source tree.
+ - add copymakefilepl attribute that injects Makefile.PL in source tree
+ - add copymetajson attribute that injects META.json in source tree
 
 2.015000 2014-06-03T05:21:36Z
  [00 Major]
