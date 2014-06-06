@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 # VERSION
 
-version 2.015000
+version 2.016000
 
 # SYNOPSIS
 
@@ -197,6 +197,15 @@ Determines which tooling to generate the distribution with
 
 If true, use `[BumpVersionAfterRelease]`  and `[RewriteVersions::Sanitized]` instead of `[PkgVersion]` and
 `[Git::NextVersion::Sanitized]`
+
+## `copylicense`
+
+    copylicense = 1
+
+If true:
+
+- Ignore LICENSE in `/`
+- Copy LICENSE to `/` during build
 
 # AUTHOR
 
