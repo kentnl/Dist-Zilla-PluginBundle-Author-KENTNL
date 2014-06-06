@@ -611,7 +611,7 @@ sub _configure_toolkit_prereqs {
   return;
 }
 
-sub _configure_reademes {
+sub _configure_readmes {
   my ($self) = @_;
 
   $self->add_plugin( 'ReadmeFromPod' => {} );
