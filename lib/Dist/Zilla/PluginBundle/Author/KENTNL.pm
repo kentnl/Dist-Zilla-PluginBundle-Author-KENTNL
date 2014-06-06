@@ -474,6 +474,8 @@ sub _configure_basic_files {
   my ($self)         = @_;
   my (@ignore_files) = qw( README README.mkdn README.pod );
 
+  push @ignore_files, @{ $self->copyfiles };
+
   $self->add_plugin(
     'Git::GatherDir' => {
       include_dotfiles => 1,
