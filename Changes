@@ -1,6 +1,8 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.015001 2014-06-03T05:28:59Z
+2.015001 2014-06-06T00:14:47Z
+ [00 Major]
+ - add copylicense attribute to support/create LICENSE in source tree.
 
 2.015000 2014-06-03T05:21:36Z
  [00 Major]
