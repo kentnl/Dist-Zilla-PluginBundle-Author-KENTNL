@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.015001 2014-06-03T05:28:59Z
+
 2.015000 2014-06-03T05:21:36Z
  [00 Major]
  - Bundle now adjusted for use with `dzil bakeini`

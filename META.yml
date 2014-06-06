@@ -15,7 +15,7 @@ build_requires:
   JSON: '2.90'
   List::Util: '1.38'
   Module::Build: '0'
-  Module::Metadata: '1.000023'
+  Module::Metadata: '1.000024'
   Path::Class::Dir: '0.33'
   Path::Tiny: '0.054'
   Test::DZil: '5.019'
@@ -37,16 +37,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.015000'
+    version: '2.015001'
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.015000'
+    version: '2.015001'
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.015000'
+    version: '2.015001'
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.015000'
+    version: '2.015001'
 recommends:
   Data::Difference: '0'
   Dist::Zilla::Plugin::Git::NextVersion::Sanitized: '0'
@@ -148,7 +148,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.015000'
+version: '2.015001'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.141520'
@@ -228,7 +228,7 @@ x_BuiltWith:
     LWP::Protocol::https: '6.04'
     List::Util: '1.38'
     Module::Build: '0.4205'
-    Module::Metadata: '1.000023'
+    Module::Metadata: '1.000024'
     Moose: '2.1208'
     Moose::Util::TypeConstraints: '2.1208'
     MooseX::AttributeShortcuts: '0.024'
@@ -614,7 +614,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 2.015000-source
+          tag: 2.015001-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -668,7 +668,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '2.015000'
+          tag: '2.015001'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local

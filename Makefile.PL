@@ -114,7 +114,7 @@ my %WriteMakefileArgs = (
     "JSON" => "2.90",
     "List::Util" => "1.38",
     "Module::Build" => 0,
-    "Module::Metadata" => "1.000023",
+    "Module::Metadata" => "1.000024",
     "Path::Class::Dir" => "0.33",
     "Path::Tiny" => "0.054",
     "Test::DZil" => "5.019",
@@ -124,7 +124,7 @@ my %WriteMakefileArgs = (
     "Test::Output" => "1.03",
     "lib" => 0
   },
-  "VERSION" => "2.015000",
+  "VERSION" => "2.015001",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -198,7 +198,7 @@ my %FallbackPrereqs = (
   "LWP::Protocol::https" => "6.04",
   "List::Util" => "1.38",
   "Module::Build" => 0,
-  "Module::Metadata" => "1.000023",
+  "Module::Metadata" => "1.000024",
   "Moose" => "2.1208",
   "Moose::Util::TypeConstraints" => "2.1208",
   "MooseX::AttributeShortcuts" => "0.024",

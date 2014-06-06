@@ -3,7 +3,7 @@ NAME
     build your distributions.
 
 VERSION
-    version 2.015000
+    version 2.015001
 
 SYNOPSIS
         [@Author::KENTNL]
@@ -198,6 +198,15 @@ ATTRIBUTES
     If true, use "[BumpVersionAfterRelease]" and
     "[RewriteVersions::Sanitized]" instead of "[PkgVersion]" and
     "[Git::NextVersion::Sanitized]"
+
+  "copylicense"
+      copylicense = 1
+
+    If true:
+
+    *   Ignore LICENSE in "/"
+
+    *   Copy LICENSE to "/" during build
 
 AUTHOR
     Kent Fredric <kentnl@cpan.org>

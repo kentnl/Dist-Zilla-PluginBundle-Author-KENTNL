@@ -234,7 +234,7 @@ my $static_prereqs = do { my $x = {
                                    'JSON' => '2.90',
                                    'List::Util' => '1.38',
                                    'Module::Build' => '0',
-                                   'Module::Metadata' => '1.000023',
+                                   'Module::Metadata' => '1.000024',
                                    'Path::Class::Dir' => '0.33',
                                    'Path::Tiny' => '0.054',
                                    'Test::DZil' => '5.019',

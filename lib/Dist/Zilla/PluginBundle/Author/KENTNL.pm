@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.015000';
+our $VERSION = '2.015001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -361,6 +361,29 @@ has 'bumpversions' => (
 
 
 
+
+
+
+
+
+
+
+
+
+
+has copylicense => (
+  is      => ro  =>,
+  isa     => 'Bool',
+  lazy    => 1,
+  builder => sub { undef },
+);
+
+
+
+
+
+
+
 sub add_plugin {
   my ( $self, $suffix, $conf ) = @_;
   if ( not defined $conf ) {
@@ -438,11 +461,18 @@ sub _configure_basic_metadata {
 
 sub _configure_basic_files {
   my ($self) = @_;
-  $self->add_plugin( 'Git::GatherDir' => { include_dotfiles => 1 } );
+  my $GGD = { include_dotfiles => 1 };
+  if ( $self->copylicense ) {
+    push @{ $GGD->{exclude_filename} }, q[LICENSE];
+  }
+  $self->add_plugin( 'Git::GatherDir' => $GGD );
   $self->add_plugin( 'License'        => {} );
-  $self->add_plugin( 'MetaJSON'       => {} );
-  $self->add_plugin( 'MetaYAML'       => {} );
-  $self->add_plugin( 'Manifest'       => {} );
+  if ( $self->copylicense ) {
+    $self->add_named_plugin( 'CopyLicense' => 'CopyFilesFromBuild', { copy => ['LICENSE'] } );
+  }
+  $self->add_plugin( 'MetaJSON' => {} );
+  $self->add_plugin( 'MetaYAML' => {} );
+  $self->add_plugin( 'Manifest' => {} );
   return;
 }
 
@@ -687,7 +717,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.015000
+version 2.015001
 
 =head1 SYNOPSIS
 
@@ -907,6 +937,20 @@ Determines which tooling to generate the distribution with
 
 If true, use C<[BumpVersionAfterRelease]>  and C<[RewriteVersions::Sanitized]> instead of C<[PkgVersion]> and
 C<[Git::NextVersion::Sanitized]>
+
+=head2 C<copylicense>
+
+  copylicense = 1
+
+If true:
+
+=over 4
+
+=item * Ignore LICENSE in C</>
+
+=item * Copy LICENSE to C</> during build
+
+=back
 
 =begin MetaPOD::JSON v1.1.0
 
