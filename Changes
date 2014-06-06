@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Major]
+ - add copylicense attribute to support/create LICENSE in source tree.
 
 2.015000 2014-06-03T05:21:36Z
  [00 Major]

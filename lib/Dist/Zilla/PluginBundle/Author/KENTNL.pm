@@ -355,6 +355,29 @@ has 'bumpversions' => (
   builder => sub { undef },
 );
 
+=attr C<copylicense>
+
+  copylicense = 1
+
+If true:
+
+=over 4
+
+=item * Ignore LICENSE in C</>
+
+=item * Copy LICENSE to C</> during build
+
+=back
+
+=cut
+
+has copylicense => (
+  is      => ro  =>,
+  isa     => 'Bool',
+  lazy    => 1,
+  builder => sub { undef },
+);
+
 =method C<add_plugin>
 
     $bundle_object->add_plugin("Basename" => { config_hash } );
@@ -438,11 +461,18 @@ sub _configure_basic_metadata {
 
 sub _configure_basic_files {
   my ($self) = @_;
-  $self->add_plugin( 'Git::GatherDir' => { include_dotfiles => 1 } );
+  my $GGD = { include_dotfiles => 1 };
+  if ( $self->copylicense ) {
+    push @{ $GGD->{exclude_filename} }, q[LICENSE];
+  }
+  $self->add_plugin( 'Git::GatherDir' => $GGD );
   $self->add_plugin( 'License'        => {} );
-  $self->add_plugin( 'MetaJSON'       => {} );
-  $self->add_plugin( 'MetaYAML'       => {} );
-  $self->add_plugin( 'Manifest'       => {} );
+  if ( $self->copylicense ) {
+    $self->add_named_plugin( 'CopyLicense' => 'CopyFilesFromBuild', { copy => ['LICENSE'] } );
+  }
+  $self->add_plugin( 'MetaJSON' => {} );
+  $self->add_plugin( 'MetaYAML' => {} );
+  $self->add_plugin( 'Manifest' => {} );
   return;
 }
 
