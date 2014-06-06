@@ -4,10 +4,6 @@
 .travis.yml
 .travis_early_installdeps.master
 Changes
-Changes.deps
-Changes.deps.all
-Changes.deps.dev
-Changes.deps.opt
 LICENSE
 MANIFEST
 META.json
@@ -42,6 +38,10 @@ maint-travis-ci/yamls/sterile.mkdn
 maint-travis-ci/yamls/sterile.yaml
 maint-travis-ci/yamls/sterile2.yaml
 maint/perlcritic.rc.gen.pl
+misc/Changes.deps
+misc/Changes.deps.all
+misc/Changes.deps.dev
+misc/Changes.deps.opt
 perlcritic.deps
 perlcritic.rc
 share/profiles/default/ModuleTemplate.pm.tpl

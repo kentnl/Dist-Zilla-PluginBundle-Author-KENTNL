@@ -1,4 +1,8 @@
-2.015000
+2.016000
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::CopyFilesFromBuild 0.103510
+
+2.015000 2014-06-03T05:21:36Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Authority
  - Dist::Zilla::Plugin::AutoPrereqs 5.019
