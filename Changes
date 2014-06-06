@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.016000 2014-06-06T02:57:01Z
+2.016000 2014-06-06T03:47:55Z
  [00 Major]
  - add copyfiles attribute to easily support copying files from build.
 

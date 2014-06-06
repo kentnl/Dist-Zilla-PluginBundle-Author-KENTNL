@@ -209,6 +209,11 @@ ATTRIBUTES
       copyfiles = Makefile.PL
       copyfiles = META.json
 
+  "srcreadme"
+      srcreadme = pod  ; # generate README.pod on the source side
+      srcreadme = mkdn ; # generate README.mkdn on the source side
+      srcreadme = none ; # don't generate README on the source side
+
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
