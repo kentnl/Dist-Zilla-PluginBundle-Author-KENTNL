@@ -1,8 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.016000 2014-06-06T03:47:55Z
+2.016000 2014-06-06T04:02:03Z
  [00 Major]
  - add copyfiles attribute to easily support copying files from build.
+ - add srcreadme attribute to control how README is generated in the build tree.
 
 2.015000 2014-06-03T05:21:36Z
  [00 Major]
