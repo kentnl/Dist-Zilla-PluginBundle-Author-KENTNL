@@ -371,7 +371,7 @@ has copyfiles => (
   is      => ro  =>,
   isa     => 'ArrayRef[ Str ]',
   lazy    => 1,
-  builder => sub { undef },
+  builder => sub { [] },
 );
 
 =attr C<srcreadme>
