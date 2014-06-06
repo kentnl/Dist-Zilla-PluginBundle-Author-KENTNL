@@ -18,6 +18,7 @@ bundledeps_phase = runtime
 toolkit = eumm
 toolkit_hardness = soft
 bumpversions = 1
+copylicense = 1
 ;version_major = 0
 ;version_minor = 1
 ;version_rel_year = 2010
