@@ -4,6 +4,7 @@
  [00 Major]
  - add copyfiles attribute to easily support copying files from build.
  - add srcreadme attribute to control how README is generated in the build tree.
+ - Changes.deps* generator now writes files in misc/ to keep top level clutter down.
 
  [Dependencies::Stats]
  - Dependencies changed since 2.015000, see misc/*.deps* for details
