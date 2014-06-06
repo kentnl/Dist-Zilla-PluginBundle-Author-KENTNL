@@ -355,10 +355,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/License'
       version: '5.019'
     -
-      class: Dist::Zilla::Plugin::CopyFilesFromBuild
-      name: '@Author::KENTNL/CopyLicense'
-      version: '0.103510'
-    -
       class: Dist::Zilla::Plugin::MetaJSON
       name: '@Author::KENTNL/MetaJSON'
       version: '5.019'
@@ -370,6 +366,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Manifest
       name: '@Author::KENTNL/Manifest'
       version: '5.019'
+    -
+      class: Dist::Zilla::Plugin::CopyFilesFromBuild
+      name: '@Author::KENTNL/CopyXBuild'
+      version: '0.103510'
     -
       class: Dist::Zilla::Plugin::MetaTests
       name: '@Author::KENTNL/MetaTests'

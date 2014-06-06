@@ -482,11 +482,6 @@
             "version" : "5.019"
          },
          {
-            "class" : "Dist::Zilla::Plugin::CopyFilesFromBuild",
-            "name" : "@Author::KENTNL/CopyLicense",
-            "version" : "0.103510"
-         },
-         {
             "class" : "Dist::Zilla::Plugin::MetaJSON",
             "name" : "@Author::KENTNL/MetaJSON",
             "version" : "5.019"
@@ -500,6 +495,11 @@
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "@Author::KENTNL/Manifest",
             "version" : "5.019"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::CopyFilesFromBuild",
+            "name" : "@Author::KENTNL/CopyXBuild",
+            "version" : "0.103510"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaTests",

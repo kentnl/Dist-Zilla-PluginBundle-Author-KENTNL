@@ -515,7 +515,7 @@ sub _configure_basic_files {
   push @copylist, q[META.json]   if $self->copymetajson;
 
   if (@copylist) {
-    push $GGD->{exclude_filename} = [@copylist];
+    $GGD->{exclude_filename} = [@copylist];
   }
 
   $self->add_plugin( 'Git::GatherDir' => $GGD );
