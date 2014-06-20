@@ -1,4 +1,6 @@
-2.016000
+2.016001
+
+2.016000 2014-06-06T07:53:47Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::CopyFilesFromBuild 0.103510
 

@@ -63,6 +63,7 @@ my $changes_all = CPAN::Changes->new();
 my $changes_dev = CPAN::Changes->new();
 
 my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/{{\$NEXT}}/ );
+$ENV{PERL_JSON_BACKEND} = 'JSON';
 
 while ( @tags > 1 ) {
   my ( $old, $new ) = ( $tags[-2], $tags[-1] );
@@ -102,51 +103,39 @@ while ( @tags > 1 ) {
   next unless defined $old_meta_sha1 and length $old_meta_sha1;
   next unless defined $new_meta_sha1 and length $new_meta_sha1;
 
-  my $diff = depsdiff->new(
+  my $ddiff = depsdiff->new(
     json_a => ( join qq[\n], $git->cat_file( '-p', $old_meta_sha1 ) ),
     json_b => ( join qq[\n], $git->cat_file( '-p', $new_meta_sha1 ) ),
   );
-  $diff->execute;
 
   $master_release->delete_group('Dependencies::Stats') if $master_release;
 
-  next unless keys %{ $diff->cache };
+  my ( @diffs ) = $ddiff->changes;
+
+  next unless @diffs;
 
   if ($master_release) {
     my $phases = {};
 
-    for my $key ( sort keys %{ $diff->cache } ) {
-      if ( $key =~ qr{^Dependencies::(\S+)\s+/\s+(\S+)\s+(\S+)$}msx ) {
-        my ( $dir, $phase, $rel ) = ( $1, $2, $3 );
-        my $phase_m = "$phase";
-        if ( not exists $phases->{$phase_m} ) {
-          $phases->{$phase_m} = {};
-        }
-        if ( not exists $phases->{$phase_m}->{$rel} ) {
-          $phases->{$phase_m}->{$rel} = { Added => 0, Upgrade => 0, Downgrade => 0, Removed => 0 };
-        }
+    for my $diff ( @diffs ) {
+      my $phase_m = $diff->phase;
+      my $rel = $diff->type;
 
-        my $stash = $phases->{$phase_m}->{$rel};
+      if ( not exists $phases->{$phase_m} ) {
+        $phases->{$phase_m} = {};
+      }
+      if ( not exists $phases->{$phase_m}->{$rel} ) {
+        $phases->{$phase_m}->{$rel} = { Added => 0, Upgrade => 0, Downgrade => 0, Removed => 0, Changed => 0 };
+      }
+      my $stash = $phases->{$phase_m}->{$rel};
 
-        for my $entry ( @{ $diff->cache->{$key} } ) {
-          if ( $dir eq 'Added' or $dir eq 'Removed' ) {
-            $stash->{$dir}++;
-          }
-          else {
-            if ( $entry =~ /(\S+)\s+→\s+(\S+)/ ) {
-              my ( $lhs, $rhs ) = ( $1, $2 );
-
-              my $lhs_v = version->parse($lhs);
-              my $rhs_v = version->parse($rhs);
-
-              if ( $lhs_v < $rhs_v ) {
-                $stash->{Upgrade}++;
-              }
-              else {
-                $stash->{Downgrade}++;
-              }
-            }
-          }
+      $stash->{Added}++ if $diff->is_addition;
+      $stash->{Removed}++ if $diff->is_removal;
+      if( $diff->is_change ) {
+        $stash->{Upgrade}++ if $diff->is_upgrade;
+        $stash->{Downgrade}++ if $diff->is_downgrade;
+        if ( not $diff->is_upgrade and not $diff->is_downgrade ) {
+          $stash->{Changed}++;
         }
       }
     }
@@ -191,20 +180,37 @@ while ( @tags > 1 ) {
     $master_release->add_changes( { group => 'Dependencies::Stats' },
       'Dependencies changed since ' . $old . ', see misc/*.deps* for details', @changes );
   }
-  for my $key ( sort keys %{ $diff->cache } ) {
-    my $label = $key;
-    $label =~ s/Dependencies:://msx;
-    $changes_all->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
-    if ( $key !~ /develop/ ) {
-      if ( $key =~ /requires/ ) {
-        $changes->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
+  my $arrowjoin = qq[\x{A0}\x{2192}\x{A0}];
+
+  for my $diff ( @diffs  ) {
+    my $prefix = '';
+    $prefix = 'Added' if $diff->is_addition;
+    $prefix = 'Removed' if $diff->is_removal;
+    $prefix = 'Changed' if $diff->is_change;
+
+    my $label = $prefix . q[ / ] . $diff->phase . q[ ] . $diff->type;
+
+    my $change = '';
+
+    if ( not $diff->is_change ) {
+      $change = $diff->module;
+      if ( $diff->requirement ne '0' ) {
+        $change .= q[ ] . $diff->requirement;
+      }
+    } else {
+      $change = $diff->module . q[ ] . $diff->old_requirement . $arrowjoin . $diff->new_requirement;
+    }
+    $changes_all->release($version)->add_changes( { group => $label }, $change );
+    if ( 'develop' ne $diff->phase ) {
+      if ( 'requires' eq $diff->type ) {
+        $changes->release($version)->add_changes( { group => $label }, $change );
       }
       else {
-        $changes_opt->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
+        $changes_opt->release($version)->add_changes( { group => $label }, $change );
       }
     }
     else {
-      $changes_dev->release($version)->add_changes( { group => $label }, @{ $diff->cache->{$key} } );
+      $changes_dev->release($version)->add_changes( { group => $label }, $change );
     }
   }
 }
