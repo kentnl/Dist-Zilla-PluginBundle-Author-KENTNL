@@ -1,4 +1,12 @@
 2.016001
+ [Added / runtime recommends]
+ - CPAN::Meta
+ - CPAN::Meta::Prereqs::Diff
+ - JSON
+ - JSON::XS
+
+ [Removed / runtime recommends]
+ - Data::Difference
 
 2.016000 2014-06-06T07:53:47Z
 
