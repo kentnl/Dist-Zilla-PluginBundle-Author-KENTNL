@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Trivial]
+ - Rework dep_changes util to use CPAN::Meta::Prereqs::Diff
+
 
 2.016000 2014-06-06T07:53:47Z
  [00 Major]
