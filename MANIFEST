@@ -24,7 +24,7 @@ misc/Changes.deps
 misc/Changes.deps.all
 misc/Changes.deps.dev
 misc/Changes.deps.opt
-perlcritic.deps
+misc/perlcritic.deps
 perlcritic.rc
 share/profiles/default/ModuleTemplate.pm.tpl
 share/profiles/default/profile.ini

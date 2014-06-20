@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.016001 2014-06-20T14:57:22Z
+2.016001 2014-06-20T15:01:23Z
  [00 Trivial]
  - Rework dep_changes util to use CPAN::Meta::Prereqs::Diff
 
