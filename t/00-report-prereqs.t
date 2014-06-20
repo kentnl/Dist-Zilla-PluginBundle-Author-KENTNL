@@ -116,13 +116,16 @@ my $static_prereqs = do { my $x = {
                     },
        'runtime' => {
                       'recommends' => {
-                                        'Data::Difference' => '0',
+                                        'CPAN::Meta' => '0',
+                                        'CPAN::Meta::Prereqs::Diff' => '0',
                                         'Dist::Zilla::Plugin::Git::NextVersion::Sanitized' => '0',
                                         'Dist::Zilla::Plugin::MakeMaker' => '0',
                                         'Dist::Zilla::Plugin::ModuleBuild' => '0',
                                         'Dist::Zilla::Plugin::ModuleBuildTiny' => '0',
                                         'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => '0',
                                         'Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled' => '0',
+                                        'JSON' => '0',
+                                        'JSON::XS' => '0',
                                         'Net::GitHub' => '0',
                                         'Perl::Critic::Bangs' => '0',
                                         'Perl::Critic::Compatibility' => '0',

@@ -97,7 +97,6 @@ utils/delta_meta.pl
 utils/delta_meta.sh
 utils/dep_changes.pl
 utils/git_fastcat.pl
-utils/lib/depsdiff.pm
 utils/normalize.pl
 utils/remove_bom.pl
 utils/strip_eol.pl

@@ -6,11 +6,13 @@ use utf8;
 use FindBin;
 use lib "$FindBin::Bin/lib";
 use Git::Wrapper;
-use depsdiff;
 use version;
 use Version::Next qw(next_version);
 use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
+use JSON;
+use CPAN::Meta::Prereqs::Diff;
+use CPAN::Meta;
 
 my $git = Git::Wrapper->new('.');
 
@@ -103,23 +105,26 @@ while ( @tags > 1 ) {
   next unless defined $old_meta_sha1 and length $old_meta_sha1;
   next unless defined $new_meta_sha1 and length $new_meta_sha1;
 
-  my $ddiff = depsdiff->new(
-    json_a => ( join qq[\n], $git->cat_file( '-p', $old_meta_sha1 ) ),
-    json_b => ( join qq[\n], $git->cat_file( '-p', $new_meta_sha1 ) ),
+  my $ddiff = CPAN::Meta::Prereqs::Diff->new(
+    old_prereqs => CPAN::Meta->load_json_string( join qq[\n], $git->cat_file( '-p', $old_meta_sha1 ) ),
+    new_prereqs => CPAN::Meta->load_json_string( join qq[\n], $git->cat_file( '-p', $new_meta_sha1 ) ),
   );
 
   $master_release->delete_group('Dependencies::Stats') if $master_release;
 
-  my ( @diffs ) = $ddiff->changes;
+  my (@diffs) = $ddiff->diff(
+    phases => [qw( configure build runtime test develop )],
+    types  => [qw( requires recommends suggests conflicts )],
+  );
 
   next unless @diffs;
 
   if ($master_release) {
     my $phases = {};
 
-    for my $diff ( @diffs ) {
+    for my $diff (@diffs) {
       my $phase_m = $diff->phase;
-      my $rel = $diff->type;
+      my $rel     = $diff->type;
 
       if ( not exists $phases->{$phase_m} ) {
         $phases->{$phase_m} = {};
@@ -129,10 +134,10 @@ while ( @tags > 1 ) {
       }
       my $stash = $phases->{$phase_m}->{$rel};
 
-      $stash->{Added}++ if $diff->is_addition;
+      $stash->{Added}++   if $diff->is_addition;
       $stash->{Removed}++ if $diff->is_removal;
-      if( $diff->is_change ) {
-        $stash->{Upgrade}++ if $diff->is_upgrade;
+      if ( $diff->is_change ) {
+        $stash->{Upgrade}++   if $diff->is_upgrade;
         $stash->{Downgrade}++ if $diff->is_downgrade;
         if ( not $diff->is_upgrade and not $diff->is_downgrade ) {
           $stash->{Changed}++;
@@ -182,9 +187,9 @@ while ( @tags > 1 ) {
   }
   my $arrowjoin = qq[\x{A0}\x{2192}\x{A0}];
 
-  for my $diff ( @diffs  ) {
+  for my $diff (@diffs) {
     my $prefix = '';
-    $prefix = 'Added' if $diff->is_addition;
+    $prefix = 'Added'   if $diff->is_addition;
     $prefix = 'Removed' if $diff->is_removal;
     $prefix = 'Changed' if $diff->is_change;
 
@@ -197,7 +202,8 @@ while ( @tags > 1 ) {
       if ( $diff->requirement ne '0' ) {
         $change .= q[ ] . $diff->requirement;
       }
-    } else {
+    }
+    else {
       $change = $diff->module . q[ ] . $diff->old_requirement . $arrowjoin . $diff->new_requirement;
     }
     $changes_all->release($version)->add_changes( { group => $label }, $change );

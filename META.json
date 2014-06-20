@@ -87,13 +87,16 @@
       },
       "runtime" : {
          "recommends" : {
-            "Data::Difference" : "0",
+            "CPAN::Meta" : "0",
+            "CPAN::Meta::Prereqs::Diff" : "0",
             "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" : "0",
             "Dist::Zilla::Plugin::MakeMaker" : "0",
             "Dist::Zilla::Plugin::ModuleBuild" : "0",
             "Dist::Zilla::Plugin::ModuleBuildTiny" : "0",
             "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : "0",
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0",
+            "JSON" : "0",
+            "JSON::XS" : "0",
             "Net::GitHub" : "0",
             "Perl::Critic::Bangs" : "0",
             "Perl::Critic::Compatibility" : "0",
@@ -253,10 +256,10 @@
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.141520",
+         "CPAN::Meta::Prereqs::Diff" : "0.001000",
          "CPAN::Meta::Requirements" : "2.125",
          "Capture::Tiny" : "0.24",
          "Carp" : "1.3301",
-         "Data::Difference" : "0.112850",
          "Dist::Zilla" : "5.019",
          "Dist::Zilla::App::Command::bakeini" : "0.001000",
          "Dist::Zilla::File::FromCode" : "5.019",
@@ -327,6 +330,7 @@
          "Git::Wrapper" : "0.032",
          "IO::Socket::SSL" : "1.993",
          "JSON" : "2.90",
+         "JSON::XS" : "3.01",
          "LWP::Protocol::https" : "6.04",
          "List::Util" : "1.39",
          "Module::Build" : "0.4205",
