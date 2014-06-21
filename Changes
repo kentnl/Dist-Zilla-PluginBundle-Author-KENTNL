@@ -4,6 +4,7 @@
  [00 Trivial]
  - Rework dep_changes util to use CPAN::Meta::Prereqs::Diff
  - generated perlcritic generator uses misc/ now instead.
+ - generated modules come with 5.008, utf8, AUTHORITY and bumpversion ready
 
  [Dependencies::Stats]
  - Dependencies changed since 2.016000, see misc/*.deps* for details
