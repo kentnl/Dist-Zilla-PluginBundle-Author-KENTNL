@@ -3,6 +3,7 @@
 {{$NEXT}}
  [00 Trivial]
  - Rework dep_changes util to use CPAN::Meta::Prereqs::Diff
+ - generated perlcritic generator uses misc/ now instead.
 
  [Dependencies::Stats]
  - Dependencies changed since 2.016000, see misc/*.deps* for details
