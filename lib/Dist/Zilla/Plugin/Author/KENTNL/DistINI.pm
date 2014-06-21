@@ -119,12 +119,15 @@ sub gather_files {
       q(; [Bootstrap::lib]),                                                     #
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
-      ':version          = 2.012000',                                            #
+      ':version          = %{version}s',                                         #
       'git_versions      = 1',                                                   #
       'normal_form       = numify',                                              #
       'mantissa          = 6',                                                   #
       'toolkit           = eumm',                                                #
       'toolkit_hardness  = soft',                                                #
+      'bumpversions      = 1',                                                   #
+      'copyfiles         = LICENSE',                                             #
+      'srcreadme         = mkdn',                                                #
       'twitter_hash_tags = %{tags}s',                                            #
       '; auto_prereqs_skip = File::Find',                                        #
       $empty,                                                                    #
@@ -160,6 +163,7 @@ sub gather_files {
         rel_hour        => (localtime)[2],
         tz              => 'Pacific/Auckland',
         tags            => '#perl #cpan',
+        depversion      => ( __PACKAGE__->VERSION || '2.016000' ),
       },
     );
     return $content;
