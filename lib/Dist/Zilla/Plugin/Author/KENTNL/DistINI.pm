@@ -119,7 +119,7 @@ sub gather_files {
       q(; [Bootstrap::lib]),                                                     #
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
-      ':version          = %{version}s',                                         #
+      ':version          = %{depversion}s',                                      #
       'git_versions      = 1',                                                   #
       'normal_form       = numify',                                              #
       'mantissa          = 6',                                                   #
