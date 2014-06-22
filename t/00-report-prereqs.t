@@ -193,7 +193,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Role::PluginBundle' => '5.019',
                                       'Dist::Zilla::Util::CurrentCmd' => '0.001000',
                                       'Dist::Zilla::Util::EmulatePhase' => '1.000000',
-                                      'IO::Socket::SSL' => '1.993',
+                                      'IO::Socket::SSL' => '1.994',
                                       'LWP::Protocol::https' => '6.04',
                                       'Moose' => '2.1209',
                                       'Moose::Util::TypeConstraints' => '2.1209',
