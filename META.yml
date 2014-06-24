@@ -154,10 +154,9 @@ resources:
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
 version: '2.016001'
 x_BuiltWith:
-  failures:
-    CPAN::Meta::Prereqs::Diff: 'module was not found in INC'
   modules:
     CPAN::Meta: '2.141520'
+    CPAN::Meta::Prereqs::Diff: '0.001000'
     CPAN::Meta::Requirements: '2.125'
     Capture::Tiny: '0.24'
     Carp: '1.34'
