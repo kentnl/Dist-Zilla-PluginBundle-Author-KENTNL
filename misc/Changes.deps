@@ -1,3 +1,4 @@
+This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 2.016001
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Git::Check 2.022 → 2.023

@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - dep_changes util adds preludes describing the files.
 
 2.016001 2014-06-21T08:22:53Z
  [00 Minor]

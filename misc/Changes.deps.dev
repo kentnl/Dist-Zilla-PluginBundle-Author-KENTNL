@@ -1,3 +1,4 @@
+This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 2.016001
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Git::Check 2.022 → 2.023
