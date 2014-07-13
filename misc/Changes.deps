@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.016002
+2.016003
+
+2.016002 2014-07-13T06:25:05Z
  [Changed / configure requires]
  - File::ShareDir::Install 0.08 → 0.09
 
