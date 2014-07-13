@@ -6,7 +6,8 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Dist::Zilla::Plugin::Git::CommitBuild 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::GatherDir 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::Tag 2.022 → 2.023
- - IO::Socket::SSL 1.992 → 1.993
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.141120 → 0.141760
+ - IO::Socket::SSL 1.992 → 1.994
  - MooseX::Has::Sugar 1.000000 → 1.000001
  - Net::SSLeay 1.63 → 1.64
  - namespace::autoclean 0.15 → 0.19

@@ -12,6 +12,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::Git::CommitBuild 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::GatherDir 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::Tag 2.022 → 2.023
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.141120 → 0.141760
  - Test::CPAN::Changes 0.27 → 0.28
 
  [Changed / runtime requires]
@@ -20,7 +21,8 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::Git::CommitBuild 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::GatherDir 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::Tag 2.022 → 2.023
- - IO::Socket::SSL 1.992 → 1.993
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.141120 → 0.141760
+ - IO::Socket::SSL 1.992 → 1.994
  - MooseX::Has::Sugar 1.000000 → 1.000001
  - Net::SSLeay 1.63 → 1.64
  - namespace::autoclean 0.15 → 0.19
