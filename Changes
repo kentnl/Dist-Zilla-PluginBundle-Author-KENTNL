@@ -4,6 +4,13 @@
  [00 Minor]
  - dep_changes util adds preludes describing the files.
 
+ [Dependencies::Stats]
+ - Dependencies changed since 2.016001, see misc/*.deps* for details
+ - configure: ↑1
+ - develop: (suggests: ↑1)
+ - runtime: ↑4
+ - test: ↑2
+
 2.016001 2014-06-21T08:22:53Z
  [00 Minor]
  - Rework dep_changes util to use CPAN::Meta::Prereqs::Diff
