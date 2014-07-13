@@ -49,7 +49,7 @@ my $static_prereqs = do { my $x = {
                                         },
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '6.30',
-                                        'File::ShareDir::Install' => '0.08'
+                                        'File::ShareDir::Install' => '0.09'
                                       }
                       },
        'develop' => {
@@ -111,7 +111,7 @@ my $static_prereqs = do { my $x = {
                                       'Test::Pod::Coverage' => '1.08'
                                     },
                       'suggests' => {
-                                      'Dist::Zilla::App::Command::bakeini' => '0.001000'
+                                      'Dist::Zilla::App::Command::bakeini' => '0.001001'
                                     }
                     },
        'runtime' => {
@@ -193,16 +193,16 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Role::PluginBundle' => '5.019',
                                       'Dist::Zilla::Util::CurrentCmd' => '0.001000',
                                       'Dist::Zilla::Util::EmulatePhase' => '1.000000',
-                                      'IO::Socket::SSL' => '1.994',
+                                      'IO::Socket::SSL' => '1.997',
                                       'LWP::Protocol::https' => '6.04',
-                                      'Moose' => '2.1209',
-                                      'Moose::Util::TypeConstraints' => '2.1209',
+                                      'Moose' => '2.1210',
+                                      'Moose::Util::TypeConstraints' => '2.1210',
                                       'MooseX::AttributeShortcuts' => '0.024',
                                       'MooseX::Has::Sugar' => '1.000001',
                                       'MooseX::StrictConstructor' => '0.19',
                                       'MooseX::Types' => '0.44',
                                       'Net::SSLeay' => '1.64',
-                                      'Perl::PrereqScanner' => '1.019',
+                                      'Perl::PrereqScanner' => '1.020',
                                       'Pod::Coverage::TrustPod' => '0.100003',
                                       'Pod::Elemental::PerlMunger' => '0.200002',
                                       'String::Formatter' => '0.102084',
@@ -233,7 +233,7 @@ my $static_prereqs = do { my $x = {
                                    'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec::Functions' => '0',
-                                   'File::pushd' => '1.007',
+                                   'File::pushd' => '1.009',
                                    'FindBin' => '0',
                                    'Git::Wrapper' => '0.032',
                                    'JSON' => '2.90',
@@ -241,7 +241,7 @@ my $static_prereqs = do { my $x = {
                                    'Module::Build' => '0',
                                    'Module::Metadata' => '1.000024',
                                    'Path::Class::Dir' => '0.33',
-                                   'Path::Tiny' => '0.054',
+                                   'Path::Tiny' => '0.055',
                                    'Test::DZil' => '5.019',
                                    'Test::Fatal' => '0.013',
                                    'Test::File::ShareDir' => '1.000001',
