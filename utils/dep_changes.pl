@@ -59,10 +59,19 @@ push @tags, 'build/master';
 
 use CPAN::Changes;
 
-my $changes     = CPAN::Changes->new();
-my $changes_opt = CPAN::Changes->new();
-my $changes_all = CPAN::Changes->new();
-my $changes_dev = CPAN::Changes->new();
+my $standard_phases = ' (configure/build/runtime/test)';
+my $all_phases      = ' (configure/build/runtime/test/develop)';
+my $preambles       = [
+  'This file contains changes in REQUIRED dependencies for standard CPAN phases' . $standard_phases,
+  'This file contains changes in OPTIONAL dependencies for standard CPAN phases' . $standard_phases,
+  'This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases' . $all_phases,
+  'This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )',
+];
+
+my $changes     = CPAN::Changes->new( preamble => $preambles->[0], );
+my $changes_opt = CPAN::Changes->new( preamble => $preambles->[1] );
+my $changes_all = CPAN::Changes->new( preamble => $preambles->[2] );
+my $changes_dev = CPAN::Changes->new( preamble => $preambles->[3] );
 
 my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/{{\$NEXT}}/ );
 $ENV{PERL_JSON_BACKEND} = 'JSON';

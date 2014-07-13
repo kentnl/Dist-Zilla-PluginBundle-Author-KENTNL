@@ -1,10 +1,15 @@
-2.016001
+This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
+
+2.016002
+
+2.016001 2014-06-21T08:22:53Z
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Git::Check 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::Commit 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::CommitBuild 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::GatherDir 2.022 → 2.023
  - Dist::Zilla::Plugin::Git::Tag 2.022 → 2.023
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.141120 → 0.141760
  - Test::CPAN::Changes 0.27 → 0.28
 
 2.016000 2014-06-06T07:53:47Z

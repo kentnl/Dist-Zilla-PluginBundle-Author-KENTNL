@@ -9,7 +9,7 @@ build_requires:
   Dist::Zilla::Plugin::Prereqs::MatchInstalled: '0'
   ExtUtils::MakeMaker: '0'
   File::Spec::Functions: '0'
-  File::pushd: '1.007'
+  File::pushd: '1.009'
   FindBin: '0'
   Git::Wrapper: '0.032'
   JSON: '2.90'
@@ -17,7 +17,7 @@ build_requires:
   Module::Build: '0'
   Module::Metadata: '1.000024'
   Path::Class::Dir: '0.33'
-  Path::Tiny: '0.054'
+  Path::Tiny: '0.055'
   Test::DZil: '5.019'
   Test::Fatal: '0.013'
   Test::File::ShareDir: '1.000001'
@@ -26,7 +26,7 @@ build_requires:
   lib: '0'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
-  File::ShareDir::Install: '0.08'
+  File::ShareDir::Install: '0.09'
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520'
 license: perl
@@ -37,16 +37,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.016001'
+    version: '2.016002'
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.016001'
+    version: '2.016002'
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.016001'
+    version: '2.016002'
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.016001'
+    version: '2.016002'
 recommends:
   CPAN::Meta: '0'
   CPAN::Meta::Prereqs::Diff: '0'
@@ -124,16 +124,16 @@ requires:
   Dist::Zilla::Role::PluginBundle: '5.019'
   Dist::Zilla::Util::CurrentCmd: '0.001000'
   Dist::Zilla::Util::EmulatePhase: '1.000000'
-  IO::Socket::SSL: '1.994'
+  IO::Socket::SSL: '1.997'
   LWP::Protocol::https: '6.04'
-  Moose: '2.1209'
-  Moose::Util::TypeConstraints: '2.1209'
+  Moose: '2.1210'
+  Moose::Util::TypeConstraints: '2.1210'
   MooseX::AttributeShortcuts: '0.024'
   MooseX::Has::Sugar: '1.000001'
   MooseX::StrictConstructor: '0.19'
   MooseX::Types: '0.44'
   Net::SSLeay: '1.64'
-  Perl::PrereqScanner: '1.019'
+  Perl::PrereqScanner: '1.020'
   Pod::Coverage::TrustPod: '0.100003'
   Pod::Elemental::PerlMunger: '0.200002'
   String::Formatter: '0.102084'
@@ -152,7 +152,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentfredric/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.016001'
+version: '2.016002'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.141520'
@@ -161,7 +161,7 @@ x_BuiltWith:
     Capture::Tiny: '0.24'
     Carp: '1.34'
     Dist::Zilla: '5.019'
-    Dist::Zilla::App::Command::bakeini: '0.001000'
+    Dist::Zilla::App::Command::bakeini: '0.001001'
     Dist::Zilla::File::FromCode: '5.019'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.019'
@@ -223,40 +223,40 @@ x_BuiltWith:
     Dist::Zilla::Util::CurrentCmd: '0.001000'
     Dist::Zilla::Util::EmulatePhase: '1.000000'
     ExtUtils::MakeMaker: '6.98'
-    File::ShareDir::Install: '0.08'
+    File::ShareDir::Install: '0.09'
     File::Spec::Functions: '3.48'
-    File::pushd: '1.007'
+    File::pushd: '1.009'
     FindBin: '1.51'
     Git::Wrapper: '0.032'
-    IO::Socket::SSL: '1.994'
+    IO::Socket::SSL: '1.997'
     JSON: '2.90'
     JSON::XS: '3.01'
     LWP::Protocol::https: '6.04'
     List::Util: '1.39'
     Module::Build: '0.4205'
     Module::Metadata: '1.000024'
-    Moose: '2.1209'
-    Moose::Util::TypeConstraints: '2.1209'
+    Moose: '2.1210'
+    Moose::Util::TypeConstraints: '2.1210'
     MooseX::AttributeShortcuts: '0.024'
     MooseX::Has::Sugar: '1.000001'
     MooseX::StrictConstructor: '0.19'
     MooseX::Types: '0.44'
-    Net::GitHub: '0.63'
+    Net::GitHub: '0.65'
     Net::SSLeay: '1.64'
     Path::Class::Dir: '0.33'
-    Path::Tiny: '0.054'
+    Path::Tiny: '0.055'
     Perl::Critic::Bangs: '1.10'
     Perl::Critic::Compatibility: '1.001'
     Perl::Critic::Deprecated: '1.119'
     Perl::Critic::Itch: '0.07'
-    Perl::Critic::Lax: '0.010'
+    Perl::Critic::Lax: '0.011'
     Perl::Critic::More: '1.003'
     Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter: '0.002'
     Perl::Critic::Pulp: '85'
     Perl::Critic::StricterSubs: '0.03'
     Perl::Critic::Swift: v1.0.3
-    Perl::Critic::Tics: '0.008'
-    Perl::PrereqScanner: '1.019'
+    Perl::Critic::Tics: '0.009'
+    Perl::PrereqScanner: '1.020'
     Pod::Coverage::TrustPod: '0.100003'
     Pod::Elemental::PerlMunger: '0.200002'
     String::Formatter: '0.102084'
@@ -290,7 +290,7 @@ x_BuiltWith:
     myarchname: x86_64-linux
     osname: linux
   platform: linux
-  uname: 'Linux 3.15.0-gentoo-r1 x86_64 GenuineIntel GNU/Linux'
+  uname: 'Linux 3.15.2-aufs x86_64 GenuineIntel GNU/Linux'
 x_Dist_Zilla:
   perl:
     version: '5.021001'
@@ -624,7 +624,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 2.016001-source
+          tag: 2.016002-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -678,7 +678,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '2.016001'
+          tag: '2.016002'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
