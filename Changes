@@ -1,6 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
 2.016003 2014-07-15T08:57:51Z
+ [00 Minor]
+ - dep_utils: avoid annoying deprecation warning about { chars 
+
  [Dependencies::Stats]
  - Dependencies changed since 2.016002, see misc/*.deps* for details
  - develop: ↑2
