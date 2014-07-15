@@ -1,6 +1,13 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.016002
+2.016003
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.000001 → 2.000002
+ - Dist::Zilla::Plugin::RunExtraTests 0.021 → 0.022
+ - Dist::Zilla::Role::BundleDeps 0.001001 → 0.002000
+ - Net::SSLeay 1.64 → 1.65
+
+2.016002 2014-07-13T06:25:05Z
  [Changed / configure requires]
  - File::ShareDir::Install 0.08 → 0.09
 
