@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.016004 2014-07-15T09:06:45Z
+
 2.016003 2014-07-15T09:01:30Z
  [00 Minor]
  - dep_utils: avoid annoying deprecation warning about { chars
