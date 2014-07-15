@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - dep_utils: avoid annoying deprecation warning about { chars
+
  [Dependencies::Stats]
  - Dependencies changed since 2.016002, see misc/*.deps* for details
  - develop: ↑2
