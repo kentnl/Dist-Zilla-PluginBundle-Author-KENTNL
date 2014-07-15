@@ -73,7 +73,7 @@ my $changes_opt = CPAN::Changes->new( preamble => $preambles->[1] );
 my $changes_all = CPAN::Changes->new( preamble => $preambles->[2] );
 my $changes_dev = CPAN::Changes->new( preamble => $preambles->[3] );
 
-my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/{{\$NEXT}}/ );
+my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/\{\{\$NEXT\}\}/ );
 $ENV{PERL_JSON_BACKEND} = 'JSON';
 
 while ( @tags > 1 ) {
