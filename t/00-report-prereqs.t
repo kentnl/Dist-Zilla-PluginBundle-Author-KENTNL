@@ -57,7 +57,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla' => '5.019',
                                       'Dist::Zilla::Plugin::Authority' => '0',
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '5.019',
-                                      'Dist::Zilla::Plugin::Bootstrap::lib' => '1.000001',
+                                      'Dist::Zilla::Plugin::Bootstrap::lib' => '1.000002',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease' => '0.002',
                                       'Dist::Zilla::Plugin::CheckPrereqsIndexed' => '0.012',
                                       'Dist::Zilla::Plugin::ConfirmRelease' => '5.019',
@@ -116,6 +116,7 @@ my $static_prereqs = do { my $x = {
                     },
        'runtime' => {
                       'recommends' => {
+                                        'CPAN::Changes::Group::Dependencies::Stats' => '0',
                                         'CPAN::Meta' => '0',
                                         'CPAN::Meta::Prereqs::Diff' => '0',
                                         'Dist::Zilla::Plugin::Git::NextVersion::Sanitized' => '0',
@@ -145,7 +146,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::File::FromCode' => '5.019',
                                       'Dist::Zilla::Plugin::Authority' => '1.006',
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '5.019',
-                                      'Dist::Zilla::Plugin::Bootstrap::lib' => '1.000001',
+                                      'Dist::Zilla::Plugin::Bootstrap::lib' => '1.000002',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease' => '0.002',
                                       'Dist::Zilla::Plugin::ConfirmRelease' => '5.019',
                                       'Dist::Zilla::Plugin::CopyFilesFromBuild' => '0.103510',

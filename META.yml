@@ -48,6 +48,7 @@ provides:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
     version: '2.016004'
 recommends:
+  CPAN::Changes::Group::Dependencies::Stats: '0'
   CPAN::Meta: '0'
   CPAN::Meta::Prereqs::Diff: '0'
   Dist::Zilla::Plugin::Git::NextVersion::Sanitized: '0'
@@ -76,7 +77,7 @@ requires:
   Dist::Zilla::File::FromCode: '5.019'
   Dist::Zilla::Plugin::Authority: '1.006'
   Dist::Zilla::Plugin::AutoPrereqs: '5.019'
-  Dist::Zilla::Plugin::Bootstrap::lib: '1.000001'
+  Dist::Zilla::Plugin::Bootstrap::lib: '1.000002'
   Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.002'
   Dist::Zilla::Plugin::ConfirmRelease: '5.019'
   Dist::Zilla::Plugin::CopyFilesFromBuild: '0.103510'
@@ -155,6 +156,7 @@ resources:
 version: '2.016004'
 x_BuiltWith:
   modules:
+    CPAN::Changes::Group::Dependencies::Stats: '0.001000'
     CPAN::Meta: '2.141520'
     CPAN::Meta::Prereqs::Diff: '0.001000'
     CPAN::Meta::Requirements: '2.125'
@@ -165,7 +167,7 @@ x_BuiltWith:
     Dist::Zilla::File::FromCode: '5.019'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.019'
-    Dist::Zilla::Plugin::Bootstrap::lib: '1.000001'
+    Dist::Zilla::Plugin::Bootstrap::lib: '1.000002'
     Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.002'
     Dist::Zilla::Plugin::CheckPrereqsIndexed: '0.012'
     Dist::Zilla::Plugin::ConfirmRelease: '5.019'
@@ -304,7 +306,7 @@ x_Dist_Zilla:
           try_built: '1'
           try_built_method: mtime
       name: Bootstrap::lib
-      version: '1.000001'
+      version: '1.000002'
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::KENTNL/MetaConfig'
