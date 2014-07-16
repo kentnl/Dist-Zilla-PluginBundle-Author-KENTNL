@@ -1,6 +1,13 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - dep_utils: Factor out primary summary logic into its own dist.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.016003, see misc/*.deps* for details
+ - develop: ↑1
+ - runtime: ↑1 (recommends: +1)
 
 2.016003 2014-07-15T09:01:30Z
  [00 Minor]

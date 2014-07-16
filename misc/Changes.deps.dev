@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 2.016004
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000001 → 1.000002
 
 2.016003 2014-07-15T09:01:30Z
  [Changed / develop requires]
