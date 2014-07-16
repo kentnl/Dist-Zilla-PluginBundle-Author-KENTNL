@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.016004
+2.016005
+
+2.016004 2014-07-16T12:05:55Z
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Bootstrap::lib 1.000001 → 1.000002
 
