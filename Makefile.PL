@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::File::FromCode" => "5.019",
     "Dist::Zilla::Plugin::Authority" => "1.006",
     "Dist::Zilla::Plugin::AutoPrereqs" => "5.019",
-    "Dist::Zilla::Plugin::Bootstrap::lib" => "1.000001",
+    "Dist::Zilla::Plugin::Bootstrap::lib" => "1.000002",
     "Dist::Zilla::Plugin::BumpVersionAfterRelease" => "0.002",
     "Dist::Zilla::Plugin::ConfirmRelease" => "5.019",
     "Dist::Zilla::Plugin::CopyFilesFromBuild" => "0.103510",
@@ -125,7 +125,7 @@ my %WriteMakefileArgs = (
     "Test::Output" => "1.03",
     "lib" => 0
   },
-  "VERSION" => "2.016003",
+  "VERSION" => "2.016004",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -139,7 +139,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla::File::FromCode" => "5.019",
   "Dist::Zilla::Plugin::Authority" => "1.006",
   "Dist::Zilla::Plugin::AutoPrereqs" => "5.019",
-  "Dist::Zilla::Plugin::Bootstrap::lib" => "1.000001",
+  "Dist::Zilla::Plugin::Bootstrap::lib" => "1.000002",
   "Dist::Zilla::Plugin::BumpVersionAfterRelease" => "0.002",
   "Dist::Zilla::Plugin::ConfirmRelease" => "5.019",
   "Dist::Zilla::Plugin::CopyFilesFromBuild" => "0.103510",

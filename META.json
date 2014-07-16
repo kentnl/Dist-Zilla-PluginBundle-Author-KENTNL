@@ -28,7 +28,7 @@
             "Dist::Zilla" : "5.019",
             "Dist::Zilla::Plugin::Authority" : "0",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.019",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000001",
+            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000002",
             "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.002",
             "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.012",
             "Dist::Zilla::Plugin::ConfirmRelease" : "5.019",
@@ -87,6 +87,7 @@
       },
       "runtime" : {
          "recommends" : {
+            "CPAN::Changes::Group::Dependencies::Stats" : "0",
             "CPAN::Meta" : "0",
             "CPAN::Meta::Prereqs::Diff" : "0",
             "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" : "0",
@@ -116,7 +117,7 @@
             "Dist::Zilla::File::FromCode" : "5.019",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.019",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000001",
+            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000002",
             "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.002",
             "Dist::Zilla::Plugin::ConfirmRelease" : "5.019",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.103510",
@@ -225,19 +226,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.016003"
+         "version" : "2.016004"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.016003"
+         "version" : "2.016004"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.016003"
+         "version" : "2.016004"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.016003"
+         "version" : "2.016004"
       }
    },
    "release_status" : "stable",
@@ -252,9 +253,10 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.016003",
+   "version" : "2.016004",
    "x_BuiltWith" : {
       "modules" : {
+         "CPAN::Changes::Group::Dependencies::Stats" : "0.001000",
          "CPAN::Meta" : "2.141520",
          "CPAN::Meta::Prereqs::Diff" : "0.001000",
          "CPAN::Meta::Requirements" : "2.125",
@@ -265,7 +267,7 @@
          "Dist::Zilla::File::FromCode" : "5.019",
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.019",
-         "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000001",
+         "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000002",
          "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.002",
          "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.012",
          "Dist::Zilla::Plugin::ConfirmRelease" : "5.019",
@@ -412,7 +414,7 @@
                }
             },
             "name" : "Bootstrap::lib",
-            "version" : "1.000001"
+            "version" : "1.000002"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
@@ -827,7 +829,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "2.016003-source",
+                  "tag" : "2.016004-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -898,7 +900,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "2.016003",
+                  "tag" : "2.016004",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"

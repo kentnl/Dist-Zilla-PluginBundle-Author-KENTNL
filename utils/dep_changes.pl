@@ -11,6 +11,7 @@ use Version::Next qw(next_version);
 use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
 use JSON;
+use CPAN::Changes::Group::Dependencies::Stats;
 use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
 
@@ -119,82 +120,27 @@ while ( @tags > 1 ) {
     new_prereqs => CPAN::Meta->load_json_string( join qq[\n], $git->cat_file( '-p', $new_meta_sha1 ) ),
   );
 
-  $master_release->delete_group('Dependencies::Stats') if $master_release;
+  my $prereqs = CPAN::Changes::Group::Dependencies::Stats->new( prereqs_diff => $ddiff );
+
+  my $pchanges = $prereqs->changes;
+
+  next unless @{$pchanges};
+
+  if ($master_release) {
+    $master_release->delete_group('Dependencies::Stats');
+
+    $master_release->add_changes(
+      { group => 'Dependencies::Stats' },
+      'Dependencies changed since ' . $old . ', see misc/*.deps* for details',
+      @{$pchanges}
+    );
+  }
+  my $arrowjoin = qq[\x{A0}\x{2192}\x{A0}];
 
   my (@diffs) = $ddiff->diff(
     phases => [qw( configure build runtime test develop )],
     types  => [qw( requires recommends suggests conflicts )],
   );
-
-  next unless @diffs;
-
-  if ($master_release) {
-    my $phases = {};
-
-    for my $diff (@diffs) {
-      my $phase_m = $diff->phase;
-      my $rel     = $diff->type;
-
-      if ( not exists $phases->{$phase_m} ) {
-        $phases->{$phase_m} = {};
-      }
-      if ( not exists $phases->{$phase_m}->{$rel} ) {
-        $phases->{$phase_m}->{$rel} = { Added => 0, Upgrade => 0, Downgrade => 0, Removed => 0, Changed => 0 };
-      }
-      my $stash = $phases->{$phase_m}->{$rel};
-
-      $stash->{Added}++   if $diff->is_addition;
-      $stash->{Removed}++ if $diff->is_removal;
-      if ( $diff->is_change ) {
-        $stash->{Upgrade}++   if $diff->is_upgrade;
-        $stash->{Downgrade}++ if $diff->is_downgrade;
-        if ( not $diff->is_upgrade and not $diff->is_downgrade ) {
-          $stash->{Changed}++;
-        }
-      }
-    }
-    my @changes = ();
-
-    for my $phase ( sort keys %{$phases} ) {
-
-      my $rel_lists = {};
-
-      my $add_thing = sub {
-        my ( $name, $token, $minortoken ) = @_;
-
-        for my $rel (qw( requires suggests recommends )) {
-          next unless exists $phases->{$phase}->{$rel};
-          next unless $phases->{$phase}->{$rel}->{$name} > 0;
-          $rel_lists->{$rel} = [] unless exists $rel_lists->{$rel};
-          push @{ $rel_lists->{$rel} }, $token . $phases->{$phase}->{$rel}->{$name};
-        }
-      };
-
-      $add_thing->( 'Added',     '+',   'm' );
-      $add_thing->( 'Upgrade',   "↑", 'm' );
-      $add_thing->( 'Downgrade', "↓", 'm' );
-      $add_thing->( 'Removed',   '-',   'm' );
-
-      my @parts;
-
-      if ( $rel_lists->{requires} ) {
-        push @parts, @{ delete $rel_lists->{requires} };
-      }
-      my @extra;
-      for my $rel ( sort keys %{$rel_lists} ) {
-        push @extra, sprintf '%s: %s', $rel, join q[ ], @{ $rel_lists->{$rel} };
-      }
-      if (@extra) {
-        push @parts, sprintf '(%s)', join q[, ], @extra;
-      }
-      if (@parts) {
-        push @changes, $phase . ': ' . ( join q[ ], @parts );
-      }
-    }
-    $master_release->add_changes( { group => 'Dependencies::Stats' },
-      'Dependencies changed since ' . $old . ', see misc/*.deps* for details', @changes );
-  }
-  my $arrowjoin = qq[\x{A0}\x{2192}\x{A0}];
 
   for my $diff (@diffs) {
     my $prefix = '';

@@ -1,6 +1,10 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.016003
+2.016004
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000001 → 1.000002
+
+2.016003 2014-07-15T09:01:30Z
  [Changed / develop requires]
  - Dist::Zilla::Plugin::MetaProvides::Package 2.000001 → 2.000002
  - Dist::Zilla::Plugin::RunExtraTests 0.021 → 0.022
