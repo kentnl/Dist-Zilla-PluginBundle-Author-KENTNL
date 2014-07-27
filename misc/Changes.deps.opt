@@ -4,6 +4,7 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
  [Added / runtime recommends]
  - CHI
  - CHI::Driver::FastMmap
+ - CPAN::Changes::Group::Dependencies::Details 0.001001
  - Cache::FastMmap
 
  [Added / test recommends]

@@ -4,6 +4,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / runtime recommends]
  - CHI
  - CHI::Driver::FastMmap
+ - CPAN::Changes::Group::Dependencies::Details 0.001001
  - Cache::FastMmap
 
  [Added / test recommends]

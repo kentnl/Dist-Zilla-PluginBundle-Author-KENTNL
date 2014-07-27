@@ -115,6 +115,7 @@ Cache::FastMmap                      = 0
 CPAN::Meta                           = 0
 CPAN::Meta::Prereqs::Diff            = 0
 CPAN::Changes::Group::Dependencies::Stats   = 0.002002
+CPAN::Changes::Group::Dependencies::Details = 0.001001
 Net::GitHub                          = 0
 JSON                                 = 0
 JSON::XS                             = 0

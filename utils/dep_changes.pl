@@ -163,43 +163,79 @@ while ( @tags > 1 ) {
   if ($master_release) {
     $master_release->attach_group($pchanges);
   }
-  my $arrowjoin = qq[\x{A0}\x{2192}\x{A0}];
 
-  my (@diffs) = $ddiff->diff(
-    phases => [qw( configure build runtime test develop )],
-    types  => [qw( requires recommends suggests conflicts )],
-  );
+  {
+    # Changes.deps
+    my $release = $changes->release($version);
 
-  for my $diff (@diffs) {
-    my $prefix = '';
-    $prefix = 'Added'   if $diff->is_addition;
-    $prefix = 'Removed' if $diff->is_removal;
-    $prefix = 'Changed' if $diff->is_change;
+    for my $change_type (qw( Added Changed Removed )) {
+      for my $phase (qw( configure build runtime test )) {
+        for my $type (qw( requires )) {
 
-    my $label = $prefix . q[ / ] . $diff->phase . q[ ] . $diff->type;
-
-    my $change = '';
-
-    if ( not $diff->is_change ) {
-      $change = $diff->module;
-      if ( $diff->requirement ne '0' ) {
-        $change .= q[ ] . $diff->requirement;
+          my $group = CPAN::Changes::Group::Dependencies::Details->new(
+            change_type => $change_type,
+            phase       => $phase,
+            type        => $type,
+            all_diffs   => $pchanges->_diff_items,
+          );
+          next unless $group->has_changes;
+          $release->attach_group($group);
+        }
       }
     }
-    else {
-      $change = $diff->module . q[ ] . $diff->old_requirement . $arrowjoin . $diff->new_requirement;
-    }
-    $changes_all->release($version)->add_changes( { group => $label }, $change );
-    if ( 'develop' ne $diff->phase ) {
-      if ( 'requires' eq $diff->type ) {
-        $changes->release($version)->add_changes( { group => $label }, $change );
+  }
+  {
+    # Changes.deps.opt
+    my $release = $changes_opt->release($version);
+    for my $change_type (qw( Added Changed Removed )) {
+      for my $phase (qw( configure build runtime test )) {
+        for my $type (qw( recommends suggests )) {
+          my $group = CPAN::Changes::Group::Dependencies::Details->new(
+            change_type => $change_type,
+            phase       => $phase,
+            type        => $type,
+            all_diffs   => $pchanges->_diff_items,
+          );
+          next unless $group->has_changes;
+          $release->attach_group($group);
+        }
       }
-      else {
-        $changes_opt->release($version)->add_changes( { group => $label }, $change );
+    }
+  }
+  {
+    # Changes.deps.dev
+    my $release = $changes_dev->release($version);
+    for my $change_type (qw( Added Changed Removed )) {
+      for my $phase (qw( develop )) {
+        for my $type (qw( requires recommends suggests )) {
+          my $group = CPAN::Changes::Group::Dependencies::Details->new(
+            change_type => $change_type,
+            phase       => $phase,
+            type        => $type,
+            all_diffs   => $pchanges->_diff_items,
+          );
+          next unless $group->has_changes;
+          $release->attach_group($group);
+        }
       }
     }
-    else {
-      $changes_dev->release($version)->add_changes( { group => $label }, $change );
+  }
+  {
+    # Changes.deps.all
+    my $release = $changes_all->release($version);
+    for my $change_type (qw( Added Changed Removed )) {
+      for my $phase (qw( configure build develop runtime test )) {
+        for my $type (qw( requires recommends suggests )) {
+          my $group = CPAN::Changes::Group::Dependencies::Details->new(
+            change_type => $change_type,
+            phase       => $phase,
+            type        => $type,
+            all_diffs   => $pchanges->_diff_items,
+          );
+          next unless $group->has_changes;
+          $release->attach_group($group);
+        }
+      }
     }
   }
 }
