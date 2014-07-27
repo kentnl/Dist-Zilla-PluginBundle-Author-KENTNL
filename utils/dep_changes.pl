@@ -12,6 +12,7 @@ use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
 use JSON;
 use CPAN::Changes::Group::Dependencies::Stats;
+use CPAN::Changes::Group::Dependencies::Details;
 use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
 use CHI;
@@ -152,20 +153,15 @@ while ( @tags > 1 ) {
     new_prereqs => CPAN::Meta->load_json_string( get_sha($new_meta_sha1) ),
   );
 
-  my $prereqs = CPAN::Changes::Group::Dependencies::Stats->new( prereqs_diff => $ddiff );
+  my $pchanges = CPAN::Changes::Group::Dependencies::Stats->new(
+    prelude      => [ 'Dependencies changed since ' . $old . ', see misc/*.deps* for details', ],
+    prereqs_diff => $ddiff
+  );
 
-  my $pchanges = $prereqs->changes;
-
-  next unless @{$pchanges};
+  next unless $pchanges->has_changes;
 
   if ($master_release) {
-    $master_release->delete_group('Dependencies::Stats');
-
-    $master_release->add_changes(
-      { group => 'Dependencies::Stats' },
-      'Dependencies changed since ' . $old . ', see misc/*.deps* for details',
-      @{$pchanges}
-    );
+    $master_release->attach_group($pchanges);
   }
   my $arrowjoin = qq[\x{A0}\x{2192}\x{A0}];
 
