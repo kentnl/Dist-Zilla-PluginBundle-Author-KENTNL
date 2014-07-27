@@ -1,10 +1,13 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - dep_utils: Cache misc lookup calls to git for speed.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.016004, see misc/*.deps* for details
  - develop: ↑10
- - runtime: ↑11
+ - runtime: ↑11 (recommends: +3)
  - test: +3 ↑2 (recommends: +1 ↑1)
 
 2.016004 2014-07-16T12:05:55Z

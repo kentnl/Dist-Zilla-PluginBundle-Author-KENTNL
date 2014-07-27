@@ -14,17 +14,49 @@ use JSON;
 use CPAN::Changes::Group::Dependencies::Stats;
 use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
+use CHI;
+use CHI::Driver::FastMmap;
+use Cache::FastMmap;
 
 my $git = Git::Wrapper->new('.');
 
+my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->stringify;
+
+my $file_sha_cache = CHI->new(
+  driver     => 'FastMmap',
+  root_dir   => $cache_root,
+  namespace  => 'file_sha:' . Path::Tiny::cwd->stringify,
+  expires_in => '3m',
+);
+my $get_sha_cache = CHI->new(
+  driver     => 'FastMmap',
+  root_dir   => $cache_root,
+  namespace  => 'get_sha:' . Path::Tiny::cwd->stringify,
+  expires_in => '3m',
+);
+
 sub file_sha {
   my ( $commit, $path ) = @_;
+  my $key = { commit => $commit, path => $path };
+  my $result = $file_sha_cache->get($key);
+  return $result if defined $result;
   my $rev = [ $git->rev_parse($commit) ]->[0];
   my $tree = [ $git->ls_tree( $rev, $path ) ]->[0];
   return unless $tree;
   my ( $left, $right ) = $tree =~ /^([^\t]+)\t(.*$)/;
   my ( $flags, $type, $sha ) = split / /, $left;
+  $file_sha_cache->set( $key, $sha );
   return $sha;
+}
+
+sub get_sha {
+  my ($sha)  = @_;
+  my $key    = $sha;
+  my $result = $get_sha_cache->get($key);
+  return $result if defined $result;
+  my $out = join qq[\n], $git->cat_file( '-p', $sha );
+  $get_sha_cache->set( $key, $out );
+  return $out;
 }
 
 my @tags;
@@ -116,8 +148,8 @@ while ( @tags > 1 ) {
   next unless defined $new_meta_sha1 and length $new_meta_sha1;
 
   my $ddiff = CPAN::Meta::Prereqs::Diff->new(
-    old_prereqs => CPAN::Meta->load_json_string( join qq[\n], $git->cat_file( '-p', $old_meta_sha1 ) ),
-    new_prereqs => CPAN::Meta->load_json_string( join qq[\n], $git->cat_file( '-p', $new_meta_sha1 ) ),
+    old_prereqs => CPAN::Meta->load_json_string( get_sha($old_meta_sha1) ),
+    new_prereqs => CPAN::Meta->load_json_string( get_sha($new_meta_sha1) ),
   );
 
   my $prereqs = CPAN::Changes::Group::Dependencies::Stats->new( prereqs_diff => $ddiff );
