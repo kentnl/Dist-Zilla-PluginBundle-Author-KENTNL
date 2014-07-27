@@ -1,6 +1,50 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.016005
+ [Added / runtime recommends]
+ - CHI
+ - CHI::Driver::FastMmap
+ - Cache::FastMmap
+
+ [Added / test recommends]
+ - CPAN::Meta::Prereqs 2.142060
+
+ [Added / test requires]
+ - File::Spec
+ - Scalar::Util 1.39
+ - version 0.9908
+
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000002 → 1.000003
+ - Dist::Zilla::Plugin::Git::NextRelease 0.002010 → 0.002011
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.000000 → 1.000001
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.001000 → 0.002000
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001000 → 0.001001
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002000 → 0.002001
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.013 → 0.014
+ - Test::CPAN::Changes 0.28 → 0.30
+ - Test::Kwalitee 1.18 → 1.19
+ - Test::Pod::Coverage 1.08 → 1.10
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000002 → 1.000003
+ - Dist::Zilla::Plugin::Git::NextRelease 0.002010 → 0.002011
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.000000 → 1.000001
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.001000 → 0.002000
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001000 → 0.001001
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002000 → 0.002001
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.013 → 0.014
+ - Dist::Zilla::Util::CurrentCmd 0.001000 → 0.001001
+ - Dist::Zilla::Util::EmulatePhase 1.000000 → 1.000001
+ - MooseX::Has::Sugar 1.000001 → 1.000002
+ - Test::Pod::Coverage 1.08 → 1.10
+
+ [Changed / test recommends]
+ - CPAN::Meta 2.141520 → 2.142060
+
+ [Changed / test requires]
+ - Git::Wrapper 0.032 → 0.034
+ - Test::File::ShareDir 1.000001 → 1.000004
 
 2.016004 2014-07-16T12:05:55Z
  [Added / runtime recommends]
