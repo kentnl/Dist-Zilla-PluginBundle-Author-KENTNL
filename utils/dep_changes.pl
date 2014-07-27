@@ -12,19 +12,52 @@ use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
 use JSON;
 use CPAN::Changes::Group::Dependencies::Stats;
+use CPAN::Changes::Group::Dependencies::Details;
 use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
+use CHI;
+use CHI::Driver::FastMmap;
+use Cache::FastMmap;
 
 my $git = Git::Wrapper->new('.');
 
+my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->stringify;
+
+my $file_sha_cache = CHI->new(
+  driver     => 'FastMmap',
+  root_dir   => $cache_root,
+  namespace  => 'file_sha:' . Path::Tiny::cwd->stringify,
+  expires_in => '3m',
+);
+my $get_sha_cache = CHI->new(
+  driver     => 'FastMmap',
+  root_dir   => $cache_root,
+  namespace  => 'get_sha:' . Path::Tiny::cwd->stringify,
+  expires_in => '3m',
+);
+
 sub file_sha {
   my ( $commit, $path ) = @_;
+  my $key = { commit => $commit, path => $path };
+  my $result = $file_sha_cache->get($key);
+  return $result if defined $result;
   my $rev = [ $git->rev_parse($commit) ]->[0];
   my $tree = [ $git->ls_tree( $rev, $path ) ]->[0];
   return unless $tree;
   my ( $left, $right ) = $tree =~ /^([^\t]+)\t(.*$)/;
   my ( $flags, $type, $sha ) = split / /, $left;
+  $file_sha_cache->set( $key, $sha );
   return $sha;
+}
+
+sub get_sha {
+  my ($sha)  = @_;
+  my $key    = $sha;
+  my $result = $get_sha_cache->get($key);
+  return $result if defined $result;
+  my $out = join qq[\n], $git->cat_file( '-p', $sha );
+  $get_sha_cache->set( $key, $out );
+  return $out;
 }
 
 my @tags;
@@ -116,62 +149,93 @@ while ( @tags > 1 ) {
   next unless defined $new_meta_sha1 and length $new_meta_sha1;
 
   my $ddiff = CPAN::Meta::Prereqs::Diff->new(
-    old_prereqs => CPAN::Meta->load_json_string( join qq[\n], $git->cat_file( '-p', $old_meta_sha1 ) ),
-    new_prereqs => CPAN::Meta->load_json_string( join qq[\n], $git->cat_file( '-p', $new_meta_sha1 ) ),
+    old_prereqs => CPAN::Meta->load_json_string( get_sha($old_meta_sha1) ),
+    new_prereqs => CPAN::Meta->load_json_string( get_sha($new_meta_sha1) ),
   );
 
-  my $prereqs = CPAN::Changes::Group::Dependencies::Stats->new( prereqs_diff => $ddiff );
+  my $pchanges = CPAN::Changes::Group::Dependencies::Stats->new(
+    prelude      => [ 'Dependencies changed since ' . $old . ', see misc/*.deps* for details', ],
+    prereqs_diff => $ddiff
+  );
 
-  my $pchanges = $prereqs->changes;
-
-  next unless @{$pchanges};
+  next unless $pchanges->has_changes;
 
   if ($master_release) {
-    $master_release->delete_group('Dependencies::Stats');
-
-    $master_release->add_changes(
-      { group => 'Dependencies::Stats' },
-      'Dependencies changed since ' . $old . ', see misc/*.deps* for details',
-      @{$pchanges}
-    );
+    $master_release->attach_group($pchanges);
   }
-  my $arrowjoin = qq[\x{A0}\x{2192}\x{A0}];
 
-  my (@diffs) = $ddiff->diff(
-    phases => [qw( configure build runtime test develop )],
-    types  => [qw( requires recommends suggests conflicts )],
-  );
+  {
+    # Changes.deps
+    my $release = $changes->release($version);
 
-  for my $diff (@diffs) {
-    my $prefix = '';
-    $prefix = 'Added'   if $diff->is_addition;
-    $prefix = 'Removed' if $diff->is_removal;
-    $prefix = 'Changed' if $diff->is_change;
+    for my $change_type (qw( Added Changed Removed )) {
+      for my $phase (qw( configure build runtime test )) {
+        for my $type (qw( requires )) {
 
-    my $label = $prefix . q[ / ] . $diff->phase . q[ ] . $diff->type;
-
-    my $change = '';
-
-    if ( not $diff->is_change ) {
-      $change = $diff->module;
-      if ( $diff->requirement ne '0' ) {
-        $change .= q[ ] . $diff->requirement;
+          my $group = CPAN::Changes::Group::Dependencies::Details->new(
+            change_type => $change_type,
+            phase       => $phase,
+            type        => $type,
+            all_diffs   => $pchanges->_diff_items,
+          );
+          next unless $group->has_changes;
+          $release->attach_group($group);
+        }
       }
     }
-    else {
-      $change = $diff->module . q[ ] . $diff->old_requirement . $arrowjoin . $diff->new_requirement;
-    }
-    $changes_all->release($version)->add_changes( { group => $label }, $change );
-    if ( 'develop' ne $diff->phase ) {
-      if ( 'requires' eq $diff->type ) {
-        $changes->release($version)->add_changes( { group => $label }, $change );
+  }
+  {
+    # Changes.deps.opt
+    my $release = $changes_opt->release($version);
+    for my $change_type (qw( Added Changed Removed )) {
+      for my $phase (qw( configure build runtime test )) {
+        for my $type (qw( recommends suggests )) {
+          my $group = CPAN::Changes::Group::Dependencies::Details->new(
+            change_type => $change_type,
+            phase       => $phase,
+            type        => $type,
+            all_diffs   => $pchanges->_diff_items,
+          );
+          next unless $group->has_changes;
+          $release->attach_group($group);
+        }
       }
-      else {
-        $changes_opt->release($version)->add_changes( { group => $label }, $change );
+    }
+  }
+  {
+    # Changes.deps.dev
+    my $release = $changes_dev->release($version);
+    for my $change_type (qw( Added Changed Removed )) {
+      for my $phase (qw( develop )) {
+        for my $type (qw( requires recommends suggests )) {
+          my $group = CPAN::Changes::Group::Dependencies::Details->new(
+            change_type => $change_type,
+            phase       => $phase,
+            type        => $type,
+            all_diffs   => $pchanges->_diff_items,
+          );
+          next unless $group->has_changes;
+          $release->attach_group($group);
+        }
       }
     }
-    else {
-      $changes_dev->release($version)->add_changes( { group => $label }, $change );
+  }
+  {
+    # Changes.deps.all
+    my $release = $changes_all->release($version);
+    for my $change_type (qw( Added Changed Removed )) {
+      for my $phase (qw( configure build develop runtime test )) {
+        for my $type (qw( requires recommends suggests )) {
+          my $group = CPAN::Changes::Group::Dependencies::Details->new(
+            change_type => $change_type,
+            phase       => $phase,
+            type        => $type,
+            all_diffs   => $pchanges->_diff_items,
+          );
+          next unless $group->has_changes;
+          $release->attach_group($group);
+        }
+      }
     }
   }
 }
