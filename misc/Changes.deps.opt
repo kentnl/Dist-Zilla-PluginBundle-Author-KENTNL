@@ -1,6 +1,8 @@
 This file contains changes in OPTIONAL dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.016005
+2.016006
+
+2.016005 2014-07-27T06:49:27Z
  [Added / runtime recommends]
  - CHI
  - CHI::Driver::FastMmap
