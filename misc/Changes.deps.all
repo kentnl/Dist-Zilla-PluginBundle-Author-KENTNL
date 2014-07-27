@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.016005
+2.016006
+
+2.016005 2014-07-27T06:49:27Z
  [Added / runtime recommends]
  - CHI
  - CHI::Driver::FastMmap

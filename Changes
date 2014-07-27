@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.016006 2014-07-27T07:16:35Z
+
 2.016005 2014-07-27T06:49:27Z
  [00 Minor]
  - dep_utils: Cache misc lookup calls to git for speed.
