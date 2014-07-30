@@ -223,7 +223,7 @@ EOF
 
   note explain $data;
 
-  is_deeply( $data->{prereqs}->{configure}->{requires}, { 'ExtUtils::MakeMaker' => '6.30' }, 'prereqs.configure is sane' );
+  is_deeply( $data->{prereqs}->{configure}->{requires}, { 'ExtUtils::MakeMaker' => '0' }, 'prereqs.configure is sane' );
 
 };
 
