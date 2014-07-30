@@ -23,12 +23,6 @@ my $git = Git::Wrapper->new('.');
 
 my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->stringify;
 
-my $file_sha_cache = CHI->new(
-  driver     => 'FastMmap',
-  root_dir   => $cache_root,
-  namespace  => 'file_sha:' . Path::Tiny::cwd->stringify,
-  expires_in => '3m',
-);
 my $get_sha_cache = CHI->new(
   driver     => 'FastMmap',
   root_dir   => $cache_root,
@@ -38,15 +32,11 @@ my $get_sha_cache = CHI->new(
 
 sub file_sha {
   my ( $commit, $path ) = @_;
-  my $key = { commit => $commit, path => $path };
-  my $result = $file_sha_cache->get($key);
-  return $result if defined $result;
   my $rev = [ $git->rev_parse($commit) ]->[0];
   my $tree = [ $git->ls_tree( $rev, $path ) ]->[0];
   return unless $tree;
   my ( $left, $right ) = $tree =~ /^([^\t]+)\t(.*$)/;
   my ( $flags, $type, $sha ) = split / /, $left;
-  $file_sha_cache->set( $key, $sha );
   return $sha;
 }
 

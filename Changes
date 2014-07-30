@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bug Fixes]
+ - dep_utils: Less aggressive caching because [ commitish , path ] being cached can lead to wrong results.
 
 2.016005 2014-07-27T06:49:27Z
  [00 Minor]
