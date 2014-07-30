@@ -5,6 +5,13 @@
  - dep_utils: Less aggressive caching because [ commitish , path ] being cached can lead to wrong results.
  - tests: don't fail on newer dzil
 
+ [Dependencies::Stats]
+ - Dependencies changed since 2.016005, see misc/*.deps* for details
+ - configure: ↓1
+ - develop: ↑19
+ - runtime: ↑22
+ - test: ↑1 -1 (recommends: -2)
+
 2.016005 2014-07-27T06:49:27Z
  [00 Minor]
  - dep_utils: Cache misc lookup calls to git for speed.
