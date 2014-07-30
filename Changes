@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.016007 2014-07-30T04:29:54Z
+
 2.016006 2014-07-30T04:27:01Z
  [Bug Fixes]
  - dep_utils: Less aggressive caching because [ commitish , path ] being cached can lead to wrong results.
