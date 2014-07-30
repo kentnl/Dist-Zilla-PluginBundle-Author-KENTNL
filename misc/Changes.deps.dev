@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.016006
+2.016007
+
+2.016006 2014-07-30T04:27:01Z
  [Changed / develop requires]
  - Dist::Zilla 5.019 → 5.020
  - Dist::Zilla::Plugin::AutoPrereqs 5.019 → 5.020
