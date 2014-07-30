@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.016006 2014-07-30T04:27:01Z
  [Bug Fixes]
  - dep_utils: Less aggressive caching because [ commitish , path ] being cached can lead to wrong results.
  - tests: don't fail on newer dzil
