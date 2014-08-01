@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - dep_utils: continued refactoring, now based on simple CPAN::Changes::Dependencies::Details
+
  [Dependencies::Stats]
  - Dependencies changed since 2.016006, see misc/*.deps* for details
  - develop: ↑1
