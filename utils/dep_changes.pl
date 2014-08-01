@@ -12,7 +12,6 @@ use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
 use JSON;
 use CPAN::Changes::Group::Dependencies::Stats;
-use CPAN::Changes::Group::Dependencies::Details;
 use CPAN::Changes::Dependencies::Details;
 use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
@@ -95,7 +94,7 @@ my $changes = CPAN::Changes::Dependencies::Details->new(
 );
 
 my $changes_opt = CPAN::Changes::Dependencies::Details->new(
-  preamble => 'This file contains changes in OPTIONAL dependencies for standard CPAN phases' . $standard_phases,
+  preamble     => 'This file contains changes in OPTIONAL dependencies for standard CPAN phases' . $standard_phases,
   change_types => [qw( Added Changed Removed )],
   phases       => [qw( configure build runtime test )],
   types        => [qw( recommends suggests )],
@@ -148,15 +147,9 @@ while ( @tags > 1 ) {
   my $old_meta_sha1 = file_sha( $old, 'META.json' );
   my $new_meta_sha1 = file_sha( $new, 'META.json' );
 
-  next unless defined $old_meta_sha1 and length $old_meta_sha1;
-  next unless defined $new_meta_sha1 and length $new_meta_sha1;
-
-  my $old_meta = CPAN::Meta->load_json_string( get_sha($old_meta_sha1) );
-  my $new_meta = CPAN::Meta->load_json_string( get_sha($new_meta_sha1) );
-
   my $delta = CPAN::Meta::Prereqs::Diff->new(
-    old_prereqs => $old_meta,
-    new_prereqs => $new_meta,
+    old_prereqs => ( defined $old_meta_sha1 and length $old_meta_sha1 ? CPAN::Meta->load_json_string( get_sha($old_meta_sha1) ) : {} ),
+    new_prereqs => ( defined $new_meta_sha1 and length $new_meta_sha1 ? CPAN::Meta->load_json_string( get_sha($new_meta_sha1) ) : {} ),
   );
 
   if ($master_release) {
