@@ -9,10 +9,9 @@ build_requires:
   Dist::Zilla::Plugin::Prereqs::MatchInstalled: '0'
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
-  File::Spec::Functions: '0'
   File::pushd: '1.009'
   FindBin: '0'
-  Git::Wrapper: '0.034'
+  Git::Wrapper: '0.035'
   JSON: '2.90'
   List::Util: '1.39'
   Module::Build: '0'
@@ -29,7 +28,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '0'
   File::ShareDir::Install: '0.09'
-dynamic_config: 0
+dynamic_config: '0'
 generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
@@ -39,20 +38,20 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.016006'
+    version: '2.016007'
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.016006'
+    version: '2.016007'
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.016006'
+    version: '2.016007'
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.016006'
+    version: '2.016007'
 recommends:
   CHI: '0'
   CHI::Driver::FastMmap: '0'
-  CPAN::Changes::Group::Dependencies::Details: '0.001001'
+  CPAN::Changes::Dependencies::Details: '0.001000'
   CPAN::Changes::Group::Dependencies::Stats: '0.002002'
   CPAN::Meta: '0'
   CPAN::Meta::Prereqs::Diff: '0'
@@ -100,7 +99,7 @@ requires:
   Dist::Zilla::Plugin::Manifest: '5.020'
   Dist::Zilla::Plugin::ManifestSkip: '5.020'
   Dist::Zilla::Plugin::MetaConfig: '5.020'
-  Dist::Zilla::Plugin::MetaData::BuiltWith: '1.000001'
+  Dist::Zilla::Plugin::MetaData::BuiltWith: '1.001000'
   Dist::Zilla::Plugin::MetaJSON: '5.020'
   Dist::Zilla::Plugin::MetaProvides::Package: '2.000003'
   Dist::Zilla::Plugin::MetaTests: '5.020'
@@ -121,7 +120,7 @@ requires:
   Dist::Zilla::Plugin::Test::Kwalitee: '2.07'
   Dist::Zilla::Plugin::Test::MinimumVersion: '2.000005'
   Dist::Zilla::Plugin::Test::Perl::Critic: '2.112410'
-  Dist::Zilla::Plugin::Test::ReportPrereqs: '0.016'
+  Dist::Zilla::Plugin::Test::ReportPrereqs: '0.017'
   Dist::Zilla::Plugin::TestRelease: '5.020'
   Dist::Zilla::Plugin::Twitter: '0.025'
   Dist::Zilla::Plugin::UploadToCPAN: '5.020'
@@ -159,12 +158,12 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.016006'
+version: '2.016007'
 x_BuiltWith:
   modules:
     CHI: '0.58'
     CHI::Driver::FastMmap: '0.58'
-    CPAN::Changes::Group::Dependencies::Details: '0.001001'
+    CPAN::Changes::Dependencies::Details: '0.001000'
     CPAN::Changes::Group::Dependencies::Stats: '0.002002'
     CPAN::Meta: '2.142060'
     CPAN::Meta::Prereqs::Diff: '0.001000'
@@ -195,7 +194,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Manifest: '5.020'
     Dist::Zilla::Plugin::ManifestSkip: '5.020'
     Dist::Zilla::Plugin::MetaConfig: '5.020'
-    Dist::Zilla::Plugin::MetaData::BuiltWith: '1.000001'
+    Dist::Zilla::Plugin::MetaData::BuiltWith: '1.001000'
     Dist::Zilla::Plugin::MetaJSON: '5.020'
     Dist::Zilla::Plugin::MetaProvides::Package: '2.000003'
     Dist::Zilla::Plugin::MetaTests: '5.020'
@@ -223,7 +222,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Test::Kwalitee: '2.07'
     Dist::Zilla::Plugin::Test::MinimumVersion: '2.000005'
     Dist::Zilla::Plugin::Test::Perl::Critic: '2.112410'
-    Dist::Zilla::Plugin::Test::ReportPrereqs: '0.016'
+    Dist::Zilla::Plugin::Test::ReportPrereqs: '0.017'
     Dist::Zilla::Plugin::TestRelease: '5.020'
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.020'
@@ -236,10 +235,9 @@ x_BuiltWith:
     ExtUtils::MakeMaker: '6.98'
     File::ShareDir::Install: '0.09'
     File::Spec: '3.48'
-    File::Spec::Functions: '3.48'
     File::pushd: '1.009'
     FindBin: '1.51'
-    Git::Wrapper: '0.034'
+    Git::Wrapper: '0.035'
     IO::Socket::SSL: '1.997'
     JSON: '2.90'
     JSON::XS: '3.01'
@@ -253,7 +251,7 @@ x_BuiltWith:
     MooseX::Has::Sugar: '1.000002'
     MooseX::StrictConstructor: '0.19'
     MooseX::Types: '0.44'
-    Net::GitHub: '0.65'
+    Net::GitHub: '0.66'
     Net::SSLeay: '1.65'
     Path::Class::Dir: '0.33'
     Path::Tiny: '0.055'
@@ -357,7 +355,7 @@ x_Dist_Zilla:
               - -i
             uname_call: uname
       name: '@Author::KENTNL/MetaData::BuiltWith'
-      version: '1.000001'
+      version: '1.001000'
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       config:
@@ -402,7 +400,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::ReportPrereqs
       name: '@Author::KENTNL/Test::ReportPrereqs'
-      version: '0.016'
+      version: '0.017'
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
@@ -636,8 +634,8 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
-          signed: 0
-          tag: 2.016006-source
+          signed: '0'
+          tag: 2.016007-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -678,7 +676,7 @@ x_Dist_Zilla:
           branch: build/%b
           build_root: ~
           message: 'Build results of %h (on %b)'
-          multiple_inheritance: 0
+          multiple_inheritance: '0'
           release_branch: releases
           release_message: 'Build results of %h (on %b)'
         Dist::Zilla::Role::Git::Repo:
@@ -690,8 +688,8 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
-          signed: 0
-          tag: '2.016006'
+          signed: '0'
+          tag: '2.016007'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
