@@ -3,6 +3,13 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 2.016007
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.000001 → 1.001000
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.016 → 0.017
+
+ [Changed / test requires]
+ - Git::Wrapper 0.034 → 0.035
+
+ [Removed / test requires]
+ - File::Spec::Functions
 
 2.016006 2014-07-30T04:27:01Z
  [Changed / configure requires]
