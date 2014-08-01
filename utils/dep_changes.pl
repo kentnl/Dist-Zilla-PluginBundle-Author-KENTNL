@@ -12,7 +12,7 @@ use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
 use JSON;
 use CPAN::Changes::Group::Dependencies::Stats;
-use CPAN::Changes::Group::Dependencies::Details;
+use CPAN::Changes::Dependencies::Details;
 use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
 use CHI;
@@ -50,6 +50,13 @@ sub get_sha {
   return $out;
 }
 
+sub get_json_prereqs {
+  my ($commitish) = @_;
+  my $sha1 = file_sha( $commitish, 'META.json' );
+  return {} unless defined $sha1 and length $sha1;
+  return CPAN::Meta->load_json_string( get_sha($sha1) );
+}
+
 my @tags;
 
 for my $line ( reverse $git->RUN( 'log', '--pretty=format:%d', 'releases' ) ) {
@@ -85,17 +92,33 @@ use CPAN::Changes;
 
 my $standard_phases = ' (configure/build/runtime/test)';
 my $all_phases      = ' (configure/build/runtime/test/develop)';
-my $preambles       = [
-  'This file contains changes in REQUIRED dependencies for standard CPAN phases' . $standard_phases,
-  'This file contains changes in OPTIONAL dependencies for standard CPAN phases' . $standard_phases,
-  'This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases' . $all_phases,
-  'This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )',
-];
 
-my $changes     = CPAN::Changes->new( preamble => $preambles->[0], );
-my $changes_opt = CPAN::Changes->new( preamble => $preambles->[1] );
-my $changes_all = CPAN::Changes->new( preamble => $preambles->[2] );
-my $changes_dev = CPAN::Changes->new( preamble => $preambles->[3] );
+my $changes = CPAN::Changes::Dependencies::Details->new(
+  preamble     => 'This file contains changes in REQUIRED dependencies for standard CPAN phases' . $standard_phases,
+  change_types => [qw( Added Changed Removed )],
+  phases       => [qw( configure build runtime test )],
+  types        => [qw( requires )],
+);
+
+my $changes_opt = CPAN::Changes::Dependencies::Details->new(
+  preamble     => 'This file contains changes in OPTIONAL dependencies for standard CPAN phases' . $standard_phases,
+  change_types => [qw( Added Changed Removed )],
+  phases       => [qw( configure build runtime test )],
+  types        => [qw( recommends suggests )],
+);
+my $changes_all = CPAN::Changes::Dependencies::Details->new(
+  preamble => 'This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases'
+    . $all_phases,
+  change_types => [qw( Added Changed Removed )],
+  phases       => [qw( configure build develop runtime test )],
+  types        => [qw( requires recommends suggests )],
+);
+my $changes_dev = CPAN::Changes::Dependencies::Details->new(
+  preamble     => 'This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )',
+  change_types => [qw( Added Changed Removed )],
+  phases       => [qw( develop )],
+  types        => [qw( requires recommends suggests )],
+);
 
 my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/\{\{\$NEXT\}\}/ );
 $ENV{PERL_JSON_BACKEND} = 'JSON';
@@ -127,107 +150,24 @@ while ( @tags > 1 ) {
     version => $version,
     ( defined $date ? ( date => $date ) : () ),
   };
-  $changes->add_release(     {%$params} );
-  $changes_opt->add_release( {%$params} );
-  $changes_all->add_release( {%$params} );
-  $changes_dev->add_release( {%$params} );
 
-  my $old_meta_sha1 = file_sha( $old, 'META.json' );
-  my $new_meta_sha1 = file_sha( $new, 'META.json' );
-
-  next unless defined $old_meta_sha1 and length $old_meta_sha1;
-  next unless defined $new_meta_sha1 and length $new_meta_sha1;
-
-  my $ddiff = CPAN::Meta::Prereqs::Diff->new(
-    old_prereqs => CPAN::Meta->load_json_string( get_sha($old_meta_sha1) ),
-    new_prereqs => CPAN::Meta->load_json_string( get_sha($new_meta_sha1) ),
+  my $delta = CPAN::Meta::Prereqs::Diff->new(
+    old_prereqs => get_json_prereqs($old),
+    new_prereqs => get_json_prereqs($new),
   );
-
-  my $pchanges = CPAN::Changes::Group::Dependencies::Stats->new(
-    prelude      => [ 'Dependencies changed since ' . $old . ', see misc/*.deps* for details', ],
-    prereqs_diff => $ddiff
-  );
-
-  next unless $pchanges->has_changes;
 
   if ($master_release) {
-    $master_release->attach_group($pchanges);
+    my $pchanges = CPAN::Changes::Group::Dependencies::Stats->new(
+      prelude      => [ 'Dependencies changed since ' . $old . ', see misc/*.deps* for details', ],
+      prereqs_diff => $delta
+    );
+    $pchanges->has_changes && $master_release->attach_group($pchanges);
   }
-
-  {
-    # Changes.deps
-    my $release = $changes->release($version);
-
-    for my $change_type (qw( Added Changed Removed )) {
-      for my $phase (qw( configure build runtime test )) {
-        for my $type (qw( requires )) {
-
-          my $group = CPAN::Changes::Group::Dependencies::Details->new(
-            change_type => $change_type,
-            phase       => $phase,
-            type        => $type,
-            all_diffs   => $pchanges->_diff_items,
-          );
-          next unless $group->has_changes;
-          $release->attach_group($group);
-        }
-      }
-    }
-  }
-  {
-    # Changes.deps.opt
-    my $release = $changes_opt->release($version);
-    for my $change_type (qw( Added Changed Removed )) {
-      for my $phase (qw( configure build runtime test )) {
-        for my $type (qw( recommends suggests )) {
-          my $group = CPAN::Changes::Group::Dependencies::Details->new(
-            change_type => $change_type,
-            phase       => $phase,
-            type        => $type,
-            all_diffs   => $pchanges->_diff_items,
-          );
-          next unless $group->has_changes;
-          $release->attach_group($group);
-        }
-      }
-    }
-  }
-  {
-    # Changes.deps.dev
-    my $release = $changes_dev->release($version);
-    for my $change_type (qw( Added Changed Removed )) {
-      for my $phase (qw( develop )) {
-        for my $type (qw( requires recommends suggests )) {
-          my $group = CPAN::Changes::Group::Dependencies::Details->new(
-            change_type => $change_type,
-            phase       => $phase,
-            type        => $type,
-            all_diffs   => $pchanges->_diff_items,
-          );
-          next unless $group->has_changes;
-          $release->attach_group($group);
-        }
-      }
-    }
-  }
-  {
-    # Changes.deps.all
-    my $release = $changes_all->release($version);
-    for my $change_type (qw( Added Changed Removed )) {
-      for my $phase (qw( configure build develop runtime test )) {
-        for my $type (qw( requires recommends suggests )) {
-          my $group = CPAN::Changes::Group::Dependencies::Details->new(
-            change_type => $change_type,
-            phase       => $phase,
-            type        => $type,
-            all_diffs   => $pchanges->_diff_items,
-          );
-          next unless $group->has_changes;
-          $release->attach_group($group);
-        }
-      }
-    }
-  }
+  my $release_info = { %{$params}, prereqs_diff => $delta, };
+  $changes->add_release($release_info);
+  $changes_opt->add_release($release_info);
+  $changes_dev->add_release($release_info);
+  $changes_all->add_release($release_info);
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 
