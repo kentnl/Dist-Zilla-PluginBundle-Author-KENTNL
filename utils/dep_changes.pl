@@ -50,6 +50,13 @@ sub get_sha {
   return $out;
 }
 
+sub get_json_prereqs {
+  my ($commitish) = @_;
+  my $sha1 = file_sha( $commitish, 'META.json' );
+  return {} unless defined $sha1 and length $sha1;
+  return CPAN::Meta->load_json_string( get_sha($sha1) );
+}
+
 my @tags;
 
 for my $line ( reverse $git->RUN( 'log', '--pretty=format:%d', 'releases' ) ) {
@@ -144,12 +151,9 @@ while ( @tags > 1 ) {
     ( defined $date ? ( date => $date ) : () ),
   };
 
-  my $old_meta_sha1 = file_sha( $old, 'META.json' );
-  my $new_meta_sha1 = file_sha( $new, 'META.json' );
-
   my $delta = CPAN::Meta::Prereqs::Diff->new(
-    old_prereqs => ( defined $old_meta_sha1 and length $old_meta_sha1 ? CPAN::Meta->load_json_string( get_sha($old_meta_sha1) ) : {} ),
-    new_prereqs => ( defined $new_meta_sha1 and length $new_meta_sha1 ? CPAN::Meta->load_json_string( get_sha($new_meta_sha1) ) : {} ),
+    old_prereqs => get_json_prereqs($old),
+    new_prereqs => get_json_prereqs($new),
   );
 
   if ($master_release) {

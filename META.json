@@ -89,7 +89,7 @@
          "recommends" : {
             "CHI" : "0",
             "CHI::Driver::FastMmap" : "0",
-            "CPAN::Changes::Group::Dependencies::Details" : "0.001001",
+            "CPAN::Changes::Dependencies::Details" : "0.001000",
             "CPAN::Changes::Group::Dependencies::Stats" : "0.002002",
             "CPAN::Meta" : "0",
             "CPAN::Meta::Prereqs::Diff" : "0",
@@ -263,7 +263,7 @@
       "modules" : {
          "CHI" : "0.58",
          "CHI::Driver::FastMmap" : "0.58",
-         "CPAN::Changes::Group::Dependencies::Details" : "0.001001",
+         "CPAN::Changes::Dependencies::Details" : "0.001000",
          "CPAN::Changes::Group::Dependencies::Stats" : "0.002002",
          "CPAN::Meta" : "2.142060",
          "CPAN::Meta::Prereqs::Diff" : "0.001000",
