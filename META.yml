@@ -29,7 +29,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '0'
   File::ShareDir::Install: '0.09'
-dynamic_config: 0
+dynamic_config: '0'
 generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
@@ -100,7 +100,7 @@ requires:
   Dist::Zilla::Plugin::Manifest: '5.020'
   Dist::Zilla::Plugin::ManifestSkip: '5.020'
   Dist::Zilla::Plugin::MetaConfig: '5.020'
-  Dist::Zilla::Plugin::MetaData::BuiltWith: '1.000001'
+  Dist::Zilla::Plugin::MetaData::BuiltWith: '1.001000'
   Dist::Zilla::Plugin::MetaJSON: '5.020'
   Dist::Zilla::Plugin::MetaProvides::Package: '2.000003'
   Dist::Zilla::Plugin::MetaTests: '5.020'
@@ -195,7 +195,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Manifest: '5.020'
     Dist::Zilla::Plugin::ManifestSkip: '5.020'
     Dist::Zilla::Plugin::MetaConfig: '5.020'
-    Dist::Zilla::Plugin::MetaData::BuiltWith: '1.000001'
+    Dist::Zilla::Plugin::MetaData::BuiltWith: '1.001000'
     Dist::Zilla::Plugin::MetaJSON: '5.020'
     Dist::Zilla::Plugin::MetaProvides::Package: '2.000003'
     Dist::Zilla::Plugin::MetaTests: '5.020'
@@ -357,7 +357,7 @@ x_Dist_Zilla:
               - -i
             uname_call: uname
       name: '@Author::KENTNL/MetaData::BuiltWith'
-      version: '1.000001'
+      version: '1.001000'
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       config:
@@ -636,7 +636,7 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
-          signed: 0
+          signed: '0'
           tag: 2.016007-source
           tag_format: '%v-source'
           tag_message: v%v
@@ -678,7 +678,7 @@ x_Dist_Zilla:
           branch: build/%b
           build_root: ~
           message: 'Build results of %h (on %b)'
-          multiple_inheritance: 0
+          multiple_inheritance: '0'
           release_branch: releases
           release_message: 'Build results of %h (on %b)'
         Dist::Zilla::Role::Git::Repo:
@@ -690,7 +690,7 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
-          signed: 0
+          signed: '0'
           tag: '2.016007'
           tag_format: '%v'
           tag_message: v%v
