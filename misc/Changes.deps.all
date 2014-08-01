@@ -1,11 +1,17 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.016007
+ [Added / runtime recommends]
+ - CPAN::Changes::Dependencies::Details 0.001000
+
  [Changed / develop requires]
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.000001 → 1.001000
 
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.000001 → 1.001000
+
+ [Removed / runtime recommends]
+ - CPAN::Changes::Group::Dependencies::Details 0.001001
 
 2.016006 2014-07-30T04:27:01Z
  [Changed / configure requires]
