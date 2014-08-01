@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.016007 2014-08-01T12:30:36Z
  [00 Minor]
  - dep_utils: continued refactoring, now based on simple CPAN::Changes::Dependencies::Details
 
