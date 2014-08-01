@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.016007
+2.016008
+
+2.016007 2014-08-01T12:30:36Z
  [Changed / develop requires]
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.000001 → 1.001000
  - Dist::Zilla::Plugin::Test::ReportPrereqs 0.016 → 0.017
