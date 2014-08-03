@@ -1,6 +1,13 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.016008
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.017 → 0.018
+ - Dist::Zilla::Util::CurrentCmd 0.001001 → 0.002000
+
+ [Removed / test requires]
+ - List::Util 1.39
+ - Scalar::Util 1.39
 
 2.016007 2014-08-01T12:30:36Z
  [Changed / runtime requires]
