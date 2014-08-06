@@ -2,6 +2,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 
 2.016008
  [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000003 → 1.000004
  - Dist::Zilla::Plugin::Test::ReportPrereqs 0.017 → 0.018
  - Dist::Zilla::Util::CurrentCmd 0.001001 → 0.002000
 
