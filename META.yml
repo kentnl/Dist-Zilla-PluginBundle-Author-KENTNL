@@ -80,7 +80,7 @@ requires:
   Dist::Zilla::File::FromCode: '5.020'
   Dist::Zilla::Plugin::Authority: '1.006'
   Dist::Zilla::Plugin::AutoPrereqs: '5.020'
-  Dist::Zilla::Plugin::Bootstrap::lib: '1.000003'
+  Dist::Zilla::Plugin::Bootstrap::lib: '1.000004'
   Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.002'
   Dist::Zilla::Plugin::ConfirmRelease: '5.020'
   Dist::Zilla::Plugin::CopyFilesFromBuild: '0.103510'
@@ -173,7 +173,7 @@ x_BuiltWith:
     Dist::Zilla::File::FromCode: '5.020'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.020'
-    Dist::Zilla::Plugin::Bootstrap::lib: '1.000003'
+    Dist::Zilla::Plugin::Bootstrap::lib: '1.000004'
     Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.002'
     Dist::Zilla::Plugin::CheckPrereqsIndexed: '0.012'
     Dist::Zilla::Plugin::ConfirmRelease: '5.020'
@@ -311,7 +311,7 @@ x_Dist_Zilla:
           try_built: '1'
           try_built_method: mtime
       name: Bootstrap::lib
-      version: '1.000003'
+      version: '1.000004'
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::KENTNL/MetaConfig'
