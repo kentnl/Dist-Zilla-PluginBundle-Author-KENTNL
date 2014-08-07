@@ -109,7 +109,7 @@ requires:
   Dist::Zilla::Plugin::PodWeaver: '4.005'
   Dist::Zilla::Plugin::Prereqs: '5.020'
   Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled: '0.002000'
-  Dist::Zilla::Plugin::ReadmeAnyFromPod: '0.141760'
+  Dist::Zilla::Plugin::ReadmeAnyFromPod: '0.142180'
   Dist::Zilla::Plugin::ReadmeFromPod: '0.21'
   Dist::Zilla::Plugin::RewriteVersion::Sanitized: '0.001001'
   Dist::Zilla::Plugin::RunExtraTests: '0.022'
@@ -133,7 +133,7 @@ requires:
   Moose: '2.1210'
   Moose::Util::TypeConstraints: '2.1210'
   MooseX::AttributeShortcuts: '0.024'
-  MooseX::Has::Sugar: '1.000002'
+  MooseX::Has::Sugar: '1.000003'
   MooseX::StrictConstructor: '0.19'
   MooseX::Types: '0.44'
   Net::SSLeay: '1.65'
@@ -161,7 +161,7 @@ x_BuiltWith:
   modules:
     CHI: '0.58'
     CHI::Driver::FastMmap: '0.58'
-    CPAN::Changes::Dependencies::Details: '0.001000'
+    CPAN::Changes::Dependencies::Details: '0.001001'
     CPAN::Changes::Group::Dependencies::Stats: '0.002002'
     CPAN::Meta: '2.142060'
     CPAN::Meta::Prereqs::Diff: '0.001000'
@@ -210,7 +210,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Prereqs::MatchInstalled: '1.000001'
     Dist::Zilla::Plugin::Prereqs::MatchInstalled::All: '1.000000'
     Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled: '0.002000'
-    Dist::Zilla::Plugin::ReadmeAnyFromPod: '0.141760'
+    Dist::Zilla::Plugin::ReadmeAnyFromPod: '0.142180'
     Dist::Zilla::Plugin::ReadmeFromPod: '0.21'
     Dist::Zilla::Plugin::RemovePhasedPrereqs: '0.002'
     Dist::Zilla::Plugin::RewriteVersion::Sanitized: '0.001001'
@@ -245,7 +245,7 @@ x_BuiltWith:
     Moose: '2.1210'
     Moose::Util::TypeConstraints: '2.1210'
     MooseX::AttributeShortcuts: '0.024'
-    MooseX::Has::Sugar: '1.000002'
+    MooseX::Has::Sugar: '1.000003'
     MooseX::StrictConstructor: '0.19'
     MooseX::Types: '0.44'
     Net::GitHub: '0.66'
@@ -573,7 +573,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ReadmeAnyFromPod
       name: '@Author::KENTNL/ReadmeAnyFromPod'
-      version: '0.141760'
+      version: '0.142180'
     -
       class: Dist::Zilla::Plugin::Test::CPAN::Changes
       name: '@Author::KENTNL/Test::CPAN::Changes'
