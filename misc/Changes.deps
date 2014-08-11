@@ -1,6 +1,10 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.016008
+2.017000
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Git::Contributors 0.004
+
+2.016008 2014-08-11T10:42:36Z
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Bootstrap::lib 1.000003 → 1.000004
  - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.141760 → 0.142180

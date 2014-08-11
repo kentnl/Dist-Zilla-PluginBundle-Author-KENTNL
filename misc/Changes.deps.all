@@ -1,6 +1,16 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.016008
+2.017000
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Git::Contributors 0.004
+
+ [Added / runtime recommends]
+ - Data::Serializer::Sereal
+
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Git::Contributors 0.004
+
+2.016008 2014-08-11T10:42:36Z
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Bootstrap::lib 1.000003 → 1.000004
  - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.141760 → 0.142180

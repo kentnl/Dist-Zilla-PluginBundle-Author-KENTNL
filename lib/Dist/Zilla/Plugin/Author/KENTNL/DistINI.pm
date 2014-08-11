@@ -11,7 +11,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
-our $VERSION = '2.016008';
+our $VERSION = '2.017000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -31,59 +31,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 use Moose qw( with );
 
 with qw(Dist::Zilla::Role::FileGatherer);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 use Dist::Zilla::File::FromCode;
 use String::Formatter named_stringf => {
@@ -180,6 +127,60 @@ sub gather_files {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -194,7 +195,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::
 
 =head1 VERSION
 
-version 2.016008
+version 2.017000
 
 =head1 SYNOPSIS
 

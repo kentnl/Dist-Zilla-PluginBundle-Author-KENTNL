@@ -38,6 +38,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::Git::Check" => "2.023",
     "Dist::Zilla::Plugin::Git::Commit" => "2.023",
     "Dist::Zilla::Plugin::Git::CommitBuild" => "2.023",
+    "Dist::Zilla::Plugin::Git::Contributors" => "0.004",
     "Dist::Zilla::Plugin::Git::GatherDir" => "2.023",
     "Dist::Zilla::Plugin::Git::NextRelease" => "0.002011",
     "Dist::Zilla::Plugin::Git::Tag" => "2.023",
@@ -124,7 +125,7 @@ my %WriteMakefileArgs = (
     "Test::Output" => "1.03",
     "lib" => 0
   },
-  "VERSION" => "2.016008",
+  "VERSION" => "2.017000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -146,6 +147,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla::Plugin::Git::Check" => "2.023",
   "Dist::Zilla::Plugin::Git::Commit" => "2.023",
   "Dist::Zilla::Plugin::Git::CommitBuild" => "2.023",
+  "Dist::Zilla::Plugin::Git::Contributors" => "0.004",
   "Dist::Zilla::Plugin::Git::GatherDir" => "2.023",
   "Dist::Zilla::Plugin::Git::NextRelease" => "0.002011",
   "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" => 0,

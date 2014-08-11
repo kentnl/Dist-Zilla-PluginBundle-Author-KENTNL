@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.016008';
+our $VERSION = '2.017000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -21,96 +21,6 @@ with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::BundleDeps';
 
 use namespace::autoclean;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -466,6 +376,13 @@ sub _configure_basic_metadata {
   }
 
   $self->add_plugin( 'MetaData::BuiltWith' => $builtwith_options );
+  $self->add_plugin(
+    'Git::Contributors' => {
+      include_authors  => 0,
+      include_releaser => 0,
+      order_by         => 'name',
+    },
+  );
 
   return;
 }
@@ -739,6 +656,96 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 no Moose::Util::TypeConstraints;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -753,7 +760,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.016008
+version 2.017000
 
 =head1 SYNOPSIS
 
