@@ -1,6 +1,11 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - dep_utils: fail better when build/master doesn't exist
+ - dep_utils: try use META.yml if META.json doesn't exist
+ - tests: update reportversions test
+
  [Dependencies::Stats]
  - Dependencies changed since 2.016007, see misc/*.deps* for details
  - develop: ↑4
