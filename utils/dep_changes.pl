@@ -30,10 +30,31 @@ my $get_sha_cache = CHI->new(
   expires_in => '3m',
 );
 
+use Try::Tiny qw( try catch );
+
+sub rev_sha {
+  my ($commit) = @_;
+  my $rev;
+  try {
+    $rev = [ $git->rev_parse($commit) ]->[0];
+  };
+  return $rev;
+}
+
+sub tree_sha {
+  my ( $sha, $path ) = @_;
+  my $tree;
+  try {
+    $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
+  };
+  return $tree;
+}
+
 sub file_sha {
   my ( $commit, $path ) = @_;
-  my $rev = [ $git->rev_parse($commit) ]->[0];
-  my $tree = [ $git->ls_tree( $rev, $path ) ]->[0];
+  my $rev = rev_sha($commit);
+  return unless $rev;
+  my $tree = tree_sha( $rev, $path );
   return unless $tree;
   my ( $left, $right ) = $tree =~ /^([^\t]+)\t(.*$)/;
   my ( $flags, $type, $sha ) = split / /, $left;
@@ -53,8 +74,14 @@ sub get_sha {
 sub get_json_prereqs {
   my ($commitish) = @_;
   my $sha1 = file_sha( $commitish, 'META.json' );
-  return {} unless defined $sha1 and length $sha1;
-  return CPAN::Meta->load_json_string( get_sha($sha1) );
+  if ( defined $sha1 and length $sha1 ) {
+    return CPAN::Meta->load_json_string( get_sha($sha1) );
+  }
+  $sha1 = file_sha( $commitish, 'META.yml' );
+  if ( defined $sha1 and length $sha1 ) {
+    return CPAN::Meta->load_yaml_string( get_sha($sha1) );
+  }
+  return {};
 }
 
 my @tags;
@@ -86,7 +113,7 @@ else {
   $build_master_version = next_version( $tags[-1] );
 }
 
-push @tags, 'build/master';
+push @tags, 'build/master' if rev_sha('build/master');
 
 use CPAN::Changes;
 

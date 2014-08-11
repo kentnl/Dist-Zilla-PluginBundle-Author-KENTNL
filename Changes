@@ -1,5 +1,17 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.016008 2014-08-11T10:42:36Z
+ [00 Minor]
+ - dep_utils: fail better when build/master doesn't exist
+ - dep_utils: try use META.yml if META.json doesn't exist
+ - tests: update reportversions test
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.016007, see misc/*.deps* for details
+ - develop: ↑4
+ - runtime: ↑6
+ - test: ↑1 -2
+
 2.016007 2014-08-01T12:30:36Z
  [00 Minor]
  - dep_utils: continued refactoring, now based on simple CPAN::Changes::Dependencies::Details
