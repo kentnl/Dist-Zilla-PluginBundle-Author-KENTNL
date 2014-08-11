@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.017000
+2.017001
+
+2.017000 2014-08-11T20:48:43Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Git::Contributors 0.004
 
