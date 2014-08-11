@@ -32,59 +32,6 @@ use Moose qw( with );
 
 with qw(Dist::Zilla::Role::FileGatherer);
 
-=head1 SYNOPSIS
-
-  ; ~/.dzil/profiles/default/profile.ini
-  [Author::KENTNL::DistINI]
-
-  ; ~/.dzil/config.ini
-  [%Rights]
-  license_class = Perl_5
-  copyright_holder = Kent Fredric <kentnl@cpan.org>
-
-  [%PAUSE]
-  user = KENTNL
-  password = ; you don't think I'm stupid do you?
-
-  ; ~/.netrc
-  machine api.twitter.com
-    login kentnlrelease
-    password ; still not quite stupid enough
-
-Then
-
-  dzil new Some-Distname
-  # start hacking.
-
-This sets up [@Author::KENTNL] packages the way KENTNL likes it.
-
-This involves initial configuration of the parameters that get
-passed through to AutoVersion::Relative to provide the
-relative frame of reference.
-
-=head1 NAMING RATIONALE
-
-  Plugin::DistINI::KENTNL # Argh, too pollutive of the ::DistINI subspace
-  Plugin::DistINI::Author::KENTNL
-    # Argh, its going to result in lots of 'Author' subspaces ;(
-  Plugin::Author::KENTNL::* # Low pollution, well clustered.
-
-As it is, the following stuff is starting to get to me in terms of
-name-space pollution:
-
-  Plugin::EOLTests  # Would prefer Plugin::Test::EOL
-  Plugin::PodSyntaxTests # Would prefer Plugin::Test::Pod::Syntax
-
-And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::Zilla::PluginBundle::KENTNL >> to be
-C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful
-for people other than ... well.. me. Call me a counter-egotist, if you will.
-
-=head1 THEFT
-
-This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken C<< ☺ >>.
-
-=cut
-
 use Dist::Zilla::File::FromCode;
 use String::Formatter named_stringf => {
   -as   => 'str_rf',
@@ -180,4 +127,58 @@ sub gather_files {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
+
+=head1 SYNOPSIS
+
+  ; ~/.dzil/profiles/default/profile.ini
+  [Author::KENTNL::DistINI]
+
+  ; ~/.dzil/config.ini
+  [%Rights]
+  license_class = Perl_5
+  copyright_holder = Kent Fredric <kentnl@cpan.org>
+
+  [%PAUSE]
+  user = KENTNL
+  password = ; you don't think I'm stupid do you?
+
+  ; ~/.netrc
+  machine api.twitter.com
+    login kentnlrelease
+    password ; still not quite stupid enough
+
+Then
+
+  dzil new Some-Distname
+  # start hacking.
+
+This sets up [@Author::KENTNL] packages the way KENTNL likes it.
+
+This involves initial configuration of the parameters that get
+passed through to AutoVersion::Relative to provide the
+relative frame of reference.
+
+=head1 NAMING RATIONALE
+
+  Plugin::DistINI::KENTNL # Argh, too pollutive of the ::DistINI subspace
+  Plugin::DistINI::Author::KENTNL
+    # Argh, its going to result in lots of 'Author' subspaces ;(
+  Plugin::Author::KENTNL::* # Low pollution, well clustered.
+
+As it is, the following stuff is starting to get to me in terms of
+name-space pollution:
+
+  Plugin::EOLTests  # Would prefer Plugin::Test::EOL
+  Plugin::PodSyntaxTests # Would prefer Plugin::Test::Pod::Syntax
+
+And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::Zilla::PluginBundle::KENTNL >> to be
+C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful
+for people other than ... well.. me. Call me a counter-egotist, if you will.
+
+=head1 THEFT
+
+This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken C<< ☺ >>.
+
+=cut
+
 1;

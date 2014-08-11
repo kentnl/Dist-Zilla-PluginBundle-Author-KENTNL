@@ -33,96 +33,6 @@ use namespace::autoclean;
 
 =end MetaPOD::JSON
 
-=cut
-
-=head1 SYNOPSIS
-
-    [@Author::KENTNL]
-    git_versions = 1      ; Mandatory flag indicating the dist is adjusted to use git tag versioning
-                          ; otherwise use an older bundle version.
-
-    normal_form  = numify ; Mandatory for this bundle indicating normal form.
-                          ; see DZP::Git::NextVersion::Sanitized
-
-    mantissa     = 6      ; Mandatory for this bundle if normal_form is numify.
-                          ; see DZP::Git::NextVersion::Sanitized
-
-    authority    = cpan:KENTNL ; Optional, defaults to cpan:KENTNL
-
-    auto_prereqs_skip   = Some::Module  ; Hide these from autoprereqs
-    auto_prereqs_skip   = Other::Module
-
-    toolkit     = mb   ; Which toolkit to use. Either eumm or mb
-                         ; mb is default.
-
-    toolkit_hardness = hard ; Whether to upgrade *require* deps to the latest
-                            ; or wether to make them merely recomendations.
-                            ; Either 'soft' ( recommend ) or 'hard' ( require )
-                            ; default is 'hard'
-
-    twitter_extra_hash_tags = #foo #bar ; non-default hashtags to append to the tweet
-
-
-=head1 DESCRIPTION
-
-This is the plug-in bundle that KENTNL uses. It exists mostly because he is very lazy
-and wants others to be using what he's using if they want to be doing work on his modules.
-
-=head1 NAMING SCHEME
-
-As I blogged about on L<< C<blog.fox.geek.nz> : Making a Minting Profile as a CPANized Dist |http://bit.ly/hAwl4S >>,
-this bundle advocates a new naming system for people who are absolutely convinced they want their C<Author-Centric> distribution
-uploaded to CPAN.
-
-As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is
-a copious amount of name-space pollution in the PluginBundle name-space, and more Author bundles than task-bundles, which was
-really what the name-space was designed for, and I'm petitioning you to help reduce this annoyance in future modules.
-
-From a CPAN testers perspective, the annoyance of lots of CPANID-dists is similar to the annoyance of the whole DPCHRIST::
-subspace, and that if this pattern continues, it will mean for the testers who do not wish to test everyones personal modules,
-that they will have to work hard to avoid this. If DPCHRIST:: had used something like Author::DPCHRIST:: instead, I doubt so many
-people would be horrified by it, because you can just have a policy/rule that excludes ^Author::, and everyone else who goes that
-way can be quietly ignored.
-
-Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and so-forth, and
-possibly even apply special indexing restrictions or something so people wouldn't even have to know those modules exist on cpan!
-
-So, for the sake of cleanliness, semantics, and general global sanity, I ask you to join me with my Author:: naming policy to
-voluntarily segregate modules that are most likely of only personal use from those that have more general application.
-
-    Dist::Zilla::Plugin::Foo                    # [Foo]                 dist-zilla plugins for general use
-    Dist::Zilla::Plugin::Author::KENTNL::Foo    # [Author::KENTNL::Foo] foo that only KENTNL will probably have use for
-    Dist::Zilla::PluginBundle::Classic          # [@Classic]            A bundle that can have practical use by many
-    Dist::Zilla::PluginBundle::Author::KENTNL   # [@Author::KENTNL]     KENTNL's primary plugin bundle
-    Dist::Zilla::MintingProfile::Default        # A minting profile that is used by all
-    Dist::Zilla::MintingProfile::Author::KENTNL # A minting profile that only KENTNL will find of use.
-
-=head2 Current Proponents
-
-I wish to give proper respect to the people out there already implementing this scheme:
-
-=over 4
-
-=item L<< C<@Author::DOHERTY> |Dist::Zilla::PluginBundle::Author::DOHERTY >> - Mike Doherty's, Author Bundle.
-
-=item L<< C<@Author::OLIVER> |Dist::Zilla::PluginBundle::Author::OLIVER >> - Oliver Gorwits', Author Bundle.
-
-=item L<< C<Dist::Zilla::PluginBundle::Author::> namespace |http://bit.ly/dIovQI >> - Oliver Gorwit's blog on the subject.
-
-=item L<< C<@Author::LESPEA> |Dist::Zilla::PluginBundle::Author::LESPEA >> - Adam Lesperance's, Author Bundle.
-
-=item L<< C<@Author::ALEXBIO> |Dist::Zilla::PluginBundle::Author::ALEXBIO >> - Alessandro Ghedini's, Author Bundle.
-
-=item L<< C<@Author::RWSTAUNER> |Dist::Zilla::PluginBundle::Author::RWSTAUNER >> - Randy Stauner's, Author Bundle.
-
-=item L<< C<@Author::WOLVERIAN> |Dist::Zilla::PluginBundle::Author::WOLVERIAN >> - Ilmari Vacklin's, Author Bundle.
-
-=item L<< C<@Author::YANICK> |Dist::Zilla::PluginBundle::Author::YANICK >> - Yanick Champoux's, Author Bundle.
-
-=item L<< C<@Author::RUSSOZ> |Dist::Zilla::PluginBundle::Author::RUSSOZ >> - Alexei Znamensky's, Author Bundle.
-
-=back
-
 =method C<bundle_config>
 
 See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what this is for, it is a method to satisfy that role.
@@ -745,6 +655,96 @@ sub bundle_config {
 __PACKAGE__->meta->make_immutable;
 no Moose;
 no Moose::Util::TypeConstraints;
+
+=head1 SYNOPSIS
+
+    [@Author::KENTNL]
+    git_versions = 1      ; Mandatory flag indicating the dist is adjusted to use git tag versioning
+                          ; otherwise use an older bundle version.
+
+    normal_form  = numify ; Mandatory for this bundle indicating normal form.
+                          ; see DZP::Git::NextVersion::Sanitized
+
+    mantissa     = 6      ; Mandatory for this bundle if normal_form is numify.
+                          ; see DZP::Git::NextVersion::Sanitized
+
+    authority    = cpan:KENTNL ; Optional, defaults to cpan:KENTNL
+
+    auto_prereqs_skip   = Some::Module  ; Hide these from autoprereqs
+    auto_prereqs_skip   = Other::Module
+
+    toolkit     = mb   ; Which toolkit to use. Either eumm or mb
+                         ; mb is default.
+
+    toolkit_hardness = hard ; Whether to upgrade *require* deps to the latest
+                            ; or wether to make them merely recomendations.
+                            ; Either 'soft' ( recommend ) or 'hard' ( require )
+                            ; default is 'hard'
+
+    twitter_extra_hash_tags = #foo #bar ; non-default hashtags to append to the tweet
+
+
+=head1 DESCRIPTION
+
+This is the plug-in bundle that KENTNL uses. It exists mostly because he is very lazy
+and wants others to be using what he's using if they want to be doing work on his modules.
+
+=head1 NAMING SCHEME
+
+As I blogged about on L<< C<blog.fox.geek.nz> : Making a Minting Profile as a CPANized Dist |http://bit.ly/hAwl4S >>,
+this bundle advocates a new naming system for people who are absolutely convinced they want their C<Author-Centric> distribution
+uploaded to CPAN.
+
+As we have seen with Dist::Zilla there have been a slew of PluginBundles with CPANID's in their name, to the point that there is
+a copious amount of name-space pollution in the PluginBundle name-space, and more Author bundles than task-bundles, which was
+really what the name-space was designed for, and I'm petitioning you to help reduce this annoyance in future modules.
+
+From a CPAN testers perspective, the annoyance of lots of CPANID-dists is similar to the annoyance of the whole DPCHRIST::
+subspace, and that if this pattern continues, it will mean for the testers who do not wish to test everyones personal modules,
+that they will have to work hard to avoid this. If DPCHRIST:: had used something like Author::DPCHRIST:: instead, I doubt so many
+people would be horrified by it, because you can just have a policy/rule that excludes ^Author::, and everyone else who goes that
+way can be quietly ignored.
+
+Then we could probably rationally add that same restriction to the irc announce bots, the "recent modules" list and so-forth, and
+possibly even apply special indexing restrictions or something so people wouldn't even have to know those modules exist on cpan!
+
+So, for the sake of cleanliness, semantics, and general global sanity, I ask you to join me with my Author:: naming policy to
+voluntarily segregate modules that are most likely of only personal use from those that have more general application.
+
+    Dist::Zilla::Plugin::Foo                    # [Foo]                 dist-zilla plugins for general use
+    Dist::Zilla::Plugin::Author::KENTNL::Foo    # [Author::KENTNL::Foo] foo that only KENTNL will probably have use for
+    Dist::Zilla::PluginBundle::Classic          # [@Classic]            A bundle that can have practical use by many
+    Dist::Zilla::PluginBundle::Author::KENTNL   # [@Author::KENTNL]     KENTNL's primary plugin bundle
+    Dist::Zilla::MintingProfile::Default        # A minting profile that is used by all
+    Dist::Zilla::MintingProfile::Author::KENTNL # A minting profile that only KENTNL will find of use.
+
+=head2 Current Proponents
+
+I wish to give proper respect to the people out there already implementing this scheme:
+
+=over 4
+
+=item L<< C<@Author::DOHERTY> |Dist::Zilla::PluginBundle::Author::DOHERTY >> - Mike Doherty's, Author Bundle.
+
+=item L<< C<@Author::OLIVER> |Dist::Zilla::PluginBundle::Author::OLIVER >> - Oliver Gorwits', Author Bundle.
+
+=item L<< C<Dist::Zilla::PluginBundle::Author::> namespace |http://bit.ly/dIovQI >> - Oliver Gorwit's blog on the subject.
+
+=item L<< C<@Author::LESPEA> |Dist::Zilla::PluginBundle::Author::LESPEA >> - Adam Lesperance's, Author Bundle.
+
+=item L<< C<@Author::ALEXBIO> |Dist::Zilla::PluginBundle::Author::ALEXBIO >> - Alessandro Ghedini's, Author Bundle.
+
+=item L<< C<@Author::RWSTAUNER> |Dist::Zilla::PluginBundle::Author::RWSTAUNER >> - Randy Stauner's, Author Bundle.
+
+=item L<< C<@Author::WOLVERIAN> |Dist::Zilla::PluginBundle::Author::WOLVERIAN >> - Ilmari Vacklin's, Author Bundle.
+
+=item L<< C<@Author::YANICK> |Dist::Zilla::PluginBundle::Author::YANICK >> - Yanick Champoux's, Author Bundle.
+
+=item L<< C<@Author::RUSSOZ> |Dist::Zilla::PluginBundle::Author::RUSSOZ >> - Alexei Znamensky's, Author Bundle.
+
+=back
+
+=cut
 
 1;
 
