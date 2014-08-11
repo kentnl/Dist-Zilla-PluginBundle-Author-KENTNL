@@ -74,8 +74,14 @@ sub get_sha {
 sub get_json_prereqs {
   my ($commitish) = @_;
   my $sha1 = file_sha( $commitish, 'META.json' );
-  return {} unless defined $sha1 and length $sha1;
-  return CPAN::Meta->load_json_string( get_sha($sha1) );
+  if ( defined $sha1 and length $sha1 ) {
+    return CPAN::Meta->load_json_string( get_sha($sha1) );
+  }
+  $sha1 = file_sha( $commitish, 'META.yml' );
+  if ( defined $sha1 and length $sha1 ) {
+    return CPAN::Meta->load_yaml_string( get_sha($sha1) );
+  }
+  return {};
 }
 
 my @tags;
