@@ -18,17 +18,31 @@ use CPAN::Meta;
 use CHI;
 use CHI::Driver::FastMmap;
 use Cache::FastMmap;
+use Data::Serializer::Sereal;
 
 my $git = Git::Wrapper->new('.');
 
-my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->stringify;
+my $extension = Path::Tiny::cwd->stringify;
+$extension =~ s/[^-\p{PosixAlnum}_]+/_/msxg;
 
-my $get_sha_cache = CHI->new(
-  driver     => 'FastMmap',
-  root_dir   => $cache_root,
-  namespace  => 'get_sha:' . Path::Tiny::cwd->stringify,
-  expires_in => '3m',
+my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->child($extension);
+
+$cache_root->mkpath;
+
+my $s = Data::Serializer::Sereal->new();
+
+my %CACHE_COMMON = (
+  driver         => 'FastMmap',
+  root_dir       => $cache_root->stringify,
+  expires_in     => '30m',
+  cache_size     => '15m',
+  key_serializer => $s,
+  serializer     => $s,
 );
+
+my $get_sha_cache  = CHI->new( namespace => 'get_sha',    %CACHE_COMMON, );
+my $tree_sha_cache = CHI->new( namespace => 'tree_sha',   %CACHE_COMMON, );
+my $meta_cache     = CHI->new( namespace => 'meta_cache', %CACHE_COMMON, );
 
 use Try::Tiny qw( try catch );
 
@@ -43,10 +57,15 @@ sub rev_sha {
 
 sub tree_sha {
   my ( $sha, $path ) = @_;
+  my $result = $tree_sha_cache->get($sha);
+  return $result if $result;
+
   my $tree;
+
   try {
     $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
   };
+  $tree_sha_cache->set( $sha, $tree );
   return $tree;
 }
 
@@ -75,11 +94,19 @@ sub get_json_prereqs {
   my ($commitish) = @_;
   my $sha1 = file_sha( $commitish, 'META.json' );
   if ( defined $sha1 and length $sha1 ) {
-    return CPAN::Meta->load_json_string( get_sha($sha1) );
+    my $rval = $meta_cache->get($sha1);
+    return $rval if $rval;
+    $rval = CPAN::Meta->load_json_string( get_sha($sha1) );
+    $meta_cache->set( $sha1, $rval );
+    return $rval;
   }
   $sha1 = file_sha( $commitish, 'META.yml' );
   if ( defined $sha1 and length $sha1 ) {
-    return CPAN::Meta->load_yaml_string( get_sha($sha1) );
+    my $rval = $meta_cache->get($sha1);
+    return $rval if $rval;
+    $rval = CPAN::Meta->load_yaml_string( get_sha($sha1) );
+    $meta_cache->set( $sha1, $rval );
+    return $rval;
   }
   return {};
 }
