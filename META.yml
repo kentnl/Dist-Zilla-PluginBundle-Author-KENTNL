@@ -159,6 +159,8 @@ resources:
   repository: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL.git
 version: '2.016009'
 x_BuiltWith:
+  failures:
+    Foo: 'module was not found in INC'
   modules:
     CHI: '0.58'
     CHI::Driver::FastMmap: '0.58'

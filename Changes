@@ -1,6 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
 2.016009 2014-08-11T10:46:49Z
+ [00 Minor]
+ - Start using Git::Contributors.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.016008, see misc/*.deps* for details
  - develop: +1

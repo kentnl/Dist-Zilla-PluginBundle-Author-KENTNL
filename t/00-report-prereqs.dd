@@ -68,7 +68,8 @@ do { my $x = {
                                       'Test::Pod::Coverage' => '1.10'
                                     },
                       'suggests' => {
-                                      'Dist::Zilla::App::Command::bakeini' => '0.001001'
+                                      'Dist::Zilla::App::Command::bakeini' => '0.001001',
+                                      'Foo' => '1'
                                     }
                     },
        'runtime' => {

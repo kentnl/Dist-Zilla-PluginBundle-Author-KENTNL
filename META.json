@@ -83,7 +83,8 @@
             "Test::Pod::Coverage" : "1.10"
          },
          "suggests" : {
-            "Dist::Zilla::App::Command::bakeini" : "0.001001"
+            "Dist::Zilla::App::Command::bakeini" : "0.001001",
+            "Foo" : "1"
          }
       },
       "runtime" : {
@@ -259,6 +260,9 @@
    },
    "version" : "2.016009",
    "x_BuiltWith" : {
+      "failures" : {
+         "Foo" : "module was not found in INC"
+      },
       "modules" : {
          "CHI" : "0.58",
          "CHI::Driver::FastMmap" : "0.58",

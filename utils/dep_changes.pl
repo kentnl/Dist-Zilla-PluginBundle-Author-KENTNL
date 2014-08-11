@@ -21,14 +21,34 @@ use Cache::FastMmap;
 
 my $git = Git::Wrapper->new('.');
 
-my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->stringify;
+my $extension = Path::Tiny::cwd->stringify;
+$extension =~ s/[^-\p{PosixAlnum}_]+/_/msxg;
+
+my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->child($extension);
+$cache_root->mkpath;
 
 my $get_sha_cache = CHI->new(
   driver     => 'FastMmap',
-  root_dir   => $cache_root,
-  namespace  => 'get_sha:' . Path::Tiny::cwd->stringify,
+  root_dir   => $cache_root->stringify,
+  namespace  => 'get_sha',
   expires_in => '3m',
+  cache_size => '15m',
 );
+my $tree_sha_cache = CHI->new(
+  driver     => 'FastMmap',
+  root_dir   => $cache_root->stringify,
+  namespace  => 'tree_sha',
+  expires_in => '3m',
+  cache_size => '15m',
+);
+my $meta_cache = CHI->new(
+  driver     => 'FastMmap',
+  root_dir   => $cache_root->stringify,
+  namespace  => 'meta_cache',
+  expires_in => '3m',
+  cache_size => '15m',
+);
+
 
 use Try::Tiny qw( try catch );
 
@@ -36,17 +56,26 @@ sub rev_sha {
   my ($commit) = @_;
   my $rev;
   try {
-    $rev = [ $git->rev_parse($commit) ]->[0];
+    $rev = [ split /\n/, capture_stdout {
+      system('git','rev-parse',$commit);
+    }]->[0];
   };
   return $rev;
 }
 
 sub tree_sha {
   my ( $sha, $path ) = @_;
+  my $result = $tree_sha_cache->get($sha);
+  return $result if $result;
+
   my $tree;
+
   try {
-    $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
+    $tree = [ split /\n/, capture_stdout {
+        system('git','ls-tree', $sha, $path );
+    }]->[0];
   };
+  $tree_sha_cache->set( $sha, $tree );
   return $tree;
 }
 
@@ -66,7 +95,9 @@ sub get_sha {
   my $key    = $sha;
   my $result = $get_sha_cache->get($key);
   return $result if defined $result;
-  my $out = join qq[\n], $git->cat_file( '-p', $sha );
+  my $out = capture_stdout {
+      system('git','cat-file','-p', $sha );
+  };
   $get_sha_cache->set( $key, $out );
   return $out;
 }
@@ -75,11 +106,19 @@ sub get_json_prereqs {
   my ($commitish) = @_;
   my $sha1 = file_sha( $commitish, 'META.json' );
   if ( defined $sha1 and length $sha1 ) {
-    return CPAN::Meta->load_json_string( get_sha($sha1) );
+    my $rval = $meta_cache->get($sha1);
+    return $rval if $rval;
+    $rval = CPAN::Meta->load_json_string( get_sha($sha1) );
+    $meta_cache->set( $sha1, $rval );
+    return $rval;
   }
   $sha1 = file_sha( $commitish, 'META.yml' );
   if ( defined $sha1 and length $sha1 ) {
-    return CPAN::Meta->load_yaml_string( get_sha($sha1) );
+    my $rval = $meta_cache->get($sha1);
+    return $rval if $rval;
+    $rval = CPAN::Meta->load_yaml_string( get_sha($sha1) );
+    $meta_cache->set( $sha1, $rval );
+    return $rval;
   }
   return {};
 }
