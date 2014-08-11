@@ -471,7 +471,7 @@ sub _configure_basic_metadata {
       include_authors  => 0,
       include_releaser => 0,
       order_by         => 'name',
-    }
+    },
   );
 
   return;
