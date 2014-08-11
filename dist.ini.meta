@@ -116,6 +116,9 @@ CPAN::Meta                           = 0
 CPAN::Meta::Prereqs::Diff            = 0
 CPAN::Changes::Group::Dependencies::Stats   = 0.002002
 CPAN::Changes::Dependencies::Details = 0.001000
+
+Data::Serializer::Sereal             = 0
+
 Net::GitHub                          = 0
 JSON                                 = 0
 JSON::XS                             = 0

@@ -18,6 +18,7 @@ use CPAN::Meta;
 use CHI;
 use CHI::Driver::FastMmap;
 use Cache::FastMmap;
+use Data::Serializer::Sereal;
 
 my $git = Git::Wrapper->new('.');
 
@@ -25,30 +26,23 @@ my $extension = Path::Tiny::cwd->stringify;
 $extension =~ s/[^-\p{PosixAlnum}_]+/_/msxg;
 
 my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->child($extension);
+
 $cache_root->mkpath;
 
-my $get_sha_cache = CHI->new(
-  driver     => 'FastMmap',
-  root_dir   => $cache_root->stringify,
-  namespace  => 'get_sha',
-  expires_in => '3m',
-  cache_size => '15m',
-);
-my $tree_sha_cache = CHI->new(
-  driver     => 'FastMmap',
-  root_dir   => $cache_root->stringify,
-  namespace  => 'tree_sha',
-  expires_in => '3m',
-  cache_size => '15m',
-);
-my $meta_cache = CHI->new(
-  driver     => 'FastMmap',
-  root_dir   => $cache_root->stringify,
-  namespace  => 'meta_cache',
-  expires_in => '3m',
-  cache_size => '15m',
+my $s = Data::Serializer::Sereal->new();
+
+my %CACHE_COMMON = (
+  driver         => 'FastMmap',
+  root_dir       => $cache_root->stringify,
+  expires_in     => '30m',
+  cache_size     => '15m',
+  key_serializer => $s,
+  serializer     => $s,
 );
 
+my $get_sha_cache  = CHI->new( namespace => 'get_sha',    %CACHE_COMMON, );
+my $tree_sha_cache = CHI->new( namespace => 'tree_sha',   %CACHE_COMMON, );
+my $meta_cache     = CHI->new( namespace => 'meta_cache', %CACHE_COMMON, );
 
 use Try::Tiny qw( try catch );
 
@@ -56,9 +50,7 @@ sub rev_sha {
   my ($commit) = @_;
   my $rev;
   try {
-    $rev = [ split /\n/, capture_stdout {
-      system('git','rev-parse',$commit);
-    }]->[0];
+    $rev = [ $git->rev_parse($commit) ]->[0];
   };
   return $rev;
 }
@@ -71,9 +63,7 @@ sub tree_sha {
   my $tree;
 
   try {
-    $tree = [ split /\n/, capture_stdout {
-        system('git','ls-tree', $sha, $path );
-    }]->[0];
+    $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
   };
   $tree_sha_cache->set( $sha, $tree );
   return $tree;
@@ -95,9 +85,7 @@ sub get_sha {
   my $key    = $sha;
   my $result = $get_sha_cache->get($key);
   return $result if defined $result;
-  my $out = capture_stdout {
-      system('git','cat-file','-p', $sha );
-  };
+  my $out = join qq[\n], $git->cat_file( '-p', $sha );
   $get_sha_cache->set( $key, $out );
   return $out;
 }

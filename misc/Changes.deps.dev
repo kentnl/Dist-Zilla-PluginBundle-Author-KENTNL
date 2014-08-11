@@ -4,9 +4,6 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
  [Added / develop requires]
  - Dist::Zilla::Plugin::Git::Contributors 0.004
 
- [Added / develop suggests]
- - Foo 1
-
 2.016008 2014-08-11T10:42:36Z
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Bootstrap::lib 1.000003 → 1.000004
