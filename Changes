@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.016008 2014-08-11T10:42:36Z
  [00 Minor]
  - dep_utils: fail better when build/master doesn't exist
  - dep_utils: try use META.yml if META.json doesn't exist

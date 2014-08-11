@@ -7,7 +7,7 @@ package Dist::Zilla::MintingProfile::Author::KENTNL;
 
 # ABSTRACT: KENTNL's Minting Profile
 
-our $VERSION = '2.016008';
+our $VERSION = '2.016009';
 
 # AUTHORITY
 
