@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.016009 2014-08-11T20:40:31Z
+2.017000 2014-08-11T20:40:31Z
  [00 Minor]
  - Start using Git::Contributors.
  - dep_changes: more cache levels
