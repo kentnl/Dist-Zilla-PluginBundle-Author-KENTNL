@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.016009 2014-08-11T10:44:12Z
+
 2.016008 2014-08-11T10:42:36Z
  [00 Minor]
  - dep_utils: fail better when build/master doesn't exist
