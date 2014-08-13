@@ -1,6 +1,9 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.017001
+ [Changed / runtime requires]
+ - Moose 2.1210 → 2.1211
+ - Moose::Util::TypeConstraints 2.1210 → 2.1211
 
 2.017000 2014-08-11T20:48:43Z
  [Added / develop requires]

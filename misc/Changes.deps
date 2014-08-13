@@ -1,6 +1,9 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.017001
+ [Changed / runtime requires]
+ - Moose 2.1210 → 2.1211
+ - Moose::Util::TypeConstraints 2.1210 → 2.1211
 
 2.017000 2014-08-11T20:48:43Z
  [Added / runtime requires]
