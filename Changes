@@ -1,6 +1,11 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
 2.017002 2014-08-15T02:13:10Z
+ [00 Trivial]
+ - util updates.
+
+ [Utils]
+ - dep_changes: Greatly increase the cache timing to 5h instead of 30m now it proves to be more stable.
 
 2.017001 2014-08-15T01:59:33Z
  [00 Bugfix]
@@ -29,7 +34,7 @@
  [00 Minor]
  - dep_utils: fail better when build/master doesn't exist
  - dep_utils: try use META.yml if META.json doesn't exist
- - tests: update reportversions test
+ - tests: update reportprereqs test
 
  [Dependencies::Stats]
  - Dependencies changed since 2.016007, see misc/*.deps* for details
