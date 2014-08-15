@@ -3,7 +3,9 @@
 2.017001 2014-08-11T20:51:35Z
  [Dependencies::Stats]
  - Dependencies changed since 2.017000, see misc/*.deps* for details
- - runtime: ↑2
+ - develop: ↑3
+ - runtime: ↑6
+ - test: ↑1
 
 2.017000 2014-08-11T20:48:43Z
  [00 Minor]
