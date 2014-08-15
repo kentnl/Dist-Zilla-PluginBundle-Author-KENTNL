@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.017001 2014-08-15T01:59:33Z
  [00 Bugfix]
  - Use a version of Git::Contributors that is safe for testing and general use.
 
