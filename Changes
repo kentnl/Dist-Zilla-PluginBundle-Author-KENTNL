@@ -1,6 +1,14 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Bugfix]
+ - Use a version of Git::Contributors that is safe for testing and general use.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.017000, see misc/*.deps* for details
+ - develop: ↑3
+ - runtime: ↑6
+ - test: ↑1
 
 2.017000 2014-08-11T20:48:43Z
  [00 Minor]
