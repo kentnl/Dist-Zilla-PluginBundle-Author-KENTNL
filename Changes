@@ -1,6 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.017001 2014-08-11T20:51:35Z
+2.017001 2014-08-15T01:59:33Z
+ [00 Bugfix]
+ - Use a version of Git::Contributors that is safe for testing and general use.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.017000, see misc/*.deps* for details
  - develop: ↑3
