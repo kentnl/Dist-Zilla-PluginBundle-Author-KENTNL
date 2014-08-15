@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.017001
+2.017002
+
+2.017001 2014-08-15T01:59:33Z
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Git::Contributors 0.004 → 0.006
  - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.142180 → 0.142250
