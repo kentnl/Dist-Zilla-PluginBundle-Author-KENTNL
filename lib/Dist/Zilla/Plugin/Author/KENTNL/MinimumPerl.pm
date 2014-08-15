@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
-our $VERSION = '2.017002';
+our $VERSION = '2.017003';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -149,7 +149,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.017002
+version 2.017003
 
 =head1 METHODS
 
