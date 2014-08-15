@@ -30,12 +30,6 @@ with 'Dist::Zilla::Role::MintingProfile::ShareDir';
 
 
 
-
-
-
-
-
-
 __PACKAGE__->meta->make_immutable;
 no Moose;
 1;
