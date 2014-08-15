@@ -378,6 +378,7 @@ sub _configure_basic_metadata {
   $self->add_plugin( 'MetaData::BuiltWith' => $builtwith_options );
   $self->add_plugin(
     'Git::Contributors' => {
+      ':version'       => '0.006',
       include_authors  => 0,
       include_releaser => 0,
       order_by         => 'name',
