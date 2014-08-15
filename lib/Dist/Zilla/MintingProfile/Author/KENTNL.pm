@@ -30,12 +30,12 @@ with 'Dist::Zilla::Role::MintingProfile::ShareDir';
 
 =cut
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+1;
+
 =head1 SYNOPSIS
 
     dzil new -P Author::KENTNL Some::Dist::Name
 
 =cut
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
-1;

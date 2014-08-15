@@ -128,6 +128,8 @@ sub gather_files {
 __PACKAGE__->meta->make_immutable;
 no Moose;
 
+1;
+
 =head1 SYNOPSIS
 
   ; ~/.dzil/profiles/default/profile.ini
@@ -180,5 +182,3 @@ for people other than ... well.. me. Call me a counter-egotist, if you will.
 This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken C<< ☺ >>.
 
 =cut
-
-1;

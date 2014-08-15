@@ -657,6 +657,8 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 no Moose::Util::TypeConstraints;
 
+1;
+
 =head1 SYNOPSIS
 
     [@Author::KENTNL]
@@ -746,6 +748,3 @@ I wish to give proper respect to the people out there already implementing this 
 =back
 
 =cut
-
-1;
-
