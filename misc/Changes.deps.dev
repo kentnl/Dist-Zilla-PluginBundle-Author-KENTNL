@@ -1,6 +1,12 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.017000
+2.017001
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Git::Contributors 0.004 → 0.006
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.142180 → 0.142250
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.018 → 0.019
+
+2.017000 2014-08-11T20:48:43Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Git::Contributors 0.004
 

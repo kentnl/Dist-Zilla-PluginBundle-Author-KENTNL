@@ -1,6 +1,8 @@
 This file contains changes in OPTIONAL dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.017000
+2.017001
+
+2.017000 2014-08-11T20:48:43Z
  [Added / runtime recommends]
  - Data::Serializer::Sereal
 

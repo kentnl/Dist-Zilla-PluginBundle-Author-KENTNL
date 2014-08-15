@@ -1,6 +1,18 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.017000
+2.017001
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Git::Contributors 0.004 → 0.006
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.142180 → 0.142250
+ - Dist::Zilla::Plugin::Test::ReportPrereqs 0.018 → 0.019
+ - LWP::Protocol::https 6.04 → 6.06
+ - Moose 2.1210 → 2.1211
+ - Moose::Util::TypeConstraints 2.1210 → 2.1211
+
+ [Changed / test requires]
+ - Git::Wrapper 0.035 → 0.037
+
+2.017000 2014-08-11T20:48:43Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Git::Contributors 0.004
 

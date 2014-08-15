@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.017000';
+our $VERSION = '2.017001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -378,6 +378,7 @@ sub _configure_basic_metadata {
   $self->add_plugin( 'MetaData::BuiltWith' => $builtwith_options );
   $self->add_plugin(
     'Git::Contributors' => {
+      ':version'       => '0.006',
       include_authors  => 0,
       include_releaser => 0,
       order_by         => 'name',
@@ -760,7 +761,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.017000
+version 2.017001
 
 =head1 SYNOPSIS
 
