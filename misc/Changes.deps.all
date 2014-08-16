@@ -1,6 +1,30 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.017003
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000004 → 1.000005
+ - Dist::Zilla::Plugin::Git::NextRelease 0.002011 → 0.002012
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.001000 → 1.001001
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.000003 → 2.000004
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.002000 → 0.002001
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001002 → 0.001003
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002001 → 0.002002
+ - Test::Kwalitee 1.19 → 1.21
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000004 → 1.000005
+ - Dist::Zilla::Plugin::Git::NextRelease 0.002011 → 0.002012
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.001000 → 1.001001
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.000003 → 2.000004
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.002000 → 0.002001
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001002 → 0.001003
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002001 → 0.002002
+ - Dist::Zilla::Util::CurrentCmd 0.002000 → 0.002001
+ - Dist::Zilla::Util::EmulatePhase 1.000001 → 1.000002
+ - MooseX::Has::Sugar 1.000003 → 1.000004
+
+ [Changed / test requires]
+ - Test::File::ShareDir 1.000004 → 1.000005
 
 2.017002 2014-08-15T20:54:32Z
 
