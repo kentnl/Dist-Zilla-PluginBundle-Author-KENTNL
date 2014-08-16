@@ -482,11 +482,11 @@ tc_select: {
     }
     if ( 'eumm' eq $tk ) {
       $self->add_plugin( 'MakeMaker' => { default_jobs => 10 } );
-      last_tc_select;
+      last tc_select;
     }
     if ( 'mbtiny' eq $tk ) {
       $self->add_plugin( 'ModuleBuildTiny' => { default_jobs => 10 } );
-      last_tc_select;
+      last tc_select;
     }
   }
   $self->add_plugin( 'Author::KENTNL::RecommendFixes' => { ':version' => '0.001001' } );
