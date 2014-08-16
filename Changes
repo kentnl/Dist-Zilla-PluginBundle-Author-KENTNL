@@ -1,6 +1,15 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - CPANDAY!
+ - Add new KENTNL::RecommendFixes trick.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.017002, see misc/*.deps* for details
+ - develop: +1 ↑11 (suggests: ↑1)
+ - runtime: +1 ↑15
+ - test: ↑2
 
 2.017002 2014-08-15T20:54:32Z
  [00 Trivial]
