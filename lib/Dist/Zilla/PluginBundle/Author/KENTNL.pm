@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.017003';
+our $VERSION = '2.018000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -475,18 +475,21 @@ sub _configure_bundle_develop_requires {
 sub _configure_toolkit {
   my ($self) = @_;
   my $tk = $self->toolkit;
-  if ( 'mb' eq $tk ) {
-    $self->add_plugin( 'ModuleBuild' => { default_jobs => 10 } );
-    return;
+tc_select: {
+    if ( 'mb' eq $tk ) {
+      $self->add_plugin( 'ModuleBuild' => { default_jobs => 10 } );
+      last tc_select;
+    }
+    if ( 'eumm' eq $tk ) {
+      $self->add_plugin( 'MakeMaker' => { default_jobs => 10 } );
+      last_tc_select;
+    }
+    if ( 'mbtiny' eq $tk ) {
+      $self->add_plugin( 'ModuleBuildTiny' => { default_jobs => 10 } );
+      last_tc_select;
+    }
   }
-  if ( 'eumm' eq $tk ) {
-    $self->add_plugin( 'MakeMaker' => { default_jobs => 10 } );
-    return;
-  }
-  if ( 'mbtiny' eq $tk ) {
-    $self->add_plugin( 'ModuleBuildTiny' => { default_jobs => 10 } );
-    return;
-  }
+  $self->add_plugin( 'Author::KENTNL::RecommendFixes' => { ':version' => '0.001001' } );
   return;
 }
 
@@ -671,7 +674,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.017003
+version 2.018000
 
 =head1 SYNOPSIS
 
