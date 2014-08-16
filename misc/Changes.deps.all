@@ -1,6 +1,50 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.017002
+2.017003
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001
+
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001
+
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000004 → 1.000005
+ - Dist::Zilla::Plugin::Git::Contributors 0.006 → 0.007
+ - Dist::Zilla::Plugin::Git::NextRelease 0.002011 → 0.002012
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.001000 → 1.001001
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.000003 → 2.000004
+ - Dist::Zilla::Plugin::PodWeaver 4.005 → 4.006
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.002000 → 0.002001
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001002 → 0.001003
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002001 → 0.002002
+ - Dist::Zilla::Plugin::Test::Kwalitee 2.07 → 2.08
+ - Test::Kwalitee 1.19 → 1.22
+
+ [Changed / develop suggests]
+ - Dist::Zilla::App::Command::bakeini 0.001001 → 0.001002
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 1.000004 → 1.000005
+ - Dist::Zilla::Plugin::Git::Contributors 0.006 → 0.007
+ - Dist::Zilla::Plugin::Git::NextRelease 0.002011 → 0.002012
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.001000 → 1.001001
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.000003 → 2.000004
+ - Dist::Zilla::Plugin::PodWeaver 4.005 → 4.006
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.002000 → 0.002001
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001002 → 0.001003
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002001 → 0.002002
+ - Dist::Zilla::Plugin::Test::Kwalitee 2.07 → 2.08
+ - Dist::Zilla::Role::BundleDeps 0.002000 → 0.002001
+ - Dist::Zilla::Util::CurrentCmd 0.002000 → 0.002001
+ - Dist::Zilla::Util::EmulatePhase 1.000001 → 1.000002
+ - MooseX::Has::Sugar 1.000003 → 1.000004
+ - version 0.9908 → 0.9909
+
+ [Changed / test requires]
+ - Capture::Tiny 0.24 → 0.25
+ - Test::File::ShareDir 1.000004 → 1.000005
+
+2.017002 2014-08-15T20:54:32Z
 
 2.017001 2014-08-15T01:59:33Z
  [Changed / develop requires]
