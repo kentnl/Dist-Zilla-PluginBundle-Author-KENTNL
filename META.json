@@ -216,7 +216,6 @@
             "File::pushd" : "1.009",
             "FindBin" : "0",
             "Git::Wrapper" : "0.037",
-            "JSON::MaybeXS" : "1.002002",
             "Module::Build" : "0",
             "Module::Metadata" : "1.000024",
             "Path::Class::Dir" : "0.33",

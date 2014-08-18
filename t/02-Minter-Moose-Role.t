@@ -5,7 +5,6 @@ use warnings;
 use Test::More;
 use FindBin;
 use Test::Output qw();
-use JSON::MaybeXS;
 
 use lib 't/lib';
 use tshare;
