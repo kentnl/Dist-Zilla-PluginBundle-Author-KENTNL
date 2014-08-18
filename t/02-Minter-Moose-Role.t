@@ -5,7 +5,6 @@ use warnings;
 use Test::More;
 use FindBin;
 use Test::Output qw();
-use JSON qw( from_json );
 
 use lib 't/lib';
 use tshare;
@@ -219,7 +218,7 @@ EOF
     ok( exists $got_files{$file}, 'Expected mint file ' . $file . ' files exists' );
   }
 
-  my $data = from_json( $bzil->tempdir->subdir('build')->file('META.json')->slurp() );
+  my $data = $bzil->distmeta;
 
   note explain $data;
 

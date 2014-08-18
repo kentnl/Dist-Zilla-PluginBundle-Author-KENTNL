@@ -1,6 +1,26 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.017003
+2.019000
+ [Added / runtime recommends]
+ - Cpanel::JSON::XS
+ - JSON::MaybeXS
+
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001 → 0.002001
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.001001 → 1.002000
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001 → 0.002001
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.001001 → 1.002000
+
+ [Removed / runtime recommends]
+ - JSON
+ - JSON::XS
+
+ [Removed / test requires]
+ - JSON 2.90
+
+2.018000 2014-08-16T21:56:32Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001
 
