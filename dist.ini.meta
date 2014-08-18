@@ -120,8 +120,8 @@ CPAN::Changes::Dependencies::Details = 0.001000
 Data::Serializer::Sereal             = 0
 
 Net::GitHub                          = 0
-JSON                                 = 0
-JSON::XS                             = 0
+JSON::MaybeXS                        = 0
+Cpanel::JSON::XS                     = 0
 
 [Prereqs / testreqs]
 -phase = test

@@ -1,6 +1,13 @@
 This file contains changes in OPTIONAL dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.018001
+2.019000
+ [Added / runtime recommends]
+ - Cpanel::JSON::XS
+ - JSON::MaybeXS
+
+ [Removed / runtime recommends]
+ - JSON
+ - JSON::XS
 
 2.018000 2014-08-16T21:56:32Z
 
