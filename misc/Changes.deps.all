@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.019000
+2.019001
+
+2.019000 2014-08-18T03:48:49Z
  [Added / runtime recommends]
  - Cpanel::JSON::XS
  - JSON::MaybeXS
