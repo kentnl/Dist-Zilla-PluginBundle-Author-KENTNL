@@ -79,7 +79,7 @@ requires:
   Carp: '0'
   Dist::Zilla: '5.020'
   Dist::Zilla::File::FromCode: '5.020'
-  Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.001001'
+  Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.002001'
   Dist::Zilla::Plugin::Authority: '1.006'
   Dist::Zilla::Plugin::AutoPrereqs: '5.020'
   Dist::Zilla::Plugin::Bootstrap::lib: '1.000005'
@@ -175,7 +175,7 @@ x_BuiltWith:
     Dist::Zilla: '5.020'
     Dist::Zilla::App::Command::bakeini: '0.001002'
     Dist::Zilla::File::FromCode: '5.020'
-    Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.001001'
+    Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.002001'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.020'
     Dist::Zilla::Plugin::Bootstrap::lib: '1.000005'
@@ -588,7 +588,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes
       name: '@Author::KENTNL/Author::KENTNL::RecommendFixes'
-      version: '0.001001'
+      version: '0.002001'
     -
       class: Dist::Zilla::Plugin::ReadmeFromPod
       name: '@Author::KENTNL/ReadmeFromPod'
