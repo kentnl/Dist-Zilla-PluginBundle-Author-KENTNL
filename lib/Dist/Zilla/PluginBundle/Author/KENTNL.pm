@@ -70,7 +70,9 @@ has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'l
 
 
 
-has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', 'required' => 1 );    #builder => sub { 'numify' } );
+
+
+has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', lazy => 1, builder => sub { 'numify' } );
 
 
 
@@ -88,34 +90,9 @@ has 'mantissa' => (
   'lazy'    => 1,
   'builder' => sub {
     my ($self) = @_;
-    if ( 'numify' eq $self->normal_form ) {
-      require Carp;
-      return Carp::croak('mantissa required but not specified');
-    }
     return 6;
   },
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
 
 
 
@@ -679,9 +656,6 @@ version 2.019001
 =head1 SYNOPSIS
 
     [@Author::KENTNL]
-    git_versions = 1      ; Mandatory flag indicating the dist is adjusted to use git tag versioning
-                          ; otherwise use an older bundle version.
-
     normal_form  = numify ; Mandatory for this bundle indicating normal form.
                           ; see DZP::Git::NextVersion::Sanitized
 
@@ -793,36 +767,21 @@ Populated during C<< $self->configure >> and returned from C<< ->bundle_config >
 
 =head2 C<normal_form>
 
-  Str, ro, required
+  Str, ro, lazy
 
 A C<normal_form> to pass to L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >>.
+
+Defaults to C<numify>
 
 See L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
 
 =head2 C<mantissa>
 
-  Int, ro, required if normal_form eq 'numify'
+  Int, ro, defaults to 6.
 
 Defines the length of the mantissa when normal form is C<numify>.
 
 See L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >> and L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
-
-=head2 C<git_versions>
-
-  enum([1]), ro, required
-
-=over 4
-
-=item * B<MUST BE SPECIFIED>
-
-=item * B<< MUST BE C<1> >>
-
-=back
-
-Setting as such indicates that the distribution in question is safe to use with C<Git::NextVersion>.
-
-As no logic exists any more to support using anything other than C<Git::NextVersion> with this bundle,
-this parameter must be turned on and you must use Git::NextVersion.
 
 =head2 C<authority>
 
