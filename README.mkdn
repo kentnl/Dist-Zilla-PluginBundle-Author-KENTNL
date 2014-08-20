@@ -4,14 +4,11 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 # VERSION
 
-version 2.019001
+version 2.020000
 
 # SYNOPSIS
 
     [@Author::KENTNL]
-    git_versions = 1      ; Mandatory flag indicating the dist is adjusted to use git tag versioning
-                          ; otherwise use an older bundle version.
-
     normal_form  = numify ; Mandatory for this bundle indicating normal form.
                           ; see DZP::Git::NextVersion::Sanitized
 
@@ -111,15 +108,17 @@ Populated during `$self->configure` and returned from `->bundle_config`
 
 ## `normal_form`
 
-    Str, ro, required
+    Str, ro, lazy
 
 A `normal_form` to pass to [`[Git::NextVersion::Sanitized]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Git::NextVersion::Sanitized).
+
+Defaults to `numify`
 
 See [`[::Role::Version::Sanitize]`](https://metacpan.org/pod/Dist::Zilla::Role::Version::Sanitize)
 
 ## `mantissa`
 
-    Int, ro, required if normal_form eq 'numify'
+    Int, ro, defaults to 6.
 
 Defines the length of the mantissa when normal form is `numify`.
 
@@ -127,15 +126,15 @@ See [`[Git::NextVersion::Sanitized]`](https://metacpan.org/pod/Dist::Zilla::Plug
 
 ## `git_versions`
 
-    enum([1]), ro, required
+    Any, unused.
 
-- **MUST BE SPECIFIED**
-- **MUST BE `1`**
+- **UNUSED**
 
-Setting as such indicates that the distribution in question is safe to use with `Git::NextVersion`.
+Since `2.020`, this field is no longer required, and is unused, simply supported for legacy reasons.
 
-As no logic exists any more to support using anything other than `Git::NextVersion` with this bundle,
-this parameter must be turned on and you must use Git::NextVersion.
+Things may not work if code has not been portaged to be `Git::NextVersion` safe, but that's better than going "bang".
+
+But code will be assumed to be using `Git::NextVersion`.
 
 ## `authority`
 

@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.019001';
+our $VERSION = '2.020000';
 
 # AUTHORITY
 
@@ -62,19 +62,21 @@ has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'l
 
 =attr C<normal_form>
 
-  Str, ro, required
+  Str, ro, lazy
 
 A C<normal_form> to pass to L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >>.
+
+Defaults to C<numify>
 
 See L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
 
 =cut
 
-has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', 'required' => 1 );    #builder => sub { 'numify' } );
+has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', lazy => 1, builder => sub { 'numify' } );
 
 =attr C<mantissa>
 
-  Int, ro, required if normal_form eq 'numify'
+  Int, ro, defaults to 6.
 
 Defines the length of the mantissa when normal form is C<numify>.
 
@@ -87,35 +89,29 @@ has 'mantissa' => (
   'isa'     => 'Int',
   'lazy'    => 1,
   'builder' => sub {
-    my ($self) = @_;
-    if ( 'numify' eq $self->normal_form ) {
-      require Carp;
-      return Carp::croak('mantissa required but not specified');
-    }
     return 6;
   },
 );
 
 =attr C<git_versions>
 
-  enum([1]), ro, required
+  Any, unused.
 
 =over 4
 
-=item * B<MUST BE SPECIFIED>
-
-=item * B<< MUST BE C<1> >>
+=item * B<UNUSED>
 
 =back
 
-Setting as such indicates that the distribution in question is safe to use with C<Git::NextVersion>.
+Since C<2.020>, this field is no longer required, and is unused, simply supported for legacy reasons.
 
-As no logic exists any more to support using anything other than C<Git::NextVersion> with this bundle,
-this parameter must be turned on and you must use Git::NextVersion.
+Things may not work if code has not been portaged to be C<Git::NextVersion> safe, but that's better than going "bang".
+
+But code will be assumed to be using C<Git::NextVersion>.
 
 =cut
 
-has 'git_versions' => ( is => 'ro', isa => enum( [1] ), required => 1, );
+has 'git_versions' => ( is => 'ro', isa => 'Any', lazy => 1, default => sub { undef } );
 
 =attr C<authority>
 
@@ -665,9 +661,6 @@ no Moose::Util::TypeConstraints;
 =head1 SYNOPSIS
 
     [@Author::KENTNL]
-    git_versions = 1      ; Mandatory flag indicating the dist is adjusted to use git tag versioning
-                          ; otherwise use an older bundle version.
-
     normal_form  = numify ; Mandatory for this bundle indicating normal form.
                           ; see DZP::Git::NextVersion::Sanitized
 
