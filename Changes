@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.020000 2014-08-20T15:50:05Z
  [00 Major]
  - 'git_versions' is now both optional, and an ignored parameter.
  - 'normal_form' is now optional, and defaults to 'numify'

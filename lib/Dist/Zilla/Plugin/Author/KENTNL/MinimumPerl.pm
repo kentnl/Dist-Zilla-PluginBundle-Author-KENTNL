@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
-our $VERSION = '2.019001';
+our $VERSION = '2.020001';
 
 # AUTHORITY
 
