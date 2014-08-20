@@ -89,7 +89,6 @@ has 'mantissa' => (
   'isa'     => 'Int',
   'lazy'    => 1,
   'builder' => sub {
-    my ($self) = @_;
     return 6;
   },
 );
