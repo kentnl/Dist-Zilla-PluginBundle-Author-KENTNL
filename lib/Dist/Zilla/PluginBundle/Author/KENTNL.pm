@@ -102,6 +102,26 @@ has 'mantissa' => (
 
 
 
+
+
+
+
+
+
+
+
+
+
+has 'git_versions' => ( is => 'ro', isa => 'Any', lazy =>, );
+
+
+
+
+
+
+
+
+
 has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, builder => sub { 'cpan:KENTNL' }, );
 
 
@@ -782,6 +802,22 @@ See L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
 Defines the length of the mantissa when normal form is C<numify>.
 
 See L<< C<[Git::NextVersion::Sanitized]>|Dist::Zilla::Plugin::Git::NextVersion::Sanitized >> and L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
+
+=head2 C<git_versions>
+
+  Any, unused.
+
+=over 4
+
+=item * B<UNUSED>
+
+=back
+
+Since C<2.020>, this field is no longer required, and is unused, simply supported for legacy reasons.
+
+Things may not work if code has not been portaged to be C<Git::NextVersion> safe, but that's better than going "bang".
+
+But code will be assumed to be using C<Git::NextVersion>.
 
 =head2 C<authority>
 

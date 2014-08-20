@@ -125,6 +125,19 @@ ATTRIBUTES
 
     See "[Git::NextVersion::Sanitized]" and "[::Role::Version::Sanitize]"
 
+  "git_versions"
+      Any, unused.
+
+    *   UNUSED
+
+    Since 2.020, this field is no longer required, and is unused, simply
+    supported for legacy reasons.
+
+    Things may not work if code has not been portaged to be
+    "Git::NextVersion" safe, but that's better than going "bang".
+
+    But code will be assumed to be using "Git::NextVersion".
+
   "authority"
       Str, ro, default = cpan:KENTNL
 
