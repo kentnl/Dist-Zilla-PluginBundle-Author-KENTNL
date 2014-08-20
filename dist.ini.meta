@@ -10,7 +10,6 @@ main_module = lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 try_built = 1
 
 [@Author::KENTNL]
-git_versions      = 1
 twitter_hash_tags = #perl #cpan
 normal_form       = numify
 mantissa          = 6

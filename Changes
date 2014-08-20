@@ -1,6 +1,16 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
 2.020000 2014-08-18T03:57:23Z
+ [00 Major]
+ - 'git_versions' is now both optional, and an ignored parameter.
+ - 'normal_form' is now optional, and defaults to 'numify'
+ - 'mantissa' is now optional, and defautls to 6.
+ - Discrepancies with any of the above will be offloaded into the RecommendChanges plugin.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.019000, see misc/*.deps* for details
+ - develop: ↑1
+ - runtime: ↑1
 
 2.019000 2014-08-18T03:48:49Z
  [00 Minor]
