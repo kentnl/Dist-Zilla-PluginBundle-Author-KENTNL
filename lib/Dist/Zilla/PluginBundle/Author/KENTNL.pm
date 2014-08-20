@@ -112,7 +112,7 @@ has 'mantissa' => (
 
 
 
-has 'git_versions' => ( is => 'ro', isa => 'Any', lazy => 1, default => sub { undef });
+has 'git_versions' => ( is => 'ro', isa => 'Any', lazy => 1, default => sub { undef } );
 
 
 
