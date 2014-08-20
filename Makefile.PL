@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     "Carp" => 0,
     "Dist::Zilla" => "5.020",
     "Dist::Zilla::File::FromCode" => "5.020",
-    "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" => "0.002001",
+    "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" => "0.002002",
     "Dist::Zilla::Plugin::Authority" => "1.006",
     "Dist::Zilla::Plugin::AutoPrereqs" => "5.020",
     "Dist::Zilla::Plugin::Bootstrap::lib" => "1.000005",
@@ -125,7 +125,7 @@ my %WriteMakefileArgs = (
     "Test::Output" => "1.03",
     "lib" => 0
   },
-  "VERSION" => "2.019000",
+  "VERSION" => "2.020000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -137,7 +137,7 @@ my %FallbackPrereqs = (
   "Carp" => 0,
   "Dist::Zilla" => "5.020",
   "Dist::Zilla::File::FromCode" => "5.020",
-  "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" => "0.002001",
+  "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" => "0.002002",
   "Dist::Zilla::Plugin::Authority" => "1.006",
   "Dist::Zilla::Plugin::AutoPrereqs" => "5.020",
   "Dist::Zilla::Plugin::Bootstrap::lib" => "1.000005",

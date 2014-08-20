@@ -26,7 +26,7 @@
       "develop" : {
          "requires" : {
             "Dist::Zilla" : "5.020",
-            "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.002001",
+            "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.002002",
             "Dist::Zilla::Plugin::Authority" : "0",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.020",
             "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000005",
@@ -122,7 +122,7 @@
             "Carp" : "0",
             "Dist::Zilla" : "5.020",
             "Dist::Zilla::File::FromCode" : "5.020",
-            "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.002001",
+            "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.002002",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.020",
             "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000005",
@@ -232,19 +232,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.019000"
+         "version" : "2.020000"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.019000"
+         "version" : "2.020000"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.019000"
+         "version" : "2.020000"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.019000"
+         "version" : "2.020000"
       }
    },
    "release_status" : "stable",
@@ -259,7 +259,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.019000",
+   "version" : "2.020000",
    "x_BuiltWith" : {
       "modules" : {
          "CHI" : "0.58",
@@ -276,7 +276,7 @@
          "Dist::Zilla" : "5.020",
          "Dist::Zilla::App::Command::bakeini" : "0.001002",
          "Dist::Zilla::File::FromCode" : "5.020",
-         "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.002001",
+         "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.002002",
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.020",
          "Dist::Zilla::Plugin::Bootstrap::lib" : "1.000005",
@@ -346,7 +346,7 @@
          "IO::Socket::SSL" : "1.997",
          "JSON::MaybeXS" : "1.002002",
          "LWP::Protocol::https" : "6.06",
-         "Module::Build" : "0.4207",
+         "Module::Build" : "0.4208",
          "Module::Metadata" : "1.000024",
          "Moose" : "2.1211",
          "Moose::Util::TypeConstraints" : "2.1211",
@@ -407,7 +407,7 @@
          "osname" : "linux"
       },
       "platform" : "linux",
-      "uname" : "Linux 3.15.5-aufs x86_64 GenuineIntel GNU/Linux"
+      "uname" : "Linux 3.16.1-aufs x86_64 GenuineIntel GNU/Linux"
    },
    "x_Dist_Zilla" : {
       "perl" : {
@@ -776,7 +776,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes",
             "name" : "@Author::KENTNL/Author::KENTNL::RecommendFixes",
-            "version" : "0.002001"
+            "version" : "0.002002"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeFromPod",
@@ -863,7 +863,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "2.019000-source",
+                  "tag" : "2.020000-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -934,7 +934,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "2.019000",
+                  "tag" : "2.020000",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"

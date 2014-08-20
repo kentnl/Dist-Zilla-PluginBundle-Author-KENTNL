@@ -3,13 +3,10 @@ NAME
     build your distributions.
 
 VERSION
-    version 2.019000
+    version 2.020000
 
 SYNOPSIS
         [@Author::KENTNL]
-        git_versions = 1      ; Mandatory flag indicating the dist is adjusted to use git tag versioning
-                              ; otherwise use an older bundle version.
-
         normal_form  = numify ; Mandatory for this bundle indicating normal form.
                               ; see DZP::Git::NextVersion::Sanitized
 
@@ -113,32 +110,33 @@ ATTRIBUTES
     Populated during "$self->configure" and returned from "->bundle_config"
 
   "normal_form"
-      Str, ro, required
+      Str, ro, lazy
 
     A "normal_form" to pass to "[Git::NextVersion::Sanitized]".
+
+    Defaults to "numify"
 
     See "[::Role::Version::Sanitize]"
 
   "mantissa"
-      Int, ro, required if normal_form eq 'numify'
+      Int, ro, defaults to 6.
 
     Defines the length of the mantissa when normal form is "numify".
 
     See "[Git::NextVersion::Sanitized]" and "[::Role::Version::Sanitize]"
 
   "git_versions"
-      enum([1]), ro, required
+      Any, unused.
 
-    *   MUST BE SPECIFIED
+    *   UNUSED
 
-    *   MUST BE 1
+    Since 2.020, this field is no longer required, and is unused, simply
+    supported for legacy reasons.
 
-    Setting as such indicates that the distribution in question is safe to
-    use with "Git::NextVersion".
+    Things may not work if code has not been portaged to be
+    "Git::NextVersion" safe, but that's better than going "bang".
 
-    As no logic exists any more to support using anything other than
-    "Git::NextVersion" with this bundle, this parameter must be turned on
-    and you must use Git::NextVersion.
+    But code will be assumed to be using "Git::NextVersion".
 
   "authority"
       Str, ro, default = cpan:KENTNL
