@@ -11,6 +11,9 @@
  - runtime: +1 ↑9
  - test: ↑1 (recommends: ↑1)
 
+ [Metadata]
+ - Specifiy an email address for copyright holder.
+
 2.020000 2014-08-20T15:50:05Z
  [00 Major]
  - 'git_versions' is now both optional, and an ignored parameter.
