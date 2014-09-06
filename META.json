@@ -50,7 +50,7 @@
             "Dist::Zilla::Plugin::MetaConfig" : "5.020",
             "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.003000",
             "Dist::Zilla::Plugin::MetaJSON" : "5.020",
-            "Dist::Zilla::Plugin::MetaProvides::Package" : "2.001001",
+            "Dist::Zilla::Plugin::MetaProvides::Package" : "2.001002",
             "Dist::Zilla::Plugin::MetaTests" : "5.020",
             "Dist::Zilla::Plugin::MetaYAML" : "5.020",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
@@ -62,7 +62,7 @@
             "Dist::Zilla::Plugin::Prereqs::AuthorDeps" : "0.003",
             "Dist::Zilla::Plugin::Prereqs::MatchInstalled::All" : "1.000000",
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.002001",
-            "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142250",
+            "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
             "Dist::Zilla::Plugin::RemovePhasedPrereqs" : "0.002",
             "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0.001003",
@@ -145,7 +145,7 @@
             "Dist::Zilla::Plugin::MetaConfig" : "5.020",
             "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.003000",
             "Dist::Zilla::Plugin::MetaJSON" : "5.020",
-            "Dist::Zilla::Plugin::MetaProvides::Package" : "2.001001",
+            "Dist::Zilla::Plugin::MetaProvides::Package" : "2.001002",
             "Dist::Zilla::Plugin::MetaTests" : "5.020",
             "Dist::Zilla::Plugin::MetaYAML" : "5.020",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
@@ -155,7 +155,7 @@
             "Dist::Zilla::Plugin::PodWeaver" : "4.006",
             "Dist::Zilla::Plugin::Prereqs" : "5.020",
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.002001",
-            "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142250",
+            "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
             "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0.001003",
             "Dist::Zilla::Plugin::RunExtraTests" : "0.022",
@@ -302,7 +302,7 @@
          "Dist::Zilla::Plugin::MetaConfig" : "5.020",
          "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.003000",
          "Dist::Zilla::Plugin::MetaJSON" : "5.020",
-         "Dist::Zilla::Plugin::MetaProvides::Package" : "2.001001",
+         "Dist::Zilla::Plugin::MetaProvides::Package" : "2.001002",
          "Dist::Zilla::Plugin::MetaTests" : "5.020",
          "Dist::Zilla::Plugin::MetaYAML" : "5.020",
          "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
@@ -315,10 +315,10 @@
          "Dist::Zilla::Plugin::PodWeaver" : "4.006",
          "Dist::Zilla::Plugin::Prereqs" : "5.020",
          "Dist::Zilla::Plugin::Prereqs::AuthorDeps" : "0.003",
-         "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : "1.000002",
+         "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : "1.001001",
          "Dist::Zilla::Plugin::Prereqs::MatchInstalled::All" : "1.000000",
          "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.002001",
-         "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142250",
+         "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
          "Dist::Zilla::Plugin::RemovePhasedPrereqs" : "0.002",
          "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0.001003",
@@ -460,7 +460,7 @@
                }
             },
             "name" : "@Author::KENTNL/MetaProvides::Package",
-            "version" : "2.001001"
+            "version" : "2.001002"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",
@@ -791,7 +791,7 @@
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
             "name" : "@Author::KENTNL/ReadmeAnyFromPod",
-            "version" : "0.142250"
+            "version" : "0.142470"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::CPAN::Changes",
