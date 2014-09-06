@@ -67,7 +67,6 @@ sub gather_files {
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
       ':version          = %{depversion}s',                                      #
-      'git_versions      = 1',                                                   #
       'normal_form       = numify',                                              #
       'mantissa          = 6',                                                   #
       'toolkit           = eumm',                                                #
