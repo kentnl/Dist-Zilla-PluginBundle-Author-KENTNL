@@ -3,11 +3,12 @@
 {{$NEXT}}
  [Bugfix]
  - dont set git_versions in new dists.
+ - add dump_config to MinimumPerl
 
  [Dependencies::Stats]
  - Dependencies changed since 2.020000, see misc/*.deps* for details
  - develop: ↑6
- - runtime: ↑9
+ - runtime: +1 ↑9
  - test: ↑1 (recommends: ↑1)
 
 2.020000 2014-08-20T15:50:05Z

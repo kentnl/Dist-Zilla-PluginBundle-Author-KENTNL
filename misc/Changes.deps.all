@@ -1,6 +1,9 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.020001
+ [Added / runtime requires]
+ - Dist::Zilla::Util::ConfigDumper 0.003004
+
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.002002 → 0.003002
  - Dist::Zilla::Plugin::Bootstrap::lib 1.000005 → 1.001000
