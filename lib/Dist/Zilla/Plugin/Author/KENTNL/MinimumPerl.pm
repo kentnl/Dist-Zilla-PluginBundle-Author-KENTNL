@@ -23,7 +23,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-use Moose qw( has extends override );
+use Moose qw( has extends override around );
 use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;

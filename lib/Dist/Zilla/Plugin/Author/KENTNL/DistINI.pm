@@ -38,7 +38,7 @@ use String::Formatter named_stringf => {
   codes => {
     s => sub { "$_" },
     S => sub { q{"} . "$_" . q{"} },
-    n => sub { int $_ },
+    n => sub { int },
   },
 };
 
