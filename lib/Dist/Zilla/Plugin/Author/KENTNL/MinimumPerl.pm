@@ -24,8 +24,11 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 use Moose qw( has extends override );
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
+
+around dump_config => config_dumper( __PACKAGE__, { attrs => 'detected_perl', 'fiveten' } );
 
 has 'detected_perl' => (
   is         => 'rw',

@@ -1,6 +1,14 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.020001 2014-08-20T15:58:39Z
+2.020001 2014-09-06T02:45:57Z
+ [Bugfix]
+ - dont set git_versions in new dists.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.020000, see misc/*.deps* for details
+ - develop: ↑6
+ - runtime: ↑9
+ - test: ↑1 (recommends: ↑1)
 
 2.020000 2014-08-20T15:50:05Z
  [00 Major]

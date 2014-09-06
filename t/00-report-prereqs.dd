@@ -157,6 +157,7 @@ do { my $x = {
                                       'Dist::Zilla::Role::FileGatherer' => '5.020',
                                       'Dist::Zilla::Role::MintingProfile::ShareDir' => '5.020',
                                       'Dist::Zilla::Role::PluginBundle' => '5.020',
+                                      'Dist::Zilla::Util::ConfigDumper' => '0.003004',
                                       'Dist::Zilla::Util::CurrentCmd' => '0.002001',
                                       'Dist::Zilla::Util::EmulatePhase' => '1.001001',
                                       'IO::Socket::SSL' => '1.997',
