@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.020001 2014-09-06T03:22:12Z
  [Bugfix]
  - dont set git_versions in new dists.
  - add dump_config to MinimumPerl
