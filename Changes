@@ -7,8 +7,8 @@
 
  [Dependencies::Stats]
  - Dependencies changed since 2.020000, see misc/*.deps* for details
- - develop: ↑6
- - runtime: +1 ↑9
+ - develop: ↑7
+ - runtime: +1 ↑10
  - test: ↑1 (recommends: ↑1)
 
  [Metadata]

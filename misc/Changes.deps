@@ -9,7 +9,8 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Dist::Zilla::Plugin::Bootstrap::lib 1.000005 → 1.001000
  - Dist::Zilla::Plugin::Git::NextRelease 0.002012 → 0.003000
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.002000 → 1.003000
- - Dist::Zilla::Plugin::MetaProvides::Package 2.000004 → 2.001001
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.000004 → 2.001002
+ - Dist::Zilla::Plugin::ReadmeAnyFromPod 0.142250 → 0.142470
  - Dist::Zilla::Plugin::Test::Kwalitee 2.08 → 2.11
  - Dist::Zilla::Util::EmulatePhase 1.000002 → 1.001001
  - MooseX::Types 0.44 → 0.45
