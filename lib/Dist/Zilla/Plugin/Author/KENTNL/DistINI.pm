@@ -11,7 +11,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
-our $VERSION = '2.020000';
+our $VERSION = '2.020001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -38,7 +38,7 @@ use String::Formatter named_stringf => {
   codes => {
     s => sub { "$_" },
     S => sub { q{"} . "$_" . q{"} },
-    n => sub { int $_ },
+    n => sub { int },
   },
 };
 
@@ -67,7 +67,6 @@ sub gather_files {
       $empty,                                                                    #
       '[@Author::KENTNL]',                                                       #
       ':version          = %{depversion}s',                                      #
-      'git_versions      = 1',                                                   #
       'normal_form       = numify',                                              #
       'mantissa          = 6',                                                   #
       'toolkit           = eumm',                                                #
@@ -142,7 +141,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::
 
 =head1 VERSION
 
-version 2.020000
+version 2.020001
 
 =head1 SYNOPSIS
 
@@ -219,7 +218,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

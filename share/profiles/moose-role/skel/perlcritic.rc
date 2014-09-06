@@ -42,6 +42,8 @@ allow_includes = 1
 
 [BuiltinFunctions::ProhibitUniversalIsa]
 
+[BuiltinFunctions::ProhibitUselessTopic]
+
 [BuiltinFunctions::ProhibitVoidGrep]
 
 [BuiltinFunctions::ProhibitVoidMap]
@@ -144,6 +146,8 @@ spell_command = aspell list --lang en_US
 [Documentation::ProhibitVerbatimMarkup]
 
 [Documentation::RequireEndBeforeLastPod]
+
+[Documentation::RequireFilenameMarkup]
 
 [Documentation::RequireFinalCut]
 
@@ -291,6 +295,8 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 [RegularExpressions::ProhibitUnusedCapture]
 
 [RegularExpressions::ProhibitUnusualDelimiters]
+
+[RegularExpressions::ProhibitUselessTopic]
 
 [RegularExpressions::RequireBracesForMultiline]
 

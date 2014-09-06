@@ -1,5 +1,19 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.020001 2014-09-06T03:22:12Z
+ [Bugfix]
+ - dont set git_versions in new dists.
+ - add dump_config to MinimumPerl
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.020000, see misc/*.deps* for details
+ - develop: ↑7
+ - runtime: +1 ↑10
+ - test: ↑1 (recommends: ↑1)
+
+ [Metadata]
+ - Specifiy an email address for copyright holder.
+
 2.020000 2014-08-20T15:50:05Z
  [00 Major]
  - 'git_versions' is now both optional, and an ignored parameter.

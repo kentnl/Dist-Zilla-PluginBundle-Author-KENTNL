@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
-our $VERSION = '2.020000';
+our $VERSION = '2.020001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -23,9 +23,12 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-use Moose qw( has extends override );
+use Moose qw( has extends override around );
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
+
+around dump_config => config_dumper( __PACKAGE__, { attrs => [ 'detected_perl', 'fiveten' ] } );
 
 has 'detected_perl' => (
   is         => 'rw',
@@ -149,7 +152,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.020000
+version 2.020001
 
 =head1 METHODS
 
@@ -174,7 +177,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
