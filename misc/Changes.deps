@@ -1,6 +1,9 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.020001
+ [Added / runtime requires]
+ - Dist::Zilla::Util::ConfigDumper 0.003004
+
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.002002 → 0.003002
  - Dist::Zilla::Plugin::Bootstrap::lib 1.000005 → 1.001000
