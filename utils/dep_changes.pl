@@ -17,7 +17,9 @@ use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
 use CHI;
 use CHI::Driver::FastMmap;
+use CHI::Driver::LMDB;
 use Cache::FastMmap;
+use LMDB_File qw( :envflags );
 use Data::Serializer::Sereal;
 
 my $git = Git::Wrapper->new('.');
@@ -39,11 +41,25 @@ my %CACHE_COMMON = (
   key_serializer => $s,
   serializer     => $s,
 );
+if ( $ENV{LMDB} ) { 
+  $CACHE_COMMON{'driver'} = 'LMDB';
+  $CACHE_COMMON{'lmdb_env_options'} = {
+    mapsize => 15 * 1024 * 1024,
+#    flags   => MDB_NOSYNC | MDB_NOMETASYNC,
+  };
+  $CACHE_COMMON{'single_txn'} = 1;
+}
 
 my $get_sha_cache  = CHI->new( namespace => 'get_sha',    %CACHE_COMMON, );
 my $tree_sha_cache = CHI->new( namespace => 'tree_sha',   %CACHE_COMMON, );
 my $meta_cache     = CHI->new( namespace => 'meta_cache', %CACHE_COMMON, );
+sub sEND {
+  undef $get_sha_cache;
+  undef $tree_sha_cache;
+  undef $meta_cache;
 
+  print "Cleanup done\n";
+}
 use Try::Tiny qw( try catch );
 
 sub rev_sha {
@@ -239,3 +255,6 @@ $misc->child('Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) )
 $misc->child('Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
 
 path('./Changes')->spew_utf8( _maybe( $master_changes->serialize ) );
+
+
+1;
