@@ -40,10 +40,29 @@ my %CACHE_COMMON = (
   serializer     => $s,
 );
 
+if ( $ENV{LMDB} ) {
+  eval q<
+    use LMDB_File qw( MDB_NOSYNC MDB_NOMETASYNC );
+    $CACHE_COMMON{'driver'} = 'LMDB';
+
+    $CACHE_COMMON{'flags'} = MDB_NOSYNC | MDB_NOMETASYNC;
+    # STILL SEGVing
+    # $CACHE_COMMON{'single_txn'} = 1;
+    1;
+  > or warn "LMDB Not available $@";
+}
+
 my $get_sha_cache  = CHI->new( namespace => 'get_sha',    %CACHE_COMMON, );
 my $tree_sha_cache = CHI->new( namespace => 'tree_sha',   %CACHE_COMMON, );
 my $meta_cache     = CHI->new( namespace => 'meta_cache', %CACHE_COMMON, );
 
+sub END {
+  undef $get_sha_cache;
+  undef $tree_sha_cache;
+  undef $meta_cache;
+
+  print "Cleanup done\n";
+}
 use Try::Tiny qw( try catch );
 
 sub rev_sha {
