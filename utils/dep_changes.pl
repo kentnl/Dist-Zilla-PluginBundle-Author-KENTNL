@@ -17,9 +17,7 @@ use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
 use CHI;
 use CHI::Driver::FastMmap;
-use CHI::Driver::LMDB;
 use Cache::FastMmap;
-use LMDB_File qw( :envflags );
 use Data::Serializer::Sereal;
 
 my $git = Git::Wrapper->new('.');
@@ -41,19 +39,23 @@ my %CACHE_COMMON = (
   key_serializer => $s,
   serializer     => $s,
 );
-if ( $ENV{LMDB} ) { 
-  $CACHE_COMMON{'driver'} = 'LMDB';
-  $CACHE_COMMON{'lmdb_env_options'} = {
-    mapsize => 15 * 1024 * 1024,
-#    flags   => MDB_NOSYNC | MDB_NOMETASYNC,
-  };
-  $CACHE_COMMON{'single_txn'} = 1;
+
+if ( $ENV{LMDB} ) {
+  eval q<
+    use LMDB_File qw( MDB_NOSYNC MDB_NOMETASYNC );
+    $CACHE_COMMON{'driver'} = 'LMDB';
+
+    $CACHE_COMMON{'flags'} = MDB_NOSYNC | MDB_NOMETASYNC;
+    $CACHE_COMMON{'single_txn'} = 1;
+    1;
+  > or warn "LMDB Not available $@";
 }
 
 my $get_sha_cache  = CHI->new( namespace => 'get_sha',    %CACHE_COMMON, );
 my $tree_sha_cache = CHI->new( namespace => 'tree_sha',   %CACHE_COMMON, );
 my $meta_cache     = CHI->new( namespace => 'meta_cache', %CACHE_COMMON, );
-sub sEND {
+
+sub END {
   undef $get_sha_cache;
   undef $tree_sha_cache;
   undef $meta_cache;
@@ -73,16 +75,18 @@ sub rev_sha {
 
 sub tree_sha {
   my ( $sha, $path ) = @_;
-  my $result = $tree_sha_cache->get($sha);
-  return $result if $result;
+  return $tree_sha_cache->compute(
+    $sha, undef,
+    sub {
+      #*STDERR->print("Cache Miss for tree_sha $sha + $path\n");
+      my $tree;
 
-  my $tree;
-
-  try {
-    $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
-  };
-  $tree_sha_cache->set( $sha, $tree );
-  return $tree;
+      try {
+        $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
+      };
+      return $tree;
+    }
+  );
 }
 
 sub file_sha {
@@ -97,34 +101,35 @@ sub file_sha {
 }
 
 sub get_sha {
-  my ($sha)  = @_;
-  my $key    = $sha;
-  my $result = $get_sha_cache->get($key);
-  return $result if defined $result;
-  my $out = join qq[\n], $git->cat_file( '-p', $sha );
-  $get_sha_cache->set( $key, $out );
-  return $out;
+  my ($sha) = @_;
+  my $key = $sha;
+  return $get_sha_cache->compute(
+    $sha, undef,
+    sub {
+      #*STDERR->print("Cache Miss for get_sha $sha\n");
+      return join qq[\n], $git->cat_file( '-p', $sha );
+    }
+  );
 }
 
 sub get_json_prereqs {
   my ($commitish) = @_;
-  my $sha1 = file_sha( $commitish, 'META.json' );
-  if ( defined $sha1 and length $sha1 ) {
-    my $rval = $meta_cache->get($sha1);
-    return $rval if $rval;
-    $rval = CPAN::Meta->load_json_string( get_sha($sha1) );
-    $meta_cache->set( $sha1, $rval );
-    return $rval;
-  }
-  $sha1 = file_sha( $commitish, 'META.yml' );
-  if ( defined $sha1 and length $sha1 ) {
-    my $rval = $meta_cache->get($sha1);
-    return $rval if $rval;
-    $rval = CPAN::Meta->load_yaml_string( get_sha($sha1) );
-    $meta_cache->set( $sha1, $rval );
-    return $rval;
-  }
-  return {};
+  return $meta_cache->compute(
+    $commitish,
+    undef,
+    sub {
+      #*STDERR->print("Cache miss for $commitish metadata\n");
+      my $sha1 = file_sha( $commitish, 'META.json' );
+      if ( defined $sha1 and length $sha1 ) {
+        return CPAN::Meta->load_json_string( get_sha($sha1) );
+      }
+      $sha1 = file_sha( $commitish, 'META.yml' );
+      if ( defined $sha1 and length $sha1 ) {
+        return CPAN::Meta->load_yaml_string( get_sha($sha1) );
+      }
+      return {};
+    }
+  );
 }
 
 my @tags;
@@ -255,6 +260,5 @@ $misc->child('Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) )
 $misc->child('Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
 
 path('./Changes')->spew_utf8( _maybe( $master_changes->serialize ) );
-
 
 1;
