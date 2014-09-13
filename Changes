@@ -3,6 +3,7 @@
 {{$NEXT}}
  [Utils]
  - dep_changes: Enable LMDB Backend as an option.
+ - dep_changes: Cleanup CHI code to be more efficient and understandable.
 
 2.020001 2014-09-06T03:22:12Z
  [Bugfix]

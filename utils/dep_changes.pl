@@ -76,16 +76,18 @@ sub rev_sha {
 
 sub tree_sha {
   my ( $sha, $path ) = @_;
-  my $result = $tree_sha_cache->get($sha);
-  return $result if $result;
+  return $tree_sha_cache->compute(
+    $sha, undef,
+    sub {
+      #*STDERR->print("Cache Miss for tree_sha $sha + $path\n");
+      my $tree;
 
-  my $tree;
-
-  try {
-    $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
-  };
-  $tree_sha_cache->set( $sha, $tree );
-  return $tree;
+      try {
+        $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
+      };
+      return $tree;
+    }
+  );
 }
 
 sub file_sha {
@@ -100,34 +102,35 @@ sub file_sha {
 }
 
 sub get_sha {
-  my ($sha)  = @_;
-  my $key    = $sha;
-  my $result = $get_sha_cache->get($key);
-  return $result if defined $result;
-  my $out = join qq[\n], $git->cat_file( '-p', $sha );
-  $get_sha_cache->set( $key, $out );
-  return $out;
+  my ($sha) = @_;
+  my $key = $sha;
+  return $get_sha_cache->compute(
+    $sha, undef,
+    sub {
+      #*STDERR->print("Cache Miss for get_sha $sha\n");
+      return join qq[\n], $git->cat_file( '-p', $sha );
+    }
+  );
 }
 
 sub get_json_prereqs {
   my ($commitish) = @_;
-  my $sha1 = file_sha( $commitish, 'META.json' );
-  if ( defined $sha1 and length $sha1 ) {
-    my $rval = $meta_cache->get($sha1);
-    return $rval if $rval;
-    $rval = CPAN::Meta->load_json_string( get_sha($sha1) );
-    $meta_cache->set( $sha1, $rval );
-    return $rval;
-  }
-  $sha1 = file_sha( $commitish, 'META.yml' );
-  if ( defined $sha1 and length $sha1 ) {
-    my $rval = $meta_cache->get($sha1);
-    return $rval if $rval;
-    $rval = CPAN::Meta->load_yaml_string( get_sha($sha1) );
-    $meta_cache->set( $sha1, $rval );
-    return $rval;
-  }
-  return {};
+  return $meta_cache->compute(
+    $commitish,
+    undef,
+    sub {
+      #*STDERR->print("Cache miss for $commitish metadata\n");
+      my $sha1 = file_sha( $commitish, 'META.json' );
+      if ( defined $sha1 and length $sha1 ) {
+        return CPAN::Meta->load_json_string( get_sha($sha1) );
+      }
+      $sha1 = file_sha( $commitish, 'META.yml' );
+      if ( defined $sha1 and length $sha1 ) {
+        return CPAN::Meta->load_yaml_string( get_sha($sha1) );
+      }
+      return {};
+    }
+  );
 }
 
 my @tags;
@@ -258,3 +261,5 @@ $misc->child('Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) )
 $misc->child('Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
 
 path('./Changes')->spew_utf8( _maybe( $master_changes->serialize ) );
+
+1;
