@@ -2,7 +2,14 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
 
 2.020002
  [Changed / develop requires]
+ - Dist::Zilla::Plugin::Git::Check 2.023 → 2.024
+ - Dist::Zilla::Plugin::Git::Commit 2.023 → 2.024
+ - Dist::Zilla::Plugin::Git::CommitBuild 2.023 → 2.024
+ - Dist::Zilla::Plugin::Git::GatherDir 2.023 → 2.024
+ - Dist::Zilla::Plugin::Git::Tag 2.023 → 2.024
  - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.002001 → 0.003001
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001003 → 0.001004
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002002 → 0.003000
 
 2.020001 2014-09-06T03:22:12Z
  [Changed / develop requires]
