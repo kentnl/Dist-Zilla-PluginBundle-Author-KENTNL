@@ -115,6 +115,9 @@ sub get_sha {
 
 sub get_json_prereqs {
   my ($commitish) = @_;
+  if ( $commitish !~ /\d\.\d/ ) {
+    $commitish = rev_sha($commitish);
+  }
   return $meta_cache->compute(
     $commitish,
     undef,
