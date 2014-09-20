@@ -1,6 +1,12 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.020001, see misc/*.deps* for details
+ - develop: ↑8
+ - runtime: ↑10
+ - test: ↑2
+
  [Utils]
  - dep_changes: Enable LMDB Backend as an option.
  - dep_changes: Cleanup CHI code to be more efficient and understandable.
