@@ -1,6 +1,13 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.020002
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.002001 → 0.003001
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.002001 → 0.003001
+ - IO::Socket::SSL 1.997 → 1.998
+ - namespace::autoclean 0.19 → 0.20
 
 2.020001 2014-09-06T03:22:12Z
  [Added / runtime requires]

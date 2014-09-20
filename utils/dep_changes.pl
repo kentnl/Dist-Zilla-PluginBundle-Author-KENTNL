@@ -34,7 +34,7 @@ my $s = Data::Serializer::Sereal->new();
 my %CACHE_COMMON = (
   driver         => 'FastMmap',
   root_dir       => $cache_root->stringify,
-  expires_in     => '5h',
+  expires_in     => '7d',
   cache_size     => '15m',
   key_serializer => $s,
   serializer     => $s,
@@ -46,7 +46,8 @@ if ( $ENV{LMDB} ) {
     $CACHE_COMMON{'driver'} = 'LMDB';
 
     $CACHE_COMMON{'flags'} = MDB_NOSYNC | MDB_NOMETASYNC;
-    $CACHE_COMMON{'single_txn'} = 1;
+    # STILL SEGVing
+    # $CACHE_COMMON{'single_txn'} = 1;
     1;
   > or warn "LMDB Not available $@";
 }
@@ -114,6 +115,9 @@ sub get_sha {
 
 sub get_json_prereqs {
   my ($commitish) = @_;
+  if ( $commitish !~ /\d\.\d/ ) {
+    $commitish = rev_sha($commitish);
+  }
   return $meta_cache->compute(
     $commitish,
     undef,
@@ -134,7 +138,9 @@ sub get_json_prereqs {
 
 my @tags;
 
-for my $line ( reverse $git->RUN( 'log', '--pretty=format:%d', 'releases' ) ) {
+my @lines;
+eval { @lines = reverse $git->RUN( 'log', '--pretty=format:%d', 'releases' ) };
+for my $line (@lines) {
   if ( $line =~ /\(tag:\s*([^ ),]+)/ ) {
     my $tag = $1;
     next if $tag =~ /-source$/;

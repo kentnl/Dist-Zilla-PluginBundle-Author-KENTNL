@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 2.020002
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled 0.002001 → 0.003001
 
 2.020001 2014-09-06T03:22:12Z
  [Changed / develop requires]
