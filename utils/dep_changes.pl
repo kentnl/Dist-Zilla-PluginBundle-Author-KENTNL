@@ -138,7 +138,9 @@ sub get_json_prereqs {
 
 my @tags;
 
-for my $line ( reverse $git->RUN( 'log', '--pretty=format:%d', 'releases' ) ) {
+my @lines;
+eval { @lines = reverse $git->RUN( 'log', '--pretty=format:%d', 'releases' ) };
+for my $line (@lines) {
   if ( $line =~ /\(tag:\s*([^ ),]+)/ ) {
     my $tag = $1;
     next if $tag =~ /-source$/;
