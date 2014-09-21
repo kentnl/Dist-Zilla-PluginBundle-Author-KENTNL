@@ -6,7 +6,7 @@
  [Dependencies::Stats]
  - Dependencies changed since 2.020001, see misc/*.deps* for details
  - develop: ↑8
- - runtime: ↑10
+ - runtime: ↑12
  - test: ↑2
 
  [Utils]

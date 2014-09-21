@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.020002
+2.020003
+
+2.020002 2014-09-20T21:00:28Z
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Git::Check 2.023 → 2.024
  - Dist::Zilla::Plugin::Git::Commit 2.023 → 2.024
@@ -21,6 +23,8 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::RewriteVersion::Sanitized 0.001003 → 0.001004
  - Dist::Zilla::Plugin::Test::Compile::PerFile 0.002002 → 0.003000
  - IO::Socket::SSL 1.997 → 1.998
+ - Moose 2.1211 → 2.1212
+ - Moose::Util::TypeConstraints 2.1211 → 2.1212
  - namespace::autoclean 0.19 → 0.20
 
  [Changed / test requires]
