@@ -1,6 +1,13 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.020002, see misc/*.deps* for details
+ - develop: ↑1
+ - runtime: ↑1
+
+ [Minting]
+ - Minted dist.ini's don't default to wrong twitter hash tag syntax.
 
 2.020002 2014-09-20T21:00:28Z
  [Dependencies::Stats]
