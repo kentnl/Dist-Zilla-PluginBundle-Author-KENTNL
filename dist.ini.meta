@@ -11,7 +11,7 @@ main_module = lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 try_built = 1
 
 [@Author::KENTNL]
-twitter_hash_tags = #perl #cpan
+twitter_extra_hash_tags = #distzilla
 normal_form       = numify
 mantissa          = 6
 bundledeps_phase  = runtime

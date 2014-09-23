@@ -1,10 +1,19 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.020003 2014-09-23T14:54:27Z
+ [Dependencies::Stats]
+ - Dependencies changed since 2.020002, see misc/*.deps* for details
+ - develop: ↑1
+ - runtime: ↑1
+
+ [Minting]
+ - Minted dist.ini's don't default to wrong twitter hash tag syntax.
+
 2.020002 2014-09-20T21:00:28Z
  [Dependencies::Stats]
  - Dependencies changed since 2.020001, see misc/*.deps* for details
  - develop: ↑8
- - runtime: ↑10
+ - runtime: ↑12
  - test: ↑2
 
  [Utils]

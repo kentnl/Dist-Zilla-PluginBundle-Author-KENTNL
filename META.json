@@ -26,7 +26,7 @@
       "develop" : {
          "requires" : {
             "Dist::Zilla" : "5.020",
-            "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.003002",
+            "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.003004",
             "Dist::Zilla::Plugin::Authority" : "0",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.020",
             "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
@@ -122,7 +122,7 @@
             "Carp" : "0",
             "Dist::Zilla" : "5.020",
             "Dist::Zilla::File::FromCode" : "5.020",
-            "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.003002",
+            "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.003004",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.020",
             "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
@@ -233,19 +233,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.020002"
+         "version" : "2.020003"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.020002"
+         "version" : "2.020003"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.020002"
+         "version" : "2.020003"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.020002"
+         "version" : "2.020003"
       }
    },
    "release_status" : "stable",
@@ -260,7 +260,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.020002",
+   "version" : "2.020003",
    "x_BuiltWith" : {
       "modules" : {
          "CHI" : "0.58",
@@ -277,7 +277,7 @@
          "Dist::Zilla" : "5.020",
          "Dist::Zilla::App::Command::bakeini" : "0.001002",
          "Dist::Zilla::File::FromCode" : "5.020",
-         "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.003002",
+         "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.003004",
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.020",
          "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
@@ -781,7 +781,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes",
             "name" : "@Author::KENTNL/Author::KENTNL::RecommendFixes",
-            "version" : "0.003002"
+            "version" : "0.003004"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeFromPod",
@@ -868,7 +868,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "2.020002-source",
+                  "tag" : "2.020003-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -939,7 +939,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "2.020002",
+                  "tag" : "2.020003",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
