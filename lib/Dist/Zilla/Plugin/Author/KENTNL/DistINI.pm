@@ -74,7 +74,7 @@ sub gather_files {
       'bumpversions      = 1',                                                   #
       'copyfiles         = LICENSE',                                             #
       'srcreadme         = mkdn',                                                #
-      'twitter_hash_tags = %{tags}s',                                            #
+      '; twitter_extra_hash_tags =',                                             #
       '; auto_prereqs_skip = File::Find',                                        #
       $empty,                                                                    #
       '[Prereqs]',                                                               #
