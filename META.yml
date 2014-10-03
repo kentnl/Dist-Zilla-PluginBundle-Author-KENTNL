@@ -161,8 +161,6 @@ resources:
   repository: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL.git
 version: '2.020004'
 x_BuiltWith:
-  failures:
-    Example: 'module was not found in INC'
   modules:
     CHI: '0.58'
     CHI::Driver::LMDB: '0.002003'

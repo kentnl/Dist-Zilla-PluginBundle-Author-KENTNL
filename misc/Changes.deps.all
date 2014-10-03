@@ -1,6 +1,9 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.020004
+ [Added / develop suggests]
+ - Example
+
  [Added / runtime recommends]
  - CHI::Driver::LMDB
  - LMDB_File

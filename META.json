@@ -84,8 +84,7 @@
             "Test::Pod::Coverage" : "1.10"
          },
          "suggests" : {
-            "Dist::Zilla::App::Command::bakeini" : "0.001002",
-            "Example" : "0"
+            "Dist::Zilla::App::Command::bakeini" : "0.001002"
          }
       },
       "runtime" : {
@@ -263,9 +262,6 @@
    },
    "version" : "2.020004",
    "x_BuiltWith" : {
-      "failures" : {
-         "Example" : "module was not found in INC"
-      },
       "modules" : {
          "CHI" : "0.58",
          "CHI::Driver::LMDB" : "0.002003",
