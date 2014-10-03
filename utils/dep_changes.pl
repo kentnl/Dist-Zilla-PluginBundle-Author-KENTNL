@@ -175,12 +175,17 @@ sub get_release_diff {
   my ( $oldsha, $newsha ) = ( $old, $new );
   $oldsha = rev_sha($oldsha) if $oldsha !~ /\d\.\d/;
   $newsha = rev_sha($newsha) if $newsha !~ /\d\.\d/;
+  my @keyparts;
+  push @keyparts, 'phases=>', sort @{ $changes->phases };
+  push @keyparts, 'types=>',  sort @{ $changes->types };
+  push @keyparts, 'change_types' =>, sort @{ $changes->change_types };
+  push @keyparts, 'preamble=>', $changes->preamble;
+  push @keyparts, $oldsha, $newsha,
+    $CPAN::Changes::Dependencies::Details::VERSION,
+    $CPAN::Changes::Group::Dependencies::Details::VERSION;
+
   return $release_cache->compute(
-    [
-      $changes->phases, $changes->types, $changes->change_types, $changes->preamble, $oldsha, $newsha, $params,
-      $CPAN::Changes::Dependencies::Details::VERSION,
-      $CPAN::Changes::Group::Dependencies::Details::VERSION
-    ],
+    ( join qq[\0], @keyparts ),
     undef,
     sub {
       my $delta = get_prereq_diff( $old, $new );
