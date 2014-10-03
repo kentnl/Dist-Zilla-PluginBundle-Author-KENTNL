@@ -11,6 +11,7 @@ use Version::Next qw(next_version);
 use Path::Tiny qw(path);
 use Capture::Tiny qw(capture_stdout);
 use JSON;
+use CPAN::Changes;
 use CPAN::Changes::Group::Dependencies::Stats;
 use CPAN::Changes::Dependencies::Details;
 use CPAN::Meta::Prereqs::Diff;
@@ -34,7 +35,7 @@ my %CACHE_COMMON = (
   driver         => 'LMDB',
   root_dir       => $cache_root->stringify,
   expires_in     => '7d',
-  cache_size     => '15m',
+  cache_size     => '30m',
   key_serializer => $s,
   serializer     => $s,
   flags          => MDB_NOSYNC | MDB_NOMETASYNC,
@@ -43,14 +44,20 @@ my %CACHE_COMMON = (
   # single_txn => 1,
 );
 
-my $get_sha_cache  = CHI->new( namespace => 'get_sha',    %CACHE_COMMON, );
-my $tree_sha_cache = CHI->new( namespace => 'tree_sha',   %CACHE_COMMON, );
-my $meta_cache     = CHI->new( namespace => 'meta_cache', %CACHE_COMMON, );
+my $get_sha_cache  = CHI->new( namespace => 'get_sha',       %CACHE_COMMON, );
+my $tree_sha_cache = CHI->new( namespace => 'tree_sha',      %CACHE_COMMON, );
+my $meta_cache     = CHI->new( namespace => 'meta_cache',    %CACHE_COMMON, );
+my $diff_cache     = CHI->new( namespace => 'diff_cache',    %CACHE_COMMON, );
+my $stat_cache     = CHI->new( namespace => 'stat_cache',    %CACHE_COMMON, );
+my $release_cache  = CHI->new( namespace => 'release_cache', %CACHE_COMMON, );
 
 sub END {
   undef $get_sha_cache;
   undef $tree_sha_cache;
   undef $meta_cache;
+  undef $diff_cache;
+  undef $stat_cache;
+  undef $release_cache;
 
   print "Cleanup done\n";
 }
@@ -127,6 +134,63 @@ sub get_json_prereqs {
   );
 }
 
+sub get_prereq_diff {
+  my ( $old, $new ) = @_;
+  $old = rev_sha($old) if $old !~ /\d\.\d/;
+  $new = rev_sha($new) if $new !~ /\d\.\d/;
+
+  return $diff_cache->compute(
+    $old . "\0" . $new,
+    undef,
+    sub {
+      return CPAN::Meta::Prereqs::Diff->new(
+        old_prereqs => get_json_prereqs($old),
+        new_prereqs => get_json_prereqs($new),
+      );
+    }
+  );
+}
+
+sub get_summary_diff {
+  my ( $old, $new ) = @_;
+  my ( $oldsha, $newsha ) = ( $old, $new );
+  $oldsha = rev_sha($oldsha) if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) if $newsha !~ /\d\.\d/;
+  return $stat_cache->compute(
+    $oldsha . "\0" . $newsha . "\0" . $CPAN::Changes::Group::Dependencies::Stats::VERSION,
+    undef,
+    sub {
+      my $pchanges = CPAN::Changes::Group::Dependencies::Stats->new(
+        prelude      => [ 'Dependencies changed since ' . $old . ', see misc/*.deps* for details', ],
+        prereqs_diff => scalar get_prereq_diff( $old, $new )
+      );
+      $pchanges->_diff_items;
+      return $pchanges;
+    }
+  );
+}
+
+sub get_release_diff {
+  my ( $changes, $old, $new, $params ) = @_;
+  my ( $oldsha, $newsha ) = ( $old, $new );
+  $oldsha = rev_sha($oldsha) if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) if $newsha !~ /\d\.\d/;
+  return $release_cache->compute(
+    [
+      $changes->phases, $changes->types, $changes->change_types, $changes->preamble, $oldsha, $newsha, $params,
+      $CPAN::Changes::Dependencies::Details::VERSION,
+      $CPAN::Changes::Group::Dependencies::Details::VERSION
+    ],
+    undef,
+    sub {
+      my $delta = get_prereq_diff( $old, $new );
+      my $release_info = { %{$params}, prereqs_diff => $delta, };
+      my $release_object = $changes->_mk_release($release_info);
+      return $release_object;
+    }
+  );
+}
+
 my @tags;
 
 my @lines;
@@ -159,8 +223,6 @@ else {
 }
 
 push @tags, 'build/master' if rev_sha('build/master');
-
-use CPAN::Changes;
 
 my $standard_phases = ' (configure/build/runtime/test)';
 my $all_phases      = ' (configure/build/runtime/test/develop)';
@@ -223,23 +285,23 @@ while ( @tags > 1 ) {
     ( defined $date ? ( date => $date ) : () ),
   };
 
-  my $delta = CPAN::Meta::Prereqs::Diff->new(
-    old_prereqs => get_json_prereqs($old),
-    new_prereqs => get_json_prereqs($new),
-  );
-
   if ($master_release) {
-    my $pchanges = CPAN::Changes::Group::Dependencies::Stats->new(
-      prelude      => [ 'Dependencies changed since ' . $old . ', see misc/*.deps* for details', ],
-      prereqs_diff => $delta
-    );
-    $pchanges->has_changes && $master_release->attach_group($pchanges);
+    my $pchanges = get_summary_diff( $old, $new );
+    $master_release->attach_group($pchanges) if $pchanges->has_changes;
   }
+
+  my $delta = get_prereq_diff( $old, $new );
+
   my $release_info = { %{$params}, prereqs_diff => $delta, };
-  $changes->add_release($release_info);
-  $changes_opt->add_release($release_info);
-  $changes_dev->add_release($release_info);
-  $changes_all->add_release($release_info);
+  for my $target ( $changes, $changes_opt, $changes_dev, $changes_all ) {
+    my $diff = get_release_diff( $target, $old, $new, $params );
+    $target->{'releases'}->{ $diff->version } = $diff;
+  }
+
+  #  $changes->add_release($release_info);
+  #  $changes_opt->add_release($release_info);
+  #  $changes_dev->add_release($release_info);
+  #  $changes_all->add_release($release_info);
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 

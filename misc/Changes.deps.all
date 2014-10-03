@@ -9,11 +9,15 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.003004 → 0.003006
  - Dist::Zilla::Plugin::BumpVersionAfterRelease 0.002 → 0.003
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.003000 → 1.003001
+ - Dist::Zilla::Plugin::Twitter 0.025 → 0.026
 
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.003004 → 0.003006
  - Dist::Zilla::Plugin::BumpVersionAfterRelease 0.002 → 0.003
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.003000 → 1.003001
+ - Dist::Zilla::Plugin::PerlTidy 0.16 → 0.17
+ - Dist::Zilla::Plugin::Twitter 0.025 → 0.026
+ - Dist::Zilla::Util::ConfigDumper 0.003004 → 0.003006
  - Moose 2.1212 → 2.1213
  - Moose::Util::TypeConstraints 2.1212 → 2.1213
 
