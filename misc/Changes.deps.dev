@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.020004
+2.020005
+
+2.020004 2014-10-03T06:41:47Z
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.003004 → 0.003006
  - Dist::Zilla::Plugin::BumpVersionAfterRelease 0.002 → 0.003
