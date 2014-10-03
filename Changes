@@ -1,5 +1,14 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.020005 2014-10-03T07:04:22Z
+ [Bugfix]
+ - dep_changes.pl: Use a flattened key value because the previous release started segv-ing and eating all my ram
+   shortly after release.
+
+ [Utils]
+ - dep_changes.pl: Shard out LMDB namespaces to distinct DBs till I can work out a better way to see wtf is going on
+   inside them.
+
 2.020004 2014-10-03T06:41:47Z
  [Dependencies::Stats]
  - Dependencies changed since 2.020003, see misc/*.deps* for details

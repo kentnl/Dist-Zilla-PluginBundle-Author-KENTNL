@@ -43,13 +43,19 @@ my %CACHE_COMMON = (
   # STILL SEGVing
   # single_txn => 1,
 );
-
-my $get_sha_cache  = CHI->new( namespace => 'get_sha',       %CACHE_COMMON, );
-my $tree_sha_cache = CHI->new( namespace => 'tree_sha',      %CACHE_COMMON, );
-my $meta_cache     = CHI->new( namespace => 'meta_cache',    %CACHE_COMMON, );
-my $diff_cache     = CHI->new( namespace => 'diff_cache',    %CACHE_COMMON, );
-my $stat_cache     = CHI->new( namespace => 'stat_cache',    %CACHE_COMMON, );
-my $release_cache  = CHI->new( namespace => 'release_cache', %CACHE_COMMON, );
+sub xnamespace {
+  my ( %args ) = @_;
+  my $ns_root = $cache_root->child($args{namespace});
+  $ns_root->mkpath;
+  $args{root_dir} = $ns_root->stringify;
+  return %args;
+}
+my $get_sha_cache  = CHI->new(xnamespace( namespace => 'get_sha',       %CACHE_COMMON, ));
+my $tree_sha_cache = CHI->new(xnamespace( namespace => 'tree_sha',      %CACHE_COMMON, ));
+my $meta_cache     = CHI->new(xnamespace( namespace => 'meta_cache',    %CACHE_COMMON, ));
+my $diff_cache     = CHI->new(xnamespace( namespace => 'diff_cache',    %CACHE_COMMON, ));
+my $stat_cache     = CHI->new(xnamespace( namespace => 'stat_cache',    %CACHE_COMMON, ));
+my $release_cache  = CHI->new(xnamespace( namespace => 'release_cache', %CACHE_COMMON, ));
 
 sub END {
   undef $get_sha_cache;
@@ -175,12 +181,17 @@ sub get_release_diff {
   my ( $oldsha, $newsha ) = ( $old, $new );
   $oldsha = rev_sha($oldsha) if $oldsha !~ /\d\.\d/;
   $newsha = rev_sha($newsha) if $newsha !~ /\d\.\d/;
+  my @keyparts;
+  push @keyparts, 'phases=>', sort @{ $changes->phases };
+  push @keyparts, 'types=>',  sort @{ $changes->types };
+  push @keyparts, 'change_types' =>, sort @{ $changes->change_types };
+  push @keyparts, 'preamble=>', $changes->preamble;
+  push @keyparts, $oldsha, $newsha,
+    $CPAN::Changes::Dependencies::Details::VERSION,
+    $CPAN::Changes::Group::Dependencies::Details::VERSION;
+
   return $release_cache->compute(
-    [
-      $changes->phases, $changes->types, $changes->change_types, $changes->preamble, $oldsha, $newsha, $params,
-      $CPAN::Changes::Dependencies::Details::VERSION,
-      $CPAN::Changes::Group::Dependencies::Details::VERSION
-    ],
+    ( join qq[\0], @keyparts ),
     undef,
     sub {
       my $delta = get_prereq_diff( $old, $new );
