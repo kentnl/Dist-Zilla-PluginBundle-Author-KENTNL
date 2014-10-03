@@ -1,6 +1,16 @@
 This file contains changes in OPTIONAL dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.020004
+ [Added / runtime recommends]
+ - CHI::Driver::LMDB
+ - LMDB_File
+
+ [Changed / test recommends]
+ - CPAN::Meta 2.142060 → 2.142690
+
+ [Removed / runtime recommends]
+ - CHI::Driver::FastMmap
+ - Cache::FastMmap
 
 2.020003 2014-09-23T14:54:27Z
 
