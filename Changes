@@ -1,5 +1,7 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.020006 2014-10-03T07:07:17Z
+
 2.020005 2014-10-03T07:04:22Z
  [Bugfix]
  - dep_changes.pl: Use a flattened key value because the previous release started segv-ing and eating all my ram
