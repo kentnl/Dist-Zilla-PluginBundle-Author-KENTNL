@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugfix]
+ - dep_changes.pl: Use a flattened key value because the previous release started segv-ing and eating all my ram
+   shortly after release.
 
 2.020004 2014-10-03T06:41:47Z
  [Dependencies::Stats]
