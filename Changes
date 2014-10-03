@@ -9,6 +9,7 @@
 
  [Utils]
  - dep_changes.pl : Use LMDB driver by default
+ - dep_changes.pl : Add several more levels of advanced caching for blazing fast performance.
 
 2.020003 2014-09-23T14:54:27Z
  [Dependencies::Stats]
