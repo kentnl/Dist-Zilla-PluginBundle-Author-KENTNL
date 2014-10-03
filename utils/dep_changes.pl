@@ -16,8 +16,8 @@ use CPAN::Changes::Dependencies::Details;
 use CPAN::Meta::Prereqs::Diff;
 use CPAN::Meta;
 use CHI;
-use CHI::Driver::FastMmap;
-use Cache::FastMmap;
+use CHI::Driver::LMDB;
+use LMDB_File qw( MDB_NOSYNC MDB_NOMETASYNC );
 use Data::Serializer::Sereal;
 
 my $git = Git::Wrapper->new('.');
@@ -25,32 +25,23 @@ my $git = Git::Wrapper->new('.');
 my $extension = Path::Tiny::cwd->stringify;
 $extension =~ s/[^-\p{PosixAlnum}_]+/_/msxg;
 
-my $cache_root = Path::Tiny::tempdir->parent->child('dep_changes_cache')->child($extension);
+my $cache_root = Path::Tiny::tempdir->sibling('dep_changes_cache')->child($extension);
 
 $cache_root->mkpath;
 
-my $s = Data::Serializer::Sereal->new();
-
+my $s            = Data::Serializer::Sereal->new();
 my %CACHE_COMMON = (
-  driver         => 'FastMmap',
+  driver         => 'LMDB',
   root_dir       => $cache_root->stringify,
   expires_in     => '7d',
   cache_size     => '15m',
   key_serializer => $s,
   serializer     => $s,
+  flags          => MDB_NOSYNC | MDB_NOMETASYNC,
+
+  # STILL SEGVing
+  # single_txn => 1,
 );
-
-if ( $ENV{LMDB} ) {
-  eval q<
-    use LMDB_File qw( MDB_NOSYNC MDB_NOMETASYNC );
-    $CACHE_COMMON{'driver'} = 'LMDB';
-
-    $CACHE_COMMON{'flags'} = MDB_NOSYNC | MDB_NOMETASYNC;
-    # STILL SEGVing
-    # $CACHE_COMMON{'single_txn'} = 1;
-    1;
-  > or warn "LMDB Not available $@";
-}
 
 my $get_sha_cache  = CHI->new( namespace => 'get_sha',    %CACHE_COMMON, );
 my $tree_sha_cache = CHI->new( namespace => 'tree_sha',   %CACHE_COMMON, );
