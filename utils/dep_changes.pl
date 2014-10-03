@@ -43,13 +43,19 @@ my %CACHE_COMMON = (
   # STILL SEGVing
   # single_txn => 1,
 );
-
-my $get_sha_cache  = CHI->new( namespace => 'get_sha',       %CACHE_COMMON, );
-my $tree_sha_cache = CHI->new( namespace => 'tree_sha',      %CACHE_COMMON, );
-my $meta_cache     = CHI->new( namespace => 'meta_cache',    %CACHE_COMMON, );
-my $diff_cache     = CHI->new( namespace => 'diff_cache',    %CACHE_COMMON, );
-my $stat_cache     = CHI->new( namespace => 'stat_cache',    %CACHE_COMMON, );
-my $release_cache  = CHI->new( namespace => 'release_cache', %CACHE_COMMON, );
+sub xnamespace {
+  my ( %args ) = @_;
+  my $ns_root = $cache_root->child($args{namespace});
+  $ns_root->mkpath;
+  $args{root_dir} = $ns_root->stringify;
+  return %args;
+}
+my $get_sha_cache  = CHI->new(xnamespace( namespace => 'get_sha',       %CACHE_COMMON, ));
+my $tree_sha_cache = CHI->new(xnamespace( namespace => 'tree_sha',      %CACHE_COMMON, ));
+my $meta_cache     = CHI->new(xnamespace( namespace => 'meta_cache',    %CACHE_COMMON, ));
+my $diff_cache     = CHI->new(xnamespace( namespace => 'diff_cache',    %CACHE_COMMON, ));
+my $stat_cache     = CHI->new(xnamespace( namespace => 'stat_cache',    %CACHE_COMMON, ));
+my $release_cache  = CHI->new(xnamespace( namespace => 'release_cache', %CACHE_COMMON, ));
 
 sub END {
   undef $get_sha_cache;
