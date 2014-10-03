@@ -290,18 +290,10 @@ while ( @tags > 1 ) {
     $master_release->attach_group($pchanges) if $pchanges->has_changes;
   }
 
-  my $delta = get_prereq_diff( $old, $new );
-
-  my $release_info = { %{$params}, prereqs_diff => $delta, };
   for my $target ( $changes, $changes_opt, $changes_dev, $changes_all ) {
     my $diff = get_release_diff( $target, $old, $new, $params );
     $target->{'releases'}->{ $diff->version } = $diff;
   }
-
-  #  $changes->add_release($release_info);
-  #  $changes_opt->add_release($release_info);
-  #  $changes_dev->add_release($release_info);
-  #  $changes_all->add_release($release_info);
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 
