@@ -18,6 +18,7 @@ use MooseX::AttributeShortcuts;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
+with 'Dist::Zilla::Role::BundleDeps';1
 
 use namespace::autoclean;
 
@@ -453,8 +454,6 @@ sub _configure_bundle_develop_suggests {
   $self->add_named_plugin( 'BundleDevelSuggests' => 'Prereqs' => $deps );
   return;
 }
-
-has 'bundledeps_phase' => ( is => ro =>, default => "develop" );
 
 sub _configure_bundle_develop_requires {
   my ($self) = @_;

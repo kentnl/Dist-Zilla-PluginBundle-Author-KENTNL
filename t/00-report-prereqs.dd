@@ -111,6 +111,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::Bootstrap::lib' => '1.001000',
                                       'Dist::Zilla::Plugin::MinimumPerl' => '1.003',
                                       'Dist::Zilla::Plugin::PerlTidy' => '0.17',
+                                      'Dist::Zilla::Role::BundleDeps' => '0.002001',
                                       'Dist::Zilla::Role::FileGatherer' => '5.020',
                                       'Dist::Zilla::Role::MintingProfile::ShareDir' => '5.020',
                                       'Dist::Zilla::Role::PluginBundle' => '5.020',
