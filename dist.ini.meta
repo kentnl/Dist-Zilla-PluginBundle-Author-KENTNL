@@ -45,8 +45,6 @@ Test::EOL               = 1.5
 namespace::autoclean    = 0.15
 Test::Perl::Critic      = 1.02
 
-[Prereqs::AuthorDeps]
-
 [RemovePhasedPrereqs]
 remove_runtime = Dist::Zilla::PluginBundle::Author::KENTNL
 remove_runtime = Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl

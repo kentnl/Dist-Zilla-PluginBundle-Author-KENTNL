@@ -457,12 +457,6 @@ sub _configure_bundle_develop_suggests {
 
 sub _configure_bundle_develop_requires {
   my ($self) = @_;
-  $self->add_named_plugin(
-    'PluginAutoDeps' => 'Prereqs::Plugins' => {
-      ':version' => '1.002000',
-      phase      => 'develop',
-    },
-  );
   return if _is_bake();
   $self->add_named_plugin(
     'BundleDevelRequires' => 'Prereqs' => {
@@ -594,6 +588,8 @@ sub configure {
 
   $self->_configure_bundle_develop_suggests();
   $self->_configure_bundle_develop_requires();
+
+  $self->add_plugin( 'Prereqs::AuthorDeps' => {} );
 
   $self->add_plugin( 'MinimumPerl' => {} );
   $self->add_plugin(
