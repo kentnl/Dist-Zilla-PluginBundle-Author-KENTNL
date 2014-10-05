@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.021000 2014-10-03T07:07:37Z
+2.021000 2014-10-05T11:21:04Z
  [00 Minor]
  - Inject Prereqs::AuthorDeps to auto discover develop deps.
 

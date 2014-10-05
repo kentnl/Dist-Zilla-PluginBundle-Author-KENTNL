@@ -1,6 +1,6 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.020006
+2.021000
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Prereqs::AuthorDeps 0.003
 
