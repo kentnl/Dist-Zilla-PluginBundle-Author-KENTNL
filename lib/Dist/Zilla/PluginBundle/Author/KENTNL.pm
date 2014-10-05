@@ -18,7 +18,6 @@ use MooseX::AttributeShortcuts;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
-with 'Dist::Zilla::Role::BundleDeps';
 
 use namespace::autoclean;
 
@@ -457,6 +456,12 @@ sub _configure_bundle_develop_suggests {
 
 sub _configure_bundle_develop_requires {
   my ($self) = @_;
+  $self->add_named_plugin(
+    'PluginAutoDeps' => 'Prereqs::Plugins' => {
+      ':version' => '1.002000',
+      phase => 'develop',
+    },
+  );
   return if _is_bake();
   $self->add_named_plugin(
     'BundleDevelRequires' => 'Prereqs' => {
