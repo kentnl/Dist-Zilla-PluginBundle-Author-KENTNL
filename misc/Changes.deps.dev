@@ -1,6 +1,10 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.020005
+2.021000
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Git::NextRelease 0.003000 → 0.004000
+
+2.020005 2014-10-03T07:04:22Z
 
 2.020004 2014-10-03T06:41:47Z
  [Changed / develop requires]

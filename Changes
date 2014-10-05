@@ -1,5 +1,15 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.021000 2014-10-05T11:28:53Z 7814800
+ [00 Minor]
+ - Inject Prereqs::AuthorDeps to auto discover develop deps.
+ - Add shortend SHA1 to changes headers.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.020005, see misc/*.deps* for details
+ - develop: ↑1
+ - runtime: +1 ↑1
+
 2.020005 2014-10-03T07:04:22Z
  [Bugfix]
  - dep_changes.pl: Use a flattened key value because the previous release started segv-ing and eating all my ram

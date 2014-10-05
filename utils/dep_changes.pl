@@ -23,6 +23,8 @@ use Data::Serializer::Sereal;
 
 my $git = Git::Wrapper->new('.');
 
+my $build_master_version;
+
 my $extension = Path::Tiny::cwd->stringify;
 $extension =~ s/[^-\p{PosixAlnum}_]+/_/msxg;
 
@@ -41,29 +43,31 @@ my %CACHE_COMMON = (
   flags          => MDB_NOSYNC | MDB_NOMETASYNC,
 
   # STILL SEGVing
-  # single_txn => 1,
+  single_txn => 1,
 );
+
 sub xnamespace {
-  my ( %args ) = @_;
-  my $ns_root = $cache_root->child($args{namespace});
+  my (%args) = @_;
+  my $ns_root = $cache_root->child( $args{namespace} );
   $ns_root->mkpath;
   $args{root_dir} = $ns_root->stringify;
   return %args;
 }
-my $get_sha_cache  = CHI->new(xnamespace( namespace => 'get_sha',       %CACHE_COMMON, ));
-my $tree_sha_cache = CHI->new(xnamespace( namespace => 'tree_sha',      %CACHE_COMMON, ));
-my $meta_cache     = CHI->new(xnamespace( namespace => 'meta_cache',    %CACHE_COMMON, ));
-my $diff_cache     = CHI->new(xnamespace( namespace => 'diff_cache',    %CACHE_COMMON, ));
-my $stat_cache     = CHI->new(xnamespace( namespace => 'stat_cache',    %CACHE_COMMON, ));
-my $release_cache  = CHI->new(xnamespace( namespace => 'release_cache', %CACHE_COMMON, ));
+my $get_sha_cache  = CHI->new( xnamespace( namespace => 'get_sha',       %CACHE_COMMON, ) );
+my $tree_sha_cache = CHI->new( xnamespace( namespace => 'tree_sha',      %CACHE_COMMON, ) );
+my $meta_cache     = CHI->new( xnamespace( namespace => 'meta_cache',    %CACHE_COMMON, ) );
+my $diff_cache     = CHI->new( xnamespace( namespace => 'diff_cache',    %CACHE_COMMON, ) );
+my $stat_cache     = CHI->new( xnamespace( namespace => 'stat_cache',    %CACHE_COMMON, ) );
+my $release_cache  = CHI->new( xnamespace( namespace => 'release_cache', %CACHE_COMMON, ) );
 
 sub END {
-  undef $get_sha_cache;
-  undef $tree_sha_cache;
-  undef $meta_cache;
-  undef $diff_cache;
-  undef $stat_cache;
   undef $release_cache;
+  undef $stat_cache;
+  undef $diff_cache;
+  undef $meta_cache;
+  undef $tree_sha_cache;
+
+  undef $get_sha_cache;
 
   print "Cleanup done\n";
 }
@@ -160,8 +164,8 @@ sub get_prereq_diff {
 sub get_summary_diff {
   my ( $old, $new ) = @_;
   my ( $oldsha, $newsha ) = ( $old, $new );
-  $oldsha = rev_sha($oldsha) if $oldsha !~ /\d\.\d/;
-  $newsha = rev_sha($newsha) if $newsha !~ /\d\.\d/;
+  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' ) if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' ) if $newsha !~ /\d\.\d/;
   return $stat_cache->compute(
     $oldsha . "\0" . $newsha . "\0" . $CPAN::Changes::Group::Dependencies::Stats::VERSION,
     undef,
@@ -179,8 +183,8 @@ sub get_summary_diff {
 sub get_release_diff {
   my ( $changes, $old, $new, $params ) = @_;
   my ( $oldsha, $newsha ) = ( $old, $new );
-  $oldsha = rev_sha($oldsha) if $oldsha !~ /\d\.\d/;
-  $newsha = rev_sha($newsha) if $newsha !~ /\d\.\d/;
+  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' ) if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' ) if $newsha !~ /\d\.\d/;
   my @keyparts;
   push @keyparts, 'phases=>', sort @{ $changes->phases };
   push @keyparts, 'types=>',  sort @{ $changes->types };
@@ -224,7 +228,6 @@ for my $line (@lines) {
     next;
   }
 }
-my $build_master_version;
 
 if ( $ENV{V} ) {
   $build_master_version = $ENV{V};

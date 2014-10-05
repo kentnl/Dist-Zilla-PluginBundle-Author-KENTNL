@@ -1,6 +1,16 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.020005
+2.021000
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Prereqs::AuthorDeps 0.003
+
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Git::NextRelease 0.003000 → 0.004000
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::Git::NextRelease 0.003000 → 0.004000
+
+2.020005 2014-10-03T07:04:22Z
 
 2.020004 2014-10-03T06:41:47Z
  [Added / runtime recommends]

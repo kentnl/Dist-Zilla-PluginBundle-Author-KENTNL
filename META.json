@@ -40,7 +40,7 @@
             "Dist::Zilla::Plugin::Git::CommitBuild" : "2.024",
             "Dist::Zilla::Plugin::Git::Contributors" : "0.007",
             "Dist::Zilla::Plugin::Git::GatherDir" : "2.024",
-            "Dist::Zilla::Plugin::Git::NextRelease" : "0.003000",
+            "Dist::Zilla::Plugin::Git::NextRelease" : "0.004000",
             "Dist::Zilla::Plugin::Git::Tag" : "2.024",
             "Dist::Zilla::Plugin::GithubMeta" : "0.46",
             "Dist::Zilla::Plugin::License" : "5.020",
@@ -135,7 +135,7 @@
             "Dist::Zilla::Plugin::Git::CommitBuild" : "2.024",
             "Dist::Zilla::Plugin::Git::Contributors" : "0.007",
             "Dist::Zilla::Plugin::Git::GatherDir" : "2.024",
-            "Dist::Zilla::Plugin::Git::NextRelease" : "0.003000",
+            "Dist::Zilla::Plugin::Git::NextRelease" : "0.004000",
             "Dist::Zilla::Plugin::Git::Tag" : "2.024",
             "Dist::Zilla::Plugin::GithubMeta" : "0.46",
             "Dist::Zilla::Plugin::License" : "5.020",
@@ -154,6 +154,7 @@
             "Dist::Zilla::Plugin::PodSyntaxTests" : "5.020",
             "Dist::Zilla::Plugin::PodWeaver" : "4.006",
             "Dist::Zilla::Plugin::Prereqs" : "5.020",
+            "Dist::Zilla::Plugin::Prereqs::AuthorDeps" : "0.003",
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.003001",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
@@ -233,19 +234,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.020005"
+         "version" : "2.021000"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.020005"
+         "version" : "2.021000"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.020005"
+         "version" : "2.021000"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.020005"
+         "version" : "2.021000"
       }
    },
    "release_status" : "stable",
@@ -260,7 +261,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.020005",
+   "version" : "2.021000",
    "x_BuiltWith" : {
       "modules" : {
          "CHI" : "0.58",
@@ -290,7 +291,7 @@
          "Dist::Zilla::Plugin::Git::CommitBuild" : "2.024",
          "Dist::Zilla::Plugin::Git::Contributors" : "0.007",
          "Dist::Zilla::Plugin::Git::GatherDir" : "2.024",
-         "Dist::Zilla::Plugin::Git::NextRelease" : "0.003000",
+         "Dist::Zilla::Plugin::Git::NextRelease" : "0.004000",
          "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" : "0.002002",
          "Dist::Zilla::Plugin::Git::Tag" : "2.024",
          "Dist::Zilla::Plugin::GithubMeta" : "0.46",
@@ -759,6 +760,11 @@
             "version" : "5.020"
          },
          {
+            "class" : "Dist::Zilla::Plugin::Prereqs::AuthorDeps",
+            "name" : "@Author::KENTNL/Prereqs::AuthorDeps",
+            "version" : "0.003"
+         },
+         {
             "class" : "Dist::Zilla::Plugin::MinimumPerl",
             "name" : "@Author::KENTNL/MinimumPerl",
             "version" : "1.003"
@@ -868,7 +874,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "2.020005-source",
+                  "tag" : "2.021000-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -883,7 +889,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
             "name" : "@Author::KENTNL/Git::NextRelease",
-            "version" : "0.003000"
+            "version" : "0.004000"
          },
          {
             "class" : "Dist::Zilla::Plugin::BumpVersionAfterRelease",
@@ -939,7 +945,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "2.020005",
+                  "tag" : "2.021000",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -1037,11 +1043,6 @@
             },
             "name" : "Prereqs",
             "version" : "5.020"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs::AuthorDeps",
-            "name" : "Prereqs::AuthorDeps",
-            "version" : "0.003"
          },
          {
             "class" : "Dist::Zilla::Plugin::RemovePhasedPrereqs",
