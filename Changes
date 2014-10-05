@@ -1,6 +1,6 @@
-﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL at %H
+﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.021000 2014-10-05T11:21:04Z 261870b
+2.021000 2014-10-05T11:28:53Z 7814800
  [00 Minor]
  - Inject Prereqs::AuthorDeps to auto discover develop deps.
  - Add shortend SHA1 to changes headers.
