@@ -18,7 +18,7 @@ use MooseX::AttributeShortcuts;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
-with 'Dist::Zilla::Role::BundleDeps';1
+with 'Dist::Zilla::Role::BundleDeps';
 
 use namespace::autoclean;
 
