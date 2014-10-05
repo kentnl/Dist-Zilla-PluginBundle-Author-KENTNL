@@ -2,12 +2,12 @@
 
 2.021000 2014-10-03T07:07:37Z
  [00 Minor]
- - Inject modern Prereqs::AuthorDeps to auto discover develop deps.
+ - Inject Prereqs::AuthorDeps to auto discover develop deps.
 
  [Dependencies::Stats]
  - Dependencies changed since 2.020005, see misc/*.deps* for details
- - develop: -51
- - runtime: ↑1
+ - develop: ↑1
+ - runtime: +1 ↑1
 
 2.020005 2014-10-03T07:04:22Z
  [Bugfix]
