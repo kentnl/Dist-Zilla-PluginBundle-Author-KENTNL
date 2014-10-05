@@ -43,29 +43,31 @@ my %CACHE_COMMON = (
   flags          => MDB_NOSYNC | MDB_NOMETASYNC,
 
   # STILL SEGVing
-  # single_txn => 1,
+  single_txn => 1,
 );
+
 sub xnamespace {
-  my ( %args ) = @_;
-  my $ns_root = $cache_root->child($args{namespace});
+  my (%args) = @_;
+  my $ns_root = $cache_root->child( $args{namespace} );
   $ns_root->mkpath;
   $args{root_dir} = $ns_root->stringify;
   return %args;
 }
-my $get_sha_cache  = CHI->new(xnamespace( namespace => 'get_sha',       %CACHE_COMMON, ));
-my $tree_sha_cache = CHI->new(xnamespace( namespace => 'tree_sha',      %CACHE_COMMON, ));
-my $meta_cache     = CHI->new(xnamespace( namespace => 'meta_cache',    %CACHE_COMMON, ));
-my $diff_cache     = CHI->new(xnamespace( namespace => 'diff_cache',    %CACHE_COMMON, ));
-my $stat_cache     = CHI->new(xnamespace( namespace => 'stat_cache',    %CACHE_COMMON, ));
-my $release_cache  = CHI->new(xnamespace( namespace => 'release_cache', %CACHE_COMMON, ));
+my $get_sha_cache  = CHI->new( xnamespace( namespace => 'get_sha',       %CACHE_COMMON, ) );
+my $tree_sha_cache = CHI->new( xnamespace( namespace => 'tree_sha',      %CACHE_COMMON, ) );
+my $meta_cache     = CHI->new( xnamespace( namespace => 'meta_cache',    %CACHE_COMMON, ) );
+my $diff_cache     = CHI->new( xnamespace( namespace => 'diff_cache',    %CACHE_COMMON, ) );
+my $stat_cache     = CHI->new( xnamespace( namespace => 'stat_cache',    %CACHE_COMMON, ) );
+my $release_cache  = CHI->new( xnamespace( namespace => 'release_cache', %CACHE_COMMON, ) );
 
 sub END {
-  undef $get_sha_cache;
-  undef $tree_sha_cache;
-  undef $meta_cache;
-  undef $diff_cache;
-  undef $stat_cache;
   undef $release_cache;
+  undef $stat_cache;
+  undef $diff_cache;
+  undef $meta_cache;
+  undef $tree_sha_cache;
+
+  undef $get_sha_cache;
 
   print "Cleanup done\n";
 }
