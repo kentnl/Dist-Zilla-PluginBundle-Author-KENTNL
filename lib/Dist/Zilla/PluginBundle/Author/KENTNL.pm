@@ -454,12 +454,14 @@ sub _configure_bundle_develop_suggests {
   return;
 }
 
+has 'bundledeps_phase' => ( is => ro =>, default => "develop" );
+
 sub _configure_bundle_develop_requires {
   my ($self) = @_;
   $self->add_named_plugin(
     'PluginAutoDeps' => 'Prereqs::Plugins' => {
       ':version' => '1.002000',
-      phase => 'develop',
+      phase => $self->bundledeps_phase,
     },
   );
   return if _is_bake();
