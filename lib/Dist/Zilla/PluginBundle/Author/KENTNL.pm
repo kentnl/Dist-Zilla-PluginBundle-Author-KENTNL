@@ -461,7 +461,7 @@ sub _configure_bundle_develop_requires {
   $self->add_named_plugin(
     'PluginAutoDeps' => 'Prereqs::Plugins' => {
       ':version' => '1.002000',
-      phase => $self->bundledeps_phase,
+      phase => 'develop',
     },
   );
   return if _is_bake();
