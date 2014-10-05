@@ -3,6 +3,7 @@
 {{$NEXT}}
  [00 Minor]
  - Inject Prereqs::AuthorDeps to auto discover develop deps.
+ - Add shortend SHA1 to changes headers.
 
  [Dependencies::Stats]
  - Dependencies changed since 2.020005, see misc/*.deps* for details
