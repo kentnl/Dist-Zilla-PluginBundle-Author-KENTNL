@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.020006';
+our $VERSION = '2.021000';
 
 # AUTHORITY
 
@@ -588,6 +588,8 @@ sub configure {
 
   $self->_configure_bundle_develop_suggests();
   $self->_configure_bundle_develop_requires();
+
+  $self->add_plugin( 'Prereqs::AuthorDeps' => {} );
 
   $self->add_plugin( 'MinimumPerl' => {} );
   $self->add_plugin(

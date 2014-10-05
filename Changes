@@ -1,6 +1,13 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - Inject Prereqs::AuthorDeps to auto discover develop deps.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.020005, see misc/*.deps* for details
+ - develop: ↑1
+ - runtime: +1 ↑1
 
 2.020005 2014-10-03T07:04:22Z
  [Bugfix]

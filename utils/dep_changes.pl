@@ -23,6 +23,8 @@ use Data::Serializer::Sereal;
 
 my $git = Git::Wrapper->new('.');
 
+my $build_master_version;
+
 my $extension = Path::Tiny::cwd->stringify;
 $extension =~ s/[^-\p{PosixAlnum}_]+/_/msxg;
 
@@ -160,8 +162,8 @@ sub get_prereq_diff {
 sub get_summary_diff {
   my ( $old, $new ) = @_;
   my ( $oldsha, $newsha ) = ( $old, $new );
-  $oldsha = rev_sha($oldsha) if $oldsha !~ /\d\.\d/;
-  $newsha = rev_sha($newsha) if $newsha !~ /\d\.\d/;
+  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' ) if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' ) if $newsha !~ /\d\.\d/;
   return $stat_cache->compute(
     $oldsha . "\0" . $newsha . "\0" . $CPAN::Changes::Group::Dependencies::Stats::VERSION,
     undef,
@@ -179,8 +181,8 @@ sub get_summary_diff {
 sub get_release_diff {
   my ( $changes, $old, $new, $params ) = @_;
   my ( $oldsha, $newsha ) = ( $old, $new );
-  $oldsha = rev_sha($oldsha) if $oldsha !~ /\d\.\d/;
-  $newsha = rev_sha($newsha) if $newsha !~ /\d\.\d/;
+  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' ) if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' ) if $newsha !~ /\d\.\d/;
   my @keyparts;
   push @keyparts, 'phases=>', sort @{ $changes->phases };
   push @keyparts, 'types=>',  sort @{ $changes->types };
@@ -224,7 +226,6 @@ for my $line (@lines) {
     next;
   }
 }
-my $build_master_version;
 
 if ( $ENV{V} ) {
   $build_master_version = $ENV{V};
