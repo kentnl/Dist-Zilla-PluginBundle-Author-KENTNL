@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022000 2014-10-25T09:49:32Z d2cc77e
+2.022000 2014-10-25T09:54:57Z 784f4f1
  [00 Minor]
  - Replace EOLTests with Test::EOL
 
