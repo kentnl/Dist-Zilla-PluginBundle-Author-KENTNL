@@ -20,7 +20,7 @@ use CHI;
 use CHI::Driver::LMDB;
 use LMDB_File qw( MDB_NOSYNC MDB_NOMETASYNC );
 use Data::Serializer::Sereal;
-
+use Sereal::Encoder;
 my $git = Git::Wrapper->new('.');
 
 my $build_master_version;
@@ -32,7 +32,7 @@ my $cache_root = Path::Tiny::tempdir->sibling('dep_changes_cache')->child($exten
 
 $cache_root->mkpath;
 
-my $s            = Data::Serializer::Sereal->new();
+my $s = Data::Serializer::Sereal->new( options => { encoder => Sereal::Encoder->new( { compress => 1, canonical => 1 } ), } );
 my %CACHE_COMMON = (
   driver         => 'LMDB',
   root_dir       => $cache_root->stringify,
@@ -164,8 +164,10 @@ sub get_prereq_diff {
 sub get_summary_diff {
   my ( $old, $new ) = @_;
   my ( $oldsha, $newsha ) = ( $old, $new );
-  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' ) if $oldsha !~ /\d\.\d/;
-  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' ) if $newsha !~ /\d\.\d/;
+  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' )
+    if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' )
+    if $newsha !~ /\d\.\d/;
   return $stat_cache->compute(
     $oldsha . "\0" . $newsha . "\0" . $CPAN::Changes::Group::Dependencies::Stats::VERSION,
     undef,
@@ -183,8 +185,10 @@ sub get_summary_diff {
 sub get_release_diff {
   my ( $changes, $old, $new, $params ) = @_;
   my ( $oldsha, $newsha ) = ( $old, $new );
-  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' ) if $oldsha !~ /\d\.\d/;
-  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' ) if $newsha !~ /\d\.\d/;
+  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' )
+    if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' )
+    if $newsha !~ /\d\.\d/;
   my @keyparts;
   push @keyparts, 'phases=>', sort @{ $changes->phases };
   push @keyparts, 'types=>',  sort @{ $changes->types };
