@@ -11,6 +11,9 @@
  - runtime: +1 ↑29 -1
  - test: ↑2 (recommends: ↑2)
 
+ [Utils]
+ - use canonicalised Sereal keys
+
 2.021000 2014-10-05T11:28:53Z 7814800
  [00 Minor]
  - Inject Prereqs::AuthorDeps to auto discover develop deps.
