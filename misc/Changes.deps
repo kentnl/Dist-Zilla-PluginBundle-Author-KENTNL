@@ -1,13 +1,15 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.021001
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Test::EOL 0.14
+
  [Changed / runtime requires]
  - Dist::Zilla 5.020 → 5.021
  - Dist::Zilla::File::FromCode 5.020 → 5.021
  - Dist::Zilla::Plugin::AutoPrereqs 5.020 → 5.021
  - Dist::Zilla::Plugin::BumpVersionAfterRelease 0.003 → 0.004
  - Dist::Zilla::Plugin::ConfirmRelease 5.020 → 5.021
- - Dist::Zilla::Plugin::EOLTests 0.02 → 0.14
  - Dist::Zilla::Plugin::Git::Check 2.024 → 2.025
  - Dist::Zilla::Plugin::Git::Commit 2.024 → 2.025
  - Dist::Zilla::Plugin::Git::CommitBuild 2.024 → 2.025
@@ -36,6 +38,9 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  [Changed / test requires]
  - Path::Tiny 0.058 → 0.059
  - Test::DZil 5.020 → 5.021
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::EOLTests 0.02
 
 2.021000 2014-10-05T11:28:53Z
  [Added / runtime requires]

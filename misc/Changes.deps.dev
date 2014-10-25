@@ -5,6 +5,7 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
  - Test::More 1.001008
 
  [Added / develop requires]
+ - Dist::Zilla::Plugin::Test::EOL 0.14
  - Test::EOL 1.5
  - Test::More
 
@@ -14,7 +15,6 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
  - Dist::Zilla::Plugin::AutoPrereqs 5.020 → 5.021
  - Dist::Zilla::Plugin::BumpVersionAfterRelease 0.003 → 0.004
  - Dist::Zilla::Plugin::ConfirmRelease 5.020 → 5.021
- - Dist::Zilla::Plugin::EOLTests 0.02 → 0.14
  - Dist::Zilla::Plugin::Git::Check 2.024 → 2.025
  - Dist::Zilla::Plugin::Git::Commit 2.024 → 2.025
  - Dist::Zilla::Plugin::Git::CommitBuild 2.024 → 2.025
@@ -39,6 +39,9 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
 
  [Changed / develop suggests]
  - Dist::Zilla::App::Command::bakeini 0.001002 → 0.001003
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::EOLTests 0.02
 
 2.021000 2014-10-05T11:28:53Z
  [Changed / develop requires]

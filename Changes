@@ -1,15 +1,18 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022000 2014-10-25T09:11:54Z 708e73b
+2.022000 2014-10-25T09:20:20Z 0555598
  [00 Minor]
  - Replace EOLTests with Test::EOL
 
  [Dependencies::Stats]
  - Dependencies changed since 2.021000, see misc/*.deps* for details
  - configure: (recommends: ↑1)
- - develop: +2 ↑27 (recommends: +1, suggests: ↑1)
- - runtime: ↑30
+ - develop: +3 ↑26 -1 (recommends: +1, suggests: ↑1)
+ - runtime: +1 ↑29 -1
  - test: ↑2 (recommends: ↑2)
+
+ [Utils]
+ - use canonicalised Sereal keys
 
 2.021000 2014-10-05T11:28:53Z 7814800
  [00 Minor]
