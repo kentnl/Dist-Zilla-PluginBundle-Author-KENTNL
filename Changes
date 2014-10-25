@@ -398,24 +398,17 @@
  - Work around weird behaviour in Config::MVP with attribute propagation causing errors.
 
 2.011000 2014-01-29T21:19:25Z
- [00 Major]
-
- [01 - Toolkit alternation]
- - attribute `toolkit` now exists.
- - can be any of `eumm` `mb` or `mbtiny` and will do the right things.
-
- [02 - Toolkit hardness variation]
- - attribute `tookit_hardness` exists.
- - `hard` = ramp dependencies on toolkit so everyone gets the latest
- - `soft` = copy dependencies on toolkit to recommended, and ramp recommended
-
- [03 - More Recommended deps by far]
- - All the top 3 are now pulled by --recommended
- - All the perl critic modules I use are now pulled by --recommended
- - Both the hardness support modules are pulled by --recommended
-
- [04 - Softer Deps on this dist]
- - No more forced upgrading MB on Perl >5.11
+ - 00 Major
+ - 01 - Toolkit alternation * attribute `toolkit` now exists. * can be any of `eumm` `mb` or `mbtiny` and will do the
+   right things.
+ - 02 - Toolkit hardness variation * attribute `tookit_hardness` exists. * `hard` = ramp dependencies on toolkit so
+   everyone gets the latest * `soft` = copy dependencies on toolkit to recommended, and ramp recommended
+ - 03 - More Recommended deps by far * All the top 3 are now pulled by --recommended * All the perl critic modules I
+   use are now pulled by --recommended * Both the hardness support modules are pulled by --recommended
+ - 04 - Softer Deps on this dist * No more forced upgrading MB on Perl >5.11
+ - Dependencies::Stats * Dependencies changed since 2.010001, see misc/*.deps* for details * build: ↓1 (recommends: +1)
+   * configure: ↓1 (recommends: +1) * develop: ↑1 * runtime: +1 ↑2 -1 (recommends: +18) * test: +2 ↑1 ↓1 (recommends:
+   +1)
 
  [Dependencies::Stats]
  - Dependencies changed since 2.010001, see misc/*.deps* for details
@@ -516,6 +509,7 @@
 
 2.007000 2013-12-01T11:42:18Z
  - Switch to Git::NextVersion::Sanitized
+ - Dependencies::Stats * Dependencies changed since 2.006001, see misc/*.deps* for details * runtime: +1 -1
 
  [Dependencies::Stats]
  - Dependencies changed since 2.006001, see misc/*.deps* for details
@@ -523,6 +517,7 @@
 
 2.006001 2013-12-01T05:07:52Z
  - That last release is about to unhappen. kentnl--
+ - Dependencies::Stats * Dependencies changed since 2.6.0, see misc/*.deps* for details * runtime: ↑1
 
  [Dependencies::Stats]
  - Dependencies changed since 2.6.0, see misc/*.deps* for details
@@ -544,6 +539,7 @@
 2.005000 2013-11-29T19:31:25Z
  - Stop using PruneCruft as the number of exclusions being added just keeps growing, and it sucks.
  - We use Git::GatherDir anyway.
+ - Dependencies::Stats * Dependencies changed since 2.004002, see misc/*.deps* for details * runtime: -1
 
  [Dependencies::Stats]
  - Dependencies changed since 2.004002, see misc/*.deps* for details
@@ -741,6 +737,8 @@
 
 1.7.5 2013-08-01T09:48:11Z
  - Minor Changes, backend deps switched.
+ - Dependencies::Stats * Dependencies changed since 1.7.4, see misc/*.deps* for details * develop: (suggests: ↑1) *
+   runtime: +1 -1
 
  [Dependencies::Stats]
  - Dependencies changed since 1.7.4, see misc/*.deps* for details
@@ -750,6 +748,9 @@
 1.7.4 2013-06-13T22:56:08Z
  - Maintenance release
  - ::Twitter bumped for API v1.0 deprecation
+ - Dependencies::Stats * Dependencies changed since 1.7.3, see misc/*.deps* for details * build: ↑1 * configure: ↑1 *
+   develop: (suggests: ↑1) * runtime: ↑1
+ - Documentation * Retroactively modernize Changes * Add MetaPOD and Class Graph
 
  [Dependencies::Stats]
  - Dependencies changed since 1.7.3, see misc/*.deps* for details
@@ -758,14 +759,12 @@
  - develop: (suggests: ↑1)
  - runtime: ↑1
 
- [Documentation]
- - Retroactively modernize Changes
- - Add MetaPOD and Class Graph
-
 1.7.3 2013-04-26T19:09:26Z
  - Bugfix for minting failure with Plugin::Test::CPAN::Changes
  - Ramp bootstrap::lib
  - add a small arsenal of utils
+ - Dependencies::Stats * Dependencies changed since 1.7.2, see misc/*.deps* for details * develop: +1 (suggests: ↑1) *
+   runtime: ↑2
 
  [Dependencies::Stats]
  - Dependencies changed since 1.7.2, see misc/*.deps* for details
@@ -774,6 +773,10 @@
 
 1.7.2 2013-04-03T02:39:06Z
  - minor release, packaging / update Module::Build
+ - Dependencies::Stats * Dependencies changed since 1.7.1, see misc/*.deps* for details * build: ↑1 * configure: ↑1 *
+   runtime: +1
+ - Documentation * Sort changes previous.
+ - Packaging * Update to Module::Build 0.4004 to properly support test requires
 
  [Dependencies::Stats]
  - Dependencies changed since 1.7.1, see misc/*.deps* for details
@@ -781,21 +784,14 @@
  - configure: ↑1
  - runtime: +1
 
- [Documentation]
- - Sort changes previous.
-
- [Packaging]
- - Update to Module::Build 0.4004 to properly support test requires
-
 1.7.1 2013-03-13T13:31:16Z
  - Minor release to test changes to DZP:Git
+ - Dependencies::Stats * Dependencies changed since 1.7.0, see misc/*.deps* for details * runtime: ↑5
+ - Documentation * utf8ify changes.
 
  [Dependencies::Stats]
  - Dependencies changed since 1.7.0, see misc/*.deps* for details
  - runtime: ↑5
-
- [Documentation]
- - utf8ify changes.
 
 1.7.0 2013-01-25T04:24:14Z
  [!Features]
@@ -816,15 +812,15 @@
 
 1.5.1 2012-11-04T16:03:42Z
  - maintenance release
+ - Dependencies::Stats * Dependencies changed since 1.5.0, see misc/*.deps* for details * build: ↑1 * configure: ↑1 *
+   develop: +5
+ - Tests * regenerated t/000-report-versions-tiny.t
 
  [Dependencies::Stats]
  - Dependencies changed since 1.5.0, see misc/*.deps* for details
  - build: ↑1
  - configure: ↑1
  - develop: +5
-
- [Tests]
- - regenerated t/000-report-versions-tiny.t
 
 1.5.0 2012-08-08T02:56:12Z
  [Features]
