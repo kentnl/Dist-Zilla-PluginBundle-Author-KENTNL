@@ -28,202 +28,186 @@ my $build_master_version;
 my $extension = Path::Tiny::cwd->stringify;
 $extension =~ s/[^-\p{PosixAlnum}_]+/_/msxg;
 
-my $cache_root =
-  Path::Tiny::tempdir->sibling('dep_changes_cache')->child($extension);
+my $cache_root = Path::Tiny::tempdir->sibling('dep_changes_cache')->child($extension);
 
 $cache_root->mkpath;
 
-my $s =
-  Data::Serializer::Sereal->new( options =>
-      { encoder => Sereal::Encoder->new( { compress => 1, canonical => 1 } ), }
-  );
+my $s = Data::Serializer::Sereal->new( options => { encoder => Sereal::Encoder->new( { compress => 1, canonical => 1 } ), } );
 my %CACHE_COMMON = (
-    driver         => 'LMDB',
-    root_dir       => $cache_root->stringify,
-    expires_in     => '7d',
-    cache_size     => '30m',
-    key_serializer => $s,
-    serializer     => $s,
-    flags          => MDB_NOSYNC | MDB_NOMETASYNC,
+  driver         => 'LMDB',
+  root_dir       => $cache_root->stringify,
+  expires_in     => '7d',
+  cache_size     => '30m',
+  key_serializer => $s,
+  serializer     => $s,
+  flags          => MDB_NOSYNC | MDB_NOMETASYNC,
 
-    # STILL SEGVing
-    single_txn => 1,
+  # STILL SEGVing
+  single_txn => 1,
 );
 
 sub xnamespace {
-    my (%args) = @_;
-    my $ns_root = $cache_root->child( $args{namespace} );
-    $ns_root->mkpath;
-    $args{root_dir} = $ns_root->stringify;
-    return %args;
+  my (%args) = @_;
+  my $ns_root = $cache_root->child( $args{namespace} );
+  $ns_root->mkpath;
+  $args{root_dir} = $ns_root->stringify;
+  return %args;
 }
-my $get_sha_cache =
-  CHI->new( xnamespace( namespace => 'get_sha', %CACHE_COMMON, ) );
-my $tree_sha_cache =
-  CHI->new( xnamespace( namespace => 'tree_sha', %CACHE_COMMON, ) );
-my $meta_cache =
-  CHI->new( xnamespace( namespace => 'meta_cache', %CACHE_COMMON, ) );
-my $diff_cache =
-  CHI->new( xnamespace( namespace => 'diff_cache', %CACHE_COMMON, ) );
-my $stat_cache =
-  CHI->new( xnamespace( namespace => 'stat_cache', %CACHE_COMMON, ) );
-my $release_cache =
-  CHI->new( xnamespace( namespace => 'release_cache', %CACHE_COMMON, ) );
+my $get_sha_cache  = CHI->new( xnamespace( namespace => 'get_sha',       %CACHE_COMMON, ) );
+my $tree_sha_cache = CHI->new( xnamespace( namespace => 'tree_sha',      %CACHE_COMMON, ) );
+my $meta_cache     = CHI->new( xnamespace( namespace => 'meta_cache',    %CACHE_COMMON, ) );
+my $diff_cache     = CHI->new( xnamespace( namespace => 'diff_cache',    %CACHE_COMMON, ) );
+my $stat_cache     = CHI->new( xnamespace( namespace => 'stat_cache',    %CACHE_COMMON, ) );
+my $release_cache  = CHI->new( xnamespace( namespace => 'release_cache', %CACHE_COMMON, ) );
 
 sub END {
-    undef $release_cache;
-    undef $stat_cache;
-    undef $diff_cache;
-    undef $meta_cache;
-    undef $tree_sha_cache;
+  undef $release_cache;
+  undef $stat_cache;
+  undef $diff_cache;
+  undef $meta_cache;
+  undef $tree_sha_cache;
 
-    undef $get_sha_cache;
+  undef $get_sha_cache;
 
-    print "Cleanup done\n";
+  print "Cleanup done\n";
 }
 use Try::Tiny qw( try catch );
 
 sub rev_sha {
-    my ($commit) = @_;
-    my $rev;
-    try {
-        $rev = [ $git->rev_parse($commit) ]->[0];
-    };
-    return $rev;
+  my ($commit) = @_;
+  my $rev;
+  try {
+    $rev = [ $git->rev_parse($commit) ]->[0];
+  };
+  return $rev;
 }
 
 sub tree_sha {
-    my ( $sha, $path ) = @_;
-    return $tree_sha_cache->compute(
-        $sha, undef,
-        sub {
-            #*STDERR->print("Cache Miss for tree_sha $sha + $path\n");
-            my $tree;
+  my ( $sha, $path ) = @_;
+  return $tree_sha_cache->compute(
+    $sha, undef,
+    sub {
+      #*STDERR->print("Cache Miss for tree_sha $sha + $path\n");
+      my $tree;
 
-            try {
-                $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
-            };
-            return $tree;
-        }
-    );
+      try {
+        $tree = [ $git->ls_tree( $sha, $path ) ]->[0];
+      };
+      return $tree;
+    }
+  );
 }
 
 sub file_sha {
-    my ( $commit, $path ) = @_;
-    my $rev = rev_sha($commit);
-    return unless $rev;
-    my $tree = tree_sha( $rev, $path );
-    return unless $tree;
-    my ( $left, $right ) = $tree =~ /^([^\t]+)\t(.*$)/;
-    my ( $flags, $type, $sha ) = split / /, $left;
-    return $sha;
+  my ( $commit, $path ) = @_;
+  my $rev = rev_sha($commit);
+  return unless $rev;
+  my $tree = tree_sha( $rev, $path );
+  return unless $tree;
+  my ( $left, $right ) = $tree =~ /^([^\t]+)\t(.*$)/;
+  my ( $flags, $type, $sha ) = split / /, $left;
+  return $sha;
 }
 
 sub get_sha {
-    my ($sha) = @_;
-    my $key = $sha;
-    return $get_sha_cache->compute(
-        $sha, undef,
-        sub {
-            #*STDERR->print("Cache Miss for get_sha $sha\n");
-            return join qq[\n], $git->cat_file( '-p', $sha );
-        }
-    );
+  my ($sha) = @_;
+  my $key = $sha;
+  return $get_sha_cache->compute(
+    $sha, undef,
+    sub {
+      #*STDERR->print("Cache Miss for get_sha $sha\n");
+      return join qq[\n], $git->cat_file( '-p', $sha );
+    }
+  );
 }
 
 sub get_json_prereqs {
-    my ($commitish) = @_;
-    if ( $commitish !~ /\d\.\d/ ) {
-        $commitish = rev_sha($commitish);
+  my ($commitish) = @_;
+  if ( $commitish !~ /\d\.\d/ ) {
+    $commitish = rev_sha($commitish);
+  }
+  return $meta_cache->compute(
+    $commitish,
+    undef,
+    sub {
+      #*STDERR->print("Cache miss for $commitish metadata\n");
+      my $sha1 = file_sha( $commitish, 'META.json' );
+      if ( defined $sha1 and length $sha1 ) {
+        return CPAN::Meta->load_json_string( get_sha($sha1) );
+      }
+      $sha1 = file_sha( $commitish, 'META.yml' );
+      if ( defined $sha1 and length $sha1 ) {
+        return CPAN::Meta->load_yaml_string( get_sha($sha1) );
+      }
+      return {};
     }
-    return $meta_cache->compute(
-        $commitish,
-        undef,
-        sub {
-            #*STDERR->print("Cache miss for $commitish metadata\n");
-            my $sha1 = file_sha( $commitish, 'META.json' );
-            if ( defined $sha1 and length $sha1 ) {
-                return CPAN::Meta->load_json_string( get_sha($sha1) );
-            }
-            $sha1 = file_sha( $commitish, 'META.yml' );
-            if ( defined $sha1 and length $sha1 ) {
-                return CPAN::Meta->load_yaml_string( get_sha($sha1) );
-            }
-            return {};
-        }
-    );
+  );
 }
 
 sub get_prereq_diff {
-    my ( $old, $new ) = @_;
-    $old = rev_sha($old) if $old !~ /\d\.\d/;
-    $new = rev_sha($new) if $new !~ /\d\.\d/;
+  my ( $old, $new ) = @_;
+  $old = rev_sha($old) if $old !~ /\d\.\d/;
+  $new = rev_sha($new) if $new !~ /\d\.\d/;
 
-    return $diff_cache->compute(
-        $old . "\0" . $new,
-        undef,
-        sub {
-            return CPAN::Meta::Prereqs::Diff->new(
-                old_prereqs => get_json_prereqs($old),
-                new_prereqs => get_json_prereqs($new),
-            );
-        }
-    );
+  return $diff_cache->compute(
+    $old . "\0" . $new,
+    undef,
+    sub {
+      return CPAN::Meta::Prereqs::Diff->new(
+        old_prereqs => get_json_prereqs($old),
+        new_prereqs => get_json_prereqs($new),
+      );
+    }
+  );
 }
 
 sub get_summary_diff {
-    my ( $old, $new ) = @_;
-    my ( $oldsha, $newsha ) = ( $old, $new );
-    $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' )
-      if $oldsha !~ /\d\.\d/;
-    $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' )
-      if $newsha !~ /\d\.\d/;
-    return $stat_cache->compute(
-        $oldsha . "\0"
-          . $newsha . "\0"
-          . $CPAN::Changes::Group::Dependencies::Stats::VERSION,
-        undef,
-        sub {
-            my $pchanges = CPAN::Changes::Group::Dependencies::Stats->new(
-                prelude => [
-                        'Dependencies changed since '
-                      . $old
-                      . ', see misc/*.deps* for details',
-                ],
-                prereqs_diff => scalar get_prereq_diff( $old, $new )
-            );
-            $pchanges->_diff_items;
-            return $pchanges;
-        }
-    );
+  my ( $old, $new ) = @_;
+  my ( $oldsha, $newsha ) = ( $old, $new );
+  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' )
+    if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' )
+    if $newsha !~ /\d\.\d/;
+  return $stat_cache->compute(
+    $oldsha . "\0" . $newsha . "\0" . $CPAN::Changes::Group::Dependencies::Stats::VERSION,
+    undef,
+    sub {
+      my $pchanges = CPAN::Changes::Group::Dependencies::Stats->new(
+        prelude      => [ 'Dependencies changed since ' . $old . ', see misc/*.deps* for details', ],
+        prereqs_diff => scalar get_prereq_diff( $old, $new )
+      );
+      $pchanges->_diff_items;
+      return $pchanges;
+    }
+  );
 }
 
 sub get_release_diff {
-    my ( $changes, $old, $new, $params ) = @_;
-    my ( $oldsha, $newsha ) = ( $old, $new );
-    $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' )
-      if $oldsha !~ /\d\.\d/;
-    $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' )
-      if $newsha !~ /\d\.\d/;
-    my @keyparts;
-    push @keyparts, 'phases=>', sort @{ $changes->phases };
-    push @keyparts, 'types=>',  sort @{ $changes->types };
-    push @keyparts, 'change_types' =>, sort @{ $changes->change_types };
-    push @keyparts, 'preamble=>', $changes->preamble;
-    push @keyparts, $oldsha, $newsha,
-      $CPAN::Changes::Dependencies::Details::VERSION,
-      $CPAN::Changes::Group::Dependencies::Details::VERSION;
+  my ( $changes, $old, $new, $params ) = @_;
+  my ( $oldsha, $newsha ) = ( $old, $new );
+  $oldsha = rev_sha($oldsha) . "\0" . ( $build_master_version || '0' )
+    if $oldsha !~ /\d\.\d/;
+  $newsha = rev_sha($newsha) . "\0" . ( $build_master_version || '0' )
+    if $newsha !~ /\d\.\d/;
+  my @keyparts;
+  push @keyparts, 'phases=>', sort @{ $changes->phases };
+  push @keyparts, 'types=>',  sort @{ $changes->types };
+  push @keyparts, 'change_types' =>, sort @{ $changes->change_types };
+  push @keyparts, 'preamble=>', $changes->preamble;
+  push @keyparts, $oldsha, $newsha,
+    $CPAN::Changes::Dependencies::Details::VERSION,
+    $CPAN::Changes::Group::Dependencies::Details::VERSION;
 
-    return $release_cache->compute(
-        ( join qq[\0], @keyparts ),
-        undef,
-        sub {
-            my $delta = get_prereq_diff( $old, $new );
-            my $release_info = { %{$params}, prereqs_diff => $delta, };
-            my $release_object = $changes->_mk_release($release_info);
-            return $release_object;
-        }
-    );
+  return $release_cache->compute(
+    ( join qq[\0], @keyparts ),
+    undef,
+    sub {
+      my $delta = get_prereq_diff( $old, $new );
+      my $release_info = { %{$params}, prereqs_diff => $delta, };
+      my $release_object = $changes->_mk_release($release_info);
+      return $release_object;
+    }
+  );
 }
 
 my @tags;
@@ -231,29 +215,29 @@ my @tags;
 my @lines;
 eval { @lines = reverse $git->RUN( 'log', '--pretty=format:%d', 'releases' ) };
 for my $line (@lines) {
-    if ( $line =~ /\(tag:\s*([^ ),]+)/ ) {
-        my $tag = $1;
-        next if $tag =~ /-source$/;
-        if ( not eval { version->parse($tag); 1 } ) {
-            print "tag $tag skipped\n";
-            next;
-        }
-        push @tags, $tag;
+  if ( $line =~ /\(tag:\s*([^ ),]+)/ ) {
+    my $tag = $1;
+    next if $tag =~ /-source$/;
+    if ( not eval { version->parse($tag); 1 } ) {
+      print "tag $tag skipped\n";
+      next;
+    }
+    push @tags, $tag;
 
-        #print "$tag\n";
-        next;
-    }
-    if ( $line =~ /\(/ ) {
-        print "Skipped decoration $line\n";
-        next;
-    }
+    #print "$tag\n";
+    next;
+  }
+  if ( $line =~ /\(/ ) {
+    print "Skipped decoration $line\n";
+    next;
+  }
 }
 
 if ( $ENV{V} ) {
-    $build_master_version = $ENV{V};
+  $build_master_version = $ENV{V};
 }
 else {
-    $build_master_version = next_version( $tags[-1] );
+  $build_master_version = next_version( $tags[-1] );
 }
 
 push @tags, 'build/master' if rev_sha('build/master');
@@ -262,79 +246,72 @@ my $standard_phases = ' (configure/build/runtime/test)';
 my $all_phases      = ' (configure/build/runtime/test/develop)';
 
 my $changes = CPAN::Changes::Dependencies::Details->new(
-    preamble =>
-'This file contains changes in REQUIRED dependencies for standard CPAN phases'
-      . $standard_phases,
-    change_types => [qw( Added Changed Removed )],
-    phases       => [qw( configure build runtime test )],
-    types        => [qw( requires )],
+  preamble     => 'This file contains changes in REQUIRED dependencies for standard CPAN phases' . $standard_phases,
+  change_types => [qw( Added Changed Removed )],
+  phases       => [qw( configure build runtime test )],
+  types        => [qw( requires )],
 );
 
 my $changes_opt = CPAN::Changes::Dependencies::Details->new(
-    preamble =>
-'This file contains changes in OPTIONAL dependencies for standard CPAN phases'
-      . $standard_phases,
-    change_types => [qw( Added Changed Removed )],
-    phases       => [qw( configure build runtime test )],
-    types        => [qw( recommends suggests )],
+  preamble     => 'This file contains changes in OPTIONAL dependencies for standard CPAN phases' . $standard_phases,
+  change_types => [qw( Added Changed Removed )],
+  phases       => [qw( configure build runtime test )],
+  types        => [qw( recommends suggests )],
 );
 my $changes_all = CPAN::Changes::Dependencies::Details->new(
-    preamble =>
-'This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases'
-      . $all_phases,
-    change_types => [qw( Added Changed Removed )],
-    phases       => [qw( configure build develop runtime test )],
-    types        => [qw( requires recommends suggests )],
+  preamble => 'This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases'
+    . $all_phases,
+  change_types => [qw( Added Changed Removed )],
+  phases       => [qw( configure build develop runtime test )],
+  types        => [qw( requires recommends suggests )],
 );
 my $changes_dev = CPAN::Changes::Dependencies::Details->new(
-    preamble =>
-'This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )',
-    change_types => [qw( Added Changed Removed )],
-    phases       => [qw( develop )],
-    types        => [qw( requires recommends suggests )],
+  preamble     => 'This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )',
+  change_types => [qw( Added Changed Removed )],
+  phases       => [qw( develop )],
+  types        => [qw( requires recommends suggests )],
 );
 
-my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8,
-    next_token => qr/\{\{\$NEXT\}\}/ );
+my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/\{\{\$NEXT\}\}/ );
 $ENV{PERL_JSON_BACKEND} = 'JSON';
 
 while ( @tags > 1 ) {
-    my ( $old, $new ) = ( $tags[-2], $tags[-1] );
-    print "$old - $new\n";
-    pop @tags;
+  my ( $old, $new ) = ( $tags[-2], $tags[-1] );
+  print "$old - $new\n";
+  pop @tags;
 
-    my $date;
-    my $master_release;
-    if ( $master_release = $master_changes->release($new) ) {
-        $date = $master_release->date();
-    }
-    else {
-        print "$new not on master Changelog\n";
-        if ( $new eq 'build/master' ) {
-            $master_release = [ $master_changes->releases ]->[-1];
-            print " ... using " . $master_release->version . " instead \n";
-
-            #('{{$NEXT}}');
-        }
-    }
-    my $version = $new;
+  my $date;
+  my $master_release;
+  if ( $master_release = $master_changes->release($new) ) {
+    $date = $master_release->date();
+  }
+  else {
+    print "$new not on master Changelog\n";
     if ( $new eq 'build/master' ) {
-        $version = $build_master_version;
-    }
-    my $params = {
-        version => $version,
-        ( defined $date ? ( date => $date ) : () ),
-    };
+      $master_release = [ $master_changes->releases ]->[-1];
+      print " ... using " . $master_release->version . " instead \n";
 
-    if ($master_release) {
-        my $pchanges = get_summary_diff( $old, $new );
-        $master_release->attach_group($pchanges) if $pchanges->has_changes;
+      #('{{$NEXT}}');
     }
+  }
+  my $version = $new;
+  if ( $new eq 'build/master' ) {
+    $version = $build_master_version;
+  }
+  my $params = {
+    version => $version,
+    ( defined $date ? ( date => $date ) : () ),
+  };
 
-    for my $target ( $changes, $changes_opt, $changes_dev, $changes_all ) {
-        my $diff = get_release_diff( $target, $old, $new, $params );
-        $target->{'releases'}->{ $diff->version } = $diff;
-    }
+  if ($master_release) {
+    my $pchanges = get_summary_diff( $old, $new );
+    $master_release->attach_group($pchanges) if $pchanges->has_changes;
+  }
+
+  for my $target ( $changes, $changes_opt, $changes_dev, $changes_all ) {
+    my $diff = get_release_diff( $target, $old, $new, $params );
+    $target->{'releases'}->{ $diff->version } = $diff;
+  }
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 
@@ -344,15 +321,12 @@ $Text::Wrap::huge    = 'overflow';
 
 my $misc = path('./misc');
 if ( not -d $misc ) {
-    $misc->mkpath;
+  $misc->mkpath;
 }
-$misc->child('Changes.deps.all')
-  ->spew_utf8( _maybe( $changes_all->serialize ) );
+$misc->child('Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize ) );
 $misc->child('Changes.deps')->spew_utf8( _maybe( $changes->serialize ) );
-$misc->child('Changes.deps.opt')
-  ->spew_utf8( _maybe( $changes_opt->serialize ) );
-$misc->child('Changes.deps.dev')
-  ->spew_utf8( _maybe( $changes_dev->serialize ) );
+$misc->child('Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) );
+$misc->child('Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
 
 path('./Changes')->spew_utf8( _maybe( $master_changes->serialize ) );
 
