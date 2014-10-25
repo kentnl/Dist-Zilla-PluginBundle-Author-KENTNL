@@ -194,7 +194,7 @@ EOF
     xt/author/critic.t
     xt/release/cpan-changes.t
     xt/release/distmeta.t
-    xt/release/eol.t
+    xt/author/eol.t
     xt/release/kwalitee.t
     xt/release/minimum-version.t
     xt/release/pod-coverage.t

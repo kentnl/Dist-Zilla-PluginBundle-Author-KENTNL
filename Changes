@@ -1,11 +1,14 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Minor]
+ - Replace EOLTests with Test::EOL
+
  [Dependencies::Stats]
  - Dependencies changed since 2.021000, see misc/*.deps* for details
  - configure: (recommends: ↑1)
- - develop: +2 ↑27 (recommends: +1, suggests: ↑1)
- - runtime: ↑30
+ - develop: +3 ↑26 -1 (recommends: +1, suggests: ↑1)
+ - runtime: +1 ↑29 -1
  - test: ↑2 (recommends: ↑2)
 
 2.021000 2014-10-05T11:28:53Z 7814800
