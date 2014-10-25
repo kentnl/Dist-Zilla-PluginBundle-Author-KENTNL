@@ -1,6 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
 2.022000 2014-10-25T09:11:54Z 708e73b
+ [00 Minor]
+ - Replace EOLTests with Test::EOL
+
  [Dependencies::Stats]
  - Dependencies changed since 2.021000, see misc/*.deps* for details
  - configure: (recommends: ↑1)
