@@ -22,9 +22,11 @@ build_requires:
   Test::More: '0.89'
   Test::Output: '1.03'
   lib: '0'
+  perl: '5.008'
 configure_requires:
   ExtUtils::MakeMaker: '0'
   File::ShareDir::Install: '0.09'
+  perl: '5.008'
 dynamic_config: '0'
 generated_by: 'Dist::Zilla version 5.021, CPAN::Meta::Converter version 2.142690'
 license: perl
@@ -103,7 +105,7 @@ requires:
   Dist::Zilla::Plugin::MetaProvides::Package: '2.001002'
   Dist::Zilla::Plugin::MetaTests: '5.021'
   Dist::Zilla::Plugin::MetaYAML: '5.021'
-  Dist::Zilla::Plugin::MinimumPerl: '1.003'
+  Dist::Zilla::Plugin::MinimumPerl: '1.004'
   Dist::Zilla::Plugin::PerlTidy: '0.18'
   Dist::Zilla::Plugin::PodCoverageTests: '5.021'
   Dist::Zilla::Plugin::PodSyntaxTests: '5.021'
@@ -203,7 +205,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaProvides::Package: '2.001002'
     Dist::Zilla::Plugin::MetaTests: '5.021'
     Dist::Zilla::Plugin::MetaYAML: '5.021'
-    Dist::Zilla::Plugin::MinimumPerl: '1.003'
+    Dist::Zilla::Plugin::MinimumPerl: '1.004'
     Dist::Zilla::Plugin::ModuleBuild: '5.021'
     Dist::Zilla::Plugin::ModuleBuildTiny: '0.007'
     Dist::Zilla::Plugin::ModuleShareDirs: '5.021'
@@ -597,7 +599,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::MinimumPerl
       name: '@Author::KENTNL/MinimumPerl'
-      version: '1.003'
+      version: '1.004'
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'

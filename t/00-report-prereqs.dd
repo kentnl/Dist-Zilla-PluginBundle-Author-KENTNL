@@ -5,7 +5,8 @@ do { my $x = {
                                         },
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '0',
-                                        'File::ShareDir::Install' => '0.09'
+                                        'File::ShareDir::Install' => '0.09',
+                                        'perl' => '5.008'
                                       }
                       },
        'develop' => {
@@ -40,7 +41,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::MetaProvides::Package' => '2.001002',
                                       'Dist::Zilla::Plugin::MetaTests' => '5.021',
                                       'Dist::Zilla::Plugin::MetaYAML' => '5.021',
-                                      'Dist::Zilla::Plugin::MinimumPerl' => '1.003',
+                                      'Dist::Zilla::Plugin::MinimumPerl' => '1.004',
                                       'Dist::Zilla::Plugin::ModuleShareDirs' => '5.021',
                                       'Dist::Zilla::Plugin::PodCoverageTests' => '5.021',
                                       'Dist::Zilla::Plugin::PodSyntaxTests' => '5.021',
@@ -137,7 +138,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::MetaProvides::Package' => '2.001002',
                                       'Dist::Zilla::Plugin::MetaTests' => '5.021',
                                       'Dist::Zilla::Plugin::MetaYAML' => '5.021',
-                                      'Dist::Zilla::Plugin::MinimumPerl' => '1.003',
+                                      'Dist::Zilla::Plugin::MinimumPerl' => '1.004',
                                       'Dist::Zilla::Plugin::PerlTidy' => '0.18',
                                       'Dist::Zilla::Plugin::PodCoverageTests' => '5.021',
                                       'Dist::Zilla::Plugin::PodSyntaxTests' => '5.021',
@@ -217,7 +218,8 @@ do { my $x = {
                                    'Test::File::ShareDir' => '1.000005',
                                    'Test::More' => '0.89',
                                    'Test::Output' => '1.03',
-                                   'lib' => '0'
+                                   'lib' => '0',
+                                   'perl' => '5.008'
                                  }
                  }
      };
