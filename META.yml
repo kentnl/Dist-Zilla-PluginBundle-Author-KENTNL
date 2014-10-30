@@ -11,7 +11,7 @@ build_requires:
   File::Spec: '0'
   File::pushd: '1.009'
   FindBin: '0'
-  Git::Wrapper: '0.037'
+  Git::Wrapper: '0.038'
   Module::Build: '0'
   Module::Metadata: '1.000024'
   Path::Class::Dir: '0.35'
@@ -80,11 +80,11 @@ requires:
   Carp: '0'
   Dist::Zilla: '5.022'
   Dist::Zilla::File::FromCode: '5.022'
-  Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.003006'
+  Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.004000'
   Dist::Zilla::Plugin::Authority: '1.006'
   Dist::Zilla::Plugin::AutoPrereqs: '5.022'
   Dist::Zilla::Plugin::Bootstrap::lib: '1.001000'
-  Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.004'
+  Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.005'
   Dist::Zilla::Plugin::ConfirmRelease: '5.022'
   Dist::Zilla::Plugin::CopyFilesFromBuild: '0.103510'
   Dist::Zilla::Plugin::Git::Check: '2.025'
@@ -178,11 +178,11 @@ x_BuiltWith:
     Dist::Zilla: '5.022'
     Dist::Zilla::App::Command::bakeini: '0.001003'
     Dist::Zilla::File::FromCode: '5.022'
-    Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.003006'
+    Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.004000'
     Dist::Zilla::Plugin::Authority: '1.009'
     Dist::Zilla::Plugin::AutoPrereqs: '5.022'
     Dist::Zilla::Plugin::Bootstrap::lib: '1.001000'
-    Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.004'
+    Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.005'
     Dist::Zilla::Plugin::CheckPrereqsIndexed: '0.012'
     Dist::Zilla::Plugin::ConfirmRelease: '5.022'
     Dist::Zilla::Plugin::CopyFilesFromBuild: '0.103510'
@@ -207,7 +207,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaYAML: '5.022'
     Dist::Zilla::Plugin::MinimumPerl: '1.004'
     Dist::Zilla::Plugin::ModuleBuild: '5.022'
-    Dist::Zilla::Plugin::ModuleBuildTiny: '0.007'
+    Dist::Zilla::Plugin::ModuleBuildTiny: '0.008'
     Dist::Zilla::Plugin::ModuleShareDirs: '5.022'
     Dist::Zilla::Plugin::PerlTidy: '0.18'
     Dist::Zilla::Plugin::PodCoverageTests: '5.022'
@@ -245,7 +245,7 @@ x_BuiltWith:
     File::Spec: '3.49'
     File::pushd: '1.009'
     FindBin: '1.51'
-    Git::Wrapper: '0.037'
+    Git::Wrapper: '0.038'
     IO::Socket::SSL: '2.002'
     JSON::MaybeXS: '1.002006'
     LMDB_File: '0.06'
@@ -614,7 +614,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes
       name: '@Author::KENTNL/Author::KENTNL::RecommendFixes'
-      version: '0.003006'
+      version: '0.004000'
     -
       class: Dist::Zilla::Plugin::ReadmeFromPod
       name: '@Author::KENTNL/ReadmeFromPod'
@@ -695,7 +695,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::BumpVersionAfterRelease
       name: '@Author::KENTNL/BumpVersionAfterRelease'
-      version: '0.004'
+      version: '0.005'
     -
       class: Dist::Zilla::Plugin::Git::Commit
       config:
