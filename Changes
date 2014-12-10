@@ -1,11 +1,13 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022001 2014-12-10T09:48:41Z ce128ab
+2.022001 2014-12-10T09:55:48Z ba4625f
  [00 Minor]
  - Drop ReadmeFromPod until its at least usable again.
+ - Drop utf8 and 5.008 from the default module template.
 
  [Bugfix]
  - Make miniting profile tests happy by giving a valid abstract by default
+ - Anticipate needing 5.006 as a prereq.
 
  [Dependencies::Stats]
  - Dependencies changed since 2.022000, see misc/*.deps* for details
