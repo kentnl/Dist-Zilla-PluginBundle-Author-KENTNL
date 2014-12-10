@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.022001 2014-12-10T09:57:13Z d29ce03
  [00 Minor]
  - Drop ReadmeFromPod until its at least usable again.
  - Drop utf8 and 5.008 from the default module template.
