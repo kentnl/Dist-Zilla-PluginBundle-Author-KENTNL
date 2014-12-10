@@ -3,6 +3,7 @@
 {{$NEXT}}
  [00 Minor]
  - Drop ReadmeFromPod until its at least usable again.
+ - Drop utf8 and 5.008 from the default module template.
 
  [Bugfix]
  - Make miniting profile tests happy by giving a valid abstract by default
