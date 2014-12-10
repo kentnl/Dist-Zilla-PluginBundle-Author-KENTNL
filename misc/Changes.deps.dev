@@ -30,7 +30,6 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
  - Dist::Zilla::Plugin::PodSyntaxTests 5.021 → 5.027
  - Dist::Zilla::Plugin::Prereqs 5.021 → 5.027
  - Dist::Zilla::Plugin::Prereqs::AuthorDeps 0.003 → 0.004
- - Dist::Zilla::Plugin::ReadmeFromPod 0.21 → 0.30
  - Dist::Zilla::Plugin::RunExtraTests 0.022 → 0.025
  - Dist::Zilla::Plugin::Test::EOL 0.14 → 0.16
  - Dist::Zilla::Plugin::TestRelease 5.021 → 5.027
@@ -38,6 +37,9 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
 
  [Changed / develop suggests]
  - Dist::Zilla::App::Command::bakeini 0.001003 → 0.002000
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::ReadmeFromPod 0.21
 
 2.022000 2014-10-25T09:54:57Z
  [Added / develop recommends]

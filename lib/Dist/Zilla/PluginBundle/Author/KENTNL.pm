@@ -533,7 +533,14 @@ sub _configure_toolkit_prereqs {
 sub _configure_readmes {
   my ($self) = @_;
 
-  $self->add_plugin( 'ReadmeFromPod' => {} );
+  # TODO: Go back to the otherone when it stops failing balls
+  $self->add_named_plugin(
+    'ShippedReadme' => 'ReadmeAnyFromPod' => {
+      filename => 'README',
+      type     => 'text',
+      location => 'build',
+    },
+  );
 
   my $type = $self->srcreadme;
 
