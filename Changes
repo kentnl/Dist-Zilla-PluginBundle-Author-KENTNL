@@ -1,11 +1,14 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022001 2014-12-10T09:36:35Z daaa486
+2.022001 2014-12-10T09:40:55Z cf1c55a
+ [00 Minor]
+ - Drop ReadmeFromPod until its at least usable again.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.022000, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
- - develop: ↑30 (recommends: ↑1, suggests: ↑1)
- - runtime: ↑38
+ - develop: ↑29 -1 (recommends: ↑1, suggests: ↑1)
+ - runtime: ↑37 -1
  - test: +1 ↑5 (recommends: ↑3)
 
 2.022000 2014-10-25T09:54:57Z 784f4f1
