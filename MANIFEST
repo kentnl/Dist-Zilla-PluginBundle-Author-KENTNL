@@ -10,6 +10,7 @@ MANIFEST
 META.json
 META.yml
 Makefile.PL
+README
 corpus/global/config.ini
 dist.ini
 dist.ini.meta
