@@ -539,7 +539,7 @@ sub _configure_readmes {
       filename => 'README',
       type     => 'text',
       location => 'build',
-    }
+    },
   );
 
   my $type = $self->srcreadme;
