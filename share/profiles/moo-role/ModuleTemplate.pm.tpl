@@ -1,13 +1,12 @@
-use 5.008;    # utf8
+use 5.006;  # our
 use strict;
 use warnings;
-use utf8;
 
 package {{ $name }};
 
 our $VERSION = '0.001000';
 
-# ABSTRACT:
+# ABSTRACT: Kent Failed To Provide An Abstract
 
 # AUTHORITY
 

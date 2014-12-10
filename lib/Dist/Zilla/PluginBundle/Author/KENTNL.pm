@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.022000';
+our $VERSION = '2.022001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -533,7 +533,14 @@ sub _configure_toolkit_prereqs {
 sub _configure_readmes {
   my ($self) = @_;
 
-  $self->add_plugin( 'ReadmeFromPod' => {} );
+  # TODO: Go back to the otherone when it stops failing balls
+  $self->add_named_plugin(
+    'ShippedReadme' => 'ReadmeAnyFromPod' => {
+      filename => 'README',
+      type     => 'text',
+      location => 'build',
+    },
+  );
 
   my $type = $self->srcreadme;
 
@@ -673,7 +680,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.022000
+version 2.022001
 
 =head1 SYNOPSIS
 
