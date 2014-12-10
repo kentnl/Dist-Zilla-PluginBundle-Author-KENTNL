@@ -222,7 +222,11 @@ EOF
 
   note explain $data;
 
-  is_deeply( $data->{prereqs}->{configure}->{requires}, { 'ExtUtils::MakeMaker' => '0' }, 'prereqs.configure is sane' );
+  is_deeply(
+    $data->{prereqs}->{configure}->{requires},
+    { 'ExtUtils::MakeMaker' => '0', perl => '5.006', },
+    'prereqs.configure is sane'
+  );
 
 };
 

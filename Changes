@@ -7,6 +7,7 @@
 
  [Bugfix]
  - Make miniting profile tests happy by giving a valid abstract by default
+ - Anticipate needing 5.006 as a prereq.
 
  [Dependencies::Stats]
  - Dependencies changed since 2.022000, see misc/*.deps* for details
