@@ -7,7 +7,7 @@ package {{ $name }};
 
 our $VERSION = '0.001000';
 
-# ABSTRACT:
+# ABSTRACT: Kent Failed To Provide An Abstract
 
 # AUTHORITY
 

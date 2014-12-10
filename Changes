@@ -4,6 +4,9 @@
  [00 Minor]
  - Drop ReadmeFromPod until its at least usable again.
 
+ [Bugfix]
+ - Make miniting profile tests happy by giving a valid abstract by default
+
  [Dependencies::Stats]
  - Dependencies changed since 2.022000, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
