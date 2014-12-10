@@ -51,6 +51,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::Prereqs::MatchInstalled::All' => '1.001000',
                                       'Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled' => '0.003001',
                                       'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0.142470',
+                                      'Dist::Zilla::Plugin::ReadmeFromPod' => '0.30',
                                       'Dist::Zilla::Plugin::RemovePhasedPrereqs' => '0.002',
                                       'Dist::Zilla::Plugin::RewriteVersion::Sanitized' => '0.001004',
                                       'Dist::Zilla::Plugin::RunExtraTests' => '0.025',
