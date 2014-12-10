@@ -1,8 +1,11 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022001 2014-12-10T09:40:55Z cf1c55a
+2.022001 2014-12-10T09:48:41Z ce128ab
  [00 Minor]
  - Drop ReadmeFromPod until its at least usable again.
+
+ [Bugfix]
+ - Make miniting profile tests happy by giving a valid abstract by default
 
  [Dependencies::Stats]
  - Dependencies changed since 2.022000, see misc/*.deps* for details
