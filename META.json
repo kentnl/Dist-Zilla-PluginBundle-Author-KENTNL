@@ -66,7 +66,6 @@
             "Dist::Zilla::Plugin::Prereqs::MatchInstalled::All" : "1.001000",
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.003001",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
-            "Dist::Zilla::Plugin::ReadmeFromPod" : "0.30",
             "Dist::Zilla::Plugin::RemovePhasedPrereqs" : "0.002",
             "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0.001004",
             "Dist::Zilla::Plugin::RunExtraTests" : "0.025",
@@ -816,9 +815,9 @@
             "version" : "0.004000"
          },
          {
-            "class" : "Dist::Zilla::Plugin::ReadmeFromPod",
-            "name" : "@Author::KENTNL/ReadmeFromPod",
-            "version" : "0.30"
+            "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
+            "name" : "@Author::KENTNL/ReadmeAnyFromPod.text",
+            "version" : "0.142470"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
