@@ -1,6 +1,28 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.022001
+2.022002
+ [Changed / develop requires]
+ - Dist::Zilla 5.027 → 5.028
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.004000 → 0.004001
+ - Dist::Zilla::Plugin::AutoPrereqs 5.027 → 5.028
+ - Dist::Zilla::Plugin::ConfirmRelease 5.027 → 5.028
+ - Dist::Zilla::Plugin::License 5.027 → 5.028
+ - Dist::Zilla::Plugin::MakeMaker 5.027 → 5.028
+ - Dist::Zilla::Plugin::Manifest 5.027 → 5.028
+ - Dist::Zilla::Plugin::ManifestSkip 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaConfig 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.003001 → 1.004000
+ - Dist::Zilla::Plugin::MetaJSON 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaYAML 5.027 → 5.028
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.027 → 5.028
+ - Dist::Zilla::Plugin::PodCoverageTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::PodSyntaxTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::Prereqs 5.027 → 5.028
+ - Dist::Zilla::Plugin::TestRelease 5.027 → 5.028
+ - Dist::Zilla::Plugin::UploadToCPAN 5.027 → 5.028
+
+2.022001 2014-12-10T09:57:13Z
  [Changed / develop recommends]
  - Test::More 1.001008 → 1.001009
 
