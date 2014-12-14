@@ -1,6 +1,58 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.022002
+ [Changed / configure requires]
+ - File::ShareDir::Install 0.09 → 0.10
+
+ [Changed / develop requires]
+ - Dist::Zilla 5.027 → 5.028
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.004000 → 0.004001
+ - Dist::Zilla::Plugin::AutoPrereqs 5.027 → 5.028
+ - Dist::Zilla::Plugin::ConfirmRelease 5.027 → 5.028
+ - Dist::Zilla::Plugin::License 5.027 → 5.028
+ - Dist::Zilla::Plugin::MakeMaker 5.027 → 5.028
+ - Dist::Zilla::Plugin::Manifest 5.027 → 5.028
+ - Dist::Zilla::Plugin::ManifestSkip 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaConfig 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.003001 → 1.004000
+ - Dist::Zilla::Plugin::MetaJSON 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.001002 → 2.001003
+ - Dist::Zilla::Plugin::MetaTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaYAML 5.027 → 5.028
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.027 → 5.028
+ - Dist::Zilla::Plugin::PodCoverageTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::PodSyntaxTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::Prereqs 5.027 → 5.028
+ - Dist::Zilla::Plugin::TestRelease 5.027 → 5.028
+ - Dist::Zilla::Plugin::UploadToCPAN 5.027 → 5.028
+
+ [Changed / runtime requires]
+ - Dist::Zilla 5.027 → 5.028
+ - Dist::Zilla::File::FromCode 5.027 → 5.028
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.004000 → 0.004001
+ - Dist::Zilla::Plugin::AutoPrereqs 5.027 → 5.028
+ - Dist::Zilla::Plugin::ConfirmRelease 5.027 → 5.028
+ - Dist::Zilla::Plugin::License 5.027 → 5.028
+ - Dist::Zilla::Plugin::MakeMaker 5.027 → 5.028
+ - Dist::Zilla::Plugin::Manifest 5.027 → 5.028
+ - Dist::Zilla::Plugin::ManifestSkip 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaConfig 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.003001 → 1.004000
+ - Dist::Zilla::Plugin::MetaJSON 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.001002 → 2.001003
+ - Dist::Zilla::Plugin::MetaTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::MetaYAML 5.027 → 5.028
+ - Dist::Zilla::Plugin::PodCoverageTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::PodSyntaxTests 5.027 → 5.028
+ - Dist::Zilla::Plugin::Prereqs 5.027 → 5.028
+ - Dist::Zilla::Plugin::TestRelease 5.027 → 5.028
+ - Dist::Zilla::Plugin::UploadToCPAN 5.027 → 5.028
+ - Dist::Zilla::Role::FileGatherer 5.027 → 5.028
+ - Dist::Zilla::Role::MintingProfile::ShareDir 5.027 → 5.028
+ - Dist::Zilla::Role::PluginBundle 5.027 → 5.028
+
+ [Changed / test requires]
+ - Test::DZil 5.027 → 5.028
 
 2.022001 2014-12-10T09:57:13Z
  [Added / configure requires]

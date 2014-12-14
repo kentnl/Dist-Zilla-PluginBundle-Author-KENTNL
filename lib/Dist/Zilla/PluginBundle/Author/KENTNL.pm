@@ -364,7 +364,10 @@ sub _configure_basic_metadata {
   $self->add_plugin( 'GithubMeta'            => { issues => 1 }, );
   $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
-  my $builtwith_options = { show_config => 1 };
+  my $builtwith_options = { 
+    show_config => 1,
+    use_external_file => 'only',
+  };
 
   if ( 'linux' eq $^O ) {
     $builtwith_options->{show_uname} = 1;
