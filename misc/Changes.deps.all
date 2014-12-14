@@ -16,7 +16,6 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::MetaConfig 5.027 → 5.028
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.003001 → 1.004000
  - Dist::Zilla::Plugin::MetaJSON 5.027 → 5.028
- - Dist::Zilla::Plugin::MetaProvides::Package 2.001002 → 2.001003
  - Dist::Zilla::Plugin::MetaTests 5.027 → 5.028
  - Dist::Zilla::Plugin::MetaYAML 5.027 → 5.028
  - Dist::Zilla::Plugin::ModuleShareDirs 5.027 → 5.028
@@ -39,7 +38,6 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::MetaConfig 5.027 → 5.028
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.003001 → 1.004000
  - Dist::Zilla::Plugin::MetaJSON 5.027 → 5.028
- - Dist::Zilla::Plugin::MetaProvides::Package 2.001002 → 2.001003
  - Dist::Zilla::Plugin::MetaTests 5.027 → 5.028
  - Dist::Zilla::Plugin::MetaYAML 5.027 → 5.028
  - Dist::Zilla::Plugin::PodCoverageTests 5.027 → 5.028
