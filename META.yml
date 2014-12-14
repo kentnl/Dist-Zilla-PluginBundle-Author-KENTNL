@@ -37,16 +37,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.022002'
+    version: '2.022003'
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.022002'
+    version: '2.022003'
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.022002'
+    version: '2.022003'
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.022002'
+    version: '2.022003'
 recommends:
   CHI: '0'
   CHI::Driver::LMDB: '0'
@@ -161,7 +161,7 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.022002'
+version: '2.022003'
 x_BuiltWith:
   external_file: misc/built_with.json
 x_Dist_Zilla:
@@ -536,7 +536,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 2.022002-source
+          tag: 2.022003-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -590,7 +590,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '2.022002'
+          tag: '2.022003'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
