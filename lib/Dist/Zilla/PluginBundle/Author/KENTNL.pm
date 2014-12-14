@@ -365,6 +365,7 @@ sub _configure_basic_metadata {
   $self->add_plugin( 'MetaProvides::Package' => { ':version' => '1.14000001' }, );
 
   my $builtwith_options = {
+    ':version'        => '1.004000',
     show_config       => 1,
     use_external_file => 'only',
   };

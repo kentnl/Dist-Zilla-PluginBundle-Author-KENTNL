@@ -8,6 +8,9 @@
  - runtime: ↑23
  - test: ↑1
 
+ [Minor]
+ - Drop BuiltWith data from META.* and isolate in own file.
+
 2.022001 2014-12-10T09:57:13Z d29ce03
  [00 Minor]
  - Drop ReadmeFromPod until its at least usable again.
