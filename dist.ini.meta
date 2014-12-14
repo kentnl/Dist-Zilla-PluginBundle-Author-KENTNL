@@ -1,3 +1,4 @@
+; vim: syntax=dosini
 name    = Dist-Zilla-PluginBundle-Author-KENTNL
 
 author  = Kent Fredric <kentnl@cpan.org>
