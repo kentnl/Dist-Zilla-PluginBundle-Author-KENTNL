@@ -58,6 +58,7 @@
             "Dist::Zilla::Plugin::MetaYAML" : "5.029",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.006",
             "Dist::Zilla::Plugin::ModuleShareDirs" : "5.029",
+            "Dist::Zilla::Plugin::Pod2Readme" : "0.001",
             "Dist::Zilla::Plugin::PodCoverageTests" : "5.029",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "5.029",
             "Dist::Zilla::Plugin::PodWeaver" : "4.006",
@@ -154,6 +155,7 @@
             "Dist::Zilla::Plugin::MetaYAML" : "5.029",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.006",
             "Dist::Zilla::Plugin::PerlTidy" : "0.19",
+            "Dist::Zilla::Plugin::Pod2Readme" : "0.001",
             "Dist::Zilla::Plugin::PodCoverageTests" : "5.029",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "5.029",
             "Dist::Zilla::Plugin::PodWeaver" : "4.006",
@@ -667,9 +669,9 @@
             "version" : "0.004001"
          },
          {
-            "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
+            "class" : "Dist::Zilla::Plugin::Pod2Readme",
             "name" : "@Author::KENTNL/ShippedReadme",
-            "version" : "0.142470"
+            "version" : "0.001"
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
