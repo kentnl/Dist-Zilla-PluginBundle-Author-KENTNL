@@ -273,7 +273,9 @@ my $changes_dev = CPAN::Changes::Dependencies::Details->new(
 );
 
 my $master_changes = CPAN::Changes->load_string( path('./Changes')->slurp_utf8, next_token => qr/\{\{\$NEXT\}\}/ );
-$ENV{PERL_JSON_BACKEND} = 'JSON';
+BEGIN {
+ $ENV{PERL_JSON_BACKEND} = 'JSON';
+}
 
 while ( @tags > 1 ) {
   my ( $old, $new ) = ( $tags[-2], $tags[-1] );

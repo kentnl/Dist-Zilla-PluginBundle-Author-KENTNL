@@ -131,21 +131,19 @@
       "warnings" : null
    },
    "perl" : {
-      "original" : "v5.21.3",
+      "original" : "v5.21.6",
       "qv" : 1,
       "version" : [
          5,
          21,
-         3
+         6
       ]
    },
    "perl-config" : {
       "gccversion" : "4.8.3",
-      "git_commit_id" : "640eedb9ffcac7a9c2793689044e84bfd9af3045",
-      "git_describe" : "v5.21.2-215-g640eedb",
       "myarchname" : "x86_64-linux",
       "osname" : "linux"
    },
    "platform" : "linux",
-   "uname" : "Linux 3.17.1-aufs x86_64 GenuineIntel GNU/Linux"
+   "uname" : "Linux 3.18.1-aufs x86_64 GenuineIntel GNU/Linux"
 }
