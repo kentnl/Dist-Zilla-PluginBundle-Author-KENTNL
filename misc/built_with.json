@@ -45,6 +45,7 @@
       "Dist::Zilla::Plugin::ModuleBuildTiny" : null,
       "Dist::Zilla::Plugin::ModuleShareDirs" : null,
       "Dist::Zilla::Plugin::PerlTidy" : null,
+      "Dist::Zilla::Plugin::Pod2Readme" : null,
       "Dist::Zilla::Plugin::PodCoverageTests" : null,
       "Dist::Zilla::Plugin::PodSyntaxTests" : null,
       "Dist::Zilla::Plugin::PodWeaver" : null,
