@@ -1,6 +1,9 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 2.022003
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Pod2Readme 0.001
+
  [Changed / develop recommends]
  - Test::More 1.001009 → 1.001014
 
