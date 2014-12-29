@@ -1,6 +1,12 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.022003
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Pod2Readme 0.001
+
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Pod2Readme 0.001
+
  [Changed / develop recommends]
  - Test::More 1.001009 → 1.001014
 
