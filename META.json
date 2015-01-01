@@ -51,7 +51,7 @@
             "Dist::Zilla::Plugin::Manifest" : "5.029",
             "Dist::Zilla::Plugin::ManifestSkip" : "5.029",
             "Dist::Zilla::Plugin::MetaConfig" : "5.029",
-            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.004000",
+            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.004001",
             "Dist::Zilla::Plugin::MetaJSON" : "5.029",
             "Dist::Zilla::Plugin::MetaProvides::Package" : "2.001002",
             "Dist::Zilla::Plugin::MetaTests" : "5.029",
@@ -148,7 +148,7 @@
             "Dist::Zilla::Plugin::Manifest" : "5.029",
             "Dist::Zilla::Plugin::ManifestSkip" : "5.029",
             "Dist::Zilla::Plugin::MetaConfig" : "5.029",
-            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.004000",
+            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.004001",
             "Dist::Zilla::Plugin::MetaJSON" : "5.029",
             "Dist::Zilla::Plugin::MetaProvides::Package" : "2.001002",
             "Dist::Zilla::Plugin::MetaTests" : "5.029",
@@ -180,7 +180,7 @@
             "Dist::Zilla::Role::MintingProfile::ShareDir" : "5.029",
             "Dist::Zilla::Role::PluginBundle" : "5.029",
             "Dist::Zilla::Util::ConfigDumper" : "0.003006",
-            "Dist::Zilla::Util::CurrentCmd" : "0.002001",
+            "Dist::Zilla::Util::CurrentCmd" : "0.002002",
             "Dist::Zilla::Util::EmulatePhase" : "1.001001",
             "IO::Socket::SSL" : "2.008",
             "LWP::Protocol::https" : "6.06",
@@ -191,7 +191,7 @@
             "MooseX::StrictConstructor" : "0.19",
             "MooseX::Types" : "0.45",
             "Net::SSLeay" : "1.66",
-            "Perl::PrereqScanner" : "1.021",
+            "Perl::PrereqScanner" : "1.022",
             "Pod::Coverage::TrustPod" : "0.100003",
             "Pod::Elemental::PerlMunger" : "0.200002",
             "String::Formatter" : "0.102084",
@@ -200,7 +200,7 @@
             "Test::Perl::Critic" : "1.02",
             "Test::Pod" : "1.48",
             "Test::Pod::Coverage" : "1.10",
-            "namespace::autoclean" : "0.22",
+            "namespace::autoclean" : "0.23",
             "perl" : "5.008",
             "strict" : "0",
             "utf8" : "0",
@@ -343,7 +343,7 @@
                }
             },
             "name" : "@Author::KENTNL/MetaData::BuiltWith",
-            "version" : "1.004000"
+            "version" : "1.004001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Contributors",

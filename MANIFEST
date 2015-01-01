@@ -84,6 +84,7 @@ utils/normalize.pl
 utils/remove_bom.pl
 utils/strip_eol.pl
 utils/treediff.pl
+utils/yaml_canon.pl
 utils/zuluize.pl
 weaver.ini
 xt/author/critic.t
