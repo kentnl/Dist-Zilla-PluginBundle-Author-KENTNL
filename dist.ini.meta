@@ -133,3 +133,4 @@ Module::Build                                    = 0
 ;[Prereqs::SyncVersions]
 [CheckPrereqsIndexed]
 
+[Author::KENTNL::TravisCI]

@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 2.022004
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.004000 → 1.004001
 
 2.022003 2014-12-29T11:33:17Z
  [Added / develop requires]
