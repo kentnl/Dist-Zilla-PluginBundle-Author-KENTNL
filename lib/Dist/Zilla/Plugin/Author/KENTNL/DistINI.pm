@@ -79,6 +79,8 @@ sub gather_files {
       $empty,                                                                    #
       '[Prereqs]',                                                               #
       $empty,                                                                    #
+      '[Author::KENTNL::TravisCI]',                                              #
+      $empty,                                                                    #
     );
   }
   my $code = sub {

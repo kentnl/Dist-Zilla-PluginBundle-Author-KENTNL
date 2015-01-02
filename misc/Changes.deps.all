@@ -1,6 +1,12 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.022004
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0.001000
+
+ [Added / test requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI
+
  [Changed / develop requires]
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.004000 → 1.004001
 
