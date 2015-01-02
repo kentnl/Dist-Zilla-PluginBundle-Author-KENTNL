@@ -3,7 +3,6 @@ after_failure:
   - perl ./maint-travis-ci/report_fail_ctx.pl
 before_install:
   - perlbrew list
-  - git --version
   - time git clone --depth 10 https://github.com/kentfredric/travis-scripts.git maint-travis-ci
   - time git -C ./maint-travis-ci reset --hard master
   - time perl ./maint-travis-ci/branch_reset.pl
@@ -30,6 +29,8 @@ matrix:
     - env: STERILIZE_ENV=1
       perl: 5.21
     - env: STERILIZE_ENV=0
+      perl: 5.8
+    - env: STERILIZE_ENV=0
       perl: 5.10
     - env: STERILIZE_ENV=0
       perl: 5.12
@@ -41,6 +42,8 @@ matrix:
       perl: 5.20
     - env: STERILIZE_ENV=0
       perl: 5.21
+    - env: STERILIZE_ENV=1
+      perl: 5.8
     - env: STERILIZE_ENV=1
       perl: 5.10
     - env: STERILIZE_ENV=1
