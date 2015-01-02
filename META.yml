@@ -764,6 +764,10 @@ x_Dist_Zilla:
       name: CheckPrereqsIndexed
       version: '0.013'
     -
+      class: Dist::Zilla::Plugin::Author::KENTNL::TravisCI
+      name: Author::KENTNL::TravisCI
+      version: '0.001000'
+    -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
       version: '5.029'

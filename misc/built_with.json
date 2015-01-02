@@ -14,6 +14,7 @@
       "Dist::Zilla::App::Command::bakeini" : "0.002000",
       "Dist::Zilla::File::FromCode" : "5.029",
       "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.004001",
+      "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" : "0.001000",
       "Dist::Zilla::Plugin::Authority" : "1.009",
       "Dist::Zilla::Plugin::AutoPrereqs" : "5.029",
       "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
