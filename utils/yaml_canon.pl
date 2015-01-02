@@ -8,5 +8,5 @@ use warnings;
 use utf8;
 
 use YAML;
-my $content = YAML::LoadFile($ARGV[0]);
-YAML::DumpFile($ARGV[0], $content);
+my $content = YAML::LoadFile( $ARGV[0] );
+YAML::DumpFile( $ARGV[0], $content );
