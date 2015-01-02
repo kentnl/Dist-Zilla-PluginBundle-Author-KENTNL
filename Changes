@@ -10,6 +10,7 @@
  [Minor]
  - use new travis generator
  - inject new travis generator into new dists
+ - inject vim syntax stanza into new dists
 
 2.022003 2014-12-29T11:33:17Z c7a0caa
  [Dependencies::Stats]
