@@ -4,6 +4,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0.001000
 
+ [Added / test requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI
+
  [Changed / develop requires]
  - Dist::Zilla::Plugin::MetaData::BuiltWith 1.004000 → 1.004001
 
