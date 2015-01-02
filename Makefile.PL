@@ -109,6 +109,7 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Capture::Tiny" => "0.27",
+    "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" => 0,
     "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" => 0,
     "Dist::Zilla::Plugin::ModuleBuild" => 0,
     "Dist::Zilla::Plugin::Prereqs::MatchInstalled" => 0,
@@ -141,6 +142,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla" => "5.029",
   "Dist::Zilla::File::FromCode" => "5.029",
   "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" => "0.004001",
+  "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" => 0,
   "Dist::Zilla::Plugin::Authority" => "1.006",
   "Dist::Zilla::Plugin::AutoPrereqs" => "5.029",
   "Dist::Zilla::Plugin::Bootstrap::lib" => "1.001000",

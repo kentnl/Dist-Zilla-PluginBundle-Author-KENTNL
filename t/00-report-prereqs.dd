@@ -202,6 +202,7 @@ do { my $x = {
                                    },
                    'requires' => {
                                    'Capture::Tiny' => '0.27',
+                                   'Dist::Zilla::Plugin::Author::KENTNL::TravisCI' => '0',
                                    'Dist::Zilla::Plugin::Git::NextVersion::Sanitized' => '0',
                                    'Dist::Zilla::Plugin::ModuleBuild' => '0',
                                    'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => '0',
