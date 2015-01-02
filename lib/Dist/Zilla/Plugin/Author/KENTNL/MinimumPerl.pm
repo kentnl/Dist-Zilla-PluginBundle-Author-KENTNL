@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
-our $VERSION = '2.022003';
+our $VERSION = '2.022004';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -152,7 +152,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.022003
+version 2.022004
 
 =head1 METHODS
 
@@ -177,7 +177,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

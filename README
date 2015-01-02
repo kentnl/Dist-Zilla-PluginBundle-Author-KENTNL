@@ -3,7 +3,7 @@ NAME
     build your distributions.
 
 VERSION
-    version 2.022003
+    version 2.022004
 
 SYNOPSIS
         [@Author::KENTNL]
@@ -216,7 +216,7 @@ AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Kent Fredric
+    This software is copyright (c) 2015 by Kent Fredric
     <kentfredric@gmail.com>.
 
     This is free software; you can redistribute it and/or modify it under

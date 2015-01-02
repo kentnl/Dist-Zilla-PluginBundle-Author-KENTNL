@@ -1,5 +1,17 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.022004 2015-01-02T03:00:30Z 07c5593
+ [Dependencies::Stats]
+ - Dependencies changed since 2.022003, see misc/*.deps* for details
+ - develop: +1 ↑1
+ - runtime: ↑4
+ - test: +1
+
+ [Minor]
+ - use new travis generator
+ - inject new travis generator into new dists
+ - inject vim syntax stanza into new dists
+
 2.022003 2014-12-29T11:33:17Z c7a0caa
  [Dependencies::Stats]
  - Dependencies changed since 2.022002, see misc/*.deps* for details

@@ -1,6 +1,16 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.022003
+2.022004
+ [Added / test requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.004000 → 1.004001
+ - Dist::Zilla::Util::CurrentCmd 0.002001 → 0.002002
+ - Perl::PrereqScanner 1.021 → 1.022
+ - namespace::autoclean 0.22 → 0.23
+
+2.022003 2014-12-29T11:33:17Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Pod2Readme 0.001
 
