@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.022005 2015-01-05T20:16:46Z cba7b74
  [Dependencies::Stats]
  - Dependencies changed since 2.022004, see misc/*.deps* for details
  - develop: +1 ↑18 -1
