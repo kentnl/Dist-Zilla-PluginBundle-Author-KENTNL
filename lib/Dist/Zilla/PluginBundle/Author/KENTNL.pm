@@ -537,8 +537,7 @@ sub _configure_toolkit_prereqs {
 sub _configure_readmes {
   my ($self) = @_;
 
-  # TODO: Go back to the otherone when it stops failing balls
-  $self->add_named_plugin( 'ShippedReadme' => 'Pod2Readme' => {}, );
+  $self->add_named_plugin( 'ShippedReadme' => 'Readme::Brief' => {}, );
 
   my $type = $self->srcreadme;
 

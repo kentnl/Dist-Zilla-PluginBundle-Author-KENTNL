@@ -1,6 +1,9 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.022005
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Readme::Brief 0.002000
+
  [Changed / runtime requires]
  - Dist::Zilla 5.029 → 5.030
  - Dist::Zilla::File::FromCode 5.029 → 5.030
@@ -27,6 +30,9 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  [Changed / test requires]
  - Module::Metadata 1.000024 → 1.000025
  - Test::DZil 5.029 → 5.030
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::Pod2Readme 0.001
 
 2.022004 2015-01-02T03:00:30Z
  [Added / test requires]

@@ -3,9 +3,12 @@
 {{$NEXT}}
  [Dependencies::Stats]
  - Dependencies changed since 2.022004, see misc/*.deps* for details
- - develop: ↑18
- - runtime: ↑21
+ - develop: +1 ↑18 -1
+ - runtime: +1 ↑21 -1
  - test: ↑2
+
+ [Minor]
+ - Switch to Readme::Brief
 
 2.022004 2015-01-02T03:00:30Z 07c5593
  [Dependencies::Stats]
