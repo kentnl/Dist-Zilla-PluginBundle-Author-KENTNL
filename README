@@ -1,224 +1,31 @@
-NAME
-    Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you
-    build your distributions.
+Dist::Zilla::PluginBundle::Author::KENTNL
 
-VERSION
-    version 2.022004
+This is the plug-in bundle that KENTNL uses. It exists mostly because he
+is very lazy and wants others to be using what he's using if they want
+to be doing work on his modules.
 
-SYNOPSIS
-        [@Author::KENTNL]
-        normal_form  = numify ; Mandatory for this bundle indicating normal form.
-                              ; see DZP::Git::NextVersion::Sanitized
 
-        mantissa     = 6      ; Mandatory for this bundle if normal_form is numify.
-                              ; see DZP::Git::NextVersion::Sanitized
 
-        authority    = cpan:KENTNL ; Optional, defaults to cpan:KENTNL
+INSTALLATION
 
-        auto_prereqs_skip   = Some::Module  ; Hide these from autoprereqs
-        auto_prereqs_skip   = Other::Module
+To install this module automatically, any of the following may work:
 
-        toolkit     = mb   ; Which toolkit to use. Either eumm or mb
-                             ; mb is default.
+  cpanm .
+  cpan  .
+  cpanp -i .
 
-        toolkit_hardness = hard ; Whether to upgrade *require* deps to the latest
-                                ; or wether to make them merely recomendations.
-                                ; Either 'soft' ( recommend ) or 'hard' ( require )
-                                ; default is 'hard'
+To install this module manually:
 
-        twitter_extra_hash_tags = #foo #bar ; non-default hashtags to append to the tweet
-
-DESCRIPTION
-    This is the plug-in bundle that KENTNL uses. It exists mostly because he
-    is very lazy and wants others to be using what he's using if they want
-    to be doing work on his modules.
-
-NAMING SCHEME
-    As I blogged about on "blog.fox.geek.nz" : Making a Minting Profile as a
-    CPANized Dist <http://bit.ly/hAwl4S>, this bundle advocates a new naming
-    system for people who are absolutely convinced they want their
-    "Author-Centric" distribution uploaded to CPAN.
-
-    As we have seen with Dist::Zilla there have been a slew of PluginBundles
-    with CPANID's in their name, to the point that there is a copious amount
-    of name-space pollution in the PluginBundle name-space, and more Author
-    bundles than task-bundles, which was really what the name-space was
-    designed for, and I'm petitioning you to help reduce this annoyance in
-    future modules.
-
-    From a CPAN testers perspective, the annoyance of lots of CPANID-dists
-    is similar to the annoyance of the whole DPCHRIST:: subspace, and that
-    if this pattern continues, it will mean for the testers who do not wish
-    to test everyones personal modules, that they will have to work hard to
-    avoid this. If DPCHRIST:: had used something like Author::DPCHRIST::
-    instead, I doubt so many people would be horrified by it, because you
-    can just have a policy/rule that excludes ^Author::, and everyone else
-    who goes that way can be quietly ignored.
-
-    Then we could probably rationally add that same restriction to the irc
-    announce bots, the "recent modules" list and so-forth, and possibly even
-    apply special indexing restrictions or something so people wouldn't even
-    have to know those modules exist on cpan!
-
-    So, for the sake of cleanliness, semantics, and general global sanity, I
-    ask you to join me with my Author:: naming policy to voluntarily
-    segregate modules that are most likely of only personal use from those
-    that have more general application.
-
-        Dist::Zilla::Plugin::Foo                    # [Foo]                 dist-zilla plugins for general use
-        Dist::Zilla::Plugin::Author::KENTNL::Foo    # [Author::KENTNL::Foo] foo that only KENTNL will probably have use for
-        Dist::Zilla::PluginBundle::Classic          # [@Classic]            A bundle that can have practical use by many
-        Dist::Zilla::PluginBundle::Author::KENTNL   # [@Author::KENTNL]     KENTNL's primary plugin bundle
-        Dist::Zilla::MintingProfile::Default        # A minting profile that is used by all
-        Dist::Zilla::MintingProfile::Author::KENTNL # A minting profile that only KENTNL will find of use.
-
-  Current Proponents
-    I wish to give proper respect to the people out there already
-    implementing this scheme:
-
-    @Author::DOHERTY - Mike Doherty's, Author Bundle.
-    @Author::OLIVER - Oliver Gorwits', Author Bundle.
-    "Dist::Zilla::PluginBundle::Author::" namespace <http://bit.ly/dIovQI> -
-    Oliver Gorwit's blog on the subject.
-    @Author::LESPEA - Adam Lesperance's, Author Bundle.
-    @Author::ALEXBIO - Alessandro Ghedini's, Author Bundle.
-    @Author::RWSTAUNER - Randy Stauner's, Author Bundle.
-    @Author::WOLVERIAN - Ilmari Vacklin's, Author Bundle.
-    @Author::YANICK - Yanick Champoux's, Author Bundle.
-    @Author::RUSSOZ - Alexei Znamensky's, Author Bundle.
-
-METHODS
-  "bundle_config"
-    See the "PluginBundle" role for what this is for, it is a method to
-    satisfy that role.
-
-  "add_plugin"
-        $bundle_object->add_plugin("Basename" => { config_hash } );
-
-  "add_named_plugin"
-        $bundle_object->add_named_plugin("alias" => "Basename" => { config_hash } );
-
-  "configure"
-    Called by in "bundle_config" after "new"
-
-ATTRIBUTES
-  "plugins"
-    INTERNAL.
-
-      ArrayRef, ro, default = [], no init arg.
-
-    Populated during "$self->configure" and returned from "->bundle_config"
-
-  "normal_form"
-      Str, ro, lazy
-
-    A "normal_form" to pass to "[Git::NextVersion::Sanitized]".
-
-    Defaults to "numify"
-
-    See "[::Role::Version::Sanitize]"
-
-  "mantissa"
-      Int, ro, defaults to 6.
-
-    Defines the length of the mantissa when normal form is "numify".
-
-    See "[Git::NextVersion::Sanitized]" and "[::Role::Version::Sanitize]"
-
-  "git_versions"
-      Any, unused.
-
-    *   UNUSED
-
-    Since 2.020, this field is no longer required, and is unused, simply
-    supported for legacy reasons.
-
-    Things may not work if code has not been portaged to be
-    "Git::NextVersion" safe, but that's better than going "bang".
-
-    But code will be assumed to be using "Git::NextVersion".
-
-  "authority"
-      Str, ro, default = cpan:KENTNL
-
-    An authority string to use for "[Authority]".
-
-  "auto_prereqs_skip"
-      ArrayRef, ro, multivalue, default = []
-
-    A list of prerequisites to pass to "[AutoPrereqs].skips"
-
-  "twitter_extra_hash_tags"
-      Str, ro, default = ""
-
-    Additional hash tags to append to twitter
-
-  "twitter_hash_tags"
-      Str, ro, default = '#perl #cpan' . extras()
-
-    Populates "extras" from "twitter_extra_hash_tags"
-
-  "tweet_url"
-      Str, ro, default =  q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew]
-
-    The "URI" to tweet to @kentnlrelease
-
-  "toolkit_hardness"
-      enum( hard, soft ), ro, default = hard
-
-    *   "hard"
-
-        Copy the versions of important toolkit components the author was
-        using as "required" dependencies, forcing consumers to update
-        aggressively on those parts.
-
-    *   "soft"
-
-        Copy the versions of important toolkit components the author was
-        using as "recommended" dependencies, so that only consumers who are
-        installing with "--with-recommended" get given the forced upgrade
-        path.
-
-  "toolkit"
-      enum( mb, mbtiny, eumm ), ro, default = mb
-
-    Determines which tooling to generate the distribution with
-
-    *   "mb" : "Module::Build"
-
-    *   "mbtiny" : "Module::Build::Tiny"
-
-    *   "eumm" : "ExtUtils::MakeMaker"
-
-  "bumpversions"
-      bumpversions = 1
-
-    If true, use "[BumpVersionAfterRelease]" and
-    "[RewriteVersions::Sanitized]" instead of "[PkgVersion]" and
-    "[Git::NextVersion::Sanitized]"
-
-  "copyfiles"
-    An array of files generated by "Dist::Zilla" build to copy from the
-    built dist back to the source dist
-
-      copyfiles = LICENSE
-      ; Warning: These two are presently bad ideas
-      ; and will ultimately give version mismatches
-      copyfiles = Makefile.PL
-      copyfiles = META.json
-
-  "srcreadme"
-      srcreadme = pod  ; # generate README.pod on the source side
-      srcreadme = mkdn ; # generate README.mkdn on the source side
-      srcreadme = none ; # don't generate README on the source side
-
-AUTHOR
-    Kent Fredric <kentnl@cpan.org>
+  perl Makefile.PL
+  make
+  make test
+  make install
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2015 by Kent Fredric
-    <kentfredric@gmail.com>.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+This software is copyright (c) 2015 by Kent Fredric
+<kentfredric@gmail.com>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
