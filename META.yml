@@ -108,13 +108,13 @@ requires:
   Dist::Zilla::Plugin::MetaYAML: '5.030'
   Dist::Zilla::Plugin::MinimumPerl: '1.006'
   Dist::Zilla::Plugin::PerlTidy: '0.19'
-  Dist::Zilla::Plugin::Pod2Readme: '0.001'
   Dist::Zilla::Plugin::PodCoverageTests: '5.030'
   Dist::Zilla::Plugin::PodSyntaxTests: '5.030'
   Dist::Zilla::Plugin::PodWeaver: '4.006'
   Dist::Zilla::Plugin::Prereqs: '5.030'
   Dist::Zilla::Plugin::Prereqs::AuthorDeps: '0.004'
   Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled: '0.003001'
+  Dist::Zilla::Plugin::Readme::Brief: '0.002000'
   Dist::Zilla::Plugin::ReadmeAnyFromPod: '0.142470'
   Dist::Zilla::Plugin::RewriteVersion::Sanitized: '0.001004'
   Dist::Zilla::Plugin::RunExtraTests: '0.025'
@@ -474,9 +474,9 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/Author::KENTNL::RecommendFixes'
       version: '0.004001'
     -
-      class: Dist::Zilla::Plugin::Pod2Readme
+      class: Dist::Zilla::Plugin::Readme::Brief
       name: '@Author::KENTNL/ShippedReadme'
-      version: '0.001'
+      version: '0.002000'
     -
       class: Dist::Zilla::Plugin::ReadmeAnyFromPod
       name: '@Author::KENTNL/ReadmeAnyFromPod'
