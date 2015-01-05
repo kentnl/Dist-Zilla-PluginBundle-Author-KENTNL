@@ -1,6 +1,12 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.022005
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Readme::Brief 0.002000
+
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Readme::Brief 0.002000
+
  [Changed / develop requires]
  - Dist::Zilla 5.029 → 5.030
  - Dist::Zilla::Plugin::AutoPrereqs 5.029 → 5.030
@@ -47,6 +53,12 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Changed / test requires]
  - Module::Metadata 1.000024 → 1.000025
  - Test::DZil 5.029 → 5.030
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::Pod2Readme 0.001
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::Pod2Readme 0.001
 
 2.022004 2015-01-02T03:00:30Z
  [Added / develop requires]
