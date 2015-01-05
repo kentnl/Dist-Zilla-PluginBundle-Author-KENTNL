@@ -1,6 +1,11 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022005 2015-01-02T03:02:30Z 51ae35d
+2.022005 2015-01-05T20:12:55Z 36449af
+ [Dependencies::Stats]
+ - Dependencies changed since 2.022004, see misc/*.deps* for details
+ - develop: ↑18
+ - runtime: ↑21
+ - test: ↑2
 
 2.022004 2015-01-02T03:00:30Z 07c5593
  [Dependencies::Stats]
