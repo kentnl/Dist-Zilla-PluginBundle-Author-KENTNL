@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.022005
+2.022006
+
+2.022005 2015-01-05T20:16:46Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Readme::Brief 0.002000
 

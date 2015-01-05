@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.022005
+2.022006
+
+2.022005 2015-01-05T20:16:46Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Readme::Brief 0.002000
 
