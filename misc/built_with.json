@@ -1,7 +1,4 @@
 {
-   "failures" : {
-      "Dist::Zilla::Role::PluginBundle::ConfigSlicer" : "module was not found in INC"
-   },
    "modules" : {
       "CHI" : "0.59",
       "CHI::Driver::LMDB" : "0.002003",
@@ -76,6 +73,7 @@
       "Dist::Zilla::Role::FileGatherer" : "5.031",
       "Dist::Zilla::Role::MintingProfile::ShareDir" : "5.031",
       "Dist::Zilla::Role::PluginBundle" : "5.031",
+      "Dist::Zilla::Role::PluginBundle::Config::Slicer" : "0.200",
       "Dist::Zilla::Role::PluginBundle::PluginRemover" : "0.103",
       "Dist::Zilla::Util::ConfigDumper" : "0.003006",
       "Dist::Zilla::Util::CurrentCmd" : "0.002002",

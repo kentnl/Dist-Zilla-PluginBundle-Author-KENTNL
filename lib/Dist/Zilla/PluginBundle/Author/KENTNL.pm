@@ -19,7 +19,7 @@ use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::PluginBundle::PluginRemover';
-with 'Dist::Zilla::Role::PluginBundle::ConfigSlicer';
+with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 with 'Dist::Zilla::Role::BundleDeps';
 
 use namespace::autoclean;
