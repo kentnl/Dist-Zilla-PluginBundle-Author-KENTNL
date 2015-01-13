@@ -32,6 +32,9 @@ use Moose qw( with );
 
 with qw(Dist::Zilla::Role::FileGatherer);
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+
 use Dist::Zilla::File::FromCode;
 use String::Formatter named_stringf => {
   -as   => 'str_rf',
@@ -122,9 +125,6 @@ sub gather_files {
   $self->add_file($file);
   return 1;
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
 
 1;
 
