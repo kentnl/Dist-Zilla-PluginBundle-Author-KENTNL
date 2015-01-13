@@ -21,6 +21,7 @@ toolkit_hardness  = soft
 bumpversions      = 1
 copyfiles         = LICENSE
 srcreadme         = mkdn
+Author::KENTNL::TravisCI.skip_perls = 5.8
 
 [ModuleShareDirs]
 Dist::Zilla::MintingProfile::Author::KENTNL = share/profiles
@@ -133,6 +134,3 @@ Dist::Zilla::Plugin::Author::KENTNL::TravisCI    = 0
 
 ;[Prereqs::SyncVersions]
 [CheckPrereqsIndexed]
-
-[Author::KENTNL::TravisCI]
-skip_perls = 5.8

@@ -7,17 +7,17 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.022005';
+our $VERSION = '2.023000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
-use MooseX::StrictConstructor;
-use MooseX::AttributeShortcuts;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
+with 'Dist::Zilla::Role::PluginBundle::PluginRemover';
+with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 with 'Dist::Zilla::Role::BundleDeps';
 
 use namespace::autoclean;
@@ -58,7 +58,7 @@ sub mvp_multivalue_args { return qw( auto_prereqs_skip copyfiles ) }
 
 
 
-has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'builder' => sub { [] } );
+has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'default' => sub { [] } );
 
 
 
@@ -72,7 +72,7 @@ has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'l
 
 
 
-has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', lazy => 1, builder => sub { 'numify' } );
+has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', lazy => 1, default => sub { 'numify' } );
 
 
 
@@ -88,7 +88,7 @@ has 'mantissa' => (
   'is'      => ro =>,
   'isa'     => 'Int',
   'lazy'    => 1,
-  'builder' => sub {
+  'default' => sub {
     return 6;
   },
 );
@@ -121,7 +121,7 @@ has 'git_versions' => ( is => 'ro', isa => 'Any', lazy => 1, default => sub { un
 
 
 
-has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, default => sub { 'cpan:KENTNL' }, );
 
 
 
@@ -136,7 +136,7 @@ has 'auto_prereqs_skip' => (
   isa       => 'ArrayRef',
   predicate => 'has_auto_prereqs_skip',
   lazy      => 1,
-  builder   => sub { [] },
+  default   => sub { [] },
 );
 
 
@@ -152,7 +152,7 @@ has 'twitter_extra_hash_tags' => (
   'isa'     => 'Str',
   lazy      => 1,
   predicate => 'has_twitter_extra_hash_tags',
-  builder   => sub { q[] },
+  default   => sub { q[] },
 );
 
 
@@ -167,7 +167,7 @@ has 'twitter_hash_tags' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
-  builder => sub {
+  default => sub {
     my ($self) = @_;
     return '#perl #cpan' unless $self->has_twitter_extra_hash_tags;
 
@@ -187,7 +187,7 @@ has 'tweet_url' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
-  builder => sub {
+  default => sub {
     ## no critic (RequireInterpolationOfMetachars)
     return q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew];
   },
@@ -217,7 +217,7 @@ has 'toolkit_hardness' => (
   is => ro =>,
   isa => enum( [ 'hard', 'soft' ] ),
   lazy    => 1,
-  builder => sub { 'hard' },
+  default => sub { 'hard' },
 );
 
 
@@ -242,7 +242,7 @@ has 'toolkit' => (
   is => ro =>,
   isa => enum( [ 'mb', 'mbtiny', 'eumm' ] ),
   lazy    => 1,
-  builder => sub { 'mb' },
+  default => sub { 'mb' },
 );
 
 
@@ -258,7 +258,7 @@ has 'bumpversions' => (
   is      => ro  =>,
   isa     => 'Bool',
   lazy    => 1,
-  builder => sub { undef },
+  default => sub { undef },
 );
 
 
@@ -277,7 +277,7 @@ has copyfiles => (
   is      => ro  =>,
   isa     => 'ArrayRef[ Str ]',
   lazy    => 1,
-  builder => sub { [] },
+  default => sub { [] },
 );
 
 
@@ -292,8 +292,12 @@ has srcreadme => (
   is => ro =>,
   isa => enum( [ 'pod', 'mkdn', 'none' ] ),
   lazy    => 1,
-  builder => sub { return 'mkdn'; },
+  default => sub { return 'mkdn'; },
 );
+
+__PACKAGE__->meta->make_immutable;
+no Moose;
+no Moose::Util::TypeConstraints;
 
 
 
@@ -402,9 +406,10 @@ sub _configure_basic_files {
   );
   $self->add_plugin( 'License' => {} );
 
-  $self->add_plugin( 'MetaJSON' => {} );
-  $self->add_plugin( 'MetaYAML' => {} );
-  $self->add_plugin( 'Manifest' => {} );
+  $self->add_plugin( 'MetaJSON'                 => {} );
+  $self->add_plugin( 'MetaYAML'                 => {} );
+  $self->add_plugin( 'Manifest'                 => {} );
+  $self->add_plugin( 'Author::KENTNL::TravisCI' => {} );
 
   if ( @{ $self->copyfiles } ) {
     $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ @{ $self->copyfiles } ] } );
@@ -644,6 +649,29 @@ sub configure {
   return;
 }
 
+sub BUILDARGS {
+  my ( $self, $config, @args ) = @_;
+
+  if ( @args or not 'HASH' eq ( ref $config || q[] ) ) {
+    $config = { $config, @args };
+  }
+  my (%init_args);
+  for my $attr ( $self->meta->get_all_attributes ) {
+    next unless my $arg = $attr->init_arg;
+    $init_args{$arg} = 1;
+  }
+
+  # A weakened warn-only filter-supporting StrictConstructor
+  for my $key ( keys %{$config} ) {
+    next if exists $init_args{$key};
+    next if $key =~ /\A-remove/msx;
+    next if $key =~ /\A[^.]+[.][^.]/msx;
+    require Carp;
+    Carp::carp("Unknown key $key");
+  }
+  return $config;
+}
+
 sub bundle_config {
   my ( $self, $section ) = @_;
   my $class = ( ref $self ) || $self;
@@ -659,10 +687,6 @@ sub bundle_config {
   return @{ $instance->plugins };
 }
 
-__PACKAGE__->meta->make_immutable;
-no Moose;
-no Moose::Util::TypeConstraints;
-
 1;
 
 __END__
@@ -677,7 +701,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.022005
+version 2.023000
 
 =head1 SYNOPSIS
 
