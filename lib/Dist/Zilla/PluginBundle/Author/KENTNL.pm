@@ -295,6 +295,10 @@ has srcreadme => (
   default => sub { return 'mkdn'; },
 );
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+no Moose::Util::TypeConstraints;
+
 
 
 
@@ -405,6 +409,7 @@ sub _configure_basic_files {
   $self->add_plugin( 'MetaJSON' => {} );
   $self->add_plugin( 'MetaYAML' => {} );
   $self->add_plugin( 'Manifest' => {} );
+  $self->add_plugin( 'Author::KENTNL::TravisCI' => {} );
 
   if ( @{ $self->copyfiles } ) {
     $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ @{ $self->copyfiles } ] } );
@@ -647,21 +652,20 @@ sub configure {
 sub BUILDARGS {
   my ( $self, $config, @args ) = @_;
 
-  if ( @args or not 'HASH' eq ( ref $config || '' ) ) {
+  if ( @args or not 'HASH' eq ( ref $config || q[] ) ) {
     $config = { $config, @args };
   }
-  my (%attributes);
+  my (%init_args);
   for my $attr ( $self->meta->get_all_attributes ) {
-    if ( my $arg = $attr->init_arg ) {
-      $attributes{$arg} = 1;
-    }
+    next unless my $arg = $attr->init_arg;
+    $init_args{$arg} = 1;
   }
 
   # A weakened warn-only filter-supporting StrictConstructor
   for my $key ( keys %{$config} ) {
     next if exists $attributes{$key};
-    next if $key =~ /^-remove/;
-    next if $key =~ /^[^.]+[.][^.]/;
+    next if $key =~ /\A-remove/msx;
+    next if $key =~ /\A[^.]+[.][^.]/msx;
     warn "Unknown key $key";
   }
   return $config;
@@ -681,10 +685,6 @@ sub bundle_config {
 
   return @{ $instance->plugins };
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
-no Moose::Util::TypeConstraints;
 
 1;
 

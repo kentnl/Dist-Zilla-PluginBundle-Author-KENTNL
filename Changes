@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022006 2015-01-13T07:44:25Z 96b10ad
+2.022006 2015-01-13T07:56:29Z 3710464
  [API]
  - Missing constructor arguments are now only warnings
  - Now does :PluginRemover and :Config::Slicer plugin bundle roles.
