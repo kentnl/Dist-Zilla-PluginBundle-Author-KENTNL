@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.023000 2015-01-13T08:13:40Z 8d47bcc
  [API]
  - Missing constructor arguments are now only warnings
  - Now does :PluginRemover and :Config::Slicer plugin bundle roles.
