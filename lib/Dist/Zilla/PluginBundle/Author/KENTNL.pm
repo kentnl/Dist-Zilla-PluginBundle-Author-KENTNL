@@ -13,7 +13,6 @@ our $VERSION = '2.022006';
 
 use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
-use MooseX::StrictConstructor;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
@@ -641,6 +640,29 @@ sub configure {
   $self->_configure_toolkit_prereqs;
 
   return;
+}
+
+sub BUILDARGS {
+  my ( $self, $config, @args ) = @_;
+
+  if ( @args or not 'HASH' eq ( ref $config || q[] ) ) {
+    $config = { $config, @args };
+  }
+  my (%init_args);
+  for my $attr ( $self->meta->get_all_attributes ) {
+    next unless my $arg = $attr->init_arg;
+    $init_args{$arg} = 1;
+  }
+
+  # A weakened warn-only filter-supporting StrictConstructor
+  for my $key ( keys %{$config} ) {
+    next if exists $init_args{$key};
+    next if $key =~ /\A-remove/msx;
+    next if $key =~ /\A[^.]+[.][^.]/msx;
+    require Carp;
+    Carp::carp("Unknown key $key");
+  }
+  return $config;
 }
 
 sub bundle_config {

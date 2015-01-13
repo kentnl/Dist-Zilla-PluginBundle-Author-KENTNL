@@ -29,6 +29,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 
  [Removed / runtime requires]
  - MooseX::AttributeShortcuts 0.024
+ - MooseX::StrictConstructor 0.19
 
 2.022005 2015-01-05T20:16:46Z
  [Added / runtime requires]
