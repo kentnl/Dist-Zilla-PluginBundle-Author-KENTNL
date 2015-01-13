@@ -409,6 +409,7 @@ sub _configure_basic_files {
   $self->add_plugin( 'MetaJSON' => {} );
   $self->add_plugin( 'MetaYAML' => {} );
   $self->add_plugin( 'Manifest' => {} );
+  $self->add_plugin( 'Author::KENTNL::TravisCI' => {} );
 
   if ( @{ $self->copyfiles } ) {
     $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ @{ $self->copyfiles } ] } );
