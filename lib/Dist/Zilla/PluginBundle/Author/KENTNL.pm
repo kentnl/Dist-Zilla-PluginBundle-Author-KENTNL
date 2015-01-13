@@ -13,8 +13,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
-use MooseX::StrictConstructor;
-use MooseX::AttributeShortcuts;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
@@ -60,7 +58,7 @@ sub mvp_multivalue_args { return qw( auto_prereqs_skip copyfiles ) }
 
 
 
-has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'builder' => sub { [] } );
+has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'default' => sub { [] } );
 
 
 
@@ -74,7 +72,7 @@ has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'l
 
 
 
-has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', lazy => 1, builder => sub { 'numify' } );
+has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', lazy => 1, default => sub { 'numify' } );
 
 
 
@@ -90,7 +88,7 @@ has 'mantissa' => (
   'is'      => ro =>,
   'isa'     => 'Int',
   'lazy'    => 1,
-  'builder' => sub {
+  'default' => sub {
     return 6;
   },
 );
@@ -123,7 +121,7 @@ has 'git_versions' => ( is => 'ro', isa => 'Any', lazy => 1, default => sub { un
 
 
 
-has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, default => sub { 'cpan:KENTNL' }, );
 
 
 
@@ -138,7 +136,7 @@ has 'auto_prereqs_skip' => (
   isa       => 'ArrayRef',
   predicate => 'has_auto_prereqs_skip',
   lazy      => 1,
-  builder   => sub { [] },
+  default   => sub { [] },
 );
 
 
@@ -154,7 +152,7 @@ has 'twitter_extra_hash_tags' => (
   'isa'     => 'Str',
   lazy      => 1,
   predicate => 'has_twitter_extra_hash_tags',
-  builder   => sub { q[] },
+  default   => sub { q[] },
 );
 
 
@@ -169,7 +167,7 @@ has 'twitter_hash_tags' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
-  builder => sub {
+  default => sub {
     my ($self) = @_;
     return '#perl #cpan' unless $self->has_twitter_extra_hash_tags;
 
@@ -189,7 +187,7 @@ has 'tweet_url' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
-  builder => sub {
+  default => sub {
     ## no critic (RequireInterpolationOfMetachars)
     return q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew];
   },
@@ -219,7 +217,7 @@ has 'toolkit_hardness' => (
   is => ro =>,
   isa => enum( [ 'hard', 'soft' ] ),
   lazy    => 1,
-  builder => sub { 'hard' },
+  default => sub { 'hard' },
 );
 
 
@@ -244,7 +242,7 @@ has 'toolkit' => (
   is => ro =>,
   isa => enum( [ 'mb', 'mbtiny', 'eumm' ] ),
   lazy    => 1,
-  builder => sub { 'mb' },
+  default => sub { 'mb' },
 );
 
 
@@ -260,7 +258,7 @@ has 'bumpversions' => (
   is      => ro  =>,
   isa     => 'Bool',
   lazy    => 1,
-  builder => sub { undef },
+  default => sub { undef },
 );
 
 
@@ -279,7 +277,7 @@ has copyfiles => (
   is      => ro  =>,
   isa     => 'ArrayRef[ Str ]',
   lazy    => 1,
-  builder => sub { [] },
+  default => sub { [] },
 );
 
 
@@ -294,7 +292,7 @@ has srcreadme => (
   is => ro =>,
   isa => enum( [ 'pod', 'mkdn', 'none' ] ),
   lazy    => 1,
-  builder => sub { return 'mkdn'; },
+  default => sub { return 'mkdn'; },
 );
 
 

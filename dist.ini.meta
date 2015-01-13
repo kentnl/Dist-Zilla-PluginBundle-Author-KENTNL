@@ -12,6 +12,7 @@ main_module = lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 try_built = 1
 
 [@Author::KENTNL]
+-remove = MetaConfig
 twitter_extra_hash_tags = #distzilla
 normal_form       = numify
 mantissa          = 6
