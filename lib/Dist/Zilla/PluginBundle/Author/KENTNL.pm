@@ -659,7 +659,7 @@ sub BUILDARGS {
     next if exists $attributes{ $key };
     next if $key =~ /^-remove/;
     next if $key =~ /^[^.]+[.][^.]/;
-    $self->log(["Unknown key %s", $key ]);
+    warn "Unknown key $key";
   }
   return $config;
 }
