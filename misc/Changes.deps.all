@@ -1,7 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.022006
+2.023000
  [Added / runtime requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0.001000
  - Dist::Zilla::Role::PluginBundle::Config::Slicer 0.200
  - Dist::Zilla::Role::PluginBundle::PluginRemover 0.103
 
@@ -55,6 +56,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Test::More 1.001014 → 1.301001_097
 
  [Changed / test requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0 → 0.001000
  - Test::DZil 5.030 → 5.031
 
  [Removed / runtime requires]

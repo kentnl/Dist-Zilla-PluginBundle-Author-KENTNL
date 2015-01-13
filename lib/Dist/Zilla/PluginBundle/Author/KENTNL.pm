@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.022006';
+our $VERSION = '2.023000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -666,7 +666,8 @@ sub BUILDARGS {
     next if exists $init_args{$key};
     next if $key =~ /\A-remove/msx;
     next if $key =~ /\A[^.]+[.][^.]/msx;
-    warn "Unknown key $key";
+    require Carp;
+    Carp::carp("Unknown key $key");
   }
   return $config;
 }
@@ -700,7 +701,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.022006
+version 2.023000
 
 =head1 SYNOPSIS
 

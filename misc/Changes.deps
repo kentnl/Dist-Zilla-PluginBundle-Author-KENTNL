@@ -1,7 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.022006
+2.023000
  [Added / runtime requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0.001000
  - Dist::Zilla::Role::PluginBundle::Config::Slicer 0.200
  - Dist::Zilla::Role::PluginBundle::PluginRemover 0.103
 
@@ -29,6 +30,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Dist::Zilla::Role::PluginBundle 5.030 → 5.031
 
  [Changed / test requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0 → 0.001000
  - Test::DZil 5.030 → 5.031
 
  [Removed / runtime requires]
