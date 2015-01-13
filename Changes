@@ -1,6 +1,15 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugfix]
+ - Stop injecting TravisCI in newly minted dists ( superceded by bundle changes )
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.023000, see misc/*.deps* for details
+ - configure: (recommends: ↑1)
+ - develop: ↑2
+ - runtime: ↑3
+ - test: (recommends: ↑1)
 
 2.023000 2015-01-13T08:13:40Z 8d47bcc
  [API]

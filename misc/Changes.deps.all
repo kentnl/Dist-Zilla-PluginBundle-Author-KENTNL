@@ -1,6 +1,20 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.023001
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 7.04 → 7.05_07
+
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.002000 → 2.003000
+ - Test::CPAN::Meta 0.23 → 0.24
+
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.002000 → 2.003000
+ - IO::Socket::SSL 2.008 → 2.009
+ - Test::CPAN::Meta 0.23 → 0.24
+
+ [Changed / test recommends]
+ - ExtUtils::MakeMaker 7.04 → 7.05_07
 
 2.023000 2015-01-13T08:13:40Z
  [Added / runtime requires]
