@@ -84,7 +84,7 @@
       "File::pushd" : "1.009",
       "FindBin" : "1.51",
       "Git::Wrapper" : "0.038",
-      "IO::Socket::SSL" : "2.008",
+      "IO::Socket::SSL" : "2.009",
       "JSON::MaybeXS" : "1.003003",
       "LMDB_File" : "0.07",
       "LWP::Protocol::https" : "6.06",
