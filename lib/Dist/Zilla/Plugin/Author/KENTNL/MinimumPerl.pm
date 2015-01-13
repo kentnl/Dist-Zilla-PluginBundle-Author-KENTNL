@@ -42,6 +42,18 @@ has 'fiveten' => (
   default => sub { undef },
 );
 
+override register_prereqs => sub {
+  my ($self) = @_;
+
+  my $minperl = $self->minperl;
+
+  $self->log_debug( [ 'Minimum Perl is v%s', $minperl ] );
+  $self->zilla->register_prereqs( { phase => 'runtime' }, perl => $minperl->stringify, );
+};
+
+no Moose;
+__PACKAGE__->meta->make_immutable;
+
 sub _3part_check {
   my ( $self, $file, $pmv, $minver ) = @_;
   my $perl_required = version->parse('5.10.0');
@@ -126,17 +138,5 @@ sub minperl {
   return $y;
 }
 
-override register_prereqs => sub {
-  my ($self) = @_;
-
-  my $minperl = $self->minperl;
-
-  $self->log_debug( [ 'Minimum Perl is v%s', $minperl ] );
-  $self->zilla->register_prereqs( { phase => 'runtime' }, perl => $minperl->stringify, );
-
-};
-
-no Moose;
-__PACKAGE__->meta->make_immutable;
 1;
 
