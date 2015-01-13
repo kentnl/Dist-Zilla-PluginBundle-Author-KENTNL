@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "recommends" : {
-            "ExtUtils::MakeMaker" : "7.04"
+            "ExtUtils::MakeMaker" : "7.05_07"
          },
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
@@ -54,7 +54,7 @@
             "Dist::Zilla::Plugin::MetaConfig" : "5.031",
             "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.004001",
             "Dist::Zilla::Plugin::MetaJSON" : "5.031",
-            "Dist::Zilla::Plugin::MetaProvides::Package" : "2.002000",
+            "Dist::Zilla::Plugin::MetaProvides::Package" : "2.003000",
             "Dist::Zilla::Plugin::MetaTests" : "5.031",
             "Dist::Zilla::Plugin::MetaYAML" : "5.031",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.006",
@@ -83,7 +83,7 @@
             "Dist::Zilla::Plugin::UploadToCPAN" : "5.031",
             "Pod::Coverage::TrustPod" : "0.100003",
             "Test::CPAN::Changes" : "0.30",
-            "Test::CPAN::Meta" : "0.23",
+            "Test::CPAN::Meta" : "0.24",
             "Test::EOL" : "1.5",
             "Test::Kwalitee" : "1.22",
             "Test::More" : "0",
@@ -152,7 +152,7 @@
             "Dist::Zilla::Plugin::MetaConfig" : "5.031",
             "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.004001",
             "Dist::Zilla::Plugin::MetaJSON" : "5.031",
-            "Dist::Zilla::Plugin::MetaProvides::Package" : "2.002000",
+            "Dist::Zilla::Plugin::MetaProvides::Package" : "2.003000",
             "Dist::Zilla::Plugin::MetaTests" : "5.031",
             "Dist::Zilla::Plugin::MetaYAML" : "5.031",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.006",
@@ -197,7 +197,7 @@
             "Pod::Coverage::TrustPod" : "0.100003",
             "Pod::Elemental::PerlMunger" : "0.200002",
             "String::Formatter" : "0.102084",
-            "Test::CPAN::Meta" : "0.23",
+            "Test::CPAN::Meta" : "0.24",
             "Test::EOL" : "1.5",
             "Test::Perl::Critic" : "1.02",
             "Test::Pod" : "1.48",
@@ -213,7 +213,7 @@
       "test" : {
          "recommends" : {
             "CPAN::Meta" : "2.143240",
-            "ExtUtils::MakeMaker" : "7.04",
+            "ExtUtils::MakeMaker" : "7.05_07",
             "Test::More" : "1.301001_097"
          },
          "requires" : {
@@ -322,7 +322,7 @@
                }
             },
             "name" : "@Author::KENTNL/MetaProvides::Package",
-            "version" : "2.002000"
+            "version" : "2.003000"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",

@@ -104,7 +104,7 @@ requires:
   Dist::Zilla::Plugin::MetaConfig: '5.031'
   Dist::Zilla::Plugin::MetaData::BuiltWith: '1.004001'
   Dist::Zilla::Plugin::MetaJSON: '5.031'
-  Dist::Zilla::Plugin::MetaProvides::Package: '2.002000'
+  Dist::Zilla::Plugin::MetaProvides::Package: '2.003000'
   Dist::Zilla::Plugin::MetaTests: '5.031'
   Dist::Zilla::Plugin::MetaYAML: '5.031'
   Dist::Zilla::Plugin::MinimumPerl: '1.006'
@@ -149,7 +149,7 @@ requires:
   Pod::Coverage::TrustPod: '0.100003'
   Pod::Elemental::PerlMunger: '0.200002'
   String::Formatter: '0.102084'
-  Test::CPAN::Meta: '0.23'
+  Test::CPAN::Meta: '0.24'
   Test::EOL: '1.5'
   Test::Perl::Critic: '1.02'
   Test::Pod: '1.48'
@@ -203,7 +203,7 @@ x_Dist_Zilla:
           inherit_version: '1'
           meta_noindex: '1'
       name: '@Author::KENTNL/MetaProvides::Package'
-      version: '2.002000'
+      version: '2.003000'
     -
       class: Dist::Zilla::Plugin::MetaData::BuiltWith
       config:
