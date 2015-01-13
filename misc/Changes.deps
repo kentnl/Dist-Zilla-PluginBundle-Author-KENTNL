@@ -1,6 +1,10 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.022006
+ [Added / runtime requires]
+ - Dist::Zilla::Role::PluginBundle::Config::Slicer 0.200
+ - Dist::Zilla::Role::PluginBundle::PluginRemover 0.103
+
  [Changed / runtime requires]
  - Dist::Zilla 5.030 → 5.031
  - Dist::Zilla::File::FromCode 5.030 → 5.031

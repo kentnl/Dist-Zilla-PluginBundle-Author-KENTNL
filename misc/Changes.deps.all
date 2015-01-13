@@ -1,6 +1,10 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.022006
+ [Added / runtime requires]
+ - Dist::Zilla::Role::PluginBundle::Config::Slicer 0.200
+ - Dist::Zilla::Role::PluginBundle::PluginRemover 0.103
+
  [Changed / develop recommends]
  - Test::More 1.001014 → 1.301001_097
 
