@@ -32,7 +32,9 @@ use Moose qw( with );
 
 with qw(Dist::Zilla::Role::FileGatherer);
 
-use Dist::Zilla::File::FromCode;
+__PACKAGE__->meta->make_immutable;
+no Moose;
+
 use String::Formatter named_stringf => {
   -as   => 'str_rf',
   codes => {
@@ -80,7 +82,7 @@ EOF
 
 sub gather_files {
   my ( $self, ) = @_;
-  my $code      = sub {
+  my $code = sub {
     ## no critic (RegularExpressions)
     my $license = ref $self->zilla->license;
     if ( $license =~ /^Software::License::(.+)$/ ) {
@@ -113,6 +115,7 @@ sub gather_files {
     );
     return $content;
   };
+  require Dist::Zilla::File::FromCode;
   my $file = Dist::Zilla::File::FromCode->new(
     {
       name => 'dist.ini',
@@ -122,9 +125,6 @@ sub gather_files {
   $self->add_file($file);
   return 1;
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
 
 1;
 
@@ -206,10 +206,6 @@ name-space pollution:
 And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::Zilla::PluginBundle::KENTNL >> to be
 C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful
 for people other than ... well.. me. Call me a counter-egotist, if you will.
-
-=head1 THEFT
-
-This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken C<< ☺ >>.
 
 =head1 AUTHOR
 

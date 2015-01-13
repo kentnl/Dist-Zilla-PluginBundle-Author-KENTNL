@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.023001 2015-01-13T11:55:09Z 561529e
+2.023001 2015-01-13T12:12:42Z 9c13379
  [Bugfix]
  - Stop injecting TravisCI in newly minted dists ( superceded by bundle changes )
 
