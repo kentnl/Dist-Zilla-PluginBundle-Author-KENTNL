@@ -1,6 +1,11 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.023000
+2.023001
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.002000 → 2.003000
+ - Test::CPAN::Meta 0.23 → 0.24
+
+2.023000 2015-01-13T08:13:40Z
  [Changed / develop recommends]
  - Test::More 1.001014 → 1.301001_097
 
