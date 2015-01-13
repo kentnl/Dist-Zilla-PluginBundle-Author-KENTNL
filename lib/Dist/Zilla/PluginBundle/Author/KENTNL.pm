@@ -13,11 +13,10 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
+use MooseX::StrictConstructor;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
-with 'Dist::Zilla::Role::PluginBundle::PluginRemover';
-with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 with 'Dist::Zilla::Role::BundleDeps';
 
 use namespace::autoclean;
