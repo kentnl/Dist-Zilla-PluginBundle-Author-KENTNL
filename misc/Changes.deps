@@ -1,6 +1,10 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.023001
+ [Changed / runtime requires]
+ - Dist::Zilla::Plugin::MetaProvides::Package 2.002000 → 2.003000
+ - IO::Socket::SSL 2.008 → 2.009
+ - Test::CPAN::Meta 0.23 → 0.24
 
 2.023000 2015-01-13T08:13:40Z
  [Added / runtime requires]
