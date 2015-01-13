@@ -35,6 +35,7 @@
       "Dist::Zilla::Plugin::MakeMaker" : "5.031",
       "Dist::Zilla::Plugin::Manifest" : "5.031",
       "Dist::Zilla::Plugin::ManifestSkip" : "5.031",
+      "Dist::Zilla::Plugin::MetaConfig" : "5.031",
       "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.004001",
       "Dist::Zilla::Plugin::MetaJSON" : "5.031",
       "Dist::Zilla::Plugin::MetaProvides::Package" : "2.002000",
