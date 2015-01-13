@@ -295,6 +295,10 @@ has srcreadme => (
   default => sub { return 'mkdn'; },
 );
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+no Moose::Util::TypeConstraints;
+
 =method C<add_plugin>
 
     $bundle_object->add_plugin("Basename" => { config_hash } );
@@ -681,10 +685,6 @@ sub bundle_config {
 
   return @{ $instance->plugins };
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
-no Moose::Util::TypeConstraints;
 
 1;
 
