@@ -644,19 +644,20 @@ sub configure {
 
 sub BUILDARGS {
   my ( $self, $config, @args ) = @_;
-  
+
   if ( @args or not 'HASH' eq ( ref $config || '' ) ) {
     $config = { $config, @args };
   }
-  my ( %attributes );
+  my (%attributes);
   for my $attr ( $self->meta->get_all_attributes ) {
-    if ( my $arg = $attr->init_arg  ) {
-      $attributes{  $arg } = 1;
+    if ( my $arg = $attr->init_arg ) {
+      $attributes{$arg} = 1;
     }
   }
+
   # A weakened warn-only filter-supporting StrictConstructor
-  for my $key ( keys %{ $config } ) {
-    next if exists $attributes{ $key };
+  for my $key ( keys %{$config} ) {
+    next if exists $attributes{$key};
     next if $key =~ /^-remove/;
     next if $key =~ /^[^.]+[.][^.]/;
     warn "Unknown key $key";
