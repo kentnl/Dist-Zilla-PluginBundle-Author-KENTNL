@@ -1,9 +1,10 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022006 2015-01-13T07:59:39Z 714c2b1
+2.022006 2015-01-13T08:05:09Z 11b38b5
  [API]
  - Missing constructor arguments are now only warnings
  - Now does :PluginRemover and :Config::Slicer plugin bundle roles.
+ - Inject TravisCI plugin standard.
 
  [Dependencies::Stats]
  - Dependencies changed since 2.022005, see misc/*.deps* for details

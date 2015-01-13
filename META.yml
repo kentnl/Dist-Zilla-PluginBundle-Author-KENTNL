@@ -4,7 +4,7 @@ author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   Capture::Tiny: '0.27'
-  Dist::Zilla::Plugin::Author::KENTNL::TravisCI: '0'
+  Dist::Zilla::Plugin::Author::KENTNL::TravisCI: '0.001000'
   Dist::Zilla::Plugin::Git::NextVersion::Sanitized: '0'
   Dist::Zilla::Plugin::ModuleBuild: '0'
   Dist::Zilla::Plugin::Prereqs::MatchInstalled: '0'
@@ -82,6 +82,7 @@ requires:
   Dist::Zilla: '5.031'
   Dist::Zilla::File::FromCode: '5.031'
   Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.004001'
+  Dist::Zilla::Plugin::Author::KENTNL::TravisCI: '0.001000'
   Dist::Zilla::Plugin::Authority: '1.006'
   Dist::Zilla::Plugin::AutoPrereqs: '5.031'
   Dist::Zilla::Plugin::Bootstrap::lib: '1.001000'
@@ -269,6 +270,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Manifest
       name: '@Author::KENTNL/Manifest'
       version: '5.031'
+    -
+      class: Dist::Zilla::Plugin::Author::KENTNL::TravisCI
+      name: '@Author::KENTNL/Author::KENTNL::TravisCI'
+      version: '0.001000'
     -
       class: Dist::Zilla::Plugin::CopyFilesFromBuild
       name: '@Author::KENTNL/CopyXBuild'
@@ -764,10 +769,6 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::CheckPrereqsIndexed
       name: CheckPrereqsIndexed
       version: '0.013'
-    -
-      class: Dist::Zilla::Plugin::Author::KENTNL::TravisCI
-      name: Author::KENTNL::TravisCI
-      version: '0.001000'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
