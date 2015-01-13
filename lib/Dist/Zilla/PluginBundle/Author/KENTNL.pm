@@ -663,7 +663,7 @@ sub BUILDARGS {
 
   # A weakened warn-only filter-supporting StrictConstructor
   for my $key ( keys %{$config} ) {
-    next if exists $attributes{$key};
+    next if exists $init_args{$key};
     next if $key =~ /\A-remove/msx;
     next if $key =~ /\A[^.]+[.][^.]/msx;
     warn "Unknown key $key";
