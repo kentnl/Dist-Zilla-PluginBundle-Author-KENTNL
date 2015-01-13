@@ -175,8 +175,4 @@ And I have half a mind to rename L<< C<Dist::Zilla::PluginBundle::KENTNL>|Dist::
 C<Dist::Zilla::PluginBundle::Author::KENTNL> just to keep the top level cleaner, for stuff where bundles of plug-ins are useful
 for people other than ... well.. me. Call me a counter-egotist, if you will.
 
-=head1 THEFT
-
-This code is mostly stolen from the L<< C<DistINI>|Dist::Zilla::Plugin::DistINI >> plug-in. Blame C<rjbs> if its broken C<< ☺ >>.
-
 =cut
