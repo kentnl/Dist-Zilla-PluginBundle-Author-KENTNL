@@ -1,6 +1,28 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 2.022006
+ [Changed / develop recommends]
+ - Test::More 1.001014 → 1.301001_097
+
+ [Changed / develop requires]
+ - Dist::Zilla 5.030 → 5.031
+ - Dist::Zilla::Plugin::AutoPrereqs 5.030 → 5.031
+ - Dist::Zilla::Plugin::ConfirmRelease 5.030 → 5.031
+ - Dist::Zilla::Plugin::License 5.030 → 5.031
+ - Dist::Zilla::Plugin::MakeMaker 5.030 → 5.031
+ - Dist::Zilla::Plugin::Manifest 5.030 → 5.031
+ - Dist::Zilla::Plugin::ManifestSkip 5.030 → 5.031
+ - Dist::Zilla::Plugin::MetaConfig 5.030 → 5.031
+ - Dist::Zilla::Plugin::MetaJSON 5.030 → 5.031
+ - Dist::Zilla::Plugin::MetaTests 5.030 → 5.031
+ - Dist::Zilla::Plugin::MetaYAML 5.030 → 5.031
+ - Dist::Zilla::Plugin::ModuleShareDirs 5.030 → 5.031
+ - Dist::Zilla::Plugin::PodCoverageTests 5.030 → 5.031
+ - Dist::Zilla::Plugin::PodSyntaxTests 5.030 → 5.031
+ - Dist::Zilla::Plugin::Prereqs 5.030 → 5.031
+ - Dist::Zilla::Plugin::Readme::Brief 0.002000 → 0.002002
+ - Dist::Zilla::Plugin::TestRelease 5.030 → 5.031
+ - Dist::Zilla::Plugin::UploadToCPAN 5.030 → 5.031
 
 2.022005 2015-01-05T20:16:46Z
  [Added / develop requires]

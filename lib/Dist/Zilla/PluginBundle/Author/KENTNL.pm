@@ -14,7 +14,6 @@ our $VERSION = '2.022006';
 use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
 use MooseX::StrictConstructor;
-use MooseX::AttributeShortcuts;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
@@ -58,7 +57,7 @@ Populated during C<< $self->configure >> and returned from C<< ->bundle_config >
 
 =cut
 
-has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'builder' => sub { [] } );
+has 'plugins' => ( 'is' => 'ro' =>, 'isa' => 'ArrayRef', 'init_arg' => undef, 'lazy' => 1, 'default' => sub { [] } );
 
 =attr C<normal_form>
 
@@ -72,7 +71,7 @@ See L<< C<[::Role::Version::Sanitize]>|Dist::Zilla::Role::Version::Sanitize >>
 
 =cut
 
-has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', lazy => 1, builder => sub { 'numify' } );
+has 'normal_form' => ( 'is' => ro =>, 'isa' => 'Str', lazy => 1, default => sub { 'numify' } );
 
 =attr C<mantissa>
 
@@ -88,7 +87,7 @@ has 'mantissa' => (
   'is'      => ro =>,
   'isa'     => 'Int',
   'lazy'    => 1,
-  'builder' => sub {
+  'default' => sub {
     return 6;
   },
 );
@@ -121,7 +120,7 @@ An authority string to use for C<< [Authority] >>.
 
 =cut
 
-has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, builder => sub { 'cpan:KENTNL' }, );
+has 'authority' => ( is => 'ro', isa => 'Str', lazy => 1, default => sub { 'cpan:KENTNL' }, );
 
 =attr C<auto_prereqs_skip>
 
@@ -136,7 +135,7 @@ has 'auto_prereqs_skip' => (
   isa       => 'ArrayRef',
   predicate => 'has_auto_prereqs_skip',
   lazy      => 1,
-  builder   => sub { [] },
+  default   => sub { [] },
 );
 
 =attr C<twitter_extra_hash_tags>
@@ -152,7 +151,7 @@ has 'twitter_extra_hash_tags' => (
   'isa'     => 'Str',
   lazy      => 1,
   predicate => 'has_twitter_extra_hash_tags',
-  builder   => sub { q[] },
+  default   => sub { q[] },
 );
 
 =attr C<twitter_hash_tags>
@@ -167,7 +166,7 @@ has 'twitter_hash_tags' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
-  builder => sub {
+  default => sub {
     my ($self) = @_;
     return '#perl #cpan' unless $self->has_twitter_extra_hash_tags;
 
@@ -187,7 +186,7 @@ has 'tweet_url' => (
   is      => 'ro',
   isa     => 'Str',
   lazy    => 1,
-  builder => sub {
+  default => sub {
     ## no critic (RequireInterpolationOfMetachars)
     return q[https://metacpan.org/release/{{$AUTHOR_UC}}/{{$DIST}}-{{$VERSION}}{{$TRIAL}}#whatsnew];
   },
@@ -217,7 +216,7 @@ has 'toolkit_hardness' => (
   is => ro =>,
   isa => enum( [ 'hard', 'soft' ] ),
   lazy    => 1,
-  builder => sub { 'hard' },
+  default => sub { 'hard' },
 );
 
 =attr C<toolkit>
@@ -242,7 +241,7 @@ has 'toolkit' => (
   is => ro =>,
   isa => enum( [ 'mb', 'mbtiny', 'eumm' ] ),
   lazy    => 1,
-  builder => sub { 'mb' },
+  default => sub { 'mb' },
 );
 
 =attr C<bumpversions>
@@ -258,7 +257,7 @@ has 'bumpversions' => (
   is      => ro  =>,
   isa     => 'Bool',
   lazy    => 1,
-  builder => sub { undef },
+  default => sub { undef },
 );
 
 =attr C<copyfiles>
@@ -277,7 +276,7 @@ has copyfiles => (
   is      => ro  =>,
   isa     => 'ArrayRef[ Str ]',
   lazy    => 1,
-  builder => sub { [] },
+  default => sub { [] },
 );
 
 =attr C<srcreadme>
@@ -292,7 +291,7 @@ has srcreadme => (
   is => ro =>,
   isa => enum( [ 'pod', 'mkdn', 'none' ] ),
   lazy    => 1,
-  builder => sub { return 'mkdn'; },
+  default => sub { return 'mkdn'; },
 );
 
 =method C<add_plugin>

@@ -1,6 +1,14 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.022005, see misc/*.deps* for details
+ - develop: ↑18 (recommends: ↑1)
+ - runtime: ↑21 -1
+ - test: ↑1 (recommends: ↑1)
+
+ [Internals]
+ - No more MX::AttributeShortcuts
 
 2.022005 2015-01-05T20:16:46Z cba7b74
  [Dependencies::Stats]
