@@ -21,6 +21,7 @@ toolkit_hardness  = soft
 bumpversions      = 1
 copyfiles         = LICENSE
 srcreadme         = mkdn
+Git::GatherDir.include_dotfiles = 0
 
 [ModuleShareDirs]
 Dist::Zilla::MintingProfile::Author::KENTNL = share/profiles
