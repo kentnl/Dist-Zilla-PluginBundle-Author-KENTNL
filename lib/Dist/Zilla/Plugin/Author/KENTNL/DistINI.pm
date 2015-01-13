@@ -35,7 +35,6 @@ with qw(Dist::Zilla::Role::FileGatherer);
 __PACKAGE__->meta->make_immutable;
 no Moose;
 
-use Dist::Zilla::File::FromCode;
 use String::Formatter named_stringf => {
   -as   => 'str_rf',
   codes => {
@@ -116,6 +115,7 @@ sub gather_files {
     );
     return $content;
   };
+  require Dist::Zilla::File::FromCode;
   my $file = Dist::Zilla::File::FromCode->new(
     {
       name => 'dist.ini',
