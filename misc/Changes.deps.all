@@ -12,6 +12,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::MakeMaker 5.030 → 5.031
  - Dist::Zilla::Plugin::Manifest 5.030 → 5.031
  - Dist::Zilla::Plugin::ManifestSkip 5.030 → 5.031
+ - Dist::Zilla::Plugin::MetaConfig 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaJSON 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaTests 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaYAML 5.030 → 5.031
@@ -32,6 +33,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::MakeMaker 5.030 → 5.031
  - Dist::Zilla::Plugin::Manifest 5.030 → 5.031
  - Dist::Zilla::Plugin::ManifestSkip 5.030 → 5.031
+ - Dist::Zilla::Plugin::MetaConfig 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaJSON 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaTests 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaYAML 5.030 → 5.031
@@ -51,11 +53,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Changed / test requires]
  - Test::DZil 5.030 → 5.031
 
- [Removed / develop requires]
- - Dist::Zilla::Plugin::MetaConfig 5.030
-
  [Removed / runtime requires]
- - Dist::Zilla::Plugin::MetaConfig 5.030
  - MooseX::AttributeShortcuts 0.024
 
 2.022005 2015-01-05T20:16:46Z

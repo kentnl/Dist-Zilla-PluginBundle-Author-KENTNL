@@ -1,11 +1,14 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.022006 2015-01-05T20:57:29Z 9aca7ad
+2.022006 2015-01-13T06:11:37Z 03860bf
  [Dependencies::Stats]
  - Dependencies changed since 2.022005, see misc/*.deps* for details
- - develop: ↑17 -1 (recommends: ↑1)
- - runtime: ↑20 -2
+ - develop: ↑18 (recommends: ↑1)
+ - runtime: ↑21 -1
  - test: ↑1 (recommends: ↑1)
+
+ [Internals]
+ - No more MX::AttributeShortcuts
 
 2.022005 2015-01-05T20:16:46Z cba7b74
  [Dependencies::Stats]

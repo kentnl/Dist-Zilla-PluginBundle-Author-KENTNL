@@ -13,7 +13,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has );
 use Moose::Util::TypeConstraints qw(enum);
-use MooseX::StrictConstructor;
 use Dist::Zilla::Util::CurrentCmd qw( current_cmd );
 
 with 'Dist::Zilla::Role::PluginBundle';
@@ -641,6 +640,28 @@ sub configure {
   $self->_configure_toolkit_prereqs;
 
   return;
+}
+
+sub BUILDARGS {
+  my ( $self, $config, @args ) = @_;
+  
+  if ( @args or not 'HASH' eq ( ref $config || '' ) ) {
+    $config = { $config, @args };
+  }
+  my ( %attributes );
+  for my $attr ( $self->meta->get_all_attributs ) {
+    if ( my $arg = $attr->init_arg  ) {
+      $attributes{  $arg } = 1;
+    }
+  }
+  # A weakened warn-only filter-supporting StrictConstructor
+  for my $key ( keys %{ $config } ) {
+    next if exists $attributes{ $key };
+    next if $key =~ /^-remove/;
+    next if $key =~ /^[^.]+[.][^.]/;
+    $self->log(["Unknown key %s", $key ]);
+  }
+  return $config;
 }
 
 sub bundle_config {

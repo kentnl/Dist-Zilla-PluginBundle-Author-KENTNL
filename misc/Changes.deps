@@ -10,6 +10,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Dist::Zilla::Plugin::MakeMaker 5.030 → 5.031
  - Dist::Zilla::Plugin::Manifest 5.030 → 5.031
  - Dist::Zilla::Plugin::ManifestSkip 5.030 → 5.031
+ - Dist::Zilla::Plugin::MetaConfig 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaJSON 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaTests 5.030 → 5.031
  - Dist::Zilla::Plugin::MetaYAML 5.030 → 5.031
@@ -27,7 +28,6 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Test::DZil 5.030 → 5.031
 
  [Removed / runtime requires]
- - Dist::Zilla::Plugin::MetaConfig 5.030
  - MooseX::AttributeShortcuts 0.024
 
 2.022005 2015-01-05T20:16:46Z
