@@ -649,7 +649,7 @@ sub BUILDARGS {
     $config = { $config, @args };
   }
   my ( %attributes );
-  for my $attr ( $self->meta->get_all_attributs ) {
+  for my $attr ( $self->meta->get_all_attributes ) {
     if ( my $arg = $attr->init_arg  ) {
       $attributes{  $arg } = 1;
     }
