@@ -80,11 +80,9 @@ EOF
 
 sub gather_files {
   my ( $self, ) = @_;
-  my $zilla     = $self->zilla;
-  my $empty     = q{};
   my $code      = sub {
     ## no critic (RegularExpressions)
-    my $license = ref $zilla->license;
+    my $license = ref $self->zilla->license;
     if ( $license =~ /^Software::License::(.+)$/ ) {
       $license = $1;
     }
@@ -100,10 +98,10 @@ sub gather_files {
         GENPACKAGE      => __PACKAGE__,
         GENVERSION      => ( __PACKAGE__->VERSION || '(unversioned:dist)' ),
         GENTIME         => ( scalar localtime ),
-        name            => $zilla->name,
-        author          => $zilla->authors->[0],
+        name            => $self->zilla->name,
+        author          => $self->zilla->authors->[0],
         license         => $license,
-        copyrightholder => $zilla->copyright_holder,
+        copyrightholder => $self->zilla->copyright_holder,
         rel_year        => (localtime)[5] + 1900,
         rel_month       => (localtime)[4] + 1,
         rel_day         => (localtime)[3],
