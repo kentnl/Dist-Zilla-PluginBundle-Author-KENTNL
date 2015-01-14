@@ -26,7 +26,9 @@ Author::KENTNL::TravisCI.skip_perls = 5.8
 [Prereqs]
 Dist::Zilla = 5.011
 
-[Prereqs / configure_requires]
+[Prereqs / config_reqs]
+-phase = configure
+-relationship = requires
 File::ShareDir::Install = 0.10 ; dotfiles bug
 
 [Prereqs/softdeps]

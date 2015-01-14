@@ -26,7 +26,7 @@ build_requires:
   perl: '5.008'
 configure_requires:
   ExtUtils::MakeMaker: '0'
-  File::ShareDir::Install: '0.06'
+  File::ShareDir::Install: '0.10'
   perl: '5.008'
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.031, CPAN::Meta::Converter version 2.143240'
@@ -655,6 +655,14 @@ x_Dist_Zilla:
           phase: runtime
           type: requires
       name: Prereqs
+      version: '5.031'
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: configure
+          type: requires
+      name: config_reqs
       version: '5.031'
     -
       class: Dist::Zilla::Plugin::Prereqs

@@ -18,7 +18,7 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
-    "File::ShareDir::Install" => "0.06"
+    "File::ShareDir::Install" => "0.10"
   },
   "DISTNAME" => "Dist-Zilla-PluginBundle-Author-KENTNL",
   "EXE_FILES" => [],
@@ -186,7 +186,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla::Util::ConfigDumper" => 0,
   "Dist::Zilla::Util::CurrentCmd" => 0,
   "ExtUtils::MakeMaker" => 0,
-  "File::ShareDir::Install" => "0.06",
+  "File::ShareDir::Install" => "0.10",
   "File::Spec" => 0,
   "File::pushd" => 0,
   "FindBin" => 0,
