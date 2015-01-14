@@ -26,7 +26,13 @@
       },
       "develop" : {
          "recommends" : {
-            "Test::More" : "1.301001_097"
+            "Dist::Zilla" : "5.031",
+            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
+            "Pod::Coverage::TrustPod" : "0.100003",
+            "Test::CPAN::Meta" : "0.24",
+            "Test::EOL" : "1.5",
+            "Test::More" : "1.301001_097",
+            "Test::Pod" : "1.48"
          },
          "requires" : {
             "Dist::Zilla" : "5.031",
@@ -66,6 +72,7 @@
             "Dist::Zilla::Plugin::Prereqs::AuthorDeps" : "0.004",
             "Dist::Zilla::Plugin::Prereqs::MatchInstalled::All" : "1.001000",
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.003001",
+            "Dist::Zilla::Plugin::Prereqs::Upgrade" : "0.001000",
             "Dist::Zilla::Plugin::Readme::Brief" : "0.002002",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
             "Dist::Zilla::Plugin::RemovePhasedPrereqs" : "0.002",
@@ -112,6 +119,7 @@
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0",
             "JSON::MaybeXS" : "0",
             "LMDB_File" : "0",
+            "Moose" : "2.1403",
             "Net::GitHub" : "0",
             "Perl::Critic::Bangs" : "0",
             "Perl::Critic::Compatibility" : "0",
@@ -123,17 +131,16 @@
             "Perl::Critic::Pulp" : "0",
             "Perl::Critic::StricterSubs" : "0",
             "Perl::Critic::Swift" : "0",
-            "Perl::Critic::Tics" : "0"
+            "Perl::Critic::Tics" : "0",
+            "namespace::autoclean" : "0.23"
          },
          "requires" : {
             "Carp" : "0",
-            "Dist::Zilla" : "5.031",
             "Dist::Zilla::File::FromCode" : "5.031",
             "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.004001",
             "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" : "0.001000",
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "5.031",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
             "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.008",
             "Dist::Zilla::Plugin::ConfirmRelease" : "5.031",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.103510",
@@ -156,7 +163,6 @@
             "Dist::Zilla::Plugin::MetaTests" : "5.031",
             "Dist::Zilla::Plugin::MetaYAML" : "5.031",
             "Dist::Zilla::Plugin::MinimumPerl" : "1.006",
-            "Dist::Zilla::Plugin::PerlTidy" : "0.19",
             "Dist::Zilla::Plugin::PodCoverageTests" : "5.031",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "5.031",
             "Dist::Zilla::Plugin::PodWeaver" : "4.006",
@@ -185,23 +191,9 @@
             "Dist::Zilla::Role::PluginBundle::PluginRemover" : "0.103",
             "Dist::Zilla::Util::ConfigDumper" : "0.003006",
             "Dist::Zilla::Util::CurrentCmd" : "0.002002",
-            "Dist::Zilla::Util::EmulatePhase" : "1.001001",
-            "IO::Socket::SSL" : "2.009",
-            "LWP::Protocol::https" : "6.06",
             "Moose" : "2.1403",
             "Moose::Util::TypeConstraints" : "2.1403",
-            "MooseX::Has::Sugar" : "1.000004",
-            "MooseX::Types" : "0.45",
-            "Net::SSLeay" : "1.66",
-            "Perl::PrereqScanner" : "1.022",
-            "Pod::Coverage::TrustPod" : "0.100003",
-            "Pod::Elemental::PerlMunger" : "0.200002",
             "String::Formatter" : "0.102084",
-            "Test::CPAN::Meta" : "0.24",
-            "Test::EOL" : "1.5",
-            "Test::Perl::Critic" : "1.02",
-            "Test::Pod" : "1.48",
-            "Test::Pod::Coverage" : "1.10",
             "namespace::autoclean" : "0.23",
             "perl" : "5.008",
             "strict" : "0",
@@ -921,15 +913,34 @@
             "version" : "5.031"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "class" : "Dist::Zilla::Plugin::Prereqs::Upgrade",
             "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "runtime",
-                  "type" : "requires"
+               "Dist::Zilla::Plugin::Prereqs::Upgrade" : {
+                  "modules" : {
+                     "Dist::Zilla" : "5.011",
+                     "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000002",
+                     "Dist::Zilla::Plugin::PerlTidy" : "0.14",
+                     "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
+                     "IO::Socket::SSL" : "1.962",
+                     "LWP::Protocol::https" : "6.04",
+                     "Moose" : "2.1201",
+                     "MooseX::Has::Sugar" : "1.000000",
+                     "MooseX::Types" : "0.41",
+                     "Net::SSLeay" : "1.57",
+                     "Perl::PrereqScanner" : "1.019",
+                     "Pod::Coverage::TrustPod" : "0.100003",
+                     "Pod::Elemental::PerlMunger" : "0.200001",
+                     "Test::CPAN::Meta" : "0.23",
+                     "Test::EOL" : "1.5",
+                     "Test::Perl::Critic" : "1.02",
+                     "Test::Pod" : "1.48",
+                     "Test::Pod::Coverage" : "1.08",
+                     "namespace::autoclean" : "0.15"
+                  }
                }
             },
-            "name" : "Prereqs",
-            "version" : "5.031"
+            "name" : "Prereqs::Upgrade",
+            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::RemovePhasedPrereqs",
