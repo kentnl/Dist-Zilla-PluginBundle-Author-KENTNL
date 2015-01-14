@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.023002 2015-01-14T07:26:23Z cdffce2
  [Dependencies::Stats]
  - Dependencies changed since 2.023001, see misc/*.deps* for details
  - configure: (recommends: ↓1)
