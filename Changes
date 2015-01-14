@@ -3,10 +3,10 @@
 2.023002 2015-01-14T06:46:02Z f3a88f8
  [Dependencies::Stats]
  - Dependencies changed since 2.023001, see misc/*.deps* for details
- - configure: (recommends: ↓1)
+ - configure: (recommends: +1 ↓1)
  - develop: +1 ↓56 -1 (recommends: ↓1)
  - runtime: +1 ↓59 -16 (recommends: +18)
- - test: ↓11 (recommends: ↓3)
+ - test: ↓11 (recommends: +1 ↓3)
 
  [Features]
  - Use a less aggressive technique for recommending newer EUMM/TB to be slightly more stable and do 99% of what I mean

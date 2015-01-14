@@ -1,6 +1,9 @@
 This file contains changes in OPTIONAL dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.023002
+ [Added / configure recommends]
+ - File::ShareDir::Install 0.10
+
  [Added / runtime recommends]
  - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002
  - Dist::Zilla::Plugin::PerlTidy 0.14
@@ -20,6 +23,9 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
  - Test::Pod 1.48
  - Test::Pod::Coverage 1.08
  - namespace::autoclean 0.15
+
+ [Added / test recommends]
+ - Path::Tiny 0.58
 
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 7.05_07 → 7.00
