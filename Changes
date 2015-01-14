@@ -3,7 +3,14 @@
 {{$NEXT}}
  [Dependencies::Stats]
  - Dependencies changed since 2.023001, see misc/*.deps* for details
- - runtime: -16 (recommends: +18)
+ - configure: (recommends: ↓1)
+ - develop: +1 (recommends: ↓1)
+ - runtime: +1 -16 (recommends: +18)
+ - test: (recommends: ↓2)
+
+ [Features]
+ - Use a less aggressive technique for recommending newer EUMM/TB to be slightly more stable and do 99% of what I mean
+   without so much commit churn.
 
  [Packaging]
  - Moved a boatload of hard required deps that were really mostly recommendations to where they belong.

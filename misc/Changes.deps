@@ -1,6 +1,9 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.023002
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::Prereqs::Upgrade 0.001000
+
  [Removed / runtime requires]
  - Dist::Zilla::Plugin::Bootstrap::lib 1.001000
  - Dist::Zilla::Plugin::PerlTidy 0.19
