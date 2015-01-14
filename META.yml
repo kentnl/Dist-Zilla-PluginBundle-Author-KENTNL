@@ -131,6 +131,7 @@ requires:
   Dist::Zilla::Plugin::Prereqs: '0'
   Dist::Zilla::Plugin::Prereqs::AuthorDeps: '0'
   Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled: '0'
+  Dist::Zilla::Plugin::Prereqs::Upgrade: '0'
   Dist::Zilla::Plugin::Readme::Brief: '0'
   Dist::Zilla::Plugin::ReadmeAnyFromPod: '0'
   Dist::Zilla::Plugin::RewriteVersion::Sanitized: '0'
@@ -616,28 +617,14 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/Twitter'
       version: '0.026'
     -
-      class: Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
+      class: Dist::Zilla::Plugin::Prereqs::Upgrade
       config:
-        Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled:
-          applyto_map:
-            - 'build.requires = build.recommends'
-            - 'test.requires = test.recommends'
-            - 'runtime.requires = runtime.recommends'
-            - 'configure.requires = configure.recommends'
-            - 'develop.requires = develop.recommends'
-          applyto_phase:
-            - build
-            - test
-            - runtime
-            - configure
-            - develop
+        Dist::Zilla::Plugin::Prereqs::Upgrade:
           modules:
-            - ExtUtils::MakeMaker
-            - Test::More
-          source_relation: requires
-          target_relation: recommends
-      name: '@Author::KENTNL/Prereqs::Recommend::MatchInstalled'
-      version: '0.003001'
+            ExtUtils::MakeMaker: '7.00'
+            Test::More: '0.99'
+      name: '@Author::KENTNL/Prereqs::Upgrade'
+      version: '0.001000'
     -
       class: Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
       config:
