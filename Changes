@@ -4,9 +4,9 @@
  [Dependencies::Stats]
  - Dependencies changed since 2.023001, see misc/*.deps* for details
  - configure: (recommends: ↓1)
- - develop: +1 (recommends: ↓1)
- - runtime: +1 -16 (recommends: +18)
- - test: (recommends: ↓2)
+ - develop: +1 ↓56 -1 (recommends: ↓1)
+ - runtime: +1 ↓59 -16 (recommends: +18)
+ - test: ↓11 (recommends: ↓3)
 
  [Features]
  - Use a less aggressive technique for recommending newer EUMM/TB to be slightly more stable and do 99% of what I mean
@@ -14,6 +14,8 @@
 
  [Packaging]
  - Moved a boatload of hard required deps that were really mostly recommendations to where they belong.
+ - Drop "ramp all the things" version insanity ( caveat: more things are going to break now due to not knowing all
+   minimum deps )
 
 2.023001 2015-01-13T12:12:42Z 9c13379
  [Bugfix]
