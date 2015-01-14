@@ -16,7 +16,8 @@
    "prereqs" : {
       "configure" : {
          "recommends" : {
-            "ExtUtils::MakeMaker" : "7.00"
+            "ExtUtils::MakeMaker" : "7.00",
+            "File::ShareDir::Install" : "0.10"
          },
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
@@ -217,6 +218,7 @@
          "recommends" : {
             "CPAN::Meta" : "2.120900",
             "ExtUtils::MakeMaker" : "7.00",
+            "Path::Tiny" : "0.58",
             "Test::More" : "0.99"
          },
          "requires" : {
@@ -862,7 +864,12 @@
             "config" : {
                "Dist::Zilla::Plugin::Prereqs::Upgrade" : {
                   "modules" : {
+                     "Dist::Zilla" : "5",
                      "ExtUtils::MakeMaker" : "7.00",
+                     "File::ShareDir::Install" : "0.10",
+                     "Moo" : "1.000008",
+                     "Moose" : "2.000",
+                     "Path::Tiny" : "0.58",
                      "Test::More" : "0.99"
                   }
                }

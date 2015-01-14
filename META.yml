@@ -621,7 +621,12 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Prereqs::Upgrade:
           modules:
+            Dist::Zilla: '5'
             ExtUtils::MakeMaker: '7.00'
+            File::ShareDir::Install: '0.10'
+            Moo: '1.000008'
+            Moose: '2.000'
+            Path::Tiny: '0.58'
             Test::More: '0.99'
       name: '@Author::KENTNL/Prereqs::Upgrade'
       version: '0.001000'

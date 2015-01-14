@@ -1,7 +1,8 @@
 do { my $x = {
        'configure' => {
                         'recommends' => {
-                                          'ExtUtils::MakeMaker' => '7.00'
+                                          'ExtUtils::MakeMaker' => '7.00',
+                                          'File::ShareDir::Install' => '0.10'
                                         },
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '0',
@@ -202,6 +203,7 @@ do { my $x = {
                    'recommends' => {
                                      'CPAN::Meta' => '2.120900',
                                      'ExtUtils::MakeMaker' => '7.00',
+                                     'Path::Tiny' => '0.58',
                                      'Test::More' => '0.99'
                                    },
                    'requires' => {
