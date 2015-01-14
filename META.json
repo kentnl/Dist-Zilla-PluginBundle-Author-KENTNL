@@ -26,13 +26,7 @@
       },
       "develop" : {
          "recommends" : {
-            "Dist::Zilla" : "5.031",
-            "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
-            "Pod::Coverage::TrustPod" : "0.100003",
-            "Test::CPAN::Meta" : "0.24",
-            "Test::EOL" : "1.5",
-            "Test::More" : "1.301001_097",
-            "Test::Pod" : "1.48"
+            "Test::More" : "1.301001_097"
          },
          "requires" : {
             "Dist::Zilla" : "5.031",
@@ -119,7 +113,6 @@
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0",
             "JSON::MaybeXS" : "0",
             "LMDB_File" : "0",
-            "Moose" : "2.1403",
             "Net::GitHub" : "0",
             "Perl::Critic::Bangs" : "0",
             "Perl::Critic::Compatibility" : "0",
@@ -131,8 +124,7 @@
             "Perl::Critic::Pulp" : "0",
             "Perl::Critic::StricterSubs" : "0",
             "Perl::Critic::Swift" : "0",
-            "Perl::Critic::Tics" : "0",
-            "namespace::autoclean" : "0.23"
+            "Perl::Critic::Tics" : "0"
          },
          "requires" : {
             "Carp" : "0",
@@ -913,36 +905,6 @@
             "version" : "5.031"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereqs::Upgrade",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs::Upgrade" : {
-                  "modules" : {
-                     "Dist::Zilla" : "5.011",
-                     "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000002",
-                     "Dist::Zilla::Plugin::PerlTidy" : "0.14",
-                     "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
-                     "IO::Socket::SSL" : "1.962",
-                     "LWP::Protocol::https" : "6.04",
-                     "Moose" : "2.1201",
-                     "MooseX::Has::Sugar" : "1.000000",
-                     "MooseX::Types" : "0.41",
-                     "Net::SSLeay" : "1.57",
-                     "Perl::PrereqScanner" : "1.019",
-                     "Pod::Coverage::TrustPod" : "0.100003",
-                     "Pod::Elemental::PerlMunger" : "0.200001",
-                     "Test::CPAN::Meta" : "0.23",
-                     "Test::EOL" : "1.5",
-                     "Test::Perl::Critic" : "1.02",
-                     "Test::Pod" : "1.48",
-                     "Test::Pod::Coverage" : "1.08",
-                     "namespace::autoclean" : "0.15"
-                  }
-               }
-            },
-            "name" : "Prereqs::Upgrade",
-            "version" : "0.001000"
-         },
-         {
             "class" : "Dist::Zilla::Plugin::RemovePhasedPrereqs",
             "config" : {
                "Dist::Zilla::Plugin::RemovePhasedPrereqs" : {
@@ -1057,6 +1019,36 @@
             },
             "name" : "testreqs",
             "version" : "5.031"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs::Upgrade",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs::Upgrade" : {
+                  "modules" : {
+                     "Dist::Zilla" : "5.011",
+                     "Dist::Zilla::Plugin::Bootstrap::lib" : "0.04000002",
+                     "Dist::Zilla::Plugin::PerlTidy" : "0.14",
+                     "Dist::Zilla::Util::EmulatePhase" : "0.01025803",
+                     "IO::Socket::SSL" : "1.962",
+                     "LWP::Protocol::https" : "6.04",
+                     "Moose" : "2.1201",
+                     "MooseX::Has::Sugar" : "1.000000",
+                     "MooseX::Types" : "0.41",
+                     "Net::SSLeay" : "1.57",
+                     "Perl::PrereqScanner" : "1.019",
+                     "Pod::Coverage::TrustPod" : "0.100003",
+                     "Pod::Elemental::PerlMunger" : "0.200001",
+                     "Test::CPAN::Meta" : "0.23",
+                     "Test::EOL" : "1.5",
+                     "Test::Perl::Critic" : "1.02",
+                     "Test::Pod" : "1.48",
+                     "Test::Pod::Coverage" : "1.08",
+                     "namespace::autoclean" : "0.15"
+                  }
+               }
+            },
+            "name" : "Prereqs::Upgrade",
+            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::CheckPrereqsIndexed",

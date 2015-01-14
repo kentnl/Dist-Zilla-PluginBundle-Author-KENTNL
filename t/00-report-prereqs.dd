@@ -11,13 +11,7 @@ do { my $x = {
                       },
        'develop' => {
                       'recommends' => {
-                                        'Dist::Zilla' => '5.031',
-                                        'Dist::Zilla::Plugin::Bootstrap::lib' => '1.001000',
-                                        'Pod::Coverage::TrustPod' => '0.100003',
-                                        'Test::CPAN::Meta' => '0.24',
-                                        'Test::EOL' => '1.5',
-                                        'Test::More' => '1.301001_097',
-                                        'Test::Pod' => '1.48'
+                                        'Test::More' => '1.301001_097'
                                       },
                       'requires' => {
                                       'Dist::Zilla' => '5.031',
@@ -104,7 +98,6 @@ do { my $x = {
                                         'Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled' => '0',
                                         'JSON::MaybeXS' => '0',
                                         'LMDB_File' => '0',
-                                        'Moose' => '2.1403',
                                         'Net::GitHub' => '0',
                                         'Perl::Critic::Bangs' => '0',
                                         'Perl::Critic::Compatibility' => '0',
@@ -116,8 +109,7 @@ do { my $x = {
                                         'Perl::Critic::Pulp' => '0',
                                         'Perl::Critic::StricterSubs' => '0',
                                         'Perl::Critic::Swift' => '0',
-                                        'Perl::Critic::Tics' => '0',
-                                        'namespace::autoclean' => '0.23'
+                                        'Perl::Critic::Tics' => '0'
                                       },
                       'requires' => {
                                       'Carp' => '0',
