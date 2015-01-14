@@ -57,15 +57,24 @@ recommends:
   CPAN::Meta::Prereqs::Diff: '0'
   Cpanel::JSON::XS: '0'
   Data::Serializer::Sereal: '0'
+  Dist::Zilla::Plugin::Bootstrap::lib: '1.001000'
   Dist::Zilla::Plugin::Git::NextVersion::Sanitized: '0'
   Dist::Zilla::Plugin::MakeMaker: '0'
   Dist::Zilla::Plugin::ModuleBuild: '0'
   Dist::Zilla::Plugin::ModuleBuildTiny: '0'
+  Dist::Zilla::Plugin::PerlTidy: '0.19'
   Dist::Zilla::Plugin::Prereqs::MatchInstalled: '0'
   Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled: '0'
+  Dist::Zilla::Util::EmulatePhase: '1.001001'
+  IO::Socket::SSL: '2.009'
   JSON::MaybeXS: '0'
   LMDB_File: '0'
+  LWP::Protocol::https: '6.06'
+  Moose: '2.1403'
+  MooseX::Has::Sugar: '1.000004'
+  MooseX::Types: '0.45'
   Net::GitHub: '0'
+  Net::SSLeay: '1.66'
   Perl::Critic::Bangs: '0'
   Perl::Critic::Compatibility: '0'
   Perl::Critic::Deprecated: '0'
@@ -77,8 +86,18 @@ recommends:
   Perl::Critic::StricterSubs: '0'
   Perl::Critic::Swift: '0'
   Perl::Critic::Tics: '0'
+  Perl::PrereqScanner: '1.022'
+  Pod::Coverage::TrustPod: '0.100003'
+  Pod::Elemental::PerlMunger: '0.200002'
+  Test::CPAN::Meta: '0.24'
+  Test::EOL: '1.5'
+  Test::Perl::Critic: '1.02'
+  Test::Pod: '1.48'
+  Test::Pod::Coverage: '1.10'
+  namespace::autoclean: '0.23'
 requires:
   Carp: '0'
+  Dist::Zilla: '5.031'
   Dist::Zilla::File::FromCode: '5.031'
   Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.004001'
   Dist::Zilla::Plugin::Author::KENTNL::TravisCI: '0.001000'
@@ -643,6 +662,22 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/::Role::BundleDeps'
       version: '5.031'
     -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: requires
+      name: Prereqs
+      version: '5.031'
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: recommends
+      name: softdeps
+      version: '5.031'
+    -
       class: Dist::Zilla::Plugin::ModuleShareDirs
       name: ModuleShareDirs
       version: '5.031'
@@ -740,32 +775,6 @@ x_Dist_Zilla:
           type: requires
       name: testreqs
       version: '5.031'
-    -
-      class: Dist::Zilla::Plugin::Prereqs::Upgrade
-      config:
-        Dist::Zilla::Plugin::Prereqs::Upgrade:
-          modules:
-            Dist::Zilla: '5.011'
-            Dist::Zilla::Plugin::Bootstrap::lib: '0.04000002'
-            Dist::Zilla::Plugin::PerlTidy: '0.14'
-            Dist::Zilla::Util::EmulatePhase: '0.01025803'
-            IO::Socket::SSL: '1.962'
-            LWP::Protocol::https: '6.04'
-            Moose: '2.1201'
-            MooseX::Has::Sugar: '1.000000'
-            MooseX::Types: '0.41'
-            Net::SSLeay: '1.57'
-            Perl::PrereqScanner: '1.019'
-            Pod::Coverage::TrustPod: '0.100003'
-            Pod::Elemental::PerlMunger: '0.200001'
-            Test::CPAN::Meta: '0.23'
-            Test::EOL: '1.5'
-            Test::Perl::Critic: '1.02'
-            Test::Pod: '1.48'
-            Test::Pod::Coverage: '1.08'
-            namespace::autoclean: '0.15'
-      name: Prereqs::Upgrade
-      version: '0.001000'
     -
       class: Dist::Zilla::Plugin::CheckPrereqsIndexed
       name: CheckPrereqsIndexed
