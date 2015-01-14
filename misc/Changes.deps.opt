@@ -21,6 +21,10 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
  - Test::Pod::Coverage 1.08
  - namespace::autoclean 0.15
 
+ [Added / test recommends]
+ - Path::Tiny 0.058
+ - Test::File::ShareDir 1.000000
+
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 7.05_07 → 7.00
 

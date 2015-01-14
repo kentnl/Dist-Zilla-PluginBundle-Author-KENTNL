@@ -11,18 +11,6 @@ main_module = lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 [Bootstrap::lib]
 try_built = 1
 
-[@Author::KENTNL]
-twitter_extra_hash_tags = #distzilla
-normal_form       = numify
-mantissa          = 6
-bundledeps_phase  = runtime
-toolkit           = eumm
-toolkit_hardness  = soft
-bumpversions      = 1
-copyfiles         = LICENSE
-srcreadme         = mkdn
-Author::KENTNL::TravisCI.skip_perls = 5.8
-
 [Prereqs]
 Dist::Zilla = 5.011
 
@@ -112,6 +100,18 @@ Dist::Zilla::Plugin::ModuleBuild                 = 0
 Dist::Zilla::Plugin::Git::NextVersion::Sanitized = 0
 Module::Build                                    = 0
 Dist::Zilla::Plugin::Author::KENTNL::TravisCI    = 0
+
+[@Author::KENTNL]
+twitter_extra_hash_tags = #distzilla
+normal_form       = numify
+mantissa          = 6
+bundledeps_phase  = runtime
+toolkit           = eumm
+toolkit_hardness  = soft
+bumpversions      = 1
+copyfiles         = LICENSE
+srcreadme         = mkdn
+Author::KENTNL::TravisCI.skip_perls = 5.8
 
 ;[Prereqs::SyncVersions]
 [CheckPrereqsIndexed]

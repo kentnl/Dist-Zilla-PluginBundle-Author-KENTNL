@@ -4,6 +4,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / develop requires]
  - Dist::Zilla::Plugin::Prereqs::Upgrade
 
+ [Added / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.023002
+
  [Added / runtime recommends]
  - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002
  - Dist::Zilla::Plugin::PerlTidy 0.14
@@ -26,6 +29,10 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Prereqs::Upgrade
+
+ [Added / test recommends]
+ - Path::Tiny 0.058
+ - Test::File::ShareDir 1.000000
 
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 7.05_07 → 7.00
