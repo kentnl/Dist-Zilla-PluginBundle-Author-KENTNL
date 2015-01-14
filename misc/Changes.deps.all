@@ -1,11 +1,11 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.023002
- [Added / configure recommends]
- - File::ShareDir::Install 0.10
-
  [Added / develop requires]
  - Dist::Zilla::Plugin::Prereqs::Upgrade
+
+ [Added / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.023002
 
  [Added / runtime recommends]
  - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002

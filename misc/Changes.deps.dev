@@ -4,6 +4,9 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
  [Added / develop requires]
  - Dist::Zilla::Plugin::Prereqs::Upgrade
 
+ [Added / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.023002
+
  [Changed / develop recommends]
  - Test::More 1.301001_097 → 0.99
 

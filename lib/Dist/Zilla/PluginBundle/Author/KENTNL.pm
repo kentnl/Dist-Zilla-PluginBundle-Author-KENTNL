@@ -518,11 +518,13 @@ sub _configure_toolkit_prereqs {
   $self->add_plugin(
     'Prereqs::Upgrade' => {
       %{$extra_match_installed},
-      'Moose'                   => '2.000',       # Module::Runtime crap
-      'Moo'                     => '1.000008',    # lazy_build => sub
-      'Path::Tiny'              => '0.58',        # ->sibling
-      'File::ShareDir::Install' => '0.10',        # dotfiles
-      'Dist::Zilla'             => '5'            # encoding
+      'Moose'                                     => '2.000',       # Module::Runtime crap
+      'Moo'                                       => '1.000008',    # lazy_build => sub
+      'Path::Tiny'                                => '0.58',        # ->sibling
+      'File::ShareDir::Install'                   => '0.10',        # dotfiles
+      'Dist::Zilla'                               => '5',           # encoding
+      'Test::File::ShareDir'                      => '1.000000',    # 5.8 version compat
+      'Dist::Zila::Plugin::MetaProvides::Package' => '2.000000',    # sane version
     },
   );
 
