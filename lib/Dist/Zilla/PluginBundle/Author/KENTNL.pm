@@ -501,13 +501,11 @@ tc_select: {
 sub _configure_toolkit_prereqs {
   my ($self) = @_;
 
-  my $extra_match_installed = { 
-      'Test::More' => '0.99',
-  };
+  my $extra_match_installed = { 'Test::More' => '0.99', };
 
-  $extra_match_installed->{'Module::Build'} = '0.4004'  if 'mb' eq $self->toolkit;
-  $extra_match_installed->{'Module::Build::Tiny'} = '0.032' if 'mbtiny' eq $self->toolkit;
-  $extra_match_installed->{'ExtUtils::MakeMaker'} = '7.00' if 'eumm' eq $self->toolkit;
+  $extra_match_installed->{'Module::Build'}       = '0.4004' if 'mb' eq $self->toolkit;
+  $extra_match_installed->{'Module::Build::Tiny'} = '0.032'  if 'mbtiny' eq $self->toolkit;
+  $extra_match_installed->{'ExtUtils::MakeMaker'} = '7.00'   if 'eumm' eq $self->toolkit;
 
   if ( 'hard' eq $self->toolkit_hardness ) {
     $self->add_plugin(
@@ -517,11 +515,7 @@ sub _configure_toolkit_prereqs {
     );
   }
   if ( 'soft' eq $self->toolkit_hardness ) {
-    $self->add_plugin(
-      'Prereqs::Upgrade' => {
-        %extra_match_installed,
-      },
-    );
+    $self->add_plugin( 'Prereqs::Upgrade' => { %{$extra_match_installed}, }, );
   }
 
   my $applymap = [ 'develop.requires = develop.requires', ];
