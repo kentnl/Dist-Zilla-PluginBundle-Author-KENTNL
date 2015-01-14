@@ -53,7 +53,6 @@
       "Dist::Zilla::Plugin::Prereqs::AuthorDeps" : "0.004",
       "Dist::Zilla::Plugin::Prereqs::MatchInstalled" : "1.001002",
       "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.003001",
-      "Dist::Zilla::Plugin::Prereqs::Upgrade" : "0.001000",
       "Dist::Zilla::Plugin::Readme::Brief" : "0.002002",
       "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
       "Dist::Zilla::Plugin::RemovePhasedPrereqs" : "0.002",

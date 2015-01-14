@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "recommends" : {
-            "ExtUtils::MakeMaker" : "7.00"
+            "ExtUtils::MakeMaker" : "7.05_07"
          },
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
@@ -26,7 +26,7 @@
       },
       "develop" : {
          "recommends" : {
-            "Test::More" : "0.99"
+            "Test::More" : "1.301001_097"
          },
          "requires" : {
             "Dist::Zilla" : "5",
@@ -65,7 +65,6 @@
             "Dist::Zilla::Plugin::Prereqs" : "0",
             "Dist::Zilla::Plugin::Prereqs::AuthorDeps" : "0",
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0",
-            "Dist::Zilla::Plugin::Prereqs::Upgrade" : "0",
             "Dist::Zilla::Plugin::Readme::Brief" : "0",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0",
             "Dist::Zilla::Plugin::RemovePhasedPrereqs" : "0",
@@ -179,7 +178,6 @@
             "Dist::Zilla::Plugin::Prereqs" : "0",
             "Dist::Zilla::Plugin::Prereqs::AuthorDeps" : "0",
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0",
-            "Dist::Zilla::Plugin::Prereqs::Upgrade" : "0",
             "Dist::Zilla::Plugin::Readme::Brief" : "0",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0",
             "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0",
@@ -216,8 +214,8 @@
       "test" : {
          "recommends" : {
             "CPAN::Meta" : "2.120900",
-            "ExtUtils::MakeMaker" : "7.00",
-            "Test::More" : "0.99"
+            "ExtUtils::MakeMaker" : "7.05_07",
+            "Test::More" : "1.301001_097"
          },
          "requires" : {
             "Capture::Tiny" : "0",
@@ -858,17 +856,33 @@
             "version" : "0.026"
          },
          {
-            "class" : "Dist::Zilla::Plugin::Prereqs::Upgrade",
+            "class" : "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled",
             "config" : {
-               "Dist::Zilla::Plugin::Prereqs::Upgrade" : {
-                  "modules" : {
-                     "ExtUtils::MakeMaker" : "7.00",
-                     "Test::More" : "0.99"
-                  }
+               "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : {
+                  "applyto_map" : [
+                     "build.requires = build.recommends",
+                     "test.requires = test.recommends",
+                     "runtime.requires = runtime.recommends",
+                     "configure.requires = configure.recommends",
+                     "develop.requires = develop.recommends"
+                  ],
+                  "applyto_phase" : [
+                     "build",
+                     "test",
+                     "runtime",
+                     "configure",
+                     "develop"
+                  ],
+                  "modules" : [
+                     "ExtUtils::MakeMaker",
+                     "Test::More"
+                  ],
+                  "source_relation" : "requires",
+                  "target_relation" : "recommends"
                }
             },
-            "name" : "@Author::KENTNL/Prereqs::Upgrade",
-            "version" : "0.001000"
+            "name" : "@Author::KENTNL/Prereqs::Recommend::MatchInstalled",
+            "version" : "0.003001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled",

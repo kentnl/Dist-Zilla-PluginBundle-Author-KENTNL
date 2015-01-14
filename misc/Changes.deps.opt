@@ -2,29 +2,30 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
 
 2.023002
  [Added / runtime recommends]
- - Dist::Zilla::Plugin::Bootstrap::lib 1.001000
- - Dist::Zilla::Plugin::PerlTidy 0.19
- - Dist::Zilla::Util::EmulatePhase 1.001001
- - IO::Socket::SSL 2.009
- - LWP::Protocol::https 6.06
- - Moose 2.1403
- - MooseX::Has::Sugar 1.000004
- - MooseX::Types 0.45
- - Net::SSLeay 1.66
- - Perl::PrereqScanner 1.022
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002
+ - Dist::Zilla::Plugin::PerlTidy 0.14
+ - Dist::Zilla::Util::EmulatePhase 0.01025803
+ - IO::Socket::SSL 1.962
+ - LWP::Protocol::https 6.04
+ - Moose 2.1201
+ - MooseX::Has::Sugar 1.000000
+ - MooseX::Types 0.41
+ - Net::SSLeay 1.57
+ - Perl::PrereqScanner 1.019
  - Pod::Coverage::TrustPod 0.100003
- - Pod::Elemental::PerlMunger 0.200002
- - Test::CPAN::Meta 0.24
+ - Pod::Elemental::PerlMunger 0.200001
+ - Test::CPAN::Meta 0.23
  - Test::EOL 1.5
  - Test::Perl::Critic 1.02
  - Test::Pod 1.48
- - Test::Pod::Coverage 1.10
- - namespace::autoclean 0.23
+ - Test::Pod::Coverage 1.08
+ - namespace::autoclean 0.15
 
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 7.05_07 → 7.00
 
  [Changed / test recommends]
+ - CPAN::Meta 2.143240 → 2.120900
  - ExtUtils::MakeMaker 7.05_07 → 7.00
  - Test::More 1.301001_097 → 0.99
 
