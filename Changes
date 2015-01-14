@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.023002 2015-01-14T07:25:10Z 23e5e08
+2.023002 2015-01-14T07:26:23Z cdffce2
  [Dependencies::Stats]
  - Dependencies changed since 2.023001, see misc/*.deps* for details
  - configure: (recommends: ↓1)
@@ -11,7 +11,7 @@
  [Features]
  - Use a less aggressive technique for recommending newer EUMM/TB to be slightly more stable and do 99% of what I mean
    without so much commit churn.
- - Selected packages auto-recommend selected versions as implied upgrade ( much more preceise and less	   automatic
+ - Selected packages auto-recommend selected versions as implied upgrade ( much more preceise and less	      automatic
    than all my random 'MatchInstalled' rubbish
 
  [Packaging]
