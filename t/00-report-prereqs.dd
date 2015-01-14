@@ -1,8 +1,7 @@
 do { my $x = {
        'configure' => {
                         'recommends' => {
-                                          'ExtUtils::MakeMaker' => '7.00',
-                                          'File::ShareDir::Install' => '0.10'
+                                          'ExtUtils::MakeMaker' => '7.00'
                                         },
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '0',
@@ -77,7 +76,8 @@ do { my $x = {
                                       'Test::Pod::Coverage' => '1.08'
                                     },
                       'suggests' => {
-                                      'Dist::Zilla::App::Command::bakeini' => '0.002000'
+                                      'Dist::Zilla::App::Command::bakeini' => '0.002000',
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.023002'
                                     }
                     },
        'runtime' => {

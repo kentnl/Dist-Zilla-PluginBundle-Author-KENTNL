@@ -16,8 +16,7 @@
    "prereqs" : {
       "configure" : {
          "recommends" : {
-            "ExtUtils::MakeMaker" : "7.00",
-            "File::ShareDir::Install" : "0.10"
+            "ExtUtils::MakeMaker" : "7.00"
          },
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
@@ -92,7 +91,8 @@
             "Test::Pod::Coverage" : "1.08"
          },
          "suggests" : {
-            "Dist::Zilla::App::Command::bakeini" : "0.002000"
+            "Dist::Zilla::App::Command::bakeini" : "0.002000",
+            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.023002"
          }
       },
       "runtime" : {
@@ -297,6 +297,97 @@
             },
             "name" : "Bootstrap::lib",
             "version" : "1.001000"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "requires"
+               }
+            },
+            "name" : "Prereqs",
+            "version" : "5.031"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "configure",
+                  "type" : "requires"
+               }
+            },
+            "name" : "config_reqs",
+            "version" : "5.031"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "recommends"
+               }
+            },
+            "name" : "softdeps",
+            "version" : "5.031"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::ModuleShareDirs",
+            "name" : "ModuleShareDirs",
+            "version" : "5.031"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::RemovePhasedPrereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::RemovePhasedPrereqs" : {
+                  "remove_build" : [],
+                  "remove_configure" : [],
+                  "remove_develop" : [
+                     "Dist::Zilla::PluginBundle::Author::KENTNL",
+                     "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
+                  ],
+                  "remove_runtime" : [
+                     "Dist::Zilla::PluginBundle::Author::KENTNL",
+                     "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
+                  ],
+                  "remove_test" : []
+               }
+            },
+            "name" : "RemovePhasedPrereqs",
+            "version" : "0.002"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "recommends"
+               }
+            },
+            "name" : "criticspreqs",
+            "version" : "5.031"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "recommends"
+               }
+            },
+            "name" : "conditionalpreqs",
+            "version" : "5.031"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "test",
+                  "type" : "requires"
+               }
+            },
+            "name" : "testreqs",
+            "version" : "5.031"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
@@ -907,97 +998,6 @@
                }
             },
             "name" : "@Author::KENTNL/::Role::BundleDeps",
-            "version" : "5.031"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "runtime",
-                  "type" : "requires"
-               }
-            },
-            "name" : "Prereqs",
-            "version" : "5.031"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "configure",
-                  "type" : "requires"
-               }
-            },
-            "name" : "config_reqs",
-            "version" : "5.031"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "runtime",
-                  "type" : "recommends"
-               }
-            },
-            "name" : "softdeps",
-            "version" : "5.031"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::ModuleShareDirs",
-            "name" : "ModuleShareDirs",
-            "version" : "5.031"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::RemovePhasedPrereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::RemovePhasedPrereqs" : {
-                  "remove_build" : [],
-                  "remove_configure" : [],
-                  "remove_develop" : [
-                     "Dist::Zilla::PluginBundle::Author::KENTNL",
-                     "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
-                  ],
-                  "remove_runtime" : [
-                     "Dist::Zilla::PluginBundle::Author::KENTNL",
-                     "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
-                  ],
-                  "remove_test" : []
-               }
-            },
-            "name" : "RemovePhasedPrereqs",
-            "version" : "0.002"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "runtime",
-                  "type" : "recommends"
-               }
-            },
-            "name" : "criticspreqs",
-            "version" : "5.031"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "runtime",
-                  "type" : "recommends"
-               }
-            },
-            "name" : "conditionalpreqs",
-            "version" : "5.031"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "test",
-                  "type" : "requires"
-               }
-            },
-            "name" : "testreqs",
             "version" : "5.031"
          },
          {
