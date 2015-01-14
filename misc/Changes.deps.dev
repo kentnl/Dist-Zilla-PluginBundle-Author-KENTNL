@@ -1,6 +1,11 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 2.023002
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Prereqs::Upgrade 0.001000
+
+ [Changed / develop recommends]
+ - Test::More 1.301001_097 → 0.99
 
 2.023001 2015-01-13T12:12:42Z
  [Changed / develop requires]

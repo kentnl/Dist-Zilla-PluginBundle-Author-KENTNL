@@ -58,34 +58,34 @@ remove_runtime = Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
 remove_develop = Dist::Zilla::PluginBundle::Author::KENTNL
 remove_develop = Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
 
-[Prereqs::MatchInstalled::All]
-; Locally patched
-exclude = Dist::Zilla::Plugin::Authority
-; Core/Dual Life
-exclude = blib
-exclude = lib
-exclude = strict
-exclude = warnings
-exclude = FindBin
-exclude = Carp
-exclude = IO::Handle
-exclude = IPC::Open3
-exclude = File::Spec
-exclude = File::Spec::Functions
-exclude = Cwd
-exclude = utf8
-exclude = ExtUtils::MakeMaker
-exclude = Module::Build
-exclude = Module::Build::Tiny
-exclude = Test::More
-
-; Provided by this dist
-; so any version is OK!
-exclude = Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
-exclude = Dist::Zilla::PluginBundle::Author::KENTNL
-; Dev local
-; exclude = Moose
-; exclude = Moose::Util::TypeConstraints
+;[Prereqs::MatchInstalled::All]
+;; Locally patched
+;exclude = Dist::Zilla::Plugin::Authority
+;; Core/Dual Life
+;exclude = blib
+;exclude = lib
+;exclude = strict
+;exclude = warnings
+;exclude = FindBin
+;exclude = Carp
+;exclude = IO::Handle
+;exclude = IPC::Open3
+;exclude = File::Spec
+;exclude = File::Spec::Functions
+;exclude = Cwd
+;exclude = utf8
+;exclude = ExtUtils::MakeMaker
+;exclude = Module::Build
+;exclude = Module::Build::Tiny
+;exclude = Test::More
+;
+;; Provided by this dist
+;; so any version is OK!
+;exclude = Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
+;exclude = Dist::Zilla::PluginBundle::Author::KENTNL
+;; Dev local
+;; exclude = Moose
+;; exclude = Moose::Util::TypeConstraints
 
 [Prereqs / criticspreqs]
 -phase = runtime
