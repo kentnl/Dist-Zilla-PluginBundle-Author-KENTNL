@@ -32,6 +32,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Added / test recommends]
  - Path::Tiny 0.58
+ - Test::File::ShareDir 1.000000
 
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 7.05_07 → 7.00
