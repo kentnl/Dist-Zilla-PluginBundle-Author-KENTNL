@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.023001';
+our $VERSION = '2.023002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -501,25 +501,32 @@ tc_select: {
 sub _configure_toolkit_prereqs {
   my ($self) = @_;
 
-  my @extra_match_installed = qw( Test::More );
-  unshift @extra_match_installed, 'Module::Build'       if 'mb' eq $self->toolkit;
-  unshift @extra_match_installed, 'Module::Build::Tiny' if 'mbtiny' eq $self->toolkit;
-  unshift @extra_match_installed, 'ExtUtils::MakeMaker' if 'eumm' eq $self->toolkit;
+  my $extra_match_installed = { 'Test::More' => '0.99', };
+
+  $extra_match_installed->{'Module::Build'}       = '0.4004' if 'mb' eq $self->toolkit;
+  $extra_match_installed->{'Module::Build::Tiny'} = '0.032'  if 'mbtiny' eq $self->toolkit;
+  $extra_match_installed->{'ExtUtils::MakeMaker'} = '7.00'   if 'eumm' eq $self->toolkit;
 
   if ( 'hard' eq $self->toolkit_hardness ) {
     $self->add_plugin(
       'Prereqs::MatchInstalled' => {
-        modules => \@extra_match_installed,
+        modules => [ sort keys %{$extra_match_installed} ],
       },
     );
   }
-  if ( 'soft' eq $self->toolkit_hardness ) {
-    $self->add_plugin(
-      'Prereqs::Recommend::MatchInstalled' => {
-        modules => \@extra_match_installed,
-      },
-    );
-  }
+
+  $self->add_plugin(
+    'Prereqs::Upgrade' => {
+      %{$extra_match_installed},
+      'Moose'                                     => '2.000',       # Module::Runtime crap
+      'Moo'                                       => '1.000008',    # lazy_build => sub
+      'Path::Tiny'                                => '0.058',       # ->sibling
+      'File::ShareDir::Install'                   => '0.10',        # dotfiles
+      'Dist::Zilla'                               => '5',           # encoding
+      'Test::File::ShareDir'                      => '1.000000',    # 5.8 version compat
+      'Dist::Zila::Plugin::MetaProvides::Package' => '2.000000',    # sane version
+    },
+  );
 
   my $applymap = [ 'develop.requires = develop.requires', ];
 
@@ -701,7 +708,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.023001
+version 2.023002
 
 =head1 SYNOPSIS
 

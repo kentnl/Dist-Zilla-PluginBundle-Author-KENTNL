@@ -11,23 +11,17 @@ main_module = lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
 [Bootstrap::lib]
 try_built = 1
 
-[@Author::KENTNL]
-twitter_extra_hash_tags = #distzilla
-normal_form       = numify
-mantissa          = 6
-bundledeps_phase  = runtime
-toolkit           = eumm
-toolkit_hardness  = soft
-bumpversions      = 1
-copyfiles         = LICENSE
-srcreadme         = mkdn
-Author::KENTNL::TravisCI.skip_perls = 5.8
-
-[ModuleShareDirs]
-Dist::Zilla::MintingProfile::Author::KENTNL = share/profiles
-
 [Prereqs]
 Dist::Zilla = 5.011
+
+[Prereqs / config_reqs]
+-phase = configure
+-relationship = requires
+File::ShareDir::Install = 0.10 ; dotfiles bug
+
+[Prereqs/softdeps]
+-phase = runtime
+-type = recommends
 Dist::Zilla::Plugin::Bootstrap::lib = 0.04000002
 Dist::Zilla::Plugin::PerlTidy = 0.14
 Dist::Zilla::Util::EmulatePhase = 0.01025803
@@ -47,40 +41,15 @@ Test::EOL               = 1.5
 namespace::autoclean    = 0.15
 Test::Perl::Critic      = 1.02
 
+
+[ModuleShareDirs]
+Dist::Zilla::MintingProfile::Author::KENTNL = share/profiles
+
 [RemovePhasedPrereqs]
 remove_runtime = Dist::Zilla::PluginBundle::Author::KENTNL
 remove_runtime = Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
 remove_develop = Dist::Zilla::PluginBundle::Author::KENTNL
 remove_develop = Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
-
-[Prereqs::MatchInstalled::All]
-; Locally patched
-exclude = Dist::Zilla::Plugin::Authority
-; Core/Dual Life
-exclude = blib
-exclude = lib
-exclude = strict
-exclude = warnings
-exclude = FindBin
-exclude = Carp
-exclude = IO::Handle
-exclude = IPC::Open3
-exclude = File::Spec
-exclude = File::Spec::Functions
-exclude = Cwd
-exclude = utf8
-exclude = ExtUtils::MakeMaker
-exclude = Module::Build
-exclude = Module::Build::Tiny
-exclude = Test::More
-
-; Provided by this dist
-; so any version is OK!
-exclude = Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
-exclude = Dist::Zilla::PluginBundle::Author::KENTNL
-; Dev local
-; exclude = Moose
-; exclude = Moose::Util::TypeConstraints
 
 [Prereqs / criticspreqs]
 -phase = runtime
@@ -131,6 +100,18 @@ Dist::Zilla::Plugin::ModuleBuild                 = 0
 Dist::Zilla::Plugin::Git::NextVersion::Sanitized = 0
 Module::Build                                    = 0
 Dist::Zilla::Plugin::Author::KENTNL::TravisCI    = 0
+
+[@Author::KENTNL]
+twitter_extra_hash_tags = #distzilla
+normal_form       = numify
+mantissa          = 6
+bundledeps_phase  = runtime
+toolkit           = eumm
+toolkit_hardness  = soft
+bumpversions      = 1
+copyfiles         = LICENSE
+srcreadme         = mkdn
+Author::KENTNL::TravisCI.skip_perls = 5.8
 
 ;[Prereqs::SyncVersions]
 [CheckPrereqsIndexed]
