@@ -30,9 +30,6 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 7.05_07 → 7.00
 
- [Changed / configure requires]
- - File::ShareDir::Install 0.10 → 0.06
-
  [Changed / develop recommends]
  - Test::More 1.301001_097 → 0.99
 

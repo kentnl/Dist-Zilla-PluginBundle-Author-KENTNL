@@ -4,9 +4,6 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Prereqs::Upgrade
 
- [Changed / configure requires]
- - File::ShareDir::Install 0.10 → 0.06
-
  [Changed / runtime requires]
  - Dist::Zilla 5.031 → 5.011
  - Dist::Zilla::File::FromCode 5.031 → 0
