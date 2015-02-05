@@ -57,6 +57,7 @@ recommends:
   CPAN::Meta::Prereqs::Diff: '0'
   Cpanel::JSON::XS: '0'
   Data::Serializer::Sereal: '0'
+  Dist::Zilla::Plugin::Author::KENTNL::TravisCI: '0.001001'
   Dist::Zilla::Plugin::Bootstrap::lib: '0.04000002'
   Dist::Zilla::Plugin::Git::NextVersion::Sanitized: '0'
   Dist::Zilla::Plugin::MakeMaker: '0'
