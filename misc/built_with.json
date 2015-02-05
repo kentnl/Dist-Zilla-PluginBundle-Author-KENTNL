@@ -1,6 +1,5 @@
 {
    "failures" : {
-      "Net::GitHub" : "module was not found in INC",
       "Perl::Critic::StricterSubs" : "module was not found in INC"
    },
    "modules" : {
@@ -99,6 +98,7 @@
       "Moose::Util::TypeConstraints" : "2.1403",
       "MooseX::Has::Sugar" : "1.000004",
       "MooseX::Types" : "0.45",
+      "Net::GitHub" : "0.71",
       "Net::SSLeay" : "1.68",
       "Path::Class::Dir" : "0.35",
       "Path::Tiny" : "0.061",
