@@ -1,5 +1,14 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.023003 2015-02-05T10:55:56Z 66ca3cb
+ [Bugfix]
+ - Ensure quoted YAML via Travis stack upgrades.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.023002, see misc/*.deps* for details
+ - develop: ↑1 (suggests: ↑1)
+ - runtime: (recommends: +1)
+
 2.023002 2015-01-14T07:26:23Z cdffce2
  [Dependencies::Stats]
  - Dependencies changed since 2.023001, see misc/*.deps* for details
@@ -11,8 +20,8 @@
  [Features]
  - Use a less aggressive technique for recommending newer EUMM/TB to be slightly more stable and do 99% of what I mean
    without so much commit churn.
- - Selected packages auto-recommend selected versions as implied upgrade ( much more preceise and less	      automatic
-   than all my random 'MatchInstalled' rubbish
+ - Selected packages auto-recommend selected versions as implied upgrade ( much more preceise and less automatic than
+   all my random 'MatchInstalled' rubbish
 
  [Packaging]
  - Moved a boatload of hard required deps that were really mostly recommendations to where they belong.
