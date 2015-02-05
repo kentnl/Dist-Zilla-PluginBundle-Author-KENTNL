@@ -1,9 +1,13 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.023003 2015-02-05T10:51:45Z 093137d
+2.023003 2015-02-05T10:55:56Z 66ca3cb
+ [Bugfix]
+ - Ensure quoted YAML via Travis stack upgrades.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.023002, see misc/*.deps* for details
  - develop: ↑1 (suggests: ↑1)
+ - runtime: (recommends: +1)
 
 2.023002 2015-01-14T07:26:23Z cdffce2
  [Dependencies::Stats]
