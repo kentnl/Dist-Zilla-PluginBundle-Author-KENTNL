@@ -172,14 +172,13 @@ x_BuiltWith:
   external_file: misc/built_with.json
 x_Dist_Zilla:
   perl:
-    version: '5.021006'
+    version: '5.021008'
   plugins:
     -
       class: Dist::Zilla::Plugin::Bootstrap::lib
       config:
         Dist::Zilla::Role::Bootstrap:
           distname: Dist-Zilla-PluginBundle-Author-KENTNL
-          fallback: '1'
           try_built: '1'
           try_built_method: mtime
       name: Bootstrap::lib
@@ -273,7 +272,7 @@ x_Dist_Zilla:
           inherit_version: '1'
           meta_noindex: '1'
       name: '@Author::KENTNL/MetaProvides::Package'
-      version: '2.003000'
+      version: '2.003001'
     -
       class: Dist::Zilla::Plugin::MetaData::BuiltWith
       config:
@@ -302,7 +301,7 @@ x_Dist_Zilla:
           order_by: name
           paths: []
       name: '@Author::KENTNL/Git::Contributors'
-      version: '0.008'
+      version: '0.009'
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       config:
@@ -343,11 +342,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::TravisCI
       name: '@Author::KENTNL/Author::KENTNL::TravisCI'
-      version: '0.001000'
+      version: '0.001001'
     -
       class: Dist::Zilla::Plugin::CopyFilesFromBuild
       name: '@Author::KENTNL/CopyXBuild'
-      version: '0.103510'
+      version: '0.150250'
     -
       class: Dist::Zilla::Plugin::MetaTests
       name: '@Author::KENTNL/MetaTests'
@@ -363,7 +362,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::ReportPrereqs
       name: '@Author::KENTNL/Test::ReportPrereqs'
-      version: '0.019'
+      version: '0.020'
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       config:
@@ -377,12 +376,17 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Test::EOL:
           filename: xt/author/eol.t
+          finder:
+            - ':InstallModules'
+            - ':ExecFiles'
+            - ':TestFiles'
+          trailing_whitespace: '1'
       name: '@Author::KENTNL/Test::EOL'
-      version: '0.16'
+      version: '0.17'
     -
       class: Dist::Zilla::Plugin::Test::MinimumVersion
       name: '@Author::KENTNL/Test::MinimumVersion'
-      version: '2.000005'
+      version: '2.000006'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: '@Author::KENTNL/Test::Compile::PerFile/AUTOVIV/:InstallModulesPM'
@@ -406,7 +410,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Perl::Critic
       name: '@Author::KENTNL/Test::Perl::Critic'
-      version: '2.112410'
+      version: '3.000'
     -
       class: Dist::Zilla::Plugin::ManifestSkip
       name: '@Author::KENTNL/ManifestSkip'
@@ -418,7 +422,7 @@ x_Dist_Zilla:
           mantissa: '6'
           normal_form: numify
       name: '@Author::KENTNL/RewriteVersion::Sanitized'
-      version: '0.001004'
+      version: '0.001005'
     -
       class: Dist::Zilla::Plugin::PodWeaver
       config:
@@ -555,11 +559,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::ReadmeAnyFromPod
       name: '@Author::KENTNL/ReadmeAnyFromPod'
-      version: '0.142470'
+      version: '0.150250'
     -
       class: Dist::Zilla::Plugin::Test::CPAN::Changes
       name: '@Author::KENTNL/Test::CPAN::Changes'
-      version: '0.008'
+      version: '0.009'
     -
       class: Dist::Zilla::Plugin::RunExtraTests
       config:
@@ -628,7 +632,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::BumpVersionAfterRelease
       name: '@Author::KENTNL/BumpVersionAfterRelease'
-      version: '0.008'
+      version: '0.009'
     -
       class: Dist::Zilla::Plugin::Git::Commit
       config:
@@ -725,7 +729,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::CheckPrereqsIndexed
       name: CheckPrereqsIndexed
-      version: '0.013'
+      version: '0.015'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
