@@ -1,7 +1,4 @@
 {
-   "failures" : {
-      "Perl::Critic::StricterSubs" : "module was not found in INC"
-   },
    "modules" : {
       "CHI" : "0.59",
       "CHI::Driver::LMDB" : "0.002003",
@@ -110,6 +107,7 @@
       "Perl::Critic::More" : "1.003",
       "Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter" : "0.003",
       "Perl::Critic::Pulp" : "89",
+      "Perl::Critic::StricterSubs" : "0.03",
       "Perl::Critic::Swift" : "v1.0.3",
       "Perl::Critic::Tics" : "0.009",
       "Perl::PrereqScanner" : "1.022",
