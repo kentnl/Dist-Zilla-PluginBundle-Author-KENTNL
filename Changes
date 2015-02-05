@@ -1,9 +1,13 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugfix]
+ - Ensure quoted YAML via Travis stack upgrades.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.023002, see misc/*.deps* for details
  - develop: ↑1 (suggests: ↑1)
+ - runtime: (recommends: +1)
 
 2.023002 2015-01-14T07:26:23Z cdffce2
  [Dependencies::Stats]
