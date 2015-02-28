@@ -116,3 +116,4 @@ Author::KENTNL::TravisCI.skip_perls = 5.8
 
 ;[Prereqs::SyncVersions]
 [CheckPrereqsIndexed]
+skips = Dist::Zilla::PluginBundle::Author::KENTNL
