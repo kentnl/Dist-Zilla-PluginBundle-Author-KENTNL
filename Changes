@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.024000 2015-02-28T16:00:12Z 27ed8b8
+2.024000 2015-02-28T16:04:22Z 92ddc76
  [Compatibility Breaking Changes]
  - CommitBuild now builds to 'builds' regardless what branch you're on. This is mostly to negate hassle  involved with
    working on multiple branches blocking activity due to 'dzil build' doing the wrong thing and creating new, disjoint
