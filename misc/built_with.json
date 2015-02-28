@@ -19,7 +19,6 @@
       "Dist::Zilla::Plugin::AutoPrereqs" : "5.032",
       "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
       "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.009",
-      "Dist::Zilla::Plugin::CheckPrereqsIndexed" : "0.015",
       "Dist::Zilla::Plugin::ConfirmRelease" : "5.032",
       "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.150250",
       "Dist::Zilla::Plugin::Git::Check" : "2.029",
