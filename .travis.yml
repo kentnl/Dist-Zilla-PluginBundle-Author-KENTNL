@@ -13,7 +13,7 @@ before_script:
 branches:
   only:
     - master
-    - build/master
+    - builds
     - releases
 install:
   - time perl ./maint-travis-ci/install_deps_early.pl

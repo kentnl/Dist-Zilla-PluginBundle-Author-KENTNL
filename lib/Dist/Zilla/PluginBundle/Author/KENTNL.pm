@@ -640,7 +640,7 @@ sub configure {
     },
   );
 
-  $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );
+  $self->add_plugin( 'Git::CommitBuild' => { branch => 'builds', release_branch => 'releases' } );
   $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin(
