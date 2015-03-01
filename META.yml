@@ -343,7 +343,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::TravisCI
       name: '@Author::KENTNL/Author::KENTNL::TravisCI'
-      version: '0.001001'
+      version: '0.001002'
     -
       class: Dist::Zilla::Plugin::CopyFilesFromBuild
       name: '@Author::KENTNL/CopyXBuild'
@@ -552,7 +552,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes
       name: '@Author::KENTNL/Author::KENTNL::RecommendFixes'
-      version: '0.004001'
+      version: '0.004002'
     -
       class: Dist::Zilla::Plugin::Readme::Brief
       name: '@Author::KENTNL/ShippedReadme'
