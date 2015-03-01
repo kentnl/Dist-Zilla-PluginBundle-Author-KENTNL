@@ -3,6 +3,10 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 2.024001
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001 → 0.004002
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0 → 0.001002
+
+ [Changed / test requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0 → 0.001002
 
 2.024000 2015-02-28T17:36:05Z
 
