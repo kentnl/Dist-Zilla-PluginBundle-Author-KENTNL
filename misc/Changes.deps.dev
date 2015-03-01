@@ -1,6 +1,9 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 2.024001
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::CheckPrereqsIndexed
+
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001 → 0.004002
  - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0 → 0.001002

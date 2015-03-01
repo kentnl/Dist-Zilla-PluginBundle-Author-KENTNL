@@ -1,9 +1,12 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.024001 2015-03-01T10:33:35Z 46f290d
+2.024001 2015-03-01T10:38:03Z 57fafd2
+ [Bugfix]
+ - Closing the loop with inherently co-depedendent changes.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.024000, see misc/*.deps* for details
- - develop: ↑2 (suggests: ↑1)
+ - develop: +1 ↑2 (suggests: ↑1)
  - runtime: ↑2
  - test: ↑1
 
