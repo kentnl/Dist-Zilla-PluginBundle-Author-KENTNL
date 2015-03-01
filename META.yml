@@ -100,7 +100,7 @@ requires:
   Carp: '0'
   Dist::Zilla: '5.011'
   Dist::Zilla::File::FromCode: '0'
-  Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.001001'
+  Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.004002'
   Dist::Zilla::Plugin::Author::KENTNL::TravisCI: '0'
   Dist::Zilla::Plugin::Authority: '1.006'
   Dist::Zilla::Plugin::AutoPrereqs: '0'
@@ -727,6 +727,10 @@ x_Dist_Zilla:
           type: requires
       name: '@Author::KENTNL/::Role::BundleDeps'
       version: '5.032'
+    -
+      class: Dist::Zilla::Plugin::CheckPrereqsIndexed
+      name: CheckPrereqsIndexed
+      version: '0.015'
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
