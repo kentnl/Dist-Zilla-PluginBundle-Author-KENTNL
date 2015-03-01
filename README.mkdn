@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 # VERSION
 
-version 2.024001
+version 2.024002
 
 # SYNOPSIS
 
