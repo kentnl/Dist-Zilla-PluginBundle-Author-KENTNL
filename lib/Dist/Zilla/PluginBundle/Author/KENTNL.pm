@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.023003';
+our $VERSION = '2.024000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -640,7 +640,7 @@ sub configure {
     },
   );
 
-  $self->add_plugin( 'Git::CommitBuild' => { release_branch => 'releases' } );
+  $self->add_plugin( 'Git::CommitBuild' => { branch => 'builds', release_branch => 'releases' } );
   $self->add_named_plugin( 'tag_release', 'Git::Tag' => { branch => 'releases', tag_format => '%v' } );
   $self->add_plugin( 'UploadToCPAN' => {} );
   $self->add_plugin(
@@ -708,7 +708,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.023003
+version 2.024000
 
 =head1 SYNOPSIS
 

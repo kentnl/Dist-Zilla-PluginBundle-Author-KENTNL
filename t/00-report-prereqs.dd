@@ -21,7 +21,6 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '0',
                                       'Dist::Zilla::Plugin::Bootstrap::lib' => '0',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease' => '0',
-                                      'Dist::Zilla::Plugin::CheckPrereqsIndexed' => '0',
                                       'Dist::Zilla::Plugin::ConfirmRelease' => '0',
                                       'Dist::Zilla::Plugin::CopyFilesFromBuild' => '0',
                                       'Dist::Zilla::Plugin::Git::Check' => '0',
@@ -77,7 +76,7 @@ do { my $x = {
                                     },
                       'suggests' => {
                                       'Dist::Zilla::App::Command::bakeini' => '0.002000',
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.023003'
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.024000'
                                     }
                     },
        'runtime' => {

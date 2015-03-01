@@ -240,7 +240,13 @@ else {
   $build_master_version = next_version( $tags[-1] );
 }
 
-push @tags, 'build/master' if rev_sha('build/master');
+if ( rev_sha('builds') ) {
+  push @tags, 'builds';
+}
+elsif ( rev_sha('build/master') ) {
+  warn "build/master is legacy, plz git branch -m build/master builds";
+  push @tags, 'build/master';
+}
 
 my $standard_phases = ' (configure/build/runtime/test)';
 my $all_phases      = ' (configure/build/runtime/test/develop)';
@@ -286,16 +292,20 @@ while ( @tags > 1 ) {
     $date = $master_release->date();
   }
   else {
-    print "$new not on master Changelog\n";
-    if ( $new eq 'build/master' ) {
+    print "$new not on master Changelog";
+    if ( $new eq 'builds' or $new eq 'build/master' ) {
       $master_release = [ $master_changes->releases ]->[-1];
       print " ... using " . $master_release->version . " instead \n";
 
       #('{{$NEXT}}');
     }
+    else {
+      print "\n";
+    }
+
   }
   my $version = $new;
-  if ( $new eq 'build/master' ) {
+  if ( $new eq 'builds' or $new eq 'build/master' ) {
     $version = $build_master_version;
   }
   my $params = {
