@@ -494,7 +494,7 @@ tc_select: {
       last tc_select;
     }
   }
-  $self->add_plugin( 'Author::KENTNL::RecommendFixes' => { ':version' => '0.001001' } );
+  $self->add_plugin( 'Author::KENTNL::RecommendFixes' => { ':version' => '0.004002' } );
   return;
 }
 
