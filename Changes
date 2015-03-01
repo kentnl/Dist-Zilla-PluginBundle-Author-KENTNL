@@ -10,7 +10,7 @@
 
  [Dependencies::Stats]
  - Dependencies changed since 2.023003, see misc/*.deps* for details
- - develop: (suggests: ↑1)
+ - develop: -1 (suggests: ↑1)
 
 2.023003 2015-02-05T10:55:56Z 66ca3cb
  [Bugfix]
