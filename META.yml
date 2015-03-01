@@ -728,10 +728,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/::Role::BundleDeps'
       version: '5.032'
     -
-      class: Dist::Zilla::Plugin::CheckPrereqsIndexed
-      name: CheckPrereqsIndexed
-      version: '0.015'
-    -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
       version: '5.032'
