@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.024000';
+our $VERSION = '2.024001';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -409,7 +409,7 @@ sub _configure_basic_files {
   $self->add_plugin( 'MetaJSON'                 => {} );
   $self->add_plugin( 'MetaYAML'                 => {} );
   $self->add_plugin( 'Manifest'                 => {} );
-  $self->add_plugin( 'Author::KENTNL::TravisCI' => {} );
+  $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
 
   if ( @{ $self->copyfiles } ) {
     $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ @{ $self->copyfiles } ] } );
@@ -494,7 +494,7 @@ tc_select: {
       last tc_select;
     }
   }
-  $self->add_plugin( 'Author::KENTNL::RecommendFixes' => { ':version' => '0.001001' } );
+  $self->add_plugin( 'Author::KENTNL::RecommendFixes' => { ':version' => '0.004002' } );
   return;
 }
 
@@ -708,7 +708,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.024000
+version 2.024001
 
 =head1 SYNOPSIS
 

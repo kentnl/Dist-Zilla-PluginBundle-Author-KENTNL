@@ -15,12 +15,13 @@ do { my $x = {
                                       },
                       'requires' => {
                                       'Dist::Zilla' => '5',
-                                      'Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes' => '0.001001',
-                                      'Dist::Zilla::Plugin::Author::KENTNL::TravisCI' => '0',
+                                      'Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes' => '0.004002',
+                                      'Dist::Zilla::Plugin::Author::KENTNL::TravisCI' => '0.001002',
                                       'Dist::Zilla::Plugin::Authority' => '1.006',
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '0',
                                       'Dist::Zilla::Plugin::Bootstrap::lib' => '0',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease' => '0',
+                                      'Dist::Zilla::Plugin::CheckPrereqsIndexed' => '0',
                                       'Dist::Zilla::Plugin::ConfirmRelease' => '0',
                                       'Dist::Zilla::Plugin::CopyFilesFromBuild' => '0',
                                       'Dist::Zilla::Plugin::Git::Check' => '0',
@@ -76,7 +77,7 @@ do { my $x = {
                                     },
                       'suggests' => {
                                       'Dist::Zilla::App::Command::bakeini' => '0.002000',
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.024000'
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.024001'
                                     }
                     },
        'runtime' => {
@@ -133,8 +134,8 @@ do { my $x = {
                                       'Carp' => '0',
                                       'Dist::Zilla' => '5.011',
                                       'Dist::Zilla::File::FromCode' => '0',
-                                      'Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes' => '0.001001',
-                                      'Dist::Zilla::Plugin::Author::KENTNL::TravisCI' => '0',
+                                      'Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes' => '0.004002',
+                                      'Dist::Zilla::Plugin::Author::KENTNL::TravisCI' => '0.001002',
                                       'Dist::Zilla::Plugin::Authority' => '1.006',
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '0',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease' => '0',
@@ -209,7 +210,7 @@ do { my $x = {
                                    },
                    'requires' => {
                                    'Capture::Tiny' => '0',
-                                   'Dist::Zilla::Plugin::Author::KENTNL::TravisCI' => '0',
+                                   'Dist::Zilla::Plugin::Author::KENTNL::TravisCI' => '0.001002',
                                    'Dist::Zilla::Plugin::Git::NextVersion::Sanitized' => '0',
                                    'Dist::Zilla::Plugin::ModuleBuild' => '0',
                                    'Dist::Zilla::Plugin::Prereqs::MatchInstalled' => '0',
