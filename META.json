@@ -482,7 +482,7 @@
                }
             },
             "name" : "@Author::KENTNL/Git::GatherDir",
-            "version" : "2.029"
+            "version" : "2.030"
          },
          {
             "class" : "Dist::Zilla::Plugin::License",
@@ -832,7 +832,7 @@
                }
             },
             "name" : "@Author::KENTNL/Git::Check",
-            "version" : "2.029"
+            "version" : "2.030"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
@@ -855,7 +855,7 @@
                }
             },
             "name" : "@Author::KENTNL/commit_dirty_files",
-            "version" : "2.029"
+            "version" : "2.030"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
@@ -873,7 +873,7 @@
                }
             },
             "name" : "@Author::KENTNL/tag_master",
-            "version" : "2.029"
+            "version" : "2.030"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
@@ -908,7 +908,7 @@
                }
             },
             "name" : "@Author::KENTNL/commit_release_changes",
-            "version" : "2.029"
+            "version" : "2.030"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::CommitBuild",
@@ -926,7 +926,7 @@
                }
             },
             "name" : "@Author::KENTNL/Git::CommitBuild",
-            "version" : "2.029"
+            "version" : "2.030"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
@@ -944,7 +944,7 @@
                }
             },
             "name" : "@Author::KENTNL/tag_release",
-            "version" : "2.029"
+            "version" : "2.030"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
