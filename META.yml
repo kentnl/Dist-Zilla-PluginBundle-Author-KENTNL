@@ -213,20 +213,9 @@ x_Dist_Zilla:
       name: ModuleShareDirs
       version: '5.036'
     -
-      class: Dist::Zilla::Plugin::RemovePhasedPrereqs
-      config:
-        Dist::Zilla::Plugin::RemovePhasedPrereqs:
-          remove_build: []
-          remove_configure: []
-          remove_develop:
-            - Dist::Zilla::PluginBundle::Author::KENTNL
-            - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
-          remove_runtime:
-            - Dist::Zilla::PluginBundle::Author::KENTNL
-            - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
-          remove_test: []
-      name: RemovePhasedPrereqs
-      version: '0.002'
+      class: Dist::Zilla::Plugin::RemovePrereqs::Provided
+      name: RemovePrereqs::Provided
+      version: '0.001000'
     -
       class: Dist::Zilla::Plugin::Prereqs
       config:

@@ -68,7 +68,7 @@
             "Dist::Zilla::Plugin::Prereqs::Upgrade" : "0",
             "Dist::Zilla::Plugin::Readme::Brief" : "0",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0",
-            "Dist::Zilla::Plugin::RemovePhasedPrereqs" : "0",
+            "Dist::Zilla::Plugin::RemovePrereqs::Provided" : "0",
             "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0",
             "Dist::Zilla::Plugin::RunExtraTests" : "0",
             "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0",
@@ -338,24 +338,9 @@
             "version" : "5.036"
          },
          {
-            "class" : "Dist::Zilla::Plugin::RemovePhasedPrereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::RemovePhasedPrereqs" : {
-                  "remove_build" : [],
-                  "remove_configure" : [],
-                  "remove_develop" : [
-                     "Dist::Zilla::PluginBundle::Author::KENTNL",
-                     "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
-                  ],
-                  "remove_runtime" : [
-                     "Dist::Zilla::PluginBundle::Author::KENTNL",
-                     "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl"
-                  ],
-                  "remove_test" : []
-               }
-            },
-            "name" : "RemovePhasedPrereqs",
-            "version" : "0.002"
+            "class" : "Dist::Zilla::Plugin::RemovePrereqs::Provided",
+            "name" : "RemovePrereqs::Provided",
+            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
