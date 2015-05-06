@@ -1,9 +1,15 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.024002
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::RemovePrereqs::Provided
+
  [Changed / develop suggests]
  - Dist::Zilla::App::Command::bakeini 0.002000 → 0.002005
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.024001 → 2.024002
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::RemovePhasedPrereqs
 
 2.024001 2015-03-01T10:38:03Z
  [Added / develop requires]
