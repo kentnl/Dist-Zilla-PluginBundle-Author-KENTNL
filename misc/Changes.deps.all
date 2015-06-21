@@ -2,14 +2,22 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
 2.024002
  [Added / develop requires]
+ - Dist::Zilla::Plugin::MetaYAML::Minimal
  - Dist::Zilla::Plugin::RemovePrereqs::Provided
+
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::MetaYAML::Minimal
 
  [Changed / develop suggests]
  - Dist::Zilla::App::Command::bakeini 0.002000 → 0.002005
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.024001 → 2.024002
 
  [Removed / develop requires]
+ - Dist::Zilla::Plugin::MetaYAML
  - Dist::Zilla::Plugin::RemovePhasedPrereqs
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::MetaYAML
 
 2.024001 2015-03-01T10:38:03Z
  [Added / develop requires]
