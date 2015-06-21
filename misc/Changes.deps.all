@@ -2821,4 +2821,3 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 0.01001712 2010-06-02T20:54:05Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Twitter 0.007
-
