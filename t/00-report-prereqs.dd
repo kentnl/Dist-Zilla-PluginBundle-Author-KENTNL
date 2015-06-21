@@ -77,7 +77,7 @@ do { my $x = {
                                     },
                       'suggests' => {
                                       'Dist::Zilla::App::Command::bakeini' => '0.002005',
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.024002'
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.024003'
                                     }
                     },
        'runtime' => {

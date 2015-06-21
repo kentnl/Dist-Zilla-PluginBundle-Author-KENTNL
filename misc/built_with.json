@@ -69,7 +69,7 @@
       "Dist::Zilla::Plugin::TestRelease" : "5.037",
       "Dist::Zilla::Plugin::Twitter" : "0.026",
       "Dist::Zilla::Plugin::UploadToCPAN" : "5.037",
-      "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.024002",
+      "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.024003",
       "Dist::Zilla::Role::BundleDeps" : "0.002002",
       "Dist::Zilla::Role::FileGatherer" : "5.037",
       "Dist::Zilla::Role::MintingProfile::ShareDir" : "5.037",
