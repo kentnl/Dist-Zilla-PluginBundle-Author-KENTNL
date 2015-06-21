@@ -1,6 +1,11 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.024002
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::MetaYAML::Minimal
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::MetaYAML
 
 2.024001 2015-03-01T10:38:03Z
  [Changed / runtime requires]
