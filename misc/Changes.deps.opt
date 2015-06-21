@@ -7,114 +7,114 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
 2.024000 2015-02-28T17:36:05Z
 
 2.023003 2015-02-05T10:55:56Z
-  [ Added / runtime recommends ]
-    - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0.001001
+ [Added / runtime recommends]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0.001001
 
 2.023002 2015-01-14T07:26:23Z
-  [ Added / runtime recommends ]
-    - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002
-    - Dist::Zilla::Plugin::PerlTidy 0.14
-    - Dist::Zilla::Util::EmulatePhase 0.01025803
-    - IO::Socket::SSL 1.962
-    - LWP::Protocol::https 6.04
-    - Moose 2.1201
-    - MooseX::Has::Sugar 1.000000
-    - MooseX::Types 0.41
-    - Net::SSLeay 1.57
-    - Perl::PrereqScanner 1.019
-    - Pod::Coverage::TrustPod 0.100003
-    - Pod::Elemental::PerlMunger 0.200001
-    - Test::CPAN::Meta 0.23
-    - Test::EOL 1.5
-    - Test::Perl::Critic 1.02
-    - Test::Pod 1.48
-    - Test::Pod::Coverage 1.08
-    - namespace::autoclean 0.15
+ [Added / runtime recommends]
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.04000002
+ - Dist::Zilla::Plugin::PerlTidy 0.14
+ - Dist::Zilla::Util::EmulatePhase 0.01025803
+ - IO::Socket::SSL 1.962
+ - LWP::Protocol::https 6.04
+ - Moose 2.1201
+ - MooseX::Has::Sugar 1.000000
+ - MooseX::Types 0.41
+ - Net::SSLeay 1.57
+ - Perl::PrereqScanner 1.019
+ - Pod::Coverage::TrustPod 0.100003
+ - Pod::Elemental::PerlMunger 0.200001
+ - Test::CPAN::Meta 0.23
+ - Test::EOL 1.5
+ - Test::Perl::Critic 1.02
+ - Test::Pod 1.48
+ - Test::Pod::Coverage 1.08
+ - namespace::autoclean 0.15
 
-  [ Added / test recommends ]
-    - Path::Tiny 0.058
-    - Test::File::ShareDir 1.000000
+ [Added / test recommends]
+ - Path::Tiny 0.058
+ - Test::File::ShareDir 1.000000
 
-  [ Changed / configure recommends ]
-    - ExtUtils::MakeMaker 7.05_07 → 7.00
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 7.05_07 → 7.00
 
-  [ Changed / test recommends ]
-    - CPAN::Meta 2.143240 → 2.120900
-    - ExtUtils::MakeMaker 7.05_07 → 7.00
-    - Test::More 1.301001_097 → 0.99
+ [Changed / test recommends]
+ - CPAN::Meta 2.143240 → 2.120900
+ - ExtUtils::MakeMaker 7.05_07 → 7.00
+ - Test::More 1.301001_097 → 0.99
 
 2.023001 2015-01-13T12:12:42Z
-  [ Changed / configure recommends ]
-    - ExtUtils::MakeMaker 7.04 → 7.05_07
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 7.04 → 7.05_07
 
-  [ Changed / test recommends ]
-    - ExtUtils::MakeMaker 7.04 → 7.05_07
+ [Changed / test recommends]
+ - ExtUtils::MakeMaker 7.04 → 7.05_07
 
 2.023000 2015-01-13T08:13:40Z
-  [ Changed / test recommends ]
-    - Test::More 1.001014 → 1.301001_097
+ [Changed / test recommends]
+ - Test::More 1.001014 → 1.301001_097
 
 2.022005 2015-01-05T20:16:46Z
 
 2.022004 2015-01-02T03:00:30Z
 
 2.022003 2014-12-29T11:33:17Z
-  [ Changed / test recommends ]
-    - Test::More 1.001009 → 1.001014
+ [Changed / test recommends]
+ - Test::More 1.001009 → 1.001014
 
 2.022002 2014-12-14T09:15:08Z
 
 2.022001 2014-12-10T09:57:13Z
-  [ Changed / configure recommends ]
-    - ExtUtils::MakeMaker 7.00 → 7.04
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 7.00 → 7.04
 
-  [ Changed / test recommends ]
-    - CPAN::Meta 2.142690 → 2.143240
-    - ExtUtils::MakeMaker 7.00 → 7.04
-    - Test::More 1.001008 → 1.001009
+ [Changed / test recommends]
+ - CPAN::Meta 2.142690 → 2.143240
+ - ExtUtils::MakeMaker 7.00 → 7.04
+ - Test::More 1.001008 → 1.001009
 
 2.022000 2014-10-25T09:54:57Z
-  [ Changed / configure recommends ]
-    - ExtUtils::MakeMaker 6.98 → 7.00
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.98 → 7.00
 
-  [ Changed / test recommends ]
-    - ExtUtils::MakeMaker 6.98 → 7.00
-    - Test::More 1.001006 → 1.001008
+ [Changed / test recommends]
+ - ExtUtils::MakeMaker 6.98 → 7.00
+ - Test::More 1.001006 → 1.001008
 
 2.021000 2014-10-05T11:28:53Z
 
 2.020005 2014-10-03T07:04:22Z
 
 2.020004 2014-10-03T06:41:47Z
-  [ Added / runtime recommends ]
-    - CHI::Driver::LMDB
-    - LMDB_File
+ [Added / runtime recommends]
+ - CHI::Driver::LMDB
+ - LMDB_File
 
-  [ Changed / test recommends ]
-    - CPAN::Meta 2.142060 → 2.142690
+ [Changed / test recommends]
+ - CPAN::Meta 2.142060 → 2.142690
 
-  [ Removed / runtime recommends ]
-    - CHI::Driver::FastMmap
-    - Cache::FastMmap
+ [Removed / runtime recommends]
+ - CHI::Driver::FastMmap
+ - Cache::FastMmap
 
 2.020003 2014-09-23T14:54:27Z
 
 2.020002 2014-09-20T21:00:28Z
 
 2.020001 2014-09-06T03:22:12Z
-  [ Changed / test recommends ]
-    - Test::More 1.001003 → 1.001006
+ [Changed / test recommends]
+ - Test::More 1.001003 → 1.001006
 
 2.020000 2014-08-20T15:50:05Z
 
 2.019000 2014-08-18T03:48:49Z
-  [ Added / runtime recommends ]
-    - Cpanel::JSON::XS
-    - JSON::MaybeXS
+ [Added / runtime recommends]
+ - Cpanel::JSON::XS
+ - JSON::MaybeXS
 
-  [ Removed / runtime recommends ]
-    - JSON
-    - JSON::XS
+ [Removed / runtime recommends]
+ - JSON
+ - JSON::XS
 
 2.018000 2014-08-16T21:56:32Z
 
@@ -123,159 +123,159 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
 2.017001 2014-08-15T01:59:33Z
 
 2.017000 2014-08-11T20:48:43Z
-  [ Added / runtime recommends ]
-    - Data::Serializer::Sereal
+ [Added / runtime recommends]
+ - Data::Serializer::Sereal
 
 2.016008 2014-08-11T10:42:36Z
 
 2.016007 2014-08-01T12:30:36Z
-  [ Added / runtime recommends ]
-    - CPAN::Changes::Dependencies::Details 0.001000
+ [Added / runtime recommends]
+ - CPAN::Changes::Dependencies::Details 0.001000
 
-  [ Removed / runtime recommends ]
-    - CPAN::Changes::Group::Dependencies::Details 0.001001
+ [Removed / runtime recommends]
+ - CPAN::Changes::Group::Dependencies::Details 0.001001
 
 2.016006 2014-07-30T04:27:01Z
-  [ Removed / test recommends ]
-    - CPAN::Meta::Prereqs 2.142060
-    - CPAN::Meta::Requirements 2.125
+ [Removed / test recommends]
+ - CPAN::Meta::Prereqs 2.142060
+ - CPAN::Meta::Requirements 2.125
 
 2.016005 2014-07-27T06:49:27Z
-  [ Added / runtime recommends ]
-    - CHI
-    - CHI::Driver::FastMmap
-    - CPAN::Changes::Group::Dependencies::Details 0.001001
-    - Cache::FastMmap
+ [Added / runtime recommends]
+ - CHI
+ - CHI::Driver::FastMmap
+ - CPAN::Changes::Group::Dependencies::Details 0.001001
+ - Cache::FastMmap
 
-  [ Added / test recommends ]
-    - CPAN::Meta::Prereqs 2.142060
+ [Added / test recommends]
+ - CPAN::Meta::Prereqs 2.142060
 
-  [ Changed / runtime recommends ]
-    - CPAN::Changes::Group::Dependencies::Stats 0 → 0.002002
+ [Changed / runtime recommends]
+ - CPAN::Changes::Group::Dependencies::Stats 0 → 0.002002
 
-  [ Changed / test recommends ]
-    - CPAN::Meta 2.141520 → 2.142060
+ [Changed / test recommends]
+ - CPAN::Meta 2.141520 → 2.142060
 
 2.016004 2014-07-16T12:05:55Z
-  [ Added / runtime recommends ]
-    - CPAN::Changes::Group::Dependencies::Stats
+ [Added / runtime recommends]
+ - CPAN::Changes::Group::Dependencies::Stats
 
 2.016003 2014-07-15T09:01:30Z
 
 2.016002 2014-07-13T06:25:05Z
 
 2.016001 2014-06-21T08:22:53Z
-  [ Added / runtime recommends ]
-    - CPAN::Meta
-    - CPAN::Meta::Prereqs::Diff
-    - JSON
-    - JSON::XS
+ [Added / runtime recommends]
+ - CPAN::Meta
+ - CPAN::Meta::Prereqs::Diff
+ - JSON
+ - JSON::XS
 
-  [ Removed / runtime recommends ]
-    - Data::Difference
+ [Removed / runtime recommends]
+ - Data::Difference
 
 2.016000 2014-06-06T07:53:47Z
 
 2.015000 2014-06-03T05:21:36Z
 
 2.014001 2014-06-02T10:43:25Z
-  [ Changed / test recommends ]
-    - CPAN::Meta 2.141170 → 2.141520
+ [Changed / test recommends]
+ - CPAN::Meta 2.141170 → 2.141520
 
 2.014000 2014-05-31T22:25:17Z
 
 2.013005 2014-05-26T01:40:29Z
-  [ Added / runtime recommends ]
-    - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
+ [Added / runtime recommends]
+ - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
 
 2.013004 2014-05-17T15:32:46Z
-  [ Changed / configure recommends ]
-    - ExtUtils::MakeMaker 6.96 → 6.98
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.96 → 6.98
 
-  [ Changed / test recommends ]
-    - CPAN::Meta 2.140640 → 2.141170
-    - ExtUtils::MakeMaker 6.96 → 6.98
+ [Changed / test recommends]
+ - CPAN::Meta 2.140640 → 2.141170
+ - ExtUtils::MakeMaker 6.96 → 6.98
 
 2.013003 2014-04-13T03:33:11Z
 
 2.013002 2014-04-12T19:23:55Z
 
 2.013001 2014-04-12T10:22:38Z
-  [ Changed / configure recommends ]
-    - ExtUtils::MakeMaker 6.94 → 6.96
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.94 → 6.96
 
-  [ Changed / test recommends ]
-    - ExtUtils::MakeMaker 6.94 → 6.96
+ [Changed / test recommends]
+ - ExtUtils::MakeMaker 6.94 → 6.96
 
 2.013000 2014-04-11T03:02:57Z
 
 2.012002 2014-03-31T04:16:46Z
-  [ Changed / configure recommends ]
-    - ExtUtils::MakeMaker 6.92 → 6.94
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.92 → 6.94
 
-  [ Changed / test recommends ]
-    - ExtUtils::MakeMaker 6.92 → 6.94
-    - Test::More 1.001002 → 1.001003
+ [Changed / test recommends]
+ - ExtUtils::MakeMaker 6.92 → 6.94
+ - Test::More 1.001002 → 1.001003
 
 2.012001 2014-03-17T18:59:57Z
-  [ Changed / configure recommends ]
-    - ExtUtils::MakeMaker 6.86 → 6.92
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.86 → 6.92
 
-  [ Changed / test recommends ]
-    - CPAN::Meta 2.133380 → 2.140640
-    - ExtUtils::MakeMaker 6.86 → 6.92
+ [Changed / test recommends]
+ - CPAN::Meta 2.133380 → 2.140640
+ - ExtUtils::MakeMaker 6.86 → 6.92
 
 2.012000 2014-01-30T08:12:10Z
-  [ Added / configure recommends ]
-    - ExtUtils::MakeMaker 6.86
+ [Added / configure recommends]
+ - ExtUtils::MakeMaker 6.86
 
-  [ Added / test recommends ]
-    - ExtUtils::MakeMaker 6.86
+ [Added / test recommends]
+ - ExtUtils::MakeMaker 6.86
 
-  [ Removed / build recommends ]
-    - Module::Build 0.4204
+ [Removed / build recommends]
+ - Module::Build 0.4204
 
-  [ Removed / configure recommends ]
-    - Module::Build 0.4204
+ [Removed / configure recommends]
+ - Module::Build 0.4204
 
 2.011001 2014-01-30T05:38:14Z
 
 2.011000 2014-01-29T21:19:25Z
-  [ Added / build recommends ]
-    - Module::Build 0.4204
+ [Added / build recommends]
+ - Module::Build 0.4204
 
-  [ Added / configure recommends ]
-    - Module::Build 0.4204
+ [Added / configure recommends]
+ - Module::Build 0.4204
 
-  [ Added / runtime recommends ]
-    - Data::Difference
-    - Dist::Zilla::Plugin::MakeMaker
-    - Dist::Zilla::Plugin::ModuleBuild
-    - Dist::Zilla::Plugin::ModuleBuildTiny
-    - Dist::Zilla::Plugin::Prereqs::MatchInstalled
-    - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
-    - Net::GitHub
-    - Perl::Critic::Bangs
-    - Perl::Critic::Compatibility
-    - Perl::Critic::Deprecated
-    - Perl::Critic::Itch
-    - Perl::Critic::Lax
-    - Perl::Critic::More
-    - Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter
-    - Perl::Critic::Pulp
-    - Perl::Critic::StricterSubs
-    - Perl::Critic::Swift
-    - Perl::Critic::Tics
+ [Added / runtime recommends]
+ - Data::Difference
+ - Dist::Zilla::Plugin::MakeMaker
+ - Dist::Zilla::Plugin::ModuleBuild
+ - Dist::Zilla::Plugin::ModuleBuildTiny
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
+ - Net::GitHub
+ - Perl::Critic::Bangs
+ - Perl::Critic::Compatibility
+ - Perl::Critic::Deprecated
+ - Perl::Critic::Itch
+ - Perl::Critic::Lax
+ - Perl::Critic::More
+ - Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter
+ - Perl::Critic::Pulp
+ - Perl::Critic::StricterSubs
+ - Perl::Critic::Swift
+ - Perl::Critic::Tics
 
-  [ Added / test recommends ]
-    - Test::More 1.001002
+ [Added / test recommends]
+ - Test::More 1.001002
 
 2.010001 2014-01-22T03:16:45Z
 
 2.010000 2014-01-14T23:07:57Z
-  [ Added / test recommends ]
-    - CPAN::Meta 2.133380
-    - CPAN::Meta::Requirements 2.125
+ [Added / test recommends]
+ - CPAN::Meta 2.133380
+ - CPAN::Meta::Requirements 2.125
 
 2.009000 2014-01-13T07:42:49Z
 
@@ -378,12 +378,12 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
 1.0.18 2011-09-02T10:03:50Z
 
 1.0.17 2011-08-29T19:54:39Z
-  [ Removed / runtime suggests ]
-    - Dist::Zilla::Plugin::Test::Compile 1.112393
+ [Removed / runtime suggests]
+ - Dist::Zilla::Plugin::Test::Compile 1.112393
 
 1.0.16 2011-08-28T07:59:59Z
-  [ Added / runtime suggests ]
-    - Dist::Zilla::Plugin::Test::Compile 1.112393
+ [Added / runtime suggests]
+ - Dist::Zilla::Plugin::Test::Compile 1.112393
 
 1.0.15 2011-08-23T21:48:10Z
 
