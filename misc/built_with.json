@@ -40,7 +40,7 @@
       "Dist::Zilla::Plugin::MetaJSON" : "5.037",
       "Dist::Zilla::Plugin::MetaProvides::Package" : "2.003001",
       "Dist::Zilla::Plugin::MetaTests" : "5.037",
-      "Dist::Zilla::Plugin::MetaYAML" : "5.037",
+      "Dist::Zilla::Plugin::MetaYAML::Minimal" : "0.001000",
       "Dist::Zilla::Plugin::MinimumPerl" : "1.006",
       "Dist::Zilla::Plugin::ModuleBuild" : "5.037",
       "Dist::Zilla::Plugin::ModuleBuildTiny" : "0.010",
