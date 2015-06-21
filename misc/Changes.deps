@@ -1,6 +1,13 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.024001
+2.024002
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::MetaYAML::Minimal
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Plugin::MetaYAML
+
+2.024001 2015-03-01T10:38:03Z
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001 → 0.004002
  - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0 → 0.001002
@@ -1931,4 +1938,3 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 0.01001712 2010-06-02T20:54:05Z
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Twitter 0.007
-

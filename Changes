@@ -1,5 +1,14 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.024002 2015-06-21T22:23:14Z b786cb3
+ [Dependencies::Stats]
+ - Dependencies changed since 2.024001, see misc/*.deps* for details
+ - develop: +2 -2 (suggests: ↑2)
+ - runtime: +1 -1
+
+ [Minor]
+ - Now uses MetaYAML::Minimal to generate a reduced META.yml
+
 2.024001 2015-03-01T10:38:03Z 57fafd2
  [Bugfix]
  - Closing the loop with inherently co-depedendent changes.
@@ -1491,4 +1500,3 @@
 
 0.01000600 2010-05-22T08:33:14Z
  - First version.
-

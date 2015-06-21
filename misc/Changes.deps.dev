@@ -1,6 +1,19 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.024001
+2.024002
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::MetaYAML::Minimal
+ - Dist::Zilla::Plugin::RemovePrereqs::Provided
+
+ [Changed / develop suggests]
+ - Dist::Zilla::App::Command::bakeini 0.002000 → 0.002005
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.024001 → 2.024002
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::MetaYAML
+ - Dist::Zilla::Plugin::RemovePhasedPrereqs
+
+2.024001 2015-03-01T10:38:03Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::CheckPrereqsIndexed
 
@@ -881,4 +894,3 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
 0.01001713 2010-06-02T21:04:31Z
 
 0.01001712 2010-06-02T20:54:05Z
-

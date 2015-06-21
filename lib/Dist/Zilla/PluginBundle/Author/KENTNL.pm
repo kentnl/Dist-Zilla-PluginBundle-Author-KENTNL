@@ -7,7 +7,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.024001';
+our $VERSION = '2.024002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -407,7 +407,7 @@ sub _configure_basic_files {
   $self->add_plugin( 'License' => {} );
 
   $self->add_plugin( 'MetaJSON'                 => {} );
-  $self->add_plugin( 'MetaYAML'                 => {} );
+  $self->add_plugin( 'MetaYAML::Minimal'        => {} );
   $self->add_plugin( 'Manifest'                 => {} );
   $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
 
@@ -708,7 +708,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.024001
+version 2.024002
 
 =head1 SYNOPSIS
 
