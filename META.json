@@ -774,6 +774,11 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
+            "config" : {
+               "Dist::Zilla::Role::FileWatcher" : {
+                  "version" : "0.006"
+               }
+            },
             "name" : "@Author::KENTNL/ReadmeAnyFromPod",
             "version" : "0.150250"
          },
