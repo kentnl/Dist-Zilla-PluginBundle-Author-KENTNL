@@ -645,7 +645,14 @@ sub configure {
   $self->add_named_plugin( 'commit_dirty_files' => 'Git::Commit' => {} );
   $self->add_named_plugin( 'tag_master', => 'Git::Tag' => { tag_format => '%v-source' } );
   $self->add_plugin(
-    'Git::NextRelease' => { ':version' => '0.004000', time_zone => 'UTC', format => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ %h] } );
+    'Git::NextRelease' => {
+      ':version'     => '0.004000',
+      time_zone      => 'UTC',
+      format         => q[%v %{yyyy-MM-dd'T'HH:mm:ss}dZ %h],
+      default_branch => 'master',
+    },
+  );
+
   if ( $self->bumpversions ) {
     $self->add_plugin( 'BumpVersionAfterRelease' => {} );
   }
