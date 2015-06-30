@@ -1,5 +1,17 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
+2.025000 2015-06-30T02:35:26Z 8f4450c
+ [00 Features]
+ - copyfiles now copies LICENSE and Makefile.PL by default.
+ - RemovePrereqs::Provided is now standard issue.
+ - default_branch now specified for headless Git::NextRelease
+ - Inject a CONTRIBUTING document standard
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.024002, see misc/*.deps* for details
+ - develop: +1 (suggests: -1)
+ - runtime: +2
+
 2.024002 2015-06-21T22:23:14Z b786cb3
  [Dependencies::Stats]
  - Dependencies changed since 2.024001, see misc/*.deps* for details

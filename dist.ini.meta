@@ -46,8 +46,6 @@ Test::Perl::Critic      = 1.02
 [ModuleShareDirs]
 Dist::Zilla::MintingProfile::Author::KENTNL = share/profiles
 
-[RemovePrereqs::Provided]
-
 [Prereqs / criticspreqs]
 -phase = runtime
 -type = recommends
@@ -106,7 +104,6 @@ bundledeps_phase  = runtime
 toolkit           = eumm
 toolkit_hardness  = soft
 bumpversions      = 1
-copyfiles         = LICENSE
 srcreadme         = mkdn
 Author::KENTNL::TravisCI.skip_perls = 5.8
 

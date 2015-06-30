@@ -30,6 +30,7 @@
          },
          "requires" : {
             "Dist::Zilla" : "5",
+            "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" : "0.001002",
             "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.004002",
             "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" : "0.001002",
             "Dist::Zilla::Plugin::Authority" : "1.006",
@@ -91,8 +92,7 @@
             "Test::Pod::Coverage" : "1.08"
          },
          "suggests" : {
-            "Dist::Zilla::App::Command::bakeini" : "0.002005",
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.024002"
+            "Dist::Zilla::App::Command::bakeini" : "0.002005"
          }
       },
       "runtime" : {
@@ -149,6 +149,7 @@
             "Carp" : "0",
             "Dist::Zilla" : "5.011",
             "Dist::Zilla::File::FromCode" : "0",
+            "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" : "0.001002",
             "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.004002",
             "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" : "0.001002",
             "Dist::Zilla::Plugin::Authority" : "1.006",
@@ -184,6 +185,7 @@
             "Dist::Zilla::Plugin::Prereqs::Upgrade" : "0",
             "Dist::Zilla::Plugin::Readme::Brief" : "0",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0",
+            "Dist::Zilla::Plugin::RemovePrereqs::Provided" : "0",
             "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0",
             "Dist::Zilla::Plugin::RunExtraTests" : "0",
             "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0",
@@ -251,19 +253,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.024002"
+         "version" : "2.025000"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.024002"
+         "version" : "2.025000"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.024002"
+         "version" : "2.025000"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.024002"
+         "version" : "2.025000"
       }
    },
    "release_status" : "stable",
@@ -278,7 +280,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.024002",
+   "version" : "2.025000",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -336,11 +338,6 @@
             "class" : "Dist::Zilla::Plugin::ModuleShareDirs",
             "name" : "ModuleShareDirs",
             "version" : "5.037"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::RemovePrereqs::Provided",
-            "name" : "RemovePrereqs::Provided",
-            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
@@ -451,7 +448,9 @@
                      "README",
                      "README.mkdn",
                      "README.pod",
-                     "LICENSE"
+                     "CONTRIBUTING.mkdn",
+                     "LICENSE",
+                     "Makefile.PL"
                   ],
                   "exclude_match" : [],
                   "follow_symlinks" : "0",
@@ -496,6 +495,18 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::TravisCI",
             "name" : "@Author::KENTNL/Author::KENTNL::TravisCI",
+            "version" : "0.001002"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING",
+            "config" : {
+               "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" : {
+                  "document_version" : "0.1",
+                  "filename" : "CONTRIBUTING.mkdn",
+                  "format" : "mkdn"
+               }
+            },
+            "name" : "@Author::KENTNL/Author::KENTNL::CONTRIBUTING",
             "version" : "0.001002"
          },
          {
@@ -774,6 +785,11 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::ReadmeAnyFromPod",
+            "config" : {
+               "Dist::Zilla::Role::FileWatcher" : {
+                  "version" : "0.006"
+               }
+            },
             "name" : "@Author::KENTNL/ReadmeAnyFromPod",
             "version" : "0.150250"
          },
@@ -852,7 +868,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "2.024002-source",
+                  "tag" : "2.025000-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -866,6 +882,11 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
+            "config" : {
+               "Dist::Zilla::Plugin::Git::NextRelease" : {
+                  "default_branch" : "master"
+               }
+            },
             "name" : "@Author::KENTNL/Git::NextRelease",
             "version" : "0.004000"
          },
@@ -923,7 +944,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "2.024002",
+                  "tag" : "2.025000",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -985,6 +1006,11 @@
             },
             "name" : "@Author::KENTNL/always_latest_develop_bundle",
             "version" : "0.003001"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::RemovePrereqs::Provided",
+            "name" : "@Author::KENTNL/RemovePrereqs::Provided",
+            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
