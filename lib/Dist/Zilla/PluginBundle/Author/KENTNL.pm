@@ -399,7 +399,7 @@ sub _configure_basic_files {
   my ($self)         = @_;
   my (@ignore_files) = qw( README README.mkdn README.pod );
   my (@copyfiles)    = ();
-  if ( not grep { $_ eq 'none' } ) {
+  if ( not grep { $_ eq 'none' } @{ $self->copyfiles } ) {
     push @copyfiles, @{ $self->copyfiles };
   }
   push @ignore_files, @copyfiles;
