@@ -1,6 +1,12 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 Features]
+ - copyfiles now copies LICENSE and Makefile.PL by default.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.024002, see misc/*.deps* for details
+ - develop: (suggests: ↑1)
 
 2.024002 2015-06-21T22:23:14Z b786cb3
  [Dependencies::Stats]
