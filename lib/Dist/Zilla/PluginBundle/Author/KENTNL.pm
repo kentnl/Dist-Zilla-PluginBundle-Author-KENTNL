@@ -426,6 +426,7 @@ sub _configure_basic_files {
   $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
   $self->add_plugin(
     'Author::KENTNL::CONTRIBUTING' => {
+      ':version' => '0.001002',
       document_version => '0.1',
       format           => 'mkdn',
     }
