@@ -76,8 +76,7 @@ do { my $x = {
                                       'Test::Pod::Coverage' => '1.08'
                                     },
                       'suggests' => {
-                                      'Dist::Zilla::App::Command::bakeini' => '0.002005',
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.024003'
+                                      'Dist::Zilla::App::Command::bakeini' => '0.002005'
                                     }
                     },
        'runtime' => {
@@ -169,6 +168,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::Prereqs::Upgrade' => '0',
                                       'Dist::Zilla::Plugin::Readme::Brief' => '0',
                                       'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0',
+                                      'Dist::Zilla::Plugin::RemovePrereqs::Provided' => '0',
                                       'Dist::Zilla::Plugin::RewriteVersion::Sanitized' => '0',
                                       'Dist::Zilla::Plugin::RunExtraTests' => '0',
                                       'Dist::Zilla::Plugin::Test::CPAN::Changes' => '0',
