@@ -429,7 +429,7 @@ sub _configure_basic_files {
       ':version' => '0.001002',
       document_version => '0.1',
       format           => 'mkdn',
-    }
+    },
   );
 
   if (@copyfiles) {
