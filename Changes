@@ -8,8 +8,8 @@
 
  [Dependencies::Stats]
  - Dependencies changed since 2.024002, see misc/*.deps* for details
- - develop: (suggests: -1)
- - runtime: +1
+ - develop: +1 (suggests: -1)
+ - runtime: +2
 
 2.024002 2015-06-21T22:23:14Z b786cb3
  [Dependencies::Stats]

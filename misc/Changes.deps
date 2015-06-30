@@ -2,6 +2,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 
 2.024003
  [Added / runtime requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING
  - Dist::Zilla::Plugin::RemovePrereqs::Provided
 
 2.024002 2015-06-21T22:23:14Z
