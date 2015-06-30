@@ -1,7 +1,11 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.024003
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING 0.001002
+
  [Added / runtime requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING 0.001002
  - Dist::Zilla::Plugin::RemovePrereqs::Provided
 
  [Removed / develop suggests]
