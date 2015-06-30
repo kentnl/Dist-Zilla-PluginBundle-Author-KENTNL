@@ -557,6 +557,7 @@ sub _configure_toolkit_prereqs {
       modules       => [@bundles],
     },
   );
+  $self->add_plugin( 'RemovePrereqs::Provided' => {} );
   return;
 }
 

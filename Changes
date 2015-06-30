@@ -3,10 +3,12 @@
 {{$NEXT}}
  [00 Features]
  - copyfiles now copies LICENSE and Makefile.PL by default.
+ - RemovePrereqs::Provided is now standard issue.
 
  [Dependencies::Stats]
  - Dependencies changed since 2.024002, see misc/*.deps* for details
- - develop: (suggests: ↑1)
+ - develop: (suggests: -1)
+ - runtime: +1
 
 2.024002 2015-06-21T22:23:14Z b786cb3
  [Dependencies::Stats]
