@@ -867,6 +867,11 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
+            "config" : {
+               "Dist::Zilla::Plugin::Git::NextRelease" : {
+                  "default_branch" : "master"
+               }
+            },
             "name" : "@Author::KENTNL/Git::NextRelease",
             "version" : "0.004000"
          },
