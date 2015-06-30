@@ -451,7 +451,8 @@
                      "README",
                      "README.mkdn",
                      "README.pod",
-                     "LICENSE"
+                     "LICENSE",
+                     "Makefile.PL"
                   ],
                   "exclude_match" : [],
                   "follow_symlinks" : "0",

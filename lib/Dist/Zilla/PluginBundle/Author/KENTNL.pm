@@ -398,8 +398,11 @@ sub _configure_basic_metadata {
 sub _configure_basic_files {
   my ($self)         = @_;
   my (@ignore_files) = qw( README README.mkdn README.pod );
-
-  push @ignore_files, grep { $_ ne 'none' } @{ $self->copyfiles };
+  my (@copyfiles)    = ();
+  if ( not grep { $_ eq 'none' } ) {
+    push @copyfiles, @{ $self->copyfiles };
+  }
+  push @ignore_files, @copyfiles;
 
   $self->add_plugin(
     'Git::GatherDir' => {
@@ -414,8 +417,8 @@ sub _configure_basic_files {
   $self->add_plugin( 'Manifest'                 => {} );
   $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
 
-  if ( @{ $self->copyfiles } and not grep { $_ eq 'none' } @{ $self->copyfiles } ) {
-    $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ grep { $_ ne 'none' } @{ $self->copyfiles } ] } );
+  if (@copyfiles) {
+    $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [@copyfiles] } );
   }
 
   return;
