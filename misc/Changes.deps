@@ -1,6 +1,6 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.024003
+2.025000
  [Added / runtime requires]
  - Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING 0.001002
  - Dist::Zilla::Plugin::RemovePrereqs::Provided

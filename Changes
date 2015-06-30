@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.025000 2015-06-30T02:19:14Z cc34258
+2.025000 2015-06-30T02:20:26Z 56c5c5b
  [00 Features]
  - copyfiles now copies LICENSE and Makefile.PL by default.
  - RemovePrereqs::Provided is now standard issue.
