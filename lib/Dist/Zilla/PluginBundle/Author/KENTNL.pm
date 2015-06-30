@@ -277,7 +277,7 @@ has copyfiles => (
   is      => ro  =>,
   isa     => 'ArrayRef[ Str ]',
   lazy    => 1,
-  default => sub { [] },
+  default => sub { ['LICENSE', 'Makefile.PL'] },
 );
 
 
@@ -396,7 +396,7 @@ sub _configure_basic_files {
   my ($self)         = @_;
   my (@ignore_files) = qw( README README.mkdn README.pod );
 
-  push @ignore_files, @{ $self->copyfiles };
+  push @ignore_files, grep { $_ ne 'none' } @{ $self->copyfiles };
 
   $self->add_plugin(
     'Git::GatherDir' => {
@@ -411,8 +411,8 @@ sub _configure_basic_files {
   $self->add_plugin( 'Manifest'                 => {} );
   $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
 
-  if ( @{ $self->copyfiles } ) {
-    $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ @{ $self->copyfiles } ] } );
+  if ( @{ $self->copyfiles } and not grep { $_ eq 'none' } @{ $self->copyfiles }  ) {
+    $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ @{ grep { $_ ne 'none' } $self->copyfiles } ] } );
   }
 
   return;
