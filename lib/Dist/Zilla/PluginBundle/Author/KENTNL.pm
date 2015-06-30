@@ -395,11 +395,19 @@ sub _configure_basic_metadata {
   return;
 }
 
+sub _none_match {
+  my ( $item , @list ) = @_;
+  for my $list_item ( @list ) {
+    return if $item eq $list_item;
+  }
+  return 1;
+}
+
 sub _configure_basic_files {
   my ($self)         = @_;
   my (@ignore_files) = qw( README README.mkdn README.pod );
   my (@copyfiles)    = ();
-  if ( not grep { $_ eq 'none' } @{ $self->copyfiles } ) {
+  if ( _none_match 'none' ,@{ $self->copyfiles } ) {
     push @copyfiles, @{ $self->copyfiles };
   }
   push @ignore_files, @copyfiles;
