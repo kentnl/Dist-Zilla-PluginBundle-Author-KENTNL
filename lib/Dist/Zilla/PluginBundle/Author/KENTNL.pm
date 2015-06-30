@@ -396,8 +396,8 @@ sub _configure_basic_metadata {
 }
 
 sub _none_match {
-  my ( $item , @list ) = @_;
-  for my $list_item ( @list ) {
+  my ( $item, @list ) = @_;
+  for my $list_item (@list) {
     return if $item eq $list_item;
   }
   return 1;
@@ -407,7 +407,7 @@ sub _configure_basic_files {
   my ($self)         = @_;
   my (@ignore_files) = qw( README README.mkdn README.pod );
   my (@copyfiles)    = ();
-  if ( _none_match 'none' ,@{ $self->copyfiles } ) {
+  if ( _none_match 'none', @{ $self->copyfiles } ) {
     push @copyfiles, @{ $self->copyfiles };
   }
   push @ignore_files, @copyfiles;
@@ -557,6 +557,7 @@ sub _configure_toolkit_prereqs {
       modules       => [@bundles],
     },
   );
+  $self->add_plugin( 'RemovePrereqs::Provided' => { } );
   return;
 }
 

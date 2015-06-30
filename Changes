@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.024003 2015-06-21T22:26:01Z cc11846
+2.024003 2015-06-30T01:03:28Z 39176c0
  [00 Features]
  - copyfiles now copies LICENSE and Makefile.PL by default.
 
