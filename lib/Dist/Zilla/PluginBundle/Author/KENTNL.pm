@@ -415,7 +415,7 @@ sub _configure_basic_files {
   $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
 
   if ( @{ $self->copyfiles } and not grep { $_ eq 'none' } @{ $self->copyfiles } ) {
-    $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ @{ grep { $_ ne 'none' } $self->copyfiles } ] } );
+    $self->add_named_plugin( 'CopyXBuild' => 'CopyFilesFromBuild', { copy => [ grep { $_ ne 'none' } @{ $self->copyfiles } ] } );
   }
 
   return;
