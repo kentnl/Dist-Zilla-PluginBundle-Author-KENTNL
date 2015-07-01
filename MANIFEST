@@ -18,6 +18,7 @@ lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
 lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
 lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
+lib/Dist/Zilla/PluginBundle/Author/KENTNL/_MaintMode.pm
 maint/perlcritic.rc.gen.pl
 maint/travisci.pl
 misc/Changes.deps
@@ -64,6 +65,7 @@ share/profiles/moose-role/skel/misc/perlcritic.deps
 share/profiles/moose-role/skel/perlcritic.rc
 share/profiles/moose-role/skel/weaver.ini
 t/00-compile/lib_Dist_Zilla_MintingProfile_Author_KENTNL_pm.t
+t/00-compile/lib_Dist_Zilla_PluginBundle_Author_KENTNL__MaintMode_pm.t
 t/00-compile/lib_Dist_Zilla_PluginBundle_Author_KENTNL_pm.t
 t/00-compile/lib_Dist_Zilla_Plugin_Author_KENTNL_DistINI_pm.t
 t/00-compile/lib_Dist_Zilla_Plugin_Author_KENTNL_MinimumPerl_pm.t
