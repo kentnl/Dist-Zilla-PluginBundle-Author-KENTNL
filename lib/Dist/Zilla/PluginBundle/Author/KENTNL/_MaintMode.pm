@@ -1,17 +1,18 @@
-use 5.006; # our
+use 5.006;    # our
 use strict;
 use warnings;
+
 package Dist::Zilla::PluginBundle::Author::KENTNL::_MaintMode;
 
 # ABSTRACT: Horrible tricks that only KENTNL should do when he is acting in "maintainer mode"
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Moo;
+our $VERSION = '2.025001';
 
-
-
-no Moo;
+sub run_maint_mode { 
+  
+}
 
 1;
 
