@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.025001 2015-07-05T03:52:11Z 31e79e3
  [Bugfix]
  - Use a newer contributing module in pre-emption of ether accepting my patch
 
