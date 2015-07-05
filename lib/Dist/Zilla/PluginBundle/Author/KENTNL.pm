@@ -405,7 +405,7 @@ sub _none_match {
 
 sub _configure_basic_files {
   my ($self)         = @_;
-  my (@ignore_files) = qw( README README.mkdn README.pod CONTRIBUTING.mkdn );
+  my (@ignore_files) = qw( README README.mkdn README.pod CONTRIBUTING.pod );
   my (@copyfiles)    = ();
   if ( _none_match 'none', @{ $self->copyfiles } ) {
     push @copyfiles, @{ $self->copyfiles };
