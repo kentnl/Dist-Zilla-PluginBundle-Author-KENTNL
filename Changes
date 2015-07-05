@@ -1,6 +1,21 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugfix]
+ - Use a newer contributing module in pre-emption of ether accepting my patch
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.025000, see misc/*.deps* for details
+ - develop: ↑1
+ - runtime: ↑1
+
+ [Note]
+ - I really hate having so many plugins, and I really hate everyone needing my bundle
+ - But I also hate anyone needing my bundle.
+
+ [Todo]
+ - Have a system where more static stuff happens at a dedicated phases instead of part of the build cycle
+ - Not have contributors need to execute that to simply refresh files that are already there.
 
 2.025000 2015-06-30T02:35:26Z 8f4450c
  [00 Features]

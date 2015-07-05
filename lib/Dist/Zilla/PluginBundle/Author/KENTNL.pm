@@ -405,7 +405,7 @@ sub _none_match {
 
 sub _configure_basic_files {
   my ($self)         = @_;
-  my (@ignore_files) = qw( README README.mkdn README.pod CONTRIBUTING.mkdn );
+  my (@ignore_files) = qw( README README.mkdn README.pod CONTRIBUTING.pod );
   my (@copyfiles)    = ();
   if ( _none_match 'none', @{ $self->copyfiles } ) {
     push @copyfiles, @{ $self->copyfiles };
@@ -426,9 +426,10 @@ sub _configure_basic_files {
   $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
   $self->add_plugin(
     'Author::KENTNL::CONTRIBUTING' => {
-      ':version' => '0.001002',
+      ':version'       => '0.001003',
       document_version => '0.1',
-      format           => 'mkdn',
+      '-location'      => 'root',       # Assuming my patches get merged in future
+      '-phase'         => 'build',
     },
   );
 

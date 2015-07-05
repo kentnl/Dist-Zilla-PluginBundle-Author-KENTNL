@@ -1,18 +1,47 @@
-# CONTENTS
 
-- ["HOW TO CONTRIBUTE"](#how-to-contribute)
-    - ["Getting dependencies"](#getting-dependencies)
-    - ["Running tests"](#running-tests)
-    - ["Code style and tidying"](#code-style-and-tidying)
-    - ["Patching documentation"](#patching-documentation)
-    - ["Installing and using DistZilla"](#installing-and-using-distzilla)
-- ["OTHER SHORTCUTS"](#other-shortcuts)
-    - ["Install and Test using a pre-made build branch"](#install-and-test-using-a-pre-made-build-branch)
-    - ["Locally Patch dist ini"](#locally-patch-dist-ini)
-        - ["Doing Long-Term dist ini patches"](#doing-long-term-dist-ini-patches)
-- ["CREDITS"](#credits)
+=encoding UTF-8
 
-# HOW TO CONTRIBUTE
+=head1 CONTENTS
+
+=over 4
+
+=item * L</HOW TO CONTRIBUTE>
+
+=over 4
+
+=item * L</Getting dependencies>
+
+=item * L</Running tests>
+
+=item * L</Code style and tidying>
+
+=item * L</Patching documentation>
+
+=item * L</Installing and using Dist::Zilla>
+
+=back
+
+=item * L</OTHER SHORTCUTS>
+
+=over 4
+
+=item * L</Install and Test using a pre-made build branch>
+
+=item * L<< Locally Patch C<dist.ini> >>
+
+=over 4
+
+=item * L<< /Doing Long-Term C<dist.ini> patches >>
+
+=back
+
+=back
+
+=item * L</CREDITS>
+
+=back
+
+=head1 HOW TO CONTRIBUTE
 
 Thank you for considering contributing to this distribution.  This file
 contains instructions that will help you work with the source code.
@@ -22,39 +51,39 @@ usual files you might expect are not in the repository, but are generated at
 release time, as is much of the documentation.  Some generated files are
 kept in the repository as a convenience (e.g. Makefile.PL or cpanfile).
 
-Generally, **you do not need Dist::Zilla to contribute patches**.  You may need
+Generally, B<you do not need Dist::Zilla to contribute patches>.  You may need
 Dist::Zilla to create a tarball.  See below for guidance.
 
-## Getting dependencies
+=head2 Getting dependencies
 
-If you have App::cpanminus 1.6 or later installed, you can use `cpanm` to
+If you have App::cpanminus 1.6 or later installed, you can use C<cpanm> to
 satisfy dependencies like this:
 
     $ cpanm --installdeps .
 
-Otherwise, look for either a `Makefile.PL` or `cpanfile` file for
+Otherwise, look for either a C<Makefile.PL> or C<cpanfile> file for
 a list of dependencies to satisfy.
 
-## Running tests
+=head2 Running tests
 
-You can run tests directly using the \`prove\` tool:
+You can run tests directly using the `prove` tool:
 
     $ prove -l
     $ prove -lv t/some_test_file.t
 
-For most of my distributions, \`prove\` is entirely sufficient for you to test any
-patches you have. I use \`prove\` for 99% of my testing during development.
+For most of my distributions, `prove` is entirely sufficient for you to test any
+patches you have. I use `prove` for 99% of my testing during development.
 
-## Code style and tidying
+=head2 Code style and tidying
 
-Please try to match any existing coding style.  If there is a `.perltidyrc`
+Please try to match any existing coding style.  If there is a C<.perltidyrc>
 file, please install Perl::Tidy and use perltidy before submitting patches.
 
-## Patching documentation
+=head2 Patching documentation
 
 Much of the documentation Pod is generated at release time.  Some is
 generated boilerplate; other documentation is built from pseudo-POD
-directives in the source like `=method` or `=func`.
+directives in the source like C<=method> or C<=func>.
 
 If you would like to submit a documentation edit, please limit yourself to
 the documentation you see.
@@ -62,7 +91,7 @@ the documentation you see.
 If you see typos or documentation issues in the generated docs, please
 email or open a bug ticket instead of patching.
 
-## Installing and using DistZilla
+=head2 Installing and using Dist::Zilla
 
 Dist::Zilla is a very powerful authoring tool, optimized for maintaining a
 large number of distributions with a high degree of automation, but it has a
@@ -96,21 +125,27 @@ Once installed, here are some dzil commands you might try:
 
 You can learn more about Dist::Zilla at http://dzil.org/
 
-# OTHER SHORTCUTS
+=head1 OTHER SHORTCUTS
 
 I use a few other tricks that might prove useful to know about when hacking
 on my dists.
 
-## Install and Test using a pre-made build branch
+=head2 Install and Test using a pre-made build branch
 
-Most of my repositories come with 1 or more pre-made `build` branches, which may
+Most of my repositories come with 1 or more pre-made C<build> branches, which may
 occur under any of the following names:
 
-- `builds` - my last `dzil build`
-- `releases` - the build generated for the most recent CPAN release
-- `build/master` ( _legacy_ version of `builds` )
+=over 4
 
-These branches contain committed copies of my own local `dzil build` invocations.
+=item * C<builds> - my last C<dzil build>
+
+=item * C<releases> - the build generated for the most recent CPAN release
+
+=item * C<build/master> ( I<legacy> version of C<builds> )
+
+=back
+
+These branches contain committed copies of my own local C<dzil build> invocations.
 
 Checking out a copy of these branches with
 
@@ -128,10 +163,10 @@ Additionally: These branches are part of my Travis testing infrastructure which 
 ascertain that the module will work and pass tests without the benefit of having
 3-halves of CPAN due to developer dependencies.
 
-## Locally Patch dist ini
+=head2 Locally Patch C<dist.ini>
 
-The majority of `Dist::Zilla` authors ship around a load of shared configuration
-in a personal `@Bundle`, which makes replicating configuration to their different
+The majority of C<Dist::Zilla> authors ship around a load of shared configuration
+in a personal C<@Bundle>, which makes replicating configuration to their different
 distributions simpler.
 
 This has a downside that every time they make a minor tweak to their bundle, everywhere
@@ -142,21 +177,21 @@ The bundle system also makes it tricky for people to simply patch-out single plu
 that are causing local problems for them because they're hidden behind the bundle façade.
 
 Here, I use a system from generating a frozen snapshot of the state of my bundle:
-`dist.ini` is a flattened unbundled version of `dist.ini.meta`
+C<dist.ini> is a flattened unbundled version of C<dist.ini.meta>
 
-As such, you can tell **exactly** which plugins are being consumed simply by looking at
-`dist.ini`. And you can tell **exactly** what their configuration is and their intended
+As such, you can tell B<exactly> which plugins are being consumed simply by looking at
+C<dist.ini>. And you can tell B<exactly> what their configuration is and their intended
 order is.
 
 So if you're hacking on one of my dists and a plugin or two get in your way and you're
-_wanting_ to work with the full `Dist::Zilla` stack, you can freely just yank them out
+I<wanting> to work with the full C<Dist::Zilla> stack, you can freely just yank them out
 and keep on trucking without having to memorize the arcane syntax my bundle requires.
 
-### Doing Long-Term dist ini patches
+=head3 Doing Long-Term C<dist.ini> patches
 
-If you find yourself wanting to make and submit long term changes to dist.ini, **then**
-you _may_ want to look into `dist.ini.meta`, and see the results of your changes
-in `dist.ini` after making changes by performing:
+If you find yourself wanting to make and submit long term changes to dist.ini, B<then>
+you I<may> want to look into C<dist.ini.meta>, and see the results of your changes
+in C<dist.ini> after making changes by performing:
 
     dzil bakeini
 
@@ -166,6 +201,6 @@ building my dists:
     Dist::Zilla::PluginBundle::Author::KENTNL
     Dist::Zilla::App::Command::bakeini
 
-# CREDITS
+=head1 CREDITS
 
-This file was adapted from an initial `CONTRIBUTING.mkdn` file from David Golden under the terms of the Apache 2 license.
+This file was adapted from an initial C<CONTRIBUTING.mkdn> file from David Golden under the terms of the Apache 2 license.
