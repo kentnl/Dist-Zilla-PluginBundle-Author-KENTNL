@@ -100,7 +100,7 @@ requires:
   Carp: '0'
   Dist::Zilla: '5.011'
   Dist::Zilla::File::FromCode: '0'
-  Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING: '0.001002'
+  Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING: '0.001003'
   Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.004002'
   Dist::Zilla::Plugin::Author::KENTNL::TravisCI: '0.001002'
   Dist::Zilla::Plugin::Authority: '1.006'
