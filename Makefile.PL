@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     "Carp" => 0,
     "Dist::Zilla" => "5.011",
     "Dist::Zilla::File::FromCode" => 0,
-    "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" => "0.001002",
+    "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" => "0.001003",
     "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" => "0.004002",
     "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" => "0.001002",
     "Dist::Zilla::Plugin::Authority" => "1.006",
@@ -116,7 +116,7 @@ my %WriteMakefileArgs = (
     "Test::Output" => 0,
     "lib" => 0
   },
-  "VERSION" => "2.025000",
+  "VERSION" => "2.025001",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -128,7 +128,7 @@ my %FallbackPrereqs = (
   "Carp" => 0,
   "Dist::Zilla" => "5.011",
   "Dist::Zilla::File::FromCode" => 0,
-  "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" => "0.001002",
+  "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" => "0.001003",
   "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" => "0.004002",
   "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" => "0.001002",
   "Dist::Zilla::Plugin::Authority" => "1.006",
