@@ -426,9 +426,10 @@ sub _configure_basic_files {
   $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
   $self->add_plugin(
     'Author::KENTNL::CONTRIBUTING' => {
-      ':version' => '0.001002',
+      ':version'       => '0.001003',
       document_version => '0.1',
-      format           => 'mkdn',
+      '-location'      => 'root',       # Assuming my patches get merged in future
+      '-phase'         => 'build',
     },
   );
 
