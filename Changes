@@ -3,7 +3,9 @@
 {{$NEXT}}
  [Dependencies::Stats]
  - Dependencies changed since 2.025001, see misc/*.deps* for details
- - runtime: ↑1
+ - configure: ↓1
+ - runtime: ↑1 ↓1 -1
+ - test: ↓1
 
 2.025001 2015-07-05T03:52:11Z 31e79e3
  [Bugfix]
