@@ -320,16 +320,15 @@ while ( @tags > 1 ) {
 
   for my $target ( $changes, $changes_opt, $changes_dev, $changes_all ) {
     my $diff = get_release_diff( $target, $old, $new, $params );
-    print "$diff";
-    $target->{releases}->{$version} = $diff;
+    $target->{releases}->{$version} = $diff if exists $target->{releases};
     push @{ $target->_releases }, $diff if $target->can('_releases');
   }
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 
 my $width = $Text::Wrap::columns = 120;
-$Text::Wrap::break   = '(?![\x{00a0}\x{202f}])\s';
-$Text::Wrap::huge    = 'overflow';
+$Text::Wrap::break = '(?![\x{00a0}\x{202f}])\s';
+$Text::Wrap::huge  = 'overflow';
 
 my $misc = path('./misc');
 if ( not -d $misc ) {
