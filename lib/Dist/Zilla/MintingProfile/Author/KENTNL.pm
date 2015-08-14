@@ -1,7 +1,6 @@
-use 5.008;    # utf8 pragma
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::MintingProfile::Author::KENTNL;
 

@@ -129,7 +129,6 @@
       "lib" : "0.63",
       "namespace::autoclean" : "0.26",
       "strict" : "1.09",
-      "utf8" : "1.17",
       "version" : "0.9912",
       "warnings" : "1.32"
    },

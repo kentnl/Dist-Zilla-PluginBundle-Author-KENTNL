@@ -6,7 +6,7 @@ do { my $x = {
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '0',
                                         'File::ShareDir::Install' => '0.10',
-                                        'perl' => '5.008'
+                                        'perl' => '5.006'
                                       }
                       },
        'develop' => {
@@ -195,9 +195,8 @@ do { my $x = {
                                       'Moose::Util::TypeConstraints' => '0',
                                       'String::Formatter' => '0',
                                       'namespace::autoclean' => '0',
-                                      'perl' => '5.008',
+                                      'perl' => '5.006',
                                       'strict' => '0',
-                                      'utf8' => '0',
                                       'version' => '0',
                                       'warnings' => '0'
                                     }
@@ -231,7 +230,7 @@ do { my $x = {
                                    'Test::More' => '0.89',
                                    'Test::Output' => '0',
                                    'lib' => '0',
-                                   'perl' => '5.008'
+                                   'perl' => '5.006'
                                  }
                  }
      };
