@@ -1,6 +1,10 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Bugfix]
+ - Ensure declared minimum version of MinimumPerl
+ - Provision a bunch of stock files I tend to need.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.025001, see misc/*.deps* for details
  - configure: ↓1
