@@ -1,6 +1,9 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.025001, see misc/*.deps* for details
+ - runtime: ↑1
 
 2.025001 2015-07-05T03:52:11Z 31e79e3
  [Bugfix]

@@ -25,6 +25,7 @@ our $VERSION = '2.025002';
 
 use Moose qw( has extends override around );
 use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
+use Dist::Zilla::Plugin::MinimumPerl 1.004;
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
 
