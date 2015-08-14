@@ -6,7 +6,7 @@ do { my $x = {
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '0',
                                         'File::ShareDir::Install' => '0.10',
-                                        'perl' => '5.008'
+                                        'perl' => '5.006'
                                       }
                       },
        'develop' => {
@@ -160,7 +160,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::MetaProvides::Package' => '1.14000001',
                                       'Dist::Zilla::Plugin::MetaTests' => '0',
                                       'Dist::Zilla::Plugin::MetaYAML::Minimal' => '0',
-                                      'Dist::Zilla::Plugin::MinimumPerl' => '0',
+                                      'Dist::Zilla::Plugin::MinimumPerl' => '1.004',
                                       'Dist::Zilla::Plugin::PodCoverageTests' => '0',
                                       'Dist::Zilla::Plugin::PodSyntaxTests' => '0',
                                       'Dist::Zilla::Plugin::PodWeaver' => '0',
@@ -195,9 +195,8 @@ do { my $x = {
                                       'Moose::Util::TypeConstraints' => '0',
                                       'String::Formatter' => '0',
                                       'namespace::autoclean' => '0',
-                                      'perl' => '5.008',
+                                      'perl' => '5.006',
                                       'strict' => '0',
-                                      'utf8' => '0',
                                       'version' => '0',
                                       'warnings' => '0'
                                     }
@@ -231,7 +230,7 @@ do { my $x = {
                                    'Test::More' => '0.89',
                                    'Test::Output' => '0',
                                    'lib' => '0',
-                                   'perl' => '5.008'
+                                   'perl' => '5.006'
                                  }
                  }
      };

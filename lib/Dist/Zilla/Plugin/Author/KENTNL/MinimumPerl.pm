@@ -1,13 +1,12 @@
-use 5.008;    # utf8
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
-our $VERSION = '2.025001';
+our $VERSION = '2.025002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -25,6 +24,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( has extends override around );
 use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
+use Dist::Zilla::Plugin::MinimumPerl 1.004;
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
 
@@ -152,7 +152,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.025001
+version 2.025002
 
 =head1 METHODS
 

@@ -21,7 +21,7 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::ShareDir::Install" : "0.10",
-            "perl" : "5.008"
+            "perl" : "5.006"
          }
       },
       "develop" : {
@@ -175,7 +175,7 @@
             "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
             "Dist::Zilla::Plugin::MetaTests" : "0",
             "Dist::Zilla::Plugin::MetaYAML::Minimal" : "0",
-            "Dist::Zilla::Plugin::MinimumPerl" : "0",
+            "Dist::Zilla::Plugin::MinimumPerl" : "1.004",
             "Dist::Zilla::Plugin::PodCoverageTests" : "0",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "0",
             "Dist::Zilla::Plugin::PodWeaver" : "0",
@@ -210,9 +210,8 @@
             "Moose::Util::TypeConstraints" : "0",
             "String::Formatter" : "0",
             "namespace::autoclean" : "0",
-            "perl" : "5.008",
+            "perl" : "5.006",
             "strict" : "0",
-            "utf8" : "0",
             "version" : "0",
             "warnings" : "0"
          }
@@ -246,26 +245,26 @@
             "Test::More" : "0.89",
             "Test::Output" : "0",
             "lib" : "0",
-            "perl" : "5.008"
+            "perl" : "5.006"
          }
       }
    },
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.025001"
+         "version" : "2.025002"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.025001"
+         "version" : "2.025002"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.025001"
+         "version" : "2.025002"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.025001"
+         "version" : "2.025002"
       }
    },
    "release_status" : "stable",
@@ -280,7 +279,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.025001",
+   "version" : "2.025002",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -502,6 +501,14 @@
             "config" : {
                "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" : {
                   "document_version" : "0.1"
+               },
+               "Dist::Zilla::Plugin::GenerateFile::ShareDir" : {
+                  "destination_filename" : "CONTRIBUTING.pod",
+                  "dist" : "Dist-Zilla-Plugin-Author-KENTNL-CONTRIBUTING",
+                  "encoding" : "UTF-8",
+                  "location" : "root",
+                  "phase" : "build",
+                  "source_filename" : "contributing-0.1.pod"
                }
             },
             "name" : "@Author::KENTNL/Author::KENTNL::CONTRIBUTING",
@@ -774,7 +781,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes",
             "name" : "@Author::KENTNL/Author::KENTNL::RecommendFixes",
-            "version" : "0.004003"
+            "version" : "0.005001"
          },
          {
             "class" : "Dist::Zilla::Plugin::Readme::Brief",
@@ -866,7 +873,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "2.025001-source",
+                  "tag" : "2.025002-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -942,7 +949,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "2.025001",
+                  "tag" : "2.025002",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"

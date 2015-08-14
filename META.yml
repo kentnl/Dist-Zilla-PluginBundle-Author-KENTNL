@@ -23,11 +23,11 @@ build_requires:
   Test::More: '0.89'
   Test::Output: '0'
   lib: '0'
-  perl: '5.008'
+  perl: '5.006'
 configure_requires:
   ExtUtils::MakeMaker: '0'
   File::ShareDir::Install: '0.10'
-  perl: '5.008'
+  perl: '5.006'
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.037, CPAN::Meta::Converter version 2.150005'
 license: perl
@@ -38,16 +38,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.025001'
+    version: '2.025002'
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.025001'
+    version: '2.025002'
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.025001'
+    version: '2.025002'
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.025001'
+    version: '2.025002'
 recommends:
   CHI: '0'
   CHI::Driver::LMDB: '0'
@@ -126,7 +126,7 @@ requires:
   Dist::Zilla::Plugin::MetaProvides::Package: '1.14000001'
   Dist::Zilla::Plugin::MetaTests: '0'
   Dist::Zilla::Plugin::MetaYAML::Minimal: '0'
-  Dist::Zilla::Plugin::MinimumPerl: '0'
+  Dist::Zilla::Plugin::MinimumPerl: '1.004'
   Dist::Zilla::Plugin::PodCoverageTests: '0'
   Dist::Zilla::Plugin::PodSyntaxTests: '0'
   Dist::Zilla::Plugin::PodWeaver: '0'
@@ -161,13 +161,12 @@ requires:
   Moose::Util::TypeConstraints: '0'
   String::Formatter: '0'
   namespace::autoclean: '0'
-  perl: '5.008'
+  perl: '5.006'
   strict: '0'
-  utf8: '0'
   version: '0'
   warnings: '0'
 resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.025001'
+version: '2.025002'

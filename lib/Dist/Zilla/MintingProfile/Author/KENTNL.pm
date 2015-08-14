@@ -1,13 +1,12 @@
-use 5.008;    # utf8 pragma
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::MintingProfile::Author::KENTNL;
 
 # ABSTRACT: KENTNL's Minting Profile
 
-our $VERSION = '2.025001';
+our $VERSION = '2.025002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -46,7 +45,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 2.025001
+version 2.025002
 
 =head1 SYNOPSIS
 

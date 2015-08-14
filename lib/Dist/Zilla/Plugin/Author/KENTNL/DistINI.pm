@@ -1,7 +1,6 @@
-use 5.008;    # utf8
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 
 
@@ -11,7 +10,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
-our $VERSION = '2.025001';
+our $VERSION = '2.025002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -140,7 +139,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::
 
 =head1 VERSION
 
-version 2.025001
+version 2.025002
 
 =head1 SYNOPSIS
 

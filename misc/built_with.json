@@ -14,7 +14,7 @@
       "Dist::Zilla::App::Command::bakeini" : "0.002005",
       "Dist::Zilla::File::FromCode" : "5.037",
       "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" : "0.001004",
-      "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.004003",
+      "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.005001",
       "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" : "0.001002",
       "Dist::Zilla::Plugin::Authority" : "1.009",
       "Dist::Zilla::Plugin::AutoPrereqs" : "5.037",
@@ -129,7 +129,6 @@
       "lib" : "0.63",
       "namespace::autoclean" : "0.26",
       "strict" : "1.09",
-      "utf8" : "1.17",
       "version" : "0.9912",
       "warnings" : "1.32"
    },
@@ -148,5 +147,5 @@
       "osname" : "linux"
    },
    "platform" : "linux",
-   "uname" : "Linux 4.1.0-gentoo-r1 x86_64 GenuineIntel GNU/Linux"
+   "uname" : "Linux 4.1.4-gentoo x86_64 GenuineIntel GNU/Linux"
 }

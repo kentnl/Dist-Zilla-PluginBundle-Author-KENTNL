@@ -1,13 +1,12 @@
-use 5.008;    # utf8
+use 5.006;
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.025001';
+our $VERSION = '2.025002';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -738,7 +737,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.025001
+version 2.025002
 
 =head1 SYNOPSIS
 
