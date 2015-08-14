@@ -88,7 +88,7 @@ allow_includes = 1
 
 [CodeLayout::RequireTrailingCommas]
 
-[CodeLayout::RequireUseUTF8]
+[-CodeLayout::RequireUseUTF8]
 
 [Compatibility::ConstantLeadingUnderscore]
 
@@ -304,7 +304,7 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 
 [RegularExpressions::RequireExtendedFormatting]
 
-[RegularExpressions::RequireLineBoundaryMatching]
+[-RegularExpressions::RequireLineBoundaryMatching]
 
 [Subroutines::ProhibitAmpersandSigils]
 
