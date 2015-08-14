@@ -1,6 +1,8 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+2.025002 2015-08-14T12:13:53Z 6d20907
  [Bugfix]
  - Ensure declared minimum version of MinimumPerl
  - Provision a bunch of stock files I tend to need.
