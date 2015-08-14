@@ -320,12 +320,14 @@ while ( @tags > 1 ) {
 
   for my $target ( $changes, $changes_opt, $changes_dev, $changes_all ) {
     my $diff = get_release_diff( $target, $old, $new, $params );
-    $target->{'releases'}->{ $diff->version } = $diff;
+    print "$diff";
+    $target->{releases}->{$version} = $diff;
+    push @{ $target->_releases }, $diff if $target->can('_releases');
   }
 }
 sub _maybe { return $_[0] if defined $_[0]; return q[] }
 
-$Text::Wrap::columns = 120;
+my $width = $Text::Wrap::columns = 120;
 $Text::Wrap::break   = '(?![\x{00a0}\x{202f}])\s';
 $Text::Wrap::huge    = 'overflow';
 
@@ -333,11 +335,11 @@ my $misc = path('./misc');
 if ( not -d $misc ) {
   $misc->mkpath;
 }
-$misc->child('Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize ) );
-$misc->child('Changes.deps')->spew_utf8( _maybe( $changes->serialize ) );
-$misc->child('Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize ) );
-$misc->child('Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize ) );
+$misc->child('Changes.deps.all')->spew_utf8( _maybe( $changes_all->serialize( width => $width ) ) );
+$misc->child('Changes.deps')->spew_utf8( _maybe( $changes->serialize( width => $width ) ) );
+$misc->child('Changes.deps.opt')->spew_utf8( _maybe( $changes_opt->serialize( width => $width ) ) );
+$misc->child('Changes.deps.dev')->spew_utf8( _maybe( $changes_dev->serialize( width => $width ) ) );
 
-path('./Changes')->spew_utf8( _maybe( $master_changes->serialize ) );
+path('./Changes')->spew_utf8( _maybe( $master_changes->serialize( width => $width ) ) );
 
 1;
