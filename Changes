@@ -1,6 +1,9 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.025003 2015-08-14T12:21:43Z 895a62d
+2.025003 2015-10-19T14:11:40Z 834555c
+ [Bugfix]
+ - Avoid test failures on Dzil 5.040 by not expecting pod-* tests anymore.
+
  [Dependencies::Stats]
  - Dependencies changed since 2.025002, see misc/*.deps* for details
  - develop: +2 ↑1

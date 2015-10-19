@@ -295,7 +295,6 @@
             "config" : {
                "Dist::Zilla::Role::Bootstrap" : {
                   "distname" : "Dist-Zilla-PluginBundle-Author-KENTNL",
-                  "fallback" : "1",
                   "try_built" : "1"
                }
             },
