@@ -1,6 +1,14 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.025002
+2.025003
+ [Added / develop requires]
+ - English
+ - Software::License::Perl_5
+
+ [Changed / develop requires]
+ - Test::More 0.88 → 0.96
+
+2.025002 2015-08-14T12:13:53Z
  [Changed / configure requires]
  - perl 5.008 → 5.006
 

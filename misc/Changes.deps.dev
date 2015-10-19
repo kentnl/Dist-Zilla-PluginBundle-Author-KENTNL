@@ -1,6 +1,14 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.025002
+2.025003
+ [Added / develop requires]
+ - English
+ - Software::License::Perl_5
+
+ [Changed / develop requires]
+ - Test::More 0.88 → 0.96
+
+2.025002 2015-08-14T12:13:53Z
 
 2.025001 2015-07-05T03:52:11Z
  [Changed / develop requires]
