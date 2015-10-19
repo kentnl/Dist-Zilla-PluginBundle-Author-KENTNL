@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.025003
+2.025004
+
+2.025003 2015-10-19T14:11:40Z
 
 2.025002 2015-08-14T12:13:53Z
  [Changed / configure requires]

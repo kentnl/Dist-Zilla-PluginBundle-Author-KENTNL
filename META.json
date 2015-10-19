@@ -295,7 +295,8 @@
             "config" : {
                "Dist::Zilla::Role::Bootstrap" : {
                   "distname" : "Dist-Zilla-PluginBundle-Author-KENTNL",
-                  "try_built" : "1"
+                  "try_built" : "1",
+                  "try_built_method" : "mtime"
                }
             },
             "name" : "Bootstrap::lib",
