@@ -197,8 +197,6 @@ EOF
     xt/author/eol.t
     xt/release/kwalitee.t
     xt/release/minimum-version.t
-    xt/release/pod-coverage.t
-    xt/release/pod-syntax.t
   );
 
   my %got_files;
