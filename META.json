@@ -254,19 +254,19 @@
    "provides" : {
       "Dist::Zilla::MintingProfile::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm",
-         "version" : "2.025010"
+         "version" : "2.025011"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::DistINI" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm",
-         "version" : "2.025010"
+         "version" : "2.025011"
       },
       "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm",
-         "version" : "2.025010"
+         "version" : "2.025011"
       },
       "Dist::Zilla::PluginBundle::Author::KENTNL" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm",
-         "version" : "2.025010"
+         "version" : "2.025011"
       }
    },
    "release_status" : "stable",
@@ -281,7 +281,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL"
       }
    },
-   "version" : "2.025010",
+   "version" : "2.025011",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -895,7 +895,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "2.025010-source",
+                  "tag" : "2.025011-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v"
                },
@@ -986,7 +986,7 @@
                   "branch" : "releases",
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "2.025010",
+                  "tag" : "2.025011",
                   "tag_format" : "%v",
                   "tag_message" : "v%v"
                },
