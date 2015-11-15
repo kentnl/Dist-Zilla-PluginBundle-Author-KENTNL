@@ -69,7 +69,6 @@ mantissa          = 6
 toolkit           = eumm
 toolkit_hardness  = soft
 bumpversions      = 1
-copyfiles         = LICENSE
 srcreadme         = mkdn
 ; twitter_extra_hash_tags =
 ; auto_prereqs_skip = File::Find
