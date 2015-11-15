@@ -35,7 +35,6 @@ share/profiles/default/skel/.mailmap
 share/profiles/default/skel/.perltidyrc
 share/profiles/default/skel/Changes
 share/profiles/default/skel/INSTALL.SKIP
-share/profiles/default/skel/LICENSE
 share/profiles/default/skel/maint/perlcritic.rc.gen.pl
 share/profiles/default/skel/misc/Changes.deps
 share/profiles/default/skel/misc/Changes.deps.all
@@ -51,7 +50,6 @@ share/profiles/moo-role/skel/.mailmap
 share/profiles/moo-role/skel/.perltidyrc
 share/profiles/moo-role/skel/Changes
 share/profiles/moo-role/skel/INSTALL.SKIP
-share/profiles/moo-role/skel/LICENSE
 share/profiles/moo-role/skel/maint/perlcritic.rc.gen.pl
 share/profiles/moo-role/skel/misc/Changes.deps
 share/profiles/moo-role/skel/misc/Changes.deps.all
@@ -67,7 +65,6 @@ share/profiles/moo/skel/.mailmap
 share/profiles/moo/skel/.perltidyrc
 share/profiles/moo/skel/Changes
 share/profiles/moo/skel/INSTALL.SKIP
-share/profiles/moo/skel/LICENSE
 share/profiles/moo/skel/maint/perlcritic.rc.gen.pl
 share/profiles/moo/skel/misc/Changes.deps
 share/profiles/moo/skel/misc/Changes.deps.all
@@ -83,7 +80,6 @@ share/profiles/moose-role/skel/.mailmap
 share/profiles/moose-role/skel/.perltidyrc
 share/profiles/moose-role/skel/Changes
 share/profiles/moose-role/skel/INSTALL.SKIP
-share/profiles/moose-role/skel/LICENSE
 share/profiles/moose-role/skel/maint/perlcritic.rc.gen.pl
 share/profiles/moose-role/skel/misc/Changes.deps
 share/profiles/moose-role/skel/misc/Changes.deps.all
