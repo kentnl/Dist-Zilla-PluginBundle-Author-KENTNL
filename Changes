@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.025004 2015-11-15T02:17:35Z c5e6d46
+2.025004 2015-11-15T02:21:53Z dcc1328
  - Provision more files from skel instead of relying on generation on the first invocation of `dzil build`
 
 2.025003 2015-10-19T14:11:40Z 834555c
