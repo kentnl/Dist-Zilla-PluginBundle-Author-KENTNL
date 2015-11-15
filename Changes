@@ -1,7 +1,7 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
- - Provision more files from skel instead of relying on generation on the first invocation of `dzil build`
+ - Provision more files during minting instead of relying on generation on the first invocation of `dzil build`
 
 2.025003 2015-10-19T14:11:40Z 834555c
  [Bugfix]
