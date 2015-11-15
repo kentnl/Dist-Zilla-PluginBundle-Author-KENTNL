@@ -6,7 +6,7 @@ package Dist::Zilla::MintingProfile::Author::KENTNL;
 
 # ABSTRACT: KENTNL's Minting Profile
 
-our $VERSION = '2.025004';
+our $VERSION = '2.025010';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -45,7 +45,7 @@ Dist::Zilla::MintingProfile::Author::KENTNL - KENTNL's Minting Profile
 
 =head1 VERSION
 
-version 2.025004
+version 2.025010
 
 =head1 SYNOPSIS
 
