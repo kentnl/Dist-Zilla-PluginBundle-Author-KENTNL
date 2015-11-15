@@ -6,7 +6,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.025003';
+our $VERSION = '2.025010';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -737,7 +737,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.025003
+version 2.025010
 
 =head1 SYNOPSIS
 

@@ -10,7 +10,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::DistINI;
 
 # ABSTRACT: Generate a dist.ini for @Author::KENTNL projects.
 
-our $VERSION = '2.025003';
+our $VERSION = '2.025010';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -69,7 +69,6 @@ mantissa          = 6
 toolkit           = eumm
 toolkit_hardness  = soft
 bumpversions      = 1
-copyfiles         = LICENSE
 srcreadme         = mkdn
 ; twitter_extra_hash_tags =
 ; auto_prereqs_skip = File::Find
@@ -139,7 +138,7 @@ Dist::Zilla::Plugin::Author::KENTNL::DistINI - Generate a dist.ini for @Author::
 
 =head1 VERSION
 
-version 2.025003
+version 2.025010
 
 =head1 SYNOPSIS
 
