@@ -39,6 +39,7 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 =begin Pod::Coverage
 
   mvp_multivalue_args
+  mvp_aliases
   bundle_config_inner
 
 =end Pod::Coverage
@@ -46,6 +47,7 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 =cut
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip copyfiles ) }
+sub mvp_aliases { { 'bumpversions' => 'bump_versions' } }
 
 =attr C<plugins>
 
@@ -244,16 +246,16 @@ has 'toolkit' => (
   default => sub { 'mb' },
 );
 
-=attr C<bumpversions>
+=attr C<bump_versions>
 
-  bumpversions = 1
+  bump_versions = 1
 
 If true, use C<[BumpVersionAfterRelease]>  and C<[RewriteVersions::Sanitized]> instead of C<[PkgVersion]> and
 C<[Git::NextVersion::Sanitized]>
 
 =cut
 
-has 'bumpversions' => (
+has 'bump_versions' => (
   is      => ro  =>,
   isa     => 'Bool',
   lazy    => 1,
@@ -363,9 +365,9 @@ Called by in C<bundle_config> after C<new>
 
 sub _is_bake { return ( current_cmd() and 'bakeini' eq current_cmd() ) }
 
-sub _configure_bumpversions_version {
+sub _configure_bump_versions_version {
   my ( $self, ) = @_;
-  return if $self->bumpversions;
+  return if $self->bump_versions;
   $self->add_plugin(
     'Git::NextVersion::Sanitized' => {
       version_regexp => '^(.*)-source$',
@@ -478,7 +480,7 @@ sub _configure_basic_tests {
 
 sub _configure_pkgversion_munger {
   my ($self) = @_;
-  if ( not $self->bumpversions ) {
+  if ( not $self->bump_versions ) {
     $self->add_plugin( 'PkgVersion' => {} );
     return;
   }
@@ -618,7 +620,7 @@ sub configure {
   my ($self) = @_;
 
   # Version
-  $self->_configure_bumpversions_version;
+  $self->_configure_bump_versions_version;
 
   # MetaData
   $self->_configure_basic_metadata;
@@ -683,7 +685,7 @@ sub configure {
     },
   );
 
-  if ( $self->bumpversions ) {
+  if ( $self->bump_versions ) {
     $self->add_plugin( 'BumpVersionAfterRelease' => {} );
   }
   $self->add_named_plugin(

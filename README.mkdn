@@ -190,9 +190,9 @@ Determines which tooling to generate the distribution with
 - `mbtiny` : [`Module::Build::Tiny`](https://metacpan.org/pod/Module::Build::Tiny)
 - `eumm` : [`ExtUtils::MakeMaker`](https://metacpan.org/pod/ExtUtils::MakeMaker)
 
-## `bumpversions`
+## `bump_versions`
 
-    bumpversions = 1
+    bump_versions = 1
 
 If true, use `[BumpVersionAfterRelease]`  and `[RewriteVersions::Sanitized]` instead of `[PkgVersion]` and
 `[Git::NextVersion::Sanitized]`
