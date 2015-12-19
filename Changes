@@ -4,8 +4,10 @@
  [Dependencies::Stats]
  - Dependencies changed since 2.025010, see misc/*.deps* for details
  - develop: +1
+ - runtime: +1
 
  [Features]
+ - add a `carton_mode` parameter that presently just sets up cpanfile and local/etc rules.
  - 'bumpversions' moved to 'bump_versions', but legacy interface retained.
  - 'srcreadme' moved to 'src_readme' but legacy interface retained.
  - 'copyfiles' moved to 'copy_files' but legacy interface retained.

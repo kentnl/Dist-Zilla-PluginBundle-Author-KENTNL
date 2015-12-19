@@ -306,7 +306,21 @@ has src_readme => (
   default => sub { return 'mkdn'; },
 );
 
+=attr C<carton_mode>
+
+  carton_mode = 1 ; # Add glue layers necessary for working under carton
+
+=cut
+
+has 'carton_mode' => (
+  is      => ro  =>,
+  isa     => 'Bool',
+  lazy    => 1,
+  default => sub { return },
+);
+
 __PACKAGE__->meta->make_immutable;
+
 no Moose;
 no Moose::Util::TypeConstraints;
 
@@ -420,19 +434,26 @@ sub _configure_basic_files {
   if ( _none_match 'none', @{ $self->copy_files } ) {
     push @copy_files, @{ $self->copy_files };
   }
+  if ( $self->carton_mode ) {
+    push @copy_files,    'cpanfile';
+    push @ignore_match, '^vendor/';
+    push @ignore_match, '^local/';
+  }
   push @ignore_files, @copy_files;
 
   $self->add_plugin(
     'Git::GatherDir' => {
       include_dotfiles => 1,
       exclude_filename => [@ignore_files],
+      @ignore_match ? ( exclude_match => [@ignore_match] ) : ()
     },
   );
   $self->add_plugin( 'License' => {} );
 
-  $self->add_plugin( 'MetaJSON'                 => {} );
-  $self->add_plugin( 'MetaYAML::Minimal'        => {} );
-  $self->add_plugin( 'Manifest'                 => {} );
+  $self->add_plugin( 'MetaJSON'          => {} );
+  $self->add_plugin( 'MetaYAML::Minimal' => {} );
+  $self->carton_mode and $self->add_plugin( 'CPANFile' => {} );
+  $self->add_plugin( 'Manifest' => {} );
   $self->add_plugin( 'Author::KENTNL::TravisCI' => { ':version' => '0.001002' } );
   $self->add_plugin(
     'Author::KENTNL::CONTRIBUTING' => {
