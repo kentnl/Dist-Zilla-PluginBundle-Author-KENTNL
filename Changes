@@ -1,6 +1,10 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.025010, see misc/*.deps* for details
+ - develop: +1
+
  [Features]
  - 'bumpversions' moved to 'bump_versions', but legacy interface retained.
  - 'srcreadme' moved to 'src_readme' but legacy interface retained.

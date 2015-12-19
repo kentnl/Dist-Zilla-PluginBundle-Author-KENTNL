@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.025020
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::CPANFile
 
 2.025010 2015-11-15T02:28:17Z
 
