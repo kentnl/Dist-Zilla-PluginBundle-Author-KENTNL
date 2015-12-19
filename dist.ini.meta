@@ -105,6 +105,7 @@ toolkit           = eumm
 toolkit_hardness  = soft
 bumpversions      = 1
 srcreadme         = mkdn
+carton_mode       = 1
 Author::KENTNL::TravisCI.skip_perls = 5.8
 
 ;[Prereqs::SyncVersions]

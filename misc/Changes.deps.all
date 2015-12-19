@@ -4,6 +4,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / develop requires]
  - Dist::Zilla::Plugin::CPANFile
 
+ [Added / runtime requires]
+ - Dist::Zilla::Plugin::CPANFile
+
 2.025010 2015-11-15T02:28:17Z
 
 2.025003 2015-10-19T14:11:40Z

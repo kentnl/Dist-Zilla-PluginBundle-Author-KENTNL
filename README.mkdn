@@ -216,6 +216,10 @@ These defaults can be wiped with:
     srcreadme = mkdn ; # generate README.mkdn on the source side
     srcreadme = none ; # don't generate README on the source side
 
+## `carton_mode`
+
+    carton_mode = 1 ; # Add glue layers necessary for working under carton
+
 # AUTHOR
 
 Kent Fredric &lt;kentnl@cpan.org>
