@@ -47,7 +47,13 @@ See L<< the C<PluginBundle> role|Dist::Zilla::Role::PluginBundle >> for what thi
 =cut
 
 sub mvp_multivalue_args { return qw( auto_prereqs_skip copyfiles ) }
-sub mvp_aliases { { 'bumpversions' => 'bump_versions' } }
+
+sub mvp_aliases {
+  return {
+    'bumpversions' => 'bump_versions',
+    'srcreadme'    => 'src_readme',
+  };
+}
 
 =attr C<plugins>
 
@@ -284,15 +290,15 @@ has copyfiles => (
   default => sub { [ 'LICENSE', 'Makefile.PL' ] },
 );
 
-=attr C<srcreadme>
+=attr C<src_readme>
 
-  srcreadme = pod  ; # generate README.pod on the source side
-  srcreadme = mkdn ; # generate README.mkdn on the source side
-  srcreadme = none ; # don't generate README on the source side
+  src_readme = pod  ; # generate README.pod on the source side
+  src_readme = mkdn ; # generate README.mkdn on the source side
+  src_readme = none ; # don't generate README on the source side
 
 =cut
 
-has srcreadme => (
+has src_readme => (
   is => ro =>,
   isa => enum( [ 'pod', 'mkdn', 'none' ] ),
   lazy    => 1,
@@ -575,7 +581,7 @@ sub _configure_readmes {
 
   $self->add_named_plugin( 'ShippedReadme' => 'Readme::Brief' => {}, );
 
-  my $type = $self->srcreadme;
+  my $type = $self->src_readme;
 
   return if 'none' eq $type;
 
