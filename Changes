@@ -4,6 +4,7 @@
  [Features]
  - 'bumpversions' moved to 'bump_versions', but legacy interface retained.
  - 'srcreadme' moved to 'src_readme' but legacy interface retained.
+ - 'copyfiles' moved to 'copy_files' but legacy interface retained.
 
 2.025010 2015-11-15T02:28:17Z f61f784
  - Provision more files during minting instead of relying on generation on the first invocation of `dzil build`
