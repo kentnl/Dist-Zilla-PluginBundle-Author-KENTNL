@@ -210,11 +210,11 @@ These defaults can be wiped with:
 
     copyfiles = none
 
-## `srcreadme`
+## `src_readme`
 
-    srcreadme = pod  ; # generate README.pod on the source side
-    srcreadme = mkdn ; # generate README.mkdn on the source side
-    srcreadme = none ; # don't generate README on the source side
+    src_readme = pod  ; # generate README.pod on the source side
+    src_readme = mkdn ; # generate README.mkdn on the source side
+    src_readme = none ; # don't generate README on the source side
 
 ## `carton_mode`
 

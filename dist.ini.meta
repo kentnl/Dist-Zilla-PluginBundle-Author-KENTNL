@@ -104,7 +104,7 @@ bundledeps_phase  = runtime
 toolkit           = eumm
 toolkit_hardness  = soft
 bump_versions     = 1
-srcreadme         = mkdn
+src_readme        = mkdn
 carton_mode       = 1
 Author::KENTNL::TravisCI.skip_perls = 5.8
 
