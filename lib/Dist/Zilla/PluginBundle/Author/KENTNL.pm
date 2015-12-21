@@ -435,7 +435,7 @@ sub _configure_basic_files {
     push @copy_files, @{ $self->copy_files };
   }
   if ( $self->carton_mode ) {
-    push @copy_files,    'cpanfile';
+    push @copy_files, 'cpanfile', 'cpanfile.all';
     push @ignore_match, '^vendor/';
     push @ignore_match, '^local/';
   }
