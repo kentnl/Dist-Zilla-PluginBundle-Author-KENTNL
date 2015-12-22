@@ -1,8 +1,15 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 2.025020
+ [Added / develop recommends]
+ - Archive::Tar::Wrapper
+ - Dist::Zilla::App::Command::bakeini
+ - Dist::Zilla::App::Command::self
+ - Dist::Zilla::Util::BundleInfo 1.001004
+
  [Added / develop requires]
  - Dist::Zilla::Plugin::CPANFile
+ - Dist::Zilla::Plugin::RemovePrereqs
 
  [Added / runtime requires]
  - Dist::Zilla::Plugin::CPANFile

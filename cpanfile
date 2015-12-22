@@ -199,6 +199,7 @@ on 'develop' => sub {
   requires "Dist::Zilla::Plugin::Prereqs::Upgrade" => "0";
   requires "Dist::Zilla::Plugin::Readme::Brief" => "0";
   requires "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0";
+  requires "Dist::Zilla::Plugin::RemovePrereqs" => "0";
   requires "Dist::Zilla::Plugin::RemovePrereqs::Provided" => "0";
   requires "Dist::Zilla::Plugin::RewriteVersion::Sanitized" => "0";
   requires "Dist::Zilla::Plugin::RunExtraTests" => "0";
@@ -225,6 +226,10 @@ on 'develop' => sub {
 };
 
 on 'develop' => sub {
+  recommends "Archive::Tar::Wrapper" => "0";
+  recommends "Dist::Zilla::App::Command::bakeini" => "0";
+  recommends "Dist::Zilla::App::Command::self" => "0";
+  recommends "Dist::Zilla::Util::BundleInfo" => "1.001004";
   recommends "Test::More" => "0.99";
 };
 

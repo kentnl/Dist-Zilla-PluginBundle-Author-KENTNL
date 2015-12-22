@@ -3,7 +3,7 @@
 {{$NEXT}}
  [Dependencies::Stats]
  - Dependencies changed since 2.025010, see misc/*.deps* for details
- - develop: +1
+ - develop: +2 (recommends: +4)
  - runtime: +1
 
  [Features]
