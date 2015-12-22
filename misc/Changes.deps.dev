@@ -1,8 +1,15 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
 2.025020
+ [Added / develop recommends]
+ - Archive::Tar::Wrapper
+ - Dist::Zilla::App::Command::bakeini
+ - Dist::Zilla::App::Command::self
+ - Dist::Zilla::Util::BundleInfo 1.001004
+
  [Added / develop requires]
  - Dist::Zilla::Plugin::CPANFile
+ - Dist::Zilla::Plugin::RemovePrereqs
 
 2.025010 2015-11-15T02:28:17Z
 

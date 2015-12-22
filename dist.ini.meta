@@ -96,6 +96,14 @@ Dist::Zilla::Plugin::Git::NextVersion::Sanitized = 0
 Module::Build                                    = 0
 Dist::Zilla::Plugin::Author::KENTNL::TravisCI    = 0
 
+[Prereqs / devreqs]
+-phase = develop
+-type  = recommends
+Dist::Zilla::Util::BundleInfo = 1.001004
+Dist::Zilla::App::Command::self = 0
+Dist::Zilla::App::Command::bakeini = 0
+Archive::Tar::Wrapper = 0
+
 [@Author::KENTNL]
 twitter_extra_hash_tags = #distzilla
 normal_form       = numify
@@ -107,6 +115,12 @@ bump_versions     = 1
 src_readme        = mkdn
 carton_mode       = 1
 Author::KENTNL::TravisCI.skip_perls = 5.8
+
+[RemovePrereqs]
+remove = inc::CPANFile::Merged
+
+[=inc::CPANFile::Merged]
+filename = cpanfile.all
 
 ;[Prereqs::SyncVersions]
 [CheckPrereqsIndexed]
