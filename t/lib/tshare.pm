@@ -28,24 +28,17 @@ use Test::File::ShareDir 0.3.0 -share => {
 
 sub root   { return $root }
 sub corpus { return $corpus }
+sub global { return $global }
 
-sub global {
-
-  # this exists because dzil internals dont support Path::Tiny yet :(
-  require Path::Class::Dir;
-  return Path::Class::Dir->new($global);
-}
-
-use Test::DZil;
+use Test::DZil 5.038; # global_config_root ne Path::Class
 
 sub mk_minter {
   my ( $self, $profile ) = @_;
 
-  require Path::Class::Dir;
   return Minter->_new_from_profile(
     [ 'Author::KENTNL'   => $profile ],
     { name               => 'DZT-Minty', },
-    { global_config_root => $self->global },
+    { global_config_root => $global },
   );
 
 }

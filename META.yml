@@ -15,9 +15,8 @@ build_requires:
   Git::Wrapper: '0'
   Module::Build: '0'
   Module::Metadata: '0'
-  Path::Class::Dir: '0'
   Path::Tiny: '0'
-  Test::DZil: '0'
+  Test::DZil: '5.038'
   Test::Fatal: '0'
   Test::File::ShareDir: v0.3.0
   Test::More: '0.89'

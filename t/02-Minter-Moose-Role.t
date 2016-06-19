@@ -10,6 +10,7 @@ use lib 't/lib';
 use tshare;
 
 use Test::DZil;
+use Path::Tiny qw(path);
 
 my $tzil;
 
@@ -52,7 +53,7 @@ subtest 'mint files' => sub {
   # system("find",$tzil->tempdir );
 
   for my $dir (qw( .git .git/refs .git/objects lib )) {
-    ok( -e $tzil->tempdir->subdir('mint')->subdir($dir), "output dir $dir exists" );
+    ok( -e path( $tzil->tempdir ,'mint', $dir), "output dir $dir exists" );
   }
 
   note explain [ $tzil->log_messages ];
@@ -70,16 +71,16 @@ use Test::Fatal;
 
 subtest 'build minting' => sub {
 
-  my $tmpdir = $tzil->tempdir->subdir('mint')->absolute;
+  my $tmpdir = path( $tzil->tempdir, 'mint')->absolute;
 
   pass("Got minted dir");
 
   subtest 'Mangle minted dist.ini for experimental purposes' => sub {
 
-    my $old        = $tmpdir->file('dist.ini');
-    my $new        = $tmpdir->file('dist.ini.new');
-    my $distini    = $old->openr();
-    my $newdistini = $new->openw();
+    my $old        = path( $tmpdir, 'dist.ini');
+    my $new        = path( $tmpdir, 'dist.ini.new');
+    my $distini    = $old->openr_raw();
+    my $newdistini = $new->openw_raw();
 
     while ( defined( my $line = <$distini> ) ) {
       print $newdistini $line;
@@ -103,8 +104,8 @@ subtest 'build minting' => sub {
   my $pmfile;
   subtest 'Create fake pm with deps to be ignored' => sub {
 
-    $pmfile = $tmpdir->subdir('lib')->subdir('DZT')->file('Mintiniator.pm');
-    my $fh = $pmfile->openw();
+    $pmfile = path( $tmpdir, 'lib','DZT','Mintiniator.pm');
+    my $fh = $pmfile->openw_raw();
 
     print $fh <<'EOF';
 use strict;
@@ -157,7 +158,7 @@ EOF
     sub {
       $exception = exception {
         require File::pushd;
-        $target = File::pushd::pushd( $bzil->tempdir->subdir('build') );
+        $target = File::pushd::pushd( path($bzil->tempdir,'build') );
         system( $^X , 'Makefile.PL' ) and die "error with Makefile.PL\n";
         system('make') and die "error running make\n";
         system( 'make', 'test', 'TEST_VERBOSE=1' ) and die "error running make test TEST_VERBOSE=1\n";
