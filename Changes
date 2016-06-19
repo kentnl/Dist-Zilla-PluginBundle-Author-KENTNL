@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.025011 2015-11-15T02:29:54Z e1c7eee
+2.025011 2016-06-19T07:16:48Z 1e866db
 
 2.025010 2015-11-15T02:28:17Z f61f784
  - Provision more files during minting instead of relying on generation on the first invocation of `dzil build`
