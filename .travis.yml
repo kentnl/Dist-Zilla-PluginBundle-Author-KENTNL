@@ -3,6 +3,7 @@ after_failure:
   - perl ./maint-travis-ci/report_fail_ctx.pl
 before_install:
   - perlbrew list
+  - perlbrew install-cpanm -f
   - git --version
   - time git clone --depth 10 https://github.com/kentfredric/travis-scripts.git maint-travis-ci
   - time git -C ./maint-travis-ci reset --hard master
@@ -16,6 +17,7 @@ branches:
     - builds
     - releases
 install:
+  - cpanm --verbose --mirror http://cpan.metacpan.org --no-man-pages 'ExtUtils::MakeMaker~>=6.64' 'LMDB_File~<0.08'
   - time perl ./maint-travis-ci/install_deps_early.pl
   - time perl ./maint-travis-ci/install_deps.pl
 language: perl
