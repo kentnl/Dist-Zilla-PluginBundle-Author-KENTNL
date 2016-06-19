@@ -1,6 +1,6 @@
 ﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.025011 2016-06-19T07:17:51Z f3d2206
+2.025020 2016-06-19T07:18:18Z e987c7b
  [Features]
  - 'bumpversions' moved to 'bump_versions', but legacy interface retained.
  - 'srcreadme' moved to 'src_readme' but legacy interface retained.
