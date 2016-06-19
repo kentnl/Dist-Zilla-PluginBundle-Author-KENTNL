@@ -1,6 +1,11 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 2.025020
+ [Changed / test requires]
+ - Test::DZil 0 → 5.038
+
+ [Removed / test requires]
+ - Path::Class::Dir
 
 2.025010 2015-11-15T02:28:17Z
 
