@@ -45,7 +45,9 @@ use namespace::autoclean;
 
 
 
+
 sub mvp_multivalue_args { return qw( auto_prereqs_skip copyfiles ) }
+sub mvp_aliases { { 'bumpversions' => 'bump_versions' } }
 
 
 
@@ -253,7 +255,7 @@ has 'toolkit' => (
 
 
 
-has 'bumpversions' => (
+has 'bump_versions' => (
   is      => ro  =>,
   isa     => 'Bool',
   lazy    => 1,
@@ -349,9 +351,9 @@ sub add_named_plugin {
 
 sub _is_bake { return ( current_cmd() and 'bakeini' eq current_cmd() ) }
 
-sub _configure_bumpversions_version {
+sub _configure_bump_versions_version {
   my ( $self, ) = @_;
-  return if $self->bumpversions;
+  return if $self->bump_versions;
   $self->add_plugin(
     'Git::NextVersion::Sanitized' => {
       version_regexp => '^(.*)-source$',
@@ -455,7 +457,7 @@ sub _configure_basic_tests {
 
 sub _configure_pkgversion_munger {
   my ($self) = @_;
-  if ( not $self->bumpversions ) {
+  if ( not $self->bump_versions ) {
     $self->add_plugin( 'PkgVersion' => {} );
     return;
   }
@@ -595,7 +597,7 @@ sub configure {
   my ($self) = @_;
 
   # Version
-  $self->_configure_bumpversions_version;
+  $self->_configure_bump_versions_version;
 
   # MetaData
   $self->_configure_basic_metadata;
@@ -660,7 +662,7 @@ sub configure {
     },
   );
 
-  if ( $self->bumpversions ) {
+  if ( $self->bump_versions ) {
     $self->add_plugin( 'BumpVersionAfterRelease' => {} );
   }
   $self->add_named_plugin(
@@ -949,9 +951,9 @@ Determines which tooling to generate the distribution with
 
 =back
 
-=head2 C<bumpversions>
+=head2 C<bump_versions>
 
-  bumpversions = 1
+  bump_versions = 1
 
 If true, use C<[BumpVersionAfterRelease]>  and C<[RewriteVersions::Sanitized]> instead of C<[PkgVersion]> and
 C<[Git::NextVersion::Sanitized]>
@@ -988,6 +990,7 @@ These defaults can be wiped with:
 =end MetaPOD::JSON
 
 =for Pod::Coverage   mvp_multivalue_args
+  mvp_aliases
   bundle_config_inner
 
 =head1 AUTHOR
