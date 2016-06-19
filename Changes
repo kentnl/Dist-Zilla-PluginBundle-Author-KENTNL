@@ -1,10 +1,15 @@
 ﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 2.025010, see misc/*.deps* for details
+ - test: ↑1 -1
+
  [Features]
  - 'bumpversions' moved to 'bump_versions', but legacy interface retained.
  - 'srcreadme' moved to 'src_readme' but legacy interface retained.
  - 'copyfiles' moved to 'copy_files' but legacy interface retained.
+ - Remove residual reliance on Path::Class ( Requires DZil >5.038 )( Closes #1 )
 
 2.025010 2015-11-15T02:28:17Z f61f784
  - Provision more files during minting instead of relying on generation on the first invocation of `dzil build`
