@@ -15,9 +15,8 @@ build_requires:
   Git::Wrapper: '0'
   Module::Build: '0'
   Module::Metadata: '0'
-  Path::Class::Dir: '0'
   Path::Tiny: '0'
-  Test::DZil: '0'
+  Test::DZil: '5.038'
   Test::Fatal: '0'
   Test::File::ShareDir: v0.3.0
   Test::More: '0.89'
@@ -29,7 +28,7 @@ configure_requires:
   File::ShareDir::Install: '0.10'
   perl: '5.006'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.041, CPAN::Meta::Converter version 2.150005'
+generated_by: 'Dist::Zilla version 5.047, CPAN::Meta::Converter version 2.150005'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -38,16 +37,16 @@ name: Dist-Zilla-PluginBundle-Author-KENTNL
 provides:
   Dist::Zilla::MintingProfile::Author::KENTNL:
     file: lib/Dist/Zilla/MintingProfile/Author/KENTNL.pm
-    version: '2.025010'
+    version: '2.025020'
   Dist::Zilla::Plugin::Author::KENTNL::DistINI:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/DistINI.pm
-    version: '2.025010'
+    version: '2.025020'
   Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl:
     file: lib/Dist/Zilla/Plugin/Author/KENTNL/MinimumPerl.pm
-    version: '2.025010'
+    version: '2.025020'
   Dist::Zilla::PluginBundle::Author::KENTNL:
     file: lib/Dist/Zilla/PluginBundle/Author/KENTNL.pm
-    version: '2.025010'
+    version: '2.025020'
 recommends:
   CHI: '0'
   CHI::Driver::LMDB: '0'
@@ -169,4 +168,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL/issues
   homepage: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL
   repository: https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL.git
-version: '2.025010'
+version: '2.025020'

@@ -103,8 +103,8 @@ mantissa          = 6
 bundledeps_phase  = runtime
 toolkit           = eumm
 toolkit_hardness  = soft
-bumpversions      = 1
-srcreadme         = mkdn
+bump_versions     = 1
+src_readme        = mkdn
 Author::KENTNL::TravisCI.skip_perls = 5.8
 
 ;[Prereqs::SyncVersions]
