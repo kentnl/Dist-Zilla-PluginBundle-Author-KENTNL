@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
 
-2.025021 2017-03-04T02:07:34Z 1a04ca4
+2.025021 2017-03-04T02:25:51Z 19fcce1
  [Bugfix]
  - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
  - Closes https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL/issues/3
