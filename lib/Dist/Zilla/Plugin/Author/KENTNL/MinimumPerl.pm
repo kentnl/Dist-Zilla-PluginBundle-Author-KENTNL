@@ -23,12 +23,27 @@ our $VERSION = '2.025021';
 =cut
 
 use Moose qw( has extends override around );
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 use Dist::Zilla::Plugin::MinimumPerl 1.004;
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
 
-around dump_config => config_dumper( __PACKAGE__, { attrs => [ 'detected_perl', 'fiveten' ] } );
+around dump_config => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config = $self->$orig(@args);
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  if ( $self->meta->find_attribute_by_name('detected_perl')->has_value($self) ) {
+    $localconf->{detected_perl} = $self->detected_perl;
+  }
+  if ( $self->meta->find_attribute_by_name('fiveten')->has_value($self) ) {
+    $localconf->{fiveten} = $self->fiveten;
+  }
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION
+    unless __PACKAGE__ eq ref $self;
+
+  return $config;
+};
 
 has 'detected_perl' => (
   is         => 'rw',

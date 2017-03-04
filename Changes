@@ -8,8 +8,11 @@
  [Dependencies::Stats]
  - Dependencies changed since 2.025020, see misc/*.deps* for details
  - develop: +1 ↑1
- - runtime: ↑1
+ - runtime: ↑1 -1
  - test: ↓1
+
+ [Internals]
+ - Remove usage of ConfigDumper
 
 2.025020 2016-06-19T07:19:45Z 9153e61
  [Dependencies::Stats]
