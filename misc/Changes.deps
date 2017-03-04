@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-2.025021
+2.025022
+
+2.025021 2017-03-04T02:54:50Z
  [Changed / runtime requires]
  - Dist::Zilla::Plugin::Test::Compile::PerFile 0 → 0.003902
 

@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-2.025021
+2.025022
+
+2.025021 2017-03-04T02:54:50Z
  [Added / develop requires]
  - Test::MinimumVersion
 
