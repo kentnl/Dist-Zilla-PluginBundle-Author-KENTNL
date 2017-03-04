@@ -154,7 +154,6 @@ requires:
   Dist::Zilla::Role::PluginBundle: '0'
   Dist::Zilla::Role::PluginBundle::Config::Slicer: '0'
   Dist::Zilla::Role::PluginBundle::PluginRemover: '0'
-  Dist::Zilla::Util::ConfigDumper: '0'
   Dist::Zilla::Util::CurrentCmd: '0'
   Moose: '0'
   Moose::Util::TypeConstraints: '0'

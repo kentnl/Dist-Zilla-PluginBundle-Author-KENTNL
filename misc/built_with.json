@@ -80,7 +80,6 @@
       "Dist::Zilla::Role::PluginBundle" : "6.008",
       "Dist::Zilla::Role::PluginBundle::Config::Slicer" : "0.201",
       "Dist::Zilla::Role::PluginBundle::PluginRemover" : "0.104",
-      "Dist::Zilla::Util::ConfigDumper" : "0.003007",
       "Dist::Zilla::Util::CurrentCmd" : "0.002003",
       "English" : "1.10",
       "ExtUtils::MakeMaker" : "7.24",
