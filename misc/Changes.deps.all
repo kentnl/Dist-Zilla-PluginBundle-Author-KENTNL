@@ -13,6 +13,13 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Changed / test requires]
  - Test::More 0.89 → 0
 
+ [Removed / runtime recommends]
+ - CHI
+ - CHI::Driver::LMDB
+ - Data::Serializer::Sereal
+ - LMDB_File
+ - Net::GitHub
+
  [Removed / runtime requires]
  - Dist::Zilla::Util::ConfigDumper
 

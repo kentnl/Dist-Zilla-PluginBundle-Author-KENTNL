@@ -1,12 +1,9 @@
 {
    "failures" : {
       "Dist::Zilla::Plugin::PerlTidy" : "module was not found in INC",
-      "Dist::Zilla::Util::EmulatePhase" : "module was not found in INC",
-      "Net::GitHub" : "module was not found in INC"
+      "Dist::Zilla::Util::EmulatePhase" : "module was not found in INC"
    },
    "modules" : {
-      "CHI" : "0.60",
-      "CHI::Driver::LMDB" : "0.002003",
       "CPAN::Changes::Dependencies::Details" : "0.001006",
       "CPAN::Changes::Group::Dependencies::Stats" : "0.002007",
       "CPAN::Meta" : "2.150010",
@@ -14,7 +11,6 @@
       "Capture::Tiny" : "0.46",
       "Carp" : "1.42",
       "Cpanel::JSON::XS" : "3.0227",
-      "Data::Serializer::Sereal" : "1.05",
       "Dist::Zilla" : "6.008",
       "Dist::Zilla::App::Command::bakeini" : "0.002005",
       "Dist::Zilla::File::FromCode" : "6.008",
@@ -90,7 +86,6 @@
       "Git::Wrapper" : "0.047",
       "IO::Socket::SSL" : "2.047",
       "JSON::MaybeXS" : "1.003008",
-      "LMDB_File" : "0.12",
       "LWP::Protocol::https" : "6.07",
       "Module::Build" : "0.4220",
       "Module::Metadata" : "1.000033",
