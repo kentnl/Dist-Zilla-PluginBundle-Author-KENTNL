@@ -6,7 +6,7 @@ package Dist::Zilla::PluginBundle::Author::KENTNL;
 
 # ABSTRACT: BeLike::KENTNL when you build your distributions.
 
-our $VERSION = '2.025020';
+our $VERSION = '2.025021';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -451,15 +451,20 @@ sub _configure_basic_files {
 
 sub _configure_basic_tests {
   my ($self) = @_;
-  $self->add_plugin( 'MetaTests'              => {} );
-  $self->add_plugin( 'PodCoverageTests'       => {} );
-  $self->add_plugin( 'PodSyntaxTests'         => {} );
-  $self->add_plugin( 'Test::ReportPrereqs'    => {} );
-  $self->add_plugin( 'Test::Kwalitee'         => {} );
-  $self->add_plugin( 'Test::EOL'              => { trailing_whitespace => 1, } );
-  $self->add_plugin( 'Test::MinimumVersion'   => {} );
-  $self->add_plugin( 'Test::Compile::PerFile' => {} );
-  $self->add_plugin( 'Test::Perl::Critic'     => {} );
+  $self->add_plugin( 'MetaTests'            => {} );
+  $self->add_plugin( 'PodCoverageTests'     => {} );
+  $self->add_plugin( 'PodSyntaxTests'       => {} );
+  $self->add_plugin( 'Test::ReportPrereqs'  => {} );
+  $self->add_plugin( 'Test::Kwalitee'       => {} );
+  $self->add_plugin( 'Test::EOL'            => { trailing_whitespace => 1, } );
+  $self->add_plugin( 'Test::MinimumVersion' => {} );
+  $self->add_plugin(
+    'Test::Compile::PerFile' => {
+      ':version'      => '0.003902',
+      'test_template' => '02-raw-require.t.tpl',
+    },
+  );
+  $self->add_plugin( 'Test::Perl::Critic' => {} );
   return;
 }
 
@@ -747,7 +752,7 @@ Dist::Zilla::PluginBundle::Author::KENTNL - BeLike::KENTNL when you build your d
 
 =head1 VERSION
 
-version 2.025020
+version 2.025021
 
 =head1 SYNOPSIS
 
@@ -1007,7 +1012,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

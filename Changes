@@ -1,4 +1,18 @@
-﻿Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
+Revision history for Dist-Zilla-PluginBundle-Author-KENTNL
+
+2.025021 2017-03-04T02:54:50Z 57634ed
+ [Bugfix]
+ - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
+ - Closes https://github.com/kentnl/Dist-Zilla-PluginBundle-Author-KENTNL/issues/3
+
+ [Dependencies::Stats]
+ - Dependencies changed since 2.025020, see misc/*.deps* for details
+ - develop: +1 ↑1
+ - runtime: ↑1 -1 (recommends: -5)
+ - test: ↓1
+
+ [Internals]
+ - Remove usage of ConfigDumper
 
 2.025020 2016-06-19T07:19:45Z 9153e61
  [Dependencies::Stats]

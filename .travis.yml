@@ -17,9 +17,10 @@ branches:
     - builds
     - releases
 install:
-  - cpanm --verbose --mirror http://cpan.metacpan.org --no-man-pages 'ExtUtils::MakeMaker~>=6.64' 'LMDB_File~<0.08'
+  - cpanm --verbose --mirror http://cpan.metacpan.org --no-man-pages 'ExtUtils::MakeMaker~>=6.64'
   - time perl ./maint-travis-ci/install_deps_early.pl
-  - time perl ./maint-travis-ci/install_deps.pl
+  - time perl ./maint-travis-ci/autoinstall_dzil.pl
+  - time perl ./maint-travis-ci/install_deps_2.pl
 language: perl
 matrix:
   allow_failures:

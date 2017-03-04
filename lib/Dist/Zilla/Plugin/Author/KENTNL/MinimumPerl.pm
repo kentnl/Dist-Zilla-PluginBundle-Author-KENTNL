@@ -6,7 +6,7 @@ package Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl;
 
 # ABSTRACT: The MinimumPerl Plugin with a few hacks
 
-our $VERSION = '2.025020';
+our $VERSION = '2.025021';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -23,12 +23,27 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 use Moose qw( has extends override around );
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 use Dist::Zilla::Plugin::MinimumPerl 1.004;
 extends 'Dist::Zilla::Plugin::MinimumPerl';
 use namespace::autoclean;
 
-around dump_config => config_dumper( __PACKAGE__, { attrs => [ 'detected_perl', 'fiveten' ] } );
+around dump_config => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config = $self->$orig(@args);
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  if ( $self->meta->find_attribute_by_name('detected_perl')->has_value($self) ) {
+    $localconf->{detected_perl} = $self->detected_perl;
+  }
+  if ( $self->meta->find_attribute_by_name('fiveten')->has_value($self) ) {
+    $localconf->{fiveten} = $self->fiveten;
+  }
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION
+    unless __PACKAGE__ eq ref $self;
+
+  return $config;
+};
 
 has 'detected_perl' => (
   is         => 'rw',
@@ -152,7 +167,7 @@ Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl - The MinimumPerl Plugin with a
 
 =head1 VERSION
 
-version 2.025020
+version 2.025021
 
 =head1 METHODS
 
@@ -177,7 +192,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

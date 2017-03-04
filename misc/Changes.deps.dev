@@ -1,6 +1,13 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-2.025020
+2.025021
+ [Added / develop requires]
+ - Test::MinimumVersion
+
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0 → 0.003902
+
+2.025020 2016-06-19T07:19:45Z
 
 2.025010 2015-11-15T02:28:17Z
 
