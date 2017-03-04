@@ -451,15 +451,20 @@ sub _configure_basic_files {
 
 sub _configure_basic_tests {
   my ($self) = @_;
-  $self->add_plugin( 'MetaTests'              => {} );
-  $self->add_plugin( 'PodCoverageTests'       => {} );
-  $self->add_plugin( 'PodSyntaxTests'         => {} );
-  $self->add_plugin( 'Test::ReportPrereqs'    => {} );
-  $self->add_plugin( 'Test::Kwalitee'         => {} );
-  $self->add_plugin( 'Test::EOL'              => { trailing_whitespace => 1, } );
-  $self->add_plugin( 'Test::MinimumVersion'   => {} );
-  $self->add_plugin( 'Test::Compile::PerFile' => {} );
-  $self->add_plugin( 'Test::Perl::Critic'     => {} );
+  $self->add_plugin( 'MetaTests'            => {} );
+  $self->add_plugin( 'PodCoverageTests'     => {} );
+  $self->add_plugin( 'PodSyntaxTests'       => {} );
+  $self->add_plugin( 'Test::ReportPrereqs'  => {} );
+  $self->add_plugin( 'Test::Kwalitee'       => {} );
+  $self->add_plugin( 'Test::EOL'            => { trailing_whitespace => 1, } );
+  $self->add_plugin( 'Test::MinimumVersion' => {} );
+  $self->add_plugin(
+    'Test::Compile::PerFile' => {
+      ':version'      => '0.003902',
+      'test_template' => '02-raw-require.t.tpl',
+    },
+  );
+  $self->add_plugin( 'Test::Perl::Critic' => {} );
   return;
 }
 
